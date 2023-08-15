@@ -1,0 +1,308 @@
+// This schema defines the Protobuf messages used for communication with the
+// Cube Market Data Service (Mendelev, MD).
+//
+// ### Order Book Data
+//
+// The market data service exposes a websocket endpoint for order book data for
+// a given market at `/book/:market_id`. The order book can be consumed by both
+// price level through the Market by Price (MBP) and order-by-order through the
+// Market by Order (MBO). In addition, clients can subscribe to the trade stream
+// and price candlesticks. Clients should submit a [`Config`](#config) and then
+// process [`MdMessage`'s](#md-message).
+//
+// ### Aggregate Book Tops Data
+//
+// The market data service exposes a websocket endpoint for aggregated
+// tops-of-book for all markets at `/tops`. Client should process
+// [`AggMessage`](#agg-message).
+//
+// ### Heartbeats
+//
+// Application-level heartbeats are expected every 30 seconds. If more than one
+// interval is missed, the market data service will disconnect the websocket.
+//
+syntax = "proto3";
+
+package md;
+
+// Side specifies whether the level, order, or diff, is for buying or selling
+// the base asset.
+enum Side {
+  // Bids buy the base asset with the quote asset.
+  BID = 0;
+  // Asks (or offers) sell the base asset and get the quote asset.
+  ASK = 1;
+}
+
+// The candlestick interval.
+enum KlineInterval {
+  // 1 second
+  S1 = 0;
+  // 1 minute
+  M1 = 1;
+  // 15 minutes
+  M15 = 2;
+  // 1 hour
+  H1 = 3;
+  // 4 hours
+  H4 = 4;
+  // 1 day
+  D1 = 5;
+}
+
+// Every exchange message from `/book/:market_id` will be wrapped as an
+// [`MdMessages`](#md-messages) which contains multiple `MdMessage`'s.
+message MdMessage {
+  oneof inner {
+    // Server heartbeat reply
+    Heartbeat heartbeat = 1;
+    // 24h summary
+    Summary summary = 2;
+    // Recent trades
+    Trades trades = 3;
+    // Market by order snapshot
+    MarketByOrder mboSnapshot = 4;
+    // Market by order diff
+    MarketByOrderDiff mboDiff = 5;
+    // Market by price snapshot
+    MarketByPrice mbpSnapshot = 6;
+    // Market by price diff
+    MarketByPriceDiff mbpDiff = 7;
+    // Candlestick
+    Kline kline = 8;
+  }
+}
+
+// Market by price snapshot message. This is chunked into `numChunks` and starts
+// with `chunk = 0`. A snapshot is sent on first connect. `Level`'s should be
+// concatened until `chunk = numChunks - 1`. Currently, the chunks and levels
+// are streamed from tightest price level outwards with interleaved Bid and Ask
+// levels, but no ordering is guaranteed.
+message MarketByPrice {
+  repeated Level levels = 1;
+  uint32 chunk = 2;
+  uint32 numChunks = 3;
+
+  // Each price level is the aggregate total quantity of orders placed at that
+  // price.
+  message Level {
+    uint64 price = 1;
+    uint64 quantity = 2;
+    Side side = 3;
+  }
+}
+
+// Market by price diff message. Book updates for the MBP feed are sent as diffs
+// after the initial snapshot. The number of total side levels are for
+// reconciliation.
+message MarketByPriceDiff {
+  repeated Diff diffs = 1;
+  // Total number of bid levels after this diff is applied.
+  uint32 totalBidLevels = 2;
+  // Total number of ask levels after this diff is applied.
+  uint32 totalAskLevels = 3;
+
+  // The operation to apply for this price level. Currently, new price levels
+  // are created with `REPLACE`.
+  enum DiffOp {
+    ADD = 0;
+    REMOVE = 1;
+    REPLACE = 2;
+  }
+
+  // A price level diff overwrites the existing price level.
+  message Diff {
+    uint64 price = 1;
+    uint64 quantity = 2;
+    Side side = 3;
+    DiffOp op = 4;
+  }
+}
+
+// Market by order snapshot message. This is chunked into `numChunks` and starts
+// with `chunk = 0`. A snapshot is sent on first connect. `Level`'s should be
+// concatened until `chunk = numChunks - 1`. Orders are sent in order of FIFO
+// queue priority so the first order of a level should be the first order to be
+// matched when that level is aggressed.
+message MarketByOrder {
+  repeated Order orders = 1;
+  uint32 chunk = 2;
+  uint32 numChunks = 3;
+
+  // A resting order.
+  message Order {
+    uint64 price = 1;
+    uint64 quantity = 2;
+    // [Exchange order ID](/docs/api_reference/trade#exchange-order-id)
+    uint64 exchangeOrderId = 3;
+    Side side = 4;
+  }
+}
+
+// Market by order diff message. Book updates for the MBO feed are sent as diffs
+// after the initial snapshot. The number of total side levels and orders are
+// for reconciliation.
+//
+// Note that for orders that are cancel-replace'd (a modify that lost queue
+// priority), the new price and quantity will be reported as a `REPLACE` but the
+// exchange order ID will not change.
+message MarketByOrderDiff {
+  repeated Diff diffs = 1;
+  // Total number of bid levels after this diff is applied.
+  uint32 totalBidLevels = 2;
+  // Total number of ask levels after this diff is applied.
+  uint32 totalAskLevels = 3;
+  // Total number of bid orders after this diff is applied.
+  uint32 totalBidOrders = 4;
+  // Total number of ask orders after this diff is applied.
+  uint32 totalAskOrders = 5;
+
+  enum OrderOp {
+    ADD = 0;
+    REMOVE = 1;
+    REPLACE = 2;
+  }
+
+  message Diff {
+    uint64 price = 1;
+    uint64 quantity = 2;
+    // [Exchange order ID](/docs/api_reference/trade#exchange-order-id)
+    uint64 exchangeOrderId = 3;
+    Side side = 4;
+    OrderOp op = 5;
+  }
+}
+
+// Trades since the latest `Trades` message. The result of the trades will also
+// appear in the MBP and MBO feeds independently as updates to the resting
+// orders and levels, respectively.
+message Trades {
+  repeated Trade trades = 1;
+
+  message Trade {
+    // The ID assigned to this trade. All trades that occur from the same event
+    // will be assigned the same ID, and are considered to be an atomic batch.
+    uint64 tradeId = 1;
+    // The price that this trade occurred at.
+    uint64 price = 2;
+    // The side of the aggressing order.
+    Side aggressingSide = 3;
+    // The [Exchange order ID](/docs/api_reference/trade#exchange-order-id) of
+    // the resting order.
+    uint64 restingExchangeOrderId = 4;
+    uint64 fillQuantity = 5;
+    // The [transact time](/docs/api_reference/trade#transact-time) assigned by
+    // the matching engine for this trade. All trades that occur from the same
+    // event will be assigned the same transact time.
+    uint64 transactTime = 6;
+    // The [Exchange order ID](/docs/api_reference/trade#exchange-order-id) of
+    // the aggressing order.
+    uint64 aggressingExchangeOrderId = 7;
+  }
+}
+
+// Rolling 24h stats.
+message Summary {
+  // Low price
+  uint64 low = 1;
+  // High price
+  uint64 high = 2;
+  // Low 64-bits of the base quantity traded
+  uint64 baseVolumeLo = 3;
+  // High 64-bits of the base quantity traded
+  uint64 baseVolumeHi = 4;
+  // Low 64-bits of the quote quantity traded
+  uint64 quoteVolumeLo = 5;
+  // High 64-bits of the quote quantity traded
+  uint64 quoteVolumeHi = 6;
+}
+
+// Candlestick bar.
+message Kline {
+  KlineInterval interval = 1;
+  // The unix nanosecond timestamp that this kline covers.
+  uint64 startTime = 2;
+  // Kline open price.
+  uint64 open = 3;
+  // Kline close price.
+  uint64 close = 4;
+  // Kline high price.
+  uint64 high = 5;
+  // Kline low price.
+  uint64 low = 6;
+  // Low 64-bits of the base quantity traded.
+  uint64 volumeLo = 7;
+  // High 64-bits of the base quantity traded.
+  uint64 volumeHi = 8;
+}
+
+// A client and server heartbeat. The heartbeat reply, including the timestamp
+// value, comes from the market data service.
+message Heartbeat {
+  // A request ID that is echoed back on the Heartbeat
+  uint64 requestId = 1;
+  uint64 timestamp = 2;
+}
+
+message MdMessages {
+  repeated MdMessage messages = 1;
+}
+
+// Every exchange message from `/tops` will be wrapped as an `AggMessage`.
+message AggMessage {
+  oneof inner {
+    // Server heartbeat reply
+    Heartbeat heartbeat = 1;
+    // Top of books
+    TopOfBooks topOfBooks = 2;
+  }
+}
+
+// Top of book
+message TopOfBook {
+  uint64 marketId = 1;
+  // The [transact time](/docs/api_reference/trade#transact-time) of the latest
+  // book update on this market.
+  uint64 transactTime = 2;
+  // The best bid price.
+  uint64 bidPrice = 3;
+  // The total bid quantity at the best bid price.
+  uint64 bidQuantity = 4;
+  // The best ask price.
+  uint64 askPrice = 5;
+  // The total ask quantity at the best ask price.
+  uint64 askQuantity = 6;
+  // The last trade price.
+  uint64 lastPrice = 7;
+}
+
+// Top of books for all books that were updates since the last top-of-books
+// message.
+message TopOfBooks {
+  repeated TopOfBook tops = 1;
+}
+
+// Client heartbeats and configs. This wrapper is used for both
+// `/book/:market_id` and `/tops`, but `config` messages are ignored on the
+// latter.
+message ClientMessage {
+  oneof inner {
+    Heartbeat heartbeat = 1;
+    Config config = 2;
+  }
+}
+
+// Set the message subscriptions for `/book/:market_id`. At most one of `mbp`
+// and `mbo` can be set.
+message Config {
+  // Enable MBP feeds
+  bool mbp = 1;
+  // Enable MBO feeds
+  bool mbo = 2;
+  // Enable recent trades
+  bool trades = 3;
+  // Enable 24h summary
+  bool summary = 4;
+  // Enable price klines
+  repeated KlineInterval klines = 5;
+}
