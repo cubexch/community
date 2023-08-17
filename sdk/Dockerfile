@@ -42,7 +42,7 @@ RUN /home/proto/.local/bin/protoc --java_out=/home/proto/java/ *.proto
 
 # generating CommonJS style import, if Closer-style imports are needed
 # see: https://github.com/protocolbuffers/protobuf-javascript
-# RUN /home/proto/.local/bin/protoc --js_out=/home/proto/import_style=commonjs,binary:javascript *.proto
+RUN /home/proto/.local/bin/protoc --js_out=import_style=commonjs,binary:/home/proto/javascript *.proto
 
 # requires protoc-gen-ts, see https://github.com/thesayyn/protoc-gen-ts
 RUN /home/proto/.local/bin/protoc --ts_out=/home/proto/typescript/ *.proto
