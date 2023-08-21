@@ -19,8 +19,15 @@ docker cp proto-copy:/home/proto/python/ ./
 docker cp proto-copy:/home/proto/typescript/ ./
 # docker cp proto-copy:/home/proto/go/ go/
 # docker cp proto-copy:/home/proto/csharp/ csharp/
-
+echo '-------------------------------------'
+echo 'library generation complete, cleaning up....'
+echo '-------------------------------------'
+echo '**** removing proto-copy container'
+echo '-------------------------------------'
 docker rm -f proto-copy 
-docker image rm proto-gen:latest
-clear
-echo 'language specific imports created from proto files in protos/ directory'
+echo '-------------------------------------'
+echo '**** removing proto-gen:latest container'
+echo '-------------------------------------'
+docker image rm -f proto-gen:latest
+echo '-------------------------------------'
+echo 'COMPLETE: language specific imports created from proto files in protos/ directory'
