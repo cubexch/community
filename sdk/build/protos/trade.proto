@@ -64,6 +64,8 @@ syntax = "proto3";
 
 package trade;
 
+option go_package = "go/";
+
 // Side specifies whether the order is buying or selling the base asset. A trade
 // is matched when a buyer (BID) and a seller (ASK) agree on a price (cross).
 // The bid-ask spread is the gap between the highest bid price and lowest ask

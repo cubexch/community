@@ -25,6 +25,8 @@ syntax = "proto3";
 
 package md;
 
+option go_package = "go/";
+
 // Side specifies whether the level, order, or diff, is for buying or selling
 // the base asset.
 enum Side {
