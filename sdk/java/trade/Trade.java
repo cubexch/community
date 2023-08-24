@@ -28231,7 +28231,7 @@ public final class Trade {
       "TH_PROTECTION\020\002*V\n\023SelfTradePrevention\022\022" +
       "\n\016CANCEL_RESTING\020\000\022\025\n\021CANCEL_AGGRESSING\020" +
       "\001\022\024\n\020ALLOW_SELF_TRADE\020\002*%\n\010PostOnly\022\014\n\010D" +
-      "ISABLED\020\000\022\013\n\007ENABLED\020\001b\006proto3"
+      "ISABLED\020\000\022\013\n\007ENABLED\020\001B\005Z\003go/b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
