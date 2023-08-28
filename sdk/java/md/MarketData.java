@@ -21210,7 +21210,7 @@ public final class MarketData {
       "lines\030\005 \003(\0162\021.md.KlineInterval*\030\n\004Side\022\007" +
       "\n\003BID\020\000\022\007\n\003ASK\020\001*@\n\rKlineInterval\022\006\n\002S1\020" +
       "\000\022\006\n\002M1\020\001\022\007\n\003M15\020\002\022\006\n\002H1\020\003\022\006\n\002H4\020\004\022\006\n\002D1" +
-      "\020\005B\005Z\003go/b\006proto3"
+      "\020\005B\027Z\003go/\252\002\017Cube.MarketDatab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

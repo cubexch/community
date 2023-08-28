@@ -616,11 +616,11 @@ const char descriptor_table_protodef_market_5fdata_2eproto[] PROTOBUF_SECTION_VA
   "lines\030\005 \003(\0162\021.md.KlineInterval*\030\n\004Side\022\007"
   "\n\003BID\020\000\022\007\n\003ASK\020\001*@\n\rKlineInterval\022\006\n\002S1\020"
   "\000\022\006\n\002M1\020\001\022\007\n\003M15\020\002\022\006\n\002H1\020\003\022\006\n\002H4\020\004\022\006\n\002D1"
-  "\020\005B\005Z\003go/b\006proto3"
+  "\020\005B\027Z\003go/\252\002\017Cube.MarketDatab\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_market_5fdata_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_market_5fdata_2eproto = {
-  false, false, 2497, descriptor_table_protodef_market_5fdata_2eproto, "market_data.proto", 
+  false, false, 2515, descriptor_table_protodef_market_5fdata_2eproto, "market_data.proto", 
   &descriptor_table_market_5fdata_2eproto_once, nullptr, 0, 20,
   schemas, file_default_instances, TableStruct_market_5fdata_2eproto::offsets,
   file_level_metadata_market_5fdata_2eproto, file_level_enum_descriptors_market_5fdata_2eproto, file_level_service_descriptors_market_5fdata_2eproto,

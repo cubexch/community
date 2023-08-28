@@ -925,11 +925,12 @@ const char descriptor_table_protodef_trade_2eproto[] PROTOBUF_SECTION_VARIABLE(p
   "TH_PROTECTION\020\002*V\n\023SelfTradePrevention\022\022"
   "\n\016CANCEL_RESTING\020\000\022\025\n\021CANCEL_AGGRESSING\020"
   "\001\022\024\n\020ALLOW_SELF_TRADE\020\002*%\n\010PostOnly\022\014\n\010D"
-  "ISABLED\020\000\022\013\n\007ENABLED\020\001B\005Z\003go/b\006proto3"
+  "ISABLED\020\000\022\013\n\007ENABLED\020\001B\022Z\003go/\252\002\nCube.Tra"
+  "deb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_trade_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_trade_2eproto = {
-  false, false, 5517, descriptor_table_protodef_trade_2eproto, "trade.proto", 
+  false, false, 5530, descriptor_table_protodef_trade_2eproto, "trade.proto", 
   &descriptor_table_trade_2eproto_once, nullptr, 0, 23,
   schemas, file_default_instances, TableStruct_trade_2eproto::offsets,
   file_level_metadata_trade_2eproto, file_level_enum_descriptors_trade_2eproto, file_level_service_descriptors_trade_2eproto,
