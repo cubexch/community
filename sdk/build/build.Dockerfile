@@ -1,7 +1,7 @@
 FROM cube-protoc-dependencies:v0.1
 
 COPY protos/ /home/proto/
-RUN mkdir python/ cpp/ java/ javascript/ typescript/ go/
+RUN mkdir python/ cpp/ java/ javascript/ typescript/ go/ csharp/
 
 RUN /home/proto/.local/bin/protoc --python_out=/home/proto/python/ *.proto
 RUN /home/proto/.local/bin/protoc --cpp_out=/home/proto/cpp/ *.proto
@@ -25,4 +25,4 @@ RUN /home/proto/.local/bin/protoc --go_out=/home/proto/ *.proto
 
 # for c sharp, we need to specify a namespace option in proto files
 # and make ../csharp dir
-# protoc --csharp_out=../csharp/ *.proto
+RUN protoc --csharp_out=/home/proto/csharp/ *.proto

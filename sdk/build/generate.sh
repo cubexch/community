@@ -19,7 +19,7 @@ docker cp proto-copy:/home/proto/javascript/ ../
 docker cp proto-copy:/home/proto/python/ ../
 docker cp proto-copy:/home/proto/typescript/ ../
 docker cp proto-copy:/home/proto/go/ ../
-# docker cp proto-copy:/home/proto/csharp/ csharp/
+docker cp proto-copy:/home/proto/csharp/ ../
 
 echo '-------------------------------------'
 echo 'library generation complete, cleaning up....'

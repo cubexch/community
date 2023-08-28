@@ -65,6 +65,7 @@ syntax = "proto3";
 package trade;
 
 option go_package = "go/";
+option csharp_namespace = "Cube.Trade";
 
 // Side specifies whether the order is buying or selling the base asset. A trade
 // is matched when a buyer (BID) and a seller (ASK) agree on a price (cross).
