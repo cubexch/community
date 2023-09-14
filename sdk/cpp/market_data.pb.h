@@ -47,7 +47,7 @@ struct TableStruct_market_5fdata_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[20]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[22]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -101,6 +101,12 @@ extern MdMessageDefaultTypeInternal _MdMessage_default_instance_;
 class MdMessages;
 struct MdMessagesDefaultTypeInternal;
 extern MdMessagesDefaultTypeInternal _MdMessages_default_instance_;
+class RateUpdate;
+struct RateUpdateDefaultTypeInternal;
+extern RateUpdateDefaultTypeInternal _RateUpdate_default_instance_;
+class RateUpdates;
+struct RateUpdatesDefaultTypeInternal;
+extern RateUpdatesDefaultTypeInternal _RateUpdates_default_instance_;
 class Summary;
 struct SummaryDefaultTypeInternal;
 extern SummaryDefaultTypeInternal _Summary_default_instance_;
@@ -133,6 +139,8 @@ template<> ::md::MarketByPriceDiff_Diff* Arena::CreateMaybeMessage<::md::MarketB
 template<> ::md::MarketByPrice_Level* Arena::CreateMaybeMessage<::md::MarketByPrice_Level>(Arena*);
 template<> ::md::MdMessage* Arena::CreateMaybeMessage<::md::MdMessage>(Arena*);
 template<> ::md::MdMessages* Arena::CreateMaybeMessage<::md::MdMessages>(Arena*);
+template<> ::md::RateUpdate* Arena::CreateMaybeMessage<::md::RateUpdate>(Arena*);
+template<> ::md::RateUpdates* Arena::CreateMaybeMessage<::md::RateUpdates>(Arena*);
 template<> ::md::Summary* Arena::CreateMaybeMessage<::md::Summary>(Arena*);
 template<> ::md::TopOfBook* Arena::CreateMaybeMessage<::md::TopOfBook>(Arena*);
 template<> ::md::TopOfBooks* Arena::CreateMaybeMessage<::md::TopOfBooks>(Arena*);
@@ -167,31 +175,31 @@ inline bool MarketByPriceDiff_DiffOp_Parse(
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<MarketByPriceDiff_DiffOp>(
     MarketByPriceDiff_DiffOp_descriptor(), name, value);
 }
-enum MarketByOrderDiff_OrderOp : int {
-  MarketByOrderDiff_OrderOp_ADD = 0,
-  MarketByOrderDiff_OrderOp_REMOVE = 1,
-  MarketByOrderDiff_OrderOp_REPLACE = 2,
-  MarketByOrderDiff_OrderOp_MarketByOrderDiff_OrderOp_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
-  MarketByOrderDiff_OrderOp_MarketByOrderDiff_OrderOp_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+enum MarketByOrderDiff_DiffOp : int {
+  MarketByOrderDiff_DiffOp_ADD = 0,
+  MarketByOrderDiff_DiffOp_REMOVE = 1,
+  MarketByOrderDiff_DiffOp_REPLACE = 2,
+  MarketByOrderDiff_DiffOp_MarketByOrderDiff_DiffOp_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  MarketByOrderDiff_DiffOp_MarketByOrderDiff_DiffOp_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
-bool MarketByOrderDiff_OrderOp_IsValid(int value);
-constexpr MarketByOrderDiff_OrderOp MarketByOrderDiff_OrderOp_OrderOp_MIN = MarketByOrderDiff_OrderOp_ADD;
-constexpr MarketByOrderDiff_OrderOp MarketByOrderDiff_OrderOp_OrderOp_MAX = MarketByOrderDiff_OrderOp_REPLACE;
-constexpr int MarketByOrderDiff_OrderOp_OrderOp_ARRAYSIZE = MarketByOrderDiff_OrderOp_OrderOp_MAX + 1;
+bool MarketByOrderDiff_DiffOp_IsValid(int value);
+constexpr MarketByOrderDiff_DiffOp MarketByOrderDiff_DiffOp_DiffOp_MIN = MarketByOrderDiff_DiffOp_ADD;
+constexpr MarketByOrderDiff_DiffOp MarketByOrderDiff_DiffOp_DiffOp_MAX = MarketByOrderDiff_DiffOp_REPLACE;
+constexpr int MarketByOrderDiff_DiffOp_DiffOp_ARRAYSIZE = MarketByOrderDiff_DiffOp_DiffOp_MAX + 1;
 
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* MarketByOrderDiff_OrderOp_descriptor();
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* MarketByOrderDiff_DiffOp_descriptor();
 template<typename T>
-inline const std::string& MarketByOrderDiff_OrderOp_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, MarketByOrderDiff_OrderOp>::value ||
+inline const std::string& MarketByOrderDiff_DiffOp_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, MarketByOrderDiff_DiffOp>::value ||
     ::std::is_integral<T>::value,
-    "Incorrect type passed to function MarketByOrderDiff_OrderOp_Name.");
+    "Incorrect type passed to function MarketByOrderDiff_DiffOp_Name.");
   return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    MarketByOrderDiff_OrderOp_descriptor(), enum_t_value);
+    MarketByOrderDiff_DiffOp_descriptor(), enum_t_value);
 }
-inline bool MarketByOrderDiff_OrderOp_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, MarketByOrderDiff_OrderOp* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<MarketByOrderDiff_OrderOp>(
-    MarketByOrderDiff_OrderOp_descriptor(), name, value);
+inline bool MarketByOrderDiff_DiffOp_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, MarketByOrderDiff_DiffOp* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<MarketByOrderDiff_DiffOp>(
+    MarketByOrderDiff_DiffOp_descriptor(), name, value);
 }
 enum Side : int {
   BID = 0,
@@ -246,6 +254,31 @@ inline bool KlineInterval_Parse(
     ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, KlineInterval* value) {
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<KlineInterval>(
     KlineInterval_descriptor(), name, value);
+}
+enum RateUpdateSide : int {
+  BASE = 0,
+  QUOTE = 1,
+  RateUpdateSide_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  RateUpdateSide_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool RateUpdateSide_IsValid(int value);
+constexpr RateUpdateSide RateUpdateSide_MIN = BASE;
+constexpr RateUpdateSide RateUpdateSide_MAX = QUOTE;
+constexpr int RateUpdateSide_ARRAYSIZE = RateUpdateSide_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* RateUpdateSide_descriptor();
+template<typename T>
+inline const std::string& RateUpdateSide_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, RateUpdateSide>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function RateUpdateSide_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    RateUpdateSide_descriptor(), enum_t_value);
+}
+inline bool RateUpdateSide_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, RateUpdateSide* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<RateUpdateSide>(
+    RateUpdateSide_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -1762,13 +1795,13 @@ class MarketByOrderDiff_Diff PROTOBUF_FINAL :
   void _internal_set_side(::md::Side value);
   public:
 
-  // .md.MarketByOrderDiff.OrderOp op = 5;
+  // .md.MarketByOrderDiff.DiffOp op = 5;
   void clear_op();
-  ::md::MarketByOrderDiff_OrderOp op() const;
-  void set_op(::md::MarketByOrderDiff_OrderOp value);
+  ::md::MarketByOrderDiff_DiffOp op() const;
+  void set_op(::md::MarketByOrderDiff_DiffOp value);
   private:
-  ::md::MarketByOrderDiff_OrderOp _internal_op() const;
-  void _internal_set_op(::md::MarketByOrderDiff_OrderOp value);
+  ::md::MarketByOrderDiff_DiffOp _internal_op() const;
+  void _internal_set_op(::md::MarketByOrderDiff_DiffOp value);
   public:
 
   // @@protoc_insertion_point(class_scope:md.MarketByOrderDiff.Diff)
@@ -1900,36 +1933,36 @@ class MarketByOrderDiff PROTOBUF_FINAL :
 
   typedef MarketByOrderDiff_Diff Diff;
 
-  typedef MarketByOrderDiff_OrderOp OrderOp;
-  static constexpr OrderOp ADD =
-    MarketByOrderDiff_OrderOp_ADD;
-  static constexpr OrderOp REMOVE =
-    MarketByOrderDiff_OrderOp_REMOVE;
-  static constexpr OrderOp REPLACE =
-    MarketByOrderDiff_OrderOp_REPLACE;
-  static inline bool OrderOp_IsValid(int value) {
-    return MarketByOrderDiff_OrderOp_IsValid(value);
+  typedef MarketByOrderDiff_DiffOp DiffOp;
+  static constexpr DiffOp ADD =
+    MarketByOrderDiff_DiffOp_ADD;
+  static constexpr DiffOp REMOVE =
+    MarketByOrderDiff_DiffOp_REMOVE;
+  static constexpr DiffOp REPLACE =
+    MarketByOrderDiff_DiffOp_REPLACE;
+  static inline bool DiffOp_IsValid(int value) {
+    return MarketByOrderDiff_DiffOp_IsValid(value);
   }
-  static constexpr OrderOp OrderOp_MIN =
-    MarketByOrderDiff_OrderOp_OrderOp_MIN;
-  static constexpr OrderOp OrderOp_MAX =
-    MarketByOrderDiff_OrderOp_OrderOp_MAX;
-  static constexpr int OrderOp_ARRAYSIZE =
-    MarketByOrderDiff_OrderOp_OrderOp_ARRAYSIZE;
+  static constexpr DiffOp DiffOp_MIN =
+    MarketByOrderDiff_DiffOp_DiffOp_MIN;
+  static constexpr DiffOp DiffOp_MAX =
+    MarketByOrderDiff_DiffOp_DiffOp_MAX;
+  static constexpr int DiffOp_ARRAYSIZE =
+    MarketByOrderDiff_DiffOp_DiffOp_ARRAYSIZE;
   static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
-  OrderOp_descriptor() {
-    return MarketByOrderDiff_OrderOp_descriptor();
+  DiffOp_descriptor() {
+    return MarketByOrderDiff_DiffOp_descriptor();
   }
   template<typename T>
-  static inline const std::string& OrderOp_Name(T enum_t_value) {
-    static_assert(::std::is_same<T, OrderOp>::value ||
+  static inline const std::string& DiffOp_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, DiffOp>::value ||
       ::std::is_integral<T>::value,
-      "Incorrect type passed to function OrderOp_Name.");
-    return MarketByOrderDiff_OrderOp_Name(enum_t_value);
+      "Incorrect type passed to function DiffOp_Name.");
+    return MarketByOrderDiff_DiffOp_Name(enum_t_value);
   }
-  static inline bool OrderOp_Parse(::PROTOBUF_NAMESPACE_ID::ConstStringParam name,
-      OrderOp* value) {
-    return MarketByOrderDiff_OrderOp_Parse(name, value);
+  static inline bool DiffOp_Parse(::PROTOBUF_NAMESPACE_ID::ConstStringParam name,
+      DiffOp* value) {
+    return MarketByOrderDiff_DiffOp_Parse(name, value);
   }
 
   // accessors -------------------------------------------------------
@@ -2476,14 +2509,34 @@ class Summary PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kLowFieldNumber = 1,
-    kHighFieldNumber = 2,
-    kBaseVolumeLoFieldNumber = 3,
-    kBaseVolumeHiFieldNumber = 4,
-    kQuoteVolumeLoFieldNumber = 5,
-    kQuoteVolumeHiFieldNumber = 6,
+    kOpenFieldNumber = 1,
+    kCloseFieldNumber = 2,
+    kLowFieldNumber = 3,
+    kHighFieldNumber = 4,
+    kBaseVolumeLoFieldNumber = 5,
+    kBaseVolumeHiFieldNumber = 6,
+    kQuoteVolumeLoFieldNumber = 7,
+    kQuoteVolumeHiFieldNumber = 8,
   };
-  // uint64 low = 1;
+  // uint64 open = 1;
+  void clear_open();
+  ::PROTOBUF_NAMESPACE_ID::uint64 open() const;
+  void set_open(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_open() const;
+  void _internal_set_open(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint64 close = 2;
+  void clear_close();
+  ::PROTOBUF_NAMESPACE_ID::uint64 close() const;
+  void set_close(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_close() const;
+  void _internal_set_close(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint64 low = 3;
   void clear_low();
   ::PROTOBUF_NAMESPACE_ID::uint64 low() const;
   void set_low(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -2492,7 +2545,7 @@ class Summary PROTOBUF_FINAL :
   void _internal_set_low(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 high = 2;
+  // uint64 high = 4;
   void clear_high();
   ::PROTOBUF_NAMESPACE_ID::uint64 high() const;
   void set_high(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -2501,7 +2554,7 @@ class Summary PROTOBUF_FINAL :
   void _internal_set_high(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 baseVolumeLo = 3;
+  // uint64 baseVolumeLo = 5;
   void clear_basevolumelo();
   ::PROTOBUF_NAMESPACE_ID::uint64 basevolumelo() const;
   void set_basevolumelo(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -2510,7 +2563,7 @@ class Summary PROTOBUF_FINAL :
   void _internal_set_basevolumelo(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 baseVolumeHi = 4;
+  // uint64 baseVolumeHi = 6;
   void clear_basevolumehi();
   ::PROTOBUF_NAMESPACE_ID::uint64 basevolumehi() const;
   void set_basevolumehi(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -2519,7 +2572,7 @@ class Summary PROTOBUF_FINAL :
   void _internal_set_basevolumehi(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 quoteVolumeLo = 5;
+  // uint64 quoteVolumeLo = 7;
   void clear_quotevolumelo();
   ::PROTOBUF_NAMESPACE_ID::uint64 quotevolumelo() const;
   void set_quotevolumelo(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -2528,7 +2581,7 @@ class Summary PROTOBUF_FINAL :
   void _internal_set_quotevolumelo(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 quoteVolumeHi = 6;
+  // uint64 quoteVolumeHi = 8;
   void clear_quotevolumehi();
   ::PROTOBUF_NAMESPACE_ID::uint64 quotevolumehi() const;
   void set_quotevolumehi(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -2544,6 +2597,8 @@ class Summary PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 open_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 close_;
   ::PROTOBUF_NAMESPACE_ID::uint64 low_;
   ::PROTOBUF_NAMESPACE_ID::uint64 high_;
   ::PROTOBUF_NAMESPACE_ID::uint64 basevolumelo_;
@@ -3104,6 +3159,7 @@ class AggMessage PROTOBUF_FINAL :
   enum InnerCase {
     kHeartbeat = 1,
     kTopOfBooks = 2,
+    kRateUpdates = 3,
     INNER_NOT_SET = 0,
   };
 
@@ -3184,6 +3240,7 @@ class AggMessage PROTOBUF_FINAL :
   enum : int {
     kHeartbeatFieldNumber = 1,
     kTopOfBooksFieldNumber = 2,
+    kRateUpdatesFieldNumber = 3,
   };
   // .md.Heartbeat heartbeat = 1;
   bool has_heartbeat() const;
@@ -3221,6 +3278,24 @@ class AggMessage PROTOBUF_FINAL :
       ::md::TopOfBooks* topofbooks);
   ::md::TopOfBooks* unsafe_arena_release_topofbooks();
 
+  // .md.RateUpdates rateUpdates = 3;
+  bool has_rateupdates() const;
+  private:
+  bool _internal_has_rateupdates() const;
+  public:
+  void clear_rateupdates();
+  const ::md::RateUpdates& rateupdates() const;
+  ::md::RateUpdates* release_rateupdates();
+  ::md::RateUpdates* mutable_rateupdates();
+  void set_allocated_rateupdates(::md::RateUpdates* rateupdates);
+  private:
+  const ::md::RateUpdates& _internal_rateupdates() const;
+  ::md::RateUpdates* _internal_mutable_rateupdates();
+  public:
+  void unsafe_arena_set_allocated_rateupdates(
+      ::md::RateUpdates* rateupdates);
+  ::md::RateUpdates* unsafe_arena_release_rateupdates();
+
   void clear_inner();
   InnerCase inner_case() const;
   // @@protoc_insertion_point(class_scope:md.AggMessage)
@@ -3228,6 +3303,7 @@ class AggMessage PROTOBUF_FINAL :
   class _Internal;
   void set_has_heartbeat();
   void set_has_topofbooks();
+  void set_has_rateupdates();
 
   inline bool has_inner() const;
   inline void clear_has_inner();
@@ -3240,6 +3316,7 @@ class AggMessage PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
     ::md::Heartbeat* heartbeat_;
     ::md::TopOfBooks* topofbooks_;
+    ::md::RateUpdates* rateupdates_;
   } inner_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -3368,6 +3445,7 @@ class TopOfBook PROTOBUF_FINAL :
     kAskPriceFieldNumber = 5,
     kAskQuantityFieldNumber = 6,
     kLastPriceFieldNumber = 7,
+    kRolling24HPriceFieldNumber = 8,
   };
   // uint64 marketId = 1;
   void clear_marketid();
@@ -3432,6 +3510,15 @@ class TopOfBook PROTOBUF_FINAL :
   void _internal_set_lastprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
+  // uint64 rolling24hPrice = 8;
+  void clear_rolling24hprice();
+  ::PROTOBUF_NAMESPACE_ID::uint64 rolling24hprice() const;
+  void set_rolling24hprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_rolling24hprice() const;
+  void _internal_set_rolling24hprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:md.TopOfBook)
  private:
   class _Internal;
@@ -3446,6 +3533,7 @@ class TopOfBook PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::uint64 askprice_;
   ::PROTOBUF_NAMESPACE_ID::uint64 askquantity_;
   ::PROTOBUF_NAMESPACE_ID::uint64 lastprice_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 rolling24hprice_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_market_5fdata_2eproto;
 };
@@ -3597,6 +3685,322 @@ class TopOfBooks PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class RateUpdate PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:md.RateUpdate) */ {
+ public:
+  inline RateUpdate() : RateUpdate(nullptr) {}
+  virtual ~RateUpdate();
+  explicit constexpr RateUpdate(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  RateUpdate(const RateUpdate& from);
+  RateUpdate(RateUpdate&& from) noexcept
+    : RateUpdate() {
+    *this = ::std::move(from);
+  }
+
+  inline RateUpdate& operator=(const RateUpdate& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline RateUpdate& operator=(RateUpdate&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const RateUpdate& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const RateUpdate* internal_default_instance() {
+    return reinterpret_cast<const RateUpdate*>(
+               &_RateUpdate_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    18;
+
+  friend void swap(RateUpdate& a, RateUpdate& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(RateUpdate* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(RateUpdate* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline RateUpdate* New() const final {
+    return CreateMaybeMessage<RateUpdate>(nullptr);
+  }
+
+  RateUpdate* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<RateUpdate>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const RateUpdate& from);
+  void MergeFrom(const RateUpdate& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(RateUpdate* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "md.RateUpdate";
+  }
+  protected:
+  explicit RateUpdate(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_market_5fdata_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAssetIdFieldNumber = 1,
+    kTimestampFieldNumber = 2,
+    kRateFieldNumber = 3,
+    kSideFieldNumber = 4,
+  };
+  // uint64 assetId = 1;
+  void clear_assetid();
+  ::PROTOBUF_NAMESPACE_ID::uint64 assetid() const;
+  void set_assetid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_assetid() const;
+  void _internal_set_assetid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint64 timestamp = 2;
+  void clear_timestamp();
+  ::PROTOBUF_NAMESPACE_ID::uint64 timestamp() const;
+  void set_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_timestamp() const;
+  void _internal_set_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint64 rate = 3;
+  void clear_rate();
+  ::PROTOBUF_NAMESPACE_ID::uint64 rate() const;
+  void set_rate(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_rate() const;
+  void _internal_set_rate(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // .md.RateUpdateSide side = 4;
+  void clear_side();
+  ::md::RateUpdateSide side() const;
+  void set_side(::md::RateUpdateSide value);
+  private:
+  ::md::RateUpdateSide _internal_side() const;
+  void _internal_set_side(::md::RateUpdateSide value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:md.RateUpdate)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 assetid_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 timestamp_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 rate_;
+  int side_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_market_5fdata_2eproto;
+};
+// -------------------------------------------------------------------
+
+class RateUpdates PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:md.RateUpdates) */ {
+ public:
+  inline RateUpdates() : RateUpdates(nullptr) {}
+  virtual ~RateUpdates();
+  explicit constexpr RateUpdates(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  RateUpdates(const RateUpdates& from);
+  RateUpdates(RateUpdates&& from) noexcept
+    : RateUpdates() {
+    *this = ::std::move(from);
+  }
+
+  inline RateUpdates& operator=(const RateUpdates& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline RateUpdates& operator=(RateUpdates&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const RateUpdates& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const RateUpdates* internal_default_instance() {
+    return reinterpret_cast<const RateUpdates*>(
+               &_RateUpdates_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    19;
+
+  friend void swap(RateUpdates& a, RateUpdates& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(RateUpdates* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(RateUpdates* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline RateUpdates* New() const final {
+    return CreateMaybeMessage<RateUpdates>(nullptr);
+  }
+
+  RateUpdates* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<RateUpdates>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const RateUpdates& from);
+  void MergeFrom(const RateUpdates& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(RateUpdates* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "md.RateUpdates";
+  }
+  protected:
+  explicit RateUpdates(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    return ::descriptor_table_market_5fdata_2eproto_metadata_getter(kIndexInFileMessages);
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kUpdatesFieldNumber = 1,
+  };
+  // repeated .md.RateUpdate updates = 1;
+  int updates_size() const;
+  private:
+  int _internal_updates_size() const;
+  public:
+  void clear_updates();
+  ::md::RateUpdate* mutable_updates(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::md::RateUpdate >*
+      mutable_updates();
+  private:
+  const ::md::RateUpdate& _internal_updates(int index) const;
+  ::md::RateUpdate* _internal_add_updates();
+  public:
+  const ::md::RateUpdate& updates(int index) const;
+  ::md::RateUpdate* add_updates();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::md::RateUpdate >&
+      updates() const;
+
+  // @@protoc_insertion_point(class_scope:md.RateUpdates)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::md::RateUpdate > updates_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_market_5fdata_2eproto;
+};
+// -------------------------------------------------------------------
+
 class ClientMessage PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:md.ClientMessage) */ {
  public:
@@ -3646,7 +4050,7 @@ class ClientMessage PROTOBUF_FINAL :
                &_ClientMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
   friend void swap(ClientMessage& a, ClientMessage& b) {
     a.Swap(&b);
@@ -3825,7 +4229,7 @@ class Config PROTOBUF_FINAL :
                &_Config_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   friend void swap(Config& a, Config& b) {
     a.Swap(&b);
@@ -5139,22 +5543,22 @@ inline void MarketByOrderDiff_Diff::set_side(::md::Side value) {
   // @@protoc_insertion_point(field_set:md.MarketByOrderDiff.Diff.side)
 }
 
-// .md.MarketByOrderDiff.OrderOp op = 5;
+// .md.MarketByOrderDiff.DiffOp op = 5;
 inline void MarketByOrderDiff_Diff::clear_op() {
   op_ = 0;
 }
-inline ::md::MarketByOrderDiff_OrderOp MarketByOrderDiff_Diff::_internal_op() const {
-  return static_cast< ::md::MarketByOrderDiff_OrderOp >(op_);
+inline ::md::MarketByOrderDiff_DiffOp MarketByOrderDiff_Diff::_internal_op() const {
+  return static_cast< ::md::MarketByOrderDiff_DiffOp >(op_);
 }
-inline ::md::MarketByOrderDiff_OrderOp MarketByOrderDiff_Diff::op() const {
+inline ::md::MarketByOrderDiff_DiffOp MarketByOrderDiff_Diff::op() const {
   // @@protoc_insertion_point(field_get:md.MarketByOrderDiff.Diff.op)
   return _internal_op();
 }
-inline void MarketByOrderDiff_Diff::_internal_set_op(::md::MarketByOrderDiff_OrderOp value) {
+inline void MarketByOrderDiff_Diff::_internal_set_op(::md::MarketByOrderDiff_DiffOp value) {
   
   op_ = value;
 }
-inline void MarketByOrderDiff_Diff::set_op(::md::MarketByOrderDiff_OrderOp value) {
+inline void MarketByOrderDiff_Diff::set_op(::md::MarketByOrderDiff_DiffOp value) {
   _internal_set_op(value);
   // @@protoc_insertion_point(field_set:md.MarketByOrderDiff.Diff.op)
 }
@@ -5473,7 +5877,47 @@ Trades::trades() const {
 
 // Summary
 
-// uint64 low = 1;
+// uint64 open = 1;
+inline void Summary::clear_open() {
+  open_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Summary::_internal_open() const {
+  return open_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Summary::open() const {
+  // @@protoc_insertion_point(field_get:md.Summary.open)
+  return _internal_open();
+}
+inline void Summary::_internal_set_open(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  open_ = value;
+}
+inline void Summary::set_open(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_open(value);
+  // @@protoc_insertion_point(field_set:md.Summary.open)
+}
+
+// uint64 close = 2;
+inline void Summary::clear_close() {
+  close_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Summary::_internal_close() const {
+  return close_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Summary::close() const {
+  // @@protoc_insertion_point(field_get:md.Summary.close)
+  return _internal_close();
+}
+inline void Summary::_internal_set_close(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  close_ = value;
+}
+inline void Summary::set_close(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_close(value);
+  // @@protoc_insertion_point(field_set:md.Summary.close)
+}
+
+// uint64 low = 3;
 inline void Summary::clear_low() {
   low_ = PROTOBUF_ULONGLONG(0);
 }
@@ -5493,7 +5937,7 @@ inline void Summary::set_low(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   // @@protoc_insertion_point(field_set:md.Summary.low)
 }
 
-// uint64 high = 2;
+// uint64 high = 4;
 inline void Summary::clear_high() {
   high_ = PROTOBUF_ULONGLONG(0);
 }
@@ -5513,7 +5957,7 @@ inline void Summary::set_high(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   // @@protoc_insertion_point(field_set:md.Summary.high)
 }
 
-// uint64 baseVolumeLo = 3;
+// uint64 baseVolumeLo = 5;
 inline void Summary::clear_basevolumelo() {
   basevolumelo_ = PROTOBUF_ULONGLONG(0);
 }
@@ -5533,7 +5977,7 @@ inline void Summary::set_basevolumelo(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   // @@protoc_insertion_point(field_set:md.Summary.baseVolumeLo)
 }
 
-// uint64 baseVolumeHi = 4;
+// uint64 baseVolumeHi = 6;
 inline void Summary::clear_basevolumehi() {
   basevolumehi_ = PROTOBUF_ULONGLONG(0);
 }
@@ -5553,7 +5997,7 @@ inline void Summary::set_basevolumehi(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   // @@protoc_insertion_point(field_set:md.Summary.baseVolumeHi)
 }
 
-// uint64 quoteVolumeLo = 5;
+// uint64 quoteVolumeLo = 7;
 inline void Summary::clear_quotevolumelo() {
   quotevolumelo_ = PROTOBUF_ULONGLONG(0);
 }
@@ -5573,7 +6017,7 @@ inline void Summary::set_quotevolumelo(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   // @@protoc_insertion_point(field_set:md.Summary.quoteVolumeLo)
 }
 
-// uint64 quoteVolumeHi = 6;
+// uint64 quoteVolumeHi = 8;
 inline void Summary::clear_quotevolumehi() {
   quotevolumehi_ = PROTOBUF_ULONGLONG(0);
 }
@@ -5994,6 +6438,79 @@ inline ::md::TopOfBooks* AggMessage::mutable_topofbooks() {
   return _internal_mutable_topofbooks();
 }
 
+// .md.RateUpdates rateUpdates = 3;
+inline bool AggMessage::_internal_has_rateupdates() const {
+  return inner_case() == kRateUpdates;
+}
+inline bool AggMessage::has_rateupdates() const {
+  return _internal_has_rateupdates();
+}
+inline void AggMessage::set_has_rateupdates() {
+  _oneof_case_[0] = kRateUpdates;
+}
+inline void AggMessage::clear_rateupdates() {
+  if (_internal_has_rateupdates()) {
+    if (GetArena() == nullptr) {
+      delete inner_.rateupdates_;
+    }
+    clear_has_inner();
+  }
+}
+inline ::md::RateUpdates* AggMessage::release_rateupdates() {
+  // @@protoc_insertion_point(field_release:md.AggMessage.rateUpdates)
+  if (_internal_has_rateupdates()) {
+    clear_has_inner();
+      ::md::RateUpdates* temp = inner_.rateupdates_;
+    if (GetArena() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    inner_.rateupdates_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::md::RateUpdates& AggMessage::_internal_rateupdates() const {
+  return _internal_has_rateupdates()
+      ? *inner_.rateupdates_
+      : reinterpret_cast< ::md::RateUpdates&>(::md::_RateUpdates_default_instance_);
+}
+inline const ::md::RateUpdates& AggMessage::rateupdates() const {
+  // @@protoc_insertion_point(field_get:md.AggMessage.rateUpdates)
+  return _internal_rateupdates();
+}
+inline ::md::RateUpdates* AggMessage::unsafe_arena_release_rateupdates() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:md.AggMessage.rateUpdates)
+  if (_internal_has_rateupdates()) {
+    clear_has_inner();
+    ::md::RateUpdates* temp = inner_.rateupdates_;
+    inner_.rateupdates_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void AggMessage::unsafe_arena_set_allocated_rateupdates(::md::RateUpdates* rateupdates) {
+  clear_inner();
+  if (rateupdates) {
+    set_has_rateupdates();
+    inner_.rateupdates_ = rateupdates;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:md.AggMessage.rateUpdates)
+}
+inline ::md::RateUpdates* AggMessage::_internal_mutable_rateupdates() {
+  if (!_internal_has_rateupdates()) {
+    clear_inner();
+    set_has_rateupdates();
+    inner_.rateupdates_ = CreateMaybeMessage< ::md::RateUpdates >(GetArena());
+  }
+  return inner_.rateupdates_;
+}
+inline ::md::RateUpdates* AggMessage::mutable_rateupdates() {
+  // @@protoc_insertion_point(field_mutable:md.AggMessage.rateUpdates)
+  return _internal_mutable_rateupdates();
+}
+
 inline bool AggMessage::has_inner() const {
   return inner_case() != INNER_NOT_SET;
 }
@@ -6147,6 +6664,26 @@ inline void TopOfBook::set_lastprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   // @@protoc_insertion_point(field_set:md.TopOfBook.lastPrice)
 }
 
+// uint64 rolling24hPrice = 8;
+inline void TopOfBook::clear_rolling24hprice() {
+  rolling24hprice_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 TopOfBook::_internal_rolling24hprice() const {
+  return rolling24hprice_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 TopOfBook::rolling24hprice() const {
+  // @@protoc_insertion_point(field_get:md.TopOfBook.rolling24hPrice)
+  return _internal_rolling24hprice();
+}
+inline void TopOfBook::_internal_set_rolling24hprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  rolling24hprice_ = value;
+}
+inline void TopOfBook::set_rolling24hprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_rolling24hprice(value);
+  // @@protoc_insertion_point(field_set:md.TopOfBook.rolling24hPrice)
+}
+
 // -------------------------------------------------------------------
 
 // TopOfBooks
@@ -6188,6 +6725,133 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::md::TopOfBook >&
 TopOfBooks::tops() const {
   // @@protoc_insertion_point(field_list:md.TopOfBooks.tops)
   return tops_;
+}
+
+// -------------------------------------------------------------------
+
+// RateUpdate
+
+// uint64 assetId = 1;
+inline void RateUpdate::clear_assetid() {
+  assetid_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 RateUpdate::_internal_assetid() const {
+  return assetid_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 RateUpdate::assetid() const {
+  // @@protoc_insertion_point(field_get:md.RateUpdate.assetId)
+  return _internal_assetid();
+}
+inline void RateUpdate::_internal_set_assetid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  assetid_ = value;
+}
+inline void RateUpdate::set_assetid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_assetid(value);
+  // @@protoc_insertion_point(field_set:md.RateUpdate.assetId)
+}
+
+// uint64 timestamp = 2;
+inline void RateUpdate::clear_timestamp() {
+  timestamp_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 RateUpdate::_internal_timestamp() const {
+  return timestamp_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 RateUpdate::timestamp() const {
+  // @@protoc_insertion_point(field_get:md.RateUpdate.timestamp)
+  return _internal_timestamp();
+}
+inline void RateUpdate::_internal_set_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  timestamp_ = value;
+}
+inline void RateUpdate::set_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_timestamp(value);
+  // @@protoc_insertion_point(field_set:md.RateUpdate.timestamp)
+}
+
+// uint64 rate = 3;
+inline void RateUpdate::clear_rate() {
+  rate_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 RateUpdate::_internal_rate() const {
+  return rate_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 RateUpdate::rate() const {
+  // @@protoc_insertion_point(field_get:md.RateUpdate.rate)
+  return _internal_rate();
+}
+inline void RateUpdate::_internal_set_rate(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  rate_ = value;
+}
+inline void RateUpdate::set_rate(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_rate(value);
+  // @@protoc_insertion_point(field_set:md.RateUpdate.rate)
+}
+
+// .md.RateUpdateSide side = 4;
+inline void RateUpdate::clear_side() {
+  side_ = 0;
+}
+inline ::md::RateUpdateSide RateUpdate::_internal_side() const {
+  return static_cast< ::md::RateUpdateSide >(side_);
+}
+inline ::md::RateUpdateSide RateUpdate::side() const {
+  // @@protoc_insertion_point(field_get:md.RateUpdate.side)
+  return _internal_side();
+}
+inline void RateUpdate::_internal_set_side(::md::RateUpdateSide value) {
+  
+  side_ = value;
+}
+inline void RateUpdate::set_side(::md::RateUpdateSide value) {
+  _internal_set_side(value);
+  // @@protoc_insertion_point(field_set:md.RateUpdate.side)
+}
+
+// -------------------------------------------------------------------
+
+// RateUpdates
+
+// repeated .md.RateUpdate updates = 1;
+inline int RateUpdates::_internal_updates_size() const {
+  return updates_.size();
+}
+inline int RateUpdates::updates_size() const {
+  return _internal_updates_size();
+}
+inline void RateUpdates::clear_updates() {
+  updates_.Clear();
+}
+inline ::md::RateUpdate* RateUpdates::mutable_updates(int index) {
+  // @@protoc_insertion_point(field_mutable:md.RateUpdates.updates)
+  return updates_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::md::RateUpdate >*
+RateUpdates::mutable_updates() {
+  // @@protoc_insertion_point(field_mutable_list:md.RateUpdates.updates)
+  return &updates_;
+}
+inline const ::md::RateUpdate& RateUpdates::_internal_updates(int index) const {
+  return updates_.Get(index);
+}
+inline const ::md::RateUpdate& RateUpdates::updates(int index) const {
+  // @@protoc_insertion_point(field_get:md.RateUpdates.updates)
+  return _internal_updates(index);
+}
+inline ::md::RateUpdate* RateUpdates::_internal_add_updates() {
+  return updates_.Add();
+}
+inline ::md::RateUpdate* RateUpdates::add_updates() {
+  // @@protoc_insertion_point(field_add:md.RateUpdates.updates)
+  return _internal_add_updates();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::md::RateUpdate >&
+RateUpdates::updates() const {
+  // @@protoc_insertion_point(field_list:md.RateUpdates.updates)
+  return updates_;
 }
 
 // -------------------------------------------------------------------
@@ -6517,6 +7181,10 @@ Config::mutable_klines() {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -6529,10 +7197,10 @@ template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::md::MarketByPriceDiff_DiffOp>() {
   return ::md::MarketByPriceDiff_DiffOp_descriptor();
 }
-template <> struct is_proto_enum< ::md::MarketByOrderDiff_OrderOp> : ::std::true_type {};
+template <> struct is_proto_enum< ::md::MarketByOrderDiff_DiffOp> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::md::MarketByOrderDiff_OrderOp>() {
-  return ::md::MarketByOrderDiff_OrderOp_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::md::MarketByOrderDiff_DiffOp>() {
+  return ::md::MarketByOrderDiff_DiffOp_descriptor();
 }
 template <> struct is_proto_enum< ::md::Side> : ::std::true_type {};
 template <>
@@ -6543,6 +7211,11 @@ template <> struct is_proto_enum< ::md::KlineInterval> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::md::KlineInterval>() {
   return ::md::KlineInterval_descriptor();
+}
+template <> struct is_proto_enum< ::md::RateUpdateSide> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::md::RateUpdateSide>() {
+  return ::md::RateUpdateSide_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

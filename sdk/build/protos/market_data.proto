@@ -24,9 +24,8 @@
 syntax = "proto3";
 
 package md;
-
-option go_package = "go/";
 option csharp_namespace = "Cube.MarketData";
+option go_package = "go/";
 
 // Side specifies whether the level, order, or diff, is for buying or selling
 // the base asset.
@@ -160,19 +159,24 @@ message MarketByOrderDiff {
   // Total number of ask orders after this diff is applied.
   uint32 totalAskOrders = 5;
 
-  enum OrderOp {
+  // The operation to apply for this price level. For example, an resting order
+  // that gets filled will be `REPLACE`'d with the new resting quantity. An
+  // order is `REMOVE`'d when it is fully filled or canceled.
+  enum DiffOp {
     ADD = 0;
     REMOVE = 1;
     REPLACE = 2;
   }
 
+  // An order diff creates, updates, or deletes a resting order based on the
+  // `exchangeOrderId`
   message Diff {
     uint64 price = 1;
     uint64 quantity = 2;
     // [Exchange order ID](/docs/api_reference/trade#exchange-order-id)
     uint64 exchangeOrderId = 3;
     Side side = 4;
-    OrderOp op = 5;
+    DiffOp op = 5;
   }
 }
 
@@ -206,18 +210,22 @@ message Trades {
 
 // Rolling 24h stats.
 message Summary {
-  // Low price
-  uint64 low = 1;
-  // High price
-  uint64 high = 2;
+  // 24h open price
+  uint64 open = 1;
+  // Latest price
+  uint64 close = 2;
+  // 24h low price
+  uint64 low = 3;
+  // 24h high price
+  uint64 high = 4;
   // Low 64-bits of the base quantity traded
-  uint64 baseVolumeLo = 3;
+  uint64 baseVolumeLo = 5;
   // High 64-bits of the base quantity traded
-  uint64 baseVolumeHi = 4;
+  uint64 baseVolumeHi = 6;
   // Low 64-bits of the quote quantity traded
-  uint64 quoteVolumeLo = 5;
+  uint64 quoteVolumeLo = 7;
   // High 64-bits of the quote quantity traded
-  uint64 quoteVolumeHi = 6;
+  uint64 quoteVolumeHi = 8;
 }
 
 // Candlestick bar.
@@ -258,6 +266,8 @@ message AggMessage {
     Heartbeat heartbeat = 1;
     // Top of books
     TopOfBooks topOfBooks = 2;
+    // Rates for all assets
+    RateUpdates rateUpdates = 3;
   }
 }
 
@@ -277,12 +287,42 @@ message TopOfBook {
   uint64 askQuantity = 6;
   // The last trade price.
   uint64 lastPrice = 7;
+  // The 24h open price.
+  uint64 rolling24hPrice = 8;
 }
 
 // Top of books for all books that were updates since the last top-of-books
 // message.
 message TopOfBooks {
   repeated TopOfBook tops = 1;
+}
+
+// Rate update. Used in conjuction with another rate update to get the price of
+// that divisor. Rate's should not be used alone. For example, given a
+// RateUpdate for `assetId = BTC, updateSide = BASE` of `r1`, and `assetId =
+// EUR, updateSide = QUOTE` of `r2`, the BTC-EUR price estimate is `r1 * r2`.
+message RateUpdate {
+  uint64 assetId = 1;
+  // The nanosecond timestamp of the update.
+  uint64 timestamp = 2;
+  // The asset rate at the given timestamp.
+  uint64 rate = 3;
+  RateUpdateSide side = 4;
+}
+
+// The side of the rate update. Given a `BASE` rate of `r`, the `QUOTE` rate is
+// `1 / r`, and vice versa.
+enum RateUpdateSide {
+  // The asset serves as the base asset for the given rate.
+  BASE = 0;
+  // The asset serves as the quote asset for the given rate.
+  QUOTE = 1;
+}
+
+// Rates for all assets. Published on connect and updates since the last
+// rate-updates message.
+message RateUpdates {
+  repeated RateUpdate updates = 1;
 }
 
 // Client heartbeats and configs. This wrapper is used for both

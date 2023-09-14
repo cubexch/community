@@ -32,7 +32,7 @@
 // market-agnostic terms is an order for `0.23 ETH` at a price of `0.06300 BTC /
 // ETH`. In more detail, we have:
 //
-// ```
+// ```text
 // 230 base lots
 //   * (10^15 WEI / base lot)
 //   / (10^18 WEI / ETH)
@@ -63,9 +63,8 @@
 syntax = "proto3";
 
 package trade;
-
-option go_package = "go/";
 option csharp_namespace = "Cube.Trade";
+option go_package = "go/";
 
 // Side specifies whether the order is buying or selling the base asset. A trade
 // is matched when a buyer (BID) and a seller (ASK) agree on a price (cross).
@@ -149,7 +148,7 @@ enum PostOnly {
 // `cube.xyz` and the current unix epoch in seconds interpreted at a
 // little-endian 64-bit number. For example:
 //
-// ```rust
+// ```rust compile_fail
 // use hmac::{Hmac, Mac, NewMac};
 // use std::time::SystemTime;
 //
@@ -235,7 +234,7 @@ message CancelOrder {
 // cumulative fill qty is subtracted from `newQuantity` to calculate the new
 // resting quantity. For example:
 //
-// ```
+// ```text
 //          | Resting | Filled
 // ---------+---------+--------
 // New 5    | 5       | 0
@@ -555,7 +554,7 @@ message RawUnits {
   uint64 word0 = 1;
   uint64 word1 = 2;
   uint64 word2 = 3;
-  uint64 word3 = 5;
+  uint64 word3 = 4;
 }
 
 

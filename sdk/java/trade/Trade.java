@@ -800,7 +800,7 @@ public final class Trade {
    * signature should be calculated as the concatenation of the byte string
    * `cube.xyz` and the current unix epoch in seconds interpreted at a
    * little-endian 64-bit number. For example:
-   * ```rust
+   * ```rust compile_fail
    * use hmac::{Hmac, Mac, NewMac};
    * use std::time::SystemTime;
    * let secret_key = [...];
@@ -1204,7 +1204,7 @@ public final class Trade {
      * signature should be calculated as the concatenation of the byte string
      * `cube.xyz` and the current unix epoch in seconds interpreted at a
      * little-endian 64-bit number. For example:
-     * ```rust
+     * ```rust compile_fail
      * use hmac::{Hmac, Mac, NewMac};
      * use std::time::SystemTime;
      * let secret_key = [...];
@@ -5697,7 +5697,7 @@ public final class Trade {
    * Currently, in-flight-mitigation (IFM) is always enabled. That is, the
    * cumulative fill qty is subtracted from `newQuantity` to calculate the new
    * resting quantity. For example:
-   * ```
+   * ```text
    *          | Resting | Filled
    * ---------+---------+--------
    * New 5    | 5       | 0
@@ -6206,7 +6206,7 @@ public final class Trade {
      * Currently, in-flight-mitigation (IFM) is always enabled. That is, the
      * cumulative fill qty is subtracted from `newQuantity` to calculate the new
      * resting quantity. For example:
-     * ```
+     * ```text
      *          | Resting | Filled
      * ---------+---------+--------
      * New 5    | 5       | 0
@@ -22547,7 +22547,7 @@ public final class Trade {
     long getWord2();
 
     /**
-     * <code>uint64 word3 = 5;</code>
+     * <code>uint64 word3 = 4;</code>
      * @return The word3.
      */
     long getWord3();
@@ -22620,7 +22620,7 @@ public final class Trade {
               word2_ = input.readUInt64();
               break;
             }
-            case 40: {
+            case 32: {
 
               word3_ = input.readUInt64();
               break;
@@ -22690,10 +22690,10 @@ public final class Trade {
       return word2_;
     }
 
-    public static final int WORD3_FIELD_NUMBER = 5;
+    public static final int WORD3_FIELD_NUMBER = 4;
     private long word3_;
     /**
-     * <code>uint64 word3 = 5;</code>
+     * <code>uint64 word3 = 4;</code>
      * @return The word3.
      */
     @java.lang.Override
@@ -22725,7 +22725,7 @@ public final class Trade {
         output.writeUInt64(3, word2_);
       }
       if (word3_ != 0L) {
-        output.writeUInt64(5, word3_);
+        output.writeUInt64(4, word3_);
       }
       unknownFields.writeTo(output);
     }
@@ -22750,7 +22750,7 @@ public final class Trade {
       }
       if (word3_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(5, word3_);
+          .computeUInt64Size(4, word3_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -23161,7 +23161,7 @@ public final class Trade {
 
       private long word3_ ;
       /**
-       * <code>uint64 word3 = 5;</code>
+       * <code>uint64 word3 = 4;</code>
        * @return The word3.
        */
       @java.lang.Override
@@ -23169,7 +23169,7 @@ public final class Trade {
         return word3_;
       }
       /**
-       * <code>uint64 word3 = 5;</code>
+       * <code>uint64 word3 = 4;</code>
        * @param value The word3 to set.
        * @return This builder for chaining.
        */
@@ -23180,7 +23180,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 word3 = 5;</code>
+       * <code>uint64 word3 = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearWord3() {
@@ -28209,7 +28209,7 @@ public final class Trade {
       "\n\005total\030\003 \001(\0132\017.trade.RawUnits\022\"\n\tavaila" +
       "ble\030\004 \001(\0132\017.trade.RawUnits\"F\n\010RawUnits\022\r" +
       "\n\005word0\030\001 \001(\004\022\r\n\005word1\030\002 \001(\004\022\r\n\005word2\030\003 " +
-      "\001(\004\022\r\n\005word3\030\005 \001(\004\"\205\001\n\tBootstrap\022\033\n\004done" +
+      "\001(\004\022\r\n\005word3\030\004 \001(\004\"\205\001\n\tBootstrap\022\033\n\004done" +
       "\030\001 \001(\0132\013.trade.DoneH\000\022\'\n\007resting\030\002 \001(\0132\024" +
       ".trade.RestingOrdersH\000\022)\n\010position\030\003 \001(\013" +
       "2\025.trade.AssetPositionsH\000B\007\n\005inner\"4\n\rRe" +

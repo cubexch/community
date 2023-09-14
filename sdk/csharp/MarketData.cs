@@ -45,57 +45,66 @@ namespace Cube.MarketData {
             "eU9yZGVyLk9yZGVyEg0KBWNodW5rGAIgASgNEhEKCW51bUNodW5rcxgDIAEo",
             "DRpZCgVPcmRlchINCgVwcmljZRgBIAEoBBIQCghxdWFudGl0eRgCIAEoBBIX",
             "Cg9leGNoYW5nZU9yZGVySWQYAyABKAQSFgoEc2lkZRgEIAEoDjIILm1kLlNp",
-            "ZGUi0QIKEU1hcmtldEJ5T3JkZXJEaWZmEikKBWRpZmZzGAEgAygLMhoubWQu",
+            "ZGUizwIKEU1hcmtldEJ5T3JkZXJEaWZmEikKBWRpZmZzGAEgAygLMhoubWQu",
             "TWFya2V0QnlPcmRlckRpZmYuRGlmZhIWCg50b3RhbEJpZExldmVscxgCIAEo",
             "DRIWCg50b3RhbEFza0xldmVscxgDIAEoDRIWCg50b3RhbEJpZE9yZGVycxgE",
-            "IAEoDRIWCg50b3RhbEFza09yZGVycxgFIAEoDRqDAQoERGlmZhINCgVwcmlj",
+            "IAEoDRIWCg50b3RhbEFza09yZGVycxgFIAEoDRqCAQoERGlmZhINCgVwcmlj",
             "ZRgBIAEoBBIQCghxdWFudGl0eRgCIAEoBBIXCg9leGNoYW5nZU9yZGVySWQY",
-            "AyABKAQSFgoEc2lkZRgEIAEoDjIILm1kLlNpZGUSKQoCb3AYBSABKA4yHS5t",
-            "ZC5NYXJrZXRCeU9yZGVyRGlmZi5PcmRlck9wIisKB09yZGVyT3ASBwoDQURE",
-            "EAASCgoGUkVNT1ZFEAESCwoHUkVQTEFDRRACIuUBCgZUcmFkZXMSIAoGdHJh",
-            "ZGVzGAEgAygLMhAubWQuVHJhZGVzLlRyYWRlGrgBCgVUcmFkZRIPCgd0cmFk",
-            "ZUlkGAEgASgEEg0KBXByaWNlGAIgASgEEiAKDmFnZ3Jlc3NpbmdTaWRlGAMg",
-            "ASgOMggubWQuU2lkZRIeChZyZXN0aW5nRXhjaGFuZ2VPcmRlcklkGAQgASgE",
-            "EhQKDGZpbGxRdWFudGl0eRgFIAEoBBIUCgx0cmFuc2FjdFRpbWUYBiABKAQS",
-            "IQoZYWdncmVzc2luZ0V4Y2hhbmdlT3JkZXJJZBgHIAEoBCJ+CgdTdW1tYXJ5",
-            "EgsKA2xvdxgBIAEoBBIMCgRoaWdoGAIgASgEEhQKDGJhc2VWb2x1bWVMbxgD",
-            "IAEoBBIUCgxiYXNlVm9sdW1lSGkYBCABKAQSFQoNcXVvdGVWb2x1bWVMbxgF",
-            "IAEoBBIVCg1xdW90ZVZvbHVtZUhpGAYgASgEIpsBCgVLbGluZRIjCghpbnRl",
-            "cnZhbBgBIAEoDjIRLm1kLktsaW5lSW50ZXJ2YWwSEQoJc3RhcnRUaW1lGAIg",
-            "ASgEEgwKBG9wZW4YAyABKAQSDQoFY2xvc2UYBCABKAQSDAoEaGlnaBgFIAEo",
-            "BBILCgNsb3cYBiABKAQSEAoIdm9sdW1lTG8YByABKAQSEAoIdm9sdW1lSGkY",
-            "CCABKAQiMQoJSGVhcnRiZWF0EhEKCXJlcXVlc3RJZBgBIAEoBBIRCgl0aW1l",
-            "c3RhbXAYAiABKAQiLQoKTWRNZXNzYWdlcxIfCghtZXNzYWdlcxgBIAMoCzIN",
-            "Lm1kLk1kTWVzc2FnZSJfCgpBZ2dNZXNzYWdlEiIKCWhlYXJ0YmVhdBgBIAEo",
-            "CzINLm1kLkhlYXJ0YmVhdEgAEiQKCnRvcE9mQm9va3MYAiABKAsyDi5tZC5U",
-            "b3BPZkJvb2tzSABCBwoFaW5uZXIilAEKCVRvcE9mQm9vaxIQCghtYXJrZXRJ",
-            "ZBgBIAEoBBIUCgx0cmFuc2FjdFRpbWUYAiABKAQSEAoIYmlkUHJpY2UYAyAB",
-            "KAQSEwoLYmlkUXVhbnRpdHkYBCABKAQSEAoIYXNrUHJpY2UYBSABKAQSEwoL",
-            "YXNrUXVhbnRpdHkYBiABKAQSEQoJbGFzdFByaWNlGAcgASgEIikKClRvcE9m",
-            "Qm9va3MSGwoEdG9wcxgBIAMoCzINLm1kLlRvcE9mQm9vayJaCg1DbGllbnRN",
-            "ZXNzYWdlEiIKCWhlYXJ0YmVhdBgBIAEoCzINLm1kLkhlYXJ0YmVhdEgAEhwK",
-            "BmNvbmZpZxgCIAEoCzIKLm1kLkNvbmZpZ0gAQgcKBWlubmVyImYKBkNvbmZp",
-            "ZxILCgNtYnAYASABKAgSCwoDbWJvGAIgASgIEg4KBnRyYWRlcxgDIAEoCBIP",
-            "CgdzdW1tYXJ5GAQgASgIEiEKBmtsaW5lcxgFIAMoDjIRLm1kLktsaW5lSW50",
-            "ZXJ2YWwqGAoEU2lkZRIHCgNCSUQQABIHCgNBU0sQASpACg1LbGluZUludGVy",
-            "dmFsEgYKAlMxEAASBgoCTTEQARIHCgNNMTUQAhIGCgJIMRADEgYKAkg0EAQS",
-            "BgoCRDEQBUIXWgNnby+qAg9DdWJlLk1hcmtldERhdGFiBnByb3RvMw=="));
+            "AyABKAQSFgoEc2lkZRgEIAEoDjIILm1kLlNpZGUSKAoCb3AYBSABKA4yHC5t",
+            "ZC5NYXJrZXRCeU9yZGVyRGlmZi5EaWZmT3AiKgoGRGlmZk9wEgcKA0FERBAA",
+            "EgoKBlJFTU9WRRABEgsKB1JFUExBQ0UQAiLlAQoGVHJhZGVzEiAKBnRyYWRl",
+            "cxgBIAMoCzIQLm1kLlRyYWRlcy5UcmFkZRq4AQoFVHJhZGUSDwoHdHJhZGVJ",
+            "ZBgBIAEoBBINCgVwcmljZRgCIAEoBBIgCg5hZ2dyZXNzaW5nU2lkZRgDIAEo",
+            "DjIILm1kLlNpZGUSHgoWcmVzdGluZ0V4Y2hhbmdlT3JkZXJJZBgEIAEoBBIU",
+            "CgxmaWxsUXVhbnRpdHkYBSABKAQSFAoMdHJhbnNhY3RUaW1lGAYgASgEEiEK",
+            "GWFnZ3Jlc3NpbmdFeGNoYW5nZU9yZGVySWQYByABKAQimwEKB1N1bW1hcnkS",
+            "DAoEb3BlbhgBIAEoBBINCgVjbG9zZRgCIAEoBBILCgNsb3cYAyABKAQSDAoE",
+            "aGlnaBgEIAEoBBIUCgxiYXNlVm9sdW1lTG8YBSABKAQSFAoMYmFzZVZvbHVt",
+            "ZUhpGAYgASgEEhUKDXF1b3RlVm9sdW1lTG8YByABKAQSFQoNcXVvdGVWb2x1",
+            "bWVIaRgIIAEoBCKbAQoFS2xpbmUSIwoIaW50ZXJ2YWwYASABKA4yES5tZC5L",
+            "bGluZUludGVydmFsEhEKCXN0YXJ0VGltZRgCIAEoBBIMCgRvcGVuGAMgASgE",
+            "Eg0KBWNsb3NlGAQgASgEEgwKBGhpZ2gYBSABKAQSCwoDbG93GAYgASgEEhAK",
+            "CHZvbHVtZUxvGAcgASgEEhAKCHZvbHVtZUhpGAggASgEIjEKCUhlYXJ0YmVh",
+            "dBIRCglyZXF1ZXN0SWQYASABKAQSEQoJdGltZXN0YW1wGAIgASgEIi0KCk1k",
+            "TWVzc2FnZXMSHwoIbWVzc2FnZXMYASADKAsyDS5tZC5NZE1lc3NhZ2UihwEK",
+            "CkFnZ01lc3NhZ2USIgoJaGVhcnRiZWF0GAEgASgLMg0ubWQuSGVhcnRiZWF0",
+            "SAASJAoKdG9wT2ZCb29rcxgCIAEoCzIOLm1kLlRvcE9mQm9va3NIABImCgty",
+            "YXRlVXBkYXRlcxgDIAEoCzIPLm1kLlJhdGVVcGRhdGVzSABCBwoFaW5uZXIi",
+            "rQEKCVRvcE9mQm9vaxIQCghtYXJrZXRJZBgBIAEoBBIUCgx0cmFuc2FjdFRp",
+            "bWUYAiABKAQSEAoIYmlkUHJpY2UYAyABKAQSEwoLYmlkUXVhbnRpdHkYBCAB",
+            "KAQSEAoIYXNrUHJpY2UYBSABKAQSEwoLYXNrUXVhbnRpdHkYBiABKAQSEQoJ",
+            "bGFzdFByaWNlGAcgASgEEhcKD3JvbGxpbmcyNGhQcmljZRgIIAEoBCIpCgpU",
+            "b3BPZkJvb2tzEhsKBHRvcHMYASADKAsyDS5tZC5Ub3BPZkJvb2siYAoKUmF0",
+            "ZVVwZGF0ZRIPCgdhc3NldElkGAEgASgEEhEKCXRpbWVzdGFtcBgCIAEoBBIM",
+            "CgRyYXRlGAMgASgEEiAKBHNpZGUYBCABKA4yEi5tZC5SYXRlVXBkYXRlU2lk",
+            "ZSIuCgtSYXRlVXBkYXRlcxIfCgd1cGRhdGVzGAEgAygLMg4ubWQuUmF0ZVVw",
+            "ZGF0ZSJaCg1DbGllbnRNZXNzYWdlEiIKCWhlYXJ0YmVhdBgBIAEoCzINLm1k",
+            "LkhlYXJ0YmVhdEgAEhwKBmNvbmZpZxgCIAEoCzIKLm1kLkNvbmZpZ0gAQgcK",
+            "BWlubmVyImYKBkNvbmZpZxILCgNtYnAYASABKAgSCwoDbWJvGAIgASgIEg4K",
+            "BnRyYWRlcxgDIAEoCBIPCgdzdW1tYXJ5GAQgASgIEiEKBmtsaW5lcxgFIAMo",
+            "DjIRLm1kLktsaW5lSW50ZXJ2YWwqGAoEU2lkZRIHCgNCSUQQABIHCgNBU0sQ",
+            "ASpACg1LbGluZUludGVydmFsEgYKAlMxEAASBgoCTTEQARIHCgNNMTUQAhIG",
+            "CgJIMRADEgYKAkg0EAQSBgoCRDEQBSolCg5SYXRlVXBkYXRlU2lkZRIICgRC",
+            "QVNFEAASCQoFUVVPVEUQAUIXWgNnby+qAg9DdWJlLk1hcmtldERhdGFiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Cube.MarketData.Side), typeof(global::Cube.MarketData.KlineInterval), }, null, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Cube.MarketData.Side), typeof(global::Cube.MarketData.KlineInterval), typeof(global::Cube.MarketData.RateUpdateSide), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.MdMessage), global::Cube.MarketData.MdMessage.Parser, new[]{ "Heartbeat", "Summary", "Trades", "MboSnapshot", "MboDiff", "MbpSnapshot", "MbpDiff", "Kline" }, new[]{ "Inner" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.MarketByPrice), global::Cube.MarketData.MarketByPrice.Parser, new[]{ "Levels", "Chunk", "NumChunks" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.MarketByPrice.Types.Level), global::Cube.MarketData.MarketByPrice.Types.Level.Parser, new[]{ "Price", "Quantity", "Side" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.MarketByPriceDiff), global::Cube.MarketData.MarketByPriceDiff.Parser, new[]{ "Diffs", "TotalBidLevels", "TotalAskLevels" }, null, new[]{ typeof(global::Cube.MarketData.MarketByPriceDiff.Types.DiffOp) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.MarketByPriceDiff.Types.Diff), global::Cube.MarketData.MarketByPriceDiff.Types.Diff.Parser, new[]{ "Price", "Quantity", "Side", "Op" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.MarketByOrder), global::Cube.MarketData.MarketByOrder.Parser, new[]{ "Orders", "Chunk", "NumChunks" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.MarketByOrder.Types.Order), global::Cube.MarketData.MarketByOrder.Types.Order.Parser, new[]{ "Price", "Quantity", "ExchangeOrderId", "Side" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.MarketByOrderDiff), global::Cube.MarketData.MarketByOrderDiff.Parser, new[]{ "Diffs", "TotalBidLevels", "TotalAskLevels", "TotalBidOrders", "TotalAskOrders" }, null, new[]{ typeof(global::Cube.MarketData.MarketByOrderDiff.Types.OrderOp) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.MarketByOrderDiff.Types.Diff), global::Cube.MarketData.MarketByOrderDiff.Types.Diff.Parser, new[]{ "Price", "Quantity", "ExchangeOrderId", "Side", "Op" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.MarketByOrderDiff), global::Cube.MarketData.MarketByOrderDiff.Parser, new[]{ "Diffs", "TotalBidLevels", "TotalAskLevels", "TotalBidOrders", "TotalAskOrders" }, null, new[]{ typeof(global::Cube.MarketData.MarketByOrderDiff.Types.DiffOp) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.MarketByOrderDiff.Types.Diff), global::Cube.MarketData.MarketByOrderDiff.Types.Diff.Parser, new[]{ "Price", "Quantity", "ExchangeOrderId", "Side", "Op" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.Trades), global::Cube.MarketData.Trades.Parser, new[]{ "Trades_" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.Trades.Types.Trade), global::Cube.MarketData.Trades.Types.Trade.Parser, new[]{ "TradeId", "Price", "AggressingSide", "RestingExchangeOrderId", "FillQuantity", "TransactTime", "AggressingExchangeOrderId" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.Summary), global::Cube.MarketData.Summary.Parser, new[]{ "Low", "High", "BaseVolumeLo", "BaseVolumeHi", "QuoteVolumeLo", "QuoteVolumeHi" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.Summary), global::Cube.MarketData.Summary.Parser, new[]{ "Open", "Close", "Low", "High", "BaseVolumeLo", "BaseVolumeHi", "QuoteVolumeLo", "QuoteVolumeHi" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.Kline), global::Cube.MarketData.Kline.Parser, new[]{ "Interval", "StartTime", "Open", "Close", "High", "Low", "VolumeLo", "VolumeHi" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.Heartbeat), global::Cube.MarketData.Heartbeat.Parser, new[]{ "RequestId", "Timestamp" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.MdMessages), global::Cube.MarketData.MdMessages.Parser, new[]{ "Messages" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.AggMessage), global::Cube.MarketData.AggMessage.Parser, new[]{ "Heartbeat", "TopOfBooks" }, new[]{ "Inner" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.TopOfBook), global::Cube.MarketData.TopOfBook.Parser, new[]{ "MarketId", "TransactTime", "BidPrice", "BidQuantity", "AskPrice", "AskQuantity", "LastPrice" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.AggMessage), global::Cube.MarketData.AggMessage.Parser, new[]{ "Heartbeat", "TopOfBooks", "RateUpdates" }, new[]{ "Inner" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.TopOfBook), global::Cube.MarketData.TopOfBook.Parser, new[]{ "MarketId", "TransactTime", "BidPrice", "BidQuantity", "AskPrice", "AskQuantity", "LastPrice", "Rolling24HPrice" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.TopOfBooks), global::Cube.MarketData.TopOfBooks.Parser, new[]{ "Tops" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.RateUpdate), global::Cube.MarketData.RateUpdate.Parser, new[]{ "AssetId", "Timestamp", "Rate", "Side" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.RateUpdates), global::Cube.MarketData.RateUpdates.Parser, new[]{ "Updates" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.ClientMessage), global::Cube.MarketData.ClientMessage.Parser, new[]{ "Heartbeat", "Config" }, new[]{ "Inner" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.Config), global::Cube.MarketData.Config.Parser, new[]{ "Mbp", "Mbo", "Trades", "Summary", "Klines" }, null, null, null, null)
           }));
@@ -147,6 +156,21 @@ namespace Cube.MarketData {
     /// 1 day
     /// </summary>
     [pbr::OriginalName("D1")] D1 = 5,
+  }
+
+  /// <summary>
+  /// The side of the rate update. Given a `BASE` rate of `r`, the `QUOTE` rate is
+  /// `1 / r`, and vice versa.
+  /// </summary>
+  public enum RateUpdateSide {
+    /// <summary>
+    /// The asset serves as the base asset for the given rate.
+    /// </summary>
+    [pbr::OriginalName("BASE")] Base = 0,
+    /// <summary>
+    /// The asset serves as the quote asset for the given rate.
+    /// </summary>
+    [pbr::OriginalName("QUOTE")] Quote = 1,
   }
 
   #endregion
@@ -2657,12 +2681,21 @@ namespace Cube.MarketData {
     /// <summary>Container for nested types declared in the MarketByOrderDiff message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
-      public enum OrderOp {
+      /// <summary>
+      /// The operation to apply for this price level. For example, an resting order
+      /// that gets filled will be `REPLACE`'d with the new resting quantity. An
+      /// order is `REMOVE`'d when it is fully filled or canceled.
+      /// </summary>
+      public enum DiffOp {
         [pbr::OriginalName("ADD")] Add = 0,
         [pbr::OriginalName("REMOVE")] Remove = 1,
         [pbr::OriginalName("REPLACE")] Replace = 2,
       }
 
+      /// <summary>
+      /// An order diff creates, updates, or deletes a resting order based on the
+      /// `exchangeOrderId`
+      /// </summary>
       public sealed partial class Diff : pb::IMessage<Diff>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           , pb::IBufferMessage
@@ -2754,9 +2787,9 @@ namespace Cube.MarketData {
 
         /// <summary>Field number for the "op" field.</summary>
         public const int OpFieldNumber = 5;
-        private global::Cube.MarketData.MarketByOrderDiff.Types.OrderOp op_ = global::Cube.MarketData.MarketByOrderDiff.Types.OrderOp.Add;
+        private global::Cube.MarketData.MarketByOrderDiff.Types.DiffOp op_ = global::Cube.MarketData.MarketByOrderDiff.Types.DiffOp.Add;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public global::Cube.MarketData.MarketByOrderDiff.Types.OrderOp Op {
+        public global::Cube.MarketData.MarketByOrderDiff.Types.DiffOp Op {
           get { return op_; }
           set {
             op_ = value;
@@ -2791,7 +2824,7 @@ namespace Cube.MarketData {
           if (Quantity != 0UL) hash ^= Quantity.GetHashCode();
           if (ExchangeOrderId != 0UL) hash ^= ExchangeOrderId.GetHashCode();
           if (Side != global::Cube.MarketData.Side.Bid) hash ^= Side.GetHashCode();
-          if (Op != global::Cube.MarketData.MarketByOrderDiff.Types.OrderOp.Add) hash ^= Op.GetHashCode();
+          if (Op != global::Cube.MarketData.MarketByOrderDiff.Types.DiffOp.Add) hash ^= Op.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -2824,7 +2857,7 @@ namespace Cube.MarketData {
             output.WriteRawTag(32);
             output.WriteEnum((int) Side);
           }
-          if (Op != global::Cube.MarketData.MarketByOrderDiff.Types.OrderOp.Add) {
+          if (Op != global::Cube.MarketData.MarketByOrderDiff.Types.DiffOp.Add) {
             output.WriteRawTag(40);
             output.WriteEnum((int) Op);
           }
@@ -2853,7 +2886,7 @@ namespace Cube.MarketData {
             output.WriteRawTag(32);
             output.WriteEnum((int) Side);
           }
-          if (Op != global::Cube.MarketData.MarketByOrderDiff.Types.OrderOp.Add) {
+          if (Op != global::Cube.MarketData.MarketByOrderDiff.Types.DiffOp.Add) {
             output.WriteRawTag(40);
             output.WriteEnum((int) Op);
           }
@@ -2878,7 +2911,7 @@ namespace Cube.MarketData {
           if (Side != global::Cube.MarketData.Side.Bid) {
             size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Side);
           }
-          if (Op != global::Cube.MarketData.MarketByOrderDiff.Types.OrderOp.Add) {
+          if (Op != global::Cube.MarketData.MarketByOrderDiff.Types.DiffOp.Add) {
             size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Op);
           }
           if (_unknownFields != null) {
@@ -2904,7 +2937,7 @@ namespace Cube.MarketData {
           if (other.Side != global::Cube.MarketData.Side.Bid) {
             Side = other.Side;
           }
-          if (other.Op != global::Cube.MarketData.MarketByOrderDiff.Types.OrderOp.Add) {
+          if (other.Op != global::Cube.MarketData.MarketByOrderDiff.Types.DiffOp.Add) {
             Op = other.Op;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -2938,7 +2971,7 @@ namespace Cube.MarketData {
                 break;
               }
               case 40: {
-                Op = (global::Cube.MarketData.MarketByOrderDiff.Types.OrderOp) input.ReadEnum();
+                Op = (global::Cube.MarketData.MarketByOrderDiff.Types.DiffOp) input.ReadEnum();
                 break;
               }
             }
@@ -2972,7 +3005,7 @@ namespace Cube.MarketData {
                 break;
               }
               case 40: {
-                Op = (global::Cube.MarketData.MarketByOrderDiff.Types.OrderOp) input.ReadEnum();
+                Op = (global::Cube.MarketData.MarketByOrderDiff.Types.DiffOp) input.ReadEnum();
                 break;
               }
             }
@@ -3603,6 +3636,8 @@ namespace Cube.MarketData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Summary(Summary other) : this() {
+      open_ = other.open_;
+      close_ = other.close_;
       low_ = other.low_;
       high_ = other.high_;
       baseVolumeLo_ = other.baseVolumeLo_;
@@ -3617,11 +3652,39 @@ namespace Cube.MarketData {
       return new Summary(this);
     }
 
+    /// <summary>Field number for the "open" field.</summary>
+    public const int OpenFieldNumber = 1;
+    private ulong open_;
+    /// <summary>
+    /// 24h open price
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ulong Open {
+      get { return open_; }
+      set {
+        open_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "close" field.</summary>
+    public const int CloseFieldNumber = 2;
+    private ulong close_;
+    /// <summary>
+    /// Latest price
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ulong Close {
+      get { return close_; }
+      set {
+        close_ = value;
+      }
+    }
+
     /// <summary>Field number for the "low" field.</summary>
-    public const int LowFieldNumber = 1;
+    public const int LowFieldNumber = 3;
     private ulong low_;
     /// <summary>
-    /// Low price
+    /// 24h low price
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong Low {
@@ -3632,10 +3695,10 @@ namespace Cube.MarketData {
     }
 
     /// <summary>Field number for the "high" field.</summary>
-    public const int HighFieldNumber = 2;
+    public const int HighFieldNumber = 4;
     private ulong high_;
     /// <summary>
-    /// High price
+    /// 24h high price
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong High {
@@ -3646,7 +3709,7 @@ namespace Cube.MarketData {
     }
 
     /// <summary>Field number for the "baseVolumeLo" field.</summary>
-    public const int BaseVolumeLoFieldNumber = 3;
+    public const int BaseVolumeLoFieldNumber = 5;
     private ulong baseVolumeLo_;
     /// <summary>
     /// Low 64-bits of the base quantity traded
@@ -3660,7 +3723,7 @@ namespace Cube.MarketData {
     }
 
     /// <summary>Field number for the "baseVolumeHi" field.</summary>
-    public const int BaseVolumeHiFieldNumber = 4;
+    public const int BaseVolumeHiFieldNumber = 6;
     private ulong baseVolumeHi_;
     /// <summary>
     /// High 64-bits of the base quantity traded
@@ -3674,7 +3737,7 @@ namespace Cube.MarketData {
     }
 
     /// <summary>Field number for the "quoteVolumeLo" field.</summary>
-    public const int QuoteVolumeLoFieldNumber = 5;
+    public const int QuoteVolumeLoFieldNumber = 7;
     private ulong quoteVolumeLo_;
     /// <summary>
     /// Low 64-bits of the quote quantity traded
@@ -3688,7 +3751,7 @@ namespace Cube.MarketData {
     }
 
     /// <summary>Field number for the "quoteVolumeHi" field.</summary>
-    public const int QuoteVolumeHiFieldNumber = 6;
+    public const int QuoteVolumeHiFieldNumber = 8;
     private ulong quoteVolumeHi_;
     /// <summary>
     /// High 64-bits of the quote quantity traded
@@ -3714,6 +3777,8 @@ namespace Cube.MarketData {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Open != other.Open) return false;
+      if (Close != other.Close) return false;
       if (Low != other.Low) return false;
       if (High != other.High) return false;
       if (BaseVolumeLo != other.BaseVolumeLo) return false;
@@ -3726,6 +3791,8 @@ namespace Cube.MarketData {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
+      if (Open != 0UL) hash ^= Open.GetHashCode();
+      if (Close != 0UL) hash ^= Close.GetHashCode();
       if (Low != 0UL) hash ^= Low.GetHashCode();
       if (High != 0UL) hash ^= High.GetHashCode();
       if (BaseVolumeLo != 0UL) hash ^= BaseVolumeLo.GetHashCode();
@@ -3748,28 +3815,36 @@ namespace Cube.MarketData {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Low != 0UL) {
+      if (Open != 0UL) {
         output.WriteRawTag(8);
+        output.WriteUInt64(Open);
+      }
+      if (Close != 0UL) {
+        output.WriteRawTag(16);
+        output.WriteUInt64(Close);
+      }
+      if (Low != 0UL) {
+        output.WriteRawTag(24);
         output.WriteUInt64(Low);
       }
       if (High != 0UL) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(32);
         output.WriteUInt64(High);
       }
       if (BaseVolumeLo != 0UL) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(40);
         output.WriteUInt64(BaseVolumeLo);
       }
       if (BaseVolumeHi != 0UL) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(48);
         output.WriteUInt64(BaseVolumeHi);
       }
       if (QuoteVolumeLo != 0UL) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(56);
         output.WriteUInt64(QuoteVolumeLo);
       }
       if (QuoteVolumeHi != 0UL) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(64);
         output.WriteUInt64(QuoteVolumeHi);
       }
       if (_unknownFields != null) {
@@ -3781,28 +3856,36 @@ namespace Cube.MarketData {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Low != 0UL) {
+      if (Open != 0UL) {
         output.WriteRawTag(8);
+        output.WriteUInt64(Open);
+      }
+      if (Close != 0UL) {
+        output.WriteRawTag(16);
+        output.WriteUInt64(Close);
+      }
+      if (Low != 0UL) {
+        output.WriteRawTag(24);
         output.WriteUInt64(Low);
       }
       if (High != 0UL) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(32);
         output.WriteUInt64(High);
       }
       if (BaseVolumeLo != 0UL) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(40);
         output.WriteUInt64(BaseVolumeLo);
       }
       if (BaseVolumeHi != 0UL) {
-        output.WriteRawTag(32);
+        output.WriteRawTag(48);
         output.WriteUInt64(BaseVolumeHi);
       }
       if (QuoteVolumeLo != 0UL) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(56);
         output.WriteUInt64(QuoteVolumeLo);
       }
       if (QuoteVolumeHi != 0UL) {
-        output.WriteRawTag(48);
+        output.WriteRawTag(64);
         output.WriteUInt64(QuoteVolumeHi);
       }
       if (_unknownFields != null) {
@@ -3814,6 +3897,12 @@ namespace Cube.MarketData {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
+      if (Open != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Open);
+      }
+      if (Close != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Close);
+      }
       if (Low != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Low);
       }
@@ -3842,6 +3931,12 @@ namespace Cube.MarketData {
     public void MergeFrom(Summary other) {
       if (other == null) {
         return;
+      }
+      if (other.Open != 0UL) {
+        Open = other.Open;
+      }
+      if (other.Close != 0UL) {
+        Close = other.Close;
       }
       if (other.Low != 0UL) {
         Low = other.Low;
@@ -3876,26 +3971,34 @@ namespace Cube.MarketData {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Low = input.ReadUInt64();
+            Open = input.ReadUInt64();
             break;
           }
           case 16: {
-            High = input.ReadUInt64();
+            Close = input.ReadUInt64();
             break;
           }
           case 24: {
-            BaseVolumeLo = input.ReadUInt64();
+            Low = input.ReadUInt64();
             break;
           }
           case 32: {
-            BaseVolumeHi = input.ReadUInt64();
+            High = input.ReadUInt64();
             break;
           }
           case 40: {
-            QuoteVolumeLo = input.ReadUInt64();
+            BaseVolumeLo = input.ReadUInt64();
             break;
           }
           case 48: {
+            BaseVolumeHi = input.ReadUInt64();
+            break;
+          }
+          case 56: {
+            QuoteVolumeLo = input.ReadUInt64();
+            break;
+          }
+          case 64: {
             QuoteVolumeHi = input.ReadUInt64();
             break;
           }
@@ -3914,26 +4017,34 @@ namespace Cube.MarketData {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            Low = input.ReadUInt64();
+            Open = input.ReadUInt64();
             break;
           }
           case 16: {
-            High = input.ReadUInt64();
+            Close = input.ReadUInt64();
             break;
           }
           case 24: {
-            BaseVolumeLo = input.ReadUInt64();
+            Low = input.ReadUInt64();
             break;
           }
           case 32: {
-            BaseVolumeHi = input.ReadUInt64();
+            High = input.ReadUInt64();
             break;
           }
           case 40: {
-            QuoteVolumeLo = input.ReadUInt64();
+            BaseVolumeLo = input.ReadUInt64();
             break;
           }
           case 48: {
+            BaseVolumeHi = input.ReadUInt64();
+            break;
+          }
+          case 56: {
+            QuoteVolumeLo = input.ReadUInt64();
+            break;
+          }
+          case 64: {
             QuoteVolumeHi = input.ReadUInt64();
             break;
           }
@@ -4807,6 +4918,9 @@ namespace Cube.MarketData {
         case InnerOneofCase.TopOfBooks:
           TopOfBooks = other.TopOfBooks.Clone();
           break;
+        case InnerOneofCase.RateUpdates:
+          RateUpdates = other.RateUpdates.Clone();
+          break;
       }
 
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -4845,12 +4959,27 @@ namespace Cube.MarketData {
       }
     }
 
+    /// <summary>Field number for the "rateUpdates" field.</summary>
+    public const int RateUpdatesFieldNumber = 3;
+    /// <summary>
+    /// Rates for all assets
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Cube.MarketData.RateUpdates RateUpdates {
+      get { return innerCase_ == InnerOneofCase.RateUpdates ? (global::Cube.MarketData.RateUpdates) inner_ : null; }
+      set {
+        inner_ = value;
+        innerCase_ = value == null ? InnerOneofCase.None : InnerOneofCase.RateUpdates;
+      }
+    }
+
     private object inner_;
     /// <summary>Enum of possible cases for the "inner" oneof.</summary>
     public enum InnerOneofCase {
       None = 0,
       Heartbeat = 1,
       TopOfBooks = 2,
+      RateUpdates = 3,
     }
     private InnerOneofCase innerCase_ = InnerOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4879,6 +5008,7 @@ namespace Cube.MarketData {
       }
       if (!object.Equals(Heartbeat, other.Heartbeat)) return false;
       if (!object.Equals(TopOfBooks, other.TopOfBooks)) return false;
+      if (!object.Equals(RateUpdates, other.RateUpdates)) return false;
       if (InnerCase != other.InnerCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -4888,6 +5018,7 @@ namespace Cube.MarketData {
       int hash = 1;
       if (innerCase_ == InnerOneofCase.Heartbeat) hash ^= Heartbeat.GetHashCode();
       if (innerCase_ == InnerOneofCase.TopOfBooks) hash ^= TopOfBooks.GetHashCode();
+      if (innerCase_ == InnerOneofCase.RateUpdates) hash ^= RateUpdates.GetHashCode();
       hash ^= (int) innerCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -4913,6 +5044,10 @@ namespace Cube.MarketData {
         output.WriteRawTag(18);
         output.WriteMessage(TopOfBooks);
       }
+      if (innerCase_ == InnerOneofCase.RateUpdates) {
+        output.WriteRawTag(26);
+        output.WriteMessage(RateUpdates);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -4930,6 +5065,10 @@ namespace Cube.MarketData {
         output.WriteRawTag(18);
         output.WriteMessage(TopOfBooks);
       }
+      if (innerCase_ == InnerOneofCase.RateUpdates) {
+        output.WriteRawTag(26);
+        output.WriteMessage(RateUpdates);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -4944,6 +5083,9 @@ namespace Cube.MarketData {
       }
       if (innerCase_ == InnerOneofCase.TopOfBooks) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(TopOfBooks);
+      }
+      if (innerCase_ == InnerOneofCase.RateUpdates) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(RateUpdates);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -4968,6 +5110,12 @@ namespace Cube.MarketData {
             TopOfBooks = new global::Cube.MarketData.TopOfBooks();
           }
           TopOfBooks.MergeFrom(other.TopOfBooks);
+          break;
+        case InnerOneofCase.RateUpdates:
+          if (RateUpdates == null) {
+            RateUpdates = new global::Cube.MarketData.RateUpdates();
+          }
+          RateUpdates.MergeFrom(other.RateUpdates);
           break;
       }
 
@@ -5003,6 +5151,15 @@ namespace Cube.MarketData {
             TopOfBooks = subBuilder;
             break;
           }
+          case 26: {
+            global::Cube.MarketData.RateUpdates subBuilder = new global::Cube.MarketData.RateUpdates();
+            if (innerCase_ == InnerOneofCase.RateUpdates) {
+              subBuilder.MergeFrom(RateUpdates);
+            }
+            input.ReadMessage(subBuilder);
+            RateUpdates = subBuilder;
+            break;
+          }
         }
       }
     #endif
@@ -5033,6 +5190,15 @@ namespace Cube.MarketData {
             }
             input.ReadMessage(subBuilder);
             TopOfBooks = subBuilder;
+            break;
+          }
+          case 26: {
+            global::Cube.MarketData.RateUpdates subBuilder = new global::Cube.MarketData.RateUpdates();
+            if (innerCase_ == InnerOneofCase.RateUpdates) {
+              subBuilder.MergeFrom(RateUpdates);
+            }
+            input.ReadMessage(subBuilder);
+            RateUpdates = subBuilder;
             break;
           }
         }
@@ -5081,6 +5247,7 @@ namespace Cube.MarketData {
       askPrice_ = other.askPrice_;
       askQuantity_ = other.askQuantity_;
       lastPrice_ = other.lastPrice_;
+      rolling24HPrice_ = other.rolling24HPrice_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -5185,6 +5352,20 @@ namespace Cube.MarketData {
       }
     }
 
+    /// <summary>Field number for the "rolling24hPrice" field.</summary>
+    public const int Rolling24HPriceFieldNumber = 8;
+    private ulong rolling24HPrice_;
+    /// <summary>
+    /// The 24h open price.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ulong Rolling24HPrice {
+      get { return rolling24HPrice_; }
+      set {
+        rolling24HPrice_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as TopOfBook);
@@ -5205,6 +5386,7 @@ namespace Cube.MarketData {
       if (AskPrice != other.AskPrice) return false;
       if (AskQuantity != other.AskQuantity) return false;
       if (LastPrice != other.LastPrice) return false;
+      if (Rolling24HPrice != other.Rolling24HPrice) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -5218,6 +5400,7 @@ namespace Cube.MarketData {
       if (AskPrice != 0UL) hash ^= AskPrice.GetHashCode();
       if (AskQuantity != 0UL) hash ^= AskQuantity.GetHashCode();
       if (LastPrice != 0UL) hash ^= LastPrice.GetHashCode();
+      if (Rolling24HPrice != 0UL) hash ^= Rolling24HPrice.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -5262,6 +5445,10 @@ namespace Cube.MarketData {
         output.WriteRawTag(56);
         output.WriteUInt64(LastPrice);
       }
+      if (Rolling24HPrice != 0UL) {
+        output.WriteRawTag(64);
+        output.WriteUInt64(Rolling24HPrice);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -5299,6 +5486,10 @@ namespace Cube.MarketData {
         output.WriteRawTag(56);
         output.WriteUInt64(LastPrice);
       }
+      if (Rolling24HPrice != 0UL) {
+        output.WriteRawTag(64);
+        output.WriteUInt64(Rolling24HPrice);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -5328,6 +5519,9 @@ namespace Cube.MarketData {
       }
       if (LastPrice != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(LastPrice);
+      }
+      if (Rolling24HPrice != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Rolling24HPrice);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -5360,6 +5554,9 @@ namespace Cube.MarketData {
       }
       if (other.LastPrice != 0UL) {
         LastPrice = other.LastPrice;
+      }
+      if (other.Rolling24HPrice != 0UL) {
+        Rolling24HPrice = other.Rolling24HPrice;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -5403,6 +5600,10 @@ namespace Cube.MarketData {
             LastPrice = input.ReadUInt64();
             break;
           }
+          case 64: {
+            Rolling24HPrice = input.ReadUInt64();
+            break;
+          }
         }
       }
     #endif
@@ -5443,6 +5644,10 @@ namespace Cube.MarketData {
           }
           case 56: {
             LastPrice = input.ReadUInt64();
+            break;
+          }
+          case 64: {
+            Rolling24HPrice = input.ReadUInt64();
             break;
           }
         }
@@ -5618,6 +5823,463 @@ namespace Cube.MarketData {
   }
 
   /// <summary>
+  /// Rate update. Used in conjuction with another rate update to get the price of
+  /// that divisor. Rate's should not be used alone. For example, given a
+  /// RateUpdate for `assetId = BTC, updateSide = BASE` of `r1`, and `assetId =
+  /// EUR, updateSide = QUOTE` of `r2`, the BTC-EUR price estimate is `r1 * r2`.
+  /// </summary>
+  public sealed partial class RateUpdate : pb::IMessage<RateUpdate>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RateUpdate> _parser = new pb::MessageParser<RateUpdate>(() => new RateUpdate());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<RateUpdate> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Cube.MarketData.MarketDataReflection.Descriptor.MessageTypes[13]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RateUpdate() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RateUpdate(RateUpdate other) : this() {
+      assetId_ = other.assetId_;
+      timestamp_ = other.timestamp_;
+      rate_ = other.rate_;
+      side_ = other.side_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RateUpdate Clone() {
+      return new RateUpdate(this);
+    }
+
+    /// <summary>Field number for the "assetId" field.</summary>
+    public const int AssetIdFieldNumber = 1;
+    private ulong assetId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ulong AssetId {
+      get { return assetId_; }
+      set {
+        assetId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "timestamp" field.</summary>
+    public const int TimestampFieldNumber = 2;
+    private ulong timestamp_;
+    /// <summary>
+    /// The nanosecond timestamp of the update.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ulong Timestamp {
+      get { return timestamp_; }
+      set {
+        timestamp_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "rate" field.</summary>
+    public const int RateFieldNumber = 3;
+    private ulong rate_;
+    /// <summary>
+    /// The asset rate at the given timestamp.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ulong Rate {
+      get { return rate_; }
+      set {
+        rate_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "side" field.</summary>
+    public const int SideFieldNumber = 4;
+    private global::Cube.MarketData.RateUpdateSide side_ = global::Cube.MarketData.RateUpdateSide.Base;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Cube.MarketData.RateUpdateSide Side {
+      get { return side_; }
+      set {
+        side_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as RateUpdate);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(RateUpdate other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (AssetId != other.AssetId) return false;
+      if (Timestamp != other.Timestamp) return false;
+      if (Rate != other.Rate) return false;
+      if (Side != other.Side) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (AssetId != 0UL) hash ^= AssetId.GetHashCode();
+      if (Timestamp != 0UL) hash ^= Timestamp.GetHashCode();
+      if (Rate != 0UL) hash ^= Rate.GetHashCode();
+      if (Side != global::Cube.MarketData.RateUpdateSide.Base) hash ^= Side.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (AssetId != 0UL) {
+        output.WriteRawTag(8);
+        output.WriteUInt64(AssetId);
+      }
+      if (Timestamp != 0UL) {
+        output.WriteRawTag(16);
+        output.WriteUInt64(Timestamp);
+      }
+      if (Rate != 0UL) {
+        output.WriteRawTag(24);
+        output.WriteUInt64(Rate);
+      }
+      if (Side != global::Cube.MarketData.RateUpdateSide.Base) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) Side);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (AssetId != 0UL) {
+        output.WriteRawTag(8);
+        output.WriteUInt64(AssetId);
+      }
+      if (Timestamp != 0UL) {
+        output.WriteRawTag(16);
+        output.WriteUInt64(Timestamp);
+      }
+      if (Rate != 0UL) {
+        output.WriteRawTag(24);
+        output.WriteUInt64(Rate);
+      }
+      if (Side != global::Cube.MarketData.RateUpdateSide.Base) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) Side);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (AssetId != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(AssetId);
+      }
+      if (Timestamp != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Timestamp);
+      }
+      if (Rate != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Rate);
+      }
+      if (Side != global::Cube.MarketData.RateUpdateSide.Base) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Side);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(RateUpdate other) {
+      if (other == null) {
+        return;
+      }
+      if (other.AssetId != 0UL) {
+        AssetId = other.AssetId;
+      }
+      if (other.Timestamp != 0UL) {
+        Timestamp = other.Timestamp;
+      }
+      if (other.Rate != 0UL) {
+        Rate = other.Rate;
+      }
+      if (other.Side != global::Cube.MarketData.RateUpdateSide.Base) {
+        Side = other.Side;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            AssetId = input.ReadUInt64();
+            break;
+          }
+          case 16: {
+            Timestamp = input.ReadUInt64();
+            break;
+          }
+          case 24: {
+            Rate = input.ReadUInt64();
+            break;
+          }
+          case 32: {
+            Side = (global::Cube.MarketData.RateUpdateSide) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            AssetId = input.ReadUInt64();
+            break;
+          }
+          case 16: {
+            Timestamp = input.ReadUInt64();
+            break;
+          }
+          case 24: {
+            Rate = input.ReadUInt64();
+            break;
+          }
+          case 32: {
+            Side = (global::Cube.MarketData.RateUpdateSide) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Rates for all assets. Published on connect and updates since the last
+  /// rate-updates message.
+  /// </summary>
+  public sealed partial class RateUpdates : pb::IMessage<RateUpdates>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RateUpdates> _parser = new pb::MessageParser<RateUpdates>(() => new RateUpdates());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<RateUpdates> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Cube.MarketData.MarketDataReflection.Descriptor.MessageTypes[14]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RateUpdates() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RateUpdates(RateUpdates other) : this() {
+      updates_ = other.updates_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RateUpdates Clone() {
+      return new RateUpdates(this);
+    }
+
+    /// <summary>Field number for the "updates" field.</summary>
+    public const int UpdatesFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Cube.MarketData.RateUpdate> _repeated_updates_codec
+        = pb::FieldCodec.ForMessage(10, global::Cube.MarketData.RateUpdate.Parser);
+    private readonly pbc::RepeatedField<global::Cube.MarketData.RateUpdate> updates_ = new pbc::RepeatedField<global::Cube.MarketData.RateUpdate>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Cube.MarketData.RateUpdate> Updates {
+      get { return updates_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as RateUpdates);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(RateUpdates other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!updates_.Equals(other.updates_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= updates_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      updates_.WriteTo(output, _repeated_updates_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      updates_.WriteTo(ref output, _repeated_updates_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += updates_.CalculateSize(_repeated_updates_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(RateUpdates other) {
+      if (other == null) {
+        return;
+      }
+      updates_.Add(other.updates_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            updates_.AddEntriesFrom(input, _repeated_updates_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            updates_.AddEntriesFrom(ref input, _repeated_updates_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
   /// Client heartbeats and configs. This wrapper is used for both
   /// `/book/:market_id` and `/tops`, but `config` messages are ignored on the
   /// latter.
@@ -5634,7 +6296,7 @@ namespace Cube.MarketData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Cube.MarketData.MarketDataReflection.Descriptor.MessageTypes[13]; }
+      get { return global::Cube.MarketData.MarketDataReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5903,7 +6565,7 @@ namespace Cube.MarketData {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Cube.MarketData.MarketDataReflection.Descriptor.MessageTypes[14]; }
+      get { return global::Cube.MarketData.MarketDataReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

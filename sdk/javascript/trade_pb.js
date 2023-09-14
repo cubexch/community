@@ -6473,7 +6473,7 @@ proto.trade.RawUnits.toObject = function(includeInstance, msg) {
     word0: jspb.Message.getFieldWithDefault(msg, 1, 0),
     word1: jspb.Message.getFieldWithDefault(msg, 2, 0),
     word2: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    word3: jspb.Message.getFieldWithDefault(msg, 5, 0)
+    word3: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -6522,7 +6522,7 @@ proto.trade.RawUnits.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {number} */ (reader.readUint64());
       msg.setWord2(value);
       break;
-    case 5:
+    case 4:
       var value = /** @type {number} */ (reader.readUint64());
       msg.setWord3(value);
       break;
@@ -6579,7 +6579,7 @@ proto.trade.RawUnits.serializeBinaryToWriter = function(message, writer) {
   f = message.getWord3();
   if (f !== 0) {
     writer.writeUint64(
-      5,
+      4,
       f
     );
   }
@@ -6641,11 +6641,11 @@ proto.trade.RawUnits.prototype.setWord2 = function(value) {
 
 
 /**
- * optional uint64 word3 = 5;
+ * optional uint64 word3 = 4;
  * @return {number}
  */
 proto.trade.RawUnits.prototype.getWord3 = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
@@ -6654,7 +6654,7 @@ proto.trade.RawUnits.prototype.getWord3 = function() {
  * @return {!proto.trade.RawUnits} returns this
  */
 proto.trade.RawUnits.prototype.setWord3 = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 

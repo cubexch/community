@@ -903,7 +903,7 @@ const char descriptor_table_protodef_trade_2eproto[] PROTOBUF_SECTION_VARIABLE(p
   "\n\005total\030\003 \001(\0132\017.trade.RawUnits\022\"\n\tavaila"
   "ble\030\004 \001(\0132\017.trade.RawUnits\"F\n\010RawUnits\022\r"
   "\n\005word0\030\001 \001(\004\022\r\n\005word1\030\002 \001(\004\022\r\n\005word2\030\003 "
-  "\001(\004\022\r\n\005word3\030\005 \001(\004\"\205\001\n\tBootstrap\022\033\n\004done"
+  "\001(\004\022\r\n\005word3\030\004 \001(\004\"\205\001\n\tBootstrap\022\033\n\004done"
   "\030\001 \001(\0132\013.trade.DoneH\000\022\'\n\007resting\030\002 \001(\0132\024"
   ".trade.RestingOrdersH\000\022)\n\010position\030\003 \001(\013"
   "2\025.trade.AssetPositionsH\000B\007\n\005inner\"4\n\rRe"
@@ -7736,9 +7736,9 @@ const char* RawUnits::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 word3 = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+      // uint64 word3 = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           word3_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -7789,10 +7789,10 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_word2(), target);
   }
 
-  // uint64 word3 = 5;
+  // uint64 word3 = 4;
   if (this->word3() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_word3(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_word3(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -7832,7 +7832,7 @@ size_t RawUnits::ByteSizeLong() const {
         this->_internal_word2());
   }
 
-  // uint64 word3 = 5;
+  // uint64 word3 = 4;
   if (this->word3() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(

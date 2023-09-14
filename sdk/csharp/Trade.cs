@@ -126,7 +126,7 @@ namespace Cube.Trade {
             "GAEgASgEEg8KB2Fzc2V0SWQYAiABKAQSHgoFdG90YWwYAyABKAsyDy50cmFk",
             "ZS5SYXdVbml0cxIiCglhdmFpbGFibGUYBCABKAsyDy50cmFkZS5SYXdVbml0",
             "cyJGCghSYXdVbml0cxINCgV3b3JkMBgBIAEoBBINCgV3b3JkMRgCIAEoBBIN",
-            "CgV3b3JkMhgDIAEoBBINCgV3b3JkMxgFIAEoBCKFAQoJQm9vdHN0cmFwEhsK",
+            "CgV3b3JkMhgDIAEoBBINCgV3b3JkMxgEIAEoBCKFAQoJQm9vdHN0cmFwEhsK",
             "BGRvbmUYASABKAsyCy50cmFkZS5Eb25lSAASJwoHcmVzdGluZxgCIAEoCzIU",
             "LnRyYWRlLlJlc3RpbmdPcmRlcnNIABIpCghwb3NpdGlvbhgDIAEoCzIVLnRy",
             "YWRlLkFzc2V0UG9zaXRpb25zSABCBwoFaW5uZXIiNAoNUmVzdGluZ09yZGVy",
@@ -296,7 +296,7 @@ namespace Cube.Trade {
   /// `cube.xyz` and the current unix epoch in seconds interpreted at a
   /// little-endian 64-bit number. For example:
   ///
-  /// ```rust
+  /// ```rust compile_fail
   /// use hmac::{Hmac, Mac, NewMac};
   /// use std::time::SystemTime;
   ///
@@ -1871,7 +1871,7 @@ namespace Cube.Trade {
   /// cumulative fill qty is subtracted from `newQuantity` to calculate the new
   /// resting quantity. For example:
   ///
-  /// ```
+  /// ```text
   ///          | Resting | Filled
   /// ---------+---------+--------
   /// New 5    | 5       | 0
@@ -7806,7 +7806,7 @@ namespace Cube.Trade {
     }
 
     /// <summary>Field number for the "word3" field.</summary>
-    public const int Word3FieldNumber = 5;
+    public const int Word3FieldNumber = 4;
     private ulong word3_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong Word3 {
@@ -7872,7 +7872,7 @@ namespace Cube.Trade {
         output.WriteUInt64(Word2);
       }
       if (Word3 != 0UL) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(32);
         output.WriteUInt64(Word3);
       }
       if (_unknownFields != null) {
@@ -7897,7 +7897,7 @@ namespace Cube.Trade {
         output.WriteUInt64(Word2);
       }
       if (Word3 != 0UL) {
-        output.WriteRawTag(40);
+        output.WriteRawTag(32);
         output.WriteUInt64(Word3);
       }
       if (_unknownFields != null) {
@@ -7970,7 +7970,7 @@ namespace Cube.Trade {
             Word2 = input.ReadUInt64();
             break;
           }
-          case 40: {
+          case 32: {
             Word3 = input.ReadUInt64();
             break;
           }
@@ -8000,7 +8000,7 @@ namespace Cube.Trade {
             Word2 = input.ReadUInt64();
             break;
           }
-          case 40: {
+          case 32: {
             Word3 = input.ReadUInt64();
             break;
           }
