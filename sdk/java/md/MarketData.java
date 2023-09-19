@@ -339,6 +339,135 @@ public final class MarketData {
     // @@protoc_insertion_point(enum_scope:md.KlineInterval)
   }
 
+  /**
+   * <pre>
+   * The side of the rate update. Given a `BASE` rate of `r`, the `QUOTE` rate is
+   * `1 / r`, and vice versa.
+   * </pre>
+   *
+   * Protobuf enum {@code md.RateUpdateSide}
+   */
+  public enum RateUpdateSide
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * The asset serves as the base asset for the given rate.
+     * </pre>
+     *
+     * <code>BASE = 0;</code>
+     */
+    BASE(0),
+    /**
+     * <pre>
+     * The asset serves as the quote asset for the given rate.
+     * </pre>
+     *
+     * <code>QUOTE = 1;</code>
+     */
+    QUOTE(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * The asset serves as the base asset for the given rate.
+     * </pre>
+     *
+     * <code>BASE = 0;</code>
+     */
+    public static final int BASE_VALUE = 0;
+    /**
+     * <pre>
+     * The asset serves as the quote asset for the given rate.
+     * </pre>
+     *
+     * <code>QUOTE = 1;</code>
+     */
+    public static final int QUOTE_VALUE = 1;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RateUpdateSide valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static RateUpdateSide forNumber(int value) {
+      switch (value) {
+        case 0: return BASE;
+        case 1: return QUOTE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<RateUpdateSide>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        RateUpdateSide> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<RateUpdateSide>() {
+            public RateUpdateSide findValueByNumber(int number) {
+              return RateUpdateSide.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return md.MarketData.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final RateUpdateSide[] VALUES = values();
+
+    public static RateUpdateSide valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private RateUpdateSide(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:md.RateUpdateSide)
+  }
+
   public interface MdMessageOrBuilder extends
       // @@protoc_insertion_point(interface_extends:md.MdMessage)
       com.google.protobuf.MessageOrBuilder {
@@ -8569,9 +8698,15 @@ public final class MarketData {
     }
 
     /**
-     * Protobuf enum {@code md.MarketByOrderDiff.OrderOp}
+     * <pre>
+     * The operation to apply for this price level. For example, an resting order
+     * that gets filled will be `REPLACE`'d with the new resting quantity. An
+     * order is `REMOVE`'d when it is fully filled or canceled.
+     * </pre>
+     *
+     * Protobuf enum {@code md.MarketByOrderDiff.DiffOp}
      */
-    public enum OrderOp
+    public enum DiffOp
         implements com.google.protobuf.ProtocolMessageEnum {
       /**
        * <code>ADD = 0;</code>
@@ -8616,7 +8751,7 @@ public final class MarketData {
        * @deprecated Use {@link #forNumber(int)} instead.
        */
       @java.lang.Deprecated
-      public static OrderOp valueOf(int value) {
+      public static DiffOp valueOf(int value) {
         return forNumber(value);
       }
 
@@ -8624,7 +8759,7 @@ public final class MarketData {
        * @param value The numeric wire value of the corresponding enum entry.
        * @return The enum associated with the given numeric wire value.
        */
-      public static OrderOp forNumber(int value) {
+      public static DiffOp forNumber(int value) {
         switch (value) {
           case 0: return ADD;
           case 1: return REMOVE;
@@ -8633,15 +8768,15 @@ public final class MarketData {
         }
       }
 
-      public static com.google.protobuf.Internal.EnumLiteMap<OrderOp>
+      public static com.google.protobuf.Internal.EnumLiteMap<DiffOp>
           internalGetValueMap() {
         return internalValueMap;
       }
       private static final com.google.protobuf.Internal.EnumLiteMap<
-          OrderOp> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<OrderOp>() {
-              public OrderOp findValueByNumber(int number) {
-                return OrderOp.forNumber(number);
+          DiffOp> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<DiffOp>() {
+              public DiffOp findValueByNumber(int number) {
+                return DiffOp.forNumber(number);
               }
             };
 
@@ -8662,9 +8797,9 @@ public final class MarketData {
         return md.MarketData.MarketByOrderDiff.getDescriptor().getEnumTypes().get(0);
       }
 
-      private static final OrderOp[] VALUES = values();
+      private static final DiffOp[] VALUES = values();
 
-      public static OrderOp valueOf(
+      public static DiffOp valueOf(
           com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
         if (desc.getType() != getDescriptor()) {
           throw new java.lang.IllegalArgumentException(
@@ -8678,11 +8813,11 @@ public final class MarketData {
 
       private final int value;
 
-      private OrderOp(int value) {
+      private DiffOp(int value) {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:md.MarketByOrderDiff.OrderOp)
+      // @@protoc_insertion_point(enum_scope:md.MarketByOrderDiff.DiffOp)
     }
 
     public interface DiffOrBuilder extends
@@ -8723,17 +8858,22 @@ public final class MarketData {
       md.MarketData.Side getSide();
 
       /**
-       * <code>.md.MarketByOrderDiff.OrderOp op = 5;</code>
+       * <code>.md.MarketByOrderDiff.DiffOp op = 5;</code>
        * @return The enum numeric value on the wire for op.
        */
       int getOpValue();
       /**
-       * <code>.md.MarketByOrderDiff.OrderOp op = 5;</code>
+       * <code>.md.MarketByOrderDiff.DiffOp op = 5;</code>
        * @return The op.
        */
-      md.MarketData.MarketByOrderDiff.OrderOp getOp();
+      md.MarketData.MarketByOrderDiff.DiffOp getOp();
     }
     /**
+     * <pre>
+     * An order diff creates, updates, or deletes a resting order based on the
+     * `exchangeOrderId`
+     * </pre>
+     *
      * Protobuf type {@code md.MarketByOrderDiff.Diff}
      */
     public static final class Diff extends
@@ -8898,20 +9038,20 @@ public final class MarketData {
       public static final int OP_FIELD_NUMBER = 5;
       private int op_;
       /**
-       * <code>.md.MarketByOrderDiff.OrderOp op = 5;</code>
+       * <code>.md.MarketByOrderDiff.DiffOp op = 5;</code>
        * @return The enum numeric value on the wire for op.
        */
       @java.lang.Override public int getOpValue() {
         return op_;
       }
       /**
-       * <code>.md.MarketByOrderDiff.OrderOp op = 5;</code>
+       * <code>.md.MarketByOrderDiff.DiffOp op = 5;</code>
        * @return The op.
        */
-      @java.lang.Override public md.MarketData.MarketByOrderDiff.OrderOp getOp() {
+      @java.lang.Override public md.MarketData.MarketByOrderDiff.DiffOp getOp() {
         @SuppressWarnings("deprecation")
-        md.MarketData.MarketByOrderDiff.OrderOp result = md.MarketData.MarketByOrderDiff.OrderOp.valueOf(op_);
-        return result == null ? md.MarketData.MarketByOrderDiff.OrderOp.UNRECOGNIZED : result;
+        md.MarketData.MarketByOrderDiff.DiffOp result = md.MarketData.MarketByOrderDiff.DiffOp.valueOf(op_);
+        return result == null ? md.MarketData.MarketByOrderDiff.DiffOp.UNRECOGNIZED : result;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -8940,7 +9080,7 @@ public final class MarketData {
         if (side_ != md.MarketData.Side.BID.getNumber()) {
           output.writeEnum(4, side_);
         }
-        if (op_ != md.MarketData.MarketByOrderDiff.OrderOp.ADD.getNumber()) {
+        if (op_ != md.MarketData.MarketByOrderDiff.DiffOp.ADD.getNumber()) {
           output.writeEnum(5, op_);
         }
         unknownFields.writeTo(output);
@@ -8968,7 +9108,7 @@ public final class MarketData {
           size += com.google.protobuf.CodedOutputStream
             .computeEnumSize(4, side_);
         }
-        if (op_ != md.MarketData.MarketByOrderDiff.OrderOp.ADD.getNumber()) {
+        if (op_ != md.MarketData.MarketByOrderDiff.DiffOp.ADD.getNumber()) {
           size += com.google.protobuf.CodedOutputStream
             .computeEnumSize(5, op_);
         }
@@ -9115,6 +9255,11 @@ public final class MarketData {
         return builder;
       }
       /**
+       * <pre>
+       * An order diff creates, updates, or deletes a resting order based on the
+       * `exchangeOrderId`
+       * </pre>
+       *
        * Protobuf type {@code md.MarketByOrderDiff.Diff}
        */
       public static final class Builder extends
@@ -9446,14 +9591,14 @@ public final class MarketData {
 
         private int op_ = 0;
         /**
-         * <code>.md.MarketByOrderDiff.OrderOp op = 5;</code>
+         * <code>.md.MarketByOrderDiff.DiffOp op = 5;</code>
          * @return The enum numeric value on the wire for op.
          */
         @java.lang.Override public int getOpValue() {
           return op_;
         }
         /**
-         * <code>.md.MarketByOrderDiff.OrderOp op = 5;</code>
+         * <code>.md.MarketByOrderDiff.DiffOp op = 5;</code>
          * @param value The enum numeric value on the wire for op to set.
          * @return This builder for chaining.
          */
@@ -9464,21 +9609,21 @@ public final class MarketData {
           return this;
         }
         /**
-         * <code>.md.MarketByOrderDiff.OrderOp op = 5;</code>
+         * <code>.md.MarketByOrderDiff.DiffOp op = 5;</code>
          * @return The op.
          */
         @java.lang.Override
-        public md.MarketData.MarketByOrderDiff.OrderOp getOp() {
+        public md.MarketData.MarketByOrderDiff.DiffOp getOp() {
           @SuppressWarnings("deprecation")
-          md.MarketData.MarketByOrderDiff.OrderOp result = md.MarketData.MarketByOrderDiff.OrderOp.valueOf(op_);
-          return result == null ? md.MarketData.MarketByOrderDiff.OrderOp.UNRECOGNIZED : result;
+          md.MarketData.MarketByOrderDiff.DiffOp result = md.MarketData.MarketByOrderDiff.DiffOp.valueOf(op_);
+          return result == null ? md.MarketData.MarketByOrderDiff.DiffOp.UNRECOGNIZED : result;
         }
         /**
-         * <code>.md.MarketByOrderDiff.OrderOp op = 5;</code>
+         * <code>.md.MarketByOrderDiff.DiffOp op = 5;</code>
          * @param value The op to set.
          * @return This builder for chaining.
          */
-        public Builder setOp(md.MarketData.MarketByOrderDiff.OrderOp value) {
+        public Builder setOp(md.MarketData.MarketByOrderDiff.DiffOp value) {
           if (value == null) {
             throw new NullPointerException();
           }
@@ -9488,7 +9633,7 @@ public final class MarketData {
           return this;
         }
         /**
-         * <code>.md.MarketByOrderDiff.OrderOp op = 5;</code>
+         * <code>.md.MarketByOrderDiff.DiffOp op = 5;</code>
          * @return This builder for chaining.
          */
         public Builder clearOp() {
@@ -12456,20 +12601,40 @@ public final class MarketData {
 
     /**
      * <pre>
-     * Low price
+     * 24h open price
      * </pre>
      *
-     * <code>uint64 low = 1;</code>
+     * <code>uint64 open = 1;</code>
+     * @return The open.
+     */
+    long getOpen();
+
+    /**
+     * <pre>
+     * Latest price
+     * </pre>
+     *
+     * <code>uint64 close = 2;</code>
+     * @return The close.
+     */
+    long getClose();
+
+    /**
+     * <pre>
+     * 24h low price
+     * </pre>
+     *
+     * <code>uint64 low = 3;</code>
      * @return The low.
      */
     long getLow();
 
     /**
      * <pre>
-     * High price
+     * 24h high price
      * </pre>
      *
-     * <code>uint64 high = 2;</code>
+     * <code>uint64 high = 4;</code>
      * @return The high.
      */
     long getHigh();
@@ -12479,7 +12644,7 @@ public final class MarketData {
      * Low 64-bits of the base quantity traded
      * </pre>
      *
-     * <code>uint64 baseVolumeLo = 3;</code>
+     * <code>uint64 baseVolumeLo = 5;</code>
      * @return The baseVolumeLo.
      */
     long getBaseVolumeLo();
@@ -12489,7 +12654,7 @@ public final class MarketData {
      * High 64-bits of the base quantity traded
      * </pre>
      *
-     * <code>uint64 baseVolumeHi = 4;</code>
+     * <code>uint64 baseVolumeHi = 6;</code>
      * @return The baseVolumeHi.
      */
     long getBaseVolumeHi();
@@ -12499,7 +12664,7 @@ public final class MarketData {
      * Low 64-bits of the quote quantity traded
      * </pre>
      *
-     * <code>uint64 quoteVolumeLo = 5;</code>
+     * <code>uint64 quoteVolumeLo = 7;</code>
      * @return The quoteVolumeLo.
      */
     long getQuoteVolumeLo();
@@ -12509,7 +12674,7 @@ public final class MarketData {
      * High 64-bits of the quote quantity traded
      * </pre>
      *
-     * <code>uint64 quoteVolumeHi = 6;</code>
+     * <code>uint64 quoteVolumeHi = 8;</code>
      * @return The quoteVolumeHi.
      */
     long getQuoteVolumeHi();
@@ -12565,30 +12730,40 @@ public final class MarketData {
               break;
             case 8: {
 
-              low_ = input.readUInt64();
+              open_ = input.readUInt64();
               break;
             }
             case 16: {
 
-              high_ = input.readUInt64();
+              close_ = input.readUInt64();
               break;
             }
             case 24: {
 
-              baseVolumeLo_ = input.readUInt64();
+              low_ = input.readUInt64();
               break;
             }
             case 32: {
 
-              baseVolumeHi_ = input.readUInt64();
+              high_ = input.readUInt64();
               break;
             }
             case 40: {
 
-              quoteVolumeLo_ = input.readUInt64();
+              baseVolumeLo_ = input.readUInt64();
               break;
             }
             case 48: {
+
+              baseVolumeHi_ = input.readUInt64();
+              break;
+            }
+            case 56: {
+
+              quoteVolumeLo_ = input.readUInt64();
+              break;
+            }
+            case 64: {
 
               quoteVolumeHi_ = input.readUInt64();
               break;
@@ -12625,14 +12800,44 @@ public final class MarketData {
               md.MarketData.Summary.class, md.MarketData.Summary.Builder.class);
     }
 
-    public static final int LOW_FIELD_NUMBER = 1;
+    public static final int OPEN_FIELD_NUMBER = 1;
+    private long open_;
+    /**
+     * <pre>
+     * 24h open price
+     * </pre>
+     *
+     * <code>uint64 open = 1;</code>
+     * @return The open.
+     */
+    @java.lang.Override
+    public long getOpen() {
+      return open_;
+    }
+
+    public static final int CLOSE_FIELD_NUMBER = 2;
+    private long close_;
+    /**
+     * <pre>
+     * Latest price
+     * </pre>
+     *
+     * <code>uint64 close = 2;</code>
+     * @return The close.
+     */
+    @java.lang.Override
+    public long getClose() {
+      return close_;
+    }
+
+    public static final int LOW_FIELD_NUMBER = 3;
     private long low_;
     /**
      * <pre>
-     * Low price
+     * 24h low price
      * </pre>
      *
-     * <code>uint64 low = 1;</code>
+     * <code>uint64 low = 3;</code>
      * @return The low.
      */
     @java.lang.Override
@@ -12640,14 +12845,14 @@ public final class MarketData {
       return low_;
     }
 
-    public static final int HIGH_FIELD_NUMBER = 2;
+    public static final int HIGH_FIELD_NUMBER = 4;
     private long high_;
     /**
      * <pre>
-     * High price
+     * 24h high price
      * </pre>
      *
-     * <code>uint64 high = 2;</code>
+     * <code>uint64 high = 4;</code>
      * @return The high.
      */
     @java.lang.Override
@@ -12655,14 +12860,14 @@ public final class MarketData {
       return high_;
     }
 
-    public static final int BASEVOLUMELO_FIELD_NUMBER = 3;
+    public static final int BASEVOLUMELO_FIELD_NUMBER = 5;
     private long baseVolumeLo_;
     /**
      * <pre>
      * Low 64-bits of the base quantity traded
      * </pre>
      *
-     * <code>uint64 baseVolumeLo = 3;</code>
+     * <code>uint64 baseVolumeLo = 5;</code>
      * @return The baseVolumeLo.
      */
     @java.lang.Override
@@ -12670,14 +12875,14 @@ public final class MarketData {
       return baseVolumeLo_;
     }
 
-    public static final int BASEVOLUMEHI_FIELD_NUMBER = 4;
+    public static final int BASEVOLUMEHI_FIELD_NUMBER = 6;
     private long baseVolumeHi_;
     /**
      * <pre>
      * High 64-bits of the base quantity traded
      * </pre>
      *
-     * <code>uint64 baseVolumeHi = 4;</code>
+     * <code>uint64 baseVolumeHi = 6;</code>
      * @return The baseVolumeHi.
      */
     @java.lang.Override
@@ -12685,14 +12890,14 @@ public final class MarketData {
       return baseVolumeHi_;
     }
 
-    public static final int QUOTEVOLUMELO_FIELD_NUMBER = 5;
+    public static final int QUOTEVOLUMELO_FIELD_NUMBER = 7;
     private long quoteVolumeLo_;
     /**
      * <pre>
      * Low 64-bits of the quote quantity traded
      * </pre>
      *
-     * <code>uint64 quoteVolumeLo = 5;</code>
+     * <code>uint64 quoteVolumeLo = 7;</code>
      * @return The quoteVolumeLo.
      */
     @java.lang.Override
@@ -12700,14 +12905,14 @@ public final class MarketData {
       return quoteVolumeLo_;
     }
 
-    public static final int QUOTEVOLUMEHI_FIELD_NUMBER = 6;
+    public static final int QUOTEVOLUMEHI_FIELD_NUMBER = 8;
     private long quoteVolumeHi_;
     /**
      * <pre>
      * High 64-bits of the quote quantity traded
      * </pre>
      *
-     * <code>uint64 quoteVolumeHi = 6;</code>
+     * <code>uint64 quoteVolumeHi = 8;</code>
      * @return The quoteVolumeHi.
      */
     @java.lang.Override
@@ -12729,23 +12934,29 @@ public final class MarketData {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (open_ != 0L) {
+        output.writeUInt64(1, open_);
+      }
+      if (close_ != 0L) {
+        output.writeUInt64(2, close_);
+      }
       if (low_ != 0L) {
-        output.writeUInt64(1, low_);
+        output.writeUInt64(3, low_);
       }
       if (high_ != 0L) {
-        output.writeUInt64(2, high_);
+        output.writeUInt64(4, high_);
       }
       if (baseVolumeLo_ != 0L) {
-        output.writeUInt64(3, baseVolumeLo_);
+        output.writeUInt64(5, baseVolumeLo_);
       }
       if (baseVolumeHi_ != 0L) {
-        output.writeUInt64(4, baseVolumeHi_);
+        output.writeUInt64(6, baseVolumeHi_);
       }
       if (quoteVolumeLo_ != 0L) {
-        output.writeUInt64(5, quoteVolumeLo_);
+        output.writeUInt64(7, quoteVolumeLo_);
       }
       if (quoteVolumeHi_ != 0L) {
-        output.writeUInt64(6, quoteVolumeHi_);
+        output.writeUInt64(8, quoteVolumeHi_);
       }
       unknownFields.writeTo(output);
     }
@@ -12756,29 +12967,37 @@ public final class MarketData {
       if (size != -1) return size;
 
       size = 0;
+      if (open_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, open_);
+      }
+      if (close_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(2, close_);
+      }
       if (low_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(1, low_);
+          .computeUInt64Size(3, low_);
       }
       if (high_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, high_);
+          .computeUInt64Size(4, high_);
       }
       if (baseVolumeLo_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, baseVolumeLo_);
+          .computeUInt64Size(5, baseVolumeLo_);
       }
       if (baseVolumeHi_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(4, baseVolumeHi_);
+          .computeUInt64Size(6, baseVolumeHi_);
       }
       if (quoteVolumeLo_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(5, quoteVolumeLo_);
+          .computeUInt64Size(7, quoteVolumeLo_);
       }
       if (quoteVolumeHi_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(6, quoteVolumeHi_);
+          .computeUInt64Size(8, quoteVolumeHi_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -12795,6 +13014,10 @@ public final class MarketData {
       }
       md.MarketData.Summary other = (md.MarketData.Summary) obj;
 
+      if (getOpen()
+          != other.getOpen()) return false;
+      if (getClose()
+          != other.getClose()) return false;
       if (getLow()
           != other.getLow()) return false;
       if (getHigh()
@@ -12818,6 +13041,12 @@ public final class MarketData {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + OPEN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getOpen());
+      hash = (37 * hash) + CLOSE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getClose());
       hash = (37 * hash) + LOW_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getLow());
@@ -12973,6 +13202,10 @@ public final class MarketData {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        open_ = 0L;
+
+        close_ = 0L;
+
         low_ = 0L;
 
         high_ = 0L;
@@ -13011,6 +13244,8 @@ public final class MarketData {
       @java.lang.Override
       public md.MarketData.Summary buildPartial() {
         md.MarketData.Summary result = new md.MarketData.Summary(this);
+        result.open_ = open_;
+        result.close_ = close_;
         result.low_ = low_;
         result.high_ = high_;
         result.baseVolumeLo_ = baseVolumeLo_;
@@ -13065,6 +13300,12 @@ public final class MarketData {
 
       public Builder mergeFrom(md.MarketData.Summary other) {
         if (other == md.MarketData.Summary.getDefaultInstance()) return this;
+        if (other.getOpen() != 0L) {
+          setOpen(other.getOpen());
+        }
+        if (other.getClose() != 0L) {
+          setClose(other.getClose());
+        }
         if (other.getLow() != 0L) {
           setLow(other.getLow());
         }
@@ -13112,13 +13353,99 @@ public final class MarketData {
         return this;
       }
 
+      private long open_ ;
+      /**
+       * <pre>
+       * 24h open price
+       * </pre>
+       *
+       * <code>uint64 open = 1;</code>
+       * @return The open.
+       */
+      @java.lang.Override
+      public long getOpen() {
+        return open_;
+      }
+      /**
+       * <pre>
+       * 24h open price
+       * </pre>
+       *
+       * <code>uint64 open = 1;</code>
+       * @param value The open to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOpen(long value) {
+        
+        open_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 24h open price
+       * </pre>
+       *
+       * <code>uint64 open = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOpen() {
+        
+        open_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long close_ ;
+      /**
+       * <pre>
+       * Latest price
+       * </pre>
+       *
+       * <code>uint64 close = 2;</code>
+       * @return The close.
+       */
+      @java.lang.Override
+      public long getClose() {
+        return close_;
+      }
+      /**
+       * <pre>
+       * Latest price
+       * </pre>
+       *
+       * <code>uint64 close = 2;</code>
+       * @param value The close to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClose(long value) {
+        
+        close_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Latest price
+       * </pre>
+       *
+       * <code>uint64 close = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearClose() {
+        
+        close_ = 0L;
+        onChanged();
+        return this;
+      }
+
       private long low_ ;
       /**
        * <pre>
-       * Low price
+       * 24h low price
        * </pre>
        *
-       * <code>uint64 low = 1;</code>
+       * <code>uint64 low = 3;</code>
        * @return The low.
        */
       @java.lang.Override
@@ -13127,10 +13454,10 @@ public final class MarketData {
       }
       /**
        * <pre>
-       * Low price
+       * 24h low price
        * </pre>
        *
-       * <code>uint64 low = 1;</code>
+       * <code>uint64 low = 3;</code>
        * @param value The low to set.
        * @return This builder for chaining.
        */
@@ -13142,10 +13469,10 @@ public final class MarketData {
       }
       /**
        * <pre>
-       * Low price
+       * 24h low price
        * </pre>
        *
-       * <code>uint64 low = 1;</code>
+       * <code>uint64 low = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearLow() {
@@ -13158,10 +13485,10 @@ public final class MarketData {
       private long high_ ;
       /**
        * <pre>
-       * High price
+       * 24h high price
        * </pre>
        *
-       * <code>uint64 high = 2;</code>
+       * <code>uint64 high = 4;</code>
        * @return The high.
        */
       @java.lang.Override
@@ -13170,10 +13497,10 @@ public final class MarketData {
       }
       /**
        * <pre>
-       * High price
+       * 24h high price
        * </pre>
        *
-       * <code>uint64 high = 2;</code>
+       * <code>uint64 high = 4;</code>
        * @param value The high to set.
        * @return This builder for chaining.
        */
@@ -13185,10 +13512,10 @@ public final class MarketData {
       }
       /**
        * <pre>
-       * High price
+       * 24h high price
        * </pre>
        *
-       * <code>uint64 high = 2;</code>
+       * <code>uint64 high = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearHigh() {
@@ -13204,7 +13531,7 @@ public final class MarketData {
        * Low 64-bits of the base quantity traded
        * </pre>
        *
-       * <code>uint64 baseVolumeLo = 3;</code>
+       * <code>uint64 baseVolumeLo = 5;</code>
        * @return The baseVolumeLo.
        */
       @java.lang.Override
@@ -13216,7 +13543,7 @@ public final class MarketData {
        * Low 64-bits of the base quantity traded
        * </pre>
        *
-       * <code>uint64 baseVolumeLo = 3;</code>
+       * <code>uint64 baseVolumeLo = 5;</code>
        * @param value The baseVolumeLo to set.
        * @return This builder for chaining.
        */
@@ -13231,7 +13558,7 @@ public final class MarketData {
        * Low 64-bits of the base quantity traded
        * </pre>
        *
-       * <code>uint64 baseVolumeLo = 3;</code>
+       * <code>uint64 baseVolumeLo = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearBaseVolumeLo() {
@@ -13247,7 +13574,7 @@ public final class MarketData {
        * High 64-bits of the base quantity traded
        * </pre>
        *
-       * <code>uint64 baseVolumeHi = 4;</code>
+       * <code>uint64 baseVolumeHi = 6;</code>
        * @return The baseVolumeHi.
        */
       @java.lang.Override
@@ -13259,7 +13586,7 @@ public final class MarketData {
        * High 64-bits of the base quantity traded
        * </pre>
        *
-       * <code>uint64 baseVolumeHi = 4;</code>
+       * <code>uint64 baseVolumeHi = 6;</code>
        * @param value The baseVolumeHi to set.
        * @return This builder for chaining.
        */
@@ -13274,7 +13601,7 @@ public final class MarketData {
        * High 64-bits of the base quantity traded
        * </pre>
        *
-       * <code>uint64 baseVolumeHi = 4;</code>
+       * <code>uint64 baseVolumeHi = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearBaseVolumeHi() {
@@ -13290,7 +13617,7 @@ public final class MarketData {
        * Low 64-bits of the quote quantity traded
        * </pre>
        *
-       * <code>uint64 quoteVolumeLo = 5;</code>
+       * <code>uint64 quoteVolumeLo = 7;</code>
        * @return The quoteVolumeLo.
        */
       @java.lang.Override
@@ -13302,7 +13629,7 @@ public final class MarketData {
        * Low 64-bits of the quote quantity traded
        * </pre>
        *
-       * <code>uint64 quoteVolumeLo = 5;</code>
+       * <code>uint64 quoteVolumeLo = 7;</code>
        * @param value The quoteVolumeLo to set.
        * @return This builder for chaining.
        */
@@ -13317,7 +13644,7 @@ public final class MarketData {
        * Low 64-bits of the quote quantity traded
        * </pre>
        *
-       * <code>uint64 quoteVolumeLo = 5;</code>
+       * <code>uint64 quoteVolumeLo = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearQuoteVolumeLo() {
@@ -13333,7 +13660,7 @@ public final class MarketData {
        * High 64-bits of the quote quantity traded
        * </pre>
        *
-       * <code>uint64 quoteVolumeHi = 6;</code>
+       * <code>uint64 quoteVolumeHi = 8;</code>
        * @return The quoteVolumeHi.
        */
       @java.lang.Override
@@ -13345,7 +13672,7 @@ public final class MarketData {
        * High 64-bits of the quote quantity traded
        * </pre>
        *
-       * <code>uint64 quoteVolumeHi = 6;</code>
+       * <code>uint64 quoteVolumeHi = 8;</code>
        * @param value The quoteVolumeHi to set.
        * @return This builder for chaining.
        */
@@ -13360,7 +13687,7 @@ public final class MarketData {
        * High 64-bits of the quote quantity traded
        * </pre>
        *
-       * <code>uint64 quoteVolumeHi = 6;</code>
+       * <code>uint64 quoteVolumeHi = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearQuoteVolumeHi() {
@@ -16033,6 +16360,33 @@ public final class MarketData {
      */
     md.MarketData.TopOfBooksOrBuilder getTopOfBooksOrBuilder();
 
+    /**
+     * <pre>
+     * Rates for all assets
+     * </pre>
+     *
+     * <code>.md.RateUpdates rateUpdates = 3;</code>
+     * @return Whether the rateUpdates field is set.
+     */
+    boolean hasRateUpdates();
+    /**
+     * <pre>
+     * Rates for all assets
+     * </pre>
+     *
+     * <code>.md.RateUpdates rateUpdates = 3;</code>
+     * @return The rateUpdates.
+     */
+    md.MarketData.RateUpdates getRateUpdates();
+    /**
+     * <pre>
+     * Rates for all assets
+     * </pre>
+     *
+     * <code>.md.RateUpdates rateUpdates = 3;</code>
+     */
+    md.MarketData.RateUpdatesOrBuilder getRateUpdatesOrBuilder();
+
     public md.MarketData.AggMessage.InnerCase getInnerCase();
   }
   /**
@@ -16112,6 +16466,20 @@ public final class MarketData {
               innerCase_ = 2;
               break;
             }
+            case 26: {
+              md.MarketData.RateUpdates.Builder subBuilder = null;
+              if (innerCase_ == 3) {
+                subBuilder = ((md.MarketData.RateUpdates) inner_).toBuilder();
+              }
+              inner_ =
+                  input.readMessage(md.MarketData.RateUpdates.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((md.MarketData.RateUpdates) inner_);
+                inner_ = subBuilder.buildPartial();
+              }
+              innerCase_ = 3;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -16151,6 +16519,7 @@ public final class MarketData {
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       HEARTBEAT(1),
       TOPOFBOOKS(2),
+      RATEUPDATES(3),
       INNER_NOT_SET(0);
       private final int value;
       private InnerCase(int value) {
@@ -16170,6 +16539,7 @@ public final class MarketData {
         switch (value) {
           case 1: return HEARTBEAT;
           case 2: return TOPOFBOOKS;
+          case 3: return RATEUPDATES;
           case 0: return INNER_NOT_SET;
           default: return null;
         }
@@ -16271,6 +16641,49 @@ public final class MarketData {
       return md.MarketData.TopOfBooks.getDefaultInstance();
     }
 
+    public static final int RATEUPDATES_FIELD_NUMBER = 3;
+    /**
+     * <pre>
+     * Rates for all assets
+     * </pre>
+     *
+     * <code>.md.RateUpdates rateUpdates = 3;</code>
+     * @return Whether the rateUpdates field is set.
+     */
+    @java.lang.Override
+    public boolean hasRateUpdates() {
+      return innerCase_ == 3;
+    }
+    /**
+     * <pre>
+     * Rates for all assets
+     * </pre>
+     *
+     * <code>.md.RateUpdates rateUpdates = 3;</code>
+     * @return The rateUpdates.
+     */
+    @java.lang.Override
+    public md.MarketData.RateUpdates getRateUpdates() {
+      if (innerCase_ == 3) {
+         return (md.MarketData.RateUpdates) inner_;
+      }
+      return md.MarketData.RateUpdates.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * Rates for all assets
+     * </pre>
+     *
+     * <code>.md.RateUpdates rateUpdates = 3;</code>
+     */
+    @java.lang.Override
+    public md.MarketData.RateUpdatesOrBuilder getRateUpdatesOrBuilder() {
+      if (innerCase_ == 3) {
+         return (md.MarketData.RateUpdates) inner_;
+      }
+      return md.MarketData.RateUpdates.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -16291,6 +16704,9 @@ public final class MarketData {
       if (innerCase_ == 2) {
         output.writeMessage(2, (md.MarketData.TopOfBooks) inner_);
       }
+      if (innerCase_ == 3) {
+        output.writeMessage(3, (md.MarketData.RateUpdates) inner_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -16307,6 +16723,10 @@ public final class MarketData {
       if (innerCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, (md.MarketData.TopOfBooks) inner_);
+      }
+      if (innerCase_ == 3) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, (md.MarketData.RateUpdates) inner_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -16333,6 +16753,10 @@ public final class MarketData {
           if (!getTopOfBooks()
               .equals(other.getTopOfBooks())) return false;
           break;
+        case 3:
+          if (!getRateUpdates()
+              .equals(other.getRateUpdates())) return false;
+          break;
         case 0:
         default:
       }
@@ -16355,6 +16779,10 @@ public final class MarketData {
         case 2:
           hash = (37 * hash) + TOPOFBOOKS_FIELD_NUMBER;
           hash = (53 * hash) + getTopOfBooks().hashCode();
+          break;
+        case 3:
+          hash = (37 * hash) + RATEUPDATES_FIELD_NUMBER;
+          hash = (53 * hash) + getRateUpdates().hashCode();
           break;
         case 0:
         default:
@@ -16538,6 +16966,13 @@ public final class MarketData {
             result.inner_ = topOfBooksBuilder_.build();
           }
         }
+        if (innerCase_ == 3) {
+          if (rateUpdatesBuilder_ == null) {
+            result.inner_ = inner_;
+          } else {
+            result.inner_ = rateUpdatesBuilder_.build();
+          }
+        }
         result.innerCase_ = innerCase_;
         onBuilt();
         return result;
@@ -16594,6 +17029,10 @@ public final class MarketData {
           }
           case TOPOFBOOKS: {
             mergeTopOfBooks(other.getTopOfBooks());
+            break;
+          }
+          case RATEUPDATES: {
+            mergeRateUpdates(other.getRateUpdates());
             break;
           }
           case INNER_NOT_SET: {
@@ -16997,6 +17436,183 @@ public final class MarketData {
         onChanged();;
         return topOfBooksBuilder_;
       }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          md.MarketData.RateUpdates, md.MarketData.RateUpdates.Builder, md.MarketData.RateUpdatesOrBuilder> rateUpdatesBuilder_;
+      /**
+       * <pre>
+       * Rates for all assets
+       * </pre>
+       *
+       * <code>.md.RateUpdates rateUpdates = 3;</code>
+       * @return Whether the rateUpdates field is set.
+       */
+      @java.lang.Override
+      public boolean hasRateUpdates() {
+        return innerCase_ == 3;
+      }
+      /**
+       * <pre>
+       * Rates for all assets
+       * </pre>
+       *
+       * <code>.md.RateUpdates rateUpdates = 3;</code>
+       * @return The rateUpdates.
+       */
+      @java.lang.Override
+      public md.MarketData.RateUpdates getRateUpdates() {
+        if (rateUpdatesBuilder_ == null) {
+          if (innerCase_ == 3) {
+            return (md.MarketData.RateUpdates) inner_;
+          }
+          return md.MarketData.RateUpdates.getDefaultInstance();
+        } else {
+          if (innerCase_ == 3) {
+            return rateUpdatesBuilder_.getMessage();
+          }
+          return md.MarketData.RateUpdates.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Rates for all assets
+       * </pre>
+       *
+       * <code>.md.RateUpdates rateUpdates = 3;</code>
+       */
+      public Builder setRateUpdates(md.MarketData.RateUpdates value) {
+        if (rateUpdatesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          inner_ = value;
+          onChanged();
+        } else {
+          rateUpdatesBuilder_.setMessage(value);
+        }
+        innerCase_ = 3;
+        return this;
+      }
+      /**
+       * <pre>
+       * Rates for all assets
+       * </pre>
+       *
+       * <code>.md.RateUpdates rateUpdates = 3;</code>
+       */
+      public Builder setRateUpdates(
+          md.MarketData.RateUpdates.Builder builderForValue) {
+        if (rateUpdatesBuilder_ == null) {
+          inner_ = builderForValue.build();
+          onChanged();
+        } else {
+          rateUpdatesBuilder_.setMessage(builderForValue.build());
+        }
+        innerCase_ = 3;
+        return this;
+      }
+      /**
+       * <pre>
+       * Rates for all assets
+       * </pre>
+       *
+       * <code>.md.RateUpdates rateUpdates = 3;</code>
+       */
+      public Builder mergeRateUpdates(md.MarketData.RateUpdates value) {
+        if (rateUpdatesBuilder_ == null) {
+          if (innerCase_ == 3 &&
+              inner_ != md.MarketData.RateUpdates.getDefaultInstance()) {
+            inner_ = md.MarketData.RateUpdates.newBuilder((md.MarketData.RateUpdates) inner_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            inner_ = value;
+          }
+          onChanged();
+        } else {
+          if (innerCase_ == 3) {
+            rateUpdatesBuilder_.mergeFrom(value);
+          }
+          rateUpdatesBuilder_.setMessage(value);
+        }
+        innerCase_ = 3;
+        return this;
+      }
+      /**
+       * <pre>
+       * Rates for all assets
+       * </pre>
+       *
+       * <code>.md.RateUpdates rateUpdates = 3;</code>
+       */
+      public Builder clearRateUpdates() {
+        if (rateUpdatesBuilder_ == null) {
+          if (innerCase_ == 3) {
+            innerCase_ = 0;
+            inner_ = null;
+            onChanged();
+          }
+        } else {
+          if (innerCase_ == 3) {
+            innerCase_ = 0;
+            inner_ = null;
+          }
+          rateUpdatesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Rates for all assets
+       * </pre>
+       *
+       * <code>.md.RateUpdates rateUpdates = 3;</code>
+       */
+      public md.MarketData.RateUpdates.Builder getRateUpdatesBuilder() {
+        return getRateUpdatesFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Rates for all assets
+       * </pre>
+       *
+       * <code>.md.RateUpdates rateUpdates = 3;</code>
+       */
+      @java.lang.Override
+      public md.MarketData.RateUpdatesOrBuilder getRateUpdatesOrBuilder() {
+        if ((innerCase_ == 3) && (rateUpdatesBuilder_ != null)) {
+          return rateUpdatesBuilder_.getMessageOrBuilder();
+        } else {
+          if (innerCase_ == 3) {
+            return (md.MarketData.RateUpdates) inner_;
+          }
+          return md.MarketData.RateUpdates.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Rates for all assets
+       * </pre>
+       *
+       * <code>.md.RateUpdates rateUpdates = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          md.MarketData.RateUpdates, md.MarketData.RateUpdates.Builder, md.MarketData.RateUpdatesOrBuilder> 
+          getRateUpdatesFieldBuilder() {
+        if (rateUpdatesBuilder_ == null) {
+          if (!(innerCase_ == 3)) {
+            inner_ = md.MarketData.RateUpdates.getDefaultInstance();
+          }
+          rateUpdatesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              md.MarketData.RateUpdates, md.MarketData.RateUpdates.Builder, md.MarketData.RateUpdatesOrBuilder>(
+                  (md.MarketData.RateUpdates) inner_,
+                  getParentForChildren(),
+                  isClean());
+          inner_ = null;
+        }
+        innerCase_ = 3;
+        onChanged();;
+        return rateUpdatesBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -17120,6 +17736,16 @@ public final class MarketData {
      * @return The lastPrice.
      */
     long getLastPrice();
+
+    /**
+     * <pre>
+     * The 24h open price.
+     * </pre>
+     *
+     * <code>uint64 rolling24hPrice = 8;</code>
+     * @return The rolling24hPrice.
+     */
+    long getRolling24HPrice();
   }
   /**
    * <pre>
@@ -17203,6 +17829,11 @@ public final class MarketData {
             case 56: {
 
               lastPrice_ = input.readUInt64();
+              break;
+            }
+            case 64: {
+
+              rolling24HPrice_ = input.readUInt64();
               break;
             }
             default: {
@@ -17339,6 +17970,21 @@ public final class MarketData {
       return lastPrice_;
     }
 
+    public static final int ROLLING24HPRICE_FIELD_NUMBER = 8;
+    private long rolling24HPrice_;
+    /**
+     * <pre>
+     * The 24h open price.
+     * </pre>
+     *
+     * <code>uint64 rolling24hPrice = 8;</code>
+     * @return The rolling24hPrice.
+     */
+    @java.lang.Override
+    public long getRolling24HPrice() {
+      return rolling24HPrice_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -17373,6 +18019,9 @@ public final class MarketData {
       }
       if (lastPrice_ != 0L) {
         output.writeUInt64(7, lastPrice_);
+      }
+      if (rolling24HPrice_ != 0L) {
+        output.writeUInt64(8, rolling24HPrice_);
       }
       unknownFields.writeTo(output);
     }
@@ -17411,6 +18060,10 @@ public final class MarketData {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(7, lastPrice_);
       }
+      if (rolling24HPrice_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(8, rolling24HPrice_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -17440,6 +18093,8 @@ public final class MarketData {
           != other.getAskQuantity()) return false;
       if (getLastPrice()
           != other.getLastPrice()) return false;
+      if (getRolling24HPrice()
+          != other.getRolling24HPrice()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -17472,6 +18127,9 @@ public final class MarketData {
       hash = (37 * hash) + LASTPRICE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getLastPrice());
+      hash = (37 * hash) + ROLLING24HPRICE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRolling24HPrice());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -17623,6 +18281,8 @@ public final class MarketData {
 
         lastPrice_ = 0L;
 
+        rolling24HPrice_ = 0L;
+
         return this;
       }
 
@@ -17656,6 +18316,7 @@ public final class MarketData {
         result.askPrice_ = askPrice_;
         result.askQuantity_ = askQuantity_;
         result.lastPrice_ = lastPrice_;
+        result.rolling24HPrice_ = rolling24HPrice_;
         onBuilt();
         return result;
       }
@@ -17724,6 +18385,9 @@ public final class MarketData {
         }
         if (other.getLastPrice() != 0L) {
           setLastPrice(other.getLastPrice());
+        }
+        if (other.getRolling24HPrice() != 0L) {
+          setRolling24HPrice(other.getRolling24HPrice());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -18042,6 +18706,49 @@ public final class MarketData {
       public Builder clearLastPrice() {
         
         lastPrice_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long rolling24HPrice_ ;
+      /**
+       * <pre>
+       * The 24h open price.
+       * </pre>
+       *
+       * <code>uint64 rolling24hPrice = 8;</code>
+       * @return The rolling24hPrice.
+       */
+      @java.lang.Override
+      public long getRolling24HPrice() {
+        return rolling24HPrice_;
+      }
+      /**
+       * <pre>
+       * The 24h open price.
+       * </pre>
+       *
+       * <code>uint64 rolling24hPrice = 8;</code>
+       * @param value The rolling24hPrice to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRolling24HPrice(long value) {
+        
+        rolling24HPrice_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The 24h open price.
+       * </pre>
+       *
+       * <code>uint64 rolling24hPrice = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRolling24HPrice() {
+        
+        rolling24HPrice_ = 0L;
         onChanged();
         return this;
       }
@@ -18896,6 +19603,1601 @@ public final class MarketData {
 
     @java.lang.Override
     public md.MarketData.TopOfBooks getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RateUpdateOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:md.RateUpdate)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>uint64 assetId = 1;</code>
+     * @return The assetId.
+     */
+    long getAssetId();
+
+    /**
+     * <pre>
+     * The nanosecond timestamp of the update.
+     * </pre>
+     *
+     * <code>uint64 timestamp = 2;</code>
+     * @return The timestamp.
+     */
+    long getTimestamp();
+
+    /**
+     * <pre>
+     * The asset rate at the given timestamp.
+     * </pre>
+     *
+     * <code>uint64 rate = 3;</code>
+     * @return The rate.
+     */
+    long getRate();
+
+    /**
+     * <code>.md.RateUpdateSide side = 4;</code>
+     * @return The enum numeric value on the wire for side.
+     */
+    int getSideValue();
+    /**
+     * <code>.md.RateUpdateSide side = 4;</code>
+     * @return The side.
+     */
+    md.MarketData.RateUpdateSide getSide();
+  }
+  /**
+   * <pre>
+   * Rate update. Used in conjuction with another rate update to get the price of
+   * that divisor. Rate's should not be used alone. For example, given a
+   * RateUpdate for `assetId = BTC, updateSide = BASE` of `r1`, and `assetId =
+   * EUR, updateSide = QUOTE` of `r2`, the BTC-EUR price estimate is `r1 * r2`.
+   * </pre>
+   *
+   * Protobuf type {@code md.RateUpdate}
+   */
+  public static final class RateUpdate extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:md.RateUpdate)
+      RateUpdateOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RateUpdate.newBuilder() to construct.
+    private RateUpdate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RateUpdate() {
+      side_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RateUpdate();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RateUpdate(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              assetId_ = input.readUInt64();
+              break;
+            }
+            case 16: {
+
+              timestamp_ = input.readUInt64();
+              break;
+            }
+            case 24: {
+
+              rate_ = input.readUInt64();
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+
+              side_ = rawValue;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return md.MarketData.internal_static_md_RateUpdate_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return md.MarketData.internal_static_md_RateUpdate_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              md.MarketData.RateUpdate.class, md.MarketData.RateUpdate.Builder.class);
+    }
+
+    public static final int ASSETID_FIELD_NUMBER = 1;
+    private long assetId_;
+    /**
+     * <code>uint64 assetId = 1;</code>
+     * @return The assetId.
+     */
+    @java.lang.Override
+    public long getAssetId() {
+      return assetId_;
+    }
+
+    public static final int TIMESTAMP_FIELD_NUMBER = 2;
+    private long timestamp_;
+    /**
+     * <pre>
+     * The nanosecond timestamp of the update.
+     * </pre>
+     *
+     * <code>uint64 timestamp = 2;</code>
+     * @return The timestamp.
+     */
+    @java.lang.Override
+    public long getTimestamp() {
+      return timestamp_;
+    }
+
+    public static final int RATE_FIELD_NUMBER = 3;
+    private long rate_;
+    /**
+     * <pre>
+     * The asset rate at the given timestamp.
+     * </pre>
+     *
+     * <code>uint64 rate = 3;</code>
+     * @return The rate.
+     */
+    @java.lang.Override
+    public long getRate() {
+      return rate_;
+    }
+
+    public static final int SIDE_FIELD_NUMBER = 4;
+    private int side_;
+    /**
+     * <code>.md.RateUpdateSide side = 4;</code>
+     * @return The enum numeric value on the wire for side.
+     */
+    @java.lang.Override public int getSideValue() {
+      return side_;
+    }
+    /**
+     * <code>.md.RateUpdateSide side = 4;</code>
+     * @return The side.
+     */
+    @java.lang.Override public md.MarketData.RateUpdateSide getSide() {
+      @SuppressWarnings("deprecation")
+      md.MarketData.RateUpdateSide result = md.MarketData.RateUpdateSide.valueOf(side_);
+      return result == null ? md.MarketData.RateUpdateSide.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (assetId_ != 0L) {
+        output.writeUInt64(1, assetId_);
+      }
+      if (timestamp_ != 0L) {
+        output.writeUInt64(2, timestamp_);
+      }
+      if (rate_ != 0L) {
+        output.writeUInt64(3, rate_);
+      }
+      if (side_ != md.MarketData.RateUpdateSide.BASE.getNumber()) {
+        output.writeEnum(4, side_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (assetId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, assetId_);
+      }
+      if (timestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(2, timestamp_);
+      }
+      if (rate_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, rate_);
+      }
+      if (side_ != md.MarketData.RateUpdateSide.BASE.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, side_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof md.MarketData.RateUpdate)) {
+        return super.equals(obj);
+      }
+      md.MarketData.RateUpdate other = (md.MarketData.RateUpdate) obj;
+
+      if (getAssetId()
+          != other.getAssetId()) return false;
+      if (getTimestamp()
+          != other.getTimestamp()) return false;
+      if (getRate()
+          != other.getRate()) return false;
+      if (side_ != other.side_) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ASSETID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getAssetId());
+      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTimestamp());
+      hash = (37 * hash) + RATE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getRate());
+      hash = (37 * hash) + SIDE_FIELD_NUMBER;
+      hash = (53 * hash) + side_;
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static md.MarketData.RateUpdate parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static md.MarketData.RateUpdate parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static md.MarketData.RateUpdate parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static md.MarketData.RateUpdate parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static md.MarketData.RateUpdate parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static md.MarketData.RateUpdate parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static md.MarketData.RateUpdate parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static md.MarketData.RateUpdate parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static md.MarketData.RateUpdate parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static md.MarketData.RateUpdate parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static md.MarketData.RateUpdate parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static md.MarketData.RateUpdate parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(md.MarketData.RateUpdate prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Rate update. Used in conjuction with another rate update to get the price of
+     * that divisor. Rate's should not be used alone. For example, given a
+     * RateUpdate for `assetId = BTC, updateSide = BASE` of `r1`, and `assetId =
+     * EUR, updateSide = QUOTE` of `r2`, the BTC-EUR price estimate is `r1 * r2`.
+     * </pre>
+     *
+     * Protobuf type {@code md.RateUpdate}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:md.RateUpdate)
+        md.MarketData.RateUpdateOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return md.MarketData.internal_static_md_RateUpdate_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return md.MarketData.internal_static_md_RateUpdate_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                md.MarketData.RateUpdate.class, md.MarketData.RateUpdate.Builder.class);
+      }
+
+      // Construct using md.MarketData.RateUpdate.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        assetId_ = 0L;
+
+        timestamp_ = 0L;
+
+        rate_ = 0L;
+
+        side_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return md.MarketData.internal_static_md_RateUpdate_descriptor;
+      }
+
+      @java.lang.Override
+      public md.MarketData.RateUpdate getDefaultInstanceForType() {
+        return md.MarketData.RateUpdate.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public md.MarketData.RateUpdate build() {
+        md.MarketData.RateUpdate result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public md.MarketData.RateUpdate buildPartial() {
+        md.MarketData.RateUpdate result = new md.MarketData.RateUpdate(this);
+        result.assetId_ = assetId_;
+        result.timestamp_ = timestamp_;
+        result.rate_ = rate_;
+        result.side_ = side_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof md.MarketData.RateUpdate) {
+          return mergeFrom((md.MarketData.RateUpdate)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(md.MarketData.RateUpdate other) {
+        if (other == md.MarketData.RateUpdate.getDefaultInstance()) return this;
+        if (other.getAssetId() != 0L) {
+          setAssetId(other.getAssetId());
+        }
+        if (other.getTimestamp() != 0L) {
+          setTimestamp(other.getTimestamp());
+        }
+        if (other.getRate() != 0L) {
+          setRate(other.getRate());
+        }
+        if (other.side_ != 0) {
+          setSideValue(other.getSideValue());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        md.MarketData.RateUpdate parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (md.MarketData.RateUpdate) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long assetId_ ;
+      /**
+       * <code>uint64 assetId = 1;</code>
+       * @return The assetId.
+       */
+      @java.lang.Override
+      public long getAssetId() {
+        return assetId_;
+      }
+      /**
+       * <code>uint64 assetId = 1;</code>
+       * @param value The assetId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAssetId(long value) {
+        
+        assetId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 assetId = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAssetId() {
+        
+        assetId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long timestamp_ ;
+      /**
+       * <pre>
+       * The nanosecond timestamp of the update.
+       * </pre>
+       *
+       * <code>uint64 timestamp = 2;</code>
+       * @return The timestamp.
+       */
+      @java.lang.Override
+      public long getTimestamp() {
+        return timestamp_;
+      }
+      /**
+       * <pre>
+       * The nanosecond timestamp of the update.
+       * </pre>
+       *
+       * <code>uint64 timestamp = 2;</code>
+       * @param value The timestamp to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTimestamp(long value) {
+        
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The nanosecond timestamp of the update.
+       * </pre>
+       *
+       * <code>uint64 timestamp = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTimestamp() {
+        
+        timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long rate_ ;
+      /**
+       * <pre>
+       * The asset rate at the given timestamp.
+       * </pre>
+       *
+       * <code>uint64 rate = 3;</code>
+       * @return The rate.
+       */
+      @java.lang.Override
+      public long getRate() {
+        return rate_;
+      }
+      /**
+       * <pre>
+       * The asset rate at the given timestamp.
+       * </pre>
+       *
+       * <code>uint64 rate = 3;</code>
+       * @param value The rate to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRate(long value) {
+        
+        rate_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The asset rate at the given timestamp.
+       * </pre>
+       *
+       * <code>uint64 rate = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRate() {
+        
+        rate_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int side_ = 0;
+      /**
+       * <code>.md.RateUpdateSide side = 4;</code>
+       * @return The enum numeric value on the wire for side.
+       */
+      @java.lang.Override public int getSideValue() {
+        return side_;
+      }
+      /**
+       * <code>.md.RateUpdateSide side = 4;</code>
+       * @param value The enum numeric value on the wire for side to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSideValue(int value) {
+        
+        side_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.md.RateUpdateSide side = 4;</code>
+       * @return The side.
+       */
+      @java.lang.Override
+      public md.MarketData.RateUpdateSide getSide() {
+        @SuppressWarnings("deprecation")
+        md.MarketData.RateUpdateSide result = md.MarketData.RateUpdateSide.valueOf(side_);
+        return result == null ? md.MarketData.RateUpdateSide.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.md.RateUpdateSide side = 4;</code>
+       * @param value The side to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSide(md.MarketData.RateUpdateSide value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        side_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.md.RateUpdateSide side = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSide() {
+        
+        side_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:md.RateUpdate)
+    }
+
+    // @@protoc_insertion_point(class_scope:md.RateUpdate)
+    private static final md.MarketData.RateUpdate DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new md.MarketData.RateUpdate();
+    }
+
+    public static md.MarketData.RateUpdate getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RateUpdate>
+        PARSER = new com.google.protobuf.AbstractParser<RateUpdate>() {
+      @java.lang.Override
+      public RateUpdate parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RateUpdate(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RateUpdate> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RateUpdate> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public md.MarketData.RateUpdate getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RateUpdatesOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:md.RateUpdates)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .md.RateUpdate updates = 1;</code>
+     */
+    java.util.List<md.MarketData.RateUpdate> 
+        getUpdatesList();
+    /**
+     * <code>repeated .md.RateUpdate updates = 1;</code>
+     */
+    md.MarketData.RateUpdate getUpdates(int index);
+    /**
+     * <code>repeated .md.RateUpdate updates = 1;</code>
+     */
+    int getUpdatesCount();
+    /**
+     * <code>repeated .md.RateUpdate updates = 1;</code>
+     */
+    java.util.List<? extends md.MarketData.RateUpdateOrBuilder> 
+        getUpdatesOrBuilderList();
+    /**
+     * <code>repeated .md.RateUpdate updates = 1;</code>
+     */
+    md.MarketData.RateUpdateOrBuilder getUpdatesOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * Rates for all assets. Published on connect and updates since the last
+   * rate-updates message.
+   * </pre>
+   *
+   * Protobuf type {@code md.RateUpdates}
+   */
+  public static final class RateUpdates extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:md.RateUpdates)
+      RateUpdatesOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use RateUpdates.newBuilder() to construct.
+    private RateUpdates(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private RateUpdates() {
+      updates_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new RateUpdates();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private RateUpdates(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                updates_ = new java.util.ArrayList<md.MarketData.RateUpdate>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              updates_.add(
+                  input.readMessage(md.MarketData.RateUpdate.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          updates_ = java.util.Collections.unmodifiableList(updates_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return md.MarketData.internal_static_md_RateUpdates_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return md.MarketData.internal_static_md_RateUpdates_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              md.MarketData.RateUpdates.class, md.MarketData.RateUpdates.Builder.class);
+    }
+
+    public static final int UPDATES_FIELD_NUMBER = 1;
+    private java.util.List<md.MarketData.RateUpdate> updates_;
+    /**
+     * <code>repeated .md.RateUpdate updates = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<md.MarketData.RateUpdate> getUpdatesList() {
+      return updates_;
+    }
+    /**
+     * <code>repeated .md.RateUpdate updates = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends md.MarketData.RateUpdateOrBuilder> 
+        getUpdatesOrBuilderList() {
+      return updates_;
+    }
+    /**
+     * <code>repeated .md.RateUpdate updates = 1;</code>
+     */
+    @java.lang.Override
+    public int getUpdatesCount() {
+      return updates_.size();
+    }
+    /**
+     * <code>repeated .md.RateUpdate updates = 1;</code>
+     */
+    @java.lang.Override
+    public md.MarketData.RateUpdate getUpdates(int index) {
+      return updates_.get(index);
+    }
+    /**
+     * <code>repeated .md.RateUpdate updates = 1;</code>
+     */
+    @java.lang.Override
+    public md.MarketData.RateUpdateOrBuilder getUpdatesOrBuilder(
+        int index) {
+      return updates_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < updates_.size(); i++) {
+        output.writeMessage(1, updates_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < updates_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, updates_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof md.MarketData.RateUpdates)) {
+        return super.equals(obj);
+      }
+      md.MarketData.RateUpdates other = (md.MarketData.RateUpdates) obj;
+
+      if (!getUpdatesList()
+          .equals(other.getUpdatesList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getUpdatesCount() > 0) {
+        hash = (37 * hash) + UPDATES_FIELD_NUMBER;
+        hash = (53 * hash) + getUpdatesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static md.MarketData.RateUpdates parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static md.MarketData.RateUpdates parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static md.MarketData.RateUpdates parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static md.MarketData.RateUpdates parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static md.MarketData.RateUpdates parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static md.MarketData.RateUpdates parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static md.MarketData.RateUpdates parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static md.MarketData.RateUpdates parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static md.MarketData.RateUpdates parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static md.MarketData.RateUpdates parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static md.MarketData.RateUpdates parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static md.MarketData.RateUpdates parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(md.MarketData.RateUpdates prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Rates for all assets. Published on connect and updates since the last
+     * rate-updates message.
+     * </pre>
+     *
+     * Protobuf type {@code md.RateUpdates}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:md.RateUpdates)
+        md.MarketData.RateUpdatesOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return md.MarketData.internal_static_md_RateUpdates_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return md.MarketData.internal_static_md_RateUpdates_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                md.MarketData.RateUpdates.class, md.MarketData.RateUpdates.Builder.class);
+      }
+
+      // Construct using md.MarketData.RateUpdates.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getUpdatesFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (updatesBuilder_ == null) {
+          updates_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          updatesBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return md.MarketData.internal_static_md_RateUpdates_descriptor;
+      }
+
+      @java.lang.Override
+      public md.MarketData.RateUpdates getDefaultInstanceForType() {
+        return md.MarketData.RateUpdates.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public md.MarketData.RateUpdates build() {
+        md.MarketData.RateUpdates result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public md.MarketData.RateUpdates buildPartial() {
+        md.MarketData.RateUpdates result = new md.MarketData.RateUpdates(this);
+        int from_bitField0_ = bitField0_;
+        if (updatesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            updates_ = java.util.Collections.unmodifiableList(updates_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.updates_ = updates_;
+        } else {
+          result.updates_ = updatesBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof md.MarketData.RateUpdates) {
+          return mergeFrom((md.MarketData.RateUpdates)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(md.MarketData.RateUpdates other) {
+        if (other == md.MarketData.RateUpdates.getDefaultInstance()) return this;
+        if (updatesBuilder_ == null) {
+          if (!other.updates_.isEmpty()) {
+            if (updates_.isEmpty()) {
+              updates_ = other.updates_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureUpdatesIsMutable();
+              updates_.addAll(other.updates_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.updates_.isEmpty()) {
+            if (updatesBuilder_.isEmpty()) {
+              updatesBuilder_.dispose();
+              updatesBuilder_ = null;
+              updates_ = other.updates_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              updatesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getUpdatesFieldBuilder() : null;
+            } else {
+              updatesBuilder_.addAllMessages(other.updates_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        md.MarketData.RateUpdates parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (md.MarketData.RateUpdates) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<md.MarketData.RateUpdate> updates_ =
+        java.util.Collections.emptyList();
+      private void ensureUpdatesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          updates_ = new java.util.ArrayList<md.MarketData.RateUpdate>(updates_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          md.MarketData.RateUpdate, md.MarketData.RateUpdate.Builder, md.MarketData.RateUpdateOrBuilder> updatesBuilder_;
+
+      /**
+       * <code>repeated .md.RateUpdate updates = 1;</code>
+       */
+      public java.util.List<md.MarketData.RateUpdate> getUpdatesList() {
+        if (updatesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(updates_);
+        } else {
+          return updatesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .md.RateUpdate updates = 1;</code>
+       */
+      public int getUpdatesCount() {
+        if (updatesBuilder_ == null) {
+          return updates_.size();
+        } else {
+          return updatesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .md.RateUpdate updates = 1;</code>
+       */
+      public md.MarketData.RateUpdate getUpdates(int index) {
+        if (updatesBuilder_ == null) {
+          return updates_.get(index);
+        } else {
+          return updatesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .md.RateUpdate updates = 1;</code>
+       */
+      public Builder setUpdates(
+          int index, md.MarketData.RateUpdate value) {
+        if (updatesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUpdatesIsMutable();
+          updates_.set(index, value);
+          onChanged();
+        } else {
+          updatesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .md.RateUpdate updates = 1;</code>
+       */
+      public Builder setUpdates(
+          int index, md.MarketData.RateUpdate.Builder builderForValue) {
+        if (updatesBuilder_ == null) {
+          ensureUpdatesIsMutable();
+          updates_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          updatesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .md.RateUpdate updates = 1;</code>
+       */
+      public Builder addUpdates(md.MarketData.RateUpdate value) {
+        if (updatesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUpdatesIsMutable();
+          updates_.add(value);
+          onChanged();
+        } else {
+          updatesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .md.RateUpdate updates = 1;</code>
+       */
+      public Builder addUpdates(
+          int index, md.MarketData.RateUpdate value) {
+        if (updatesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureUpdatesIsMutable();
+          updates_.add(index, value);
+          onChanged();
+        } else {
+          updatesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .md.RateUpdate updates = 1;</code>
+       */
+      public Builder addUpdates(
+          md.MarketData.RateUpdate.Builder builderForValue) {
+        if (updatesBuilder_ == null) {
+          ensureUpdatesIsMutable();
+          updates_.add(builderForValue.build());
+          onChanged();
+        } else {
+          updatesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .md.RateUpdate updates = 1;</code>
+       */
+      public Builder addUpdates(
+          int index, md.MarketData.RateUpdate.Builder builderForValue) {
+        if (updatesBuilder_ == null) {
+          ensureUpdatesIsMutable();
+          updates_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          updatesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .md.RateUpdate updates = 1;</code>
+       */
+      public Builder addAllUpdates(
+          java.lang.Iterable<? extends md.MarketData.RateUpdate> values) {
+        if (updatesBuilder_ == null) {
+          ensureUpdatesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, updates_);
+          onChanged();
+        } else {
+          updatesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .md.RateUpdate updates = 1;</code>
+       */
+      public Builder clearUpdates() {
+        if (updatesBuilder_ == null) {
+          updates_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          updatesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .md.RateUpdate updates = 1;</code>
+       */
+      public Builder removeUpdates(int index) {
+        if (updatesBuilder_ == null) {
+          ensureUpdatesIsMutable();
+          updates_.remove(index);
+          onChanged();
+        } else {
+          updatesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .md.RateUpdate updates = 1;</code>
+       */
+      public md.MarketData.RateUpdate.Builder getUpdatesBuilder(
+          int index) {
+        return getUpdatesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .md.RateUpdate updates = 1;</code>
+       */
+      public md.MarketData.RateUpdateOrBuilder getUpdatesOrBuilder(
+          int index) {
+        if (updatesBuilder_ == null) {
+          return updates_.get(index);  } else {
+          return updatesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .md.RateUpdate updates = 1;</code>
+       */
+      public java.util.List<? extends md.MarketData.RateUpdateOrBuilder> 
+           getUpdatesOrBuilderList() {
+        if (updatesBuilder_ != null) {
+          return updatesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(updates_);
+        }
+      }
+      /**
+       * <code>repeated .md.RateUpdate updates = 1;</code>
+       */
+      public md.MarketData.RateUpdate.Builder addUpdatesBuilder() {
+        return getUpdatesFieldBuilder().addBuilder(
+            md.MarketData.RateUpdate.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .md.RateUpdate updates = 1;</code>
+       */
+      public md.MarketData.RateUpdate.Builder addUpdatesBuilder(
+          int index) {
+        return getUpdatesFieldBuilder().addBuilder(
+            index, md.MarketData.RateUpdate.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .md.RateUpdate updates = 1;</code>
+       */
+      public java.util.List<md.MarketData.RateUpdate.Builder> 
+           getUpdatesBuilderList() {
+        return getUpdatesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          md.MarketData.RateUpdate, md.MarketData.RateUpdate.Builder, md.MarketData.RateUpdateOrBuilder> 
+          getUpdatesFieldBuilder() {
+        if (updatesBuilder_ == null) {
+          updatesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              md.MarketData.RateUpdate, md.MarketData.RateUpdate.Builder, md.MarketData.RateUpdateOrBuilder>(
+                  updates_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          updates_ = null;
+        }
+        return updatesBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:md.RateUpdates)
+    }
+
+    // @@protoc_insertion_point(class_scope:md.RateUpdates)
+    private static final md.MarketData.RateUpdates DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new md.MarketData.RateUpdates();
+    }
+
+    public static md.MarketData.RateUpdates getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<RateUpdates>
+        PARSER = new com.google.protobuf.AbstractParser<RateUpdates>() {
+      @java.lang.Override
+      public RateUpdates parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RateUpdates(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RateUpdates> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RateUpdates> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public md.MarketData.RateUpdates getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -21130,6 +23432,16 @@ public final class MarketData {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_md_TopOfBooks_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_md_RateUpdate_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_md_RateUpdate_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_md_RateUpdates_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_md_RateUpdates_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_md_ClientMessage_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -21171,38 +23483,44 @@ public final class MarketData {
       "md.MarketByOrder.Order\022\r\n\005chunk\030\002 \001(\r\022\021\n" +
       "\tnumChunks\030\003 \001(\r\032Y\n\005Order\022\r\n\005price\030\001 \001(\004" +
       "\022\020\n\010quantity\030\002 \001(\004\022\027\n\017exchangeOrderId\030\003 " +
-      "\001(\004\022\026\n\004side\030\004 \001(\0162\010.md.Side\"\321\002\n\021MarketBy" +
+      "\001(\004\022\026\n\004side\030\004 \001(\0162\010.md.Side\"\317\002\n\021MarketBy" +
       "OrderDiff\022)\n\005diffs\030\001 \003(\0132\032.md.MarketByOr" +
       "derDiff.Diff\022\026\n\016totalBidLevels\030\002 \001(\r\022\026\n\016" +
       "totalAskLevels\030\003 \001(\r\022\026\n\016totalBidOrders\030\004" +
-      " \001(\r\022\026\n\016totalAskOrders\030\005 \001(\r\032\203\001\n\004Diff\022\r\n" +
+      " \001(\r\022\026\n\016totalAskOrders\030\005 \001(\r\032\202\001\n\004Diff\022\r\n" +
       "\005price\030\001 \001(\004\022\020\n\010quantity\030\002 \001(\004\022\027\n\017exchan" +
       "geOrderId\030\003 \001(\004\022\026\n\004side\030\004 \001(\0162\010.md.Side\022" +
-      ")\n\002op\030\005 \001(\0162\035.md.MarketByOrderDiff.Order" +
-      "Op\"+\n\007OrderOp\022\007\n\003ADD\020\000\022\n\n\006REMOVE\020\001\022\013\n\007RE" +
-      "PLACE\020\002\"\345\001\n\006Trades\022 \n\006trades\030\001 \003(\0132\020.md." +
-      "Trades.Trade\032\270\001\n\005Trade\022\017\n\007tradeId\030\001 \001(\004\022" +
-      "\r\n\005price\030\002 \001(\004\022 \n\016aggressingSide\030\003 \001(\0162\010" +
-      ".md.Side\022\036\n\026restingExchangeOrderId\030\004 \001(\004" +
-      "\022\024\n\014fillQuantity\030\005 \001(\004\022\024\n\014transactTime\030\006" +
-      " \001(\004\022!\n\031aggressingExchangeOrderId\030\007 \001(\004\"" +
-      "~\n\007Summary\022\013\n\003low\030\001 \001(\004\022\014\n\004high\030\002 \001(\004\022\024\n" +
-      "\014baseVolumeLo\030\003 \001(\004\022\024\n\014baseVolumeHi\030\004 \001(" +
-      "\004\022\025\n\rquoteVolumeLo\030\005 \001(\004\022\025\n\rquoteVolumeH" +
-      "i\030\006 \001(\004\"\233\001\n\005Kline\022#\n\010interval\030\001 \001(\0162\021.md" +
-      ".KlineInterval\022\021\n\tstartTime\030\002 \001(\004\022\014\n\004ope" +
-      "n\030\003 \001(\004\022\r\n\005close\030\004 \001(\004\022\014\n\004high\030\005 \001(\004\022\013\n\003" +
-      "low\030\006 \001(\004\022\020\n\010volumeLo\030\007 \001(\004\022\020\n\010volumeHi\030" +
-      "\010 \001(\004\"1\n\tHeartbeat\022\021\n\trequestId\030\001 \001(\004\022\021\n" +
-      "\ttimestamp\030\002 \001(\004\"-\n\nMdMessages\022\037\n\010messag" +
-      "es\030\001 \003(\0132\r.md.MdMessage\"_\n\nAggMessage\022\"\n" +
-      "\theartbeat\030\001 \001(\0132\r.md.HeartbeatH\000\022$\n\ntop" +
-      "OfBooks\030\002 \001(\0132\016.md.TopOfBooksH\000B\007\n\005inner" +
-      "\"\224\001\n\tTopOfBook\022\020\n\010marketId\030\001 \001(\004\022\024\n\014tran" +
-      "sactTime\030\002 \001(\004\022\020\n\010bidPrice\030\003 \001(\004\022\023\n\013bidQ" +
-      "uantity\030\004 \001(\004\022\020\n\010askPrice\030\005 \001(\004\022\023\n\013askQu" +
-      "antity\030\006 \001(\004\022\021\n\tlastPrice\030\007 \001(\004\")\n\nTopOf" +
-      "Books\022\033\n\004tops\030\001 \003(\0132\r.md.TopOfBook\"Z\n\rCl" +
+      "(\n\002op\030\005 \001(\0162\034.md.MarketByOrderDiff.DiffO" +
+      "p\"*\n\006DiffOp\022\007\n\003ADD\020\000\022\n\n\006REMOVE\020\001\022\013\n\007REPL" +
+      "ACE\020\002\"\345\001\n\006Trades\022 \n\006trades\030\001 \003(\0132\020.md.Tr" +
+      "ades.Trade\032\270\001\n\005Trade\022\017\n\007tradeId\030\001 \001(\004\022\r\n" +
+      "\005price\030\002 \001(\004\022 \n\016aggressingSide\030\003 \001(\0162\010.m" +
+      "d.Side\022\036\n\026restingExchangeOrderId\030\004 \001(\004\022\024" +
+      "\n\014fillQuantity\030\005 \001(\004\022\024\n\014transactTime\030\006 \001" +
+      "(\004\022!\n\031aggressingExchangeOrderId\030\007 \001(\004\"\233\001" +
+      "\n\007Summary\022\014\n\004open\030\001 \001(\004\022\r\n\005close\030\002 \001(\004\022\013" +
+      "\n\003low\030\003 \001(\004\022\014\n\004high\030\004 \001(\004\022\024\n\014baseVolumeL" +
+      "o\030\005 \001(\004\022\024\n\014baseVolumeHi\030\006 \001(\004\022\025\n\rquoteVo" +
+      "lumeLo\030\007 \001(\004\022\025\n\rquoteVolumeHi\030\010 \001(\004\"\233\001\n\005" +
+      "Kline\022#\n\010interval\030\001 \001(\0162\021.md.KlineInterv" +
+      "al\022\021\n\tstartTime\030\002 \001(\004\022\014\n\004open\030\003 \001(\004\022\r\n\005c" +
+      "lose\030\004 \001(\004\022\014\n\004high\030\005 \001(\004\022\013\n\003low\030\006 \001(\004\022\020\n" +
+      "\010volumeLo\030\007 \001(\004\022\020\n\010volumeHi\030\010 \001(\004\"1\n\tHea" +
+      "rtbeat\022\021\n\trequestId\030\001 \001(\004\022\021\n\ttimestamp\030\002" +
+      " \001(\004\"-\n\nMdMessages\022\037\n\010messages\030\001 \003(\0132\r.m" +
+      "d.MdMessage\"\207\001\n\nAggMessage\022\"\n\theartbeat\030" +
+      "\001 \001(\0132\r.md.HeartbeatH\000\022$\n\ntopOfBooks\030\002 \001" +
+      "(\0132\016.md.TopOfBooksH\000\022&\n\013rateUpdates\030\003 \001(" +
+      "\0132\017.md.RateUpdatesH\000B\007\n\005inner\"\255\001\n\tTopOfB" +
+      "ook\022\020\n\010marketId\030\001 \001(\004\022\024\n\014transactTime\030\002 " +
+      "\001(\004\022\020\n\010bidPrice\030\003 \001(\004\022\023\n\013bidQuantity\030\004 \001" +
+      "(\004\022\020\n\010askPrice\030\005 \001(\004\022\023\n\013askQuantity\030\006 \001(" +
+      "\004\022\021\n\tlastPrice\030\007 \001(\004\022\027\n\017rolling24hPrice\030" +
+      "\010 \001(\004\")\n\nTopOfBooks\022\033\n\004tops\030\001 \003(\0132\r.md.T" +
+      "opOfBook\"`\n\nRateUpdate\022\017\n\007assetId\030\001 \001(\004\022" +
+      "\021\n\ttimestamp\030\002 \001(\004\022\014\n\004rate\030\003 \001(\004\022 \n\004side" +
+      "\030\004 \001(\0162\022.md.RateUpdateSide\".\n\013RateUpdate" +
+      "s\022\037\n\007updates\030\001 \003(\0132\016.md.RateUpdate\"Z\n\rCl" +
       "ientMessage\022\"\n\theartbeat\030\001 \001(\0132\r.md.Hear" +
       "tbeatH\000\022\034\n\006config\030\002 \001(\0132\n.md.ConfigH\000B\007\n" +
       "\005inner\"f\n\006Config\022\013\n\003mbp\030\001 \001(\010\022\013\n\003mbo\030\002 \001" +
@@ -21210,7 +23528,8 @@ public final class MarketData {
       "lines\030\005 \003(\0162\021.md.KlineInterval*\030\n\004Side\022\007" +
       "\n\003BID\020\000\022\007\n\003ASK\020\001*@\n\rKlineInterval\022\006\n\002S1\020" +
       "\000\022\006\n\002M1\020\001\022\007\n\003M15\020\002\022\006\n\002H1\020\003\022\006\n\002H4\020\004\022\006\n\002D1" +
-      "\020\005b\006proto3"
+      "\020\005*%\n\016RateUpdateSide\022\010\n\004BASE\020\000\022\t\n\005QUOTE\020" +
+      "\001B\027Z\003go/\252\002\017Cube.MarketDatab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -21287,7 +23606,7 @@ public final class MarketData {
     internal_static_md_Summary_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_md_Summary_descriptor,
-        new java.lang.String[] { "Low", "High", "BaseVolumeLo", "BaseVolumeHi", "QuoteVolumeLo", "QuoteVolumeHi", });
+        new java.lang.String[] { "Open", "Close", "Low", "High", "BaseVolumeLo", "BaseVolumeHi", "QuoteVolumeLo", "QuoteVolumeHi", });
     internal_static_md_Kline_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_md_Kline_fieldAccessorTable = new
@@ -21311,27 +23630,39 @@ public final class MarketData {
     internal_static_md_AggMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_md_AggMessage_descriptor,
-        new java.lang.String[] { "Heartbeat", "TopOfBooks", "Inner", });
+        new java.lang.String[] { "Heartbeat", "TopOfBooks", "RateUpdates", "Inner", });
     internal_static_md_TopOfBook_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_md_TopOfBook_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_md_TopOfBook_descriptor,
-        new java.lang.String[] { "MarketId", "TransactTime", "BidPrice", "BidQuantity", "AskPrice", "AskQuantity", "LastPrice", });
+        new java.lang.String[] { "MarketId", "TransactTime", "BidPrice", "BidQuantity", "AskPrice", "AskQuantity", "LastPrice", "Rolling24HPrice", });
     internal_static_md_TopOfBooks_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_md_TopOfBooks_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_md_TopOfBooks_descriptor,
         new java.lang.String[] { "Tops", });
-    internal_static_md_ClientMessage_descriptor =
+    internal_static_md_RateUpdate_descriptor =
       getDescriptor().getMessageTypes().get(13);
+    internal_static_md_RateUpdate_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_md_RateUpdate_descriptor,
+        new java.lang.String[] { "AssetId", "Timestamp", "Rate", "Side", });
+    internal_static_md_RateUpdates_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_md_RateUpdates_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_md_RateUpdates_descriptor,
+        new java.lang.String[] { "Updates", });
+    internal_static_md_ClientMessage_descriptor =
+      getDescriptor().getMessageTypes().get(15);
     internal_static_md_ClientMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_md_ClientMessage_descriptor,
         new java.lang.String[] { "Heartbeat", "Config", "Inner", });
     internal_static_md_Config_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_md_Config_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_md_Config_descriptor,

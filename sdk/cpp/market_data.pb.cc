@@ -186,7 +186,9 @@ struct TradesDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TradesDefaultTypeInternal _Trades_default_instance_;
 constexpr Summary::Summary(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : low_(PROTOBUF_ULONGLONG(0))
+  : open_(PROTOBUF_ULONGLONG(0))
+  , close_(PROTOBUF_ULONGLONG(0))
+  , low_(PROTOBUF_ULONGLONG(0))
   , high_(PROTOBUF_ULONGLONG(0))
   , basevolumelo_(PROTOBUF_ULONGLONG(0))
   , basevolumehi_(PROTOBUF_ULONGLONG(0))
@@ -266,7 +268,8 @@ constexpr TopOfBook::TopOfBook(
   , bidquantity_(PROTOBUF_ULONGLONG(0))
   , askprice_(PROTOBUF_ULONGLONG(0))
   , askquantity_(PROTOBUF_ULONGLONG(0))
-  , lastprice_(PROTOBUF_ULONGLONG(0)){}
+  , lastprice_(PROTOBUF_ULONGLONG(0))
+  , rolling24hprice_(PROTOBUF_ULONGLONG(0)){}
 struct TopOfBookDefaultTypeInternal {
   constexpr TopOfBookDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -288,6 +291,34 @@ struct TopOfBooksDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TopOfBooksDefaultTypeInternal _TopOfBooks_default_instance_;
+constexpr RateUpdate::RateUpdate(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : assetid_(PROTOBUF_ULONGLONG(0))
+  , timestamp_(PROTOBUF_ULONGLONG(0))
+  , rate_(PROTOBUF_ULONGLONG(0))
+  , side_(0)
+{}
+struct RateUpdateDefaultTypeInternal {
+  constexpr RateUpdateDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~RateUpdateDefaultTypeInternal() {}
+  union {
+    RateUpdate _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RateUpdateDefaultTypeInternal _RateUpdate_default_instance_;
+constexpr RateUpdates::RateUpdates(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : updates_(){}
+struct RateUpdatesDefaultTypeInternal {
+  constexpr RateUpdatesDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~RateUpdatesDefaultTypeInternal() {}
+  union {
+    RateUpdates _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT RateUpdatesDefaultTypeInternal _RateUpdates_default_instance_;
 constexpr ClientMessage::ClientMessage(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : _oneof_case_{}{}
@@ -318,8 +349,8 @@ struct ConfigDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ConfigDefaultTypeInternal _Config_default_instance_;
 }  // namespace md
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_market_5fdata_2eproto[20];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_market_5fdata_2eproto[4];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_market_5fdata_2eproto[22];
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_market_5fdata_2eproto[5];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_market_5fdata_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_market_5fdata_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -430,6 +461,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_market_5fdata_2eproto::offsets
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::md::Summary, open_),
+  PROTOBUF_FIELD_OFFSET(::md::Summary, close_),
   PROTOBUF_FIELD_OFFSET(::md::Summary, low_),
   PROTOBUF_FIELD_OFFSET(::md::Summary, high_),
   PROTOBUF_FIELD_OFFSET(::md::Summary, basevolumelo_),
@@ -469,6 +502,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_market_5fdata_2eproto::offsets
   ~0u,  // no _weak_field_map_
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::md::AggMessage, inner_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::md::TopOfBook, _internal_metadata_),
@@ -482,12 +516,28 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_market_5fdata_2eproto::offsets
   PROTOBUF_FIELD_OFFSET(::md::TopOfBook, askprice_),
   PROTOBUF_FIELD_OFFSET(::md::TopOfBook, askquantity_),
   PROTOBUF_FIELD_OFFSET(::md::TopOfBook, lastprice_),
+  PROTOBUF_FIELD_OFFSET(::md::TopOfBook, rolling24hprice_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::md::TopOfBooks, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::md::TopOfBooks, tops_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::md::RateUpdate, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::md::RateUpdate, assetid_),
+  PROTOBUF_FIELD_OFFSET(::md::RateUpdate, timestamp_),
+  PROTOBUF_FIELD_OFFSET(::md::RateUpdate, rate_),
+  PROTOBUF_FIELD_OFFSET(::md::RateUpdate, side_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::md::RateUpdates, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::md::RateUpdates, updates_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::md::ClientMessage, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -520,14 +570,16 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 84, -1, sizeof(::md::Trades_Trade)},
   { 96, -1, sizeof(::md::Trades)},
   { 102, -1, sizeof(::md::Summary)},
-  { 113, -1, sizeof(::md::Kline)},
-  { 126, -1, sizeof(::md::Heartbeat)},
-  { 133, -1, sizeof(::md::MdMessages)},
-  { 139, -1, sizeof(::md::AggMessage)},
-  { 147, -1, sizeof(::md::TopOfBook)},
-  { 159, -1, sizeof(::md::TopOfBooks)},
-  { 165, -1, sizeof(::md::ClientMessage)},
-  { 173, -1, sizeof(::md::Config)},
+  { 115, -1, sizeof(::md::Kline)},
+  { 128, -1, sizeof(::md::Heartbeat)},
+  { 135, -1, sizeof(::md::MdMessages)},
+  { 141, -1, sizeof(::md::AggMessage)},
+  { 150, -1, sizeof(::md::TopOfBook)},
+  { 163, -1, sizeof(::md::TopOfBooks)},
+  { 169, -1, sizeof(::md::RateUpdate)},
+  { 178, -1, sizeof(::md::RateUpdates)},
+  { 184, -1, sizeof(::md::ClientMessage)},
+  { 192, -1, sizeof(::md::Config)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -549,6 +601,8 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::md::_AggMessage_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::md::_TopOfBook_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::md::_TopOfBooks_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::md::_RateUpdate_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::md::_RateUpdates_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::md::_ClientMessage_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::md::_Config_default_instance_),
 };
@@ -577,38 +631,44 @@ const char descriptor_table_protodef_market_5fdata_2eproto[] PROTOBUF_SECTION_VA
   "md.MarketByOrder.Order\022\r\n\005chunk\030\002 \001(\r\022\021\n"
   "\tnumChunks\030\003 \001(\r\032Y\n\005Order\022\r\n\005price\030\001 \001(\004"
   "\022\020\n\010quantity\030\002 \001(\004\022\027\n\017exchangeOrderId\030\003 "
-  "\001(\004\022\026\n\004side\030\004 \001(\0162\010.md.Side\"\321\002\n\021MarketBy"
+  "\001(\004\022\026\n\004side\030\004 \001(\0162\010.md.Side\"\317\002\n\021MarketBy"
   "OrderDiff\022)\n\005diffs\030\001 \003(\0132\032.md.MarketByOr"
   "derDiff.Diff\022\026\n\016totalBidLevels\030\002 \001(\r\022\026\n\016"
   "totalAskLevels\030\003 \001(\r\022\026\n\016totalBidOrders\030\004"
-  " \001(\r\022\026\n\016totalAskOrders\030\005 \001(\r\032\203\001\n\004Diff\022\r\n"
+  " \001(\r\022\026\n\016totalAskOrders\030\005 \001(\r\032\202\001\n\004Diff\022\r\n"
   "\005price\030\001 \001(\004\022\020\n\010quantity\030\002 \001(\004\022\027\n\017exchan"
   "geOrderId\030\003 \001(\004\022\026\n\004side\030\004 \001(\0162\010.md.Side\022"
-  ")\n\002op\030\005 \001(\0162\035.md.MarketByOrderDiff.Order"
-  "Op\"+\n\007OrderOp\022\007\n\003ADD\020\000\022\n\n\006REMOVE\020\001\022\013\n\007RE"
-  "PLACE\020\002\"\345\001\n\006Trades\022 \n\006trades\030\001 \003(\0132\020.md."
-  "Trades.Trade\032\270\001\n\005Trade\022\017\n\007tradeId\030\001 \001(\004\022"
-  "\r\n\005price\030\002 \001(\004\022 \n\016aggressingSide\030\003 \001(\0162\010"
-  ".md.Side\022\036\n\026restingExchangeOrderId\030\004 \001(\004"
-  "\022\024\n\014fillQuantity\030\005 \001(\004\022\024\n\014transactTime\030\006"
-  " \001(\004\022!\n\031aggressingExchangeOrderId\030\007 \001(\004\""
-  "~\n\007Summary\022\013\n\003low\030\001 \001(\004\022\014\n\004high\030\002 \001(\004\022\024\n"
-  "\014baseVolumeLo\030\003 \001(\004\022\024\n\014baseVolumeHi\030\004 \001("
-  "\004\022\025\n\rquoteVolumeLo\030\005 \001(\004\022\025\n\rquoteVolumeH"
-  "i\030\006 \001(\004\"\233\001\n\005Kline\022#\n\010interval\030\001 \001(\0162\021.md"
-  ".KlineInterval\022\021\n\tstartTime\030\002 \001(\004\022\014\n\004ope"
-  "n\030\003 \001(\004\022\r\n\005close\030\004 \001(\004\022\014\n\004high\030\005 \001(\004\022\013\n\003"
-  "low\030\006 \001(\004\022\020\n\010volumeLo\030\007 \001(\004\022\020\n\010volumeHi\030"
-  "\010 \001(\004\"1\n\tHeartbeat\022\021\n\trequestId\030\001 \001(\004\022\021\n"
-  "\ttimestamp\030\002 \001(\004\"-\n\nMdMessages\022\037\n\010messag"
-  "es\030\001 \003(\0132\r.md.MdMessage\"_\n\nAggMessage\022\"\n"
-  "\theartbeat\030\001 \001(\0132\r.md.HeartbeatH\000\022$\n\ntop"
-  "OfBooks\030\002 \001(\0132\016.md.TopOfBooksH\000B\007\n\005inner"
-  "\"\224\001\n\tTopOfBook\022\020\n\010marketId\030\001 \001(\004\022\024\n\014tran"
-  "sactTime\030\002 \001(\004\022\020\n\010bidPrice\030\003 \001(\004\022\023\n\013bidQ"
-  "uantity\030\004 \001(\004\022\020\n\010askPrice\030\005 \001(\004\022\023\n\013askQu"
-  "antity\030\006 \001(\004\022\021\n\tlastPrice\030\007 \001(\004\")\n\nTopOf"
-  "Books\022\033\n\004tops\030\001 \003(\0132\r.md.TopOfBook\"Z\n\rCl"
+  "(\n\002op\030\005 \001(\0162\034.md.MarketByOrderDiff.DiffO"
+  "p\"*\n\006DiffOp\022\007\n\003ADD\020\000\022\n\n\006REMOVE\020\001\022\013\n\007REPL"
+  "ACE\020\002\"\345\001\n\006Trades\022 \n\006trades\030\001 \003(\0132\020.md.Tr"
+  "ades.Trade\032\270\001\n\005Trade\022\017\n\007tradeId\030\001 \001(\004\022\r\n"
+  "\005price\030\002 \001(\004\022 \n\016aggressingSide\030\003 \001(\0162\010.m"
+  "d.Side\022\036\n\026restingExchangeOrderId\030\004 \001(\004\022\024"
+  "\n\014fillQuantity\030\005 \001(\004\022\024\n\014transactTime\030\006 \001"
+  "(\004\022!\n\031aggressingExchangeOrderId\030\007 \001(\004\"\233\001"
+  "\n\007Summary\022\014\n\004open\030\001 \001(\004\022\r\n\005close\030\002 \001(\004\022\013"
+  "\n\003low\030\003 \001(\004\022\014\n\004high\030\004 \001(\004\022\024\n\014baseVolumeL"
+  "o\030\005 \001(\004\022\024\n\014baseVolumeHi\030\006 \001(\004\022\025\n\rquoteVo"
+  "lumeLo\030\007 \001(\004\022\025\n\rquoteVolumeHi\030\010 \001(\004\"\233\001\n\005"
+  "Kline\022#\n\010interval\030\001 \001(\0162\021.md.KlineInterv"
+  "al\022\021\n\tstartTime\030\002 \001(\004\022\014\n\004open\030\003 \001(\004\022\r\n\005c"
+  "lose\030\004 \001(\004\022\014\n\004high\030\005 \001(\004\022\013\n\003low\030\006 \001(\004\022\020\n"
+  "\010volumeLo\030\007 \001(\004\022\020\n\010volumeHi\030\010 \001(\004\"1\n\tHea"
+  "rtbeat\022\021\n\trequestId\030\001 \001(\004\022\021\n\ttimestamp\030\002"
+  " \001(\004\"-\n\nMdMessages\022\037\n\010messages\030\001 \003(\0132\r.m"
+  "d.MdMessage\"\207\001\n\nAggMessage\022\"\n\theartbeat\030"
+  "\001 \001(\0132\r.md.HeartbeatH\000\022$\n\ntopOfBooks\030\002 \001"
+  "(\0132\016.md.TopOfBooksH\000\022&\n\013rateUpdates\030\003 \001("
+  "\0132\017.md.RateUpdatesH\000B\007\n\005inner\"\255\001\n\tTopOfB"
+  "ook\022\020\n\010marketId\030\001 \001(\004\022\024\n\014transactTime\030\002 "
+  "\001(\004\022\020\n\010bidPrice\030\003 \001(\004\022\023\n\013bidQuantity\030\004 \001"
+  "(\004\022\020\n\010askPrice\030\005 \001(\004\022\023\n\013askQuantity\030\006 \001("
+  "\004\022\021\n\tlastPrice\030\007 \001(\004\022\027\n\017rolling24hPrice\030"
+  "\010 \001(\004\")\n\nTopOfBooks\022\033\n\004tops\030\001 \003(\0132\r.md.T"
+  "opOfBook\"`\n\nRateUpdate\022\017\n\007assetId\030\001 \001(\004\022"
+  "\021\n\ttimestamp\030\002 \001(\004\022\014\n\004rate\030\003 \001(\004\022 \n\004side"
+  "\030\004 \001(\0162\022.md.RateUpdateSide\".\n\013RateUpdate"
+  "s\022\037\n\007updates\030\001 \003(\0132\016.md.RateUpdate\"Z\n\rCl"
   "ientMessage\022\"\n\theartbeat\030\001 \001(\0132\r.md.Hear"
   "tbeatH\000\022\034\n\006config\030\002 \001(\0132\n.md.ConfigH\000B\007\n"
   "\005inner\"f\n\006Config\022\013\n\003mbp\030\001 \001(\010\022\013\n\003mbo\030\002 \001"
@@ -616,12 +676,13 @@ const char descriptor_table_protodef_market_5fdata_2eproto[] PROTOBUF_SECTION_VA
   "lines\030\005 \003(\0162\021.md.KlineInterval*\030\n\004Side\022\007"
   "\n\003BID\020\000\022\007\n\003ASK\020\001*@\n\rKlineInterval\022\006\n\002S1\020"
   "\000\022\006\n\002M1\020\001\022\007\n\003M15\020\002\022\006\n\002H1\020\003\022\006\n\002H4\020\004\022\006\n\002D1"
-  "\020\005b\006proto3"
+  "\020\005*%\n\016RateUpdateSide\022\010\n\004BASE\020\000\022\t\n\005QUOTE\020"
+  "\001B\027Z\003go/\252\002\017Cube.MarketDatab\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_market_5fdata_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_market_5fdata_2eproto = {
-  false, false, 2490, descriptor_table_protodef_market_5fdata_2eproto, "market_data.proto", 
-  &descriptor_table_market_5fdata_2eproto_once, nullptr, 0, 20,
+  false, false, 2794, descriptor_table_protodef_market_5fdata_2eproto, "market_data.proto", 
+  &descriptor_table_market_5fdata_2eproto_once, nullptr, 0, 22,
   schemas, file_default_instances, TableStruct_market_5fdata_2eproto::offsets,
   file_level_metadata_market_5fdata_2eproto, file_level_enum_descriptors_market_5fdata_2eproto, file_level_service_descriptors_market_5fdata_2eproto,
 };
@@ -657,11 +718,11 @@ constexpr MarketByPriceDiff_DiffOp MarketByPriceDiff::DiffOp_MIN;
 constexpr MarketByPriceDiff_DiffOp MarketByPriceDiff::DiffOp_MAX;
 constexpr int MarketByPriceDiff::DiffOp_ARRAYSIZE;
 #endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* MarketByOrderDiff_OrderOp_descriptor() {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* MarketByOrderDiff_DiffOp_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_market_5fdata_2eproto);
   return file_level_enum_descriptors_market_5fdata_2eproto[1];
 }
-bool MarketByOrderDiff_OrderOp_IsValid(int value) {
+bool MarketByOrderDiff_DiffOp_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
@@ -673,12 +734,12 @@ bool MarketByOrderDiff_OrderOp_IsValid(int value) {
 }
 
 #if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
-constexpr MarketByOrderDiff_OrderOp MarketByOrderDiff::ADD;
-constexpr MarketByOrderDiff_OrderOp MarketByOrderDiff::REMOVE;
-constexpr MarketByOrderDiff_OrderOp MarketByOrderDiff::REPLACE;
-constexpr MarketByOrderDiff_OrderOp MarketByOrderDiff::OrderOp_MIN;
-constexpr MarketByOrderDiff_OrderOp MarketByOrderDiff::OrderOp_MAX;
-constexpr int MarketByOrderDiff::OrderOp_ARRAYSIZE;
+constexpr MarketByOrderDiff_DiffOp MarketByOrderDiff::ADD;
+constexpr MarketByOrderDiff_DiffOp MarketByOrderDiff::REMOVE;
+constexpr MarketByOrderDiff_DiffOp MarketByOrderDiff::REPLACE;
+constexpr MarketByOrderDiff_DiffOp MarketByOrderDiff::DiffOp_MIN;
+constexpr MarketByOrderDiff_DiffOp MarketByOrderDiff::DiffOp_MAX;
+constexpr int MarketByOrderDiff::DiffOp_ARRAYSIZE;
 #endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* Side_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_market_5fdata_2eproto);
@@ -706,6 +767,20 @@ bool KlineInterval_IsValid(int value) {
     case 3:
     case 4:
     case 5:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* RateUpdateSide_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_market_5fdata_2eproto);
+  return file_level_enum_descriptors_market_5fdata_2eproto[4];
+}
+bool RateUpdateSide_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
       return true;
     default:
       return false;
@@ -3012,12 +3087,12 @@ const char* MarketByOrderDiff_Diff::_InternalParse(const char* ptr, ::PROTOBUF_N
           _internal_set_side(static_cast<::md::Side>(val));
         } else goto handle_unusual;
         continue;
-      // .md.MarketByOrderDiff.OrderOp op = 5;
+      // .md.MarketByOrderDiff.DiffOp op = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_op(static_cast<::md::MarketByOrderDiff_OrderOp>(val));
+          _internal_set_op(static_cast<::md::MarketByOrderDiff_DiffOp>(val));
         } else goto handle_unusual;
         continue;
       default: {
@@ -3073,7 +3148,7 @@ failure:
       4, this->_internal_side(), target);
   }
 
-  // .md.MarketByOrderDiff.OrderOp op = 5;
+  // .md.MarketByOrderDiff.DiffOp op = 5;
   if (this->op() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
@@ -3123,7 +3198,7 @@ size_t MarketByOrderDiff_Diff::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_side());
   }
 
-  // .md.MarketByOrderDiff.OrderOp op = 5;
+  // .md.MarketByOrderDiff.DiffOp op = 5;
   if (this->op() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_op());
@@ -4062,17 +4137,17 @@ Summary::Summary(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 Summary::Summary(const Summary& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&low_, &from.low_,
+  ::memcpy(&open_, &from.open_,
     static_cast<size_t>(reinterpret_cast<char*>(&quotevolumehi_) -
-    reinterpret_cast<char*>(&low_)) + sizeof(quotevolumehi_));
+    reinterpret_cast<char*>(&open_)) + sizeof(quotevolumehi_));
   // @@protoc_insertion_point(copy_constructor:md.Summary)
 }
 
 void Summary::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&low_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&open_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&quotevolumehi_) -
-    reinterpret_cast<char*>(&low_)) + sizeof(quotevolumehi_));
+    reinterpret_cast<char*>(&open_)) + sizeof(quotevolumehi_));
 }
 
 Summary::~Summary() {
@@ -4101,9 +4176,9 @@ void Summary::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&low_, 0, static_cast<size_t>(
+  ::memset(&open_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&quotevolumehi_) -
-      reinterpret_cast<char*>(&low_)) + sizeof(quotevolumehi_));
+      reinterpret_cast<char*>(&open_)) + sizeof(quotevolumehi_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4114,44 +4189,58 @@ const char* Summary::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint64 low = 1;
+      // uint64 open = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          open_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 close = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          close_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 low = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           low_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 high = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+      // uint64 high = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           high_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 baseVolumeLo = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+      // uint64 baseVolumeLo = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
           basevolumelo_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 baseVolumeHi = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+      // uint64 baseVolumeHi = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
           basevolumehi_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 quoteVolumeLo = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+      // uint64 quoteVolumeLo = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
           quotevolumelo_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 quoteVolumeHi = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+      // uint64 quoteVolumeHi = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
           quotevolumehi_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -4184,40 +4273,52 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 low = 1;
+  // uint64 open = 1;
+  if (this->open() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_open(), target);
+  }
+
+  // uint64 close = 2;
+  if (this->close() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_close(), target);
+  }
+
+  // uint64 low = 3;
   if (this->low() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_low(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_low(), target);
   }
 
-  // uint64 high = 2;
+  // uint64 high = 4;
   if (this->high() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_high(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_high(), target);
   }
 
-  // uint64 baseVolumeLo = 3;
+  // uint64 baseVolumeLo = 5;
   if (this->basevolumelo() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_basevolumelo(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_basevolumelo(), target);
   }
 
-  // uint64 baseVolumeHi = 4;
+  // uint64 baseVolumeHi = 6;
   if (this->basevolumehi() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_basevolumehi(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(6, this->_internal_basevolumehi(), target);
   }
 
-  // uint64 quoteVolumeLo = 5;
+  // uint64 quoteVolumeLo = 7;
   if (this->quotevolumelo() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_quotevolumelo(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(7, this->_internal_quotevolumelo(), target);
   }
 
-  // uint64 quoteVolumeHi = 6;
+  // uint64 quoteVolumeHi = 8;
   if (this->quotevolumehi() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(6, this->_internal_quotevolumehi(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(8, this->_internal_quotevolumehi(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4236,42 +4337,56 @@ size_t Summary::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 low = 1;
+  // uint64 open = 1;
+  if (this->open() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_open());
+  }
+
+  // uint64 close = 2;
+  if (this->close() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_close());
+  }
+
+  // uint64 low = 3;
   if (this->low() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal_low());
   }
 
-  // uint64 high = 2;
+  // uint64 high = 4;
   if (this->high() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal_high());
   }
 
-  // uint64 baseVolumeLo = 3;
+  // uint64 baseVolumeLo = 5;
   if (this->basevolumelo() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal_basevolumelo());
   }
 
-  // uint64 baseVolumeHi = 4;
+  // uint64 baseVolumeHi = 6;
   if (this->basevolumehi() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal_basevolumehi());
   }
 
-  // uint64 quoteVolumeLo = 5;
+  // uint64 quoteVolumeLo = 7;
   if (this->quotevolumelo() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal_quotevolumelo());
   }
 
-  // uint64 quoteVolumeHi = 6;
+  // uint64 quoteVolumeHi = 8;
   if (this->quotevolumehi() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
@@ -4309,6 +4424,12 @@ void Summary::MergeFrom(const Summary& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.open() != 0) {
+    _internal_set_open(from._internal_open());
+  }
+  if (from.close() != 0) {
+    _internal_set_close(from._internal_close());
+  }
   if (from.low() != 0) {
     _internal_set_low(from._internal_low());
   }
@@ -4353,9 +4474,9 @@ void Summary::InternalSwap(Summary* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Summary, quotevolumehi_)
       + sizeof(Summary::quotevolumehi_)
-      - PROTOBUF_FIELD_OFFSET(Summary, low_)>(
-          reinterpret_cast<char*>(&low_),
-          reinterpret_cast<char*>(&other->low_));
+      - PROTOBUF_FIELD_OFFSET(Summary, open_)>(
+          reinterpret_cast<char*>(&open_),
+          reinterpret_cast<char*>(&other->open_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Summary::GetMetadata() const {
@@ -5150,6 +5271,7 @@ class AggMessage::_Internal {
  public:
   static const ::md::Heartbeat& heartbeat(const AggMessage* msg);
   static const ::md::TopOfBooks& topofbooks(const AggMessage* msg);
+  static const ::md::RateUpdates& rateupdates(const AggMessage* msg);
 };
 
 const ::md::Heartbeat&
@@ -5159,6 +5281,10 @@ AggMessage::_Internal::heartbeat(const AggMessage* msg) {
 const ::md::TopOfBooks&
 AggMessage::_Internal::topofbooks(const AggMessage* msg) {
   return *msg->inner_.topofbooks_;
+}
+const ::md::RateUpdates&
+AggMessage::_Internal::rateupdates(const AggMessage* msg) {
+  return *msg->inner_.rateupdates_;
 }
 void AggMessage::set_allocated_heartbeat(::md::Heartbeat* heartbeat) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
@@ -5190,6 +5316,21 @@ void AggMessage::set_allocated_topofbooks(::md::TopOfBooks* topofbooks) {
   }
   // @@protoc_insertion_point(field_set_allocated:md.AggMessage.topOfBooks)
 }
+void AggMessage::set_allocated_rateupdates(::md::RateUpdates* rateupdates) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  clear_inner();
+  if (rateupdates) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(rateupdates);
+    if (message_arena != submessage_arena) {
+      rateupdates = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, rateupdates, submessage_arena);
+    }
+    set_has_rateupdates();
+    inner_.rateupdates_ = rateupdates;
+  }
+  // @@protoc_insertion_point(field_set_allocated:md.AggMessage.rateUpdates)
+}
 AggMessage::AggMessage(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
@@ -5207,6 +5348,10 @@ AggMessage::AggMessage(const AggMessage& from)
     }
     case kTopOfBooks: {
       _internal_mutable_topofbooks()->::md::TopOfBooks::MergeFrom(from._internal_topofbooks());
+      break;
+    }
+    case kRateUpdates: {
+      _internal_mutable_rateupdates()->::md::RateUpdates::MergeFrom(from._internal_rateupdates());
       break;
     }
     case INNER_NOT_SET: {
@@ -5258,6 +5403,12 @@ void AggMessage::clear_inner() {
       }
       break;
     }
+    case kRateUpdates: {
+      if (GetArena() == nullptr) {
+        delete inner_.rateupdates_;
+      }
+      break;
+    }
     case INNER_NOT_SET: {
       break;
     }
@@ -5294,6 +5445,13 @@ const char* AggMessage::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_topofbooks(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .md.RateUpdates rateUpdates = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_rateupdates(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5341,6 +5499,14 @@ failure:
         2, _Internal::topofbooks(this), target, stream);
   }
 
+  // .md.RateUpdates rateUpdates = 3;
+  if (_internal_has_rateupdates()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        3, _Internal::rateupdates(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -5370,6 +5536,13 @@ size_t AggMessage::ByteSizeLong() const {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *inner_.topofbooks_);
+      break;
+    }
+    // .md.RateUpdates rateUpdates = 3;
+    case kRateUpdates: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *inner_.rateupdates_);
       break;
     }
     case INNER_NOT_SET: {
@@ -5414,6 +5587,10 @@ void AggMessage::MergeFrom(const AggMessage& from) {
     }
     case kTopOfBooks: {
       _internal_mutable_topofbooks()->::md::TopOfBooks::MergeFrom(from._internal_topofbooks());
+      break;
+    }
+    case kRateUpdates: {
+      _internal_mutable_rateupdates()->::md::RateUpdates::MergeFrom(from._internal_rateupdates());
       break;
     }
     case INNER_NOT_SET: {
@@ -5468,16 +5645,16 @@ TopOfBook::TopOfBook(const TopOfBook& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&marketid_, &from.marketid_,
-    static_cast<size_t>(reinterpret_cast<char*>(&lastprice_) -
-    reinterpret_cast<char*>(&marketid_)) + sizeof(lastprice_));
+    static_cast<size_t>(reinterpret_cast<char*>(&rolling24hprice_) -
+    reinterpret_cast<char*>(&marketid_)) + sizeof(rolling24hprice_));
   // @@protoc_insertion_point(copy_constructor:md.TopOfBook)
 }
 
 void TopOfBook::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&marketid_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&lastprice_) -
-    reinterpret_cast<char*>(&marketid_)) + sizeof(lastprice_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&rolling24hprice_) -
+    reinterpret_cast<char*>(&marketid_)) + sizeof(rolling24hprice_));
 }
 
 TopOfBook::~TopOfBook() {
@@ -5507,8 +5684,8 @@ void TopOfBook::Clear() {
   (void) cached_has_bits;
 
   ::memset(&marketid_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&lastprice_) -
-      reinterpret_cast<char*>(&marketid_)) + sizeof(lastprice_));
+      reinterpret_cast<char*>(&rolling24hprice_) -
+      reinterpret_cast<char*>(&marketid_)) + sizeof(rolling24hprice_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5565,6 +5742,13 @@ const char* TopOfBook::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
           lastprice_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 rolling24hPrice = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
+          rolling24hprice_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5638,6 +5822,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(7, this->_internal_lastprice(), target);
   }
 
+  // uint64 rolling24hPrice = 8;
+  if (this->rolling24hprice() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(8, this->_internal_rolling24hprice(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -5703,6 +5893,13 @@ size_t TopOfBook::ByteSizeLong() const {
         this->_internal_lastprice());
   }
 
+  // uint64 rolling24hPrice = 8;
+  if (this->rolling24hprice() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_rolling24hprice());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -5755,6 +5952,9 @@ void TopOfBook::MergeFrom(const TopOfBook& from) {
   if (from.lastprice() != 0) {
     _internal_set_lastprice(from._internal_lastprice());
   }
+  if (from.rolling24hprice() != 0) {
+    _internal_set_rolling24hprice(from._internal_rolling24hprice());
+  }
 }
 
 void TopOfBook::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -5779,8 +5979,8 @@ void TopOfBook::InternalSwap(TopOfBook* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(TopOfBook, lastprice_)
-      + sizeof(TopOfBook::lastprice_)
+      PROTOBUF_FIELD_OFFSET(TopOfBook, rolling24hprice_)
+      + sizeof(TopOfBook::rolling24hprice_)
       - PROTOBUF_FIELD_OFFSET(TopOfBook, marketid_)>(
           reinterpret_cast<char*>(&marketid_),
           reinterpret_cast<char*>(&other->marketid_));
@@ -5981,6 +6181,471 @@ void TopOfBooks::InternalSwap(TopOfBooks* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata TopOfBooks::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class RateUpdate::_Internal {
+ public:
+};
+
+RateUpdate::RateUpdate(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:md.RateUpdate)
+}
+RateUpdate::RateUpdate(const RateUpdate& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&assetid_, &from.assetid_,
+    static_cast<size_t>(reinterpret_cast<char*>(&side_) -
+    reinterpret_cast<char*>(&assetid_)) + sizeof(side_));
+  // @@protoc_insertion_point(copy_constructor:md.RateUpdate)
+}
+
+void RateUpdate::SharedCtor() {
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&assetid_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&side_) -
+    reinterpret_cast<char*>(&assetid_)) + sizeof(side_));
+}
+
+RateUpdate::~RateUpdate() {
+  // @@protoc_insertion_point(destructor:md.RateUpdate)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void RateUpdate::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void RateUpdate::ArenaDtor(void* object) {
+  RateUpdate* _this = reinterpret_cast< RateUpdate* >(object);
+  (void)_this;
+}
+void RateUpdate::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void RateUpdate::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void RateUpdate::Clear() {
+// @@protoc_insertion_point(message_clear_start:md.RateUpdate)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&assetid_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&side_) -
+      reinterpret_cast<char*>(&assetid_)) + sizeof(side_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* RateUpdate::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint64 assetId = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          assetid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 timestamp = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 rate = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          rate_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .md.RateUpdateSide side = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_side(static_cast<::md::RateUpdateSide>(val));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* RateUpdate::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:md.RateUpdate)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint64 assetId = 1;
+  if (this->assetid() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_assetid(), target);
+  }
+
+  // uint64 timestamp = 2;
+  if (this->timestamp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_timestamp(), target);
+  }
+
+  // uint64 rate = 3;
+  if (this->rate() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_rate(), target);
+  }
+
+  // .md.RateUpdateSide side = 4;
+  if (this->side() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      4, this->_internal_side(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:md.RateUpdate)
+  return target;
+}
+
+size_t RateUpdate::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:md.RateUpdate)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint64 assetId = 1;
+  if (this->assetid() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_assetid());
+  }
+
+  // uint64 timestamp = 2;
+  if (this->timestamp() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_timestamp());
+  }
+
+  // uint64 rate = 3;
+  if (this->rate() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_rate());
+  }
+
+  // .md.RateUpdateSide side = 4;
+  if (this->side() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_side());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void RateUpdate::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:md.RateUpdate)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RateUpdate* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RateUpdate>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:md.RateUpdate)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:md.RateUpdate)
+    MergeFrom(*source);
+  }
+}
+
+void RateUpdate::MergeFrom(const RateUpdate& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:md.RateUpdate)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.assetid() != 0) {
+    _internal_set_assetid(from._internal_assetid());
+  }
+  if (from.timestamp() != 0) {
+    _internal_set_timestamp(from._internal_timestamp());
+  }
+  if (from.rate() != 0) {
+    _internal_set_rate(from._internal_rate());
+  }
+  if (from.side() != 0) {
+    _internal_set_side(from._internal_side());
+  }
+}
+
+void RateUpdate::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:md.RateUpdate)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void RateUpdate::CopyFrom(const RateUpdate& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:md.RateUpdate)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool RateUpdate::IsInitialized() const {
+  return true;
+}
+
+void RateUpdate::InternalSwap(RateUpdate* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(RateUpdate, side_)
+      + sizeof(RateUpdate::side_)
+      - PROTOBUF_FIELD_OFFSET(RateUpdate, assetid_)>(
+          reinterpret_cast<char*>(&assetid_),
+          reinterpret_cast<char*>(&other->assetid_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata RateUpdate::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+class RateUpdates::_Internal {
+ public:
+};
+
+RateUpdates::RateUpdates(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  updates_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:md.RateUpdates)
+}
+RateUpdates::RateUpdates(const RateUpdates& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      updates_(from.updates_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:md.RateUpdates)
+}
+
+void RateUpdates::SharedCtor() {
+}
+
+RateUpdates::~RateUpdates() {
+  // @@protoc_insertion_point(destructor:md.RateUpdates)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void RateUpdates::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void RateUpdates::ArenaDtor(void* object) {
+  RateUpdates* _this = reinterpret_cast< RateUpdates* >(object);
+  (void)_this;
+}
+void RateUpdates::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void RateUpdates::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void RateUpdates::Clear() {
+// @@protoc_insertion_point(message_clear_start:md.RateUpdates)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  updates_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* RateUpdates::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // repeated .md.RateUpdate updates = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_updates(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* RateUpdates::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:md.RateUpdates)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .md.RateUpdate updates = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_updates_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(1, this->_internal_updates(i), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:md.RateUpdates)
+  return target;
+}
+
+size_t RateUpdates::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:md.RateUpdates)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .md.RateUpdate updates = 1;
+  total_size += 1UL * this->_internal_updates_size();
+  for (const auto& msg : this->updates_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void RateUpdates::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:md.RateUpdates)
+  GOOGLE_DCHECK_NE(&from, this);
+  const RateUpdates* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RateUpdates>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:md.RateUpdates)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:md.RateUpdates)
+    MergeFrom(*source);
+  }
+}
+
+void RateUpdates::MergeFrom(const RateUpdates& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:md.RateUpdates)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  updates_.MergeFrom(from.updates_);
+}
+
+void RateUpdates::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:md.RateUpdates)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void RateUpdates::CopyFrom(const RateUpdates& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:md.RateUpdates)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool RateUpdates::IsInitialized() const {
+  return true;
+}
+
+void RateUpdates::InternalSwap(RateUpdates* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  updates_.InternalSwap(&other->updates_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata RateUpdates::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -6654,6 +7319,12 @@ template<> PROTOBUF_NOINLINE ::md::TopOfBook* Arena::CreateMaybeMessage< ::md::T
 }
 template<> PROTOBUF_NOINLINE ::md::TopOfBooks* Arena::CreateMaybeMessage< ::md::TopOfBooks >(Arena* arena) {
   return Arena::CreateMessageInternal< ::md::TopOfBooks >(arena);
+}
+template<> PROTOBUF_NOINLINE ::md::RateUpdate* Arena::CreateMaybeMessage< ::md::RateUpdate >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::md::RateUpdate >(arena);
+}
+template<> PROTOBUF_NOINLINE ::md::RateUpdates* Arena::CreateMaybeMessage< ::md::RateUpdates >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::md::RateUpdates >(arena);
 }
 template<> PROTOBUF_NOINLINE ::md::ClientMessage* Arena::CreateMaybeMessage< ::md::ClientMessage >(Arena* arena) {
   return Arena::CreateMessageInternal< ::md::ClientMessage >(arena);

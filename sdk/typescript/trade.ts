@@ -3926,10 +3926,10 @@ export namespace trade {
             pb_1.Message.setField(this, 3, value);
         }
         get word3() {
-            return pb_1.Message.getFieldWithDefault(this, 5, 0) as number;
+            return pb_1.Message.getFieldWithDefault(this, 4, 0) as number;
         }
         set word3(value: number) {
-            pb_1.Message.setField(this, 5, value);
+            pb_1.Message.setField(this, 4, value);
         }
         static fromObject(data: {
             word0?: number;
@@ -3984,7 +3984,7 @@ export namespace trade {
             if (this.word2 != 0)
                 writer.writeUint64(3, this.word2);
             if (this.word3 != 0)
-                writer.writeUint64(5, this.word3);
+                writer.writeUint64(4, this.word3);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -4003,7 +4003,7 @@ export namespace trade {
                     case 3:
                         message.word2 = reader.readUint64();
                         break;
-                    case 5:
+                    case 4:
                         message.word3 = reader.readUint64();
                         break;
                     default: reader.skipField();

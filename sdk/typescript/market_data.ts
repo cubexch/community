@@ -17,6 +17,10 @@ export namespace md {
         H4 = 4,
         D1 = 5
     }
+    export enum RateUpdateSide {
+        BASE = 0,
+        QUOTE = 1
+    }
     export class MdMessage extends pb_1.Message {
         #one_of_decls: number[][] = [[1, 2, 3, 4, 5, 6, 7, 8]];
         constructor(data?: any[] | ({} & (({
@@ -1243,7 +1247,7 @@ export namespace md {
         }
     }
     export namespace MarketByOrderDiff {
-        export enum OrderOp {
+        export enum DiffOp {
             ADD = 0,
             REMOVE = 1,
             REPLACE = 2
@@ -1255,7 +1259,7 @@ export namespace md {
                 quantity?: number;
                 exchangeOrderId?: number;
                 side?: Side;
-                op?: MarketByOrderDiff.OrderOp;
+                op?: MarketByOrderDiff.DiffOp;
             }) {
                 super();
                 pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
@@ -1302,9 +1306,9 @@ export namespace md {
                 pb_1.Message.setField(this, 4, value);
             }
             get op() {
-                return pb_1.Message.getFieldWithDefault(this, 5, MarketByOrderDiff.OrderOp.ADD) as MarketByOrderDiff.OrderOp;
+                return pb_1.Message.getFieldWithDefault(this, 5, MarketByOrderDiff.DiffOp.ADD) as MarketByOrderDiff.DiffOp;
             }
-            set op(value: MarketByOrderDiff.OrderOp) {
+            set op(value: MarketByOrderDiff.DiffOp) {
                 pb_1.Message.setField(this, 5, value);
             }
             static fromObject(data: {
@@ -1312,7 +1316,7 @@ export namespace md {
                 quantity?: number;
                 exchangeOrderId?: number;
                 side?: Side;
-                op?: MarketByOrderDiff.OrderOp;
+                op?: MarketByOrderDiff.DiffOp;
             }): Diff {
                 const message = new Diff({});
                 if (data.price != null) {
@@ -1338,7 +1342,7 @@ export namespace md {
                     quantity?: number;
                     exchangeOrderId?: number;
                     side?: Side;
-                    op?: MarketByOrderDiff.OrderOp;
+                    op?: MarketByOrderDiff.DiffOp;
                 } = {};
                 if (this.price != null) {
                     data.price = this.price;
@@ -1369,7 +1373,7 @@ export namespace md {
                     writer.writeUint64(3, this.exchangeOrderId);
                 if (this.side != Side.BID)
                     writer.writeEnum(4, this.side);
-                if (this.op != MarketByOrderDiff.OrderOp.ADD)
+                if (this.op != MarketByOrderDiff.DiffOp.ADD)
                     writer.writeEnum(5, this.op);
                 if (!w)
                     return writer.getResultBuffer();
@@ -1685,6 +1689,8 @@ export namespace md {
     export class Summary extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
+            open?: number;
+            close?: number;
             low?: number;
             high?: number;
             baseVolumeLo?: number;
@@ -1695,6 +1701,12 @@ export namespace md {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
+                if ("open" in data && data.open != undefined) {
+                    this.open = data.open;
+                }
+                if ("close" in data && data.close != undefined) {
+                    this.close = data.close;
+                }
                 if ("low" in data && data.low != undefined) {
                     this.low = data.low;
                 }
@@ -1715,43 +1727,57 @@ export namespace md {
                 }
             }
         }
-        get low() {
+        get open() {
             return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
         }
-        set low(value: number) {
+        set open(value: number) {
             pb_1.Message.setField(this, 1, value);
         }
-        get high() {
+        get close() {
             return pb_1.Message.getFieldWithDefault(this, 2, 0) as number;
         }
-        set high(value: number) {
+        set close(value: number) {
             pb_1.Message.setField(this, 2, value);
         }
-        get baseVolumeLo() {
+        get low() {
             return pb_1.Message.getFieldWithDefault(this, 3, 0) as number;
         }
-        set baseVolumeLo(value: number) {
+        set low(value: number) {
             pb_1.Message.setField(this, 3, value);
         }
-        get baseVolumeHi() {
+        get high() {
             return pb_1.Message.getFieldWithDefault(this, 4, 0) as number;
         }
-        set baseVolumeHi(value: number) {
+        set high(value: number) {
             pb_1.Message.setField(this, 4, value);
         }
-        get quoteVolumeLo() {
+        get baseVolumeLo() {
             return pb_1.Message.getFieldWithDefault(this, 5, 0) as number;
         }
-        set quoteVolumeLo(value: number) {
+        set baseVolumeLo(value: number) {
             pb_1.Message.setField(this, 5, value);
         }
-        get quoteVolumeHi() {
+        get baseVolumeHi() {
             return pb_1.Message.getFieldWithDefault(this, 6, 0) as number;
         }
-        set quoteVolumeHi(value: number) {
+        set baseVolumeHi(value: number) {
             pb_1.Message.setField(this, 6, value);
         }
+        get quoteVolumeLo() {
+            return pb_1.Message.getFieldWithDefault(this, 7, 0) as number;
+        }
+        set quoteVolumeLo(value: number) {
+            pb_1.Message.setField(this, 7, value);
+        }
+        get quoteVolumeHi() {
+            return pb_1.Message.getFieldWithDefault(this, 8, 0) as number;
+        }
+        set quoteVolumeHi(value: number) {
+            pb_1.Message.setField(this, 8, value);
+        }
         static fromObject(data: {
+            open?: number;
+            close?: number;
             low?: number;
             high?: number;
             baseVolumeLo?: number;
@@ -1760,6 +1786,12 @@ export namespace md {
             quoteVolumeHi?: number;
         }): Summary {
             const message = new Summary({});
+            if (data.open != null) {
+                message.open = data.open;
+            }
+            if (data.close != null) {
+                message.close = data.close;
+            }
             if (data.low != null) {
                 message.low = data.low;
             }
@@ -1782,6 +1814,8 @@ export namespace md {
         }
         toObject() {
             const data: {
+                open?: number;
+                close?: number;
                 low?: number;
                 high?: number;
                 baseVolumeLo?: number;
@@ -1789,6 +1823,12 @@ export namespace md {
                 quoteVolumeLo?: number;
                 quoteVolumeHi?: number;
             } = {};
+            if (this.open != null) {
+                data.open = this.open;
+            }
+            if (this.close != null) {
+                data.close = this.close;
+            }
             if (this.low != null) {
                 data.low = this.low;
             }
@@ -1813,18 +1853,22 @@ export namespace md {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
+            if (this.open != 0)
+                writer.writeUint64(1, this.open);
+            if (this.close != 0)
+                writer.writeUint64(2, this.close);
             if (this.low != 0)
-                writer.writeUint64(1, this.low);
+                writer.writeUint64(3, this.low);
             if (this.high != 0)
-                writer.writeUint64(2, this.high);
+                writer.writeUint64(4, this.high);
             if (this.baseVolumeLo != 0)
-                writer.writeUint64(3, this.baseVolumeLo);
+                writer.writeUint64(5, this.baseVolumeLo);
             if (this.baseVolumeHi != 0)
-                writer.writeUint64(4, this.baseVolumeHi);
+                writer.writeUint64(6, this.baseVolumeHi);
             if (this.quoteVolumeLo != 0)
-                writer.writeUint64(5, this.quoteVolumeLo);
+                writer.writeUint64(7, this.quoteVolumeLo);
             if (this.quoteVolumeHi != 0)
-                writer.writeUint64(6, this.quoteVolumeHi);
+                writer.writeUint64(8, this.quoteVolumeHi);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -1835,21 +1879,27 @@ export namespace md {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.low = reader.readUint64();
+                        message.open = reader.readUint64();
                         break;
                     case 2:
-                        message.high = reader.readUint64();
+                        message.close = reader.readUint64();
                         break;
                     case 3:
-                        message.baseVolumeLo = reader.readUint64();
+                        message.low = reader.readUint64();
                         break;
                     case 4:
-                        message.baseVolumeHi = reader.readUint64();
+                        message.high = reader.readUint64();
                         break;
                     case 5:
-                        message.quoteVolumeLo = reader.readUint64();
+                        message.baseVolumeLo = reader.readUint64();
                         break;
                     case 6:
+                        message.baseVolumeHi = reader.readUint64();
+                        break;
+                    case 7:
+                        message.quoteVolumeLo = reader.readUint64();
+                        break;
+                    case 8:
                         message.quoteVolumeHi = reader.readUint64();
                         break;
                     default: reader.skipField();
@@ -2250,13 +2300,19 @@ export namespace md {
         }
     }
     export class AggMessage extends pb_1.Message {
-        #one_of_decls: number[][] = [[1, 2]];
+        #one_of_decls: number[][] = [[1, 2, 3]];
         constructor(data?: any[] | ({} & (({
             heartbeat?: Heartbeat;
             topOfBooks?: never;
+            rateUpdates?: never;
         } | {
             heartbeat?: never;
             topOfBooks?: TopOfBooks;
+            rateUpdates?: never;
+        } | {
+            heartbeat?: never;
+            topOfBooks?: never;
+            rateUpdates?: RateUpdates;
         })))) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
@@ -2266,6 +2322,9 @@ export namespace md {
                 }
                 if ("topOfBooks" in data && data.topOfBooks != undefined) {
                     this.topOfBooks = data.topOfBooks;
+                }
+                if ("rateUpdates" in data && data.rateUpdates != undefined) {
+                    this.rateUpdates = data.rateUpdates;
                 }
             }
         }
@@ -2287,19 +2346,30 @@ export namespace md {
         get has_topOfBooks() {
             return pb_1.Message.getField(this, 2) != null;
         }
+        get rateUpdates() {
+            return pb_1.Message.getWrapperField(this, RateUpdates, 3) as RateUpdates;
+        }
+        set rateUpdates(value: RateUpdates) {
+            pb_1.Message.setOneofWrapperField(this, 3, this.#one_of_decls[0], value);
+        }
+        get has_rateUpdates() {
+            return pb_1.Message.getField(this, 3) != null;
+        }
         get inner() {
             const cases: {
-                [index: number]: "none" | "heartbeat" | "topOfBooks";
+                [index: number]: "none" | "heartbeat" | "topOfBooks" | "rateUpdates";
             } = {
                 0: "none",
                 1: "heartbeat",
-                2: "topOfBooks"
+                2: "topOfBooks",
+                3: "rateUpdates"
             };
-            return cases[pb_1.Message.computeOneofCase(this, [1, 2])];
+            return cases[pb_1.Message.computeOneofCase(this, [1, 2, 3])];
         }
         static fromObject(data: {
             heartbeat?: ReturnType<typeof Heartbeat.prototype.toObject>;
             topOfBooks?: ReturnType<typeof TopOfBooks.prototype.toObject>;
+            rateUpdates?: ReturnType<typeof RateUpdates.prototype.toObject>;
         }): AggMessage {
             const message = new AggMessage({});
             if (data.heartbeat != null) {
@@ -2308,18 +2378,25 @@ export namespace md {
             if (data.topOfBooks != null) {
                 message.topOfBooks = TopOfBooks.fromObject(data.topOfBooks);
             }
+            if (data.rateUpdates != null) {
+                message.rateUpdates = RateUpdates.fromObject(data.rateUpdates);
+            }
             return message;
         }
         toObject() {
             const data: {
                 heartbeat?: ReturnType<typeof Heartbeat.prototype.toObject>;
                 topOfBooks?: ReturnType<typeof TopOfBooks.prototype.toObject>;
+                rateUpdates?: ReturnType<typeof RateUpdates.prototype.toObject>;
             } = {};
             if (this.heartbeat != null) {
                 data.heartbeat = this.heartbeat.toObject();
             }
             if (this.topOfBooks != null) {
                 data.topOfBooks = this.topOfBooks.toObject();
+            }
+            if (this.rateUpdates != null) {
+                data.rateUpdates = this.rateUpdates.toObject();
             }
             return data;
         }
@@ -2331,6 +2408,8 @@ export namespace md {
                 writer.writeMessage(1, this.heartbeat, () => this.heartbeat.serialize(writer));
             if (this.has_topOfBooks)
                 writer.writeMessage(2, this.topOfBooks, () => this.topOfBooks.serialize(writer));
+            if (this.has_rateUpdates)
+                writer.writeMessage(3, this.rateUpdates, () => this.rateUpdates.serialize(writer));
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -2345,6 +2424,9 @@ export namespace md {
                         break;
                     case 2:
                         reader.readMessage(message.topOfBooks, () => message.topOfBooks = TopOfBooks.deserialize(reader));
+                        break;
+                    case 3:
+                        reader.readMessage(message.rateUpdates, () => message.rateUpdates = RateUpdates.deserialize(reader));
                         break;
                     default: reader.skipField();
                 }
@@ -2368,6 +2450,7 @@ export namespace md {
             askPrice?: number;
             askQuantity?: number;
             lastPrice?: number;
+            rolling24hPrice?: number;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
@@ -2392,6 +2475,9 @@ export namespace md {
                 }
                 if ("lastPrice" in data && data.lastPrice != undefined) {
                     this.lastPrice = data.lastPrice;
+                }
+                if ("rolling24hPrice" in data && data.rolling24hPrice != undefined) {
+                    this.rolling24hPrice = data.rolling24hPrice;
                 }
             }
         }
@@ -2437,6 +2523,12 @@ export namespace md {
         set lastPrice(value: number) {
             pb_1.Message.setField(this, 7, value);
         }
+        get rolling24hPrice() {
+            return pb_1.Message.getFieldWithDefault(this, 8, 0) as number;
+        }
+        set rolling24hPrice(value: number) {
+            pb_1.Message.setField(this, 8, value);
+        }
         static fromObject(data: {
             marketId?: number;
             transactTime?: number;
@@ -2445,6 +2537,7 @@ export namespace md {
             askPrice?: number;
             askQuantity?: number;
             lastPrice?: number;
+            rolling24hPrice?: number;
         }): TopOfBook {
             const message = new TopOfBook({});
             if (data.marketId != null) {
@@ -2468,6 +2561,9 @@ export namespace md {
             if (data.lastPrice != null) {
                 message.lastPrice = data.lastPrice;
             }
+            if (data.rolling24hPrice != null) {
+                message.rolling24hPrice = data.rolling24hPrice;
+            }
             return message;
         }
         toObject() {
@@ -2479,6 +2575,7 @@ export namespace md {
                 askPrice?: number;
                 askQuantity?: number;
                 lastPrice?: number;
+                rolling24hPrice?: number;
             } = {};
             if (this.marketId != null) {
                 data.marketId = this.marketId;
@@ -2501,6 +2598,9 @@ export namespace md {
             if (this.lastPrice != null) {
                 data.lastPrice = this.lastPrice;
             }
+            if (this.rolling24hPrice != null) {
+                data.rolling24hPrice = this.rolling24hPrice;
+            }
             return data;
         }
         serialize(): Uint8Array;
@@ -2521,6 +2621,8 @@ export namespace md {
                 writer.writeUint64(6, this.askQuantity);
             if (this.lastPrice != 0)
                 writer.writeUint64(7, this.lastPrice);
+            if (this.rolling24hPrice != 0)
+                writer.writeUint64(8, this.rolling24hPrice);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -2550,6 +2652,9 @@ export namespace md {
                         break;
                     case 7:
                         message.lastPrice = reader.readUint64();
+                        break;
+                    case 8:
+                        message.rolling24hPrice = reader.readUint64();
                         break;
                     default: reader.skipField();
                 }
@@ -2628,6 +2733,209 @@ export namespace md {
         }
         static deserializeBinary(bytes: Uint8Array): TopOfBooks {
             return TopOfBooks.deserialize(bytes);
+        }
+    }
+    export class RateUpdate extends pb_1.Message {
+        #one_of_decls: number[][] = [];
+        constructor(data?: any[] | {
+            assetId?: number;
+            timestamp?: number;
+            rate?: number;
+            side?: RateUpdateSide;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("assetId" in data && data.assetId != undefined) {
+                    this.assetId = data.assetId;
+                }
+                if ("timestamp" in data && data.timestamp != undefined) {
+                    this.timestamp = data.timestamp;
+                }
+                if ("rate" in data && data.rate != undefined) {
+                    this.rate = data.rate;
+                }
+                if ("side" in data && data.side != undefined) {
+                    this.side = data.side;
+                }
+            }
+        }
+        get assetId() {
+            return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
+        }
+        set assetId(value: number) {
+            pb_1.Message.setField(this, 1, value);
+        }
+        get timestamp() {
+            return pb_1.Message.getFieldWithDefault(this, 2, 0) as number;
+        }
+        set timestamp(value: number) {
+            pb_1.Message.setField(this, 2, value);
+        }
+        get rate() {
+            return pb_1.Message.getFieldWithDefault(this, 3, 0) as number;
+        }
+        set rate(value: number) {
+            pb_1.Message.setField(this, 3, value);
+        }
+        get side() {
+            return pb_1.Message.getFieldWithDefault(this, 4, RateUpdateSide.BASE) as RateUpdateSide;
+        }
+        set side(value: RateUpdateSide) {
+            pb_1.Message.setField(this, 4, value);
+        }
+        static fromObject(data: {
+            assetId?: number;
+            timestamp?: number;
+            rate?: number;
+            side?: RateUpdateSide;
+        }): RateUpdate {
+            const message = new RateUpdate({});
+            if (data.assetId != null) {
+                message.assetId = data.assetId;
+            }
+            if (data.timestamp != null) {
+                message.timestamp = data.timestamp;
+            }
+            if (data.rate != null) {
+                message.rate = data.rate;
+            }
+            if (data.side != null) {
+                message.side = data.side;
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                assetId?: number;
+                timestamp?: number;
+                rate?: number;
+                side?: RateUpdateSide;
+            } = {};
+            if (this.assetId != null) {
+                data.assetId = this.assetId;
+            }
+            if (this.timestamp != null) {
+                data.timestamp = this.timestamp;
+            }
+            if (this.rate != null) {
+                data.rate = this.rate;
+            }
+            if (this.side != null) {
+                data.side = this.side;
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (this.assetId != 0)
+                writer.writeUint64(1, this.assetId);
+            if (this.timestamp != 0)
+                writer.writeUint64(2, this.timestamp);
+            if (this.rate != 0)
+                writer.writeUint64(3, this.rate);
+            if (this.side != RateUpdateSide.BASE)
+                writer.writeEnum(4, this.side);
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): RateUpdate {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new RateUpdate();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.assetId = reader.readUint64();
+                        break;
+                    case 2:
+                        message.timestamp = reader.readUint64();
+                        break;
+                    case 3:
+                        message.rate = reader.readUint64();
+                        break;
+                    case 4:
+                        message.side = reader.readEnum();
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): RateUpdate {
+            return RateUpdate.deserialize(bytes);
+        }
+    }
+    export class RateUpdates extends pb_1.Message {
+        #one_of_decls: number[][] = [];
+        constructor(data?: any[] | {
+            updates?: RateUpdate[];
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [1], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("updates" in data && data.updates != undefined) {
+                    this.updates = data.updates;
+                }
+            }
+        }
+        get updates() {
+            return pb_1.Message.getRepeatedWrapperField(this, RateUpdate, 1) as RateUpdate[];
+        }
+        set updates(value: RateUpdate[]) {
+            pb_1.Message.setRepeatedWrapperField(this, 1, value);
+        }
+        static fromObject(data: {
+            updates?: ReturnType<typeof RateUpdate.prototype.toObject>[];
+        }): RateUpdates {
+            const message = new RateUpdates({});
+            if (data.updates != null) {
+                message.updates = data.updates.map(item => RateUpdate.fromObject(item));
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                updates?: ReturnType<typeof RateUpdate.prototype.toObject>[];
+            } = {};
+            if (this.updates != null) {
+                data.updates = this.updates.map((item: RateUpdate) => item.toObject());
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (this.updates.length)
+                writer.writeRepeatedMessage(1, this.updates, (item: RateUpdate) => item.serialize(writer));
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): RateUpdates {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new RateUpdates();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        reader.readMessage(message.updates, () => pb_1.Message.addToRepeatedWrapperField(message, 1, RateUpdate.deserialize(reader), RateUpdate));
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): RateUpdates {
+            return RateUpdates.deserialize(bytes);
         }
     }
     export class ClientMessage extends pb_1.Message {

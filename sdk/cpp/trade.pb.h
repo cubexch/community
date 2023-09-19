@@ -4480,7 +4480,7 @@ class RawUnits PROTOBUF_FINAL :
     kWord0FieldNumber = 1,
     kWord1FieldNumber = 2,
     kWord2FieldNumber = 3,
-    kWord3FieldNumber = 5,
+    kWord3FieldNumber = 4,
   };
   // uint64 word0 = 1;
   void clear_word0();
@@ -4509,7 +4509,7 @@ class RawUnits PROTOBUF_FINAL :
   void _internal_set_word2(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 word3 = 5;
+  // uint64 word3 = 4;
   void clear_word3();
   ::PROTOBUF_NAMESPACE_ID::uint64 word3() const;
   void set_word3(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -9019,7 +9019,7 @@ inline void RawUnits::set_word2(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   // @@protoc_insertion_point(field_set:trade.RawUnits.word2)
 }
 
-// uint64 word3 = 5;
+// uint64 word3 = 4;
 inline void RawUnits::clear_word3() {
   word3_ = PROTOBUF_ULONGLONG(0);
 }
