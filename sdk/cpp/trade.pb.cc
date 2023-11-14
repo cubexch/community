@@ -19,7 +19,7 @@ PROTOBUF_PRAGMA_INIT_SEG
 namespace trade {
 constexpr Credentials::Credentials(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : accesskeyid_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : access_key_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , signature_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , timestamp_(PROTOBUF_ULONGLONG(0)){}
 struct CredentialsDefaultTypeInternal {
@@ -45,22 +45,23 @@ struct OrderRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT OrderRequestDefaultTypeInternal _OrderRequest_default_instance_;
 constexpr NewOrder::NewOrder(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : clientorderid_(PROTOBUF_ULONGLONG(0))
-  , requestid_(PROTOBUF_ULONGLONG(0))
-  , marketid_(PROTOBUF_ULONGLONG(0))
+  : client_order_id_(PROTOBUF_ULONGLONG(0))
+  , request_id_(PROTOBUF_ULONGLONG(0))
+  , market_id_(PROTOBUF_ULONGLONG(0))
   , price_(PROTOBUF_ULONGLONG(0))
   , quantity_(PROTOBUF_ULONGLONG(0))
   , side_(0)
 
-  , timeinforce_(0)
+  , time_in_force_(0)
 
-  , subaccountid_(PROTOBUF_ULONGLONG(0))
-  , ordertype_(0)
+  , subaccount_id_(PROTOBUF_ULONGLONG(0))
+  , order_type_(0)
 
-  , selftradeprevention_(0)
+  , self_trade_prevention_(0)
 
-  , postonly_(0)
-{}
+  , post_only_(0)
+
+  , cancel_on_disconnect_(false){}
 struct NewOrderDefaultTypeInternal {
   constexpr NewOrderDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -72,10 +73,10 @@ struct NewOrderDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NewOrderDefaultTypeInternal _NewOrder_default_instance_;
 constexpr CancelOrder::CancelOrder(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : marketid_(PROTOBUF_ULONGLONG(0))
-  , clientorderid_(PROTOBUF_ULONGLONG(0))
-  , requestid_(PROTOBUF_ULONGLONG(0))
-  , subaccountid_(PROTOBUF_ULONGLONG(0)){}
+  : market_id_(PROTOBUF_ULONGLONG(0))
+  , client_order_id_(PROTOBUF_ULONGLONG(0))
+  , request_id_(PROTOBUF_ULONGLONG(0))
+  , subaccount_id_(PROTOBUF_ULONGLONG(0)){}
 struct CancelOrderDefaultTypeInternal {
   constexpr CancelOrderDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -87,15 +88,15 @@ struct CancelOrderDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CancelOrderDefaultTypeInternal _CancelOrder_default_instance_;
 constexpr ModifyOrder::ModifyOrder(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : marketid_(PROTOBUF_ULONGLONG(0))
-  , clientorderid_(PROTOBUF_ULONGLONG(0))
-  , requestid_(PROTOBUF_ULONGLONG(0))
-  , newprice_(PROTOBUF_ULONGLONG(0))
-  , newquantity_(PROTOBUF_ULONGLONG(0))
-  , subaccountid_(PROTOBUF_ULONGLONG(0))
-  , selftradeprevention_(0)
+  : market_id_(PROTOBUF_ULONGLONG(0))
+  , client_order_id_(PROTOBUF_ULONGLONG(0))
+  , request_id_(PROTOBUF_ULONGLONG(0))
+  , new_price_(PROTOBUF_ULONGLONG(0))
+  , new_quantity_(PROTOBUF_ULONGLONG(0))
+  , subaccount_id_(PROTOBUF_ULONGLONG(0))
+  , self_trade_prevention_(0)
 
-  , postonly_(0)
+  , post_only_(0)
 {}
 struct ModifyOrderDefaultTypeInternal {
   constexpr ModifyOrderDefaultTypeInternal()
@@ -108,9 +109,9 @@ struct ModifyOrderDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ModifyOrderDefaultTypeInternal _ModifyOrder_default_instance_;
 constexpr MassCancel::MassCancel(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : subaccountid_(PROTOBUF_ULONGLONG(0))
-  , requestid_(PROTOBUF_ULONGLONG(0))
-  , marketid_(PROTOBUF_ULONGLONG(0))
+  : subaccount_id_(PROTOBUF_ULONGLONG(0))
+  , request_id_(PROTOBUF_ULONGLONG(0))
+  , market_id_(PROTOBUF_ULONGLONG(0))
   , side_(0)
 {}
 struct MassCancelDefaultTypeInternal {
@@ -124,7 +125,7 @@ struct MassCancelDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT MassCancelDefaultTypeInternal _MassCancel_default_instance_;
 constexpr Heartbeat::Heartbeat(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : requestid_(PROTOBUF_ULONGLONG(0))
+  : request_id_(PROTOBUF_ULONGLONG(0))
   , timestamp_(PROTOBUF_ULONGLONG(0)){}
 struct HeartbeatDefaultTypeInternal {
   constexpr HeartbeatDefaultTypeInternal()
@@ -149,21 +150,22 @@ struct OrderResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT OrderResponseDefaultTypeInternal _OrderResponse_default_instance_;
 constexpr NewOrderAck::NewOrderAck(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : msgseqnum_(PROTOBUF_ULONGLONG(0))
-  , clientorderid_(PROTOBUF_ULONGLONG(0))
-  , requestid_(PROTOBUF_ULONGLONG(0))
-  , exchangeorderid_(PROTOBUF_ULONGLONG(0))
-  , marketid_(PROTOBUF_ULONGLONG(0))
+  : msg_seq_num_(PROTOBUF_ULONGLONG(0))
+  , client_order_id_(PROTOBUF_ULONGLONG(0))
+  , request_id_(PROTOBUF_ULONGLONG(0))
+  , exchange_order_id_(PROTOBUF_ULONGLONG(0))
+  , market_id_(PROTOBUF_ULONGLONG(0))
   , price_(PROTOBUF_ULONGLONG(0))
   , quantity_(PROTOBUF_ULONGLONG(0))
   , side_(0)
 
-  , timeinforce_(0)
+  , time_in_force_(0)
 
-  , transacttime_(PROTOBUF_ULONGLONG(0))
-  , subaccountid_(PROTOBUF_ULONGLONG(0))
-  , ordertype_(0)
-{}
+  , transact_time_(PROTOBUF_ULONGLONG(0))
+  , order_type_(0)
+
+  , cancel_on_disconnect_(false)
+  , subaccount_id_(PROTOBUF_ULONGLONG(0)){}
 struct NewOrderAckDefaultTypeInternal {
   constexpr NewOrderAckDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -175,12 +177,12 @@ struct NewOrderAckDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NewOrderAckDefaultTypeInternal _NewOrderAck_default_instance_;
 constexpr CancelOrderAck::CancelOrderAck(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : msgseqnum_(PROTOBUF_ULONGLONG(0))
-  , clientorderid_(PROTOBUF_ULONGLONG(0))
-  , requestid_(PROTOBUF_ULONGLONG(0))
-  , transacttime_(PROTOBUF_ULONGLONG(0))
-  , subaccountid_(PROTOBUF_ULONGLONG(0))
-  , marketid_(PROTOBUF_ULONGLONG(0))
+  : msg_seq_num_(PROTOBUF_ULONGLONG(0))
+  , client_order_id_(PROTOBUF_ULONGLONG(0))
+  , request_id_(PROTOBUF_ULONGLONG(0))
+  , transact_time_(PROTOBUF_ULONGLONG(0))
+  , subaccount_id_(PROTOBUF_ULONGLONG(0))
+  , market_id_(PROTOBUF_ULONGLONG(0))
   , reason_(0)
 {}
 struct CancelOrderAckDefaultTypeInternal {
@@ -194,14 +196,16 @@ struct CancelOrderAckDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CancelOrderAckDefaultTypeInternal _CancelOrderAck_default_instance_;
 constexpr ModifyOrderAck::ModifyOrderAck(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : msgseqnum_(PROTOBUF_ULONGLONG(0))
-  , clientorderid_(PROTOBUF_ULONGLONG(0))
-  , requestid_(PROTOBUF_ULONGLONG(0))
-  , transacttime_(PROTOBUF_ULONGLONG(0))
-  , newquantity_(PROTOBUF_ULONGLONG(0))
-  , subaccountid_(PROTOBUF_ULONGLONG(0))
-  , marketid_(PROTOBUF_ULONGLONG(0))
-  , price_(PROTOBUF_ULONGLONG(0)){}
+  : msg_seq_num_(PROTOBUF_ULONGLONG(0))
+  , client_order_id_(PROTOBUF_ULONGLONG(0))
+  , request_id_(PROTOBUF_ULONGLONG(0))
+  , transact_time_(PROTOBUF_ULONGLONG(0))
+  , remaining_quantity_(PROTOBUF_ULONGLONG(0))
+  , subaccount_id_(PROTOBUF_ULONGLONG(0))
+  , market_id_(PROTOBUF_ULONGLONG(0))
+  , price_(PROTOBUF_ULONGLONG(0))
+  , quantity_(PROTOBUF_ULONGLONG(0))
+  , cumulative_quantity_(PROTOBUF_ULONGLONG(0)){}
 struct ModifyOrderAckDefaultTypeInternal {
   constexpr ModifyOrderAckDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -213,13 +217,13 @@ struct ModifyOrderAckDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ModifyOrderAckDefaultTypeInternal _ModifyOrderAck_default_instance_;
 constexpr MassCancelAck::MassCancelAck(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : msgseqnum_(PROTOBUF_ULONGLONG(0))
-  , subaccountid_(PROTOBUF_ULONGLONG(0))
-  , requestid_(PROTOBUF_ULONGLONG(0))
-  , transacttime_(PROTOBUF_ULONGLONG(0))
+  : msg_seq_num_(PROTOBUF_ULONGLONG(0))
+  , subaccount_id_(PROTOBUF_ULONGLONG(0))
+  , request_id_(PROTOBUF_ULONGLONG(0))
+  , transact_time_(PROTOBUF_ULONGLONG(0))
   , reason_(0)
 
-  , totalaffectedorders_(0u){}
+  , total_affected_orders_(0u){}
 struct MassCancelAckDefaultTypeInternal {
   constexpr MassCancelAckDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -231,21 +235,21 @@ struct MassCancelAckDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT MassCancelAckDefaultTypeInternal _MassCancelAck_default_instance_;
 constexpr NewOrderReject::NewOrderReject(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : msgseqnum_(PROTOBUF_ULONGLONG(0))
-  , clientorderid_(PROTOBUF_ULONGLONG(0))
-  , requestid_(PROTOBUF_ULONGLONG(0))
-  , transacttime_(PROTOBUF_ULONGLONG(0))
-  , subaccountid_(PROTOBUF_ULONGLONG(0))
-  , marketid_(PROTOBUF_ULONGLONG(0))
+  : msg_seq_num_(PROTOBUF_ULONGLONG(0))
+  , client_order_id_(PROTOBUF_ULONGLONG(0))
+  , request_id_(PROTOBUF_ULONGLONG(0))
+  , transact_time_(PROTOBUF_ULONGLONG(0))
+  , subaccount_id_(PROTOBUF_ULONGLONG(0))
+  , market_id_(PROTOBUF_ULONGLONG(0))
   , price_(PROTOBUF_ULONGLONG(0))
   , reason_(0)
 
   , side_(0)
 
   , quantity_(PROTOBUF_ULONGLONG(0))
-  , timeinforce_(0)
+  , time_in_force_(0)
 
-  , ordertype_(0)
+  , order_type_(0)
 {}
 struct NewOrderRejectDefaultTypeInternal {
   constexpr NewOrderRejectDefaultTypeInternal()
@@ -258,12 +262,12 @@ struct NewOrderRejectDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NewOrderRejectDefaultTypeInternal _NewOrderReject_default_instance_;
 constexpr CancelOrderReject::CancelOrderReject(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : msgseqnum_(PROTOBUF_ULONGLONG(0))
-  , clientorderid_(PROTOBUF_ULONGLONG(0))
-  , requestid_(PROTOBUF_ULONGLONG(0))
-  , transacttime_(PROTOBUF_ULONGLONG(0))
-  , subaccountid_(PROTOBUF_ULONGLONG(0))
-  , marketid_(PROTOBUF_ULONGLONG(0))
+  : msg_seq_num_(PROTOBUF_ULONGLONG(0))
+  , client_order_id_(PROTOBUF_ULONGLONG(0))
+  , request_id_(PROTOBUF_ULONGLONG(0))
+  , transact_time_(PROTOBUF_ULONGLONG(0))
+  , subaccount_id_(PROTOBUF_ULONGLONG(0))
+  , market_id_(PROTOBUF_ULONGLONG(0))
   , reason_(0)
 {}
 struct CancelOrderRejectDefaultTypeInternal {
@@ -277,12 +281,12 @@ struct CancelOrderRejectDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT CancelOrderRejectDefaultTypeInternal _CancelOrderReject_default_instance_;
 constexpr ModifyOrderReject::ModifyOrderReject(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : msgseqnum_(PROTOBUF_ULONGLONG(0))
-  , clientorderid_(PROTOBUF_ULONGLONG(0))
-  , requestid_(PROTOBUF_ULONGLONG(0))
-  , transacttime_(PROTOBUF_ULONGLONG(0))
-  , subaccountid_(PROTOBUF_ULONGLONG(0))
-  , marketid_(PROTOBUF_ULONGLONG(0))
+  : msg_seq_num_(PROTOBUF_ULONGLONG(0))
+  , client_order_id_(PROTOBUF_ULONGLONG(0))
+  , request_id_(PROTOBUF_ULONGLONG(0))
+  , transact_time_(PROTOBUF_ULONGLONG(0))
+  , subaccount_id_(PROTOBUF_ULONGLONG(0))
+  , market_id_(PROTOBUF_ULONGLONG(0))
   , reason_(0)
 {}
 struct ModifyOrderRejectDefaultTypeInternal {
@@ -296,15 +300,16 @@ struct ModifyOrderRejectDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ModifyOrderRejectDefaultTypeInternal _ModifyOrderReject_default_instance_;
 constexpr Fill::Fill(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : msgseqnum_(PROTOBUF_ULONGLONG(0))
-  , marketid_(PROTOBUF_ULONGLONG(0))
-  , clientorderid_(PROTOBUF_ULONGLONG(0))
-  , exchangeorderid_(PROTOBUF_ULONGLONG(0))
-  , fillprice_(PROTOBUF_ULONGLONG(0))
-  , fillquantity_(PROTOBUF_ULONGLONG(0))
-  , leavesquantity_(PROTOBUF_ULONGLONG(0))
-  , transacttime_(PROTOBUF_ULONGLONG(0))
-  , subaccountid_(PROTOBUF_ULONGLONG(0)){}
+  : msg_seq_num_(PROTOBUF_ULONGLONG(0))
+  , market_id_(PROTOBUF_ULONGLONG(0))
+  , client_order_id_(PROTOBUF_ULONGLONG(0))
+  , exchange_order_id_(PROTOBUF_ULONGLONG(0))
+  , fill_price_(PROTOBUF_ULONGLONG(0))
+  , fill_quantity_(PROTOBUF_ULONGLONG(0))
+  , leaves_quantity_(PROTOBUF_ULONGLONG(0))
+  , transact_time_(PROTOBUF_ULONGLONG(0))
+  , subaccount_id_(PROTOBUF_ULONGLONG(0))
+  , cumulative_quantity_(PROTOBUF_ULONGLONG(0)){}
 struct FillDefaultTypeInternal {
   constexpr FillDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -318,8 +323,8 @@ constexpr AssetPosition::AssetPosition(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : total_(nullptr)
   , available_(nullptr)
-  , subaccountid_(PROTOBUF_ULONGLONG(0))
-  , assetid_(PROTOBUF_ULONGLONG(0)){}
+  , subaccount_id_(PROTOBUF_ULONGLONG(0))
+  , asset_id_(PROTOBUF_ULONGLONG(0)){}
 struct AssetPositionDefaultTypeInternal {
   constexpr AssetPositionDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -382,7 +387,7 @@ struct AssetPositionsDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AssetPositionsDefaultTypeInternal _AssetPositions_default_instance_;
 constexpr Done::Done(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : latesttransacttime_(PROTOBUF_ULONGLONG(0)){}
+  : latest_transact_time_(PROTOBUF_ULONGLONG(0)){}
 struct DoneDefaultTypeInternal {
   constexpr DoneDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -394,19 +399,20 @@ struct DoneDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT DoneDefaultTypeInternal _Done_default_instance_;
 constexpr RestingOrder::RestingOrder(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : clientorderid_(PROTOBUF_ULONGLONG(0))
-  , exchangeorderid_(PROTOBUF_ULONGLONG(0))
-  , marketid_(PROTOBUF_ULONGLONG(0))
+  : client_order_id_(PROTOBUF_ULONGLONG(0))
+  , exchange_order_id_(PROTOBUF_ULONGLONG(0))
+  , market_id_(PROTOBUF_ULONGLONG(0))
   , price_(PROTOBUF_ULONGLONG(0))
-  , originalquantity_(PROTOBUF_ULONGLONG(0))
+  , order_quantity_(PROTOBUF_ULONGLONG(0))
   , side_(0)
 
-  , timeinforce_(0)
+  , time_in_force_(0)
 
-  , remainingquantity_(PROTOBUF_ULONGLONG(0))
-  , resttime_(PROTOBUF_ULONGLONG(0))
-  , subaccountid_(PROTOBUF_ULONGLONG(0))
-  , ordertype_(0)
+  , remaining_quantity_(PROTOBUF_ULONGLONG(0))
+  , rest_time_(PROTOBUF_ULONGLONG(0))
+  , subaccount_id_(PROTOBUF_ULONGLONG(0))
+  , cumulative_quantity_(PROTOBUF_ULONGLONG(0))
+  , order_type_(0)
 {}
 struct RestingOrderDefaultTypeInternal {
   constexpr RestingOrderDefaultTypeInternal()
@@ -428,7 +434,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_trade_2eproto::offsets[] PROTO
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::trade::Credentials, accesskeyid_),
+  PROTOBUF_FIELD_OFFSET(::trade::Credentials, access_key_id_),
   PROTOBUF_FIELD_OFFSET(::trade::Credentials, signature_),
   PROTOBUF_FIELD_OFFSET(::trade::Credentials, timestamp_),
   ~0u,  // no _has_bits_
@@ -447,17 +453,18 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_trade_2eproto::offsets[] PROTO
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::trade::NewOrder, clientorderid_),
-  PROTOBUF_FIELD_OFFSET(::trade::NewOrder, requestid_),
-  PROTOBUF_FIELD_OFFSET(::trade::NewOrder, marketid_),
+  PROTOBUF_FIELD_OFFSET(::trade::NewOrder, client_order_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::NewOrder, request_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::NewOrder, market_id_),
   PROTOBUF_FIELD_OFFSET(::trade::NewOrder, price_),
   PROTOBUF_FIELD_OFFSET(::trade::NewOrder, quantity_),
   PROTOBUF_FIELD_OFFSET(::trade::NewOrder, side_),
-  PROTOBUF_FIELD_OFFSET(::trade::NewOrder, timeinforce_),
-  PROTOBUF_FIELD_OFFSET(::trade::NewOrder, ordertype_),
-  PROTOBUF_FIELD_OFFSET(::trade::NewOrder, subaccountid_),
-  PROTOBUF_FIELD_OFFSET(::trade::NewOrder, selftradeprevention_),
-  PROTOBUF_FIELD_OFFSET(::trade::NewOrder, postonly_),
+  PROTOBUF_FIELD_OFFSET(::trade::NewOrder, time_in_force_),
+  PROTOBUF_FIELD_OFFSET(::trade::NewOrder, order_type_),
+  PROTOBUF_FIELD_OFFSET(::trade::NewOrder, subaccount_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::NewOrder, self_trade_prevention_),
+  PROTOBUF_FIELD_OFFSET(::trade::NewOrder, post_only_),
+  PROTOBUF_FIELD_OFFSET(::trade::NewOrder, cancel_on_disconnect_),
   ~0u,
   ~0u,
   ~0u,
@@ -469,28 +476,29 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_trade_2eproto::offsets[] PROTO
   ~0u,
   1,
   ~0u,
+  ~0u,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::trade::CancelOrder, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::trade::CancelOrder, marketid_),
-  PROTOBUF_FIELD_OFFSET(::trade::CancelOrder, clientorderid_),
-  PROTOBUF_FIELD_OFFSET(::trade::CancelOrder, requestid_),
-  PROTOBUF_FIELD_OFFSET(::trade::CancelOrder, subaccountid_),
+  PROTOBUF_FIELD_OFFSET(::trade::CancelOrder, market_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::CancelOrder, client_order_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::CancelOrder, request_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::CancelOrder, subaccount_id_),
   PROTOBUF_FIELD_OFFSET(::trade::ModifyOrder, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::trade::ModifyOrder, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrder, marketid_),
-  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrder, clientorderid_),
-  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrder, requestid_),
-  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrder, newprice_),
-  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrder, newquantity_),
-  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrder, subaccountid_),
-  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrder, selftradeprevention_),
-  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrder, postonly_),
+  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrder, market_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrder, client_order_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrder, request_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrder, new_price_),
+  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrder, new_quantity_),
+  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrder, subaccount_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrder, self_trade_prevention_),
+  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrder, post_only_),
   ~0u,
   ~0u,
   ~0u,
@@ -504,9 +512,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_trade_2eproto::offsets[] PROTO
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::trade::MassCancel, subaccountid_),
-  PROTOBUF_FIELD_OFFSET(::trade::MassCancel, requestid_),
-  PROTOBUF_FIELD_OFFSET(::trade::MassCancel, marketid_),
+  PROTOBUF_FIELD_OFFSET(::trade::MassCancel, subaccount_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::MassCancel, request_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::MassCancel, market_id_),
   PROTOBUF_FIELD_OFFSET(::trade::MassCancel, side_),
   ~0u,
   ~0u,
@@ -517,7 +525,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_trade_2eproto::offsets[] PROTO
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::trade::Heartbeat, requestid_),
+  PROTOBUF_FIELD_OFFSET(::trade::Heartbeat, request_id_),
   PROTOBUF_FIELD_OFFSET(::trade::Heartbeat, timestamp_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::trade::OrderResponse, _internal_metadata_),
@@ -540,24 +548,26 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_trade_2eproto::offsets[] PROTO
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::trade::NewOrderAck, msgseqnum_),
-  PROTOBUF_FIELD_OFFSET(::trade::NewOrderAck, clientorderid_),
-  PROTOBUF_FIELD_OFFSET(::trade::NewOrderAck, requestid_),
-  PROTOBUF_FIELD_OFFSET(::trade::NewOrderAck, exchangeorderid_),
-  PROTOBUF_FIELD_OFFSET(::trade::NewOrderAck, marketid_),
+  PROTOBUF_FIELD_OFFSET(::trade::NewOrderAck, msg_seq_num_),
+  PROTOBUF_FIELD_OFFSET(::trade::NewOrderAck, client_order_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::NewOrderAck, request_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::NewOrderAck, exchange_order_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::NewOrderAck, market_id_),
   PROTOBUF_FIELD_OFFSET(::trade::NewOrderAck, price_),
   PROTOBUF_FIELD_OFFSET(::trade::NewOrderAck, quantity_),
   PROTOBUF_FIELD_OFFSET(::trade::NewOrderAck, side_),
-  PROTOBUF_FIELD_OFFSET(::trade::NewOrderAck, timeinforce_),
-  PROTOBUF_FIELD_OFFSET(::trade::NewOrderAck, ordertype_),
-  PROTOBUF_FIELD_OFFSET(::trade::NewOrderAck, transacttime_),
-  PROTOBUF_FIELD_OFFSET(::trade::NewOrderAck, subaccountid_),
+  PROTOBUF_FIELD_OFFSET(::trade::NewOrderAck, time_in_force_),
+  PROTOBUF_FIELD_OFFSET(::trade::NewOrderAck, order_type_),
+  PROTOBUF_FIELD_OFFSET(::trade::NewOrderAck, transact_time_),
+  PROTOBUF_FIELD_OFFSET(::trade::NewOrderAck, subaccount_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::NewOrderAck, cancel_on_disconnect_),
   ~0u,
   ~0u,
   ~0u,
   ~0u,
   ~0u,
   0,
+  ~0u,
   ~0u,
   ~0u,
   ~0u,
@@ -569,37 +579,39 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_trade_2eproto::offsets[] PROTO
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::trade::CancelOrderAck, msgseqnum_),
-  PROTOBUF_FIELD_OFFSET(::trade::CancelOrderAck, clientorderid_),
-  PROTOBUF_FIELD_OFFSET(::trade::CancelOrderAck, requestid_),
-  PROTOBUF_FIELD_OFFSET(::trade::CancelOrderAck, transacttime_),
-  PROTOBUF_FIELD_OFFSET(::trade::CancelOrderAck, subaccountid_),
+  PROTOBUF_FIELD_OFFSET(::trade::CancelOrderAck, msg_seq_num_),
+  PROTOBUF_FIELD_OFFSET(::trade::CancelOrderAck, client_order_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::CancelOrderAck, request_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::CancelOrderAck, transact_time_),
+  PROTOBUF_FIELD_OFFSET(::trade::CancelOrderAck, subaccount_id_),
   PROTOBUF_FIELD_OFFSET(::trade::CancelOrderAck, reason_),
-  PROTOBUF_FIELD_OFFSET(::trade::CancelOrderAck, marketid_),
+  PROTOBUF_FIELD_OFFSET(::trade::CancelOrderAck, market_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderAck, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderAck, msgseqnum_),
-  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderAck, clientorderid_),
-  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderAck, requestid_),
-  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderAck, transacttime_),
-  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderAck, newquantity_),
-  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderAck, subaccountid_),
-  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderAck, marketid_),
+  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderAck, msg_seq_num_),
+  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderAck, client_order_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderAck, request_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderAck, transact_time_),
+  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderAck, remaining_quantity_),
+  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderAck, subaccount_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderAck, market_id_),
   PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderAck, price_),
+  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderAck, quantity_),
+  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderAck, cumulative_quantity_),
   PROTOBUF_FIELD_OFFSET(::trade::MassCancelAck, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::trade::MassCancelAck, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::trade::MassCancelAck, msgseqnum_),
-  PROTOBUF_FIELD_OFFSET(::trade::MassCancelAck, subaccountid_),
-  PROTOBUF_FIELD_OFFSET(::trade::MassCancelAck, requestid_),
-  PROTOBUF_FIELD_OFFSET(::trade::MassCancelAck, transacttime_),
+  PROTOBUF_FIELD_OFFSET(::trade::MassCancelAck, msg_seq_num_),
+  PROTOBUF_FIELD_OFFSET(::trade::MassCancelAck, subaccount_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::MassCancelAck, request_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::MassCancelAck, transact_time_),
   PROTOBUF_FIELD_OFFSET(::trade::MassCancelAck, reason_),
-  PROTOBUF_FIELD_OFFSET(::trade::MassCancelAck, totalaffectedorders_),
+  PROTOBUF_FIELD_OFFSET(::trade::MassCancelAck, total_affected_orders_),
   ~0u,
   ~0u,
   ~0u,
@@ -611,18 +623,18 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_trade_2eproto::offsets[] PROTO
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::trade::NewOrderReject, msgseqnum_),
-  PROTOBUF_FIELD_OFFSET(::trade::NewOrderReject, clientorderid_),
-  PROTOBUF_FIELD_OFFSET(::trade::NewOrderReject, requestid_),
-  PROTOBUF_FIELD_OFFSET(::trade::NewOrderReject, transacttime_),
-  PROTOBUF_FIELD_OFFSET(::trade::NewOrderReject, subaccountid_),
+  PROTOBUF_FIELD_OFFSET(::trade::NewOrderReject, msg_seq_num_),
+  PROTOBUF_FIELD_OFFSET(::trade::NewOrderReject, client_order_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::NewOrderReject, request_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::NewOrderReject, transact_time_),
+  PROTOBUF_FIELD_OFFSET(::trade::NewOrderReject, subaccount_id_),
   PROTOBUF_FIELD_OFFSET(::trade::NewOrderReject, reason_),
-  PROTOBUF_FIELD_OFFSET(::trade::NewOrderReject, marketid_),
+  PROTOBUF_FIELD_OFFSET(::trade::NewOrderReject, market_id_),
   PROTOBUF_FIELD_OFFSET(::trade::NewOrderReject, price_),
   PROTOBUF_FIELD_OFFSET(::trade::NewOrderReject, quantity_),
   PROTOBUF_FIELD_OFFSET(::trade::NewOrderReject, side_),
-  PROTOBUF_FIELD_OFFSET(::trade::NewOrderReject, timeinforce_),
-  PROTOBUF_FIELD_OFFSET(::trade::NewOrderReject, ordertype_),
+  PROTOBUF_FIELD_OFFSET(::trade::NewOrderReject, time_in_force_),
+  PROTOBUF_FIELD_OFFSET(::trade::NewOrderReject, order_type_),
   ~0u,
   ~0u,
   ~0u,
@@ -640,46 +652,47 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_trade_2eproto::offsets[] PROTO
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::trade::CancelOrderReject, msgseqnum_),
-  PROTOBUF_FIELD_OFFSET(::trade::CancelOrderReject, clientorderid_),
-  PROTOBUF_FIELD_OFFSET(::trade::CancelOrderReject, requestid_),
-  PROTOBUF_FIELD_OFFSET(::trade::CancelOrderReject, transacttime_),
-  PROTOBUF_FIELD_OFFSET(::trade::CancelOrderReject, subaccountid_),
+  PROTOBUF_FIELD_OFFSET(::trade::CancelOrderReject, msg_seq_num_),
+  PROTOBUF_FIELD_OFFSET(::trade::CancelOrderReject, client_order_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::CancelOrderReject, request_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::CancelOrderReject, transact_time_),
+  PROTOBUF_FIELD_OFFSET(::trade::CancelOrderReject, subaccount_id_),
   PROTOBUF_FIELD_OFFSET(::trade::CancelOrderReject, reason_),
-  PROTOBUF_FIELD_OFFSET(::trade::CancelOrderReject, marketid_),
+  PROTOBUF_FIELD_OFFSET(::trade::CancelOrderReject, market_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderReject, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderReject, msgseqnum_),
-  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderReject, clientorderid_),
-  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderReject, requestid_),
-  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderReject, transacttime_),
-  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderReject, subaccountid_),
+  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderReject, msg_seq_num_),
+  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderReject, client_order_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderReject, request_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderReject, transact_time_),
+  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderReject, subaccount_id_),
   PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderReject, reason_),
-  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderReject, marketid_),
+  PROTOBUF_FIELD_OFFSET(::trade::ModifyOrderReject, market_id_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::trade::Fill, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::trade::Fill, msgseqnum_),
-  PROTOBUF_FIELD_OFFSET(::trade::Fill, marketid_),
-  PROTOBUF_FIELD_OFFSET(::trade::Fill, clientorderid_),
-  PROTOBUF_FIELD_OFFSET(::trade::Fill, exchangeorderid_),
-  PROTOBUF_FIELD_OFFSET(::trade::Fill, fillprice_),
-  PROTOBUF_FIELD_OFFSET(::trade::Fill, fillquantity_),
-  PROTOBUF_FIELD_OFFSET(::trade::Fill, leavesquantity_),
-  PROTOBUF_FIELD_OFFSET(::trade::Fill, transacttime_),
-  PROTOBUF_FIELD_OFFSET(::trade::Fill, subaccountid_),
+  PROTOBUF_FIELD_OFFSET(::trade::Fill, msg_seq_num_),
+  PROTOBUF_FIELD_OFFSET(::trade::Fill, market_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::Fill, client_order_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::Fill, exchange_order_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::Fill, fill_price_),
+  PROTOBUF_FIELD_OFFSET(::trade::Fill, fill_quantity_),
+  PROTOBUF_FIELD_OFFSET(::trade::Fill, leaves_quantity_),
+  PROTOBUF_FIELD_OFFSET(::trade::Fill, transact_time_),
+  PROTOBUF_FIELD_OFFSET(::trade::Fill, subaccount_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::Fill, cumulative_quantity_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::trade::AssetPosition, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::trade::AssetPosition, subaccountid_),
-  PROTOBUF_FIELD_OFFSET(::trade::AssetPosition, assetid_),
+  PROTOBUF_FIELD_OFFSET(::trade::AssetPosition, subaccount_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::AssetPosition, asset_id_),
   PROTOBUF_FIELD_OFFSET(::trade::AssetPosition, total_),
   PROTOBUF_FIELD_OFFSET(::trade::AssetPosition, available_),
   ~0u,  // no _has_bits_
@@ -717,48 +730,49 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_trade_2eproto::offsets[] PROTO
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::trade::Done, latesttransacttime_),
+  PROTOBUF_FIELD_OFFSET(::trade::Done, latest_transact_time_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::trade::RestingOrder, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::trade::RestingOrder, clientorderid_),
-  PROTOBUF_FIELD_OFFSET(::trade::RestingOrder, exchangeorderid_),
-  PROTOBUF_FIELD_OFFSET(::trade::RestingOrder, marketid_),
+  PROTOBUF_FIELD_OFFSET(::trade::RestingOrder, client_order_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::RestingOrder, exchange_order_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::RestingOrder, market_id_),
   PROTOBUF_FIELD_OFFSET(::trade::RestingOrder, price_),
-  PROTOBUF_FIELD_OFFSET(::trade::RestingOrder, originalquantity_),
+  PROTOBUF_FIELD_OFFSET(::trade::RestingOrder, order_quantity_),
   PROTOBUF_FIELD_OFFSET(::trade::RestingOrder, side_),
-  PROTOBUF_FIELD_OFFSET(::trade::RestingOrder, timeinforce_),
-  PROTOBUF_FIELD_OFFSET(::trade::RestingOrder, ordertype_),
-  PROTOBUF_FIELD_OFFSET(::trade::RestingOrder, remainingquantity_),
-  PROTOBUF_FIELD_OFFSET(::trade::RestingOrder, resttime_),
-  PROTOBUF_FIELD_OFFSET(::trade::RestingOrder, subaccountid_),
+  PROTOBUF_FIELD_OFFSET(::trade::RestingOrder, time_in_force_),
+  PROTOBUF_FIELD_OFFSET(::trade::RestingOrder, order_type_),
+  PROTOBUF_FIELD_OFFSET(::trade::RestingOrder, remaining_quantity_),
+  PROTOBUF_FIELD_OFFSET(::trade::RestingOrder, rest_time_),
+  PROTOBUF_FIELD_OFFSET(::trade::RestingOrder, subaccount_id_),
+  PROTOBUF_FIELD_OFFSET(::trade::RestingOrder, cumulative_quantity_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::trade::Credentials)},
   { 8, -1, sizeof(::trade::OrderRequest)},
-  { 19, 35, sizeof(::trade::NewOrder)},
-  { 46, -1, sizeof(::trade::CancelOrder)},
-  { 55, 68, sizeof(::trade::ModifyOrder)},
-  { 76, 85, sizeof(::trade::MassCancel)},
-  { 89, -1, sizeof(::trade::Heartbeat)},
-  { 96, -1, sizeof(::trade::OrderResponse)},
-  { 112, 129, sizeof(::trade::NewOrderAck)},
-  { 141, -1, sizeof(::trade::CancelOrderAck)},
-  { 153, -1, sizeof(::trade::ModifyOrderAck)},
-  { 166, 177, sizeof(::trade::MassCancelAck)},
-  { 183, 200, sizeof(::trade::NewOrderReject)},
-  { 212, -1, sizeof(::trade::CancelOrderReject)},
-  { 224, -1, sizeof(::trade::ModifyOrderReject)},
-  { 236, -1, sizeof(::trade::Fill)},
-  { 250, -1, sizeof(::trade::AssetPosition)},
-  { 259, -1, sizeof(::trade::RawUnits)},
-  { 268, -1, sizeof(::trade::Bootstrap)},
-  { 277, -1, sizeof(::trade::RestingOrders)},
-  { 283, -1, sizeof(::trade::AssetPositions)},
-  { 289, -1, sizeof(::trade::Done)},
-  { 295, -1, sizeof(::trade::RestingOrder)},
+  { 19, 36, sizeof(::trade::NewOrder)},
+  { 48, -1, sizeof(::trade::CancelOrder)},
+  { 57, 70, sizeof(::trade::ModifyOrder)},
+  { 78, 87, sizeof(::trade::MassCancel)},
+  { 91, -1, sizeof(::trade::Heartbeat)},
+  { 98, -1, sizeof(::trade::OrderResponse)},
+  { 114, 132, sizeof(::trade::NewOrderAck)},
+  { 145, -1, sizeof(::trade::CancelOrderAck)},
+  { 157, -1, sizeof(::trade::ModifyOrderAck)},
+  { 172, 183, sizeof(::trade::MassCancelAck)},
+  { 189, 206, sizeof(::trade::NewOrderReject)},
+  { 218, -1, sizeof(::trade::CancelOrderReject)},
+  { 230, -1, sizeof(::trade::ModifyOrderReject)},
+  { 242, -1, sizeof(::trade::Fill)},
+  { 257, -1, sizeof(::trade::AssetPosition)},
+  { 266, -1, sizeof(::trade::RawUnits)},
+  { 275, -1, sizeof(::trade::Bootstrap)},
+  { 284, -1, sizeof(::trade::RestingOrders)},
+  { 290, -1, sizeof(::trade::AssetPositions)},
+  { 296, -1, sizeof(::trade::Done)},
+  { 302, -1, sizeof(::trade::RestingOrder)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -788,149 +802,156 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 };
 
 const char descriptor_table_protodef_trade_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\013trade.proto\022\005trade\"H\n\013Credentials\022\023\n\013a"
-  "ccessKeyId\030\001 \001(\t\022\021\n\tsignature\030\002 \001(\t\022\021\n\tt"
-  "imestamp\030\003 \001(\004\"\313\001\n\014OrderRequest\022\036\n\003new\030\001"
-  " \001(\0132\017.trade.NewOrderH\000\022$\n\006cancel\030\002 \001(\0132"
-  "\022.trade.CancelOrderH\000\022$\n\006modify\030\003 \001(\0132\022."
-  "trade.ModifyOrderH\000\022%\n\theartbeat\030\004 \001(\0132\020"
-  ".trade.HeartbeatH\000\022\037\n\002mc\030\005 \001(\0132\021.trade.M"
-  "assCancelH\000B\007\n\005inner\"\356\002\n\010NewOrder\022\025\n\rcli"
-  "entOrderId\030\001 \001(\004\022\021\n\trequestId\030\002 \001(\004\022\020\n\010m"
-  "arketId\030\003 \001(\004\022\022\n\005price\030\004 \001(\004H\000\210\001\001\022\020\n\010qua"
-  "ntity\030\005 \001(\004\022\031\n\004side\030\006 \001(\0162\013.trade.Side\022\'"
-  "\n\013timeInForce\030\007 \001(\0162\022.trade.TimeInForce\022"
-  "#\n\torderType\030\010 \001(\0162\020.trade.OrderType\022\024\n\014"
-  "subaccountId\030\t \001(\004\022<\n\023selfTradePreventio"
-  "n\030\n \001(\0162\032.trade.SelfTradePreventionH\001\210\001\001"
-  "\022!\n\010postOnly\030\013 \001(\0162\017.trade.PostOnlyB\010\n\006_"
-  "priceB\026\n\024_selfTradePrevention\"_\n\013CancelO"
-  "rder\022\020\n\010marketId\030\001 \001(\004\022\025\n\rclientOrderId\030"
-  "\002 \001(\004\022\021\n\trequestId\030\003 \001(\004\022\024\n\014subaccountId"
-  "\030\004 \001(\004\"\377\001\n\013ModifyOrder\022\020\n\010marketId\030\001 \001(\004"
-  "\022\025\n\rclientOrderId\030\002 \001(\004\022\021\n\trequestId\030\003 \001"
-  "(\004\022\020\n\010newPrice\030\004 \001(\004\022\023\n\013newQuantity\030\005 \001("
-  "\004\022\024\n\014subaccountId\030\006 \001(\004\022<\n\023selfTradePrev"
-  "ention\030\007 \001(\0162\032.trade.SelfTradePrevention"
-  "H\000\210\001\001\022!\n\010postOnly\030\010 \001(\0162\017.trade.PostOnly"
-  "B\026\n\024_selfTradePrevention\"\202\001\n\nMassCancel\022"
-  "\024\n\014subaccountId\030\001 \001(\004\022\021\n\trequestId\030\002 \001(\004"
-  "\022\025\n\010marketId\030\003 \001(\004H\000\210\001\001\022\036\n\004side\030\004 \001(\0162\013."
-  "trade.SideH\001\210\001\001B\013\n\t_marketIdB\007\n\005_side\"1\n"
-  "\tHeartbeat\022\021\n\trequestId\030\001 \001(\004\022\021\n\ttimesta"
-  "mp\030\002 \001(\004\"\303\003\n\rOrderResponse\022$\n\006newAck\030\001 \001"
-  "(\0132\022.trade.NewOrderAckH\000\022*\n\tcancelAck\030\002 "
-  "\001(\0132\025.trade.CancelOrderAckH\000\022*\n\tmodifyAc"
-  "k\030\003 \001(\0132\025.trade.ModifyOrderAckH\000\022*\n\tnewR"
-  "eject\030\004 \001(\0132\025.trade.NewOrderRejectH\000\0220\n\014"
-  "cancelReject\030\005 \001(\0132\030.trade.CancelOrderRe"
-  "jectH\000\0220\n\014modifyReject\030\006 \001(\0132\030.trade.Mod"
-  "ifyOrderRejectH\000\022\033\n\004fill\030\007 \001(\0132\013.trade.F"
-  "illH\000\022%\n\theartbeat\030\010 \001(\0132\020.trade.Heartbe"
-  "atH\000\022(\n\010position\030\t \001(\0132\024.trade.AssetPosi"
-  "tionH\000\022-\n\rmassCancelAck\030\n \001(\0132\024.trade.Ma"
-  "ssCancelAckH\000B\007\n\005inner\"\272\002\n\013NewOrderAck\022\021"
-  "\n\tmsgSeqNum\030\001 \001(\004\022\025\n\rclientOrderId\030\002 \001(\004"
-  "\022\021\n\trequestId\030\003 \001(\004\022\027\n\017exchangeOrderId\030\004"
-  " \001(\004\022\020\n\010marketId\030\005 \001(\004\022\022\n\005price\030\006 \001(\004H\000\210"
-  "\001\001\022\020\n\010quantity\030\007 \001(\004\022\031\n\004side\030\010 \001(\0162\013.tra"
-  "de.Side\022\'\n\013timeInForce\030\t \001(\0162\022.trade.Tim"
-  "eInForce\022#\n\torderType\030\n \001(\0162\020.trade.Orde"
-  "rType\022\024\n\014transactTime\030\013 \001(\004\022\024\n\014subaccoun"
-  "tId\030\014 \001(\004B\010\n\006_price\"\263\002\n\016CancelOrderAck\022\021"
-  "\n\tmsgSeqNum\030\001 \001(\004\022\025\n\rclientOrderId\030\002 \001(\004"
-  "\022\021\n\trequestId\030\003 \001(\004\022\024\n\014transactTime\030\004 \001("
-  "\004\022\024\n\014subaccountId\030\005 \001(\004\022,\n\006reason\030\006 \001(\0162"
-  "\034.trade.CancelOrderAck.Reason\022\020\n\010marketI"
-  "d\030\007 \001(\004\"x\n\006Reason\022\020\n\014UNCLASSIFIED\020\000\022\016\n\nD"
-  "ISCONNECT\020\001\022\r\n\tREQUESTED\020\002\022\007\n\003IOC\020\003\022\017\n\013S"
-  "TP_RESTING\020\004\022\022\n\016STP_AGGRESSING\020\005\022\017\n\013MASS"
-  "_CANCEL\020\006\"\257\001\n\016ModifyOrderAck\022\021\n\tmsgSeqNu"
-  "m\030\001 \001(\004\022\025\n\rclientOrderId\030\002 \001(\004\022\021\n\treques"
-  "tId\030\003 \001(\004\022\024\n\014transactTime\030\004 \001(\004\022\023\n\013newQu"
-  "antity\030\005 \001(\004\022\024\n\014subaccountId\030\006 \001(\004\022\020\n\010ma"
-  "rketId\030\007 \001(\004\022\r\n\005price\030\010 \001(\004\"\200\002\n\rMassCanc"
-  "elAck\022\021\n\tmsgSeqNum\030\001 \001(\004\022\024\n\014subaccountId"
-  "\030\002 \001(\004\022\021\n\trequestId\030\003 \001(\004\022\024\n\014transactTim"
-  "e\030\004 \001(\004\0220\n\006reason\030\006 \001(\0162\033.trade.MassCanc"
-  "elAck.ReasonH\000\210\001\001\022\033\n\023totalAffectedOrders"
-  "\030\007 \001(\r\"C\n\006Reason\022\020\n\014UNCLASSIFIED\020\000\022\025\n\021IN"
-  "VALID_MARKET_ID\020\001\022\020\n\014INVALID_SIDE\020\002B\t\n\007_"
-  "reason\"\221\006\n\016NewOrderReject\022\021\n\tmsgSeqNum\030\001"
-  " \001(\004\022\025\n\rclientOrderId\030\002 \001(\004\022\021\n\trequestId"
-  "\030\003 \001(\004\022\024\n\014transactTime\030\004 \001(\004\022\024\n\014subaccou"
-  "ntId\030\005 \001(\004\022,\n\006reason\030\006 \001(\0162\034.trade.NewOr"
-  "derReject.Reason\022\020\n\010marketId\030\007 \001(\004\022\022\n\005pr"
-  "ice\030\010 \001(\004H\000\210\001\001\022\020\n\010quantity\030\t \001(\004\022\031\n\004side"
-  "\030\n \001(\0162\013.trade.Side\022\'\n\013timeInForce\030\013 \001(\016"
-  "2\022.trade.TimeInForce\022#\n\torderType\030\014 \001(\0162"
-  "\020.trade.OrderType\"\274\003\n\006Reason\022\020\n\014UNCLASSI"
-  "FIED\020\000\022\024\n\020INVALID_QUANTITY\020\001\022\025\n\021INVALID_"
-  "MARKET_ID\020\002\022\026\n\022DUPLICATE_ORDER_ID\020\003\022\020\n\014I"
-  "NVALID_SIDE\020\004\022\031\n\025INVALID_TIME_IN_FORCE\020\005"
-  "\022\026\n\022INVALID_ORDER_TYPE\020\006\022\025\n\021INVALID_POST"
-  "_ONLY\020\007\022!\n\035INVALID_SELF_TRADE_PREVENTION"
-  "\020\010\022\022\n\016UNKNOWN_TRADER\020\t\022\033\n\027PRICE_WITH_MAR"
-  "KET_ORDER\020\n\022\037\n\033POST_ONLY_WITH_MARKET_ORD"
-  "ER\020\013\022\036\n\032POST_ONLY_WITH_INVALID_TIF\020\014\022\032\n\026"
-  "EXCEEDED_SPOT_POSITION\020\r\022\033\n\027NO_OPPOSING_"
-  "LIMIT_ORDER\020\016\022\031\n\025POST_ONLY_WOULD_TRADE\020\017"
-  "\022\026\n\022DID_NOT_FULLY_FILL\020\020B\010\n\006_price\"\207\002\n\021C"
-  "ancelOrderReject\022\021\n\tmsgSeqNum\030\001 \001(\004\022\025\n\rc"
-  "lientOrderId\030\002 \001(\004\022\021\n\trequestId\030\003 \001(\004\022\024\n"
-  "\014transactTime\030\004 \001(\004\022\024\n\014subaccountId\030\005 \001("
-  "\004\022/\n\006reason\030\006 \001(\0162\037.trade.CancelOrderRej"
-  "ect.Reason\022\020\n\010marketId\030\007 \001(\004\"F\n\006Reason\022\020"
-  "\n\014UNCLASSIFIED\020\000\022\025\n\021INVALID_MARKET_ID\020\001\022"
-  "\023\n\017ORDER_NOT_FOUND\020\002\"\264\003\n\021ModifyOrderReje"
-  "ct\022\021\n\tmsgSeqNum\030\001 \001(\004\022\025\n\rclientOrderId\030\002"
-  " \001(\004\022\021\n\trequestId\030\003 \001(\004\022\024\n\014transactTime\030"
-  "\004 \001(\004\022\024\n\014subaccountId\030\005 \001(\004\022/\n\006reason\030\006 "
-  "\001(\0162\037.trade.ModifyOrderReject.Reason\022\020\n\010"
-  "marketId\030\007 \001(\004\"\362\001\n\006Reason\022\020\n\014UNCLASSIFIE"
-  "D\020\000\022\024\n\020INVALID_QUANTITY\020\001\022\025\n\021INVALID_MAR"
-  "KET_ID\020\002\022\023\n\017ORDER_NOT_FOUND\020\003\022\017\n\013INVALID"
-  "_IFM\020\004\022\025\n\021INVALID_POST_ONLY\020\005\022!\n\035INVALID"
-  "_SELF_TRADE_PREVENTION\020\006\022\022\n\016UNKNOWN_TRAD"
-  "ER\020\007\022\032\n\026EXCEEDED_SPOT_POSITION\020\010\022\031\n\025POST"
-  "_ONLY_WOULD_TRADE\020\t\"\310\001\n\004Fill\022\021\n\tmsgSeqNu"
-  "m\030\001 \001(\004\022\020\n\010marketId\030\002 \001(\004\022\025\n\rclientOrder"
-  "Id\030\003 \001(\004\022\027\n\017exchangeOrderId\030\004 \001(\004\022\021\n\tfil"
-  "lPrice\030\005 \001(\004\022\024\n\014fillQuantity\030\006 \001(\004\022\026\n\016le"
-  "avesQuantity\030\007 \001(\004\022\024\n\014transactTime\030\010 \001(\004"
-  "\022\024\n\014subaccountId\030\t \001(\004\"z\n\rAssetPosition\022"
-  "\024\n\014subaccountId\030\001 \001(\004\022\017\n\007assetId\030\002 \001(\004\022\036"
-  "\n\005total\030\003 \001(\0132\017.trade.RawUnits\022\"\n\tavaila"
-  "ble\030\004 \001(\0132\017.trade.RawUnits\"F\n\010RawUnits\022\r"
-  "\n\005word0\030\001 \001(\004\022\r\n\005word1\030\002 \001(\004\022\r\n\005word2\030\003 "
-  "\001(\004\022\r\n\005word3\030\004 \001(\004\"\205\001\n\tBootstrap\022\033\n\004done"
-  "\030\001 \001(\0132\013.trade.DoneH\000\022\'\n\007resting\030\002 \001(\0132\024"
-  ".trade.RestingOrdersH\000\022)\n\010position\030\003 \001(\013"
-  "2\025.trade.AssetPositionsH\000B\007\n\005inner\"4\n\rRe"
-  "stingOrders\022#\n\006orders\030\001 \003(\0132\023.trade.Rest"
-  "ingOrder\"9\n\016AssetPositions\022\'\n\tpositions\030"
-  "\001 \003(\0132\024.trade.AssetPosition\"\"\n\004Done\022\032\n\022l"
-  "atestTransactTime\030\001 \001(\004\"\245\002\n\014RestingOrder"
-  "\022\025\n\rclientOrderId\030\001 \001(\004\022\027\n\017exchangeOrder"
-  "Id\030\002 \001(\004\022\020\n\010marketId\030\003 \001(\004\022\r\n\005price\030\004 \001("
-  "\004\022\030\n\020originalQuantity\030\005 \001(\004\022\031\n\004side\030\006 \001("
-  "\0162\013.trade.Side\022\'\n\013timeInForce\030\007 \001(\0162\022.tr"
-  "ade.TimeInForce\022#\n\torderType\030\010 \001(\0162\020.tra"
-  "de.OrderType\022\031\n\021remainingQuantity\030\t \001(\004\022"
-  "\020\n\010restTime\030\n \001(\004\022\024\n\014subaccountId\030\013 \001(\004*"
-  "\030\n\004Side\022\007\n\003BID\020\000\022\007\n\003ASK\020\001*N\n\013TimeInForce"
-  "\022\027\n\023IMMEDIATE_OR_CANCEL\020\000\022\024\n\020GOOD_FOR_SE"
-  "SSION\020\001\022\020\n\014FILL_OR_KILL\020\002*D\n\tOrderType\022\t"
-  "\n\005LIMIT\020\000\022\020\n\014MARKET_LIMIT\020\001\022\032\n\026MARKET_WI"
-  "TH_PROTECTION\020\002*V\n\023SelfTradePrevention\022\022"
-  "\n\016CANCEL_RESTING\020\000\022\025\n\021CANCEL_AGGRESSING\020"
-  "\001\022\024\n\020ALLOW_SELF_TRADE\020\002*%\n\010PostOnly\022\014\n\010D"
-  "ISABLED\020\000\022\013\n\007ENABLED\020\001B\022Z\003go/\252\002\nCube.Tra"
-  "deb\006proto3"
+  "\n\013trade.proto\022\005trade\"J\n\013Credentials\022\025\n\ra"
+  "ccess_key_id\030\001 \001(\t\022\021\n\tsignature\030\002 \001(\t\022\021\n"
+  "\ttimestamp\030\003 \001(\004\"\313\001\n\014OrderRequest\022\036\n\003new"
+  "\030\001 \001(\0132\017.trade.NewOrderH\000\022$\n\006cancel\030\002 \001("
+  "\0132\022.trade.CancelOrderH\000\022$\n\006modify\030\003 \001(\0132"
+  "\022.trade.ModifyOrderH\000\022%\n\theartbeat\030\004 \001(\013"
+  "2\020.trade.HeartbeatH\000\022\037\n\002mc\030\005 \001(\0132\021.trade"
+  ".MassCancelH\000B\007\n\005inner\"\231\003\n\010NewOrder\022\027\n\017c"
+  "lient_order_id\030\001 \001(\004\022\022\n\nrequest_id\030\002 \001(\004"
+  "\022\021\n\tmarket_id\030\003 \001(\004\022\022\n\005price\030\004 \001(\004H\000\210\001\001\022"
+  "\020\n\010quantity\030\005 \001(\004\022\031\n\004side\030\006 \001(\0162\013.trade."
+  "Side\022)\n\rtime_in_force\030\007 \001(\0162\022.trade.Time"
+  "InForce\022$\n\norder_type\030\010 \001(\0162\020.trade.Orde"
+  "rType\022\025\n\rsubaccount_id\030\t \001(\004\022>\n\025self_tra"
+  "de_prevention\030\n \001(\0162\032.trade.SelfTradePre"
+  "ventionH\001\210\001\001\022\"\n\tpost_only\030\013 \001(\0162\017.trade."
+  "PostOnly\022\034\n\024cancel_on_disconnect\030\014 \001(\010B\010"
+  "\n\006_priceB\030\n\026_self_trade_prevention\"d\n\013Ca"
+  "ncelOrder\022\021\n\tmarket_id\030\001 \001(\004\022\027\n\017client_o"
+  "rder_id\030\002 \001(\004\022\022\n\nrequest_id\030\003 \001(\004\022\025\n\rsub"
+  "account_id\030\004 \001(\004\"\213\002\n\013ModifyOrder\022\021\n\tmark"
+  "et_id\030\001 \001(\004\022\027\n\017client_order_id\030\002 \001(\004\022\022\n\n"
+  "request_id\030\003 \001(\004\022\021\n\tnew_price\030\004 \001(\004\022\024\n\014n"
+  "ew_quantity\030\005 \001(\004\022\025\n\rsubaccount_id\030\006 \001(\004"
+  "\022>\n\025self_trade_prevention\030\007 \001(\0162\032.trade."
+  "SelfTradePreventionH\000\210\001\001\022\"\n\tpost_only\030\010 "
+  "\001(\0162\017.trade.PostOnlyB\030\n\026_self_trade_prev"
+  "ention\"\206\001\n\nMassCancel\022\025\n\rsubaccount_id\030\001"
+  " \001(\004\022\022\n\nrequest_id\030\002 \001(\004\022\026\n\tmarket_id\030\003 "
+  "\001(\004H\000\210\001\001\022\036\n\004side\030\004 \001(\0162\013.trade.SideH\001\210\001\001"
+  "B\014\n\n_market_idB\007\n\005_side\"2\n\tHeartbeat\022\022\n\n"
+  "request_id\030\001 \001(\004\022\021\n\ttimestamp\030\002 \001(\004\"\313\003\n\r"
+  "OrderResponse\022%\n\007new_ack\030\001 \001(\0132\022.trade.N"
+  "ewOrderAckH\000\022+\n\ncancel_ack\030\002 \001(\0132\025.trade"
+  ".CancelOrderAckH\000\022+\n\nmodify_ack\030\003 \001(\0132\025."
+  "trade.ModifyOrderAckH\000\022+\n\nnew_reject\030\004 \001"
+  "(\0132\025.trade.NewOrderRejectH\000\0221\n\rcancel_re"
+  "ject\030\005 \001(\0132\030.trade.CancelOrderRejectH\000\0221"
+  "\n\rmodify_reject\030\006 \001(\0132\030.trade.ModifyOrde"
+  "rRejectH\000\022\033\n\004fill\030\007 \001(\0132\013.trade.FillH\000\022%"
+  "\n\theartbeat\030\010 \001(\0132\020.trade.HeartbeatH\000\022(\n"
+  "\010position\030\t \001(\0132\024.trade.AssetPositionH\000\022"
+  "/\n\017mass_cancel_ack\030\n \001(\0132\024.trade.MassCan"
+  "celAckH\000B\007\n\005inner\"\345\002\n\013NewOrderAck\022\023\n\013msg"
+  "_seq_num\030\001 \001(\004\022\027\n\017client_order_id\030\002 \001(\004\022"
+  "\022\n\nrequest_id\030\003 \001(\004\022\031\n\021exchange_order_id"
+  "\030\004 \001(\004\022\021\n\tmarket_id\030\005 \001(\004\022\022\n\005price\030\006 \001(\004"
+  "H\000\210\001\001\022\020\n\010quantity\030\007 \001(\004\022\031\n\004side\030\010 \001(\0162\013."
+  "trade.Side\022)\n\rtime_in_force\030\t \001(\0162\022.trad"
+  "e.TimeInForce\022$\n\norder_type\030\n \001(\0162\020.trad"
+  "e.OrderType\022\025\n\rtransact_time\030\013 \001(\004\022\025\n\rsu"
+  "baccount_id\030\014 \001(\004\022\034\n\024cancel_on_disconnec"
+  "t\030\r \001(\010B\010\n\006_price\"\273\002\n\016CancelOrderAck\022\023\n\013"
+  "msg_seq_num\030\001 \001(\004\022\027\n\017client_order_id\030\002 \001"
+  "(\004\022\022\n\nrequest_id\030\003 \001(\004\022\025\n\rtransact_time\030"
+  "\004 \001(\004\022\025\n\rsubaccount_id\030\005 \001(\004\022,\n\006reason\030\006"
+  " \001(\0162\034.trade.CancelOrderAck.Reason\022\021\n\tma"
+  "rket_id\030\007 \001(\004\"x\n\006Reason\022\020\n\014UNCLASSIFIED\020"
+  "\000\022\016\n\nDISCONNECT\020\001\022\r\n\tREQUESTED\020\002\022\007\n\003IOC\020"
+  "\003\022\017\n\013STP_RESTING\020\004\022\022\n\016STP_AGGRESSING\020\005\022\017"
+  "\n\013MASS_CANCEL\020\006\"\355\001\n\016ModifyOrderAck\022\023\n\013ms"
+  "g_seq_num\030\001 \001(\004\022\027\n\017client_order_id\030\002 \001(\004"
+  "\022\022\n\nrequest_id\030\003 \001(\004\022\025\n\rtransact_time\030\004 "
+  "\001(\004\022\032\n\022remaining_quantity\030\005 \001(\004\022\025\n\rsubac"
+  "count_id\030\006 \001(\004\022\021\n\tmarket_id\030\007 \001(\004\022\r\n\005pri"
+  "ce\030\010 \001(\004\022\020\n\010quantity\030\t \001(\004\022\033\n\023cumulative"
+  "_quantity\030\n \001(\004\"\207\002\n\rMassCancelAck\022\023\n\013msg"
+  "_seq_num\030\001 \001(\004\022\025\n\rsubaccount_id\030\002 \001(\004\022\022\n"
+  "\nrequest_id\030\003 \001(\004\022\025\n\rtransact_time\030\004 \001(\004"
+  "\0220\n\006reason\030\006 \001(\0162\033.trade.MassCancelAck.R"
+  "easonH\000\210\001\001\022\035\n\025total_affected_orders\030\007 \001("
+  "\r\"C\n\006Reason\022\020\n\014UNCLASSIFIED\020\000\022\025\n\021INVALID"
+  "_MARKET_ID\020\001\022\020\n\014INVALID_SIDE\020\002B\t\n\007_reaso"
+  "n\"\234\006\n\016NewOrderReject\022\023\n\013msg_seq_num\030\001 \001("
+  "\004\022\027\n\017client_order_id\030\002 \001(\004\022\022\n\nrequest_id"
+  "\030\003 \001(\004\022\025\n\rtransact_time\030\004 \001(\004\022\025\n\rsubacco"
+  "unt_id\030\005 \001(\004\022,\n\006reason\030\006 \001(\0162\034.trade.New"
+  "OrderReject.Reason\022\021\n\tmarket_id\030\007 \001(\004\022\022\n"
+  "\005price\030\010 \001(\004H\000\210\001\001\022\020\n\010quantity\030\t \001(\004\022\031\n\004s"
+  "ide\030\n \001(\0162\013.trade.Side\022)\n\rtime_in_force\030"
+  "\013 \001(\0162\022.trade.TimeInForce\022$\n\norder_type\030"
+  "\014 \001(\0162\020.trade.OrderType\"\274\003\n\006Reason\022\020\n\014UN"
+  "CLASSIFIED\020\000\022\024\n\020INVALID_QUANTITY\020\001\022\025\n\021IN"
+  "VALID_MARKET_ID\020\002\022\026\n\022DUPLICATE_ORDER_ID\020"
+  "\003\022\020\n\014INVALID_SIDE\020\004\022\031\n\025INVALID_TIME_IN_F"
+  "ORCE\020\005\022\026\n\022INVALID_ORDER_TYPE\020\006\022\025\n\021INVALI"
+  "D_POST_ONLY\020\007\022!\n\035INVALID_SELF_TRADE_PREV"
+  "ENTION\020\010\022\022\n\016UNKNOWN_TRADER\020\t\022\033\n\027PRICE_WI"
+  "TH_MARKET_ORDER\020\n\022\037\n\033POST_ONLY_WITH_MARK"
+  "ET_ORDER\020\013\022\036\n\032POST_ONLY_WITH_INVALID_TIF"
+  "\020\014\022\032\n\026EXCEEDED_SPOT_POSITION\020\r\022\033\n\027NO_OPP"
+  "OSING_LIMIT_ORDER\020\016\022\031\n\025POST_ONLY_WOULD_T"
+  "RADE\020\017\022\026\n\022DID_NOT_FULLY_FILL\020\020B\010\n\006_price"
+  "\"\217\002\n\021CancelOrderReject\022\023\n\013msg_seq_num\030\001 "
+  "\001(\004\022\027\n\017client_order_id\030\002 \001(\004\022\022\n\nrequest_"
+  "id\030\003 \001(\004\022\025\n\rtransact_time\030\004 \001(\004\022\025\n\rsubac"
+  "count_id\030\005 \001(\004\022/\n\006reason\030\006 \001(\0162\037.trade.C"
+  "ancelOrderReject.Reason\022\021\n\tmarket_id\030\007 \001"
+  "(\004\"F\n\006Reason\022\020\n\014UNCLASSIFIED\020\000\022\025\n\021INVALI"
+  "D_MARKET_ID\020\001\022\023\n\017ORDER_NOT_FOUND\020\002\"\274\003\n\021M"
+  "odifyOrderReject\022\023\n\013msg_seq_num\030\001 \001(\004\022\027\n"
+  "\017client_order_id\030\002 \001(\004\022\022\n\nrequest_id\030\003 \001"
+  "(\004\022\025\n\rtransact_time\030\004 \001(\004\022\025\n\rsubaccount_"
+  "id\030\005 \001(\004\022/\n\006reason\030\006 \001(\0162\037.trade.ModifyO"
+  "rderReject.Reason\022\021\n\tmarket_id\030\007 \001(\004\"\362\001\n"
+  "\006Reason\022\020\n\014UNCLASSIFIED\020\000\022\024\n\020INVALID_QUA"
+  "NTITY\020\001\022\025\n\021INVALID_MARKET_ID\020\002\022\023\n\017ORDER_"
+  "NOT_FOUND\020\003\022\017\n\013INVALID_IFM\020\004\022\025\n\021INVALID_"
+  "POST_ONLY\020\005\022!\n\035INVALID_SELF_TRADE_PREVEN"
+  "TION\020\006\022\022\n\016UNKNOWN_TRADER\020\007\022\032\n\026EXCEEDED_S"
+  "POT_POSITION\020\010\022\031\n\025POST_ONLY_WOULD_TRADE\020"
+  "\t\"\361\001\n\004Fill\022\023\n\013msg_seq_num\030\001 \001(\004\022\021\n\tmarke"
+  "t_id\030\002 \001(\004\022\027\n\017client_order_id\030\003 \001(\004\022\031\n\021e"
+  "xchange_order_id\030\004 \001(\004\022\022\n\nfill_price\030\005 \001"
+  "(\004\022\025\n\rfill_quantity\030\006 \001(\004\022\027\n\017leaves_quan"
+  "tity\030\007 \001(\004\022\025\n\rtransact_time\030\010 \001(\004\022\025\n\rsub"
+  "account_id\030\t \001(\004\022\033\n\023cumulative_quantity\030"
+  "\n \001(\004\"|\n\rAssetPosition\022\025\n\rsubaccount_id\030"
+  "\001 \001(\004\022\020\n\010asset_id\030\002 \001(\004\022\036\n\005total\030\003 \001(\0132\017"
+  ".trade.RawUnits\022\"\n\tavailable\030\004 \001(\0132\017.tra"
+  "de.RawUnits\"F\n\010RawUnits\022\r\n\005word0\030\001 \001(\004\022\r"
+  "\n\005word1\030\002 \001(\004\022\r\n\005word2\030\003 \001(\004\022\r\n\005word3\030\004 "
+  "\001(\004\"\205\001\n\tBootstrap\022\033\n\004done\030\001 \001(\0132\013.trade."
+  "DoneH\000\022\'\n\007resting\030\002 \001(\0132\024.trade.RestingO"
+  "rdersH\000\022)\n\010position\030\003 \001(\0132\025.trade.AssetP"
+  "ositionsH\000B\007\n\005inner\"4\n\rRestingOrders\022#\n\006"
+  "orders\030\001 \003(\0132\023.trade.RestingOrder\"9\n\016Ass"
+  "etPositions\022\'\n\tpositions\030\001 \003(\0132\024.trade.A"
+  "ssetPosition\"$\n\004Done\022\034\n\024latest_transact_"
+  "time\030\001 \001(\004\"\313\002\n\014RestingOrder\022\027\n\017client_or"
+  "der_id\030\001 \001(\004\022\031\n\021exchange_order_id\030\002 \001(\004\022"
+  "\021\n\tmarket_id\030\003 \001(\004\022\r\n\005price\030\004 \001(\004\022\026\n\016ord"
+  "er_quantity\030\005 \001(\004\022\031\n\004side\030\006 \001(\0162\013.trade."
+  "Side\022)\n\rtime_in_force\030\007 \001(\0162\022.trade.Time"
+  "InForce\022$\n\norder_type\030\010 \001(\0162\020.trade.Orde"
+  "rType\022\032\n\022remaining_quantity\030\t \001(\004\022\021\n\tres"
+  "t_time\030\n \001(\004\022\025\n\rsubaccount_id\030\013 \001(\004\022\033\n\023c"
+  "umulative_quantity\030\014 \001(\004*\030\n\004Side\022\007\n\003BID\020"
+  "\000\022\007\n\003ASK\020\001*N\n\013TimeInForce\022\027\n\023IMMEDIATE_O"
+  "R_CANCEL\020\000\022\024\n\020GOOD_FOR_SESSION\020\001\022\020\n\014FILL"
+  "_OR_KILL\020\002*D\n\tOrderType\022\t\n\005LIMIT\020\000\022\020\n\014MA"
+  "RKET_LIMIT\020\001\022\032\n\026MARKET_WITH_PROTECTION\020\002"
+  "*V\n\023SelfTradePrevention\022\022\n\016CANCEL_RESTIN"
+  "G\020\000\022\025\n\021CANCEL_AGGRESSING\020\001\022\024\n\020ALLOW_SELF"
+  "_TRADE\020\002*%\n\010PostOnly\022\014\n\010DISABLED\020\000\022\013\n\007EN"
+  "ABLED\020\001B\022Z\003go/\252\002\nCube.Tradeb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_trade_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_trade_2eproto = {
-  false, false, 5530, descriptor_table_protodef_trade_2eproto, "trade.proto", 
+  false, false, 5835, descriptor_table_protodef_trade_2eproto, "trade.proto", 
   &descriptor_table_trade_2eproto_once, nullptr, 0, 23,
   schemas, file_default_instances, TableStruct_trade_2eproto::offsets,
   file_level_metadata_trade_2eproto, file_level_enum_descriptors_trade_2eproto, file_level_service_descriptors_trade_2eproto,
@@ -1198,9 +1219,9 @@ Credentials::Credentials(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 Credentials::Credentials(const Credentials& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  accesskeyid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_accesskeyid().empty()) {
-    accesskeyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_accesskeyid(), 
+  access_key_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_access_key_id().empty()) {
+    access_key_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_access_key_id(), 
       GetArena());
   }
   signature_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -1213,7 +1234,7 @@ Credentials::Credentials(const Credentials& from)
 }
 
 void Credentials::SharedCtor() {
-accesskeyid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+access_key_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 signature_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 timestamp_ = PROTOBUF_ULONGLONG(0);
 }
@@ -1226,7 +1247,7 @@ Credentials::~Credentials() {
 
 void Credentials::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  accesskeyid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  access_key_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   signature_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -1246,7 +1267,7 @@ void Credentials::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  accesskeyid_.ClearToEmpty();
+  access_key_id_.ClearToEmpty();
   signature_.ClearToEmpty();
   timestamp_ = PROTOBUF_ULONGLONG(0);
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -1259,12 +1280,12 @@ const char* Credentials::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string accessKeyId = 1;
+      // string access_key_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_accesskeyid();
+          auto str = _internal_mutable_access_key_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "trade.Credentials.accessKeyId"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "trade.Credentials.access_key_id"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1312,14 +1333,14 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string accessKeyId = 1;
-  if (this->accesskeyid().size() > 0) {
+  // string access_key_id = 1;
+  if (this->access_key_id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_accesskeyid().data(), static_cast<int>(this->_internal_accesskeyid().length()),
+      this->_internal_access_key_id().data(), static_cast<int>(this->_internal_access_key_id().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "trade.Credentials.accessKeyId");
+      "trade.Credentials.access_key_id");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_accesskeyid(), target);
+        1, this->_internal_access_key_id(), target);
   }
 
   // string signature = 2;
@@ -1354,11 +1375,11 @@ size_t Credentials::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string accessKeyId = 1;
-  if (this->accesskeyid().size() > 0) {
+  // string access_key_id = 1;
+  if (this->access_key_id().size() > 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_accesskeyid());
+        this->_internal_access_key_id());
   }
 
   // string signature = 2;
@@ -1406,8 +1427,8 @@ void Credentials::MergeFrom(const Credentials& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.accesskeyid().size() > 0) {
-    _internal_set_accesskeyid(from._internal_accesskeyid());
+  if (from.access_key_id().size() > 0) {
+    _internal_set_access_key_id(from._internal_access_key_id());
   }
   if (from.signature().size() > 0) {
     _internal_set_signature(from._internal_signature());
@@ -1438,7 +1459,7 @@ bool Credentials::IsInitialized() const {
 void Credentials::InternalSwap(Credentials* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  accesskeyid_.Swap(&other->accesskeyid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  access_key_id_.Swap(&other->access_key_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   signature_.Swap(&other->signature_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(timestamp_, other->timestamp_);
 }
@@ -1932,7 +1953,7 @@ class NewOrder::_Internal {
   static void set_has_price(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
-  static void set_has_selftradeprevention(HasBits* has_bits) {
+  static void set_has_self_trade_prevention(HasBits* has_bits) {
     (*has_bits)[0] |= 2u;
   }
 };
@@ -1947,17 +1968,17 @@ NewOrder::NewOrder(const NewOrder& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _has_bits_(from._has_bits_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&clientorderid_, &from.clientorderid_,
-    static_cast<size_t>(reinterpret_cast<char*>(&postonly_) -
-    reinterpret_cast<char*>(&clientorderid_)) + sizeof(postonly_));
+  ::memcpy(&client_order_id_, &from.client_order_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&cancel_on_disconnect_) -
+    reinterpret_cast<char*>(&client_order_id_)) + sizeof(cancel_on_disconnect_));
   // @@protoc_insertion_point(copy_constructor:trade.NewOrder)
 }
 
 void NewOrder::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&clientorderid_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&postonly_) -
-    reinterpret_cast<char*>(&clientorderid_)) + sizeof(postonly_));
+    reinterpret_cast<char*>(&client_order_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&cancel_on_disconnect_) -
+    reinterpret_cast<char*>(&client_order_id_)) + sizeof(cancel_on_disconnect_));
 }
 
 NewOrder::~NewOrder() {
@@ -1986,15 +2007,17 @@ void NewOrder::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&clientorderid_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&marketid_) -
-      reinterpret_cast<char*>(&clientorderid_)) + sizeof(marketid_));
+  ::memset(&client_order_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&market_id_) -
+      reinterpret_cast<char*>(&client_order_id_)) + sizeof(market_id_));
   price_ = PROTOBUF_ULONGLONG(0);
   ::memset(&quantity_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&ordertype_) -
-      reinterpret_cast<char*>(&quantity_)) + sizeof(ordertype_));
-  selftradeprevention_ = 0;
-  postonly_ = 0;
+      reinterpret_cast<char*>(&order_type_) -
+      reinterpret_cast<char*>(&quantity_)) + sizeof(order_type_));
+  self_trade_prevention_ = 0;
+  ::memset(&post_only_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&cancel_on_disconnect_) -
+      reinterpret_cast<char*>(&post_only_)) + sizeof(cancel_on_disconnect_));
   _has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -2007,24 +2030,24 @@ const char* NewOrder::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint64 clientOrderId = 1;
+      // uint64 client_order_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          clientorderid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          client_order_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 requestId = 2;
+      // uint64 request_id = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          requestid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          request_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 marketId = 3;
+      // uint64 market_id = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          marketid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          market_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2051,43 +2074,50 @@ const char* NewOrder::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
           _internal_set_side(static_cast<::trade::Side>(val));
         } else goto handle_unusual;
         continue;
-      // .trade.TimeInForce timeInForce = 7;
+      // .trade.TimeInForce time_in_force = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_timeinforce(static_cast<::trade::TimeInForce>(val));
+          _internal_set_time_in_force(static_cast<::trade::TimeInForce>(val));
         } else goto handle_unusual;
         continue;
-      // .trade.OrderType orderType = 8;
+      // .trade.OrderType order_type = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_ordertype(static_cast<::trade::OrderType>(val));
+          _internal_set_order_type(static_cast<::trade::OrderType>(val));
         } else goto handle_unusual;
         continue;
-      // uint64 subaccountId = 9;
+      // uint64 subaccount_id = 9;
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 72)) {
-          subaccountid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          subaccount_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .trade.SelfTradePrevention selfTradePrevention = 10;
+      // .trade.SelfTradePrevention self_trade_prevention = 10;
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 80)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_selftradeprevention(static_cast<::trade::SelfTradePrevention>(val));
+          _internal_set_self_trade_prevention(static_cast<::trade::SelfTradePrevention>(val));
         } else goto handle_unusual;
         continue;
-      // .trade.PostOnly postOnly = 11;
+      // .trade.PostOnly post_only = 11;
       case 11:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 88)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_postonly(static_cast<::trade::PostOnly>(val));
+          _internal_set_post_only(static_cast<::trade::PostOnly>(val));
+        } else goto handle_unusual;
+        continue;
+      // bool cancel_on_disconnect = 12;
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 96)) {
+          cancel_on_disconnect_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
@@ -2119,22 +2149,22 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 clientOrderId = 1;
-  if (this->clientorderid() != 0) {
+  // uint64 client_order_id = 1;
+  if (this->client_order_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_clientorderid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_client_order_id(), target);
   }
 
-  // uint64 requestId = 2;
-  if (this->requestid() != 0) {
+  // uint64 request_id = 2;
+  if (this->request_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_requestid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_request_id(), target);
   }
 
-  // uint64 marketId = 3;
-  if (this->marketid() != 0) {
+  // uint64 market_id = 3;
+  if (this->market_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_marketid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_market_id(), target);
   }
 
   // uint64 price = 4;
@@ -2156,38 +2186,44 @@ failure:
       6, this->_internal_side(), target);
   }
 
-  // .trade.TimeInForce timeInForce = 7;
-  if (this->timeinforce() != 0) {
+  // .trade.TimeInForce time_in_force = 7;
+  if (this->time_in_force() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      7, this->_internal_timeinforce(), target);
+      7, this->_internal_time_in_force(), target);
   }
 
-  // .trade.OrderType orderType = 8;
-  if (this->ordertype() != 0) {
+  // .trade.OrderType order_type = 8;
+  if (this->order_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      8, this->_internal_ordertype(), target);
+      8, this->_internal_order_type(), target);
   }
 
-  // uint64 subaccountId = 9;
-  if (this->subaccountid() != 0) {
+  // uint64 subaccount_id = 9;
+  if (this->subaccount_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(9, this->_internal_subaccountid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(9, this->_internal_subaccount_id(), target);
   }
 
-  // .trade.SelfTradePrevention selfTradePrevention = 10;
-  if (_internal_has_selftradeprevention()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      10, this->_internal_selftradeprevention(), target);
-  }
-
-  // .trade.PostOnly postOnly = 11;
-  if (this->postonly() != 0) {
+  // .trade.SelfTradePrevention self_trade_prevention = 10;
+  if (_internal_has_self_trade_prevention()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      11, this->_internal_postonly(), target);
+      10, this->_internal_self_trade_prevention(), target);
+  }
+
+  // .trade.PostOnly post_only = 11;
+  if (this->post_only() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      11, this->_internal_post_only(), target);
+  }
+
+  // bool cancel_on_disconnect = 12;
+  if (this->cancel_on_disconnect() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(12, this->_internal_cancel_on_disconnect(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2206,25 +2242,25 @@ size_t NewOrder::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 clientOrderId = 1;
-  if (this->clientorderid() != 0) {
+  // uint64 client_order_id = 1;
+  if (this->client_order_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_clientorderid());
+        this->_internal_client_order_id());
   }
 
-  // uint64 requestId = 2;
-  if (this->requestid() != 0) {
+  // uint64 request_id = 2;
+  if (this->request_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_requestid());
+        this->_internal_request_id());
   }
 
-  // uint64 marketId = 3;
-  if (this->marketid() != 0) {
+  // uint64 market_id = 3;
+  if (this->market_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_marketid());
+        this->_internal_market_id());
   }
 
   // uint64 price = 4;
@@ -2248,35 +2284,40 @@ size_t NewOrder::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_side());
   }
 
-  // .trade.TimeInForce timeInForce = 7;
-  if (this->timeinforce() != 0) {
+  // .trade.TimeInForce time_in_force = 7;
+  if (this->time_in_force() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_timeinforce());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_time_in_force());
   }
 
-  // uint64 subaccountId = 9;
-  if (this->subaccountid() != 0) {
+  // uint64 subaccount_id = 9;
+  if (this->subaccount_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_subaccountid());
+        this->_internal_subaccount_id());
   }
 
-  // .trade.OrderType orderType = 8;
-  if (this->ordertype() != 0) {
+  // .trade.OrderType order_type = 8;
+  if (this->order_type() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_ordertype());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_order_type());
   }
 
-  // .trade.SelfTradePrevention selfTradePrevention = 10;
+  // .trade.SelfTradePrevention self_trade_prevention = 10;
   if (cached_has_bits & 0x00000002u) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_selftradeprevention());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_self_trade_prevention());
   }
 
-  // .trade.PostOnly postOnly = 11;
-  if (this->postonly() != 0) {
+  // .trade.PostOnly post_only = 11;
+  if (this->post_only() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_postonly());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_post_only());
+  }
+
+  // bool cancel_on_disconnect = 12;
+  if (this->cancel_on_disconnect() != 0) {
+    total_size += 1 + 1;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2310,14 +2351,14 @@ void NewOrder::MergeFrom(const NewOrder& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.clientorderid() != 0) {
-    _internal_set_clientorderid(from._internal_clientorderid());
+  if (from.client_order_id() != 0) {
+    _internal_set_client_order_id(from._internal_client_order_id());
   }
-  if (from.requestid() != 0) {
-    _internal_set_requestid(from._internal_requestid());
+  if (from.request_id() != 0) {
+    _internal_set_request_id(from._internal_request_id());
   }
-  if (from.marketid() != 0) {
-    _internal_set_marketid(from._internal_marketid());
+  if (from.market_id() != 0) {
+    _internal_set_market_id(from._internal_market_id());
   }
   if (from._internal_has_price()) {
     _internal_set_price(from._internal_price());
@@ -2328,20 +2369,23 @@ void NewOrder::MergeFrom(const NewOrder& from) {
   if (from.side() != 0) {
     _internal_set_side(from._internal_side());
   }
-  if (from.timeinforce() != 0) {
-    _internal_set_timeinforce(from._internal_timeinforce());
+  if (from.time_in_force() != 0) {
+    _internal_set_time_in_force(from._internal_time_in_force());
   }
-  if (from.subaccountid() != 0) {
-    _internal_set_subaccountid(from._internal_subaccountid());
+  if (from.subaccount_id() != 0) {
+    _internal_set_subaccount_id(from._internal_subaccount_id());
   }
-  if (from.ordertype() != 0) {
-    _internal_set_ordertype(from._internal_ordertype());
+  if (from.order_type() != 0) {
+    _internal_set_order_type(from._internal_order_type());
   }
-  if (from._internal_has_selftradeprevention()) {
-    _internal_set_selftradeprevention(from._internal_selftradeprevention());
+  if (from._internal_has_self_trade_prevention()) {
+    _internal_set_self_trade_prevention(from._internal_self_trade_prevention());
   }
-  if (from.postonly() != 0) {
-    _internal_set_postonly(from._internal_postonly());
+  if (from.post_only() != 0) {
+    _internal_set_post_only(from._internal_post_only());
+  }
+  if (from.cancel_on_disconnect() != 0) {
+    _internal_set_cancel_on_disconnect(from._internal_cancel_on_disconnect());
   }
 }
 
@@ -2368,11 +2412,11 @@ void NewOrder::InternalSwap(NewOrder* other) {
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(NewOrder, postonly_)
-      + sizeof(NewOrder::postonly_)
-      - PROTOBUF_FIELD_OFFSET(NewOrder, clientorderid_)>(
-          reinterpret_cast<char*>(&clientorderid_),
-          reinterpret_cast<char*>(&other->clientorderid_));
+      PROTOBUF_FIELD_OFFSET(NewOrder, cancel_on_disconnect_)
+      + sizeof(NewOrder::cancel_on_disconnect_)
+      - PROTOBUF_FIELD_OFFSET(NewOrder, client_order_id_)>(
+          reinterpret_cast<char*>(&client_order_id_),
+          reinterpret_cast<char*>(&other->client_order_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata NewOrder::GetMetadata() const {
@@ -2395,17 +2439,17 @@ CancelOrder::CancelOrder(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 CancelOrder::CancelOrder(const CancelOrder& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&marketid_, &from.marketid_,
-    static_cast<size_t>(reinterpret_cast<char*>(&subaccountid_) -
-    reinterpret_cast<char*>(&marketid_)) + sizeof(subaccountid_));
+  ::memcpy(&market_id_, &from.market_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&subaccount_id_) -
+    reinterpret_cast<char*>(&market_id_)) + sizeof(subaccount_id_));
   // @@protoc_insertion_point(copy_constructor:trade.CancelOrder)
 }
 
 void CancelOrder::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&marketid_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&subaccountid_) -
-    reinterpret_cast<char*>(&marketid_)) + sizeof(subaccountid_));
+    reinterpret_cast<char*>(&market_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&subaccount_id_) -
+    reinterpret_cast<char*>(&market_id_)) + sizeof(subaccount_id_));
 }
 
 CancelOrder::~CancelOrder() {
@@ -2434,9 +2478,9 @@ void CancelOrder::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&marketid_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&subaccountid_) -
-      reinterpret_cast<char*>(&marketid_)) + sizeof(subaccountid_));
+  ::memset(&market_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&subaccount_id_) -
+      reinterpret_cast<char*>(&market_id_)) + sizeof(subaccount_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2447,31 +2491,31 @@ const char* CancelOrder::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint64 marketId = 1;
+      // uint64 market_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          marketid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          market_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 clientOrderId = 2;
+      // uint64 client_order_id = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          clientorderid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          client_order_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 requestId = 3;
+      // uint64 request_id = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          requestid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          request_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 subaccountId = 4;
+      // uint64 subaccount_id = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          subaccountid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          subaccount_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2503,28 +2547,28 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 marketId = 1;
-  if (this->marketid() != 0) {
+  // uint64 market_id = 1;
+  if (this->market_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_marketid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_market_id(), target);
   }
 
-  // uint64 clientOrderId = 2;
-  if (this->clientorderid() != 0) {
+  // uint64 client_order_id = 2;
+  if (this->client_order_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_clientorderid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_client_order_id(), target);
   }
 
-  // uint64 requestId = 3;
-  if (this->requestid() != 0) {
+  // uint64 request_id = 3;
+  if (this->request_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_requestid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_request_id(), target);
   }
 
-  // uint64 subaccountId = 4;
-  if (this->subaccountid() != 0) {
+  // uint64 subaccount_id = 4;
+  if (this->subaccount_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_subaccountid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_subaccount_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2543,32 +2587,32 @@ size_t CancelOrder::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 marketId = 1;
-  if (this->marketid() != 0) {
+  // uint64 market_id = 1;
+  if (this->market_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_marketid());
+        this->_internal_market_id());
   }
 
-  // uint64 clientOrderId = 2;
-  if (this->clientorderid() != 0) {
+  // uint64 client_order_id = 2;
+  if (this->client_order_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_clientorderid());
+        this->_internal_client_order_id());
   }
 
-  // uint64 requestId = 3;
-  if (this->requestid() != 0) {
+  // uint64 request_id = 3;
+  if (this->request_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_requestid());
+        this->_internal_request_id());
   }
 
-  // uint64 subaccountId = 4;
-  if (this->subaccountid() != 0) {
+  // uint64 subaccount_id = 4;
+  if (this->subaccount_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_subaccountid());
+        this->_internal_subaccount_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2602,17 +2646,17 @@ void CancelOrder::MergeFrom(const CancelOrder& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.marketid() != 0) {
-    _internal_set_marketid(from._internal_marketid());
+  if (from.market_id() != 0) {
+    _internal_set_market_id(from._internal_market_id());
   }
-  if (from.clientorderid() != 0) {
-    _internal_set_clientorderid(from._internal_clientorderid());
+  if (from.client_order_id() != 0) {
+    _internal_set_client_order_id(from._internal_client_order_id());
   }
-  if (from.requestid() != 0) {
-    _internal_set_requestid(from._internal_requestid());
+  if (from.request_id() != 0) {
+    _internal_set_request_id(from._internal_request_id());
   }
-  if (from.subaccountid() != 0) {
-    _internal_set_subaccountid(from._internal_subaccountid());
+  if (from.subaccount_id() != 0) {
+    _internal_set_subaccount_id(from._internal_subaccount_id());
   }
 }
 
@@ -2638,11 +2682,11 @@ void CancelOrder::InternalSwap(CancelOrder* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(CancelOrder, subaccountid_)
-      + sizeof(CancelOrder::subaccountid_)
-      - PROTOBUF_FIELD_OFFSET(CancelOrder, marketid_)>(
-          reinterpret_cast<char*>(&marketid_),
-          reinterpret_cast<char*>(&other->marketid_));
+      PROTOBUF_FIELD_OFFSET(CancelOrder, subaccount_id_)
+      + sizeof(CancelOrder::subaccount_id_)
+      - PROTOBUF_FIELD_OFFSET(CancelOrder, market_id_)>(
+          reinterpret_cast<char*>(&market_id_),
+          reinterpret_cast<char*>(&other->market_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CancelOrder::GetMetadata() const {
@@ -2655,7 +2699,7 @@ void CancelOrder::InternalSwap(CancelOrder* other) {
 class ModifyOrder::_Internal {
  public:
   using HasBits = decltype(std::declval<ModifyOrder>()._has_bits_);
-  static void set_has_selftradeprevention(HasBits* has_bits) {
+  static void set_has_self_trade_prevention(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
 };
@@ -2670,17 +2714,17 @@ ModifyOrder::ModifyOrder(const ModifyOrder& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _has_bits_(from._has_bits_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&marketid_, &from.marketid_,
-    static_cast<size_t>(reinterpret_cast<char*>(&postonly_) -
-    reinterpret_cast<char*>(&marketid_)) + sizeof(postonly_));
+  ::memcpy(&market_id_, &from.market_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&post_only_) -
+    reinterpret_cast<char*>(&market_id_)) + sizeof(post_only_));
   // @@protoc_insertion_point(copy_constructor:trade.ModifyOrder)
 }
 
 void ModifyOrder::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&marketid_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&postonly_) -
-    reinterpret_cast<char*>(&marketid_)) + sizeof(postonly_));
+    reinterpret_cast<char*>(&market_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&post_only_) -
+    reinterpret_cast<char*>(&market_id_)) + sizeof(post_only_));
 }
 
 ModifyOrder::~ModifyOrder() {
@@ -2709,11 +2753,11 @@ void ModifyOrder::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&marketid_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&subaccountid_) -
-      reinterpret_cast<char*>(&marketid_)) + sizeof(subaccountid_));
-  selftradeprevention_ = 0;
-  postonly_ = 0;
+  ::memset(&market_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&subaccount_id_) -
+      reinterpret_cast<char*>(&market_id_)) + sizeof(subaccount_id_));
+  self_trade_prevention_ = 0;
+  post_only_ = 0;
   _has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -2726,62 +2770,62 @@ const char* ModifyOrder::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint64 marketId = 1;
+      // uint64 market_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          marketid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          market_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 clientOrderId = 2;
+      // uint64 client_order_id = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          clientorderid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          client_order_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 requestId = 3;
+      // uint64 request_id = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          requestid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          request_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 newPrice = 4;
+      // uint64 new_price = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          newprice_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          new_price_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 newQuantity = 5;
+      // uint64 new_quantity = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          newquantity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          new_quantity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 subaccountId = 6;
+      // uint64 subaccount_id = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
-          subaccountid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          subaccount_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .trade.SelfTradePrevention selfTradePrevention = 7;
+      // .trade.SelfTradePrevention self_trade_prevention = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_selftradeprevention(static_cast<::trade::SelfTradePrevention>(val));
+          _internal_set_self_trade_prevention(static_cast<::trade::SelfTradePrevention>(val));
         } else goto handle_unusual;
         continue;
-      // .trade.PostOnly postOnly = 8;
+      // .trade.PostOnly post_only = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_postonly(static_cast<::trade::PostOnly>(val));
+          _internal_set_post_only(static_cast<::trade::PostOnly>(val));
         } else goto handle_unusual;
         continue;
       default: {
@@ -2813,54 +2857,54 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 marketId = 1;
-  if (this->marketid() != 0) {
+  // uint64 market_id = 1;
+  if (this->market_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_marketid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_market_id(), target);
   }
 
-  // uint64 clientOrderId = 2;
-  if (this->clientorderid() != 0) {
+  // uint64 client_order_id = 2;
+  if (this->client_order_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_clientorderid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_client_order_id(), target);
   }
 
-  // uint64 requestId = 3;
-  if (this->requestid() != 0) {
+  // uint64 request_id = 3;
+  if (this->request_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_requestid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_request_id(), target);
   }
 
-  // uint64 newPrice = 4;
-  if (this->newprice() != 0) {
+  // uint64 new_price = 4;
+  if (this->new_price() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_newprice(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_new_price(), target);
   }
 
-  // uint64 newQuantity = 5;
-  if (this->newquantity() != 0) {
+  // uint64 new_quantity = 5;
+  if (this->new_quantity() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_newquantity(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_new_quantity(), target);
   }
 
-  // uint64 subaccountId = 6;
-  if (this->subaccountid() != 0) {
+  // uint64 subaccount_id = 6;
+  if (this->subaccount_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(6, this->_internal_subaccountid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(6, this->_internal_subaccount_id(), target);
   }
 
-  // .trade.SelfTradePrevention selfTradePrevention = 7;
-  if (_internal_has_selftradeprevention()) {
+  // .trade.SelfTradePrevention self_trade_prevention = 7;
+  if (_internal_has_self_trade_prevention()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      7, this->_internal_selftradeprevention(), target);
+      7, this->_internal_self_trade_prevention(), target);
   }
 
-  // .trade.PostOnly postOnly = 8;
-  if (this->postonly() != 0) {
+  // .trade.PostOnly post_only = 8;
+  if (this->post_only() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      8, this->_internal_postonly(), target);
+      8, this->_internal_post_only(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2879,59 +2923,59 @@ size_t ModifyOrder::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 marketId = 1;
-  if (this->marketid() != 0) {
+  // uint64 market_id = 1;
+  if (this->market_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_marketid());
+        this->_internal_market_id());
   }
 
-  // uint64 clientOrderId = 2;
-  if (this->clientorderid() != 0) {
+  // uint64 client_order_id = 2;
+  if (this->client_order_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_clientorderid());
+        this->_internal_client_order_id());
   }
 
-  // uint64 requestId = 3;
-  if (this->requestid() != 0) {
+  // uint64 request_id = 3;
+  if (this->request_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_requestid());
+        this->_internal_request_id());
   }
 
-  // uint64 newPrice = 4;
-  if (this->newprice() != 0) {
+  // uint64 new_price = 4;
+  if (this->new_price() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_newprice());
+        this->_internal_new_price());
   }
 
-  // uint64 newQuantity = 5;
-  if (this->newquantity() != 0) {
+  // uint64 new_quantity = 5;
+  if (this->new_quantity() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_newquantity());
+        this->_internal_new_quantity());
   }
 
-  // uint64 subaccountId = 6;
-  if (this->subaccountid() != 0) {
+  // uint64 subaccount_id = 6;
+  if (this->subaccount_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_subaccountid());
+        this->_internal_subaccount_id());
   }
 
-  // .trade.SelfTradePrevention selfTradePrevention = 7;
+  // .trade.SelfTradePrevention self_trade_prevention = 7;
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_selftradeprevention());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_self_trade_prevention());
   }
 
-  // .trade.PostOnly postOnly = 8;
-  if (this->postonly() != 0) {
+  // .trade.PostOnly post_only = 8;
+  if (this->post_only() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_postonly());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_post_only());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2965,29 +3009,29 @@ void ModifyOrder::MergeFrom(const ModifyOrder& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.marketid() != 0) {
-    _internal_set_marketid(from._internal_marketid());
+  if (from.market_id() != 0) {
+    _internal_set_market_id(from._internal_market_id());
   }
-  if (from.clientorderid() != 0) {
-    _internal_set_clientorderid(from._internal_clientorderid());
+  if (from.client_order_id() != 0) {
+    _internal_set_client_order_id(from._internal_client_order_id());
   }
-  if (from.requestid() != 0) {
-    _internal_set_requestid(from._internal_requestid());
+  if (from.request_id() != 0) {
+    _internal_set_request_id(from._internal_request_id());
   }
-  if (from.newprice() != 0) {
-    _internal_set_newprice(from._internal_newprice());
+  if (from.new_price() != 0) {
+    _internal_set_new_price(from._internal_new_price());
   }
-  if (from.newquantity() != 0) {
-    _internal_set_newquantity(from._internal_newquantity());
+  if (from.new_quantity() != 0) {
+    _internal_set_new_quantity(from._internal_new_quantity());
   }
-  if (from.subaccountid() != 0) {
-    _internal_set_subaccountid(from._internal_subaccountid());
+  if (from.subaccount_id() != 0) {
+    _internal_set_subaccount_id(from._internal_subaccount_id());
   }
-  if (from._internal_has_selftradeprevention()) {
-    _internal_set_selftradeprevention(from._internal_selftradeprevention());
+  if (from._internal_has_self_trade_prevention()) {
+    _internal_set_self_trade_prevention(from._internal_self_trade_prevention());
   }
-  if (from.postonly() != 0) {
-    _internal_set_postonly(from._internal_postonly());
+  if (from.post_only() != 0) {
+    _internal_set_post_only(from._internal_post_only());
   }
 }
 
@@ -3014,11 +3058,11 @@ void ModifyOrder::InternalSwap(ModifyOrder* other) {
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ModifyOrder, postonly_)
-      + sizeof(ModifyOrder::postonly_)
-      - PROTOBUF_FIELD_OFFSET(ModifyOrder, marketid_)>(
-          reinterpret_cast<char*>(&marketid_),
-          reinterpret_cast<char*>(&other->marketid_));
+      PROTOBUF_FIELD_OFFSET(ModifyOrder, post_only_)
+      + sizeof(ModifyOrder::post_only_)
+      - PROTOBUF_FIELD_OFFSET(ModifyOrder, market_id_)>(
+          reinterpret_cast<char*>(&market_id_),
+          reinterpret_cast<char*>(&other->market_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ModifyOrder::GetMetadata() const {
@@ -3031,7 +3075,7 @@ void ModifyOrder::InternalSwap(ModifyOrder* other) {
 class MassCancel::_Internal {
  public:
   using HasBits = decltype(std::declval<MassCancel>()._has_bits_);
-  static void set_has_marketid(HasBits* has_bits) {
+  static void set_has_market_id(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
   static void set_has_side(HasBits* has_bits) {
@@ -3049,17 +3093,17 @@ MassCancel::MassCancel(const MassCancel& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _has_bits_(from._has_bits_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&subaccountid_, &from.subaccountid_,
+  ::memcpy(&subaccount_id_, &from.subaccount_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&side_) -
-    reinterpret_cast<char*>(&subaccountid_)) + sizeof(side_));
+    reinterpret_cast<char*>(&subaccount_id_)) + sizeof(side_));
   // @@protoc_insertion_point(copy_constructor:trade.MassCancel)
 }
 
 void MassCancel::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&subaccountid_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&subaccount_id_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&side_) -
-    reinterpret_cast<char*>(&subaccountid_)) + sizeof(side_));
+    reinterpret_cast<char*>(&subaccount_id_)) + sizeof(side_));
 }
 
 MassCancel::~MassCancel() {
@@ -3088,14 +3132,14 @@ void MassCancel::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&subaccountid_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&requestid_) -
-      reinterpret_cast<char*>(&subaccountid_)) + sizeof(requestid_));
+  ::memset(&subaccount_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&request_id_) -
+      reinterpret_cast<char*>(&subaccount_id_)) + sizeof(request_id_));
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
-    ::memset(&marketid_, 0, static_cast<size_t>(
+    ::memset(&market_id_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&side_) -
-        reinterpret_cast<char*>(&marketid_)) + sizeof(side_));
+        reinterpret_cast<char*>(&market_id_)) + sizeof(side_));
   }
   _has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -3109,25 +3153,25 @@ const char* MassCancel::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint64 subaccountId = 1;
+      // uint64 subaccount_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          subaccountid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          subaccount_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 requestId = 2;
+      // uint64 request_id = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          requestid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          request_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 marketId = 3;
+      // uint64 market_id = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          _Internal::set_has_marketid(&has_bits);
-          marketid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          _Internal::set_has_market_id(&has_bits);
+          market_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3168,22 +3212,22 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 subaccountId = 1;
-  if (this->subaccountid() != 0) {
+  // uint64 subaccount_id = 1;
+  if (this->subaccount_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_subaccountid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_subaccount_id(), target);
   }
 
-  // uint64 requestId = 2;
-  if (this->requestid() != 0) {
+  // uint64 request_id = 2;
+  if (this->request_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_requestid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_request_id(), target);
   }
 
-  // uint64 marketId = 3;
-  if (_internal_has_marketid()) {
+  // uint64 market_id = 3;
+  if (_internal_has_market_id()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_marketid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_market_id(), target);
   }
 
   // .trade.Side side = 4;
@@ -3209,27 +3253,27 @@ size_t MassCancel::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 subaccountId = 1;
-  if (this->subaccountid() != 0) {
+  // uint64 subaccount_id = 1;
+  if (this->subaccount_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_subaccountid());
+        this->_internal_subaccount_id());
   }
 
-  // uint64 requestId = 2;
-  if (this->requestid() != 0) {
+  // uint64 request_id = 2;
+  if (this->request_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_requestid());
+        this->_internal_request_id());
   }
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
-    // uint64 marketId = 3;
+    // uint64 market_id = 3;
     if (cached_has_bits & 0x00000001u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-          this->_internal_marketid());
+          this->_internal_market_id());
     }
 
     // .trade.Side side = 4;
@@ -3270,16 +3314,16 @@ void MassCancel::MergeFrom(const MassCancel& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.subaccountid() != 0) {
-    _internal_set_subaccountid(from._internal_subaccountid());
+  if (from.subaccount_id() != 0) {
+    _internal_set_subaccount_id(from._internal_subaccount_id());
   }
-  if (from.requestid() != 0) {
-    _internal_set_requestid(from._internal_requestid());
+  if (from.request_id() != 0) {
+    _internal_set_request_id(from._internal_request_id());
   }
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      marketid_ = from.marketid_;
+      market_id_ = from.market_id_;
     }
     if (cached_has_bits & 0x00000002u) {
       side_ = from.side_;
@@ -3313,9 +3357,9 @@ void MassCancel::InternalSwap(MassCancel* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(MassCancel, side_)
       + sizeof(MassCancel::side_)
-      - PROTOBUF_FIELD_OFFSET(MassCancel, subaccountid_)>(
-          reinterpret_cast<char*>(&subaccountid_),
-          reinterpret_cast<char*>(&other->subaccountid_));
+      - PROTOBUF_FIELD_OFFSET(MassCancel, subaccount_id_)>(
+          reinterpret_cast<char*>(&subaccount_id_),
+          reinterpret_cast<char*>(&other->subaccount_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata MassCancel::GetMetadata() const {
@@ -3338,17 +3382,17 @@ Heartbeat::Heartbeat(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 Heartbeat::Heartbeat(const Heartbeat& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&requestid_, &from.requestid_,
+  ::memcpy(&request_id_, &from.request_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&requestid_)) + sizeof(timestamp_));
+    reinterpret_cast<char*>(&request_id_)) + sizeof(timestamp_));
   // @@protoc_insertion_point(copy_constructor:trade.Heartbeat)
 }
 
 void Heartbeat::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&requestid_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&request_id_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&timestamp_) -
-    reinterpret_cast<char*>(&requestid_)) + sizeof(timestamp_));
+    reinterpret_cast<char*>(&request_id_)) + sizeof(timestamp_));
 }
 
 Heartbeat::~Heartbeat() {
@@ -3377,9 +3421,9 @@ void Heartbeat::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&requestid_, 0, static_cast<size_t>(
+  ::memset(&request_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&timestamp_) -
-      reinterpret_cast<char*>(&requestid_)) + sizeof(timestamp_));
+      reinterpret_cast<char*>(&request_id_)) + sizeof(timestamp_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3390,10 +3434,10 @@ const char* Heartbeat::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint64 requestId = 1;
+      // uint64 request_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          requestid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          request_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3432,10 +3476,10 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 requestId = 1;
-  if (this->requestid() != 0) {
+  // uint64 request_id = 1;
+  if (this->request_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_requestid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_request_id(), target);
   }
 
   // uint64 timestamp = 2;
@@ -3460,11 +3504,11 @@ size_t Heartbeat::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 requestId = 1;
-  if (this->requestid() != 0) {
+  // uint64 request_id = 1;
+  if (this->request_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_requestid());
+        this->_internal_request_id());
   }
 
   // uint64 timestamp = 2;
@@ -3505,8 +3549,8 @@ void Heartbeat::MergeFrom(const Heartbeat& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.requestid() != 0) {
-    _internal_set_requestid(from._internal_requestid());
+  if (from.request_id() != 0) {
+    _internal_set_request_id(from._internal_request_id());
   }
   if (from.timestamp() != 0) {
     _internal_set_timestamp(from._internal_timestamp());
@@ -3537,9 +3581,9 @@ void Heartbeat::InternalSwap(Heartbeat* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Heartbeat, timestamp_)
       + sizeof(Heartbeat::timestamp_)
-      - PROTOBUF_FIELD_OFFSET(Heartbeat, requestid_)>(
-          reinterpret_cast<char*>(&requestid_),
-          reinterpret_cast<char*>(&other->requestid_));
+      - PROTOBUF_FIELD_OFFSET(Heartbeat, request_id_)>(
+          reinterpret_cast<char*>(&request_id_),
+          reinterpret_cast<char*>(&other->request_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Heartbeat::GetMetadata() const {
@@ -3551,41 +3595,41 @@ void Heartbeat::InternalSwap(Heartbeat* other) {
 
 class OrderResponse::_Internal {
  public:
-  static const ::trade::NewOrderAck& newack(const OrderResponse* msg);
-  static const ::trade::CancelOrderAck& cancelack(const OrderResponse* msg);
-  static const ::trade::ModifyOrderAck& modifyack(const OrderResponse* msg);
-  static const ::trade::NewOrderReject& newreject(const OrderResponse* msg);
-  static const ::trade::CancelOrderReject& cancelreject(const OrderResponse* msg);
-  static const ::trade::ModifyOrderReject& modifyreject(const OrderResponse* msg);
+  static const ::trade::NewOrderAck& new_ack(const OrderResponse* msg);
+  static const ::trade::CancelOrderAck& cancel_ack(const OrderResponse* msg);
+  static const ::trade::ModifyOrderAck& modify_ack(const OrderResponse* msg);
+  static const ::trade::NewOrderReject& new_reject(const OrderResponse* msg);
+  static const ::trade::CancelOrderReject& cancel_reject(const OrderResponse* msg);
+  static const ::trade::ModifyOrderReject& modify_reject(const OrderResponse* msg);
   static const ::trade::Fill& fill(const OrderResponse* msg);
   static const ::trade::Heartbeat& heartbeat(const OrderResponse* msg);
   static const ::trade::AssetPosition& position(const OrderResponse* msg);
-  static const ::trade::MassCancelAck& masscancelack(const OrderResponse* msg);
+  static const ::trade::MassCancelAck& mass_cancel_ack(const OrderResponse* msg);
 };
 
 const ::trade::NewOrderAck&
-OrderResponse::_Internal::newack(const OrderResponse* msg) {
-  return *msg->inner_.newack_;
+OrderResponse::_Internal::new_ack(const OrderResponse* msg) {
+  return *msg->inner_.new_ack_;
 }
 const ::trade::CancelOrderAck&
-OrderResponse::_Internal::cancelack(const OrderResponse* msg) {
-  return *msg->inner_.cancelack_;
+OrderResponse::_Internal::cancel_ack(const OrderResponse* msg) {
+  return *msg->inner_.cancel_ack_;
 }
 const ::trade::ModifyOrderAck&
-OrderResponse::_Internal::modifyack(const OrderResponse* msg) {
-  return *msg->inner_.modifyack_;
+OrderResponse::_Internal::modify_ack(const OrderResponse* msg) {
+  return *msg->inner_.modify_ack_;
 }
 const ::trade::NewOrderReject&
-OrderResponse::_Internal::newreject(const OrderResponse* msg) {
-  return *msg->inner_.newreject_;
+OrderResponse::_Internal::new_reject(const OrderResponse* msg) {
+  return *msg->inner_.new_reject_;
 }
 const ::trade::CancelOrderReject&
-OrderResponse::_Internal::cancelreject(const OrderResponse* msg) {
-  return *msg->inner_.cancelreject_;
+OrderResponse::_Internal::cancel_reject(const OrderResponse* msg) {
+  return *msg->inner_.cancel_reject_;
 }
 const ::trade::ModifyOrderReject&
-OrderResponse::_Internal::modifyreject(const OrderResponse* msg) {
-  return *msg->inner_.modifyreject_;
+OrderResponse::_Internal::modify_reject(const OrderResponse* msg) {
+  return *msg->inner_.modify_reject_;
 }
 const ::trade::Fill&
 OrderResponse::_Internal::fill(const OrderResponse* msg) {
@@ -3600,98 +3644,98 @@ OrderResponse::_Internal::position(const OrderResponse* msg) {
   return *msg->inner_.position_;
 }
 const ::trade::MassCancelAck&
-OrderResponse::_Internal::masscancelack(const OrderResponse* msg) {
-  return *msg->inner_.masscancelack_;
+OrderResponse::_Internal::mass_cancel_ack(const OrderResponse* msg) {
+  return *msg->inner_.mass_cancel_ack_;
 }
-void OrderResponse::set_allocated_newack(::trade::NewOrderAck* newack) {
+void OrderResponse::set_allocated_new_ack(::trade::NewOrderAck* new_ack) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_inner();
-  if (newack) {
+  if (new_ack) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(newack);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(new_ack);
     if (message_arena != submessage_arena) {
-      newack = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, newack, submessage_arena);
+      new_ack = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, new_ack, submessage_arena);
     }
-    set_has_newack();
-    inner_.newack_ = newack;
+    set_has_new_ack();
+    inner_.new_ack_ = new_ack;
   }
-  // @@protoc_insertion_point(field_set_allocated:trade.OrderResponse.newAck)
+  // @@protoc_insertion_point(field_set_allocated:trade.OrderResponse.new_ack)
 }
-void OrderResponse::set_allocated_cancelack(::trade::CancelOrderAck* cancelack) {
+void OrderResponse::set_allocated_cancel_ack(::trade::CancelOrderAck* cancel_ack) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_inner();
-  if (cancelack) {
+  if (cancel_ack) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(cancelack);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(cancel_ack);
     if (message_arena != submessage_arena) {
-      cancelack = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, cancelack, submessage_arena);
+      cancel_ack = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, cancel_ack, submessage_arena);
     }
-    set_has_cancelack();
-    inner_.cancelack_ = cancelack;
+    set_has_cancel_ack();
+    inner_.cancel_ack_ = cancel_ack;
   }
-  // @@protoc_insertion_point(field_set_allocated:trade.OrderResponse.cancelAck)
+  // @@protoc_insertion_point(field_set_allocated:trade.OrderResponse.cancel_ack)
 }
-void OrderResponse::set_allocated_modifyack(::trade::ModifyOrderAck* modifyack) {
+void OrderResponse::set_allocated_modify_ack(::trade::ModifyOrderAck* modify_ack) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_inner();
-  if (modifyack) {
+  if (modify_ack) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(modifyack);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(modify_ack);
     if (message_arena != submessage_arena) {
-      modifyack = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, modifyack, submessage_arena);
+      modify_ack = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, modify_ack, submessage_arena);
     }
-    set_has_modifyack();
-    inner_.modifyack_ = modifyack;
+    set_has_modify_ack();
+    inner_.modify_ack_ = modify_ack;
   }
-  // @@protoc_insertion_point(field_set_allocated:trade.OrderResponse.modifyAck)
+  // @@protoc_insertion_point(field_set_allocated:trade.OrderResponse.modify_ack)
 }
-void OrderResponse::set_allocated_newreject(::trade::NewOrderReject* newreject) {
+void OrderResponse::set_allocated_new_reject(::trade::NewOrderReject* new_reject) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_inner();
-  if (newreject) {
+  if (new_reject) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(newreject);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(new_reject);
     if (message_arena != submessage_arena) {
-      newreject = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, newreject, submessage_arena);
+      new_reject = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, new_reject, submessage_arena);
     }
-    set_has_newreject();
-    inner_.newreject_ = newreject;
+    set_has_new_reject();
+    inner_.new_reject_ = new_reject;
   }
-  // @@protoc_insertion_point(field_set_allocated:trade.OrderResponse.newReject)
+  // @@protoc_insertion_point(field_set_allocated:trade.OrderResponse.new_reject)
 }
-void OrderResponse::set_allocated_cancelreject(::trade::CancelOrderReject* cancelreject) {
+void OrderResponse::set_allocated_cancel_reject(::trade::CancelOrderReject* cancel_reject) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_inner();
-  if (cancelreject) {
+  if (cancel_reject) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(cancelreject);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(cancel_reject);
     if (message_arena != submessage_arena) {
-      cancelreject = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, cancelreject, submessage_arena);
+      cancel_reject = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, cancel_reject, submessage_arena);
     }
-    set_has_cancelreject();
-    inner_.cancelreject_ = cancelreject;
+    set_has_cancel_reject();
+    inner_.cancel_reject_ = cancel_reject;
   }
-  // @@protoc_insertion_point(field_set_allocated:trade.OrderResponse.cancelReject)
+  // @@protoc_insertion_point(field_set_allocated:trade.OrderResponse.cancel_reject)
 }
-void OrderResponse::set_allocated_modifyreject(::trade::ModifyOrderReject* modifyreject) {
+void OrderResponse::set_allocated_modify_reject(::trade::ModifyOrderReject* modify_reject) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_inner();
-  if (modifyreject) {
+  if (modify_reject) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(modifyreject);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(modify_reject);
     if (message_arena != submessage_arena) {
-      modifyreject = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, modifyreject, submessage_arena);
+      modify_reject = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, modify_reject, submessage_arena);
     }
-    set_has_modifyreject();
-    inner_.modifyreject_ = modifyreject;
+    set_has_modify_reject();
+    inner_.modify_reject_ = modify_reject;
   }
-  // @@protoc_insertion_point(field_set_allocated:trade.OrderResponse.modifyReject)
+  // @@protoc_insertion_point(field_set_allocated:trade.OrderResponse.modify_reject)
 }
 void OrderResponse::set_allocated_fill(::trade::Fill* fill) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
@@ -3738,20 +3782,20 @@ void OrderResponse::set_allocated_position(::trade::AssetPosition* position) {
   }
   // @@protoc_insertion_point(field_set_allocated:trade.OrderResponse.position)
 }
-void OrderResponse::set_allocated_masscancelack(::trade::MassCancelAck* masscancelack) {
+void OrderResponse::set_allocated_mass_cancel_ack(::trade::MassCancelAck* mass_cancel_ack) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
   clear_inner();
-  if (masscancelack) {
+  if (mass_cancel_ack) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(masscancelack);
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(mass_cancel_ack);
     if (message_arena != submessage_arena) {
-      masscancelack = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, masscancelack, submessage_arena);
+      mass_cancel_ack = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, mass_cancel_ack, submessage_arena);
     }
-    set_has_masscancelack();
-    inner_.masscancelack_ = masscancelack;
+    set_has_mass_cancel_ack();
+    inner_.mass_cancel_ack_ = mass_cancel_ack;
   }
-  // @@protoc_insertion_point(field_set_allocated:trade.OrderResponse.massCancelAck)
+  // @@protoc_insertion_point(field_set_allocated:trade.OrderResponse.mass_cancel_ack)
 }
 OrderResponse::OrderResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
@@ -3765,27 +3809,27 @@ OrderResponse::OrderResponse(const OrderResponse& from)
   clear_has_inner();
   switch (from.inner_case()) {
     case kNewAck: {
-      _internal_mutable_newack()->::trade::NewOrderAck::MergeFrom(from._internal_newack());
+      _internal_mutable_new_ack()->::trade::NewOrderAck::MergeFrom(from._internal_new_ack());
       break;
     }
     case kCancelAck: {
-      _internal_mutable_cancelack()->::trade::CancelOrderAck::MergeFrom(from._internal_cancelack());
+      _internal_mutable_cancel_ack()->::trade::CancelOrderAck::MergeFrom(from._internal_cancel_ack());
       break;
     }
     case kModifyAck: {
-      _internal_mutable_modifyack()->::trade::ModifyOrderAck::MergeFrom(from._internal_modifyack());
+      _internal_mutable_modify_ack()->::trade::ModifyOrderAck::MergeFrom(from._internal_modify_ack());
       break;
     }
     case kNewReject: {
-      _internal_mutable_newreject()->::trade::NewOrderReject::MergeFrom(from._internal_newreject());
+      _internal_mutable_new_reject()->::trade::NewOrderReject::MergeFrom(from._internal_new_reject());
       break;
     }
     case kCancelReject: {
-      _internal_mutable_cancelreject()->::trade::CancelOrderReject::MergeFrom(from._internal_cancelreject());
+      _internal_mutable_cancel_reject()->::trade::CancelOrderReject::MergeFrom(from._internal_cancel_reject());
       break;
     }
     case kModifyReject: {
-      _internal_mutable_modifyreject()->::trade::ModifyOrderReject::MergeFrom(from._internal_modifyreject());
+      _internal_mutable_modify_reject()->::trade::ModifyOrderReject::MergeFrom(from._internal_modify_reject());
       break;
     }
     case kFill: {
@@ -3801,7 +3845,7 @@ OrderResponse::OrderResponse(const OrderResponse& from)
       break;
     }
     case kMassCancelAck: {
-      _internal_mutable_masscancelack()->::trade::MassCancelAck::MergeFrom(from._internal_masscancelack());
+      _internal_mutable_mass_cancel_ack()->::trade::MassCancelAck::MergeFrom(from._internal_mass_cancel_ack());
       break;
     }
     case INNER_NOT_SET: {
@@ -3843,37 +3887,37 @@ void OrderResponse::clear_inner() {
   switch (inner_case()) {
     case kNewAck: {
       if (GetArena() == nullptr) {
-        delete inner_.newack_;
+        delete inner_.new_ack_;
       }
       break;
     }
     case kCancelAck: {
       if (GetArena() == nullptr) {
-        delete inner_.cancelack_;
+        delete inner_.cancel_ack_;
       }
       break;
     }
     case kModifyAck: {
       if (GetArena() == nullptr) {
-        delete inner_.modifyack_;
+        delete inner_.modify_ack_;
       }
       break;
     }
     case kNewReject: {
       if (GetArena() == nullptr) {
-        delete inner_.newreject_;
+        delete inner_.new_reject_;
       }
       break;
     }
     case kCancelReject: {
       if (GetArena() == nullptr) {
-        delete inner_.cancelreject_;
+        delete inner_.cancel_reject_;
       }
       break;
     }
     case kModifyReject: {
       if (GetArena() == nullptr) {
-        delete inner_.modifyreject_;
+        delete inner_.modify_reject_;
       }
       break;
     }
@@ -3897,7 +3941,7 @@ void OrderResponse::clear_inner() {
     }
     case kMassCancelAck: {
       if (GetArena() == nullptr) {
-        delete inner_.masscancelack_;
+        delete inner_.mass_cancel_ack_;
       }
       break;
     }
@@ -3926,45 +3970,45 @@ const char* OrderResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .trade.NewOrderAck newAck = 1;
+      // .trade.NewOrderAck new_ack = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_newack(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_new_ack(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .trade.CancelOrderAck cancelAck = 2;
+      // .trade.CancelOrderAck cancel_ack = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ctx->ParseMessage(_internal_mutable_cancelack(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_cancel_ack(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .trade.ModifyOrderAck modifyAck = 3;
+      // .trade.ModifyOrderAck modify_ack = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          ptr = ctx->ParseMessage(_internal_mutable_modifyack(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_modify_ack(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .trade.NewOrderReject newReject = 4;
+      // .trade.NewOrderReject new_reject = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          ptr = ctx->ParseMessage(_internal_mutable_newreject(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_new_reject(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .trade.CancelOrderReject cancelReject = 5;
+      // .trade.CancelOrderReject cancel_reject = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
-          ptr = ctx->ParseMessage(_internal_mutable_cancelreject(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_cancel_reject(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .trade.ModifyOrderReject modifyReject = 6;
+      // .trade.ModifyOrderReject modify_reject = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
-          ptr = ctx->ParseMessage(_internal_mutable_modifyreject(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_modify_reject(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3989,10 +4033,10 @@ const char* OrderResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .trade.MassCancelAck massCancelAck = 10;
+      // .trade.MassCancelAck mass_cancel_ack = 10;
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 82)) {
-          ptr = ctx->ParseMessage(_internal_mutable_masscancelack(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_mass_cancel_ack(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4024,52 +4068,52 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .trade.NewOrderAck newAck = 1;
-  if (_internal_has_newack()) {
+  // .trade.NewOrderAck new_ack = 1;
+  if (_internal_has_new_ack()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::newack(this), target, stream);
+        1, _Internal::new_ack(this), target, stream);
   }
 
-  // .trade.CancelOrderAck cancelAck = 2;
-  if (_internal_has_cancelack()) {
+  // .trade.CancelOrderAck cancel_ack = 2;
+  if (_internal_has_cancel_ack()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        2, _Internal::cancelack(this), target, stream);
+        2, _Internal::cancel_ack(this), target, stream);
   }
 
-  // .trade.ModifyOrderAck modifyAck = 3;
-  if (_internal_has_modifyack()) {
+  // .trade.ModifyOrderAck modify_ack = 3;
+  if (_internal_has_modify_ack()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        3, _Internal::modifyack(this), target, stream);
+        3, _Internal::modify_ack(this), target, stream);
   }
 
-  // .trade.NewOrderReject newReject = 4;
-  if (_internal_has_newreject()) {
+  // .trade.NewOrderReject new_reject = 4;
+  if (_internal_has_new_reject()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        4, _Internal::newreject(this), target, stream);
+        4, _Internal::new_reject(this), target, stream);
   }
 
-  // .trade.CancelOrderReject cancelReject = 5;
-  if (_internal_has_cancelreject()) {
+  // .trade.CancelOrderReject cancel_reject = 5;
+  if (_internal_has_cancel_reject()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        5, _Internal::cancelreject(this), target, stream);
+        5, _Internal::cancel_reject(this), target, stream);
   }
 
-  // .trade.ModifyOrderReject modifyReject = 6;
-  if (_internal_has_modifyreject()) {
+  // .trade.ModifyOrderReject modify_reject = 6;
+  if (_internal_has_modify_reject()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        6, _Internal::modifyreject(this), target, stream);
+        6, _Internal::modify_reject(this), target, stream);
   }
 
   // .trade.Fill fill = 7;
@@ -4096,12 +4140,12 @@ failure:
         9, _Internal::position(this), target, stream);
   }
 
-  // .trade.MassCancelAck massCancelAck = 10;
-  if (_internal_has_masscancelack()) {
+  // .trade.MassCancelAck mass_cancel_ack = 10;
+  if (_internal_has_mass_cancel_ack()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        10, _Internal::masscancelack(this), target, stream);
+        10, _Internal::mass_cancel_ack(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4121,46 +4165,46 @@ size_t OrderResponse::ByteSizeLong() const {
   (void) cached_has_bits;
 
   switch (inner_case()) {
-    // .trade.NewOrderAck newAck = 1;
+    // .trade.NewOrderAck new_ack = 1;
     case kNewAck: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *inner_.newack_);
+          *inner_.new_ack_);
       break;
     }
-    // .trade.CancelOrderAck cancelAck = 2;
+    // .trade.CancelOrderAck cancel_ack = 2;
     case kCancelAck: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *inner_.cancelack_);
+          *inner_.cancel_ack_);
       break;
     }
-    // .trade.ModifyOrderAck modifyAck = 3;
+    // .trade.ModifyOrderAck modify_ack = 3;
     case kModifyAck: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *inner_.modifyack_);
+          *inner_.modify_ack_);
       break;
     }
-    // .trade.NewOrderReject newReject = 4;
+    // .trade.NewOrderReject new_reject = 4;
     case kNewReject: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *inner_.newreject_);
+          *inner_.new_reject_);
       break;
     }
-    // .trade.CancelOrderReject cancelReject = 5;
+    // .trade.CancelOrderReject cancel_reject = 5;
     case kCancelReject: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *inner_.cancelreject_);
+          *inner_.cancel_reject_);
       break;
     }
-    // .trade.ModifyOrderReject modifyReject = 6;
+    // .trade.ModifyOrderReject modify_reject = 6;
     case kModifyReject: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *inner_.modifyreject_);
+          *inner_.modify_reject_);
       break;
     }
     // .trade.Fill fill = 7;
@@ -4184,11 +4228,11 @@ size_t OrderResponse::ByteSizeLong() const {
           *inner_.position_);
       break;
     }
-    // .trade.MassCancelAck massCancelAck = 10;
+    // .trade.MassCancelAck mass_cancel_ack = 10;
     case kMassCancelAck: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *inner_.masscancelack_);
+          *inner_.mass_cancel_ack_);
       break;
     }
     case INNER_NOT_SET: {
@@ -4228,27 +4272,27 @@ void OrderResponse::MergeFrom(const OrderResponse& from) {
 
   switch (from.inner_case()) {
     case kNewAck: {
-      _internal_mutable_newack()->::trade::NewOrderAck::MergeFrom(from._internal_newack());
+      _internal_mutable_new_ack()->::trade::NewOrderAck::MergeFrom(from._internal_new_ack());
       break;
     }
     case kCancelAck: {
-      _internal_mutable_cancelack()->::trade::CancelOrderAck::MergeFrom(from._internal_cancelack());
+      _internal_mutable_cancel_ack()->::trade::CancelOrderAck::MergeFrom(from._internal_cancel_ack());
       break;
     }
     case kModifyAck: {
-      _internal_mutable_modifyack()->::trade::ModifyOrderAck::MergeFrom(from._internal_modifyack());
+      _internal_mutable_modify_ack()->::trade::ModifyOrderAck::MergeFrom(from._internal_modify_ack());
       break;
     }
     case kNewReject: {
-      _internal_mutable_newreject()->::trade::NewOrderReject::MergeFrom(from._internal_newreject());
+      _internal_mutable_new_reject()->::trade::NewOrderReject::MergeFrom(from._internal_new_reject());
       break;
     }
     case kCancelReject: {
-      _internal_mutable_cancelreject()->::trade::CancelOrderReject::MergeFrom(from._internal_cancelreject());
+      _internal_mutable_cancel_reject()->::trade::CancelOrderReject::MergeFrom(from._internal_cancel_reject());
       break;
     }
     case kModifyReject: {
-      _internal_mutable_modifyreject()->::trade::ModifyOrderReject::MergeFrom(from._internal_modifyreject());
+      _internal_mutable_modify_reject()->::trade::ModifyOrderReject::MergeFrom(from._internal_modify_reject());
       break;
     }
     case kFill: {
@@ -4264,7 +4308,7 @@ void OrderResponse::MergeFrom(const OrderResponse& from) {
       break;
     }
     case kMassCancelAck: {
-      _internal_mutable_masscancelack()->::trade::MassCancelAck::MergeFrom(from._internal_masscancelack());
+      _internal_mutable_mass_cancel_ack()->::trade::MassCancelAck::MergeFrom(from._internal_mass_cancel_ack());
       break;
     }
     case INNER_NOT_SET: {
@@ -4323,17 +4367,17 @@ NewOrderAck::NewOrderAck(const NewOrderAck& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _has_bits_(from._has_bits_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&msgseqnum_, &from.msgseqnum_,
-    static_cast<size_t>(reinterpret_cast<char*>(&ordertype_) -
-    reinterpret_cast<char*>(&msgseqnum_)) + sizeof(ordertype_));
+  ::memcpy(&msg_seq_num_, &from.msg_seq_num_,
+    static_cast<size_t>(reinterpret_cast<char*>(&subaccount_id_) -
+    reinterpret_cast<char*>(&msg_seq_num_)) + sizeof(subaccount_id_));
   // @@protoc_insertion_point(copy_constructor:trade.NewOrderAck)
 }
 
 void NewOrderAck::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&msgseqnum_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&ordertype_) -
-    reinterpret_cast<char*>(&msgseqnum_)) + sizeof(ordertype_));
+    reinterpret_cast<char*>(&msg_seq_num_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&subaccount_id_) -
+    reinterpret_cast<char*>(&msg_seq_num_)) + sizeof(subaccount_id_));
 }
 
 NewOrderAck::~NewOrderAck() {
@@ -4362,13 +4406,13 @@ void NewOrderAck::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&msgseqnum_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&marketid_) -
-      reinterpret_cast<char*>(&msgseqnum_)) + sizeof(marketid_));
+  ::memset(&msg_seq_num_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&market_id_) -
+      reinterpret_cast<char*>(&msg_seq_num_)) + sizeof(market_id_));
   price_ = PROTOBUF_ULONGLONG(0);
   ::memset(&quantity_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&ordertype_) -
-      reinterpret_cast<char*>(&quantity_)) + sizeof(ordertype_));
+      reinterpret_cast<char*>(&subaccount_id_) -
+      reinterpret_cast<char*>(&quantity_)) + sizeof(subaccount_id_));
   _has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -4381,38 +4425,38 @@ const char* NewOrderAck::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint64 msgSeqNum = 1;
+      // uint64 msg_seq_num = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          msgseqnum_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          msg_seq_num_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 clientOrderId = 2;
+      // uint64 client_order_id = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          clientorderid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          client_order_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 requestId = 3;
+      // uint64 request_id = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          requestid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          request_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 exchangeOrderId = 4;
+      // uint64 exchange_order_id = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          exchangeorderid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          exchange_order_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 marketId = 5;
+      // uint64 market_id = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          marketid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          market_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4439,33 +4483,40 @@ const char* NewOrderAck::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
           _internal_set_side(static_cast<::trade::Side>(val));
         } else goto handle_unusual;
         continue;
-      // .trade.TimeInForce timeInForce = 9;
+      // .trade.TimeInForce time_in_force = 9;
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 72)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_timeinforce(static_cast<::trade::TimeInForce>(val));
+          _internal_set_time_in_force(static_cast<::trade::TimeInForce>(val));
         } else goto handle_unusual;
         continue;
-      // .trade.OrderType orderType = 10;
+      // .trade.OrderType order_type = 10;
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 80)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_ordertype(static_cast<::trade::OrderType>(val));
+          _internal_set_order_type(static_cast<::trade::OrderType>(val));
         } else goto handle_unusual;
         continue;
-      // uint64 transactTime = 11;
+      // uint64 transact_time = 11;
       case 11:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 88)) {
-          transacttime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          transact_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 subaccountId = 12;
+      // uint64 subaccount_id = 12;
       case 12:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 96)) {
-          subaccountid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          subaccount_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool cancel_on_disconnect = 13;
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 104)) {
+          cancel_on_disconnect_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4498,34 +4549,34 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 msgSeqNum = 1;
-  if (this->msgseqnum() != 0) {
+  // uint64 msg_seq_num = 1;
+  if (this->msg_seq_num() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_msgseqnum(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_msg_seq_num(), target);
   }
 
-  // uint64 clientOrderId = 2;
-  if (this->clientorderid() != 0) {
+  // uint64 client_order_id = 2;
+  if (this->client_order_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_clientorderid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_client_order_id(), target);
   }
 
-  // uint64 requestId = 3;
-  if (this->requestid() != 0) {
+  // uint64 request_id = 3;
+  if (this->request_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_requestid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_request_id(), target);
   }
 
-  // uint64 exchangeOrderId = 4;
-  if (this->exchangeorderid() != 0) {
+  // uint64 exchange_order_id = 4;
+  if (this->exchange_order_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_exchangeorderid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_exchange_order_id(), target);
   }
 
-  // uint64 marketId = 5;
-  if (this->marketid() != 0) {
+  // uint64 market_id = 5;
+  if (this->market_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_marketid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_market_id(), target);
   }
 
   // uint64 price = 6;
@@ -4547,30 +4598,36 @@ failure:
       8, this->_internal_side(), target);
   }
 
-  // .trade.TimeInForce timeInForce = 9;
-  if (this->timeinforce() != 0) {
+  // .trade.TimeInForce time_in_force = 9;
+  if (this->time_in_force() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      9, this->_internal_timeinforce(), target);
+      9, this->_internal_time_in_force(), target);
   }
 
-  // .trade.OrderType orderType = 10;
-  if (this->ordertype() != 0) {
+  // .trade.OrderType order_type = 10;
+  if (this->order_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      10, this->_internal_ordertype(), target);
+      10, this->_internal_order_type(), target);
   }
 
-  // uint64 transactTime = 11;
-  if (this->transacttime() != 0) {
+  // uint64 transact_time = 11;
+  if (this->transact_time() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(11, this->_internal_transacttime(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(11, this->_internal_transact_time(), target);
   }
 
-  // uint64 subaccountId = 12;
-  if (this->subaccountid() != 0) {
+  // uint64 subaccount_id = 12;
+  if (this->subaccount_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(12, this->_internal_subaccountid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(12, this->_internal_subaccount_id(), target);
+  }
+
+  // bool cancel_on_disconnect = 13;
+  if (this->cancel_on_disconnect() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(13, this->_internal_cancel_on_disconnect(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4589,39 +4646,39 @@ size_t NewOrderAck::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 msgSeqNum = 1;
-  if (this->msgseqnum() != 0) {
+  // uint64 msg_seq_num = 1;
+  if (this->msg_seq_num() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_msgseqnum());
+        this->_internal_msg_seq_num());
   }
 
-  // uint64 clientOrderId = 2;
-  if (this->clientorderid() != 0) {
+  // uint64 client_order_id = 2;
+  if (this->client_order_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_clientorderid());
+        this->_internal_client_order_id());
   }
 
-  // uint64 requestId = 3;
-  if (this->requestid() != 0) {
+  // uint64 request_id = 3;
+  if (this->request_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_requestid());
+        this->_internal_request_id());
   }
 
-  // uint64 exchangeOrderId = 4;
-  if (this->exchangeorderid() != 0) {
+  // uint64 exchange_order_id = 4;
+  if (this->exchange_order_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_exchangeorderid());
+        this->_internal_exchange_order_id());
   }
 
-  // uint64 marketId = 5;
-  if (this->marketid() != 0) {
+  // uint64 market_id = 5;
+  if (this->market_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_marketid());
+        this->_internal_market_id());
   }
 
   // uint64 price = 6;
@@ -4645,30 +4702,35 @@ size_t NewOrderAck::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_side());
   }
 
-  // .trade.TimeInForce timeInForce = 9;
-  if (this->timeinforce() != 0) {
+  // .trade.TimeInForce time_in_force = 9;
+  if (this->time_in_force() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_timeinforce());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_time_in_force());
   }
 
-  // uint64 transactTime = 11;
-  if (this->transacttime() != 0) {
+  // uint64 transact_time = 11;
+  if (this->transact_time() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_transacttime());
+        this->_internal_transact_time());
   }
 
-  // uint64 subaccountId = 12;
-  if (this->subaccountid() != 0) {
+  // .trade.OrderType order_type = 10;
+  if (this->order_type() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_order_type());
+  }
+
+  // bool cancel_on_disconnect = 13;
+  if (this->cancel_on_disconnect() != 0) {
+    total_size += 1 + 1;
+  }
+
+  // uint64 subaccount_id = 12;
+  if (this->subaccount_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_subaccountid());
-  }
-
-  // .trade.OrderType orderType = 10;
-  if (this->ordertype() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_ordertype());
+        this->_internal_subaccount_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4702,20 +4764,20 @@ void NewOrderAck::MergeFrom(const NewOrderAck& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.msgseqnum() != 0) {
-    _internal_set_msgseqnum(from._internal_msgseqnum());
+  if (from.msg_seq_num() != 0) {
+    _internal_set_msg_seq_num(from._internal_msg_seq_num());
   }
-  if (from.clientorderid() != 0) {
-    _internal_set_clientorderid(from._internal_clientorderid());
+  if (from.client_order_id() != 0) {
+    _internal_set_client_order_id(from._internal_client_order_id());
   }
-  if (from.requestid() != 0) {
-    _internal_set_requestid(from._internal_requestid());
+  if (from.request_id() != 0) {
+    _internal_set_request_id(from._internal_request_id());
   }
-  if (from.exchangeorderid() != 0) {
-    _internal_set_exchangeorderid(from._internal_exchangeorderid());
+  if (from.exchange_order_id() != 0) {
+    _internal_set_exchange_order_id(from._internal_exchange_order_id());
   }
-  if (from.marketid() != 0) {
-    _internal_set_marketid(from._internal_marketid());
+  if (from.market_id() != 0) {
+    _internal_set_market_id(from._internal_market_id());
   }
   if (from._internal_has_price()) {
     _internal_set_price(from._internal_price());
@@ -4726,17 +4788,20 @@ void NewOrderAck::MergeFrom(const NewOrderAck& from) {
   if (from.side() != 0) {
     _internal_set_side(from._internal_side());
   }
-  if (from.timeinforce() != 0) {
-    _internal_set_timeinforce(from._internal_timeinforce());
+  if (from.time_in_force() != 0) {
+    _internal_set_time_in_force(from._internal_time_in_force());
   }
-  if (from.transacttime() != 0) {
-    _internal_set_transacttime(from._internal_transacttime());
+  if (from.transact_time() != 0) {
+    _internal_set_transact_time(from._internal_transact_time());
   }
-  if (from.subaccountid() != 0) {
-    _internal_set_subaccountid(from._internal_subaccountid());
+  if (from.order_type() != 0) {
+    _internal_set_order_type(from._internal_order_type());
   }
-  if (from.ordertype() != 0) {
-    _internal_set_ordertype(from._internal_ordertype());
+  if (from.cancel_on_disconnect() != 0) {
+    _internal_set_cancel_on_disconnect(from._internal_cancel_on_disconnect());
+  }
+  if (from.subaccount_id() != 0) {
+    _internal_set_subaccount_id(from._internal_subaccount_id());
   }
 }
 
@@ -4763,11 +4828,11 @@ void NewOrderAck::InternalSwap(NewOrderAck* other) {
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(NewOrderAck, ordertype_)
-      + sizeof(NewOrderAck::ordertype_)
-      - PROTOBUF_FIELD_OFFSET(NewOrderAck, msgseqnum_)>(
-          reinterpret_cast<char*>(&msgseqnum_),
-          reinterpret_cast<char*>(&other->msgseqnum_));
+      PROTOBUF_FIELD_OFFSET(NewOrderAck, subaccount_id_)
+      + sizeof(NewOrderAck::subaccount_id_)
+      - PROTOBUF_FIELD_OFFSET(NewOrderAck, msg_seq_num_)>(
+          reinterpret_cast<char*>(&msg_seq_num_),
+          reinterpret_cast<char*>(&other->msg_seq_num_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata NewOrderAck::GetMetadata() const {
@@ -4790,17 +4855,17 @@ CancelOrderAck::CancelOrderAck(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 CancelOrderAck::CancelOrderAck(const CancelOrderAck& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&msgseqnum_, &from.msgseqnum_,
+  ::memcpy(&msg_seq_num_, &from.msg_seq_num_,
     static_cast<size_t>(reinterpret_cast<char*>(&reason_) -
-    reinterpret_cast<char*>(&msgseqnum_)) + sizeof(reason_));
+    reinterpret_cast<char*>(&msg_seq_num_)) + sizeof(reason_));
   // @@protoc_insertion_point(copy_constructor:trade.CancelOrderAck)
 }
 
 void CancelOrderAck::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&msgseqnum_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&msg_seq_num_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&reason_) -
-    reinterpret_cast<char*>(&msgseqnum_)) + sizeof(reason_));
+    reinterpret_cast<char*>(&msg_seq_num_)) + sizeof(reason_));
 }
 
 CancelOrderAck::~CancelOrderAck() {
@@ -4829,9 +4894,9 @@ void CancelOrderAck::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&msgseqnum_, 0, static_cast<size_t>(
+  ::memset(&msg_seq_num_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&reason_) -
-      reinterpret_cast<char*>(&msgseqnum_)) + sizeof(reason_));
+      reinterpret_cast<char*>(&msg_seq_num_)) + sizeof(reason_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4842,38 +4907,38 @@ const char* CancelOrderAck::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint64 msgSeqNum = 1;
+      // uint64 msg_seq_num = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          msgseqnum_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          msg_seq_num_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 clientOrderId = 2;
+      // uint64 client_order_id = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          clientorderid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          client_order_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 requestId = 3;
+      // uint64 request_id = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          requestid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          request_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 transactTime = 4;
+      // uint64 transact_time = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          transacttime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          transact_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 subaccountId = 5;
+      // uint64 subaccount_id = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          subaccountid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          subaccount_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4885,10 +4950,10 @@ const char* CancelOrderAck::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
           _internal_set_reason(static_cast<::trade::CancelOrderAck_Reason>(val));
         } else goto handle_unusual;
         continue;
-      // uint64 marketId = 7;
+      // uint64 market_id = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
-          marketid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          market_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4920,34 +4985,34 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 msgSeqNum = 1;
-  if (this->msgseqnum() != 0) {
+  // uint64 msg_seq_num = 1;
+  if (this->msg_seq_num() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_msgseqnum(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_msg_seq_num(), target);
   }
 
-  // uint64 clientOrderId = 2;
-  if (this->clientorderid() != 0) {
+  // uint64 client_order_id = 2;
+  if (this->client_order_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_clientorderid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_client_order_id(), target);
   }
 
-  // uint64 requestId = 3;
-  if (this->requestid() != 0) {
+  // uint64 request_id = 3;
+  if (this->request_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_requestid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_request_id(), target);
   }
 
-  // uint64 transactTime = 4;
-  if (this->transacttime() != 0) {
+  // uint64 transact_time = 4;
+  if (this->transact_time() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_transacttime(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_transact_time(), target);
   }
 
-  // uint64 subaccountId = 5;
-  if (this->subaccountid() != 0) {
+  // uint64 subaccount_id = 5;
+  if (this->subaccount_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_subaccountid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_subaccount_id(), target);
   }
 
   // .trade.CancelOrderAck.Reason reason = 6;
@@ -4957,10 +5022,10 @@ failure:
       6, this->_internal_reason(), target);
   }
 
-  // uint64 marketId = 7;
-  if (this->marketid() != 0) {
+  // uint64 market_id = 7;
+  if (this->market_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(7, this->_internal_marketid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(7, this->_internal_market_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4979,46 +5044,46 @@ size_t CancelOrderAck::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 msgSeqNum = 1;
-  if (this->msgseqnum() != 0) {
+  // uint64 msg_seq_num = 1;
+  if (this->msg_seq_num() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_msgseqnum());
+        this->_internal_msg_seq_num());
   }
 
-  // uint64 clientOrderId = 2;
-  if (this->clientorderid() != 0) {
+  // uint64 client_order_id = 2;
+  if (this->client_order_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_clientorderid());
+        this->_internal_client_order_id());
   }
 
-  // uint64 requestId = 3;
-  if (this->requestid() != 0) {
+  // uint64 request_id = 3;
+  if (this->request_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_requestid());
+        this->_internal_request_id());
   }
 
-  // uint64 transactTime = 4;
-  if (this->transacttime() != 0) {
+  // uint64 transact_time = 4;
+  if (this->transact_time() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_transacttime());
+        this->_internal_transact_time());
   }
 
-  // uint64 subaccountId = 5;
-  if (this->subaccountid() != 0) {
+  // uint64 subaccount_id = 5;
+  if (this->subaccount_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_subaccountid());
+        this->_internal_subaccount_id());
   }
 
-  // uint64 marketId = 7;
-  if (this->marketid() != 0) {
+  // uint64 market_id = 7;
+  if (this->market_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_marketid());
+        this->_internal_market_id());
   }
 
   // .trade.CancelOrderAck.Reason reason = 6;
@@ -5058,23 +5123,23 @@ void CancelOrderAck::MergeFrom(const CancelOrderAck& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.msgseqnum() != 0) {
-    _internal_set_msgseqnum(from._internal_msgseqnum());
+  if (from.msg_seq_num() != 0) {
+    _internal_set_msg_seq_num(from._internal_msg_seq_num());
   }
-  if (from.clientorderid() != 0) {
-    _internal_set_clientorderid(from._internal_clientorderid());
+  if (from.client_order_id() != 0) {
+    _internal_set_client_order_id(from._internal_client_order_id());
   }
-  if (from.requestid() != 0) {
-    _internal_set_requestid(from._internal_requestid());
+  if (from.request_id() != 0) {
+    _internal_set_request_id(from._internal_request_id());
   }
-  if (from.transacttime() != 0) {
-    _internal_set_transacttime(from._internal_transacttime());
+  if (from.transact_time() != 0) {
+    _internal_set_transact_time(from._internal_transact_time());
   }
-  if (from.subaccountid() != 0) {
-    _internal_set_subaccountid(from._internal_subaccountid());
+  if (from.subaccount_id() != 0) {
+    _internal_set_subaccount_id(from._internal_subaccount_id());
   }
-  if (from.marketid() != 0) {
-    _internal_set_marketid(from._internal_marketid());
+  if (from.market_id() != 0) {
+    _internal_set_market_id(from._internal_market_id());
   }
   if (from.reason() != 0) {
     _internal_set_reason(from._internal_reason());
@@ -5105,9 +5170,9 @@ void CancelOrderAck::InternalSwap(CancelOrderAck* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(CancelOrderAck, reason_)
       + sizeof(CancelOrderAck::reason_)
-      - PROTOBUF_FIELD_OFFSET(CancelOrderAck, msgseqnum_)>(
-          reinterpret_cast<char*>(&msgseqnum_),
-          reinterpret_cast<char*>(&other->msgseqnum_));
+      - PROTOBUF_FIELD_OFFSET(CancelOrderAck, msg_seq_num_)>(
+          reinterpret_cast<char*>(&msg_seq_num_),
+          reinterpret_cast<char*>(&other->msg_seq_num_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CancelOrderAck::GetMetadata() const {
@@ -5130,17 +5195,17 @@ ModifyOrderAck::ModifyOrderAck(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 ModifyOrderAck::ModifyOrderAck(const ModifyOrderAck& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&msgseqnum_, &from.msgseqnum_,
-    static_cast<size_t>(reinterpret_cast<char*>(&price_) -
-    reinterpret_cast<char*>(&msgseqnum_)) + sizeof(price_));
+  ::memcpy(&msg_seq_num_, &from.msg_seq_num_,
+    static_cast<size_t>(reinterpret_cast<char*>(&cumulative_quantity_) -
+    reinterpret_cast<char*>(&msg_seq_num_)) + sizeof(cumulative_quantity_));
   // @@protoc_insertion_point(copy_constructor:trade.ModifyOrderAck)
 }
 
 void ModifyOrderAck::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&msgseqnum_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&price_) -
-    reinterpret_cast<char*>(&msgseqnum_)) + sizeof(price_));
+    reinterpret_cast<char*>(&msg_seq_num_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&cumulative_quantity_) -
+    reinterpret_cast<char*>(&msg_seq_num_)) + sizeof(cumulative_quantity_));
 }
 
 ModifyOrderAck::~ModifyOrderAck() {
@@ -5169,9 +5234,9 @@ void ModifyOrderAck::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&msgseqnum_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&price_) -
-      reinterpret_cast<char*>(&msgseqnum_)) + sizeof(price_));
+  ::memset(&msg_seq_num_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&cumulative_quantity_) -
+      reinterpret_cast<char*>(&msg_seq_num_)) + sizeof(cumulative_quantity_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5182,52 +5247,52 @@ const char* ModifyOrderAck::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint64 msgSeqNum = 1;
+      // uint64 msg_seq_num = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          msgseqnum_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          msg_seq_num_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 clientOrderId = 2;
+      // uint64 client_order_id = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          clientorderid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          client_order_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 requestId = 3;
+      // uint64 request_id = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          requestid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          request_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 transactTime = 4;
+      // uint64 transact_time = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          transacttime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          transact_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 newQuantity = 5;
+      // uint64 remaining_quantity = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          newquantity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          remaining_quantity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 subaccountId = 6;
+      // uint64 subaccount_id = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
-          subaccountid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          subaccount_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 marketId = 7;
+      // uint64 market_id = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
-          marketid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          market_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5235,6 +5300,20 @@ const char* ModifyOrderAck::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
           price_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 quantity = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 72)) {
+          quantity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 cumulative_quantity = 10;
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 80)) {
+          cumulative_quantity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5266,52 +5345,64 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 msgSeqNum = 1;
-  if (this->msgseqnum() != 0) {
+  // uint64 msg_seq_num = 1;
+  if (this->msg_seq_num() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_msgseqnum(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_msg_seq_num(), target);
   }
 
-  // uint64 clientOrderId = 2;
-  if (this->clientorderid() != 0) {
+  // uint64 client_order_id = 2;
+  if (this->client_order_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_clientorderid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_client_order_id(), target);
   }
 
-  // uint64 requestId = 3;
-  if (this->requestid() != 0) {
+  // uint64 request_id = 3;
+  if (this->request_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_requestid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_request_id(), target);
   }
 
-  // uint64 transactTime = 4;
-  if (this->transacttime() != 0) {
+  // uint64 transact_time = 4;
+  if (this->transact_time() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_transacttime(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_transact_time(), target);
   }
 
-  // uint64 newQuantity = 5;
-  if (this->newquantity() != 0) {
+  // uint64 remaining_quantity = 5;
+  if (this->remaining_quantity() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_newquantity(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_remaining_quantity(), target);
   }
 
-  // uint64 subaccountId = 6;
-  if (this->subaccountid() != 0) {
+  // uint64 subaccount_id = 6;
+  if (this->subaccount_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(6, this->_internal_subaccountid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(6, this->_internal_subaccount_id(), target);
   }
 
-  // uint64 marketId = 7;
-  if (this->marketid() != 0) {
+  // uint64 market_id = 7;
+  if (this->market_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(7, this->_internal_marketid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(7, this->_internal_market_id(), target);
   }
 
   // uint64 price = 8;
   if (this->price() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(8, this->_internal_price(), target);
+  }
+
+  // uint64 quantity = 9;
+  if (this->quantity() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(9, this->_internal_quantity(), target);
+  }
+
+  // uint64 cumulative_quantity = 10;
+  if (this->cumulative_quantity() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(10, this->_internal_cumulative_quantity(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5330,53 +5421,53 @@ size_t ModifyOrderAck::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 msgSeqNum = 1;
-  if (this->msgseqnum() != 0) {
+  // uint64 msg_seq_num = 1;
+  if (this->msg_seq_num() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_msgseqnum());
+        this->_internal_msg_seq_num());
   }
 
-  // uint64 clientOrderId = 2;
-  if (this->clientorderid() != 0) {
+  // uint64 client_order_id = 2;
+  if (this->client_order_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_clientorderid());
+        this->_internal_client_order_id());
   }
 
-  // uint64 requestId = 3;
-  if (this->requestid() != 0) {
+  // uint64 request_id = 3;
+  if (this->request_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_requestid());
+        this->_internal_request_id());
   }
 
-  // uint64 transactTime = 4;
-  if (this->transacttime() != 0) {
+  // uint64 transact_time = 4;
+  if (this->transact_time() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_transacttime());
+        this->_internal_transact_time());
   }
 
-  // uint64 newQuantity = 5;
-  if (this->newquantity() != 0) {
+  // uint64 remaining_quantity = 5;
+  if (this->remaining_quantity() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_newquantity());
+        this->_internal_remaining_quantity());
   }
 
-  // uint64 subaccountId = 6;
-  if (this->subaccountid() != 0) {
+  // uint64 subaccount_id = 6;
+  if (this->subaccount_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_subaccountid());
+        this->_internal_subaccount_id());
   }
 
-  // uint64 marketId = 7;
-  if (this->marketid() != 0) {
+  // uint64 market_id = 7;
+  if (this->market_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_marketid());
+        this->_internal_market_id());
   }
 
   // uint64 price = 8;
@@ -5384,6 +5475,20 @@ size_t ModifyOrderAck::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal_price());
+  }
+
+  // uint64 quantity = 9;
+  if (this->quantity() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_quantity());
+  }
+
+  // uint64 cumulative_quantity = 10;
+  if (this->cumulative_quantity() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_cumulative_quantity());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5417,29 +5522,35 @@ void ModifyOrderAck::MergeFrom(const ModifyOrderAck& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.msgseqnum() != 0) {
-    _internal_set_msgseqnum(from._internal_msgseqnum());
+  if (from.msg_seq_num() != 0) {
+    _internal_set_msg_seq_num(from._internal_msg_seq_num());
   }
-  if (from.clientorderid() != 0) {
-    _internal_set_clientorderid(from._internal_clientorderid());
+  if (from.client_order_id() != 0) {
+    _internal_set_client_order_id(from._internal_client_order_id());
   }
-  if (from.requestid() != 0) {
-    _internal_set_requestid(from._internal_requestid());
+  if (from.request_id() != 0) {
+    _internal_set_request_id(from._internal_request_id());
   }
-  if (from.transacttime() != 0) {
-    _internal_set_transacttime(from._internal_transacttime());
+  if (from.transact_time() != 0) {
+    _internal_set_transact_time(from._internal_transact_time());
   }
-  if (from.newquantity() != 0) {
-    _internal_set_newquantity(from._internal_newquantity());
+  if (from.remaining_quantity() != 0) {
+    _internal_set_remaining_quantity(from._internal_remaining_quantity());
   }
-  if (from.subaccountid() != 0) {
-    _internal_set_subaccountid(from._internal_subaccountid());
+  if (from.subaccount_id() != 0) {
+    _internal_set_subaccount_id(from._internal_subaccount_id());
   }
-  if (from.marketid() != 0) {
-    _internal_set_marketid(from._internal_marketid());
+  if (from.market_id() != 0) {
+    _internal_set_market_id(from._internal_market_id());
   }
   if (from.price() != 0) {
     _internal_set_price(from._internal_price());
+  }
+  if (from.quantity() != 0) {
+    _internal_set_quantity(from._internal_quantity());
+  }
+  if (from.cumulative_quantity() != 0) {
+    _internal_set_cumulative_quantity(from._internal_cumulative_quantity());
   }
 }
 
@@ -5465,11 +5576,11 @@ void ModifyOrderAck::InternalSwap(ModifyOrderAck* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ModifyOrderAck, price_)
-      + sizeof(ModifyOrderAck::price_)
-      - PROTOBUF_FIELD_OFFSET(ModifyOrderAck, msgseqnum_)>(
-          reinterpret_cast<char*>(&msgseqnum_),
-          reinterpret_cast<char*>(&other->msgseqnum_));
+      PROTOBUF_FIELD_OFFSET(ModifyOrderAck, cumulative_quantity_)
+      + sizeof(ModifyOrderAck::cumulative_quantity_)
+      - PROTOBUF_FIELD_OFFSET(ModifyOrderAck, msg_seq_num_)>(
+          reinterpret_cast<char*>(&msg_seq_num_),
+          reinterpret_cast<char*>(&other->msg_seq_num_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ModifyOrderAck::GetMetadata() const {
@@ -5497,17 +5608,17 @@ MassCancelAck::MassCancelAck(const MassCancelAck& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _has_bits_(from._has_bits_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&msgseqnum_, &from.msgseqnum_,
-    static_cast<size_t>(reinterpret_cast<char*>(&totalaffectedorders_) -
-    reinterpret_cast<char*>(&msgseqnum_)) + sizeof(totalaffectedorders_));
+  ::memcpy(&msg_seq_num_, &from.msg_seq_num_,
+    static_cast<size_t>(reinterpret_cast<char*>(&total_affected_orders_) -
+    reinterpret_cast<char*>(&msg_seq_num_)) + sizeof(total_affected_orders_));
   // @@protoc_insertion_point(copy_constructor:trade.MassCancelAck)
 }
 
 void MassCancelAck::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&msgseqnum_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&totalaffectedorders_) -
-    reinterpret_cast<char*>(&msgseqnum_)) + sizeof(totalaffectedorders_));
+    reinterpret_cast<char*>(&msg_seq_num_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&total_affected_orders_) -
+    reinterpret_cast<char*>(&msg_seq_num_)) + sizeof(total_affected_orders_));
 }
 
 MassCancelAck::~MassCancelAck() {
@@ -5536,11 +5647,11 @@ void MassCancelAck::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&msgseqnum_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&transacttime_) -
-      reinterpret_cast<char*>(&msgseqnum_)) + sizeof(transacttime_));
+  ::memset(&msg_seq_num_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&transact_time_) -
+      reinterpret_cast<char*>(&msg_seq_num_)) + sizeof(transact_time_));
   reason_ = 0;
-  totalaffectedorders_ = 0u;
+  total_affected_orders_ = 0u;
   _has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -5553,31 +5664,31 @@ const char* MassCancelAck::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint64 msgSeqNum = 1;
+      // uint64 msg_seq_num = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          msgseqnum_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          msg_seq_num_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 subaccountId = 2;
+      // uint64 subaccount_id = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          subaccountid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          subaccount_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 requestId = 3;
+      // uint64 request_id = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          requestid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          request_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 transactTime = 4;
+      // uint64 transact_time = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          transacttime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          transact_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5589,10 +5700,10 @@ const char* MassCancelAck::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
           _internal_set_reason(static_cast<::trade::MassCancelAck_Reason>(val));
         } else goto handle_unusual;
         continue;
-      // uint32 totalAffectedOrders = 7;
+      // uint32 total_affected_orders = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
-          totalaffectedorders_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          total_affected_orders_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5625,28 +5736,28 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 msgSeqNum = 1;
-  if (this->msgseqnum() != 0) {
+  // uint64 msg_seq_num = 1;
+  if (this->msg_seq_num() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_msgseqnum(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_msg_seq_num(), target);
   }
 
-  // uint64 subaccountId = 2;
-  if (this->subaccountid() != 0) {
+  // uint64 subaccount_id = 2;
+  if (this->subaccount_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_subaccountid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_subaccount_id(), target);
   }
 
-  // uint64 requestId = 3;
-  if (this->requestid() != 0) {
+  // uint64 request_id = 3;
+  if (this->request_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_requestid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_request_id(), target);
   }
 
-  // uint64 transactTime = 4;
-  if (this->transacttime() != 0) {
+  // uint64 transact_time = 4;
+  if (this->transact_time() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_transacttime(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_transact_time(), target);
   }
 
   // .trade.MassCancelAck.Reason reason = 6;
@@ -5656,10 +5767,10 @@ failure:
       6, this->_internal_reason(), target);
   }
 
-  // uint32 totalAffectedOrders = 7;
-  if (this->totalaffectedorders() != 0) {
+  // uint32 total_affected_orders = 7;
+  if (this->total_affected_orders() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(7, this->_internal_totalaffectedorders(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(7, this->_internal_total_affected_orders(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5678,32 +5789,32 @@ size_t MassCancelAck::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 msgSeqNum = 1;
-  if (this->msgseqnum() != 0) {
+  // uint64 msg_seq_num = 1;
+  if (this->msg_seq_num() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_msgseqnum());
+        this->_internal_msg_seq_num());
   }
 
-  // uint64 subaccountId = 2;
-  if (this->subaccountid() != 0) {
+  // uint64 subaccount_id = 2;
+  if (this->subaccount_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_subaccountid());
+        this->_internal_subaccount_id());
   }
 
-  // uint64 requestId = 3;
-  if (this->requestid() != 0) {
+  // uint64 request_id = 3;
+  if (this->request_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_requestid());
+        this->_internal_request_id());
   }
 
-  // uint64 transactTime = 4;
-  if (this->transacttime() != 0) {
+  // uint64 transact_time = 4;
+  if (this->transact_time() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_transacttime());
+        this->_internal_transact_time());
   }
 
   // .trade.MassCancelAck.Reason reason = 6;
@@ -5713,11 +5824,11 @@ size_t MassCancelAck::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_reason());
   }
 
-  // uint32 totalAffectedOrders = 7;
-  if (this->totalaffectedorders() != 0) {
+  // uint32 total_affected_orders = 7;
+  if (this->total_affected_orders() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_totalaffectedorders());
+        this->_internal_total_affected_orders());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5751,23 +5862,23 @@ void MassCancelAck::MergeFrom(const MassCancelAck& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.msgseqnum() != 0) {
-    _internal_set_msgseqnum(from._internal_msgseqnum());
+  if (from.msg_seq_num() != 0) {
+    _internal_set_msg_seq_num(from._internal_msg_seq_num());
   }
-  if (from.subaccountid() != 0) {
-    _internal_set_subaccountid(from._internal_subaccountid());
+  if (from.subaccount_id() != 0) {
+    _internal_set_subaccount_id(from._internal_subaccount_id());
   }
-  if (from.requestid() != 0) {
-    _internal_set_requestid(from._internal_requestid());
+  if (from.request_id() != 0) {
+    _internal_set_request_id(from._internal_request_id());
   }
-  if (from.transacttime() != 0) {
-    _internal_set_transacttime(from._internal_transacttime());
+  if (from.transact_time() != 0) {
+    _internal_set_transact_time(from._internal_transact_time());
   }
   if (from._internal_has_reason()) {
     _internal_set_reason(from._internal_reason());
   }
-  if (from.totalaffectedorders() != 0) {
-    _internal_set_totalaffectedorders(from._internal_totalaffectedorders());
+  if (from.total_affected_orders() != 0) {
+    _internal_set_total_affected_orders(from._internal_total_affected_orders());
   }
 }
 
@@ -5794,11 +5905,11 @@ void MassCancelAck::InternalSwap(MassCancelAck* other) {
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(MassCancelAck, totalaffectedorders_)
-      + sizeof(MassCancelAck::totalaffectedorders_)
-      - PROTOBUF_FIELD_OFFSET(MassCancelAck, msgseqnum_)>(
-          reinterpret_cast<char*>(&msgseqnum_),
-          reinterpret_cast<char*>(&other->msgseqnum_));
+      PROTOBUF_FIELD_OFFSET(MassCancelAck, total_affected_orders_)
+      + sizeof(MassCancelAck::total_affected_orders_)
+      - PROTOBUF_FIELD_OFFSET(MassCancelAck, msg_seq_num_)>(
+          reinterpret_cast<char*>(&msg_seq_num_),
+          reinterpret_cast<char*>(&other->msg_seq_num_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata MassCancelAck::GetMetadata() const {
@@ -5826,17 +5937,17 @@ NewOrderReject::NewOrderReject(const NewOrderReject& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _has_bits_(from._has_bits_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&msgseqnum_, &from.msgseqnum_,
-    static_cast<size_t>(reinterpret_cast<char*>(&ordertype_) -
-    reinterpret_cast<char*>(&msgseqnum_)) + sizeof(ordertype_));
+  ::memcpy(&msg_seq_num_, &from.msg_seq_num_,
+    static_cast<size_t>(reinterpret_cast<char*>(&order_type_) -
+    reinterpret_cast<char*>(&msg_seq_num_)) + sizeof(order_type_));
   // @@protoc_insertion_point(copy_constructor:trade.NewOrderReject)
 }
 
 void NewOrderReject::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&msgseqnum_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&ordertype_) -
-    reinterpret_cast<char*>(&msgseqnum_)) + sizeof(ordertype_));
+    reinterpret_cast<char*>(&msg_seq_num_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&order_type_) -
+    reinterpret_cast<char*>(&msg_seq_num_)) + sizeof(order_type_));
 }
 
 NewOrderReject::~NewOrderReject() {
@@ -5865,13 +5976,13 @@ void NewOrderReject::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&msgseqnum_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&marketid_) -
-      reinterpret_cast<char*>(&msgseqnum_)) + sizeof(marketid_));
+  ::memset(&msg_seq_num_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&market_id_) -
+      reinterpret_cast<char*>(&msg_seq_num_)) + sizeof(market_id_));
   price_ = PROTOBUF_ULONGLONG(0);
   ::memset(&reason_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&ordertype_) -
-      reinterpret_cast<char*>(&reason_)) + sizeof(ordertype_));
+      reinterpret_cast<char*>(&order_type_) -
+      reinterpret_cast<char*>(&reason_)) + sizeof(order_type_));
   _has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -5884,38 +5995,38 @@ const char* NewOrderReject::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint64 msgSeqNum = 1;
+      // uint64 msg_seq_num = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          msgseqnum_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          msg_seq_num_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 clientOrderId = 2;
+      // uint64 client_order_id = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          clientorderid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          client_order_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 requestId = 3;
+      // uint64 request_id = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          requestid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          request_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 transactTime = 4;
+      // uint64 transact_time = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          transacttime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          transact_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 subaccountId = 5;
+      // uint64 subaccount_id = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          subaccountid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          subaccount_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5927,10 +6038,10 @@ const char* NewOrderReject::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
           _internal_set_reason(static_cast<::trade::NewOrderReject_Reason>(val));
         } else goto handle_unusual;
         continue;
-      // uint64 marketId = 7;
+      // uint64 market_id = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
-          marketid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          market_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5957,20 +6068,20 @@ const char* NewOrderReject::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
           _internal_set_side(static_cast<::trade::Side>(val));
         } else goto handle_unusual;
         continue;
-      // .trade.TimeInForce timeInForce = 11;
+      // .trade.TimeInForce time_in_force = 11;
       case 11:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 88)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_timeinforce(static_cast<::trade::TimeInForce>(val));
+          _internal_set_time_in_force(static_cast<::trade::TimeInForce>(val));
         } else goto handle_unusual;
         continue;
-      // .trade.OrderType orderType = 12;
+      // .trade.OrderType order_type = 12;
       case 12:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 96)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_ordertype(static_cast<::trade::OrderType>(val));
+          _internal_set_order_type(static_cast<::trade::OrderType>(val));
         } else goto handle_unusual;
         continue;
       default: {
@@ -6002,34 +6113,34 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 msgSeqNum = 1;
-  if (this->msgseqnum() != 0) {
+  // uint64 msg_seq_num = 1;
+  if (this->msg_seq_num() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_msgseqnum(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_msg_seq_num(), target);
   }
 
-  // uint64 clientOrderId = 2;
-  if (this->clientorderid() != 0) {
+  // uint64 client_order_id = 2;
+  if (this->client_order_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_clientorderid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_client_order_id(), target);
   }
 
-  // uint64 requestId = 3;
-  if (this->requestid() != 0) {
+  // uint64 request_id = 3;
+  if (this->request_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_requestid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_request_id(), target);
   }
 
-  // uint64 transactTime = 4;
-  if (this->transacttime() != 0) {
+  // uint64 transact_time = 4;
+  if (this->transact_time() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_transacttime(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_transact_time(), target);
   }
 
-  // uint64 subaccountId = 5;
-  if (this->subaccountid() != 0) {
+  // uint64 subaccount_id = 5;
+  if (this->subaccount_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_subaccountid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_subaccount_id(), target);
   }
 
   // .trade.NewOrderReject.Reason reason = 6;
@@ -6039,10 +6150,10 @@ failure:
       6, this->_internal_reason(), target);
   }
 
-  // uint64 marketId = 7;
-  if (this->marketid() != 0) {
+  // uint64 market_id = 7;
+  if (this->market_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(7, this->_internal_marketid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(7, this->_internal_market_id(), target);
   }
 
   // uint64 price = 8;
@@ -6064,18 +6175,18 @@ failure:
       10, this->_internal_side(), target);
   }
 
-  // .trade.TimeInForce timeInForce = 11;
-  if (this->timeinforce() != 0) {
+  // .trade.TimeInForce time_in_force = 11;
+  if (this->time_in_force() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      11, this->_internal_timeinforce(), target);
+      11, this->_internal_time_in_force(), target);
   }
 
-  // .trade.OrderType orderType = 12;
-  if (this->ordertype() != 0) {
+  // .trade.OrderType order_type = 12;
+  if (this->order_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      12, this->_internal_ordertype(), target);
+      12, this->_internal_order_type(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -6094,46 +6205,46 @@ size_t NewOrderReject::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 msgSeqNum = 1;
-  if (this->msgseqnum() != 0) {
+  // uint64 msg_seq_num = 1;
+  if (this->msg_seq_num() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_msgseqnum());
+        this->_internal_msg_seq_num());
   }
 
-  // uint64 clientOrderId = 2;
-  if (this->clientorderid() != 0) {
+  // uint64 client_order_id = 2;
+  if (this->client_order_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_clientorderid());
+        this->_internal_client_order_id());
   }
 
-  // uint64 requestId = 3;
-  if (this->requestid() != 0) {
+  // uint64 request_id = 3;
+  if (this->request_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_requestid());
+        this->_internal_request_id());
   }
 
-  // uint64 transactTime = 4;
-  if (this->transacttime() != 0) {
+  // uint64 transact_time = 4;
+  if (this->transact_time() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_transacttime());
+        this->_internal_transact_time());
   }
 
-  // uint64 subaccountId = 5;
-  if (this->subaccountid() != 0) {
+  // uint64 subaccount_id = 5;
+  if (this->subaccount_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_subaccountid());
+        this->_internal_subaccount_id());
   }
 
-  // uint64 marketId = 7;
-  if (this->marketid() != 0) {
+  // uint64 market_id = 7;
+  if (this->market_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_marketid());
+        this->_internal_market_id());
   }
 
   // uint64 price = 8;
@@ -6163,16 +6274,16 @@ size_t NewOrderReject::ByteSizeLong() const {
         this->_internal_quantity());
   }
 
-  // .trade.TimeInForce timeInForce = 11;
-  if (this->timeinforce() != 0) {
+  // .trade.TimeInForce time_in_force = 11;
+  if (this->time_in_force() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_timeinforce());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_time_in_force());
   }
 
-  // .trade.OrderType orderType = 12;
-  if (this->ordertype() != 0) {
+  // .trade.OrderType order_type = 12;
+  if (this->order_type() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_ordertype());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_order_type());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -6206,23 +6317,23 @@ void NewOrderReject::MergeFrom(const NewOrderReject& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.msgseqnum() != 0) {
-    _internal_set_msgseqnum(from._internal_msgseqnum());
+  if (from.msg_seq_num() != 0) {
+    _internal_set_msg_seq_num(from._internal_msg_seq_num());
   }
-  if (from.clientorderid() != 0) {
-    _internal_set_clientorderid(from._internal_clientorderid());
+  if (from.client_order_id() != 0) {
+    _internal_set_client_order_id(from._internal_client_order_id());
   }
-  if (from.requestid() != 0) {
-    _internal_set_requestid(from._internal_requestid());
+  if (from.request_id() != 0) {
+    _internal_set_request_id(from._internal_request_id());
   }
-  if (from.transacttime() != 0) {
-    _internal_set_transacttime(from._internal_transacttime());
+  if (from.transact_time() != 0) {
+    _internal_set_transact_time(from._internal_transact_time());
   }
-  if (from.subaccountid() != 0) {
-    _internal_set_subaccountid(from._internal_subaccountid());
+  if (from.subaccount_id() != 0) {
+    _internal_set_subaccount_id(from._internal_subaccount_id());
   }
-  if (from.marketid() != 0) {
-    _internal_set_marketid(from._internal_marketid());
+  if (from.market_id() != 0) {
+    _internal_set_market_id(from._internal_market_id());
   }
   if (from._internal_has_price()) {
     _internal_set_price(from._internal_price());
@@ -6236,11 +6347,11 @@ void NewOrderReject::MergeFrom(const NewOrderReject& from) {
   if (from.quantity() != 0) {
     _internal_set_quantity(from._internal_quantity());
   }
-  if (from.timeinforce() != 0) {
-    _internal_set_timeinforce(from._internal_timeinforce());
+  if (from.time_in_force() != 0) {
+    _internal_set_time_in_force(from._internal_time_in_force());
   }
-  if (from.ordertype() != 0) {
-    _internal_set_ordertype(from._internal_ordertype());
+  if (from.order_type() != 0) {
+    _internal_set_order_type(from._internal_order_type());
   }
 }
 
@@ -6267,11 +6378,11 @@ void NewOrderReject::InternalSwap(NewOrderReject* other) {
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(NewOrderReject, ordertype_)
-      + sizeof(NewOrderReject::ordertype_)
-      - PROTOBUF_FIELD_OFFSET(NewOrderReject, msgseqnum_)>(
-          reinterpret_cast<char*>(&msgseqnum_),
-          reinterpret_cast<char*>(&other->msgseqnum_));
+      PROTOBUF_FIELD_OFFSET(NewOrderReject, order_type_)
+      + sizeof(NewOrderReject::order_type_)
+      - PROTOBUF_FIELD_OFFSET(NewOrderReject, msg_seq_num_)>(
+          reinterpret_cast<char*>(&msg_seq_num_),
+          reinterpret_cast<char*>(&other->msg_seq_num_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata NewOrderReject::GetMetadata() const {
@@ -6294,17 +6405,17 @@ CancelOrderReject::CancelOrderReject(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 CancelOrderReject::CancelOrderReject(const CancelOrderReject& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&msgseqnum_, &from.msgseqnum_,
+  ::memcpy(&msg_seq_num_, &from.msg_seq_num_,
     static_cast<size_t>(reinterpret_cast<char*>(&reason_) -
-    reinterpret_cast<char*>(&msgseqnum_)) + sizeof(reason_));
+    reinterpret_cast<char*>(&msg_seq_num_)) + sizeof(reason_));
   // @@protoc_insertion_point(copy_constructor:trade.CancelOrderReject)
 }
 
 void CancelOrderReject::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&msgseqnum_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&msg_seq_num_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&reason_) -
-    reinterpret_cast<char*>(&msgseqnum_)) + sizeof(reason_));
+    reinterpret_cast<char*>(&msg_seq_num_)) + sizeof(reason_));
 }
 
 CancelOrderReject::~CancelOrderReject() {
@@ -6333,9 +6444,9 @@ void CancelOrderReject::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&msgseqnum_, 0, static_cast<size_t>(
+  ::memset(&msg_seq_num_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&reason_) -
-      reinterpret_cast<char*>(&msgseqnum_)) + sizeof(reason_));
+      reinterpret_cast<char*>(&msg_seq_num_)) + sizeof(reason_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6346,38 +6457,38 @@ const char* CancelOrderReject::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint64 msgSeqNum = 1;
+      // uint64 msg_seq_num = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          msgseqnum_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          msg_seq_num_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 clientOrderId = 2;
+      // uint64 client_order_id = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          clientorderid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          client_order_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 requestId = 3;
+      // uint64 request_id = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          requestid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          request_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 transactTime = 4;
+      // uint64 transact_time = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          transacttime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          transact_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 subaccountId = 5;
+      // uint64 subaccount_id = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          subaccountid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          subaccount_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -6389,10 +6500,10 @@ const char* CancelOrderReject::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
           _internal_set_reason(static_cast<::trade::CancelOrderReject_Reason>(val));
         } else goto handle_unusual;
         continue;
-      // uint64 marketId = 7;
+      // uint64 market_id = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
-          marketid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          market_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -6424,34 +6535,34 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 msgSeqNum = 1;
-  if (this->msgseqnum() != 0) {
+  // uint64 msg_seq_num = 1;
+  if (this->msg_seq_num() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_msgseqnum(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_msg_seq_num(), target);
   }
 
-  // uint64 clientOrderId = 2;
-  if (this->clientorderid() != 0) {
+  // uint64 client_order_id = 2;
+  if (this->client_order_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_clientorderid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_client_order_id(), target);
   }
 
-  // uint64 requestId = 3;
-  if (this->requestid() != 0) {
+  // uint64 request_id = 3;
+  if (this->request_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_requestid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_request_id(), target);
   }
 
-  // uint64 transactTime = 4;
-  if (this->transacttime() != 0) {
+  // uint64 transact_time = 4;
+  if (this->transact_time() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_transacttime(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_transact_time(), target);
   }
 
-  // uint64 subaccountId = 5;
-  if (this->subaccountid() != 0) {
+  // uint64 subaccount_id = 5;
+  if (this->subaccount_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_subaccountid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_subaccount_id(), target);
   }
 
   // .trade.CancelOrderReject.Reason reason = 6;
@@ -6461,10 +6572,10 @@ failure:
       6, this->_internal_reason(), target);
   }
 
-  // uint64 marketId = 7;
-  if (this->marketid() != 0) {
+  // uint64 market_id = 7;
+  if (this->market_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(7, this->_internal_marketid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(7, this->_internal_market_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -6483,46 +6594,46 @@ size_t CancelOrderReject::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 msgSeqNum = 1;
-  if (this->msgseqnum() != 0) {
+  // uint64 msg_seq_num = 1;
+  if (this->msg_seq_num() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_msgseqnum());
+        this->_internal_msg_seq_num());
   }
 
-  // uint64 clientOrderId = 2;
-  if (this->clientorderid() != 0) {
+  // uint64 client_order_id = 2;
+  if (this->client_order_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_clientorderid());
+        this->_internal_client_order_id());
   }
 
-  // uint64 requestId = 3;
-  if (this->requestid() != 0) {
+  // uint64 request_id = 3;
+  if (this->request_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_requestid());
+        this->_internal_request_id());
   }
 
-  // uint64 transactTime = 4;
-  if (this->transacttime() != 0) {
+  // uint64 transact_time = 4;
+  if (this->transact_time() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_transacttime());
+        this->_internal_transact_time());
   }
 
-  // uint64 subaccountId = 5;
-  if (this->subaccountid() != 0) {
+  // uint64 subaccount_id = 5;
+  if (this->subaccount_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_subaccountid());
+        this->_internal_subaccount_id());
   }
 
-  // uint64 marketId = 7;
-  if (this->marketid() != 0) {
+  // uint64 market_id = 7;
+  if (this->market_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_marketid());
+        this->_internal_market_id());
   }
 
   // .trade.CancelOrderReject.Reason reason = 6;
@@ -6562,23 +6673,23 @@ void CancelOrderReject::MergeFrom(const CancelOrderReject& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.msgseqnum() != 0) {
-    _internal_set_msgseqnum(from._internal_msgseqnum());
+  if (from.msg_seq_num() != 0) {
+    _internal_set_msg_seq_num(from._internal_msg_seq_num());
   }
-  if (from.clientorderid() != 0) {
-    _internal_set_clientorderid(from._internal_clientorderid());
+  if (from.client_order_id() != 0) {
+    _internal_set_client_order_id(from._internal_client_order_id());
   }
-  if (from.requestid() != 0) {
-    _internal_set_requestid(from._internal_requestid());
+  if (from.request_id() != 0) {
+    _internal_set_request_id(from._internal_request_id());
   }
-  if (from.transacttime() != 0) {
-    _internal_set_transacttime(from._internal_transacttime());
+  if (from.transact_time() != 0) {
+    _internal_set_transact_time(from._internal_transact_time());
   }
-  if (from.subaccountid() != 0) {
-    _internal_set_subaccountid(from._internal_subaccountid());
+  if (from.subaccount_id() != 0) {
+    _internal_set_subaccount_id(from._internal_subaccount_id());
   }
-  if (from.marketid() != 0) {
-    _internal_set_marketid(from._internal_marketid());
+  if (from.market_id() != 0) {
+    _internal_set_market_id(from._internal_market_id());
   }
   if (from.reason() != 0) {
     _internal_set_reason(from._internal_reason());
@@ -6609,9 +6720,9 @@ void CancelOrderReject::InternalSwap(CancelOrderReject* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(CancelOrderReject, reason_)
       + sizeof(CancelOrderReject::reason_)
-      - PROTOBUF_FIELD_OFFSET(CancelOrderReject, msgseqnum_)>(
-          reinterpret_cast<char*>(&msgseqnum_),
-          reinterpret_cast<char*>(&other->msgseqnum_));
+      - PROTOBUF_FIELD_OFFSET(CancelOrderReject, msg_seq_num_)>(
+          reinterpret_cast<char*>(&msg_seq_num_),
+          reinterpret_cast<char*>(&other->msg_seq_num_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CancelOrderReject::GetMetadata() const {
@@ -6634,17 +6745,17 @@ ModifyOrderReject::ModifyOrderReject(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 ModifyOrderReject::ModifyOrderReject(const ModifyOrderReject& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&msgseqnum_, &from.msgseqnum_,
+  ::memcpy(&msg_seq_num_, &from.msg_seq_num_,
     static_cast<size_t>(reinterpret_cast<char*>(&reason_) -
-    reinterpret_cast<char*>(&msgseqnum_)) + sizeof(reason_));
+    reinterpret_cast<char*>(&msg_seq_num_)) + sizeof(reason_));
   // @@protoc_insertion_point(copy_constructor:trade.ModifyOrderReject)
 }
 
 void ModifyOrderReject::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&msgseqnum_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&msg_seq_num_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&reason_) -
-    reinterpret_cast<char*>(&msgseqnum_)) + sizeof(reason_));
+    reinterpret_cast<char*>(&msg_seq_num_)) + sizeof(reason_));
 }
 
 ModifyOrderReject::~ModifyOrderReject() {
@@ -6673,9 +6784,9 @@ void ModifyOrderReject::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&msgseqnum_, 0, static_cast<size_t>(
+  ::memset(&msg_seq_num_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&reason_) -
-      reinterpret_cast<char*>(&msgseqnum_)) + sizeof(reason_));
+      reinterpret_cast<char*>(&msg_seq_num_)) + sizeof(reason_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6686,38 +6797,38 @@ const char* ModifyOrderReject::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint64 msgSeqNum = 1;
+      // uint64 msg_seq_num = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          msgseqnum_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          msg_seq_num_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 clientOrderId = 2;
+      // uint64 client_order_id = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          clientorderid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          client_order_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 requestId = 3;
+      // uint64 request_id = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          requestid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          request_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 transactTime = 4;
+      // uint64 transact_time = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          transacttime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          transact_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 subaccountId = 5;
+      // uint64 subaccount_id = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          subaccountid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          subaccount_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -6729,10 +6840,10 @@ const char* ModifyOrderReject::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
           _internal_set_reason(static_cast<::trade::ModifyOrderReject_Reason>(val));
         } else goto handle_unusual;
         continue;
-      // uint64 marketId = 7;
+      // uint64 market_id = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
-          marketid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          market_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -6764,34 +6875,34 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 msgSeqNum = 1;
-  if (this->msgseqnum() != 0) {
+  // uint64 msg_seq_num = 1;
+  if (this->msg_seq_num() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_msgseqnum(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_msg_seq_num(), target);
   }
 
-  // uint64 clientOrderId = 2;
-  if (this->clientorderid() != 0) {
+  // uint64 client_order_id = 2;
+  if (this->client_order_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_clientorderid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_client_order_id(), target);
   }
 
-  // uint64 requestId = 3;
-  if (this->requestid() != 0) {
+  // uint64 request_id = 3;
+  if (this->request_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_requestid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_request_id(), target);
   }
 
-  // uint64 transactTime = 4;
-  if (this->transacttime() != 0) {
+  // uint64 transact_time = 4;
+  if (this->transact_time() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_transacttime(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_transact_time(), target);
   }
 
-  // uint64 subaccountId = 5;
-  if (this->subaccountid() != 0) {
+  // uint64 subaccount_id = 5;
+  if (this->subaccount_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_subaccountid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_subaccount_id(), target);
   }
 
   // .trade.ModifyOrderReject.Reason reason = 6;
@@ -6801,10 +6912,10 @@ failure:
       6, this->_internal_reason(), target);
   }
 
-  // uint64 marketId = 7;
-  if (this->marketid() != 0) {
+  // uint64 market_id = 7;
+  if (this->market_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(7, this->_internal_marketid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(7, this->_internal_market_id(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -6823,46 +6934,46 @@ size_t ModifyOrderReject::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 msgSeqNum = 1;
-  if (this->msgseqnum() != 0) {
+  // uint64 msg_seq_num = 1;
+  if (this->msg_seq_num() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_msgseqnum());
+        this->_internal_msg_seq_num());
   }
 
-  // uint64 clientOrderId = 2;
-  if (this->clientorderid() != 0) {
+  // uint64 client_order_id = 2;
+  if (this->client_order_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_clientorderid());
+        this->_internal_client_order_id());
   }
 
-  // uint64 requestId = 3;
-  if (this->requestid() != 0) {
+  // uint64 request_id = 3;
+  if (this->request_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_requestid());
+        this->_internal_request_id());
   }
 
-  // uint64 transactTime = 4;
-  if (this->transacttime() != 0) {
+  // uint64 transact_time = 4;
+  if (this->transact_time() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_transacttime());
+        this->_internal_transact_time());
   }
 
-  // uint64 subaccountId = 5;
-  if (this->subaccountid() != 0) {
+  // uint64 subaccount_id = 5;
+  if (this->subaccount_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_subaccountid());
+        this->_internal_subaccount_id());
   }
 
-  // uint64 marketId = 7;
-  if (this->marketid() != 0) {
+  // uint64 market_id = 7;
+  if (this->market_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_marketid());
+        this->_internal_market_id());
   }
 
   // .trade.ModifyOrderReject.Reason reason = 6;
@@ -6902,23 +7013,23 @@ void ModifyOrderReject::MergeFrom(const ModifyOrderReject& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.msgseqnum() != 0) {
-    _internal_set_msgseqnum(from._internal_msgseqnum());
+  if (from.msg_seq_num() != 0) {
+    _internal_set_msg_seq_num(from._internal_msg_seq_num());
   }
-  if (from.clientorderid() != 0) {
-    _internal_set_clientorderid(from._internal_clientorderid());
+  if (from.client_order_id() != 0) {
+    _internal_set_client_order_id(from._internal_client_order_id());
   }
-  if (from.requestid() != 0) {
-    _internal_set_requestid(from._internal_requestid());
+  if (from.request_id() != 0) {
+    _internal_set_request_id(from._internal_request_id());
   }
-  if (from.transacttime() != 0) {
-    _internal_set_transacttime(from._internal_transacttime());
+  if (from.transact_time() != 0) {
+    _internal_set_transact_time(from._internal_transact_time());
   }
-  if (from.subaccountid() != 0) {
-    _internal_set_subaccountid(from._internal_subaccountid());
+  if (from.subaccount_id() != 0) {
+    _internal_set_subaccount_id(from._internal_subaccount_id());
   }
-  if (from.marketid() != 0) {
-    _internal_set_marketid(from._internal_marketid());
+  if (from.market_id() != 0) {
+    _internal_set_market_id(from._internal_market_id());
   }
   if (from.reason() != 0) {
     _internal_set_reason(from._internal_reason());
@@ -6949,9 +7060,9 @@ void ModifyOrderReject::InternalSwap(ModifyOrderReject* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(ModifyOrderReject, reason_)
       + sizeof(ModifyOrderReject::reason_)
-      - PROTOBUF_FIELD_OFFSET(ModifyOrderReject, msgseqnum_)>(
-          reinterpret_cast<char*>(&msgseqnum_),
-          reinterpret_cast<char*>(&other->msgseqnum_));
+      - PROTOBUF_FIELD_OFFSET(ModifyOrderReject, msg_seq_num_)>(
+          reinterpret_cast<char*>(&msg_seq_num_),
+          reinterpret_cast<char*>(&other->msg_seq_num_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ModifyOrderReject::GetMetadata() const {
@@ -6974,17 +7085,17 @@ Fill::Fill(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 Fill::Fill(const Fill& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&msgseqnum_, &from.msgseqnum_,
-    static_cast<size_t>(reinterpret_cast<char*>(&subaccountid_) -
-    reinterpret_cast<char*>(&msgseqnum_)) + sizeof(subaccountid_));
+  ::memcpy(&msg_seq_num_, &from.msg_seq_num_,
+    static_cast<size_t>(reinterpret_cast<char*>(&cumulative_quantity_) -
+    reinterpret_cast<char*>(&msg_seq_num_)) + sizeof(cumulative_quantity_));
   // @@protoc_insertion_point(copy_constructor:trade.Fill)
 }
 
 void Fill::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&msgseqnum_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&subaccountid_) -
-    reinterpret_cast<char*>(&msgseqnum_)) + sizeof(subaccountid_));
+    reinterpret_cast<char*>(&msg_seq_num_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&cumulative_quantity_) -
+    reinterpret_cast<char*>(&msg_seq_num_)) + sizeof(cumulative_quantity_));
 }
 
 Fill::~Fill() {
@@ -7013,9 +7124,9 @@ void Fill::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&msgseqnum_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&subaccountid_) -
-      reinterpret_cast<char*>(&msgseqnum_)) + sizeof(subaccountid_));
+  ::memset(&msg_seq_num_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&cumulative_quantity_) -
+      reinterpret_cast<char*>(&msg_seq_num_)) + sizeof(cumulative_quantity_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -7026,66 +7137,73 @@ const char* Fill::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint64 msgSeqNum = 1;
+      // uint64 msg_seq_num = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          msgseqnum_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          msg_seq_num_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 marketId = 2;
+      // uint64 market_id = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          marketid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          market_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 clientOrderId = 3;
+      // uint64 client_order_id = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          clientorderid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          client_order_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 exchangeOrderId = 4;
+      // uint64 exchange_order_id = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          exchangeorderid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          exchange_order_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 fillPrice = 5;
+      // uint64 fill_price = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          fillprice_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          fill_price_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 fillQuantity = 6;
+      // uint64 fill_quantity = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
-          fillquantity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          fill_quantity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 leavesQuantity = 7;
+      // uint64 leaves_quantity = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
-          leavesquantity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          leaves_quantity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 transactTime = 8;
+      // uint64 transact_time = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
-          transacttime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          transact_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 subaccountId = 9;
+      // uint64 subaccount_id = 9;
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 72)) {
-          subaccountid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          subaccount_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 cumulative_quantity = 10;
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 80)) {
+          cumulative_quantity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -7117,58 +7235,64 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 msgSeqNum = 1;
-  if (this->msgseqnum() != 0) {
+  // uint64 msg_seq_num = 1;
+  if (this->msg_seq_num() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_msgseqnum(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_msg_seq_num(), target);
   }
 
-  // uint64 marketId = 2;
-  if (this->marketid() != 0) {
+  // uint64 market_id = 2;
+  if (this->market_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_marketid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_market_id(), target);
   }
 
-  // uint64 clientOrderId = 3;
-  if (this->clientorderid() != 0) {
+  // uint64 client_order_id = 3;
+  if (this->client_order_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_clientorderid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_client_order_id(), target);
   }
 
-  // uint64 exchangeOrderId = 4;
-  if (this->exchangeorderid() != 0) {
+  // uint64 exchange_order_id = 4;
+  if (this->exchange_order_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_exchangeorderid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_exchange_order_id(), target);
   }
 
-  // uint64 fillPrice = 5;
-  if (this->fillprice() != 0) {
+  // uint64 fill_price = 5;
+  if (this->fill_price() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_fillprice(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_fill_price(), target);
   }
 
-  // uint64 fillQuantity = 6;
-  if (this->fillquantity() != 0) {
+  // uint64 fill_quantity = 6;
+  if (this->fill_quantity() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(6, this->_internal_fillquantity(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(6, this->_internal_fill_quantity(), target);
   }
 
-  // uint64 leavesQuantity = 7;
-  if (this->leavesquantity() != 0) {
+  // uint64 leaves_quantity = 7;
+  if (this->leaves_quantity() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(7, this->_internal_leavesquantity(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(7, this->_internal_leaves_quantity(), target);
   }
 
-  // uint64 transactTime = 8;
-  if (this->transacttime() != 0) {
+  // uint64 transact_time = 8;
+  if (this->transact_time() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(8, this->_internal_transacttime(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(8, this->_internal_transact_time(), target);
   }
 
-  // uint64 subaccountId = 9;
-  if (this->subaccountid() != 0) {
+  // uint64 subaccount_id = 9;
+  if (this->subaccount_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(9, this->_internal_subaccountid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(9, this->_internal_subaccount_id(), target);
+  }
+
+  // uint64 cumulative_quantity = 10;
+  if (this->cumulative_quantity() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(10, this->_internal_cumulative_quantity(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -7187,67 +7311,74 @@ size_t Fill::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 msgSeqNum = 1;
-  if (this->msgseqnum() != 0) {
+  // uint64 msg_seq_num = 1;
+  if (this->msg_seq_num() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_msgseqnum());
+        this->_internal_msg_seq_num());
   }
 
-  // uint64 marketId = 2;
-  if (this->marketid() != 0) {
+  // uint64 market_id = 2;
+  if (this->market_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_marketid());
+        this->_internal_market_id());
   }
 
-  // uint64 clientOrderId = 3;
-  if (this->clientorderid() != 0) {
+  // uint64 client_order_id = 3;
+  if (this->client_order_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_clientorderid());
+        this->_internal_client_order_id());
   }
 
-  // uint64 exchangeOrderId = 4;
-  if (this->exchangeorderid() != 0) {
+  // uint64 exchange_order_id = 4;
+  if (this->exchange_order_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_exchangeorderid());
+        this->_internal_exchange_order_id());
   }
 
-  // uint64 fillPrice = 5;
-  if (this->fillprice() != 0) {
+  // uint64 fill_price = 5;
+  if (this->fill_price() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_fillprice());
+        this->_internal_fill_price());
   }
 
-  // uint64 fillQuantity = 6;
-  if (this->fillquantity() != 0) {
+  // uint64 fill_quantity = 6;
+  if (this->fill_quantity() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_fillquantity());
+        this->_internal_fill_quantity());
   }
 
-  // uint64 leavesQuantity = 7;
-  if (this->leavesquantity() != 0) {
+  // uint64 leaves_quantity = 7;
+  if (this->leaves_quantity() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_leavesquantity());
+        this->_internal_leaves_quantity());
   }
 
-  // uint64 transactTime = 8;
-  if (this->transacttime() != 0) {
+  // uint64 transact_time = 8;
+  if (this->transact_time() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_transacttime());
+        this->_internal_transact_time());
   }
 
-  // uint64 subaccountId = 9;
-  if (this->subaccountid() != 0) {
+  // uint64 subaccount_id = 9;
+  if (this->subaccount_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_subaccountid());
+        this->_internal_subaccount_id());
+  }
+
+  // uint64 cumulative_quantity = 10;
+  if (this->cumulative_quantity() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_cumulative_quantity());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -7281,32 +7412,35 @@ void Fill::MergeFrom(const Fill& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.msgseqnum() != 0) {
-    _internal_set_msgseqnum(from._internal_msgseqnum());
+  if (from.msg_seq_num() != 0) {
+    _internal_set_msg_seq_num(from._internal_msg_seq_num());
   }
-  if (from.marketid() != 0) {
-    _internal_set_marketid(from._internal_marketid());
+  if (from.market_id() != 0) {
+    _internal_set_market_id(from._internal_market_id());
   }
-  if (from.clientorderid() != 0) {
-    _internal_set_clientorderid(from._internal_clientorderid());
+  if (from.client_order_id() != 0) {
+    _internal_set_client_order_id(from._internal_client_order_id());
   }
-  if (from.exchangeorderid() != 0) {
-    _internal_set_exchangeorderid(from._internal_exchangeorderid());
+  if (from.exchange_order_id() != 0) {
+    _internal_set_exchange_order_id(from._internal_exchange_order_id());
   }
-  if (from.fillprice() != 0) {
-    _internal_set_fillprice(from._internal_fillprice());
+  if (from.fill_price() != 0) {
+    _internal_set_fill_price(from._internal_fill_price());
   }
-  if (from.fillquantity() != 0) {
-    _internal_set_fillquantity(from._internal_fillquantity());
+  if (from.fill_quantity() != 0) {
+    _internal_set_fill_quantity(from._internal_fill_quantity());
   }
-  if (from.leavesquantity() != 0) {
-    _internal_set_leavesquantity(from._internal_leavesquantity());
+  if (from.leaves_quantity() != 0) {
+    _internal_set_leaves_quantity(from._internal_leaves_quantity());
   }
-  if (from.transacttime() != 0) {
-    _internal_set_transacttime(from._internal_transacttime());
+  if (from.transact_time() != 0) {
+    _internal_set_transact_time(from._internal_transact_time());
   }
-  if (from.subaccountid() != 0) {
-    _internal_set_subaccountid(from._internal_subaccountid());
+  if (from.subaccount_id() != 0) {
+    _internal_set_subaccount_id(from._internal_subaccount_id());
+  }
+  if (from.cumulative_quantity() != 0) {
+    _internal_set_cumulative_quantity(from._internal_cumulative_quantity());
   }
 }
 
@@ -7332,11 +7466,11 @@ void Fill::InternalSwap(Fill* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Fill, subaccountid_)
-      + sizeof(Fill::subaccountid_)
-      - PROTOBUF_FIELD_OFFSET(Fill, msgseqnum_)>(
-          reinterpret_cast<char*>(&msgseqnum_),
-          reinterpret_cast<char*>(&other->msgseqnum_));
+      PROTOBUF_FIELD_OFFSET(Fill, cumulative_quantity_)
+      + sizeof(Fill::cumulative_quantity_)
+      - PROTOBUF_FIELD_OFFSET(Fill, msg_seq_num_)>(
+          reinterpret_cast<char*>(&msg_seq_num_),
+          reinterpret_cast<char*>(&other->msg_seq_num_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Fill::GetMetadata() const {
@@ -7379,17 +7513,17 @@ AssetPosition::AssetPosition(const AssetPosition& from)
   } else {
     available_ = nullptr;
   }
-  ::memcpy(&subaccountid_, &from.subaccountid_,
-    static_cast<size_t>(reinterpret_cast<char*>(&assetid_) -
-    reinterpret_cast<char*>(&subaccountid_)) + sizeof(assetid_));
+  ::memcpy(&subaccount_id_, &from.subaccount_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&asset_id_) -
+    reinterpret_cast<char*>(&subaccount_id_)) + sizeof(asset_id_));
   // @@protoc_insertion_point(copy_constructor:trade.AssetPosition)
 }
 
 void AssetPosition::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&total_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&assetid_) -
-    reinterpret_cast<char*>(&total_)) + sizeof(assetid_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&asset_id_) -
+    reinterpret_cast<char*>(&total_)) + sizeof(asset_id_));
 }
 
 AssetPosition::~AssetPosition() {
@@ -7428,9 +7562,9 @@ void AssetPosition::Clear() {
     delete available_;
   }
   available_ = nullptr;
-  ::memset(&subaccountid_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&assetid_) -
-      reinterpret_cast<char*>(&subaccountid_)) + sizeof(assetid_));
+  ::memset(&subaccount_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&asset_id_) -
+      reinterpret_cast<char*>(&subaccount_id_)) + sizeof(asset_id_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -7441,17 +7575,17 @@ const char* AssetPosition::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint64 subaccountId = 1;
+      // uint64 subaccount_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          subaccountid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          subaccount_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 assetId = 2;
+      // uint64 asset_id = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          assetid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          asset_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -7497,16 +7631,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 subaccountId = 1;
-  if (this->subaccountid() != 0) {
+  // uint64 subaccount_id = 1;
+  if (this->subaccount_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_subaccountid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_subaccount_id(), target);
   }
 
-  // uint64 assetId = 2;
-  if (this->assetid() != 0) {
+  // uint64 asset_id = 2;
+  if (this->asset_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_assetid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_asset_id(), target);
   }
 
   // .trade.RawUnits total = 3;
@@ -7555,18 +7689,18 @@ size_t AssetPosition::ByteSizeLong() const {
         *available_);
   }
 
-  // uint64 subaccountId = 1;
-  if (this->subaccountid() != 0) {
+  // uint64 subaccount_id = 1;
+  if (this->subaccount_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_subaccountid());
+        this->_internal_subaccount_id());
   }
 
-  // uint64 assetId = 2;
-  if (this->assetid() != 0) {
+  // uint64 asset_id = 2;
+  if (this->asset_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_assetid());
+        this->_internal_asset_id());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -7606,11 +7740,11 @@ void AssetPosition::MergeFrom(const AssetPosition& from) {
   if (from.has_available()) {
     _internal_mutable_available()->::trade::RawUnits::MergeFrom(from._internal_available());
   }
-  if (from.subaccountid() != 0) {
-    _internal_set_subaccountid(from._internal_subaccountid());
+  if (from.subaccount_id() != 0) {
+    _internal_set_subaccount_id(from._internal_subaccount_id());
   }
-  if (from.assetid() != 0) {
-    _internal_set_assetid(from._internal_assetid());
+  if (from.asset_id() != 0) {
+    _internal_set_asset_id(from._internal_asset_id());
   }
 }
 
@@ -7636,8 +7770,8 @@ void AssetPosition::InternalSwap(AssetPosition* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(AssetPosition, assetid_)
-      + sizeof(AssetPosition::assetid_)
+      PROTOBUF_FIELD_OFFSET(AssetPosition, asset_id_)
+      + sizeof(AssetPosition::asset_id_)
       - PROTOBUF_FIELD_OFFSET(AssetPosition, total_)>(
           reinterpret_cast<char*>(&total_),
           reinterpret_cast<char*>(&other->total_));
@@ -8685,12 +8819,12 @@ Done::Done(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 Done::Done(const Done& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  latesttransacttime_ = from.latesttransacttime_;
+  latest_transact_time_ = from.latest_transact_time_;
   // @@protoc_insertion_point(copy_constructor:trade.Done)
 }
 
 void Done::SharedCtor() {
-latesttransacttime_ = PROTOBUF_ULONGLONG(0);
+latest_transact_time_ = PROTOBUF_ULONGLONG(0);
 }
 
 Done::~Done() {
@@ -8719,7 +8853,7 @@ void Done::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  latesttransacttime_ = PROTOBUF_ULONGLONG(0);
+  latest_transact_time_ = PROTOBUF_ULONGLONG(0);
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -8730,10 +8864,10 @@ const char* Done::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint64 latestTransactTime = 1;
+      // uint64 latest_transact_time = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          latesttransacttime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          latest_transact_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -8765,10 +8899,10 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 latestTransactTime = 1;
-  if (this->latesttransacttime() != 0) {
+  // uint64 latest_transact_time = 1;
+  if (this->latest_transact_time() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_latesttransacttime(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_latest_transact_time(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -8787,11 +8921,11 @@ size_t Done::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 latestTransactTime = 1;
-  if (this->latesttransacttime() != 0) {
+  // uint64 latest_transact_time = 1;
+  if (this->latest_transact_time() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_latesttransacttime());
+        this->_internal_latest_transact_time());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -8825,8 +8959,8 @@ void Done::MergeFrom(const Done& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.latesttransacttime() != 0) {
-    _internal_set_latesttransacttime(from._internal_latesttransacttime());
+  if (from.latest_transact_time() != 0) {
+    _internal_set_latest_transact_time(from._internal_latest_transact_time());
   }
 }
 
@@ -8851,7 +8985,7 @@ bool Done::IsInitialized() const {
 void Done::InternalSwap(Done* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  swap(latesttransacttime_, other->latesttransacttime_);
+  swap(latest_transact_time_, other->latest_transact_time_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Done::GetMetadata() const {
@@ -8874,17 +9008,17 @@ RestingOrder::RestingOrder(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 RestingOrder::RestingOrder(const RestingOrder& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&clientorderid_, &from.clientorderid_,
-    static_cast<size_t>(reinterpret_cast<char*>(&ordertype_) -
-    reinterpret_cast<char*>(&clientorderid_)) + sizeof(ordertype_));
+  ::memcpy(&client_order_id_, &from.client_order_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&order_type_) -
+    reinterpret_cast<char*>(&client_order_id_)) + sizeof(order_type_));
   // @@protoc_insertion_point(copy_constructor:trade.RestingOrder)
 }
 
 void RestingOrder::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&clientorderid_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&ordertype_) -
-    reinterpret_cast<char*>(&clientorderid_)) + sizeof(ordertype_));
+    reinterpret_cast<char*>(&client_order_id_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&order_type_) -
+    reinterpret_cast<char*>(&client_order_id_)) + sizeof(order_type_));
 }
 
 RestingOrder::~RestingOrder() {
@@ -8913,9 +9047,9 @@ void RestingOrder::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&clientorderid_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&ordertype_) -
-      reinterpret_cast<char*>(&clientorderid_)) + sizeof(ordertype_));
+  ::memset(&client_order_id_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&order_type_) -
+      reinterpret_cast<char*>(&client_order_id_)) + sizeof(order_type_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -8926,24 +9060,24 @@ const char* RestingOrder::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint64 clientOrderId = 1;
+      // uint64 client_order_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          clientorderid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          client_order_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 exchangeOrderId = 2;
+      // uint64 exchange_order_id = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          exchangeorderid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          exchange_order_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 marketId = 3;
+      // uint64 market_id = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          marketid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          market_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -8954,10 +9088,10 @@ const char* RestingOrder::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 originalQuantity = 5;
+      // uint64 order_quantity = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          originalquantity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          order_quantity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -8969,40 +9103,47 @@ const char* RestingOrder::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           _internal_set_side(static_cast<::trade::Side>(val));
         } else goto handle_unusual;
         continue;
-      // .trade.TimeInForce timeInForce = 7;
+      // .trade.TimeInForce time_in_force = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_timeinforce(static_cast<::trade::TimeInForce>(val));
+          _internal_set_time_in_force(static_cast<::trade::TimeInForce>(val));
         } else goto handle_unusual;
         continue;
-      // .trade.OrderType orderType = 8;
+      // .trade.OrderType order_type = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_ordertype(static_cast<::trade::OrderType>(val));
+          _internal_set_order_type(static_cast<::trade::OrderType>(val));
         } else goto handle_unusual;
         continue;
-      // uint64 remainingQuantity = 9;
+      // uint64 remaining_quantity = 9;
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 72)) {
-          remainingquantity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          remaining_quantity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 restTime = 10;
+      // uint64 rest_time = 10;
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 80)) {
-          resttime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          rest_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 subaccountId = 11;
+      // uint64 subaccount_id = 11;
       case 11:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 88)) {
-          subaccountid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          subaccount_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 cumulative_quantity = 12;
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 96)) {
+          cumulative_quantity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -9034,22 +9175,22 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 clientOrderId = 1;
-  if (this->clientorderid() != 0) {
+  // uint64 client_order_id = 1;
+  if (this->client_order_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_clientorderid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_client_order_id(), target);
   }
 
-  // uint64 exchangeOrderId = 2;
-  if (this->exchangeorderid() != 0) {
+  // uint64 exchange_order_id = 2;
+  if (this->exchange_order_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_exchangeorderid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_exchange_order_id(), target);
   }
 
-  // uint64 marketId = 3;
-  if (this->marketid() != 0) {
+  // uint64 market_id = 3;
+  if (this->market_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_marketid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_market_id(), target);
   }
 
   // uint64 price = 4;
@@ -9058,10 +9199,10 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_price(), target);
   }
 
-  // uint64 originalQuantity = 5;
-  if (this->originalquantity() != 0) {
+  // uint64 order_quantity = 5;
+  if (this->order_quantity() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_originalquantity(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_order_quantity(), target);
   }
 
   // .trade.Side side = 6;
@@ -9071,36 +9212,42 @@ failure:
       6, this->_internal_side(), target);
   }
 
-  // .trade.TimeInForce timeInForce = 7;
-  if (this->timeinforce() != 0) {
+  // .trade.TimeInForce time_in_force = 7;
+  if (this->time_in_force() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      7, this->_internal_timeinforce(), target);
+      7, this->_internal_time_in_force(), target);
   }
 
-  // .trade.OrderType orderType = 8;
-  if (this->ordertype() != 0) {
+  // .trade.OrderType order_type = 8;
+  if (this->order_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      8, this->_internal_ordertype(), target);
+      8, this->_internal_order_type(), target);
   }
 
-  // uint64 remainingQuantity = 9;
-  if (this->remainingquantity() != 0) {
+  // uint64 remaining_quantity = 9;
+  if (this->remaining_quantity() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(9, this->_internal_remainingquantity(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(9, this->_internal_remaining_quantity(), target);
   }
 
-  // uint64 restTime = 10;
-  if (this->resttime() != 0) {
+  // uint64 rest_time = 10;
+  if (this->rest_time() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(10, this->_internal_resttime(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(10, this->_internal_rest_time(), target);
   }
 
-  // uint64 subaccountId = 11;
-  if (this->subaccountid() != 0) {
+  // uint64 subaccount_id = 11;
+  if (this->subaccount_id() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(11, this->_internal_subaccountid(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(11, this->_internal_subaccount_id(), target);
+  }
+
+  // uint64 cumulative_quantity = 12;
+  if (this->cumulative_quantity() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(12, this->_internal_cumulative_quantity(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -9119,25 +9266,25 @@ size_t RestingOrder::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 clientOrderId = 1;
-  if (this->clientorderid() != 0) {
+  // uint64 client_order_id = 1;
+  if (this->client_order_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_clientorderid());
+        this->_internal_client_order_id());
   }
 
-  // uint64 exchangeOrderId = 2;
-  if (this->exchangeorderid() != 0) {
+  // uint64 exchange_order_id = 2;
+  if (this->exchange_order_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_exchangeorderid());
+        this->_internal_exchange_order_id());
   }
 
-  // uint64 marketId = 3;
-  if (this->marketid() != 0) {
+  // uint64 market_id = 3;
+  if (this->market_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_marketid());
+        this->_internal_market_id());
   }
 
   // uint64 price = 4;
@@ -9147,11 +9294,11 @@ size_t RestingOrder::ByteSizeLong() const {
         this->_internal_price());
   }
 
-  // uint64 originalQuantity = 5;
-  if (this->originalquantity() != 0) {
+  // uint64 order_quantity = 5;
+  if (this->order_quantity() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_originalquantity());
+        this->_internal_order_quantity());
   }
 
   // .trade.Side side = 6;
@@ -9160,37 +9307,44 @@ size_t RestingOrder::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_side());
   }
 
-  // .trade.TimeInForce timeInForce = 7;
-  if (this->timeinforce() != 0) {
+  // .trade.TimeInForce time_in_force = 7;
+  if (this->time_in_force() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_timeinforce());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_time_in_force());
   }
 
-  // uint64 remainingQuantity = 9;
-  if (this->remainingquantity() != 0) {
+  // uint64 remaining_quantity = 9;
+  if (this->remaining_quantity() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_remainingquantity());
+        this->_internal_remaining_quantity());
   }
 
-  // uint64 restTime = 10;
-  if (this->resttime() != 0) {
+  // uint64 rest_time = 10;
+  if (this->rest_time() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_resttime());
+        this->_internal_rest_time());
   }
 
-  // uint64 subaccountId = 11;
-  if (this->subaccountid() != 0) {
+  // uint64 subaccount_id = 11;
+  if (this->subaccount_id() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_subaccountid());
+        this->_internal_subaccount_id());
   }
 
-  // .trade.OrderType orderType = 8;
-  if (this->ordertype() != 0) {
+  // uint64 cumulative_quantity = 12;
+  if (this->cumulative_quantity() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_ordertype());
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_cumulative_quantity());
+  }
+
+  // .trade.OrderType order_type = 8;
+  if (this->order_type() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_order_type());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -9224,38 +9378,41 @@ void RestingOrder::MergeFrom(const RestingOrder& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.clientorderid() != 0) {
-    _internal_set_clientorderid(from._internal_clientorderid());
+  if (from.client_order_id() != 0) {
+    _internal_set_client_order_id(from._internal_client_order_id());
   }
-  if (from.exchangeorderid() != 0) {
-    _internal_set_exchangeorderid(from._internal_exchangeorderid());
+  if (from.exchange_order_id() != 0) {
+    _internal_set_exchange_order_id(from._internal_exchange_order_id());
   }
-  if (from.marketid() != 0) {
-    _internal_set_marketid(from._internal_marketid());
+  if (from.market_id() != 0) {
+    _internal_set_market_id(from._internal_market_id());
   }
   if (from.price() != 0) {
     _internal_set_price(from._internal_price());
   }
-  if (from.originalquantity() != 0) {
-    _internal_set_originalquantity(from._internal_originalquantity());
+  if (from.order_quantity() != 0) {
+    _internal_set_order_quantity(from._internal_order_quantity());
   }
   if (from.side() != 0) {
     _internal_set_side(from._internal_side());
   }
-  if (from.timeinforce() != 0) {
-    _internal_set_timeinforce(from._internal_timeinforce());
+  if (from.time_in_force() != 0) {
+    _internal_set_time_in_force(from._internal_time_in_force());
   }
-  if (from.remainingquantity() != 0) {
-    _internal_set_remainingquantity(from._internal_remainingquantity());
+  if (from.remaining_quantity() != 0) {
+    _internal_set_remaining_quantity(from._internal_remaining_quantity());
   }
-  if (from.resttime() != 0) {
-    _internal_set_resttime(from._internal_resttime());
+  if (from.rest_time() != 0) {
+    _internal_set_rest_time(from._internal_rest_time());
   }
-  if (from.subaccountid() != 0) {
-    _internal_set_subaccountid(from._internal_subaccountid());
+  if (from.subaccount_id() != 0) {
+    _internal_set_subaccount_id(from._internal_subaccount_id());
   }
-  if (from.ordertype() != 0) {
-    _internal_set_ordertype(from._internal_ordertype());
+  if (from.cumulative_quantity() != 0) {
+    _internal_set_cumulative_quantity(from._internal_cumulative_quantity());
+  }
+  if (from.order_type() != 0) {
+    _internal_set_order_type(from._internal_order_type());
   }
 }
 
@@ -9281,11 +9438,11 @@ void RestingOrder::InternalSwap(RestingOrder* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(RestingOrder, ordertype_)
-      + sizeof(RestingOrder::ordertype_)
-      - PROTOBUF_FIELD_OFFSET(RestingOrder, clientorderid_)>(
-          reinterpret_cast<char*>(&clientorderid_),
-          reinterpret_cast<char*>(&other->clientorderid_));
+      PROTOBUF_FIELD_OFFSET(RestingOrder, order_type_)
+      + sizeof(RestingOrder::order_type_)
+      - PROTOBUF_FIELD_OFFSET(RestingOrder, client_order_id_)>(
+          reinterpret_cast<char*>(&client_order_id_),
+          reinterpret_cast<char*>(&other->client_order_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RestingOrder::GetMetadata() const {

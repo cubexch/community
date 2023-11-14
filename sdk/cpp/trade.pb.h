@@ -555,20 +555,20 @@ class Credentials PROTOBUF_FINAL :
     kSignatureFieldNumber = 2,
     kTimestampFieldNumber = 3,
   };
-  // string accessKeyId = 1;
-  void clear_accesskeyid();
-  const std::string& accesskeyid() const;
-  void set_accesskeyid(const std::string& value);
-  void set_accesskeyid(std::string&& value);
-  void set_accesskeyid(const char* value);
-  void set_accesskeyid(const char* value, size_t size);
-  std::string* mutable_accesskeyid();
-  std::string* release_accesskeyid();
-  void set_allocated_accesskeyid(std::string* accesskeyid);
+  // string access_key_id = 1;
+  void clear_access_key_id();
+  const std::string& access_key_id() const;
+  void set_access_key_id(const std::string& value);
+  void set_access_key_id(std::string&& value);
+  void set_access_key_id(const char* value);
+  void set_access_key_id(const char* value, size_t size);
+  std::string* mutable_access_key_id();
+  std::string* release_access_key_id();
+  void set_allocated_access_key_id(std::string* access_key_id);
   private:
-  const std::string& _internal_accesskeyid() const;
-  void _internal_set_accesskeyid(const std::string& value);
-  std::string* _internal_mutable_accesskeyid();
+  const std::string& _internal_access_key_id() const;
+  void _internal_set_access_key_id(const std::string& value);
+  std::string* _internal_mutable_access_key_id();
   public:
 
   // string signature = 2;
@@ -603,7 +603,7 @@ class Credentials PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr accesskeyid_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr access_key_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr signature_;
   ::PROTOBUF_NAMESPACE_ID::uint64 timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -986,32 +986,33 @@ class NewOrder PROTOBUF_FINAL :
     kOrderTypeFieldNumber = 8,
     kSelfTradePreventionFieldNumber = 10,
     kPostOnlyFieldNumber = 11,
+    kCancelOnDisconnectFieldNumber = 12,
   };
-  // uint64 clientOrderId = 1;
-  void clear_clientorderid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 clientorderid() const;
-  void set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 client_order_id = 1;
+  void clear_client_order_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 client_order_id() const;
+  void set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_clientorderid() const;
-  void _internal_set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_client_order_id() const;
+  void _internal_set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 requestId = 2;
-  void clear_requestid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 requestid() const;
-  void set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 request_id = 2;
+  void clear_request_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 request_id() const;
+  void set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_requestid() const;
-  void _internal_set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_request_id() const;
+  void _internal_set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 marketId = 3;
-  void clear_marketid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 marketid() const;
-  void set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 market_id = 3;
+  void clear_market_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 market_id() const;
+  void set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_marketid() const;
-  void _internal_set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_market_id() const;
+  void _internal_set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // uint64 price = 4;
@@ -1045,53 +1046,62 @@ class NewOrder PROTOBUF_FINAL :
   void _internal_set_side(::trade::Side value);
   public:
 
-  // .trade.TimeInForce timeInForce = 7;
-  void clear_timeinforce();
-  ::trade::TimeInForce timeinforce() const;
-  void set_timeinforce(::trade::TimeInForce value);
+  // .trade.TimeInForce time_in_force = 7;
+  void clear_time_in_force();
+  ::trade::TimeInForce time_in_force() const;
+  void set_time_in_force(::trade::TimeInForce value);
   private:
-  ::trade::TimeInForce _internal_timeinforce() const;
-  void _internal_set_timeinforce(::trade::TimeInForce value);
+  ::trade::TimeInForce _internal_time_in_force() const;
+  void _internal_set_time_in_force(::trade::TimeInForce value);
   public:
 
-  // uint64 subaccountId = 9;
-  void clear_subaccountid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid() const;
-  void set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 subaccount_id = 9;
+  void clear_subaccount_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id() const;
+  void set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccountid() const;
-  void _internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccount_id() const;
+  void _internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // .trade.OrderType orderType = 8;
-  void clear_ordertype();
-  ::trade::OrderType ordertype() const;
-  void set_ordertype(::trade::OrderType value);
+  // .trade.OrderType order_type = 8;
+  void clear_order_type();
+  ::trade::OrderType order_type() const;
+  void set_order_type(::trade::OrderType value);
   private:
-  ::trade::OrderType _internal_ordertype() const;
-  void _internal_set_ordertype(::trade::OrderType value);
+  ::trade::OrderType _internal_order_type() const;
+  void _internal_set_order_type(::trade::OrderType value);
   public:
 
-  // .trade.SelfTradePrevention selfTradePrevention = 10;
-  bool has_selftradeprevention() const;
+  // .trade.SelfTradePrevention self_trade_prevention = 10;
+  bool has_self_trade_prevention() const;
   private:
-  bool _internal_has_selftradeprevention() const;
+  bool _internal_has_self_trade_prevention() const;
   public:
-  void clear_selftradeprevention();
-  ::trade::SelfTradePrevention selftradeprevention() const;
-  void set_selftradeprevention(::trade::SelfTradePrevention value);
+  void clear_self_trade_prevention();
+  ::trade::SelfTradePrevention self_trade_prevention() const;
+  void set_self_trade_prevention(::trade::SelfTradePrevention value);
   private:
-  ::trade::SelfTradePrevention _internal_selftradeprevention() const;
-  void _internal_set_selftradeprevention(::trade::SelfTradePrevention value);
+  ::trade::SelfTradePrevention _internal_self_trade_prevention() const;
+  void _internal_set_self_trade_prevention(::trade::SelfTradePrevention value);
   public:
 
-  // .trade.PostOnly postOnly = 11;
-  void clear_postonly();
-  ::trade::PostOnly postonly() const;
-  void set_postonly(::trade::PostOnly value);
+  // .trade.PostOnly post_only = 11;
+  void clear_post_only();
+  ::trade::PostOnly post_only() const;
+  void set_post_only(::trade::PostOnly value);
   private:
-  ::trade::PostOnly _internal_postonly() const;
-  void _internal_set_postonly(::trade::PostOnly value);
+  ::trade::PostOnly _internal_post_only() const;
+  void _internal_set_post_only(::trade::PostOnly value);
+  public:
+
+  // bool cancel_on_disconnect = 12;
+  void clear_cancel_on_disconnect();
+  bool cancel_on_disconnect() const;
+  void set_cancel_on_disconnect(bool value);
+  private:
+  bool _internal_cancel_on_disconnect() const;
+  void _internal_set_cancel_on_disconnect(bool value);
   public:
 
   // @@protoc_insertion_point(class_scope:trade.NewOrder)
@@ -1103,17 +1113,18 @@ class NewOrder PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 clientorderid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 requestid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 marketid_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 client_order_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 request_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 market_id_;
   ::PROTOBUF_NAMESPACE_ID::uint64 price_;
   ::PROTOBUF_NAMESPACE_ID::uint64 quantity_;
   int side_;
-  int timeinforce_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid_;
-  int ordertype_;
-  int selftradeprevention_;
-  int postonly_;
+  int time_in_force_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id_;
+  int order_type_;
+  int self_trade_prevention_;
+  int post_only_;
+  bool cancel_on_disconnect_;
   friend struct ::TableStruct_trade_2eproto;
 };
 // -------------------------------------------------------------------
@@ -1236,40 +1247,40 @@ class CancelOrder PROTOBUF_FINAL :
     kRequestIdFieldNumber = 3,
     kSubaccountIdFieldNumber = 4,
   };
-  // uint64 marketId = 1;
-  void clear_marketid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 marketid() const;
-  void set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 market_id = 1;
+  void clear_market_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 market_id() const;
+  void set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_marketid() const;
-  void _internal_set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_market_id() const;
+  void _internal_set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 clientOrderId = 2;
-  void clear_clientorderid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 clientorderid() const;
-  void set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 client_order_id = 2;
+  void clear_client_order_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 client_order_id() const;
+  void set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_clientorderid() const;
-  void _internal_set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_client_order_id() const;
+  void _internal_set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 requestId = 3;
-  void clear_requestid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 requestid() const;
-  void set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 request_id = 3;
+  void clear_request_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 request_id() const;
+  void set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_requestid() const;
-  void _internal_set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_request_id() const;
+  void _internal_set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 subaccountId = 4;
-  void clear_subaccountid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid() const;
-  void set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 subaccount_id = 4;
+  void clear_subaccount_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id() const;
+  void set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccountid() const;
-  void _internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccount_id() const;
+  void _internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:trade.CancelOrder)
@@ -1279,10 +1290,10 @@ class CancelOrder PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 marketid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 clientorderid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 requestid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 market_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 client_order_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 request_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_trade_2eproto;
 };
@@ -1410,80 +1421,80 @@ class ModifyOrder PROTOBUF_FINAL :
     kSelfTradePreventionFieldNumber = 7,
     kPostOnlyFieldNumber = 8,
   };
-  // uint64 marketId = 1;
-  void clear_marketid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 marketid() const;
-  void set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 market_id = 1;
+  void clear_market_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 market_id() const;
+  void set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_marketid() const;
-  void _internal_set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_market_id() const;
+  void _internal_set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 clientOrderId = 2;
-  void clear_clientorderid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 clientorderid() const;
-  void set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 client_order_id = 2;
+  void clear_client_order_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 client_order_id() const;
+  void set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_clientorderid() const;
-  void _internal_set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_client_order_id() const;
+  void _internal_set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 requestId = 3;
-  void clear_requestid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 requestid() const;
-  void set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 request_id = 3;
+  void clear_request_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 request_id() const;
+  void set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_requestid() const;
-  void _internal_set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_request_id() const;
+  void _internal_set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 newPrice = 4;
-  void clear_newprice();
-  ::PROTOBUF_NAMESPACE_ID::uint64 newprice() const;
-  void set_newprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 new_price = 4;
+  void clear_new_price();
+  ::PROTOBUF_NAMESPACE_ID::uint64 new_price() const;
+  void set_new_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_newprice() const;
-  void _internal_set_newprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_new_price() const;
+  void _internal_set_new_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 newQuantity = 5;
-  void clear_newquantity();
-  ::PROTOBUF_NAMESPACE_ID::uint64 newquantity() const;
-  void set_newquantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 new_quantity = 5;
+  void clear_new_quantity();
+  ::PROTOBUF_NAMESPACE_ID::uint64 new_quantity() const;
+  void set_new_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_newquantity() const;
-  void _internal_set_newquantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_new_quantity() const;
+  void _internal_set_new_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 subaccountId = 6;
-  void clear_subaccountid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid() const;
-  void set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 subaccount_id = 6;
+  void clear_subaccount_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id() const;
+  void set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccountid() const;
-  void _internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccount_id() const;
+  void _internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // .trade.SelfTradePrevention selfTradePrevention = 7;
-  bool has_selftradeprevention() const;
+  // .trade.SelfTradePrevention self_trade_prevention = 7;
+  bool has_self_trade_prevention() const;
   private:
-  bool _internal_has_selftradeprevention() const;
+  bool _internal_has_self_trade_prevention() const;
   public:
-  void clear_selftradeprevention();
-  ::trade::SelfTradePrevention selftradeprevention() const;
-  void set_selftradeprevention(::trade::SelfTradePrevention value);
+  void clear_self_trade_prevention();
+  ::trade::SelfTradePrevention self_trade_prevention() const;
+  void set_self_trade_prevention(::trade::SelfTradePrevention value);
   private:
-  ::trade::SelfTradePrevention _internal_selftradeprevention() const;
-  void _internal_set_selftradeprevention(::trade::SelfTradePrevention value);
+  ::trade::SelfTradePrevention _internal_self_trade_prevention() const;
+  void _internal_set_self_trade_prevention(::trade::SelfTradePrevention value);
   public:
 
-  // .trade.PostOnly postOnly = 8;
-  void clear_postonly();
-  ::trade::PostOnly postonly() const;
-  void set_postonly(::trade::PostOnly value);
+  // .trade.PostOnly post_only = 8;
+  void clear_post_only();
+  ::trade::PostOnly post_only() const;
+  void set_post_only(::trade::PostOnly value);
   private:
-  ::trade::PostOnly _internal_postonly() const;
-  void _internal_set_postonly(::trade::PostOnly value);
+  ::trade::PostOnly _internal_post_only() const;
+  void _internal_set_post_only(::trade::PostOnly value);
   public:
 
   // @@protoc_insertion_point(class_scope:trade.ModifyOrder)
@@ -1495,14 +1506,14 @@ class ModifyOrder PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 marketid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 clientorderid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 requestid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 newprice_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 newquantity_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid_;
-  int selftradeprevention_;
-  int postonly_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 market_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 client_order_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 request_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 new_price_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 new_quantity_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id_;
+  int self_trade_prevention_;
+  int post_only_;
   friend struct ::TableStruct_trade_2eproto;
 };
 // -------------------------------------------------------------------
@@ -1625,35 +1636,35 @@ class MassCancel PROTOBUF_FINAL :
     kMarketIdFieldNumber = 3,
     kSideFieldNumber = 4,
   };
-  // uint64 subaccountId = 1;
-  void clear_subaccountid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid() const;
-  void set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 subaccount_id = 1;
+  void clear_subaccount_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id() const;
+  void set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccountid() const;
-  void _internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccount_id() const;
+  void _internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 requestId = 2;
-  void clear_requestid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 requestid() const;
-  void set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 request_id = 2;
+  void clear_request_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 request_id() const;
+  void set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_requestid() const;
-  void _internal_set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_request_id() const;
+  void _internal_set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 marketId = 3;
-  bool has_marketid() const;
+  // uint64 market_id = 3;
+  bool has_market_id() const;
   private:
-  bool _internal_has_marketid() const;
+  bool _internal_has_market_id() const;
   public:
-  void clear_marketid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 marketid() const;
-  void set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  void clear_market_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 market_id() const;
+  void set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_marketid() const;
-  void _internal_set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_market_id() const;
+  void _internal_set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // .trade.Side side = 4;
@@ -1678,9 +1689,9 @@ class MassCancel PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 requestid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 marketid_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 request_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 market_id_;
   int side_;
   friend struct ::TableStruct_trade_2eproto;
 };
@@ -1802,13 +1813,13 @@ class Heartbeat PROTOBUF_FINAL :
     kRequestIdFieldNumber = 1,
     kTimestampFieldNumber = 2,
   };
-  // uint64 requestId = 1;
-  void clear_requestid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 requestid() const;
-  void set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 request_id = 1;
+  void clear_request_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 request_id() const;
+  void set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_requestid() const;
-  void _internal_set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_request_id() const;
+  void _internal_set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // uint64 timestamp = 2;
@@ -1827,7 +1838,7 @@ class Heartbeat PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 requestid_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 request_id_;
   ::PROTOBUF_NAMESPACE_ID::uint64 timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_trade_2eproto;
@@ -1972,113 +1983,113 @@ class OrderResponse PROTOBUF_FINAL :
     kPositionFieldNumber = 9,
     kMassCancelAckFieldNumber = 10,
   };
-  // .trade.NewOrderAck newAck = 1;
-  bool has_newack() const;
+  // .trade.NewOrderAck new_ack = 1;
+  bool has_new_ack() const;
   private:
-  bool _internal_has_newack() const;
+  bool _internal_has_new_ack() const;
   public:
-  void clear_newack();
-  const ::trade::NewOrderAck& newack() const;
-  ::trade::NewOrderAck* release_newack();
-  ::trade::NewOrderAck* mutable_newack();
-  void set_allocated_newack(::trade::NewOrderAck* newack);
+  void clear_new_ack();
+  const ::trade::NewOrderAck& new_ack() const;
+  ::trade::NewOrderAck* release_new_ack();
+  ::trade::NewOrderAck* mutable_new_ack();
+  void set_allocated_new_ack(::trade::NewOrderAck* new_ack);
   private:
-  const ::trade::NewOrderAck& _internal_newack() const;
-  ::trade::NewOrderAck* _internal_mutable_newack();
+  const ::trade::NewOrderAck& _internal_new_ack() const;
+  ::trade::NewOrderAck* _internal_mutable_new_ack();
   public:
-  void unsafe_arena_set_allocated_newack(
-      ::trade::NewOrderAck* newack);
-  ::trade::NewOrderAck* unsafe_arena_release_newack();
+  void unsafe_arena_set_allocated_new_ack(
+      ::trade::NewOrderAck* new_ack);
+  ::trade::NewOrderAck* unsafe_arena_release_new_ack();
 
-  // .trade.CancelOrderAck cancelAck = 2;
-  bool has_cancelack() const;
+  // .trade.CancelOrderAck cancel_ack = 2;
+  bool has_cancel_ack() const;
   private:
-  bool _internal_has_cancelack() const;
+  bool _internal_has_cancel_ack() const;
   public:
-  void clear_cancelack();
-  const ::trade::CancelOrderAck& cancelack() const;
-  ::trade::CancelOrderAck* release_cancelack();
-  ::trade::CancelOrderAck* mutable_cancelack();
-  void set_allocated_cancelack(::trade::CancelOrderAck* cancelack);
+  void clear_cancel_ack();
+  const ::trade::CancelOrderAck& cancel_ack() const;
+  ::trade::CancelOrderAck* release_cancel_ack();
+  ::trade::CancelOrderAck* mutable_cancel_ack();
+  void set_allocated_cancel_ack(::trade::CancelOrderAck* cancel_ack);
   private:
-  const ::trade::CancelOrderAck& _internal_cancelack() const;
-  ::trade::CancelOrderAck* _internal_mutable_cancelack();
+  const ::trade::CancelOrderAck& _internal_cancel_ack() const;
+  ::trade::CancelOrderAck* _internal_mutable_cancel_ack();
   public:
-  void unsafe_arena_set_allocated_cancelack(
-      ::trade::CancelOrderAck* cancelack);
-  ::trade::CancelOrderAck* unsafe_arena_release_cancelack();
+  void unsafe_arena_set_allocated_cancel_ack(
+      ::trade::CancelOrderAck* cancel_ack);
+  ::trade::CancelOrderAck* unsafe_arena_release_cancel_ack();
 
-  // .trade.ModifyOrderAck modifyAck = 3;
-  bool has_modifyack() const;
+  // .trade.ModifyOrderAck modify_ack = 3;
+  bool has_modify_ack() const;
   private:
-  bool _internal_has_modifyack() const;
+  bool _internal_has_modify_ack() const;
   public:
-  void clear_modifyack();
-  const ::trade::ModifyOrderAck& modifyack() const;
-  ::trade::ModifyOrderAck* release_modifyack();
-  ::trade::ModifyOrderAck* mutable_modifyack();
-  void set_allocated_modifyack(::trade::ModifyOrderAck* modifyack);
+  void clear_modify_ack();
+  const ::trade::ModifyOrderAck& modify_ack() const;
+  ::trade::ModifyOrderAck* release_modify_ack();
+  ::trade::ModifyOrderAck* mutable_modify_ack();
+  void set_allocated_modify_ack(::trade::ModifyOrderAck* modify_ack);
   private:
-  const ::trade::ModifyOrderAck& _internal_modifyack() const;
-  ::trade::ModifyOrderAck* _internal_mutable_modifyack();
+  const ::trade::ModifyOrderAck& _internal_modify_ack() const;
+  ::trade::ModifyOrderAck* _internal_mutable_modify_ack();
   public:
-  void unsafe_arena_set_allocated_modifyack(
-      ::trade::ModifyOrderAck* modifyack);
-  ::trade::ModifyOrderAck* unsafe_arena_release_modifyack();
+  void unsafe_arena_set_allocated_modify_ack(
+      ::trade::ModifyOrderAck* modify_ack);
+  ::trade::ModifyOrderAck* unsafe_arena_release_modify_ack();
 
-  // .trade.NewOrderReject newReject = 4;
-  bool has_newreject() const;
+  // .trade.NewOrderReject new_reject = 4;
+  bool has_new_reject() const;
   private:
-  bool _internal_has_newreject() const;
+  bool _internal_has_new_reject() const;
   public:
-  void clear_newreject();
-  const ::trade::NewOrderReject& newreject() const;
-  ::trade::NewOrderReject* release_newreject();
-  ::trade::NewOrderReject* mutable_newreject();
-  void set_allocated_newreject(::trade::NewOrderReject* newreject);
+  void clear_new_reject();
+  const ::trade::NewOrderReject& new_reject() const;
+  ::trade::NewOrderReject* release_new_reject();
+  ::trade::NewOrderReject* mutable_new_reject();
+  void set_allocated_new_reject(::trade::NewOrderReject* new_reject);
   private:
-  const ::trade::NewOrderReject& _internal_newreject() const;
-  ::trade::NewOrderReject* _internal_mutable_newreject();
+  const ::trade::NewOrderReject& _internal_new_reject() const;
+  ::trade::NewOrderReject* _internal_mutable_new_reject();
   public:
-  void unsafe_arena_set_allocated_newreject(
-      ::trade::NewOrderReject* newreject);
-  ::trade::NewOrderReject* unsafe_arena_release_newreject();
+  void unsafe_arena_set_allocated_new_reject(
+      ::trade::NewOrderReject* new_reject);
+  ::trade::NewOrderReject* unsafe_arena_release_new_reject();
 
-  // .trade.CancelOrderReject cancelReject = 5;
-  bool has_cancelreject() const;
+  // .trade.CancelOrderReject cancel_reject = 5;
+  bool has_cancel_reject() const;
   private:
-  bool _internal_has_cancelreject() const;
+  bool _internal_has_cancel_reject() const;
   public:
-  void clear_cancelreject();
-  const ::trade::CancelOrderReject& cancelreject() const;
-  ::trade::CancelOrderReject* release_cancelreject();
-  ::trade::CancelOrderReject* mutable_cancelreject();
-  void set_allocated_cancelreject(::trade::CancelOrderReject* cancelreject);
+  void clear_cancel_reject();
+  const ::trade::CancelOrderReject& cancel_reject() const;
+  ::trade::CancelOrderReject* release_cancel_reject();
+  ::trade::CancelOrderReject* mutable_cancel_reject();
+  void set_allocated_cancel_reject(::trade::CancelOrderReject* cancel_reject);
   private:
-  const ::trade::CancelOrderReject& _internal_cancelreject() const;
-  ::trade::CancelOrderReject* _internal_mutable_cancelreject();
+  const ::trade::CancelOrderReject& _internal_cancel_reject() const;
+  ::trade::CancelOrderReject* _internal_mutable_cancel_reject();
   public:
-  void unsafe_arena_set_allocated_cancelreject(
-      ::trade::CancelOrderReject* cancelreject);
-  ::trade::CancelOrderReject* unsafe_arena_release_cancelreject();
+  void unsafe_arena_set_allocated_cancel_reject(
+      ::trade::CancelOrderReject* cancel_reject);
+  ::trade::CancelOrderReject* unsafe_arena_release_cancel_reject();
 
-  // .trade.ModifyOrderReject modifyReject = 6;
-  bool has_modifyreject() const;
+  // .trade.ModifyOrderReject modify_reject = 6;
+  bool has_modify_reject() const;
   private:
-  bool _internal_has_modifyreject() const;
+  bool _internal_has_modify_reject() const;
   public:
-  void clear_modifyreject();
-  const ::trade::ModifyOrderReject& modifyreject() const;
-  ::trade::ModifyOrderReject* release_modifyreject();
-  ::trade::ModifyOrderReject* mutable_modifyreject();
-  void set_allocated_modifyreject(::trade::ModifyOrderReject* modifyreject);
+  void clear_modify_reject();
+  const ::trade::ModifyOrderReject& modify_reject() const;
+  ::trade::ModifyOrderReject* release_modify_reject();
+  ::trade::ModifyOrderReject* mutable_modify_reject();
+  void set_allocated_modify_reject(::trade::ModifyOrderReject* modify_reject);
   private:
-  const ::trade::ModifyOrderReject& _internal_modifyreject() const;
-  ::trade::ModifyOrderReject* _internal_mutable_modifyreject();
+  const ::trade::ModifyOrderReject& _internal_modify_reject() const;
+  ::trade::ModifyOrderReject* _internal_mutable_modify_reject();
   public:
-  void unsafe_arena_set_allocated_modifyreject(
-      ::trade::ModifyOrderReject* modifyreject);
-  ::trade::ModifyOrderReject* unsafe_arena_release_modifyreject();
+  void unsafe_arena_set_allocated_modify_reject(
+      ::trade::ModifyOrderReject* modify_reject);
+  ::trade::ModifyOrderReject* unsafe_arena_release_modify_reject();
 
   // .trade.Fill fill = 7;
   bool has_fill() const;
@@ -2134,39 +2145,39 @@ class OrderResponse PROTOBUF_FINAL :
       ::trade::AssetPosition* position);
   ::trade::AssetPosition* unsafe_arena_release_position();
 
-  // .trade.MassCancelAck massCancelAck = 10;
-  bool has_masscancelack() const;
+  // .trade.MassCancelAck mass_cancel_ack = 10;
+  bool has_mass_cancel_ack() const;
   private:
-  bool _internal_has_masscancelack() const;
+  bool _internal_has_mass_cancel_ack() const;
   public:
-  void clear_masscancelack();
-  const ::trade::MassCancelAck& masscancelack() const;
-  ::trade::MassCancelAck* release_masscancelack();
-  ::trade::MassCancelAck* mutable_masscancelack();
-  void set_allocated_masscancelack(::trade::MassCancelAck* masscancelack);
+  void clear_mass_cancel_ack();
+  const ::trade::MassCancelAck& mass_cancel_ack() const;
+  ::trade::MassCancelAck* release_mass_cancel_ack();
+  ::trade::MassCancelAck* mutable_mass_cancel_ack();
+  void set_allocated_mass_cancel_ack(::trade::MassCancelAck* mass_cancel_ack);
   private:
-  const ::trade::MassCancelAck& _internal_masscancelack() const;
-  ::trade::MassCancelAck* _internal_mutable_masscancelack();
+  const ::trade::MassCancelAck& _internal_mass_cancel_ack() const;
+  ::trade::MassCancelAck* _internal_mutable_mass_cancel_ack();
   public:
-  void unsafe_arena_set_allocated_masscancelack(
-      ::trade::MassCancelAck* masscancelack);
-  ::trade::MassCancelAck* unsafe_arena_release_masscancelack();
+  void unsafe_arena_set_allocated_mass_cancel_ack(
+      ::trade::MassCancelAck* mass_cancel_ack);
+  ::trade::MassCancelAck* unsafe_arena_release_mass_cancel_ack();
 
   void clear_inner();
   InnerCase inner_case() const;
   // @@protoc_insertion_point(class_scope:trade.OrderResponse)
  private:
   class _Internal;
-  void set_has_newack();
-  void set_has_cancelack();
-  void set_has_modifyack();
-  void set_has_newreject();
-  void set_has_cancelreject();
-  void set_has_modifyreject();
+  void set_has_new_ack();
+  void set_has_cancel_ack();
+  void set_has_modify_ack();
+  void set_has_new_reject();
+  void set_has_cancel_reject();
+  void set_has_modify_reject();
   void set_has_fill();
   void set_has_heartbeat();
   void set_has_position();
-  void set_has_masscancelack();
+  void set_has_mass_cancel_ack();
 
   inline bool has_inner() const;
   inline void clear_has_inner();
@@ -2177,16 +2188,16 @@ class OrderResponse PROTOBUF_FINAL :
   union InnerUnion {
     constexpr InnerUnion() : _constinit_{} {}
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
-    ::trade::NewOrderAck* newack_;
-    ::trade::CancelOrderAck* cancelack_;
-    ::trade::ModifyOrderAck* modifyack_;
-    ::trade::NewOrderReject* newreject_;
-    ::trade::CancelOrderReject* cancelreject_;
-    ::trade::ModifyOrderReject* modifyreject_;
+    ::trade::NewOrderAck* new_ack_;
+    ::trade::CancelOrderAck* cancel_ack_;
+    ::trade::ModifyOrderAck* modify_ack_;
+    ::trade::NewOrderReject* new_reject_;
+    ::trade::CancelOrderReject* cancel_reject_;
+    ::trade::ModifyOrderReject* modify_reject_;
     ::trade::Fill* fill_;
     ::trade::Heartbeat* heartbeat_;
     ::trade::AssetPosition* position_;
-    ::trade::MassCancelAck* masscancelack_;
+    ::trade::MassCancelAck* mass_cancel_ack_;
   } inner_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -2318,52 +2329,53 @@ class NewOrderAck PROTOBUF_FINAL :
     kSideFieldNumber = 8,
     kTimeInForceFieldNumber = 9,
     kTransactTimeFieldNumber = 11,
-    kSubaccountIdFieldNumber = 12,
     kOrderTypeFieldNumber = 10,
+    kCancelOnDisconnectFieldNumber = 13,
+    kSubaccountIdFieldNumber = 12,
   };
-  // uint64 msgSeqNum = 1;
-  void clear_msgseqnum();
-  ::PROTOBUF_NAMESPACE_ID::uint64 msgseqnum() const;
-  void set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 msg_seq_num = 1;
+  void clear_msg_seq_num();
+  ::PROTOBUF_NAMESPACE_ID::uint64 msg_seq_num() const;
+  void set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_msgseqnum() const;
-  void _internal_set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_msg_seq_num() const;
+  void _internal_set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 clientOrderId = 2;
-  void clear_clientorderid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 clientorderid() const;
-  void set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 client_order_id = 2;
+  void clear_client_order_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 client_order_id() const;
+  void set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_clientorderid() const;
-  void _internal_set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_client_order_id() const;
+  void _internal_set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 requestId = 3;
-  void clear_requestid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 requestid() const;
-  void set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 request_id = 3;
+  void clear_request_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 request_id() const;
+  void set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_requestid() const;
-  void _internal_set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_request_id() const;
+  void _internal_set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 exchangeOrderId = 4;
-  void clear_exchangeorderid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 exchangeorderid() const;
-  void set_exchangeorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 exchange_order_id = 4;
+  void clear_exchange_order_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 exchange_order_id() const;
+  void set_exchange_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_exchangeorderid() const;
-  void _internal_set_exchangeorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_exchange_order_id() const;
+  void _internal_set_exchange_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 marketId = 5;
-  void clear_marketid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 marketid() const;
-  void set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 market_id = 5;
+  void clear_market_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 market_id() const;
+  void set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_marketid() const;
-  void _internal_set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_market_id() const;
+  void _internal_set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // uint64 price = 6;
@@ -2397,40 +2409,49 @@ class NewOrderAck PROTOBUF_FINAL :
   void _internal_set_side(::trade::Side value);
   public:
 
-  // .trade.TimeInForce timeInForce = 9;
-  void clear_timeinforce();
-  ::trade::TimeInForce timeinforce() const;
-  void set_timeinforce(::trade::TimeInForce value);
+  // .trade.TimeInForce time_in_force = 9;
+  void clear_time_in_force();
+  ::trade::TimeInForce time_in_force() const;
+  void set_time_in_force(::trade::TimeInForce value);
   private:
-  ::trade::TimeInForce _internal_timeinforce() const;
-  void _internal_set_timeinforce(::trade::TimeInForce value);
+  ::trade::TimeInForce _internal_time_in_force() const;
+  void _internal_set_time_in_force(::trade::TimeInForce value);
   public:
 
-  // uint64 transactTime = 11;
-  void clear_transacttime();
-  ::PROTOBUF_NAMESPACE_ID::uint64 transacttime() const;
-  void set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 transact_time = 11;
+  void clear_transact_time();
+  ::PROTOBUF_NAMESPACE_ID::uint64 transact_time() const;
+  void set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_transacttime() const;
-  void _internal_set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_transact_time() const;
+  void _internal_set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 subaccountId = 12;
-  void clear_subaccountid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid() const;
-  void set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // .trade.OrderType order_type = 10;
+  void clear_order_type();
+  ::trade::OrderType order_type() const;
+  void set_order_type(::trade::OrderType value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccountid() const;
-  void _internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::trade::OrderType _internal_order_type() const;
+  void _internal_set_order_type(::trade::OrderType value);
   public:
 
-  // .trade.OrderType orderType = 10;
-  void clear_ordertype();
-  ::trade::OrderType ordertype() const;
-  void set_ordertype(::trade::OrderType value);
+  // bool cancel_on_disconnect = 13;
+  void clear_cancel_on_disconnect();
+  bool cancel_on_disconnect() const;
+  void set_cancel_on_disconnect(bool value);
   private:
-  ::trade::OrderType _internal_ordertype() const;
-  void _internal_set_ordertype(::trade::OrderType value);
+  bool _internal_cancel_on_disconnect() const;
+  void _internal_set_cancel_on_disconnect(bool value);
+  public:
+
+  // uint64 subaccount_id = 12;
+  void clear_subaccount_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id() const;
+  void set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccount_id() const;
+  void _internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:trade.NewOrderAck)
@@ -2442,18 +2463,19 @@ class NewOrderAck PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 msgseqnum_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 clientorderid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 requestid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 exchangeorderid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 marketid_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 msg_seq_num_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 client_order_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 request_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 exchange_order_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 market_id_;
   ::PROTOBUF_NAMESPACE_ID::uint64 price_;
   ::PROTOBUF_NAMESPACE_ID::uint64 quantity_;
   int side_;
-  int timeinforce_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 transacttime_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid_;
-  int ordertype_;
+  int time_in_force_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 transact_time_;
+  int order_type_;
+  bool cancel_on_disconnect_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id_;
   friend struct ::TableStruct_trade_2eproto;
 };
 // -------------------------------------------------------------------
@@ -2619,58 +2641,58 @@ class CancelOrderAck PROTOBUF_FINAL :
     kMarketIdFieldNumber = 7,
     kReasonFieldNumber = 6,
   };
-  // uint64 msgSeqNum = 1;
-  void clear_msgseqnum();
-  ::PROTOBUF_NAMESPACE_ID::uint64 msgseqnum() const;
-  void set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 msg_seq_num = 1;
+  void clear_msg_seq_num();
+  ::PROTOBUF_NAMESPACE_ID::uint64 msg_seq_num() const;
+  void set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_msgseqnum() const;
-  void _internal_set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_msg_seq_num() const;
+  void _internal_set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 clientOrderId = 2;
-  void clear_clientorderid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 clientorderid() const;
-  void set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 client_order_id = 2;
+  void clear_client_order_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 client_order_id() const;
+  void set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_clientorderid() const;
-  void _internal_set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_client_order_id() const;
+  void _internal_set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 requestId = 3;
-  void clear_requestid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 requestid() const;
-  void set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 request_id = 3;
+  void clear_request_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 request_id() const;
+  void set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_requestid() const;
-  void _internal_set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_request_id() const;
+  void _internal_set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 transactTime = 4;
-  void clear_transacttime();
-  ::PROTOBUF_NAMESPACE_ID::uint64 transacttime() const;
-  void set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 transact_time = 4;
+  void clear_transact_time();
+  ::PROTOBUF_NAMESPACE_ID::uint64 transact_time() const;
+  void set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_transacttime() const;
-  void _internal_set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_transact_time() const;
+  void _internal_set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 subaccountId = 5;
-  void clear_subaccountid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid() const;
-  void set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 subaccount_id = 5;
+  void clear_subaccount_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id() const;
+  void set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccountid() const;
-  void _internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccount_id() const;
+  void _internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 marketId = 7;
-  void clear_marketid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 marketid() const;
-  void set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 market_id = 7;
+  void clear_market_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 market_id() const;
+  void set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_marketid() const;
-  void _internal_set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_market_id() const;
+  void _internal_set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // .trade.CancelOrderAck.Reason reason = 6;
@@ -2689,12 +2711,12 @@ class CancelOrderAck PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 msgseqnum_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 clientorderid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 requestid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 transacttime_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 marketid_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 msg_seq_num_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 client_order_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 request_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 transact_time_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 market_id_;
   int reason_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_trade_2eproto;
@@ -2818,72 +2840,74 @@ class ModifyOrderAck PROTOBUF_FINAL :
     kClientOrderIdFieldNumber = 2,
     kRequestIdFieldNumber = 3,
     kTransactTimeFieldNumber = 4,
-    kNewQuantityFieldNumber = 5,
+    kRemainingQuantityFieldNumber = 5,
     kSubaccountIdFieldNumber = 6,
     kMarketIdFieldNumber = 7,
     kPriceFieldNumber = 8,
+    kQuantityFieldNumber = 9,
+    kCumulativeQuantityFieldNumber = 10,
   };
-  // uint64 msgSeqNum = 1;
-  void clear_msgseqnum();
-  ::PROTOBUF_NAMESPACE_ID::uint64 msgseqnum() const;
-  void set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 msg_seq_num = 1;
+  void clear_msg_seq_num();
+  ::PROTOBUF_NAMESPACE_ID::uint64 msg_seq_num() const;
+  void set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_msgseqnum() const;
-  void _internal_set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_msg_seq_num() const;
+  void _internal_set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 clientOrderId = 2;
-  void clear_clientorderid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 clientorderid() const;
-  void set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 client_order_id = 2;
+  void clear_client_order_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 client_order_id() const;
+  void set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_clientorderid() const;
-  void _internal_set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_client_order_id() const;
+  void _internal_set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 requestId = 3;
-  void clear_requestid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 requestid() const;
-  void set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 request_id = 3;
+  void clear_request_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 request_id() const;
+  void set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_requestid() const;
-  void _internal_set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_request_id() const;
+  void _internal_set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 transactTime = 4;
-  void clear_transacttime();
-  ::PROTOBUF_NAMESPACE_ID::uint64 transacttime() const;
-  void set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 transact_time = 4;
+  void clear_transact_time();
+  ::PROTOBUF_NAMESPACE_ID::uint64 transact_time() const;
+  void set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_transacttime() const;
-  void _internal_set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_transact_time() const;
+  void _internal_set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 newQuantity = 5;
-  void clear_newquantity();
-  ::PROTOBUF_NAMESPACE_ID::uint64 newquantity() const;
-  void set_newquantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 remaining_quantity = 5;
+  void clear_remaining_quantity();
+  ::PROTOBUF_NAMESPACE_ID::uint64 remaining_quantity() const;
+  void set_remaining_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_newquantity() const;
-  void _internal_set_newquantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_remaining_quantity() const;
+  void _internal_set_remaining_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 subaccountId = 6;
-  void clear_subaccountid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid() const;
-  void set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 subaccount_id = 6;
+  void clear_subaccount_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id() const;
+  void set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccountid() const;
-  void _internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccount_id() const;
+  void _internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 marketId = 7;
-  void clear_marketid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 marketid() const;
-  void set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 market_id = 7;
+  void clear_market_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 market_id() const;
+  void set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_marketid() const;
-  void _internal_set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_market_id() const;
+  void _internal_set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // uint64 price = 8;
@@ -2895,6 +2919,24 @@ class ModifyOrderAck PROTOBUF_FINAL :
   void _internal_set_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
+  // uint64 quantity = 9;
+  void clear_quantity();
+  ::PROTOBUF_NAMESPACE_ID::uint64 quantity() const;
+  void set_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_quantity() const;
+  void _internal_set_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint64 cumulative_quantity = 10;
+  void clear_cumulative_quantity();
+  ::PROTOBUF_NAMESPACE_ID::uint64 cumulative_quantity() const;
+  void set_cumulative_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_cumulative_quantity() const;
+  void _internal_set_cumulative_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:trade.ModifyOrderAck)
  private:
   class _Internal;
@@ -2902,14 +2944,16 @@ class ModifyOrderAck PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 msgseqnum_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 clientorderid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 requestid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 transacttime_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 newquantity_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 marketid_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 msg_seq_num_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 client_order_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 request_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 transact_time_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 remaining_quantity_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 market_id_;
   ::PROTOBUF_NAMESPACE_ID::uint64 price_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 quantity_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 cumulative_quantity_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_trade_2eproto;
 };
@@ -3067,40 +3111,40 @@ class MassCancelAck PROTOBUF_FINAL :
     kReasonFieldNumber = 6,
     kTotalAffectedOrdersFieldNumber = 7,
   };
-  // uint64 msgSeqNum = 1;
-  void clear_msgseqnum();
-  ::PROTOBUF_NAMESPACE_ID::uint64 msgseqnum() const;
-  void set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 msg_seq_num = 1;
+  void clear_msg_seq_num();
+  ::PROTOBUF_NAMESPACE_ID::uint64 msg_seq_num() const;
+  void set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_msgseqnum() const;
-  void _internal_set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_msg_seq_num() const;
+  void _internal_set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 subaccountId = 2;
-  void clear_subaccountid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid() const;
-  void set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 subaccount_id = 2;
+  void clear_subaccount_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id() const;
+  void set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccountid() const;
-  void _internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccount_id() const;
+  void _internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 requestId = 3;
-  void clear_requestid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 requestid() const;
-  void set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 request_id = 3;
+  void clear_request_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 request_id() const;
+  void set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_requestid() const;
-  void _internal_set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_request_id() const;
+  void _internal_set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 transactTime = 4;
-  void clear_transacttime();
-  ::PROTOBUF_NAMESPACE_ID::uint64 transacttime() const;
-  void set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 transact_time = 4;
+  void clear_transact_time();
+  ::PROTOBUF_NAMESPACE_ID::uint64 transact_time() const;
+  void set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_transacttime() const;
-  void _internal_set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_transact_time() const;
+  void _internal_set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // .trade.MassCancelAck.Reason reason = 6;
@@ -3116,13 +3160,13 @@ class MassCancelAck PROTOBUF_FINAL :
   void _internal_set_reason(::trade::MassCancelAck_Reason value);
   public:
 
-  // uint32 totalAffectedOrders = 7;
-  void clear_totalaffectedorders();
-  ::PROTOBUF_NAMESPACE_ID::uint32 totalaffectedorders() const;
-  void set_totalaffectedorders(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // uint32 total_affected_orders = 7;
+  void clear_total_affected_orders();
+  ::PROTOBUF_NAMESPACE_ID::uint32 total_affected_orders() const;
+  void set_total_affected_orders(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_totalaffectedorders() const;
-  void _internal_set_totalaffectedorders(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_total_affected_orders() const;
+  void _internal_set_total_affected_orders(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:trade.MassCancelAck)
@@ -3134,12 +3178,12 @@ class MassCancelAck PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 msgseqnum_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 requestid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 transacttime_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 msg_seq_num_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 request_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 transact_time_;
   int reason_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 totalaffectedorders_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 total_affected_orders_;
   friend struct ::TableStruct_trade_2eproto;
 };
 // -------------------------------------------------------------------
@@ -3330,58 +3374,58 @@ class NewOrderReject PROTOBUF_FINAL :
     kTimeInForceFieldNumber = 11,
     kOrderTypeFieldNumber = 12,
   };
-  // uint64 msgSeqNum = 1;
-  void clear_msgseqnum();
-  ::PROTOBUF_NAMESPACE_ID::uint64 msgseqnum() const;
-  void set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 msg_seq_num = 1;
+  void clear_msg_seq_num();
+  ::PROTOBUF_NAMESPACE_ID::uint64 msg_seq_num() const;
+  void set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_msgseqnum() const;
-  void _internal_set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_msg_seq_num() const;
+  void _internal_set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 clientOrderId = 2;
-  void clear_clientorderid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 clientorderid() const;
-  void set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 client_order_id = 2;
+  void clear_client_order_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 client_order_id() const;
+  void set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_clientorderid() const;
-  void _internal_set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_client_order_id() const;
+  void _internal_set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 requestId = 3;
-  void clear_requestid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 requestid() const;
-  void set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 request_id = 3;
+  void clear_request_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 request_id() const;
+  void set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_requestid() const;
-  void _internal_set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_request_id() const;
+  void _internal_set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 transactTime = 4;
-  void clear_transacttime();
-  ::PROTOBUF_NAMESPACE_ID::uint64 transacttime() const;
-  void set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 transact_time = 4;
+  void clear_transact_time();
+  ::PROTOBUF_NAMESPACE_ID::uint64 transact_time() const;
+  void set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_transacttime() const;
-  void _internal_set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_transact_time() const;
+  void _internal_set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 subaccountId = 5;
-  void clear_subaccountid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid() const;
-  void set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 subaccount_id = 5;
+  void clear_subaccount_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id() const;
+  void set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccountid() const;
-  void _internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccount_id() const;
+  void _internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 marketId = 7;
-  void clear_marketid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 marketid() const;
-  void set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 market_id = 7;
+  void clear_market_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 market_id() const;
+  void set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_marketid() const;
-  void _internal_set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_market_id() const;
+  void _internal_set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // uint64 price = 8;
@@ -3424,22 +3468,22 @@ class NewOrderReject PROTOBUF_FINAL :
   void _internal_set_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // .trade.TimeInForce timeInForce = 11;
-  void clear_timeinforce();
-  ::trade::TimeInForce timeinforce() const;
-  void set_timeinforce(::trade::TimeInForce value);
+  // .trade.TimeInForce time_in_force = 11;
+  void clear_time_in_force();
+  ::trade::TimeInForce time_in_force() const;
+  void set_time_in_force(::trade::TimeInForce value);
   private:
-  ::trade::TimeInForce _internal_timeinforce() const;
-  void _internal_set_timeinforce(::trade::TimeInForce value);
+  ::trade::TimeInForce _internal_time_in_force() const;
+  void _internal_set_time_in_force(::trade::TimeInForce value);
   public:
 
-  // .trade.OrderType orderType = 12;
-  void clear_ordertype();
-  ::trade::OrderType ordertype() const;
-  void set_ordertype(::trade::OrderType value);
+  // .trade.OrderType order_type = 12;
+  void clear_order_type();
+  ::trade::OrderType order_type() const;
+  void set_order_type(::trade::OrderType value);
   private:
-  ::trade::OrderType _internal_ordertype() const;
-  void _internal_set_ordertype(::trade::OrderType value);
+  ::trade::OrderType _internal_order_type() const;
+  void _internal_set_order_type(::trade::OrderType value);
   public:
 
   // @@protoc_insertion_point(class_scope:trade.NewOrderReject)
@@ -3451,18 +3495,18 @@ class NewOrderReject PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 msgseqnum_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 clientorderid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 requestid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 transacttime_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 marketid_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 msg_seq_num_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 client_order_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 request_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 transact_time_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 market_id_;
   ::PROTOBUF_NAMESPACE_ID::uint64 price_;
   int reason_;
   int side_;
   ::PROTOBUF_NAMESPACE_ID::uint64 quantity_;
-  int timeinforce_;
-  int ordertype_;
+  int time_in_force_;
+  int order_type_;
   friend struct ::TableStruct_trade_2eproto;
 };
 // -------------------------------------------------------------------
@@ -3620,58 +3664,58 @@ class CancelOrderReject PROTOBUF_FINAL :
     kMarketIdFieldNumber = 7,
     kReasonFieldNumber = 6,
   };
-  // uint64 msgSeqNum = 1;
-  void clear_msgseqnum();
-  ::PROTOBUF_NAMESPACE_ID::uint64 msgseqnum() const;
-  void set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 msg_seq_num = 1;
+  void clear_msg_seq_num();
+  ::PROTOBUF_NAMESPACE_ID::uint64 msg_seq_num() const;
+  void set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_msgseqnum() const;
-  void _internal_set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_msg_seq_num() const;
+  void _internal_set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 clientOrderId = 2;
-  void clear_clientorderid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 clientorderid() const;
-  void set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 client_order_id = 2;
+  void clear_client_order_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 client_order_id() const;
+  void set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_clientorderid() const;
-  void _internal_set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_client_order_id() const;
+  void _internal_set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 requestId = 3;
-  void clear_requestid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 requestid() const;
-  void set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 request_id = 3;
+  void clear_request_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 request_id() const;
+  void set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_requestid() const;
-  void _internal_set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_request_id() const;
+  void _internal_set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 transactTime = 4;
-  void clear_transacttime();
-  ::PROTOBUF_NAMESPACE_ID::uint64 transacttime() const;
-  void set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 transact_time = 4;
+  void clear_transact_time();
+  ::PROTOBUF_NAMESPACE_ID::uint64 transact_time() const;
+  void set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_transacttime() const;
-  void _internal_set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_transact_time() const;
+  void _internal_set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 subaccountId = 5;
-  void clear_subaccountid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid() const;
-  void set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 subaccount_id = 5;
+  void clear_subaccount_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id() const;
+  void set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccountid() const;
-  void _internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccount_id() const;
+  void _internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 marketId = 7;
-  void clear_marketid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 marketid() const;
-  void set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 market_id = 7;
+  void clear_market_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 market_id() const;
+  void set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_marketid() const;
-  void _internal_set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_market_id() const;
+  void _internal_set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // .trade.CancelOrderReject.Reason reason = 6;
@@ -3690,12 +3734,12 @@ class CancelOrderReject PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 msgseqnum_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 clientorderid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 requestid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 transacttime_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 marketid_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 msg_seq_num_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 client_order_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 request_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 transact_time_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 market_id_;
   int reason_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_trade_2eproto;
@@ -3869,58 +3913,58 @@ class ModifyOrderReject PROTOBUF_FINAL :
     kMarketIdFieldNumber = 7,
     kReasonFieldNumber = 6,
   };
-  // uint64 msgSeqNum = 1;
-  void clear_msgseqnum();
-  ::PROTOBUF_NAMESPACE_ID::uint64 msgseqnum() const;
-  void set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 msg_seq_num = 1;
+  void clear_msg_seq_num();
+  ::PROTOBUF_NAMESPACE_ID::uint64 msg_seq_num() const;
+  void set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_msgseqnum() const;
-  void _internal_set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_msg_seq_num() const;
+  void _internal_set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 clientOrderId = 2;
-  void clear_clientorderid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 clientorderid() const;
-  void set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 client_order_id = 2;
+  void clear_client_order_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 client_order_id() const;
+  void set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_clientorderid() const;
-  void _internal_set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_client_order_id() const;
+  void _internal_set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 requestId = 3;
-  void clear_requestid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 requestid() const;
-  void set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 request_id = 3;
+  void clear_request_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 request_id() const;
+  void set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_requestid() const;
-  void _internal_set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_request_id() const;
+  void _internal_set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 transactTime = 4;
-  void clear_transacttime();
-  ::PROTOBUF_NAMESPACE_ID::uint64 transacttime() const;
-  void set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 transact_time = 4;
+  void clear_transact_time();
+  ::PROTOBUF_NAMESPACE_ID::uint64 transact_time() const;
+  void set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_transacttime() const;
-  void _internal_set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_transact_time() const;
+  void _internal_set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 subaccountId = 5;
-  void clear_subaccountid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid() const;
-  void set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 subaccount_id = 5;
+  void clear_subaccount_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id() const;
+  void set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccountid() const;
-  void _internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccount_id() const;
+  void _internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 marketId = 7;
-  void clear_marketid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 marketid() const;
-  void set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 market_id = 7;
+  void clear_market_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 market_id() const;
+  void set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_marketid() const;
-  void _internal_set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_market_id() const;
+  void _internal_set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // .trade.ModifyOrderReject.Reason reason = 6;
@@ -3939,12 +3983,12 @@ class ModifyOrderReject PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 msgseqnum_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 clientorderid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 requestid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 transacttime_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 marketid_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 msg_seq_num_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 client_order_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 request_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 transact_time_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 market_id_;
   int reason_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_trade_2eproto;
@@ -4073,86 +4117,96 @@ class Fill PROTOBUF_FINAL :
     kLeavesQuantityFieldNumber = 7,
     kTransactTimeFieldNumber = 8,
     kSubaccountIdFieldNumber = 9,
+    kCumulativeQuantityFieldNumber = 10,
   };
-  // uint64 msgSeqNum = 1;
-  void clear_msgseqnum();
-  ::PROTOBUF_NAMESPACE_ID::uint64 msgseqnum() const;
-  void set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 msg_seq_num = 1;
+  void clear_msg_seq_num();
+  ::PROTOBUF_NAMESPACE_ID::uint64 msg_seq_num() const;
+  void set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_msgseqnum() const;
-  void _internal_set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_msg_seq_num() const;
+  void _internal_set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 marketId = 2;
-  void clear_marketid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 marketid() const;
-  void set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 market_id = 2;
+  void clear_market_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 market_id() const;
+  void set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_marketid() const;
-  void _internal_set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_market_id() const;
+  void _internal_set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 clientOrderId = 3;
-  void clear_clientorderid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 clientorderid() const;
-  void set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 client_order_id = 3;
+  void clear_client_order_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 client_order_id() const;
+  void set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_clientorderid() const;
-  void _internal_set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_client_order_id() const;
+  void _internal_set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 exchangeOrderId = 4;
-  void clear_exchangeorderid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 exchangeorderid() const;
-  void set_exchangeorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 exchange_order_id = 4;
+  void clear_exchange_order_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 exchange_order_id() const;
+  void set_exchange_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_exchangeorderid() const;
-  void _internal_set_exchangeorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_exchange_order_id() const;
+  void _internal_set_exchange_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 fillPrice = 5;
-  void clear_fillprice();
-  ::PROTOBUF_NAMESPACE_ID::uint64 fillprice() const;
-  void set_fillprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 fill_price = 5;
+  void clear_fill_price();
+  ::PROTOBUF_NAMESPACE_ID::uint64 fill_price() const;
+  void set_fill_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_fillprice() const;
-  void _internal_set_fillprice(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_fill_price() const;
+  void _internal_set_fill_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 fillQuantity = 6;
-  void clear_fillquantity();
-  ::PROTOBUF_NAMESPACE_ID::uint64 fillquantity() const;
-  void set_fillquantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 fill_quantity = 6;
+  void clear_fill_quantity();
+  ::PROTOBUF_NAMESPACE_ID::uint64 fill_quantity() const;
+  void set_fill_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_fillquantity() const;
-  void _internal_set_fillquantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_fill_quantity() const;
+  void _internal_set_fill_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 leavesQuantity = 7;
-  void clear_leavesquantity();
-  ::PROTOBUF_NAMESPACE_ID::uint64 leavesquantity() const;
-  void set_leavesquantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 leaves_quantity = 7;
+  void clear_leaves_quantity();
+  ::PROTOBUF_NAMESPACE_ID::uint64 leaves_quantity() const;
+  void set_leaves_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_leavesquantity() const;
-  void _internal_set_leavesquantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_leaves_quantity() const;
+  void _internal_set_leaves_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 transactTime = 8;
-  void clear_transacttime();
-  ::PROTOBUF_NAMESPACE_ID::uint64 transacttime() const;
-  void set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 transact_time = 8;
+  void clear_transact_time();
+  ::PROTOBUF_NAMESPACE_ID::uint64 transact_time() const;
+  void set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_transacttime() const;
-  void _internal_set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_transact_time() const;
+  void _internal_set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 subaccountId = 9;
-  void clear_subaccountid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid() const;
-  void set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 subaccount_id = 9;
+  void clear_subaccount_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id() const;
+  void set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccountid() const;
-  void _internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccount_id() const;
+  void _internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint64 cumulative_quantity = 10;
+  void clear_cumulative_quantity();
+  ::PROTOBUF_NAMESPACE_ID::uint64 cumulative_quantity() const;
+  void set_cumulative_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_cumulative_quantity() const;
+  void _internal_set_cumulative_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:trade.Fill)
@@ -4162,15 +4216,16 @@ class Fill PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 msgseqnum_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 marketid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 clientorderid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 exchangeorderid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 fillprice_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 fillquantity_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 leavesquantity_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 transacttime_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 msg_seq_num_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 market_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 client_order_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 exchange_order_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 fill_price_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 fill_quantity_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 leaves_quantity_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 transact_time_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 cumulative_quantity_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_trade_2eproto;
 };
@@ -4330,22 +4385,22 @@ class AssetPosition PROTOBUF_FINAL :
       ::trade::RawUnits* available);
   ::trade::RawUnits* unsafe_arena_release_available();
 
-  // uint64 subaccountId = 1;
-  void clear_subaccountid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid() const;
-  void set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 subaccount_id = 1;
+  void clear_subaccount_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id() const;
+  void set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccountid() const;
-  void _internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccount_id() const;
+  void _internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 assetId = 2;
-  void clear_assetid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 assetid() const;
-  void set_assetid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 asset_id = 2;
+  void clear_asset_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 asset_id() const;
+  void set_asset_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_assetid() const;
-  void _internal_set_assetid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_asset_id() const;
+  void _internal_set_asset_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:trade.AssetPosition)
@@ -4357,8 +4412,8 @@ class AssetPosition PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::trade::RawUnits* total_;
   ::trade::RawUnits* available_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 assetid_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 asset_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_trade_2eproto;
 };
@@ -5148,13 +5203,13 @@ class Done PROTOBUF_FINAL :
   enum : int {
     kLatestTransactTimeFieldNumber = 1,
   };
-  // uint64 latestTransactTime = 1;
-  void clear_latesttransacttime();
-  ::PROTOBUF_NAMESPACE_ID::uint64 latesttransacttime() const;
-  void set_latesttransacttime(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 latest_transact_time = 1;
+  void clear_latest_transact_time();
+  ::PROTOBUF_NAMESPACE_ID::uint64 latest_transact_time() const;
+  void set_latest_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_latesttransacttime() const;
-  void _internal_set_latesttransacttime(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_latest_transact_time() const;
+  void _internal_set_latest_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:trade.Done)
@@ -5164,7 +5219,7 @@ class Done PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 latesttransacttime_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 latest_transact_time_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_trade_2eproto;
 };
@@ -5287,39 +5342,40 @@ class RestingOrder PROTOBUF_FINAL :
     kExchangeOrderIdFieldNumber = 2,
     kMarketIdFieldNumber = 3,
     kPriceFieldNumber = 4,
-    kOriginalQuantityFieldNumber = 5,
+    kOrderQuantityFieldNumber = 5,
     kSideFieldNumber = 6,
     kTimeInForceFieldNumber = 7,
     kRemainingQuantityFieldNumber = 9,
     kRestTimeFieldNumber = 10,
     kSubaccountIdFieldNumber = 11,
+    kCumulativeQuantityFieldNumber = 12,
     kOrderTypeFieldNumber = 8,
   };
-  // uint64 clientOrderId = 1;
-  void clear_clientorderid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 clientorderid() const;
-  void set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 client_order_id = 1;
+  void clear_client_order_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 client_order_id() const;
+  void set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_clientorderid() const;
-  void _internal_set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_client_order_id() const;
+  void _internal_set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 exchangeOrderId = 2;
-  void clear_exchangeorderid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 exchangeorderid() const;
-  void set_exchangeorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 exchange_order_id = 2;
+  void clear_exchange_order_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 exchange_order_id() const;
+  void set_exchange_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_exchangeorderid() const;
-  void _internal_set_exchangeorderid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_exchange_order_id() const;
+  void _internal_set_exchange_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 marketId = 3;
-  void clear_marketid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 marketid() const;
-  void set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 market_id = 3;
+  void clear_market_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 market_id() const;
+  void set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_marketid() const;
-  void _internal_set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_market_id() const;
+  void _internal_set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // uint64 price = 4;
@@ -5331,13 +5387,13 @@ class RestingOrder PROTOBUF_FINAL :
   void _internal_set_price(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 originalQuantity = 5;
-  void clear_originalquantity();
-  ::PROTOBUF_NAMESPACE_ID::uint64 originalquantity() const;
-  void set_originalquantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 order_quantity = 5;
+  void clear_order_quantity();
+  ::PROTOBUF_NAMESPACE_ID::uint64 order_quantity() const;
+  void set_order_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_originalquantity() const;
-  void _internal_set_originalquantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_order_quantity() const;
+  void _internal_set_order_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // .trade.Side side = 6;
@@ -5349,49 +5405,58 @@ class RestingOrder PROTOBUF_FINAL :
   void _internal_set_side(::trade::Side value);
   public:
 
-  // .trade.TimeInForce timeInForce = 7;
-  void clear_timeinforce();
-  ::trade::TimeInForce timeinforce() const;
-  void set_timeinforce(::trade::TimeInForce value);
+  // .trade.TimeInForce time_in_force = 7;
+  void clear_time_in_force();
+  ::trade::TimeInForce time_in_force() const;
+  void set_time_in_force(::trade::TimeInForce value);
   private:
-  ::trade::TimeInForce _internal_timeinforce() const;
-  void _internal_set_timeinforce(::trade::TimeInForce value);
+  ::trade::TimeInForce _internal_time_in_force() const;
+  void _internal_set_time_in_force(::trade::TimeInForce value);
   public:
 
-  // uint64 remainingQuantity = 9;
-  void clear_remainingquantity();
-  ::PROTOBUF_NAMESPACE_ID::uint64 remainingquantity() const;
-  void set_remainingquantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 remaining_quantity = 9;
+  void clear_remaining_quantity();
+  ::PROTOBUF_NAMESPACE_ID::uint64 remaining_quantity() const;
+  void set_remaining_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_remainingquantity() const;
-  void _internal_set_remainingquantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_remaining_quantity() const;
+  void _internal_set_remaining_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 restTime = 10;
-  void clear_resttime();
-  ::PROTOBUF_NAMESPACE_ID::uint64 resttime() const;
-  void set_resttime(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 rest_time = 10;
+  void clear_rest_time();
+  ::PROTOBUF_NAMESPACE_ID::uint64 rest_time() const;
+  void set_rest_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_resttime() const;
-  void _internal_set_resttime(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_rest_time() const;
+  void _internal_set_rest_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 subaccountId = 11;
-  void clear_subaccountid();
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid() const;
-  void set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 subaccount_id = 11;
+  void clear_subaccount_id();
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id() const;
+  void set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccountid() const;
-  void _internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_subaccount_id() const;
+  void _internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // .trade.OrderType orderType = 8;
-  void clear_ordertype();
-  ::trade::OrderType ordertype() const;
-  void set_ordertype(::trade::OrderType value);
+  // uint64 cumulative_quantity = 12;
+  void clear_cumulative_quantity();
+  ::PROTOBUF_NAMESPACE_ID::uint64 cumulative_quantity() const;
+  void set_cumulative_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::trade::OrderType _internal_ordertype() const;
-  void _internal_set_ordertype(::trade::OrderType value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_cumulative_quantity() const;
+  void _internal_set_cumulative_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // .trade.OrderType order_type = 8;
+  void clear_order_type();
+  ::trade::OrderType order_type() const;
+  void set_order_type(::trade::OrderType value);
+  private:
+  ::trade::OrderType _internal_order_type() const;
+  void _internal_set_order_type(::trade::OrderType value);
   public:
 
   // @@protoc_insertion_point(class_scope:trade.RestingOrder)
@@ -5401,17 +5466,18 @@ class RestingOrder PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 clientorderid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 exchangeorderid_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 marketid_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 client_order_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 exchange_order_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 market_id_;
   ::PROTOBUF_NAMESPACE_ID::uint64 price_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 originalquantity_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 order_quantity_;
   int side_;
-  int timeinforce_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 remainingquantity_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 resttime_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 subaccountid_;
-  int ordertype_;
+  int time_in_force_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 remaining_quantity_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 rest_time_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 subaccount_id_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 cumulative_quantity_;
+  int order_type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_trade_2eproto;
 };
@@ -5426,65 +5492,65 @@ class RestingOrder PROTOBUF_FINAL :
 #endif  // __GNUC__
 // Credentials
 
-// string accessKeyId = 1;
-inline void Credentials::clear_accesskeyid() {
-  accesskeyid_.ClearToEmpty();
+// string access_key_id = 1;
+inline void Credentials::clear_access_key_id() {
+  access_key_id_.ClearToEmpty();
 }
-inline const std::string& Credentials::accesskeyid() const {
-  // @@protoc_insertion_point(field_get:trade.Credentials.accessKeyId)
-  return _internal_accesskeyid();
+inline const std::string& Credentials::access_key_id() const {
+  // @@protoc_insertion_point(field_get:trade.Credentials.access_key_id)
+  return _internal_access_key_id();
 }
-inline void Credentials::set_accesskeyid(const std::string& value) {
-  _internal_set_accesskeyid(value);
-  // @@protoc_insertion_point(field_set:trade.Credentials.accessKeyId)
+inline void Credentials::set_access_key_id(const std::string& value) {
+  _internal_set_access_key_id(value);
+  // @@protoc_insertion_point(field_set:trade.Credentials.access_key_id)
 }
-inline std::string* Credentials::mutable_accesskeyid() {
-  // @@protoc_insertion_point(field_mutable:trade.Credentials.accessKeyId)
-  return _internal_mutable_accesskeyid();
+inline std::string* Credentials::mutable_access_key_id() {
+  // @@protoc_insertion_point(field_mutable:trade.Credentials.access_key_id)
+  return _internal_mutable_access_key_id();
 }
-inline const std::string& Credentials::_internal_accesskeyid() const {
-  return accesskeyid_.Get();
+inline const std::string& Credentials::_internal_access_key_id() const {
+  return access_key_id_.Get();
 }
-inline void Credentials::_internal_set_accesskeyid(const std::string& value) {
+inline void Credentials::_internal_set_access_key_id(const std::string& value) {
   
-  accesskeyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  access_key_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void Credentials::set_accesskeyid(std::string&& value) {
+inline void Credentials::set_access_key_id(std::string&& value) {
   
-  accesskeyid_.Set(
+  access_key_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:trade.Credentials.accessKeyId)
+  // @@protoc_insertion_point(field_set_rvalue:trade.Credentials.access_key_id)
 }
-inline void Credentials::set_accesskeyid(const char* value) {
+inline void Credentials::set_access_key_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  accesskeyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:trade.Credentials.accessKeyId)
+  access_key_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:trade.Credentials.access_key_id)
 }
-inline void Credentials::set_accesskeyid(const char* value,
+inline void Credentials::set_access_key_id(const char* value,
     size_t size) {
   
-  accesskeyid_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  access_key_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:trade.Credentials.accessKeyId)
+  // @@protoc_insertion_point(field_set_pointer:trade.Credentials.access_key_id)
 }
-inline std::string* Credentials::_internal_mutable_accesskeyid() {
+inline std::string* Credentials::_internal_mutable_access_key_id() {
   
-  return accesskeyid_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return access_key_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* Credentials::release_accesskeyid() {
-  // @@protoc_insertion_point(field_release:trade.Credentials.accessKeyId)
-  return accesskeyid_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* Credentials::release_access_key_id() {
+  // @@protoc_insertion_point(field_release:trade.Credentials.access_key_id)
+  return access_key_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void Credentials::set_allocated_accesskeyid(std::string* accesskeyid) {
-  if (accesskeyid != nullptr) {
+inline void Credentials::set_allocated_access_key_id(std::string* access_key_id) {
+  if (access_key_id != nullptr) {
     
   } else {
     
   }
-  accesskeyid_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), accesskeyid,
+  access_key_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), access_key_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:trade.Credentials.accessKeyId)
+  // @@protoc_insertion_point(field_set_allocated:trade.Credentials.access_key_id)
 }
 
 // string signature = 2;
@@ -5950,64 +6016,64 @@ inline OrderRequest::InnerCase OrderRequest::inner_case() const {
 
 // NewOrder
 
-// uint64 clientOrderId = 1;
-inline void NewOrder::clear_clientorderid() {
-  clientorderid_ = PROTOBUF_ULONGLONG(0);
+// uint64 client_order_id = 1;
+inline void NewOrder::clear_client_order_id() {
+  client_order_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrder::_internal_clientorderid() const {
-  return clientorderid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrder::_internal_client_order_id() const {
+  return client_order_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrder::clientorderid() const {
-  // @@protoc_insertion_point(field_get:trade.NewOrder.clientOrderId)
-  return _internal_clientorderid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrder::client_order_id() const {
+  // @@protoc_insertion_point(field_get:trade.NewOrder.client_order_id)
+  return _internal_client_order_id();
 }
-inline void NewOrder::_internal_set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void NewOrder::_internal_set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  clientorderid_ = value;
+  client_order_id_ = value;
 }
-inline void NewOrder::set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_clientorderid(value);
-  // @@protoc_insertion_point(field_set:trade.NewOrder.clientOrderId)
+inline void NewOrder::set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_client_order_id(value);
+  // @@protoc_insertion_point(field_set:trade.NewOrder.client_order_id)
 }
 
-// uint64 requestId = 2;
-inline void NewOrder::clear_requestid() {
-  requestid_ = PROTOBUF_ULONGLONG(0);
+// uint64 request_id = 2;
+inline void NewOrder::clear_request_id() {
+  request_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrder::_internal_requestid() const {
-  return requestid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrder::_internal_request_id() const {
+  return request_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrder::requestid() const {
-  // @@protoc_insertion_point(field_get:trade.NewOrder.requestId)
-  return _internal_requestid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrder::request_id() const {
+  // @@protoc_insertion_point(field_get:trade.NewOrder.request_id)
+  return _internal_request_id();
 }
-inline void NewOrder::_internal_set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void NewOrder::_internal_set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  requestid_ = value;
+  request_id_ = value;
 }
-inline void NewOrder::set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_requestid(value);
-  // @@protoc_insertion_point(field_set:trade.NewOrder.requestId)
+inline void NewOrder::set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_request_id(value);
+  // @@protoc_insertion_point(field_set:trade.NewOrder.request_id)
 }
 
-// uint64 marketId = 3;
-inline void NewOrder::clear_marketid() {
-  marketid_ = PROTOBUF_ULONGLONG(0);
+// uint64 market_id = 3;
+inline void NewOrder::clear_market_id() {
+  market_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrder::_internal_marketid() const {
-  return marketid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrder::_internal_market_id() const {
+  return market_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrder::marketid() const {
-  // @@protoc_insertion_point(field_get:trade.NewOrder.marketId)
-  return _internal_marketid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrder::market_id() const {
+  // @@protoc_insertion_point(field_get:trade.NewOrder.market_id)
+  return _internal_market_id();
 }
-inline void NewOrder::_internal_set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void NewOrder::_internal_set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  marketid_ = value;
+  market_id_ = value;
 }
-inline void NewOrder::set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_marketid(value);
-  // @@protoc_insertion_point(field_set:trade.NewOrder.marketId)
+inline void NewOrder::set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_market_id(value);
+  // @@protoc_insertion_point(field_set:trade.NewOrder.market_id)
 }
 
 // uint64 price = 4;
@@ -6078,440 +6144,460 @@ inline void NewOrder::set_side(::trade::Side value) {
   // @@protoc_insertion_point(field_set:trade.NewOrder.side)
 }
 
-// .trade.TimeInForce timeInForce = 7;
-inline void NewOrder::clear_timeinforce() {
-  timeinforce_ = 0;
+// .trade.TimeInForce time_in_force = 7;
+inline void NewOrder::clear_time_in_force() {
+  time_in_force_ = 0;
 }
-inline ::trade::TimeInForce NewOrder::_internal_timeinforce() const {
-  return static_cast< ::trade::TimeInForce >(timeinforce_);
+inline ::trade::TimeInForce NewOrder::_internal_time_in_force() const {
+  return static_cast< ::trade::TimeInForce >(time_in_force_);
 }
-inline ::trade::TimeInForce NewOrder::timeinforce() const {
-  // @@protoc_insertion_point(field_get:trade.NewOrder.timeInForce)
-  return _internal_timeinforce();
+inline ::trade::TimeInForce NewOrder::time_in_force() const {
+  // @@protoc_insertion_point(field_get:trade.NewOrder.time_in_force)
+  return _internal_time_in_force();
 }
-inline void NewOrder::_internal_set_timeinforce(::trade::TimeInForce value) {
+inline void NewOrder::_internal_set_time_in_force(::trade::TimeInForce value) {
   
-  timeinforce_ = value;
+  time_in_force_ = value;
 }
-inline void NewOrder::set_timeinforce(::trade::TimeInForce value) {
-  _internal_set_timeinforce(value);
-  // @@protoc_insertion_point(field_set:trade.NewOrder.timeInForce)
+inline void NewOrder::set_time_in_force(::trade::TimeInForce value) {
+  _internal_set_time_in_force(value);
+  // @@protoc_insertion_point(field_set:trade.NewOrder.time_in_force)
 }
 
-// .trade.OrderType orderType = 8;
-inline void NewOrder::clear_ordertype() {
-  ordertype_ = 0;
+// .trade.OrderType order_type = 8;
+inline void NewOrder::clear_order_type() {
+  order_type_ = 0;
 }
-inline ::trade::OrderType NewOrder::_internal_ordertype() const {
-  return static_cast< ::trade::OrderType >(ordertype_);
+inline ::trade::OrderType NewOrder::_internal_order_type() const {
+  return static_cast< ::trade::OrderType >(order_type_);
 }
-inline ::trade::OrderType NewOrder::ordertype() const {
-  // @@protoc_insertion_point(field_get:trade.NewOrder.orderType)
-  return _internal_ordertype();
+inline ::trade::OrderType NewOrder::order_type() const {
+  // @@protoc_insertion_point(field_get:trade.NewOrder.order_type)
+  return _internal_order_type();
 }
-inline void NewOrder::_internal_set_ordertype(::trade::OrderType value) {
+inline void NewOrder::_internal_set_order_type(::trade::OrderType value) {
   
-  ordertype_ = value;
+  order_type_ = value;
 }
-inline void NewOrder::set_ordertype(::trade::OrderType value) {
-  _internal_set_ordertype(value);
-  // @@protoc_insertion_point(field_set:trade.NewOrder.orderType)
+inline void NewOrder::set_order_type(::trade::OrderType value) {
+  _internal_set_order_type(value);
+  // @@protoc_insertion_point(field_set:trade.NewOrder.order_type)
 }
 
-// uint64 subaccountId = 9;
-inline void NewOrder::clear_subaccountid() {
-  subaccountid_ = PROTOBUF_ULONGLONG(0);
+// uint64 subaccount_id = 9;
+inline void NewOrder::clear_subaccount_id() {
+  subaccount_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrder::_internal_subaccountid() const {
-  return subaccountid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrder::_internal_subaccount_id() const {
+  return subaccount_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrder::subaccountid() const {
-  // @@protoc_insertion_point(field_get:trade.NewOrder.subaccountId)
-  return _internal_subaccountid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrder::subaccount_id() const {
+  // @@protoc_insertion_point(field_get:trade.NewOrder.subaccount_id)
+  return _internal_subaccount_id();
 }
-inline void NewOrder::_internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void NewOrder::_internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  subaccountid_ = value;
+  subaccount_id_ = value;
 }
-inline void NewOrder::set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_subaccountid(value);
-  // @@protoc_insertion_point(field_set:trade.NewOrder.subaccountId)
+inline void NewOrder::set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_subaccount_id(value);
+  // @@protoc_insertion_point(field_set:trade.NewOrder.subaccount_id)
 }
 
-// .trade.SelfTradePrevention selfTradePrevention = 10;
-inline bool NewOrder::_internal_has_selftradeprevention() const {
+// .trade.SelfTradePrevention self_trade_prevention = 10;
+inline bool NewOrder::_internal_has_self_trade_prevention() const {
   bool value = (_has_bits_[0] & 0x00000002u) != 0;
   return value;
 }
-inline bool NewOrder::has_selftradeprevention() const {
-  return _internal_has_selftradeprevention();
+inline bool NewOrder::has_self_trade_prevention() const {
+  return _internal_has_self_trade_prevention();
 }
-inline void NewOrder::clear_selftradeprevention() {
-  selftradeprevention_ = 0;
+inline void NewOrder::clear_self_trade_prevention() {
+  self_trade_prevention_ = 0;
   _has_bits_[0] &= ~0x00000002u;
 }
-inline ::trade::SelfTradePrevention NewOrder::_internal_selftradeprevention() const {
-  return static_cast< ::trade::SelfTradePrevention >(selftradeprevention_);
+inline ::trade::SelfTradePrevention NewOrder::_internal_self_trade_prevention() const {
+  return static_cast< ::trade::SelfTradePrevention >(self_trade_prevention_);
 }
-inline ::trade::SelfTradePrevention NewOrder::selftradeprevention() const {
-  // @@protoc_insertion_point(field_get:trade.NewOrder.selfTradePrevention)
-  return _internal_selftradeprevention();
+inline ::trade::SelfTradePrevention NewOrder::self_trade_prevention() const {
+  // @@protoc_insertion_point(field_get:trade.NewOrder.self_trade_prevention)
+  return _internal_self_trade_prevention();
 }
-inline void NewOrder::_internal_set_selftradeprevention(::trade::SelfTradePrevention value) {
+inline void NewOrder::_internal_set_self_trade_prevention(::trade::SelfTradePrevention value) {
   _has_bits_[0] |= 0x00000002u;
-  selftradeprevention_ = value;
+  self_trade_prevention_ = value;
 }
-inline void NewOrder::set_selftradeprevention(::trade::SelfTradePrevention value) {
-  _internal_set_selftradeprevention(value);
-  // @@protoc_insertion_point(field_set:trade.NewOrder.selfTradePrevention)
+inline void NewOrder::set_self_trade_prevention(::trade::SelfTradePrevention value) {
+  _internal_set_self_trade_prevention(value);
+  // @@protoc_insertion_point(field_set:trade.NewOrder.self_trade_prevention)
 }
 
-// .trade.PostOnly postOnly = 11;
-inline void NewOrder::clear_postonly() {
-  postonly_ = 0;
+// .trade.PostOnly post_only = 11;
+inline void NewOrder::clear_post_only() {
+  post_only_ = 0;
 }
-inline ::trade::PostOnly NewOrder::_internal_postonly() const {
-  return static_cast< ::trade::PostOnly >(postonly_);
+inline ::trade::PostOnly NewOrder::_internal_post_only() const {
+  return static_cast< ::trade::PostOnly >(post_only_);
 }
-inline ::trade::PostOnly NewOrder::postonly() const {
-  // @@protoc_insertion_point(field_get:trade.NewOrder.postOnly)
-  return _internal_postonly();
+inline ::trade::PostOnly NewOrder::post_only() const {
+  // @@protoc_insertion_point(field_get:trade.NewOrder.post_only)
+  return _internal_post_only();
 }
-inline void NewOrder::_internal_set_postonly(::trade::PostOnly value) {
+inline void NewOrder::_internal_set_post_only(::trade::PostOnly value) {
   
-  postonly_ = value;
+  post_only_ = value;
 }
-inline void NewOrder::set_postonly(::trade::PostOnly value) {
-  _internal_set_postonly(value);
-  // @@protoc_insertion_point(field_set:trade.NewOrder.postOnly)
+inline void NewOrder::set_post_only(::trade::PostOnly value) {
+  _internal_set_post_only(value);
+  // @@protoc_insertion_point(field_set:trade.NewOrder.post_only)
+}
+
+// bool cancel_on_disconnect = 12;
+inline void NewOrder::clear_cancel_on_disconnect() {
+  cancel_on_disconnect_ = false;
+}
+inline bool NewOrder::_internal_cancel_on_disconnect() const {
+  return cancel_on_disconnect_;
+}
+inline bool NewOrder::cancel_on_disconnect() const {
+  // @@protoc_insertion_point(field_get:trade.NewOrder.cancel_on_disconnect)
+  return _internal_cancel_on_disconnect();
+}
+inline void NewOrder::_internal_set_cancel_on_disconnect(bool value) {
+  
+  cancel_on_disconnect_ = value;
+}
+inline void NewOrder::set_cancel_on_disconnect(bool value) {
+  _internal_set_cancel_on_disconnect(value);
+  // @@protoc_insertion_point(field_set:trade.NewOrder.cancel_on_disconnect)
 }
 
 // -------------------------------------------------------------------
 
 // CancelOrder
 
-// uint64 marketId = 1;
-inline void CancelOrder::clear_marketid() {
-  marketid_ = PROTOBUF_ULONGLONG(0);
+// uint64 market_id = 1;
+inline void CancelOrder::clear_market_id() {
+  market_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrder::_internal_marketid() const {
-  return marketid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrder::_internal_market_id() const {
+  return market_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrder::marketid() const {
-  // @@protoc_insertion_point(field_get:trade.CancelOrder.marketId)
-  return _internal_marketid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrder::market_id() const {
+  // @@protoc_insertion_point(field_get:trade.CancelOrder.market_id)
+  return _internal_market_id();
 }
-inline void CancelOrder::_internal_set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void CancelOrder::_internal_set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  marketid_ = value;
+  market_id_ = value;
 }
-inline void CancelOrder::set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_marketid(value);
-  // @@protoc_insertion_point(field_set:trade.CancelOrder.marketId)
+inline void CancelOrder::set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_market_id(value);
+  // @@protoc_insertion_point(field_set:trade.CancelOrder.market_id)
 }
 
-// uint64 clientOrderId = 2;
-inline void CancelOrder::clear_clientorderid() {
-  clientorderid_ = PROTOBUF_ULONGLONG(0);
+// uint64 client_order_id = 2;
+inline void CancelOrder::clear_client_order_id() {
+  client_order_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrder::_internal_clientorderid() const {
-  return clientorderid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrder::_internal_client_order_id() const {
+  return client_order_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrder::clientorderid() const {
-  // @@protoc_insertion_point(field_get:trade.CancelOrder.clientOrderId)
-  return _internal_clientorderid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrder::client_order_id() const {
+  // @@protoc_insertion_point(field_get:trade.CancelOrder.client_order_id)
+  return _internal_client_order_id();
 }
-inline void CancelOrder::_internal_set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void CancelOrder::_internal_set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  clientorderid_ = value;
+  client_order_id_ = value;
 }
-inline void CancelOrder::set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_clientorderid(value);
-  // @@protoc_insertion_point(field_set:trade.CancelOrder.clientOrderId)
+inline void CancelOrder::set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_client_order_id(value);
+  // @@protoc_insertion_point(field_set:trade.CancelOrder.client_order_id)
 }
 
-// uint64 requestId = 3;
-inline void CancelOrder::clear_requestid() {
-  requestid_ = PROTOBUF_ULONGLONG(0);
+// uint64 request_id = 3;
+inline void CancelOrder::clear_request_id() {
+  request_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrder::_internal_requestid() const {
-  return requestid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrder::_internal_request_id() const {
+  return request_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrder::requestid() const {
-  // @@protoc_insertion_point(field_get:trade.CancelOrder.requestId)
-  return _internal_requestid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrder::request_id() const {
+  // @@protoc_insertion_point(field_get:trade.CancelOrder.request_id)
+  return _internal_request_id();
 }
-inline void CancelOrder::_internal_set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void CancelOrder::_internal_set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  requestid_ = value;
+  request_id_ = value;
 }
-inline void CancelOrder::set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_requestid(value);
-  // @@protoc_insertion_point(field_set:trade.CancelOrder.requestId)
+inline void CancelOrder::set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_request_id(value);
+  // @@protoc_insertion_point(field_set:trade.CancelOrder.request_id)
 }
 
-// uint64 subaccountId = 4;
-inline void CancelOrder::clear_subaccountid() {
-  subaccountid_ = PROTOBUF_ULONGLONG(0);
+// uint64 subaccount_id = 4;
+inline void CancelOrder::clear_subaccount_id() {
+  subaccount_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrder::_internal_subaccountid() const {
-  return subaccountid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrder::_internal_subaccount_id() const {
+  return subaccount_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrder::subaccountid() const {
-  // @@protoc_insertion_point(field_get:trade.CancelOrder.subaccountId)
-  return _internal_subaccountid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrder::subaccount_id() const {
+  // @@protoc_insertion_point(field_get:trade.CancelOrder.subaccount_id)
+  return _internal_subaccount_id();
 }
-inline void CancelOrder::_internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void CancelOrder::_internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  subaccountid_ = value;
+  subaccount_id_ = value;
 }
-inline void CancelOrder::set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_subaccountid(value);
-  // @@protoc_insertion_point(field_set:trade.CancelOrder.subaccountId)
+inline void CancelOrder::set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_subaccount_id(value);
+  // @@protoc_insertion_point(field_set:trade.CancelOrder.subaccount_id)
 }
 
 // -------------------------------------------------------------------
 
 // ModifyOrder
 
-// uint64 marketId = 1;
-inline void ModifyOrder::clear_marketid() {
-  marketid_ = PROTOBUF_ULONGLONG(0);
+// uint64 market_id = 1;
+inline void ModifyOrder::clear_market_id() {
+  market_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrder::_internal_marketid() const {
-  return marketid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrder::_internal_market_id() const {
+  return market_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrder::marketid() const {
-  // @@protoc_insertion_point(field_get:trade.ModifyOrder.marketId)
-  return _internal_marketid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrder::market_id() const {
+  // @@protoc_insertion_point(field_get:trade.ModifyOrder.market_id)
+  return _internal_market_id();
 }
-inline void ModifyOrder::_internal_set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void ModifyOrder::_internal_set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  marketid_ = value;
+  market_id_ = value;
 }
-inline void ModifyOrder::set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_marketid(value);
-  // @@protoc_insertion_point(field_set:trade.ModifyOrder.marketId)
+inline void ModifyOrder::set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_market_id(value);
+  // @@protoc_insertion_point(field_set:trade.ModifyOrder.market_id)
 }
 
-// uint64 clientOrderId = 2;
-inline void ModifyOrder::clear_clientorderid() {
-  clientorderid_ = PROTOBUF_ULONGLONG(0);
+// uint64 client_order_id = 2;
+inline void ModifyOrder::clear_client_order_id() {
+  client_order_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrder::_internal_clientorderid() const {
-  return clientorderid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrder::_internal_client_order_id() const {
+  return client_order_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrder::clientorderid() const {
-  // @@protoc_insertion_point(field_get:trade.ModifyOrder.clientOrderId)
-  return _internal_clientorderid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrder::client_order_id() const {
+  // @@protoc_insertion_point(field_get:trade.ModifyOrder.client_order_id)
+  return _internal_client_order_id();
 }
-inline void ModifyOrder::_internal_set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void ModifyOrder::_internal_set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  clientorderid_ = value;
+  client_order_id_ = value;
 }
-inline void ModifyOrder::set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_clientorderid(value);
-  // @@protoc_insertion_point(field_set:trade.ModifyOrder.clientOrderId)
+inline void ModifyOrder::set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_client_order_id(value);
+  // @@protoc_insertion_point(field_set:trade.ModifyOrder.client_order_id)
 }
 
-// uint64 requestId = 3;
-inline void ModifyOrder::clear_requestid() {
-  requestid_ = PROTOBUF_ULONGLONG(0);
+// uint64 request_id = 3;
+inline void ModifyOrder::clear_request_id() {
+  request_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrder::_internal_requestid() const {
-  return requestid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrder::_internal_request_id() const {
+  return request_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrder::requestid() const {
-  // @@protoc_insertion_point(field_get:trade.ModifyOrder.requestId)
-  return _internal_requestid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrder::request_id() const {
+  // @@protoc_insertion_point(field_get:trade.ModifyOrder.request_id)
+  return _internal_request_id();
 }
-inline void ModifyOrder::_internal_set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void ModifyOrder::_internal_set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  requestid_ = value;
+  request_id_ = value;
 }
-inline void ModifyOrder::set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_requestid(value);
-  // @@protoc_insertion_point(field_set:trade.ModifyOrder.requestId)
+inline void ModifyOrder::set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_request_id(value);
+  // @@protoc_insertion_point(field_set:trade.ModifyOrder.request_id)
 }
 
-// uint64 newPrice = 4;
-inline void ModifyOrder::clear_newprice() {
-  newprice_ = PROTOBUF_ULONGLONG(0);
+// uint64 new_price = 4;
+inline void ModifyOrder::clear_new_price() {
+  new_price_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrder::_internal_newprice() const {
-  return newprice_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrder::_internal_new_price() const {
+  return new_price_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrder::newprice() const {
-  // @@protoc_insertion_point(field_get:trade.ModifyOrder.newPrice)
-  return _internal_newprice();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrder::new_price() const {
+  // @@protoc_insertion_point(field_get:trade.ModifyOrder.new_price)
+  return _internal_new_price();
 }
-inline void ModifyOrder::_internal_set_newprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void ModifyOrder::_internal_set_new_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  newprice_ = value;
+  new_price_ = value;
 }
-inline void ModifyOrder::set_newprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_newprice(value);
-  // @@protoc_insertion_point(field_set:trade.ModifyOrder.newPrice)
+inline void ModifyOrder::set_new_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_new_price(value);
+  // @@protoc_insertion_point(field_set:trade.ModifyOrder.new_price)
 }
 
-// uint64 newQuantity = 5;
-inline void ModifyOrder::clear_newquantity() {
-  newquantity_ = PROTOBUF_ULONGLONG(0);
+// uint64 new_quantity = 5;
+inline void ModifyOrder::clear_new_quantity() {
+  new_quantity_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrder::_internal_newquantity() const {
-  return newquantity_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrder::_internal_new_quantity() const {
+  return new_quantity_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrder::newquantity() const {
-  // @@protoc_insertion_point(field_get:trade.ModifyOrder.newQuantity)
-  return _internal_newquantity();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrder::new_quantity() const {
+  // @@protoc_insertion_point(field_get:trade.ModifyOrder.new_quantity)
+  return _internal_new_quantity();
 }
-inline void ModifyOrder::_internal_set_newquantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void ModifyOrder::_internal_set_new_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  newquantity_ = value;
+  new_quantity_ = value;
 }
-inline void ModifyOrder::set_newquantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_newquantity(value);
-  // @@protoc_insertion_point(field_set:trade.ModifyOrder.newQuantity)
+inline void ModifyOrder::set_new_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_new_quantity(value);
+  // @@protoc_insertion_point(field_set:trade.ModifyOrder.new_quantity)
 }
 
-// uint64 subaccountId = 6;
-inline void ModifyOrder::clear_subaccountid() {
-  subaccountid_ = PROTOBUF_ULONGLONG(0);
+// uint64 subaccount_id = 6;
+inline void ModifyOrder::clear_subaccount_id() {
+  subaccount_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrder::_internal_subaccountid() const {
-  return subaccountid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrder::_internal_subaccount_id() const {
+  return subaccount_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrder::subaccountid() const {
-  // @@protoc_insertion_point(field_get:trade.ModifyOrder.subaccountId)
-  return _internal_subaccountid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrder::subaccount_id() const {
+  // @@protoc_insertion_point(field_get:trade.ModifyOrder.subaccount_id)
+  return _internal_subaccount_id();
 }
-inline void ModifyOrder::_internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void ModifyOrder::_internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  subaccountid_ = value;
+  subaccount_id_ = value;
 }
-inline void ModifyOrder::set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_subaccountid(value);
-  // @@protoc_insertion_point(field_set:trade.ModifyOrder.subaccountId)
+inline void ModifyOrder::set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_subaccount_id(value);
+  // @@protoc_insertion_point(field_set:trade.ModifyOrder.subaccount_id)
 }
 
-// .trade.SelfTradePrevention selfTradePrevention = 7;
-inline bool ModifyOrder::_internal_has_selftradeprevention() const {
+// .trade.SelfTradePrevention self_trade_prevention = 7;
+inline bool ModifyOrder::_internal_has_self_trade_prevention() const {
   bool value = (_has_bits_[0] & 0x00000001u) != 0;
   return value;
 }
-inline bool ModifyOrder::has_selftradeprevention() const {
-  return _internal_has_selftradeprevention();
+inline bool ModifyOrder::has_self_trade_prevention() const {
+  return _internal_has_self_trade_prevention();
 }
-inline void ModifyOrder::clear_selftradeprevention() {
-  selftradeprevention_ = 0;
+inline void ModifyOrder::clear_self_trade_prevention() {
+  self_trade_prevention_ = 0;
   _has_bits_[0] &= ~0x00000001u;
 }
-inline ::trade::SelfTradePrevention ModifyOrder::_internal_selftradeprevention() const {
-  return static_cast< ::trade::SelfTradePrevention >(selftradeprevention_);
+inline ::trade::SelfTradePrevention ModifyOrder::_internal_self_trade_prevention() const {
+  return static_cast< ::trade::SelfTradePrevention >(self_trade_prevention_);
 }
-inline ::trade::SelfTradePrevention ModifyOrder::selftradeprevention() const {
-  // @@protoc_insertion_point(field_get:trade.ModifyOrder.selfTradePrevention)
-  return _internal_selftradeprevention();
+inline ::trade::SelfTradePrevention ModifyOrder::self_trade_prevention() const {
+  // @@protoc_insertion_point(field_get:trade.ModifyOrder.self_trade_prevention)
+  return _internal_self_trade_prevention();
 }
-inline void ModifyOrder::_internal_set_selftradeprevention(::trade::SelfTradePrevention value) {
+inline void ModifyOrder::_internal_set_self_trade_prevention(::trade::SelfTradePrevention value) {
   _has_bits_[0] |= 0x00000001u;
-  selftradeprevention_ = value;
+  self_trade_prevention_ = value;
 }
-inline void ModifyOrder::set_selftradeprevention(::trade::SelfTradePrevention value) {
-  _internal_set_selftradeprevention(value);
-  // @@protoc_insertion_point(field_set:trade.ModifyOrder.selfTradePrevention)
+inline void ModifyOrder::set_self_trade_prevention(::trade::SelfTradePrevention value) {
+  _internal_set_self_trade_prevention(value);
+  // @@protoc_insertion_point(field_set:trade.ModifyOrder.self_trade_prevention)
 }
 
-// .trade.PostOnly postOnly = 8;
-inline void ModifyOrder::clear_postonly() {
-  postonly_ = 0;
+// .trade.PostOnly post_only = 8;
+inline void ModifyOrder::clear_post_only() {
+  post_only_ = 0;
 }
-inline ::trade::PostOnly ModifyOrder::_internal_postonly() const {
-  return static_cast< ::trade::PostOnly >(postonly_);
+inline ::trade::PostOnly ModifyOrder::_internal_post_only() const {
+  return static_cast< ::trade::PostOnly >(post_only_);
 }
-inline ::trade::PostOnly ModifyOrder::postonly() const {
-  // @@protoc_insertion_point(field_get:trade.ModifyOrder.postOnly)
-  return _internal_postonly();
+inline ::trade::PostOnly ModifyOrder::post_only() const {
+  // @@protoc_insertion_point(field_get:trade.ModifyOrder.post_only)
+  return _internal_post_only();
 }
-inline void ModifyOrder::_internal_set_postonly(::trade::PostOnly value) {
+inline void ModifyOrder::_internal_set_post_only(::trade::PostOnly value) {
   
-  postonly_ = value;
+  post_only_ = value;
 }
-inline void ModifyOrder::set_postonly(::trade::PostOnly value) {
-  _internal_set_postonly(value);
-  // @@protoc_insertion_point(field_set:trade.ModifyOrder.postOnly)
+inline void ModifyOrder::set_post_only(::trade::PostOnly value) {
+  _internal_set_post_only(value);
+  // @@protoc_insertion_point(field_set:trade.ModifyOrder.post_only)
 }
 
 // -------------------------------------------------------------------
 
 // MassCancel
 
-// uint64 subaccountId = 1;
-inline void MassCancel::clear_subaccountid() {
-  subaccountid_ = PROTOBUF_ULONGLONG(0);
+// uint64 subaccount_id = 1;
+inline void MassCancel::clear_subaccount_id() {
+  subaccount_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancel::_internal_subaccountid() const {
-  return subaccountid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancel::_internal_subaccount_id() const {
+  return subaccount_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancel::subaccountid() const {
-  // @@protoc_insertion_point(field_get:trade.MassCancel.subaccountId)
-  return _internal_subaccountid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancel::subaccount_id() const {
+  // @@protoc_insertion_point(field_get:trade.MassCancel.subaccount_id)
+  return _internal_subaccount_id();
 }
-inline void MassCancel::_internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void MassCancel::_internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  subaccountid_ = value;
+  subaccount_id_ = value;
 }
-inline void MassCancel::set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_subaccountid(value);
-  // @@protoc_insertion_point(field_set:trade.MassCancel.subaccountId)
+inline void MassCancel::set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_subaccount_id(value);
+  // @@protoc_insertion_point(field_set:trade.MassCancel.subaccount_id)
 }
 
-// uint64 requestId = 2;
-inline void MassCancel::clear_requestid() {
-  requestid_ = PROTOBUF_ULONGLONG(0);
+// uint64 request_id = 2;
+inline void MassCancel::clear_request_id() {
+  request_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancel::_internal_requestid() const {
-  return requestid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancel::_internal_request_id() const {
+  return request_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancel::requestid() const {
-  // @@protoc_insertion_point(field_get:trade.MassCancel.requestId)
-  return _internal_requestid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancel::request_id() const {
+  // @@protoc_insertion_point(field_get:trade.MassCancel.request_id)
+  return _internal_request_id();
 }
-inline void MassCancel::_internal_set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void MassCancel::_internal_set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  requestid_ = value;
+  request_id_ = value;
 }
-inline void MassCancel::set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_requestid(value);
-  // @@protoc_insertion_point(field_set:trade.MassCancel.requestId)
+inline void MassCancel::set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_request_id(value);
+  // @@protoc_insertion_point(field_set:trade.MassCancel.request_id)
 }
 
-// uint64 marketId = 3;
-inline bool MassCancel::_internal_has_marketid() const {
+// uint64 market_id = 3;
+inline bool MassCancel::_internal_has_market_id() const {
   bool value = (_has_bits_[0] & 0x00000001u) != 0;
   return value;
 }
-inline bool MassCancel::has_marketid() const {
-  return _internal_has_marketid();
+inline bool MassCancel::has_market_id() const {
+  return _internal_has_market_id();
 }
-inline void MassCancel::clear_marketid() {
-  marketid_ = PROTOBUF_ULONGLONG(0);
+inline void MassCancel::clear_market_id() {
+  market_id_ = PROTOBUF_ULONGLONG(0);
   _has_bits_[0] &= ~0x00000001u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancel::_internal_marketid() const {
-  return marketid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancel::_internal_market_id() const {
+  return market_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancel::marketid() const {
-  // @@protoc_insertion_point(field_get:trade.MassCancel.marketId)
-  return _internal_marketid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancel::market_id() const {
+  // @@protoc_insertion_point(field_get:trade.MassCancel.market_id)
+  return _internal_market_id();
 }
-inline void MassCancel::_internal_set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void MassCancel::_internal_set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _has_bits_[0] |= 0x00000001u;
-  marketid_ = value;
+  market_id_ = value;
 }
-inline void MassCancel::set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_marketid(value);
-  // @@protoc_insertion_point(field_set:trade.MassCancel.marketId)
+inline void MassCancel::set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_market_id(value);
+  // @@protoc_insertion_point(field_set:trade.MassCancel.market_id)
 }
 
 // .trade.Side side = 4;
@@ -6546,24 +6632,24 @@ inline void MassCancel::set_side(::trade::Side value) {
 
 // Heartbeat
 
-// uint64 requestId = 1;
-inline void Heartbeat::clear_requestid() {
-  requestid_ = PROTOBUF_ULONGLONG(0);
+// uint64 request_id = 1;
+inline void Heartbeat::clear_request_id() {
+  request_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Heartbeat::_internal_requestid() const {
-  return requestid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Heartbeat::_internal_request_id() const {
+  return request_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Heartbeat::requestid() const {
-  // @@protoc_insertion_point(field_get:trade.Heartbeat.requestId)
-  return _internal_requestid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Heartbeat::request_id() const {
+  // @@protoc_insertion_point(field_get:trade.Heartbeat.request_id)
+  return _internal_request_id();
 }
-inline void Heartbeat::_internal_set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Heartbeat::_internal_set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  requestid_ = value;
+  request_id_ = value;
 }
-inline void Heartbeat::set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_requestid(value);
-  // @@protoc_insertion_point(field_set:trade.Heartbeat.requestId)
+inline void Heartbeat::set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_request_id(value);
+  // @@protoc_insertion_point(field_set:trade.Heartbeat.request_id)
 }
 
 // uint64 timestamp = 2;
@@ -6590,442 +6676,442 @@ inline void Heartbeat::set_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
 // OrderResponse
 
-// .trade.NewOrderAck newAck = 1;
-inline bool OrderResponse::_internal_has_newack() const {
+// .trade.NewOrderAck new_ack = 1;
+inline bool OrderResponse::_internal_has_new_ack() const {
   return inner_case() == kNewAck;
 }
-inline bool OrderResponse::has_newack() const {
-  return _internal_has_newack();
+inline bool OrderResponse::has_new_ack() const {
+  return _internal_has_new_ack();
 }
-inline void OrderResponse::set_has_newack() {
+inline void OrderResponse::set_has_new_ack() {
   _oneof_case_[0] = kNewAck;
 }
-inline void OrderResponse::clear_newack() {
-  if (_internal_has_newack()) {
+inline void OrderResponse::clear_new_ack() {
+  if (_internal_has_new_ack()) {
     if (GetArena() == nullptr) {
-      delete inner_.newack_;
+      delete inner_.new_ack_;
     }
     clear_has_inner();
   }
 }
-inline ::trade::NewOrderAck* OrderResponse::release_newack() {
-  // @@protoc_insertion_point(field_release:trade.OrderResponse.newAck)
-  if (_internal_has_newack()) {
+inline ::trade::NewOrderAck* OrderResponse::release_new_ack() {
+  // @@protoc_insertion_point(field_release:trade.OrderResponse.new_ack)
+  if (_internal_has_new_ack()) {
     clear_has_inner();
-      ::trade::NewOrderAck* temp = inner_.newack_;
+      ::trade::NewOrderAck* temp = inner_.new_ack_;
     if (GetArena() != nullptr) {
       temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
-    inner_.newack_ = nullptr;
+    inner_.new_ack_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::trade::NewOrderAck& OrderResponse::_internal_newack() const {
-  return _internal_has_newack()
-      ? *inner_.newack_
+inline const ::trade::NewOrderAck& OrderResponse::_internal_new_ack() const {
+  return _internal_has_new_ack()
+      ? *inner_.new_ack_
       : reinterpret_cast< ::trade::NewOrderAck&>(::trade::_NewOrderAck_default_instance_);
 }
-inline const ::trade::NewOrderAck& OrderResponse::newack() const {
-  // @@protoc_insertion_point(field_get:trade.OrderResponse.newAck)
-  return _internal_newack();
+inline const ::trade::NewOrderAck& OrderResponse::new_ack() const {
+  // @@protoc_insertion_point(field_get:trade.OrderResponse.new_ack)
+  return _internal_new_ack();
 }
-inline ::trade::NewOrderAck* OrderResponse::unsafe_arena_release_newack() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:trade.OrderResponse.newAck)
-  if (_internal_has_newack()) {
+inline ::trade::NewOrderAck* OrderResponse::unsafe_arena_release_new_ack() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:trade.OrderResponse.new_ack)
+  if (_internal_has_new_ack()) {
     clear_has_inner();
-    ::trade::NewOrderAck* temp = inner_.newack_;
-    inner_.newack_ = nullptr;
+    ::trade::NewOrderAck* temp = inner_.new_ack_;
+    inner_.new_ack_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline void OrderResponse::unsafe_arena_set_allocated_newack(::trade::NewOrderAck* newack) {
+inline void OrderResponse::unsafe_arena_set_allocated_new_ack(::trade::NewOrderAck* new_ack) {
   clear_inner();
-  if (newack) {
-    set_has_newack();
-    inner_.newack_ = newack;
+  if (new_ack) {
+    set_has_new_ack();
+    inner_.new_ack_ = new_ack;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:trade.OrderResponse.newAck)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:trade.OrderResponse.new_ack)
 }
-inline ::trade::NewOrderAck* OrderResponse::_internal_mutable_newack() {
-  if (!_internal_has_newack()) {
+inline ::trade::NewOrderAck* OrderResponse::_internal_mutable_new_ack() {
+  if (!_internal_has_new_ack()) {
     clear_inner();
-    set_has_newack();
-    inner_.newack_ = CreateMaybeMessage< ::trade::NewOrderAck >(GetArena());
+    set_has_new_ack();
+    inner_.new_ack_ = CreateMaybeMessage< ::trade::NewOrderAck >(GetArena());
   }
-  return inner_.newack_;
+  return inner_.new_ack_;
 }
-inline ::trade::NewOrderAck* OrderResponse::mutable_newack() {
-  // @@protoc_insertion_point(field_mutable:trade.OrderResponse.newAck)
-  return _internal_mutable_newack();
+inline ::trade::NewOrderAck* OrderResponse::mutable_new_ack() {
+  // @@protoc_insertion_point(field_mutable:trade.OrderResponse.new_ack)
+  return _internal_mutable_new_ack();
 }
 
-// .trade.CancelOrderAck cancelAck = 2;
-inline bool OrderResponse::_internal_has_cancelack() const {
+// .trade.CancelOrderAck cancel_ack = 2;
+inline bool OrderResponse::_internal_has_cancel_ack() const {
   return inner_case() == kCancelAck;
 }
-inline bool OrderResponse::has_cancelack() const {
-  return _internal_has_cancelack();
+inline bool OrderResponse::has_cancel_ack() const {
+  return _internal_has_cancel_ack();
 }
-inline void OrderResponse::set_has_cancelack() {
+inline void OrderResponse::set_has_cancel_ack() {
   _oneof_case_[0] = kCancelAck;
 }
-inline void OrderResponse::clear_cancelack() {
-  if (_internal_has_cancelack()) {
+inline void OrderResponse::clear_cancel_ack() {
+  if (_internal_has_cancel_ack()) {
     if (GetArena() == nullptr) {
-      delete inner_.cancelack_;
+      delete inner_.cancel_ack_;
     }
     clear_has_inner();
   }
 }
-inline ::trade::CancelOrderAck* OrderResponse::release_cancelack() {
-  // @@protoc_insertion_point(field_release:trade.OrderResponse.cancelAck)
-  if (_internal_has_cancelack()) {
+inline ::trade::CancelOrderAck* OrderResponse::release_cancel_ack() {
+  // @@protoc_insertion_point(field_release:trade.OrderResponse.cancel_ack)
+  if (_internal_has_cancel_ack()) {
     clear_has_inner();
-      ::trade::CancelOrderAck* temp = inner_.cancelack_;
+      ::trade::CancelOrderAck* temp = inner_.cancel_ack_;
     if (GetArena() != nullptr) {
       temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
-    inner_.cancelack_ = nullptr;
+    inner_.cancel_ack_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::trade::CancelOrderAck& OrderResponse::_internal_cancelack() const {
-  return _internal_has_cancelack()
-      ? *inner_.cancelack_
+inline const ::trade::CancelOrderAck& OrderResponse::_internal_cancel_ack() const {
+  return _internal_has_cancel_ack()
+      ? *inner_.cancel_ack_
       : reinterpret_cast< ::trade::CancelOrderAck&>(::trade::_CancelOrderAck_default_instance_);
 }
-inline const ::trade::CancelOrderAck& OrderResponse::cancelack() const {
-  // @@protoc_insertion_point(field_get:trade.OrderResponse.cancelAck)
-  return _internal_cancelack();
+inline const ::trade::CancelOrderAck& OrderResponse::cancel_ack() const {
+  // @@protoc_insertion_point(field_get:trade.OrderResponse.cancel_ack)
+  return _internal_cancel_ack();
 }
-inline ::trade::CancelOrderAck* OrderResponse::unsafe_arena_release_cancelack() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:trade.OrderResponse.cancelAck)
-  if (_internal_has_cancelack()) {
+inline ::trade::CancelOrderAck* OrderResponse::unsafe_arena_release_cancel_ack() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:trade.OrderResponse.cancel_ack)
+  if (_internal_has_cancel_ack()) {
     clear_has_inner();
-    ::trade::CancelOrderAck* temp = inner_.cancelack_;
-    inner_.cancelack_ = nullptr;
+    ::trade::CancelOrderAck* temp = inner_.cancel_ack_;
+    inner_.cancel_ack_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline void OrderResponse::unsafe_arena_set_allocated_cancelack(::trade::CancelOrderAck* cancelack) {
+inline void OrderResponse::unsafe_arena_set_allocated_cancel_ack(::trade::CancelOrderAck* cancel_ack) {
   clear_inner();
-  if (cancelack) {
-    set_has_cancelack();
-    inner_.cancelack_ = cancelack;
+  if (cancel_ack) {
+    set_has_cancel_ack();
+    inner_.cancel_ack_ = cancel_ack;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:trade.OrderResponse.cancelAck)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:trade.OrderResponse.cancel_ack)
 }
-inline ::trade::CancelOrderAck* OrderResponse::_internal_mutable_cancelack() {
-  if (!_internal_has_cancelack()) {
+inline ::trade::CancelOrderAck* OrderResponse::_internal_mutable_cancel_ack() {
+  if (!_internal_has_cancel_ack()) {
     clear_inner();
-    set_has_cancelack();
-    inner_.cancelack_ = CreateMaybeMessage< ::trade::CancelOrderAck >(GetArena());
+    set_has_cancel_ack();
+    inner_.cancel_ack_ = CreateMaybeMessage< ::trade::CancelOrderAck >(GetArena());
   }
-  return inner_.cancelack_;
+  return inner_.cancel_ack_;
 }
-inline ::trade::CancelOrderAck* OrderResponse::mutable_cancelack() {
-  // @@protoc_insertion_point(field_mutable:trade.OrderResponse.cancelAck)
-  return _internal_mutable_cancelack();
+inline ::trade::CancelOrderAck* OrderResponse::mutable_cancel_ack() {
+  // @@protoc_insertion_point(field_mutable:trade.OrderResponse.cancel_ack)
+  return _internal_mutable_cancel_ack();
 }
 
-// .trade.ModifyOrderAck modifyAck = 3;
-inline bool OrderResponse::_internal_has_modifyack() const {
+// .trade.ModifyOrderAck modify_ack = 3;
+inline bool OrderResponse::_internal_has_modify_ack() const {
   return inner_case() == kModifyAck;
 }
-inline bool OrderResponse::has_modifyack() const {
-  return _internal_has_modifyack();
+inline bool OrderResponse::has_modify_ack() const {
+  return _internal_has_modify_ack();
 }
-inline void OrderResponse::set_has_modifyack() {
+inline void OrderResponse::set_has_modify_ack() {
   _oneof_case_[0] = kModifyAck;
 }
-inline void OrderResponse::clear_modifyack() {
-  if (_internal_has_modifyack()) {
+inline void OrderResponse::clear_modify_ack() {
+  if (_internal_has_modify_ack()) {
     if (GetArena() == nullptr) {
-      delete inner_.modifyack_;
+      delete inner_.modify_ack_;
     }
     clear_has_inner();
   }
 }
-inline ::trade::ModifyOrderAck* OrderResponse::release_modifyack() {
-  // @@protoc_insertion_point(field_release:trade.OrderResponse.modifyAck)
-  if (_internal_has_modifyack()) {
+inline ::trade::ModifyOrderAck* OrderResponse::release_modify_ack() {
+  // @@protoc_insertion_point(field_release:trade.OrderResponse.modify_ack)
+  if (_internal_has_modify_ack()) {
     clear_has_inner();
-      ::trade::ModifyOrderAck* temp = inner_.modifyack_;
+      ::trade::ModifyOrderAck* temp = inner_.modify_ack_;
     if (GetArena() != nullptr) {
       temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
-    inner_.modifyack_ = nullptr;
+    inner_.modify_ack_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::trade::ModifyOrderAck& OrderResponse::_internal_modifyack() const {
-  return _internal_has_modifyack()
-      ? *inner_.modifyack_
+inline const ::trade::ModifyOrderAck& OrderResponse::_internal_modify_ack() const {
+  return _internal_has_modify_ack()
+      ? *inner_.modify_ack_
       : reinterpret_cast< ::trade::ModifyOrderAck&>(::trade::_ModifyOrderAck_default_instance_);
 }
-inline const ::trade::ModifyOrderAck& OrderResponse::modifyack() const {
-  // @@protoc_insertion_point(field_get:trade.OrderResponse.modifyAck)
-  return _internal_modifyack();
+inline const ::trade::ModifyOrderAck& OrderResponse::modify_ack() const {
+  // @@protoc_insertion_point(field_get:trade.OrderResponse.modify_ack)
+  return _internal_modify_ack();
 }
-inline ::trade::ModifyOrderAck* OrderResponse::unsafe_arena_release_modifyack() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:trade.OrderResponse.modifyAck)
-  if (_internal_has_modifyack()) {
+inline ::trade::ModifyOrderAck* OrderResponse::unsafe_arena_release_modify_ack() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:trade.OrderResponse.modify_ack)
+  if (_internal_has_modify_ack()) {
     clear_has_inner();
-    ::trade::ModifyOrderAck* temp = inner_.modifyack_;
-    inner_.modifyack_ = nullptr;
+    ::trade::ModifyOrderAck* temp = inner_.modify_ack_;
+    inner_.modify_ack_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline void OrderResponse::unsafe_arena_set_allocated_modifyack(::trade::ModifyOrderAck* modifyack) {
+inline void OrderResponse::unsafe_arena_set_allocated_modify_ack(::trade::ModifyOrderAck* modify_ack) {
   clear_inner();
-  if (modifyack) {
-    set_has_modifyack();
-    inner_.modifyack_ = modifyack;
+  if (modify_ack) {
+    set_has_modify_ack();
+    inner_.modify_ack_ = modify_ack;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:trade.OrderResponse.modifyAck)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:trade.OrderResponse.modify_ack)
 }
-inline ::trade::ModifyOrderAck* OrderResponse::_internal_mutable_modifyack() {
-  if (!_internal_has_modifyack()) {
+inline ::trade::ModifyOrderAck* OrderResponse::_internal_mutable_modify_ack() {
+  if (!_internal_has_modify_ack()) {
     clear_inner();
-    set_has_modifyack();
-    inner_.modifyack_ = CreateMaybeMessage< ::trade::ModifyOrderAck >(GetArena());
+    set_has_modify_ack();
+    inner_.modify_ack_ = CreateMaybeMessage< ::trade::ModifyOrderAck >(GetArena());
   }
-  return inner_.modifyack_;
+  return inner_.modify_ack_;
 }
-inline ::trade::ModifyOrderAck* OrderResponse::mutable_modifyack() {
-  // @@protoc_insertion_point(field_mutable:trade.OrderResponse.modifyAck)
-  return _internal_mutable_modifyack();
+inline ::trade::ModifyOrderAck* OrderResponse::mutable_modify_ack() {
+  // @@protoc_insertion_point(field_mutable:trade.OrderResponse.modify_ack)
+  return _internal_mutable_modify_ack();
 }
 
-// .trade.NewOrderReject newReject = 4;
-inline bool OrderResponse::_internal_has_newreject() const {
+// .trade.NewOrderReject new_reject = 4;
+inline bool OrderResponse::_internal_has_new_reject() const {
   return inner_case() == kNewReject;
 }
-inline bool OrderResponse::has_newreject() const {
-  return _internal_has_newreject();
+inline bool OrderResponse::has_new_reject() const {
+  return _internal_has_new_reject();
 }
-inline void OrderResponse::set_has_newreject() {
+inline void OrderResponse::set_has_new_reject() {
   _oneof_case_[0] = kNewReject;
 }
-inline void OrderResponse::clear_newreject() {
-  if (_internal_has_newreject()) {
+inline void OrderResponse::clear_new_reject() {
+  if (_internal_has_new_reject()) {
     if (GetArena() == nullptr) {
-      delete inner_.newreject_;
+      delete inner_.new_reject_;
     }
     clear_has_inner();
   }
 }
-inline ::trade::NewOrderReject* OrderResponse::release_newreject() {
-  // @@protoc_insertion_point(field_release:trade.OrderResponse.newReject)
-  if (_internal_has_newreject()) {
+inline ::trade::NewOrderReject* OrderResponse::release_new_reject() {
+  // @@protoc_insertion_point(field_release:trade.OrderResponse.new_reject)
+  if (_internal_has_new_reject()) {
     clear_has_inner();
-      ::trade::NewOrderReject* temp = inner_.newreject_;
+      ::trade::NewOrderReject* temp = inner_.new_reject_;
     if (GetArena() != nullptr) {
       temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
-    inner_.newreject_ = nullptr;
+    inner_.new_reject_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::trade::NewOrderReject& OrderResponse::_internal_newreject() const {
-  return _internal_has_newreject()
-      ? *inner_.newreject_
+inline const ::trade::NewOrderReject& OrderResponse::_internal_new_reject() const {
+  return _internal_has_new_reject()
+      ? *inner_.new_reject_
       : reinterpret_cast< ::trade::NewOrderReject&>(::trade::_NewOrderReject_default_instance_);
 }
-inline const ::trade::NewOrderReject& OrderResponse::newreject() const {
-  // @@protoc_insertion_point(field_get:trade.OrderResponse.newReject)
-  return _internal_newreject();
+inline const ::trade::NewOrderReject& OrderResponse::new_reject() const {
+  // @@protoc_insertion_point(field_get:trade.OrderResponse.new_reject)
+  return _internal_new_reject();
 }
-inline ::trade::NewOrderReject* OrderResponse::unsafe_arena_release_newreject() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:trade.OrderResponse.newReject)
-  if (_internal_has_newreject()) {
+inline ::trade::NewOrderReject* OrderResponse::unsafe_arena_release_new_reject() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:trade.OrderResponse.new_reject)
+  if (_internal_has_new_reject()) {
     clear_has_inner();
-    ::trade::NewOrderReject* temp = inner_.newreject_;
-    inner_.newreject_ = nullptr;
+    ::trade::NewOrderReject* temp = inner_.new_reject_;
+    inner_.new_reject_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline void OrderResponse::unsafe_arena_set_allocated_newreject(::trade::NewOrderReject* newreject) {
+inline void OrderResponse::unsafe_arena_set_allocated_new_reject(::trade::NewOrderReject* new_reject) {
   clear_inner();
-  if (newreject) {
-    set_has_newreject();
-    inner_.newreject_ = newreject;
+  if (new_reject) {
+    set_has_new_reject();
+    inner_.new_reject_ = new_reject;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:trade.OrderResponse.newReject)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:trade.OrderResponse.new_reject)
 }
-inline ::trade::NewOrderReject* OrderResponse::_internal_mutable_newreject() {
-  if (!_internal_has_newreject()) {
+inline ::trade::NewOrderReject* OrderResponse::_internal_mutable_new_reject() {
+  if (!_internal_has_new_reject()) {
     clear_inner();
-    set_has_newreject();
-    inner_.newreject_ = CreateMaybeMessage< ::trade::NewOrderReject >(GetArena());
+    set_has_new_reject();
+    inner_.new_reject_ = CreateMaybeMessage< ::trade::NewOrderReject >(GetArena());
   }
-  return inner_.newreject_;
+  return inner_.new_reject_;
 }
-inline ::trade::NewOrderReject* OrderResponse::mutable_newreject() {
-  // @@protoc_insertion_point(field_mutable:trade.OrderResponse.newReject)
-  return _internal_mutable_newreject();
+inline ::trade::NewOrderReject* OrderResponse::mutable_new_reject() {
+  // @@protoc_insertion_point(field_mutable:trade.OrderResponse.new_reject)
+  return _internal_mutable_new_reject();
 }
 
-// .trade.CancelOrderReject cancelReject = 5;
-inline bool OrderResponse::_internal_has_cancelreject() const {
+// .trade.CancelOrderReject cancel_reject = 5;
+inline bool OrderResponse::_internal_has_cancel_reject() const {
   return inner_case() == kCancelReject;
 }
-inline bool OrderResponse::has_cancelreject() const {
-  return _internal_has_cancelreject();
+inline bool OrderResponse::has_cancel_reject() const {
+  return _internal_has_cancel_reject();
 }
-inline void OrderResponse::set_has_cancelreject() {
+inline void OrderResponse::set_has_cancel_reject() {
   _oneof_case_[0] = kCancelReject;
 }
-inline void OrderResponse::clear_cancelreject() {
-  if (_internal_has_cancelreject()) {
+inline void OrderResponse::clear_cancel_reject() {
+  if (_internal_has_cancel_reject()) {
     if (GetArena() == nullptr) {
-      delete inner_.cancelreject_;
+      delete inner_.cancel_reject_;
     }
     clear_has_inner();
   }
 }
-inline ::trade::CancelOrderReject* OrderResponse::release_cancelreject() {
-  // @@protoc_insertion_point(field_release:trade.OrderResponse.cancelReject)
-  if (_internal_has_cancelreject()) {
+inline ::trade::CancelOrderReject* OrderResponse::release_cancel_reject() {
+  // @@protoc_insertion_point(field_release:trade.OrderResponse.cancel_reject)
+  if (_internal_has_cancel_reject()) {
     clear_has_inner();
-      ::trade::CancelOrderReject* temp = inner_.cancelreject_;
+      ::trade::CancelOrderReject* temp = inner_.cancel_reject_;
     if (GetArena() != nullptr) {
       temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
-    inner_.cancelreject_ = nullptr;
+    inner_.cancel_reject_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::trade::CancelOrderReject& OrderResponse::_internal_cancelreject() const {
-  return _internal_has_cancelreject()
-      ? *inner_.cancelreject_
+inline const ::trade::CancelOrderReject& OrderResponse::_internal_cancel_reject() const {
+  return _internal_has_cancel_reject()
+      ? *inner_.cancel_reject_
       : reinterpret_cast< ::trade::CancelOrderReject&>(::trade::_CancelOrderReject_default_instance_);
 }
-inline const ::trade::CancelOrderReject& OrderResponse::cancelreject() const {
-  // @@protoc_insertion_point(field_get:trade.OrderResponse.cancelReject)
-  return _internal_cancelreject();
+inline const ::trade::CancelOrderReject& OrderResponse::cancel_reject() const {
+  // @@protoc_insertion_point(field_get:trade.OrderResponse.cancel_reject)
+  return _internal_cancel_reject();
 }
-inline ::trade::CancelOrderReject* OrderResponse::unsafe_arena_release_cancelreject() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:trade.OrderResponse.cancelReject)
-  if (_internal_has_cancelreject()) {
+inline ::trade::CancelOrderReject* OrderResponse::unsafe_arena_release_cancel_reject() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:trade.OrderResponse.cancel_reject)
+  if (_internal_has_cancel_reject()) {
     clear_has_inner();
-    ::trade::CancelOrderReject* temp = inner_.cancelreject_;
-    inner_.cancelreject_ = nullptr;
+    ::trade::CancelOrderReject* temp = inner_.cancel_reject_;
+    inner_.cancel_reject_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline void OrderResponse::unsafe_arena_set_allocated_cancelreject(::trade::CancelOrderReject* cancelreject) {
+inline void OrderResponse::unsafe_arena_set_allocated_cancel_reject(::trade::CancelOrderReject* cancel_reject) {
   clear_inner();
-  if (cancelreject) {
-    set_has_cancelreject();
-    inner_.cancelreject_ = cancelreject;
+  if (cancel_reject) {
+    set_has_cancel_reject();
+    inner_.cancel_reject_ = cancel_reject;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:trade.OrderResponse.cancelReject)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:trade.OrderResponse.cancel_reject)
 }
-inline ::trade::CancelOrderReject* OrderResponse::_internal_mutable_cancelreject() {
-  if (!_internal_has_cancelreject()) {
+inline ::trade::CancelOrderReject* OrderResponse::_internal_mutable_cancel_reject() {
+  if (!_internal_has_cancel_reject()) {
     clear_inner();
-    set_has_cancelreject();
-    inner_.cancelreject_ = CreateMaybeMessage< ::trade::CancelOrderReject >(GetArena());
+    set_has_cancel_reject();
+    inner_.cancel_reject_ = CreateMaybeMessage< ::trade::CancelOrderReject >(GetArena());
   }
-  return inner_.cancelreject_;
+  return inner_.cancel_reject_;
 }
-inline ::trade::CancelOrderReject* OrderResponse::mutable_cancelreject() {
-  // @@protoc_insertion_point(field_mutable:trade.OrderResponse.cancelReject)
-  return _internal_mutable_cancelreject();
+inline ::trade::CancelOrderReject* OrderResponse::mutable_cancel_reject() {
+  // @@protoc_insertion_point(field_mutable:trade.OrderResponse.cancel_reject)
+  return _internal_mutable_cancel_reject();
 }
 
-// .trade.ModifyOrderReject modifyReject = 6;
-inline bool OrderResponse::_internal_has_modifyreject() const {
+// .trade.ModifyOrderReject modify_reject = 6;
+inline bool OrderResponse::_internal_has_modify_reject() const {
   return inner_case() == kModifyReject;
 }
-inline bool OrderResponse::has_modifyreject() const {
-  return _internal_has_modifyreject();
+inline bool OrderResponse::has_modify_reject() const {
+  return _internal_has_modify_reject();
 }
-inline void OrderResponse::set_has_modifyreject() {
+inline void OrderResponse::set_has_modify_reject() {
   _oneof_case_[0] = kModifyReject;
 }
-inline void OrderResponse::clear_modifyreject() {
-  if (_internal_has_modifyreject()) {
+inline void OrderResponse::clear_modify_reject() {
+  if (_internal_has_modify_reject()) {
     if (GetArena() == nullptr) {
-      delete inner_.modifyreject_;
+      delete inner_.modify_reject_;
     }
     clear_has_inner();
   }
 }
-inline ::trade::ModifyOrderReject* OrderResponse::release_modifyreject() {
-  // @@protoc_insertion_point(field_release:trade.OrderResponse.modifyReject)
-  if (_internal_has_modifyreject()) {
+inline ::trade::ModifyOrderReject* OrderResponse::release_modify_reject() {
+  // @@protoc_insertion_point(field_release:trade.OrderResponse.modify_reject)
+  if (_internal_has_modify_reject()) {
     clear_has_inner();
-      ::trade::ModifyOrderReject* temp = inner_.modifyreject_;
+      ::trade::ModifyOrderReject* temp = inner_.modify_reject_;
     if (GetArena() != nullptr) {
       temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
-    inner_.modifyreject_ = nullptr;
+    inner_.modify_reject_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::trade::ModifyOrderReject& OrderResponse::_internal_modifyreject() const {
-  return _internal_has_modifyreject()
-      ? *inner_.modifyreject_
+inline const ::trade::ModifyOrderReject& OrderResponse::_internal_modify_reject() const {
+  return _internal_has_modify_reject()
+      ? *inner_.modify_reject_
       : reinterpret_cast< ::trade::ModifyOrderReject&>(::trade::_ModifyOrderReject_default_instance_);
 }
-inline const ::trade::ModifyOrderReject& OrderResponse::modifyreject() const {
-  // @@protoc_insertion_point(field_get:trade.OrderResponse.modifyReject)
-  return _internal_modifyreject();
+inline const ::trade::ModifyOrderReject& OrderResponse::modify_reject() const {
+  // @@protoc_insertion_point(field_get:trade.OrderResponse.modify_reject)
+  return _internal_modify_reject();
 }
-inline ::trade::ModifyOrderReject* OrderResponse::unsafe_arena_release_modifyreject() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:trade.OrderResponse.modifyReject)
-  if (_internal_has_modifyreject()) {
+inline ::trade::ModifyOrderReject* OrderResponse::unsafe_arena_release_modify_reject() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:trade.OrderResponse.modify_reject)
+  if (_internal_has_modify_reject()) {
     clear_has_inner();
-    ::trade::ModifyOrderReject* temp = inner_.modifyreject_;
-    inner_.modifyreject_ = nullptr;
+    ::trade::ModifyOrderReject* temp = inner_.modify_reject_;
+    inner_.modify_reject_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline void OrderResponse::unsafe_arena_set_allocated_modifyreject(::trade::ModifyOrderReject* modifyreject) {
+inline void OrderResponse::unsafe_arena_set_allocated_modify_reject(::trade::ModifyOrderReject* modify_reject) {
   clear_inner();
-  if (modifyreject) {
-    set_has_modifyreject();
-    inner_.modifyreject_ = modifyreject;
+  if (modify_reject) {
+    set_has_modify_reject();
+    inner_.modify_reject_ = modify_reject;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:trade.OrderResponse.modifyReject)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:trade.OrderResponse.modify_reject)
 }
-inline ::trade::ModifyOrderReject* OrderResponse::_internal_mutable_modifyreject() {
-  if (!_internal_has_modifyreject()) {
+inline ::trade::ModifyOrderReject* OrderResponse::_internal_mutable_modify_reject() {
+  if (!_internal_has_modify_reject()) {
     clear_inner();
-    set_has_modifyreject();
-    inner_.modifyreject_ = CreateMaybeMessage< ::trade::ModifyOrderReject >(GetArena());
+    set_has_modify_reject();
+    inner_.modify_reject_ = CreateMaybeMessage< ::trade::ModifyOrderReject >(GetArena());
   }
-  return inner_.modifyreject_;
+  return inner_.modify_reject_;
 }
-inline ::trade::ModifyOrderReject* OrderResponse::mutable_modifyreject() {
-  // @@protoc_insertion_point(field_mutable:trade.OrderResponse.modifyReject)
-  return _internal_mutable_modifyreject();
+inline ::trade::ModifyOrderReject* OrderResponse::mutable_modify_reject() {
+  // @@protoc_insertion_point(field_mutable:trade.OrderResponse.modify_reject)
+  return _internal_mutable_modify_reject();
 }
 
 // .trade.Fill fill = 7;
@@ -7247,77 +7333,77 @@ inline ::trade::AssetPosition* OrderResponse::mutable_position() {
   return _internal_mutable_position();
 }
 
-// .trade.MassCancelAck massCancelAck = 10;
-inline bool OrderResponse::_internal_has_masscancelack() const {
+// .trade.MassCancelAck mass_cancel_ack = 10;
+inline bool OrderResponse::_internal_has_mass_cancel_ack() const {
   return inner_case() == kMassCancelAck;
 }
-inline bool OrderResponse::has_masscancelack() const {
-  return _internal_has_masscancelack();
+inline bool OrderResponse::has_mass_cancel_ack() const {
+  return _internal_has_mass_cancel_ack();
 }
-inline void OrderResponse::set_has_masscancelack() {
+inline void OrderResponse::set_has_mass_cancel_ack() {
   _oneof_case_[0] = kMassCancelAck;
 }
-inline void OrderResponse::clear_masscancelack() {
-  if (_internal_has_masscancelack()) {
+inline void OrderResponse::clear_mass_cancel_ack() {
+  if (_internal_has_mass_cancel_ack()) {
     if (GetArena() == nullptr) {
-      delete inner_.masscancelack_;
+      delete inner_.mass_cancel_ack_;
     }
     clear_has_inner();
   }
 }
-inline ::trade::MassCancelAck* OrderResponse::release_masscancelack() {
-  // @@protoc_insertion_point(field_release:trade.OrderResponse.massCancelAck)
-  if (_internal_has_masscancelack()) {
+inline ::trade::MassCancelAck* OrderResponse::release_mass_cancel_ack() {
+  // @@protoc_insertion_point(field_release:trade.OrderResponse.mass_cancel_ack)
+  if (_internal_has_mass_cancel_ack()) {
     clear_has_inner();
-      ::trade::MassCancelAck* temp = inner_.masscancelack_;
+      ::trade::MassCancelAck* temp = inner_.mass_cancel_ack_;
     if (GetArena() != nullptr) {
       temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
-    inner_.masscancelack_ = nullptr;
+    inner_.mass_cancel_ack_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline const ::trade::MassCancelAck& OrderResponse::_internal_masscancelack() const {
-  return _internal_has_masscancelack()
-      ? *inner_.masscancelack_
+inline const ::trade::MassCancelAck& OrderResponse::_internal_mass_cancel_ack() const {
+  return _internal_has_mass_cancel_ack()
+      ? *inner_.mass_cancel_ack_
       : reinterpret_cast< ::trade::MassCancelAck&>(::trade::_MassCancelAck_default_instance_);
 }
-inline const ::trade::MassCancelAck& OrderResponse::masscancelack() const {
-  // @@protoc_insertion_point(field_get:trade.OrderResponse.massCancelAck)
-  return _internal_masscancelack();
+inline const ::trade::MassCancelAck& OrderResponse::mass_cancel_ack() const {
+  // @@protoc_insertion_point(field_get:trade.OrderResponse.mass_cancel_ack)
+  return _internal_mass_cancel_ack();
 }
-inline ::trade::MassCancelAck* OrderResponse::unsafe_arena_release_masscancelack() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:trade.OrderResponse.massCancelAck)
-  if (_internal_has_masscancelack()) {
+inline ::trade::MassCancelAck* OrderResponse::unsafe_arena_release_mass_cancel_ack() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:trade.OrderResponse.mass_cancel_ack)
+  if (_internal_has_mass_cancel_ack()) {
     clear_has_inner();
-    ::trade::MassCancelAck* temp = inner_.masscancelack_;
-    inner_.masscancelack_ = nullptr;
+    ::trade::MassCancelAck* temp = inner_.mass_cancel_ack_;
+    inner_.mass_cancel_ack_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline void OrderResponse::unsafe_arena_set_allocated_masscancelack(::trade::MassCancelAck* masscancelack) {
+inline void OrderResponse::unsafe_arena_set_allocated_mass_cancel_ack(::trade::MassCancelAck* mass_cancel_ack) {
   clear_inner();
-  if (masscancelack) {
-    set_has_masscancelack();
-    inner_.masscancelack_ = masscancelack;
+  if (mass_cancel_ack) {
+    set_has_mass_cancel_ack();
+    inner_.mass_cancel_ack_ = mass_cancel_ack;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:trade.OrderResponse.massCancelAck)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:trade.OrderResponse.mass_cancel_ack)
 }
-inline ::trade::MassCancelAck* OrderResponse::_internal_mutable_masscancelack() {
-  if (!_internal_has_masscancelack()) {
+inline ::trade::MassCancelAck* OrderResponse::_internal_mutable_mass_cancel_ack() {
+  if (!_internal_has_mass_cancel_ack()) {
     clear_inner();
-    set_has_masscancelack();
-    inner_.masscancelack_ = CreateMaybeMessage< ::trade::MassCancelAck >(GetArena());
+    set_has_mass_cancel_ack();
+    inner_.mass_cancel_ack_ = CreateMaybeMessage< ::trade::MassCancelAck >(GetArena());
   }
-  return inner_.masscancelack_;
+  return inner_.mass_cancel_ack_;
 }
-inline ::trade::MassCancelAck* OrderResponse::mutable_masscancelack() {
-  // @@protoc_insertion_point(field_mutable:trade.OrderResponse.massCancelAck)
-  return _internal_mutable_masscancelack();
+inline ::trade::MassCancelAck* OrderResponse::mutable_mass_cancel_ack() {
+  // @@protoc_insertion_point(field_mutable:trade.OrderResponse.mass_cancel_ack)
+  return _internal_mutable_mass_cancel_ack();
 }
 
 inline bool OrderResponse::has_inner() const {
@@ -7333,104 +7419,104 @@ inline OrderResponse::InnerCase OrderResponse::inner_case() const {
 
 // NewOrderAck
 
-// uint64 msgSeqNum = 1;
-inline void NewOrderAck::clear_msgseqnum() {
-  msgseqnum_ = PROTOBUF_ULONGLONG(0);
+// uint64 msg_seq_num = 1;
+inline void NewOrderAck::clear_msg_seq_num() {
+  msg_seq_num_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::_internal_msgseqnum() const {
-  return msgseqnum_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::_internal_msg_seq_num() const {
+  return msg_seq_num_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::msgseqnum() const {
-  // @@protoc_insertion_point(field_get:trade.NewOrderAck.msgSeqNum)
-  return _internal_msgseqnum();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::msg_seq_num() const {
+  // @@protoc_insertion_point(field_get:trade.NewOrderAck.msg_seq_num)
+  return _internal_msg_seq_num();
 }
-inline void NewOrderAck::_internal_set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void NewOrderAck::_internal_set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  msgseqnum_ = value;
+  msg_seq_num_ = value;
 }
-inline void NewOrderAck::set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_msgseqnum(value);
-  // @@protoc_insertion_point(field_set:trade.NewOrderAck.msgSeqNum)
+inline void NewOrderAck::set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_msg_seq_num(value);
+  // @@protoc_insertion_point(field_set:trade.NewOrderAck.msg_seq_num)
 }
 
-// uint64 clientOrderId = 2;
-inline void NewOrderAck::clear_clientorderid() {
-  clientorderid_ = PROTOBUF_ULONGLONG(0);
+// uint64 client_order_id = 2;
+inline void NewOrderAck::clear_client_order_id() {
+  client_order_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::_internal_clientorderid() const {
-  return clientorderid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::_internal_client_order_id() const {
+  return client_order_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::clientorderid() const {
-  // @@protoc_insertion_point(field_get:trade.NewOrderAck.clientOrderId)
-  return _internal_clientorderid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::client_order_id() const {
+  // @@protoc_insertion_point(field_get:trade.NewOrderAck.client_order_id)
+  return _internal_client_order_id();
 }
-inline void NewOrderAck::_internal_set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void NewOrderAck::_internal_set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  clientorderid_ = value;
+  client_order_id_ = value;
 }
-inline void NewOrderAck::set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_clientorderid(value);
-  // @@protoc_insertion_point(field_set:trade.NewOrderAck.clientOrderId)
+inline void NewOrderAck::set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_client_order_id(value);
+  // @@protoc_insertion_point(field_set:trade.NewOrderAck.client_order_id)
 }
 
-// uint64 requestId = 3;
-inline void NewOrderAck::clear_requestid() {
-  requestid_ = PROTOBUF_ULONGLONG(0);
+// uint64 request_id = 3;
+inline void NewOrderAck::clear_request_id() {
+  request_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::_internal_requestid() const {
-  return requestid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::_internal_request_id() const {
+  return request_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::requestid() const {
-  // @@protoc_insertion_point(field_get:trade.NewOrderAck.requestId)
-  return _internal_requestid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::request_id() const {
+  // @@protoc_insertion_point(field_get:trade.NewOrderAck.request_id)
+  return _internal_request_id();
 }
-inline void NewOrderAck::_internal_set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void NewOrderAck::_internal_set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  requestid_ = value;
+  request_id_ = value;
 }
-inline void NewOrderAck::set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_requestid(value);
-  // @@protoc_insertion_point(field_set:trade.NewOrderAck.requestId)
+inline void NewOrderAck::set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_request_id(value);
+  // @@protoc_insertion_point(field_set:trade.NewOrderAck.request_id)
 }
 
-// uint64 exchangeOrderId = 4;
-inline void NewOrderAck::clear_exchangeorderid() {
-  exchangeorderid_ = PROTOBUF_ULONGLONG(0);
+// uint64 exchange_order_id = 4;
+inline void NewOrderAck::clear_exchange_order_id() {
+  exchange_order_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::_internal_exchangeorderid() const {
-  return exchangeorderid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::_internal_exchange_order_id() const {
+  return exchange_order_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::exchangeorderid() const {
-  // @@protoc_insertion_point(field_get:trade.NewOrderAck.exchangeOrderId)
-  return _internal_exchangeorderid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::exchange_order_id() const {
+  // @@protoc_insertion_point(field_get:trade.NewOrderAck.exchange_order_id)
+  return _internal_exchange_order_id();
 }
-inline void NewOrderAck::_internal_set_exchangeorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void NewOrderAck::_internal_set_exchange_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  exchangeorderid_ = value;
+  exchange_order_id_ = value;
 }
-inline void NewOrderAck::set_exchangeorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_exchangeorderid(value);
-  // @@protoc_insertion_point(field_set:trade.NewOrderAck.exchangeOrderId)
+inline void NewOrderAck::set_exchange_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_exchange_order_id(value);
+  // @@protoc_insertion_point(field_set:trade.NewOrderAck.exchange_order_id)
 }
 
-// uint64 marketId = 5;
-inline void NewOrderAck::clear_marketid() {
-  marketid_ = PROTOBUF_ULONGLONG(0);
+// uint64 market_id = 5;
+inline void NewOrderAck::clear_market_id() {
+  market_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::_internal_marketid() const {
-  return marketid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::_internal_market_id() const {
+  return market_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::marketid() const {
-  // @@protoc_insertion_point(field_get:trade.NewOrderAck.marketId)
-  return _internal_marketid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::market_id() const {
+  // @@protoc_insertion_point(field_get:trade.NewOrderAck.market_id)
+  return _internal_market_id();
 }
-inline void NewOrderAck::_internal_set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void NewOrderAck::_internal_set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  marketid_ = value;
+  market_id_ = value;
 }
-inline void NewOrderAck::set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_marketid(value);
-  // @@protoc_insertion_point(field_set:trade.NewOrderAck.marketId)
+inline void NewOrderAck::set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_market_id(value);
+  // @@protoc_insertion_point(field_set:trade.NewOrderAck.market_id)
 }
 
 // uint64 price = 6;
@@ -7501,188 +7587,208 @@ inline void NewOrderAck::set_side(::trade::Side value) {
   // @@protoc_insertion_point(field_set:trade.NewOrderAck.side)
 }
 
-// .trade.TimeInForce timeInForce = 9;
-inline void NewOrderAck::clear_timeinforce() {
-  timeinforce_ = 0;
+// .trade.TimeInForce time_in_force = 9;
+inline void NewOrderAck::clear_time_in_force() {
+  time_in_force_ = 0;
 }
-inline ::trade::TimeInForce NewOrderAck::_internal_timeinforce() const {
-  return static_cast< ::trade::TimeInForce >(timeinforce_);
+inline ::trade::TimeInForce NewOrderAck::_internal_time_in_force() const {
+  return static_cast< ::trade::TimeInForce >(time_in_force_);
 }
-inline ::trade::TimeInForce NewOrderAck::timeinforce() const {
-  // @@protoc_insertion_point(field_get:trade.NewOrderAck.timeInForce)
-  return _internal_timeinforce();
+inline ::trade::TimeInForce NewOrderAck::time_in_force() const {
+  // @@protoc_insertion_point(field_get:trade.NewOrderAck.time_in_force)
+  return _internal_time_in_force();
 }
-inline void NewOrderAck::_internal_set_timeinforce(::trade::TimeInForce value) {
+inline void NewOrderAck::_internal_set_time_in_force(::trade::TimeInForce value) {
   
-  timeinforce_ = value;
+  time_in_force_ = value;
 }
-inline void NewOrderAck::set_timeinforce(::trade::TimeInForce value) {
-  _internal_set_timeinforce(value);
-  // @@protoc_insertion_point(field_set:trade.NewOrderAck.timeInForce)
+inline void NewOrderAck::set_time_in_force(::trade::TimeInForce value) {
+  _internal_set_time_in_force(value);
+  // @@protoc_insertion_point(field_set:trade.NewOrderAck.time_in_force)
 }
 
-// .trade.OrderType orderType = 10;
-inline void NewOrderAck::clear_ordertype() {
-  ordertype_ = 0;
+// .trade.OrderType order_type = 10;
+inline void NewOrderAck::clear_order_type() {
+  order_type_ = 0;
 }
-inline ::trade::OrderType NewOrderAck::_internal_ordertype() const {
-  return static_cast< ::trade::OrderType >(ordertype_);
+inline ::trade::OrderType NewOrderAck::_internal_order_type() const {
+  return static_cast< ::trade::OrderType >(order_type_);
 }
-inline ::trade::OrderType NewOrderAck::ordertype() const {
-  // @@protoc_insertion_point(field_get:trade.NewOrderAck.orderType)
-  return _internal_ordertype();
+inline ::trade::OrderType NewOrderAck::order_type() const {
+  // @@protoc_insertion_point(field_get:trade.NewOrderAck.order_type)
+  return _internal_order_type();
 }
-inline void NewOrderAck::_internal_set_ordertype(::trade::OrderType value) {
+inline void NewOrderAck::_internal_set_order_type(::trade::OrderType value) {
   
-  ordertype_ = value;
+  order_type_ = value;
 }
-inline void NewOrderAck::set_ordertype(::trade::OrderType value) {
-  _internal_set_ordertype(value);
-  // @@protoc_insertion_point(field_set:trade.NewOrderAck.orderType)
+inline void NewOrderAck::set_order_type(::trade::OrderType value) {
+  _internal_set_order_type(value);
+  // @@protoc_insertion_point(field_set:trade.NewOrderAck.order_type)
 }
 
-// uint64 transactTime = 11;
-inline void NewOrderAck::clear_transacttime() {
-  transacttime_ = PROTOBUF_ULONGLONG(0);
+// uint64 transact_time = 11;
+inline void NewOrderAck::clear_transact_time() {
+  transact_time_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::_internal_transacttime() const {
-  return transacttime_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::_internal_transact_time() const {
+  return transact_time_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::transacttime() const {
-  // @@protoc_insertion_point(field_get:trade.NewOrderAck.transactTime)
-  return _internal_transacttime();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::transact_time() const {
+  // @@protoc_insertion_point(field_get:trade.NewOrderAck.transact_time)
+  return _internal_transact_time();
 }
-inline void NewOrderAck::_internal_set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void NewOrderAck::_internal_set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  transacttime_ = value;
+  transact_time_ = value;
 }
-inline void NewOrderAck::set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_transacttime(value);
-  // @@protoc_insertion_point(field_set:trade.NewOrderAck.transactTime)
+inline void NewOrderAck::set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_transact_time(value);
+  // @@protoc_insertion_point(field_set:trade.NewOrderAck.transact_time)
 }
 
-// uint64 subaccountId = 12;
-inline void NewOrderAck::clear_subaccountid() {
-  subaccountid_ = PROTOBUF_ULONGLONG(0);
+// uint64 subaccount_id = 12;
+inline void NewOrderAck::clear_subaccount_id() {
+  subaccount_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::_internal_subaccountid() const {
-  return subaccountid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::_internal_subaccount_id() const {
+  return subaccount_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::subaccountid() const {
-  // @@protoc_insertion_point(field_get:trade.NewOrderAck.subaccountId)
-  return _internal_subaccountid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderAck::subaccount_id() const {
+  // @@protoc_insertion_point(field_get:trade.NewOrderAck.subaccount_id)
+  return _internal_subaccount_id();
 }
-inline void NewOrderAck::_internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void NewOrderAck::_internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  subaccountid_ = value;
+  subaccount_id_ = value;
 }
-inline void NewOrderAck::set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_subaccountid(value);
-  // @@protoc_insertion_point(field_set:trade.NewOrderAck.subaccountId)
+inline void NewOrderAck::set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_subaccount_id(value);
+  // @@protoc_insertion_point(field_set:trade.NewOrderAck.subaccount_id)
+}
+
+// bool cancel_on_disconnect = 13;
+inline void NewOrderAck::clear_cancel_on_disconnect() {
+  cancel_on_disconnect_ = false;
+}
+inline bool NewOrderAck::_internal_cancel_on_disconnect() const {
+  return cancel_on_disconnect_;
+}
+inline bool NewOrderAck::cancel_on_disconnect() const {
+  // @@protoc_insertion_point(field_get:trade.NewOrderAck.cancel_on_disconnect)
+  return _internal_cancel_on_disconnect();
+}
+inline void NewOrderAck::_internal_set_cancel_on_disconnect(bool value) {
+  
+  cancel_on_disconnect_ = value;
+}
+inline void NewOrderAck::set_cancel_on_disconnect(bool value) {
+  _internal_set_cancel_on_disconnect(value);
+  // @@protoc_insertion_point(field_set:trade.NewOrderAck.cancel_on_disconnect)
 }
 
 // -------------------------------------------------------------------
 
 // CancelOrderAck
 
-// uint64 msgSeqNum = 1;
-inline void CancelOrderAck::clear_msgseqnum() {
-  msgseqnum_ = PROTOBUF_ULONGLONG(0);
+// uint64 msg_seq_num = 1;
+inline void CancelOrderAck::clear_msg_seq_num() {
+  msg_seq_num_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderAck::_internal_msgseqnum() const {
-  return msgseqnum_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderAck::_internal_msg_seq_num() const {
+  return msg_seq_num_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderAck::msgseqnum() const {
-  // @@protoc_insertion_point(field_get:trade.CancelOrderAck.msgSeqNum)
-  return _internal_msgseqnum();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderAck::msg_seq_num() const {
+  // @@protoc_insertion_point(field_get:trade.CancelOrderAck.msg_seq_num)
+  return _internal_msg_seq_num();
 }
-inline void CancelOrderAck::_internal_set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void CancelOrderAck::_internal_set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  msgseqnum_ = value;
+  msg_seq_num_ = value;
 }
-inline void CancelOrderAck::set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_msgseqnum(value);
-  // @@protoc_insertion_point(field_set:trade.CancelOrderAck.msgSeqNum)
+inline void CancelOrderAck::set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_msg_seq_num(value);
+  // @@protoc_insertion_point(field_set:trade.CancelOrderAck.msg_seq_num)
 }
 
-// uint64 clientOrderId = 2;
-inline void CancelOrderAck::clear_clientorderid() {
-  clientorderid_ = PROTOBUF_ULONGLONG(0);
+// uint64 client_order_id = 2;
+inline void CancelOrderAck::clear_client_order_id() {
+  client_order_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderAck::_internal_clientorderid() const {
-  return clientorderid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderAck::_internal_client_order_id() const {
+  return client_order_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderAck::clientorderid() const {
-  // @@protoc_insertion_point(field_get:trade.CancelOrderAck.clientOrderId)
-  return _internal_clientorderid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderAck::client_order_id() const {
+  // @@protoc_insertion_point(field_get:trade.CancelOrderAck.client_order_id)
+  return _internal_client_order_id();
 }
-inline void CancelOrderAck::_internal_set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void CancelOrderAck::_internal_set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  clientorderid_ = value;
+  client_order_id_ = value;
 }
-inline void CancelOrderAck::set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_clientorderid(value);
-  // @@protoc_insertion_point(field_set:trade.CancelOrderAck.clientOrderId)
+inline void CancelOrderAck::set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_client_order_id(value);
+  // @@protoc_insertion_point(field_set:trade.CancelOrderAck.client_order_id)
 }
 
-// uint64 requestId = 3;
-inline void CancelOrderAck::clear_requestid() {
-  requestid_ = PROTOBUF_ULONGLONG(0);
+// uint64 request_id = 3;
+inline void CancelOrderAck::clear_request_id() {
+  request_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderAck::_internal_requestid() const {
-  return requestid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderAck::_internal_request_id() const {
+  return request_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderAck::requestid() const {
-  // @@protoc_insertion_point(field_get:trade.CancelOrderAck.requestId)
-  return _internal_requestid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderAck::request_id() const {
+  // @@protoc_insertion_point(field_get:trade.CancelOrderAck.request_id)
+  return _internal_request_id();
 }
-inline void CancelOrderAck::_internal_set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void CancelOrderAck::_internal_set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  requestid_ = value;
+  request_id_ = value;
 }
-inline void CancelOrderAck::set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_requestid(value);
-  // @@protoc_insertion_point(field_set:trade.CancelOrderAck.requestId)
+inline void CancelOrderAck::set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_request_id(value);
+  // @@protoc_insertion_point(field_set:trade.CancelOrderAck.request_id)
 }
 
-// uint64 transactTime = 4;
-inline void CancelOrderAck::clear_transacttime() {
-  transacttime_ = PROTOBUF_ULONGLONG(0);
+// uint64 transact_time = 4;
+inline void CancelOrderAck::clear_transact_time() {
+  transact_time_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderAck::_internal_transacttime() const {
-  return transacttime_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderAck::_internal_transact_time() const {
+  return transact_time_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderAck::transacttime() const {
-  // @@protoc_insertion_point(field_get:trade.CancelOrderAck.transactTime)
-  return _internal_transacttime();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderAck::transact_time() const {
+  // @@protoc_insertion_point(field_get:trade.CancelOrderAck.transact_time)
+  return _internal_transact_time();
 }
-inline void CancelOrderAck::_internal_set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void CancelOrderAck::_internal_set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  transacttime_ = value;
+  transact_time_ = value;
 }
-inline void CancelOrderAck::set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_transacttime(value);
-  // @@protoc_insertion_point(field_set:trade.CancelOrderAck.transactTime)
+inline void CancelOrderAck::set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_transact_time(value);
+  // @@protoc_insertion_point(field_set:trade.CancelOrderAck.transact_time)
 }
 
-// uint64 subaccountId = 5;
-inline void CancelOrderAck::clear_subaccountid() {
-  subaccountid_ = PROTOBUF_ULONGLONG(0);
+// uint64 subaccount_id = 5;
+inline void CancelOrderAck::clear_subaccount_id() {
+  subaccount_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderAck::_internal_subaccountid() const {
-  return subaccountid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderAck::_internal_subaccount_id() const {
+  return subaccount_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderAck::subaccountid() const {
-  // @@protoc_insertion_point(field_get:trade.CancelOrderAck.subaccountId)
-  return _internal_subaccountid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderAck::subaccount_id() const {
+  // @@protoc_insertion_point(field_get:trade.CancelOrderAck.subaccount_id)
+  return _internal_subaccount_id();
 }
-inline void CancelOrderAck::_internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void CancelOrderAck::_internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  subaccountid_ = value;
+  subaccount_id_ = value;
 }
-inline void CancelOrderAck::set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_subaccountid(value);
-  // @@protoc_insertion_point(field_set:trade.CancelOrderAck.subaccountId)
+inline void CancelOrderAck::set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_subaccount_id(value);
+  // @@protoc_insertion_point(field_set:trade.CancelOrderAck.subaccount_id)
 }
 
 // .trade.CancelOrderAck.Reason reason = 6;
@@ -7705,168 +7811,168 @@ inline void CancelOrderAck::set_reason(::trade::CancelOrderAck_Reason value) {
   // @@protoc_insertion_point(field_set:trade.CancelOrderAck.reason)
 }
 
-// uint64 marketId = 7;
-inline void CancelOrderAck::clear_marketid() {
-  marketid_ = PROTOBUF_ULONGLONG(0);
+// uint64 market_id = 7;
+inline void CancelOrderAck::clear_market_id() {
+  market_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderAck::_internal_marketid() const {
-  return marketid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderAck::_internal_market_id() const {
+  return market_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderAck::marketid() const {
-  // @@protoc_insertion_point(field_get:trade.CancelOrderAck.marketId)
-  return _internal_marketid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderAck::market_id() const {
+  // @@protoc_insertion_point(field_get:trade.CancelOrderAck.market_id)
+  return _internal_market_id();
 }
-inline void CancelOrderAck::_internal_set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void CancelOrderAck::_internal_set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  marketid_ = value;
+  market_id_ = value;
 }
-inline void CancelOrderAck::set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_marketid(value);
-  // @@protoc_insertion_point(field_set:trade.CancelOrderAck.marketId)
+inline void CancelOrderAck::set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_market_id(value);
+  // @@protoc_insertion_point(field_set:trade.CancelOrderAck.market_id)
 }
 
 // -------------------------------------------------------------------
 
 // ModifyOrderAck
 
-// uint64 msgSeqNum = 1;
-inline void ModifyOrderAck::clear_msgseqnum() {
-  msgseqnum_ = PROTOBUF_ULONGLONG(0);
+// uint64 msg_seq_num = 1;
+inline void ModifyOrderAck::clear_msg_seq_num() {
+  msg_seq_num_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::_internal_msgseqnum() const {
-  return msgseqnum_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::_internal_msg_seq_num() const {
+  return msg_seq_num_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::msgseqnum() const {
-  // @@protoc_insertion_point(field_get:trade.ModifyOrderAck.msgSeqNum)
-  return _internal_msgseqnum();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::msg_seq_num() const {
+  // @@protoc_insertion_point(field_get:trade.ModifyOrderAck.msg_seq_num)
+  return _internal_msg_seq_num();
 }
-inline void ModifyOrderAck::_internal_set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void ModifyOrderAck::_internal_set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  msgseqnum_ = value;
+  msg_seq_num_ = value;
 }
-inline void ModifyOrderAck::set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_msgseqnum(value);
-  // @@protoc_insertion_point(field_set:trade.ModifyOrderAck.msgSeqNum)
+inline void ModifyOrderAck::set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_msg_seq_num(value);
+  // @@protoc_insertion_point(field_set:trade.ModifyOrderAck.msg_seq_num)
 }
 
-// uint64 clientOrderId = 2;
-inline void ModifyOrderAck::clear_clientorderid() {
-  clientorderid_ = PROTOBUF_ULONGLONG(0);
+// uint64 client_order_id = 2;
+inline void ModifyOrderAck::clear_client_order_id() {
+  client_order_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::_internal_clientorderid() const {
-  return clientorderid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::_internal_client_order_id() const {
+  return client_order_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::clientorderid() const {
-  // @@protoc_insertion_point(field_get:trade.ModifyOrderAck.clientOrderId)
-  return _internal_clientorderid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::client_order_id() const {
+  // @@protoc_insertion_point(field_get:trade.ModifyOrderAck.client_order_id)
+  return _internal_client_order_id();
 }
-inline void ModifyOrderAck::_internal_set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void ModifyOrderAck::_internal_set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  clientorderid_ = value;
+  client_order_id_ = value;
 }
-inline void ModifyOrderAck::set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_clientorderid(value);
-  // @@protoc_insertion_point(field_set:trade.ModifyOrderAck.clientOrderId)
+inline void ModifyOrderAck::set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_client_order_id(value);
+  // @@protoc_insertion_point(field_set:trade.ModifyOrderAck.client_order_id)
 }
 
-// uint64 requestId = 3;
-inline void ModifyOrderAck::clear_requestid() {
-  requestid_ = PROTOBUF_ULONGLONG(0);
+// uint64 request_id = 3;
+inline void ModifyOrderAck::clear_request_id() {
+  request_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::_internal_requestid() const {
-  return requestid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::_internal_request_id() const {
+  return request_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::requestid() const {
-  // @@protoc_insertion_point(field_get:trade.ModifyOrderAck.requestId)
-  return _internal_requestid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::request_id() const {
+  // @@protoc_insertion_point(field_get:trade.ModifyOrderAck.request_id)
+  return _internal_request_id();
 }
-inline void ModifyOrderAck::_internal_set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void ModifyOrderAck::_internal_set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  requestid_ = value;
+  request_id_ = value;
 }
-inline void ModifyOrderAck::set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_requestid(value);
-  // @@protoc_insertion_point(field_set:trade.ModifyOrderAck.requestId)
+inline void ModifyOrderAck::set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_request_id(value);
+  // @@protoc_insertion_point(field_set:trade.ModifyOrderAck.request_id)
 }
 
-// uint64 transactTime = 4;
-inline void ModifyOrderAck::clear_transacttime() {
-  transacttime_ = PROTOBUF_ULONGLONG(0);
+// uint64 transact_time = 4;
+inline void ModifyOrderAck::clear_transact_time() {
+  transact_time_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::_internal_transacttime() const {
-  return transacttime_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::_internal_transact_time() const {
+  return transact_time_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::transacttime() const {
-  // @@protoc_insertion_point(field_get:trade.ModifyOrderAck.transactTime)
-  return _internal_transacttime();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::transact_time() const {
+  // @@protoc_insertion_point(field_get:trade.ModifyOrderAck.transact_time)
+  return _internal_transact_time();
 }
-inline void ModifyOrderAck::_internal_set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void ModifyOrderAck::_internal_set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  transacttime_ = value;
+  transact_time_ = value;
 }
-inline void ModifyOrderAck::set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_transacttime(value);
-  // @@protoc_insertion_point(field_set:trade.ModifyOrderAck.transactTime)
+inline void ModifyOrderAck::set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_transact_time(value);
+  // @@protoc_insertion_point(field_set:trade.ModifyOrderAck.transact_time)
 }
 
-// uint64 newQuantity = 5;
-inline void ModifyOrderAck::clear_newquantity() {
-  newquantity_ = PROTOBUF_ULONGLONG(0);
+// uint64 remaining_quantity = 5;
+inline void ModifyOrderAck::clear_remaining_quantity() {
+  remaining_quantity_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::_internal_newquantity() const {
-  return newquantity_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::_internal_remaining_quantity() const {
+  return remaining_quantity_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::newquantity() const {
-  // @@protoc_insertion_point(field_get:trade.ModifyOrderAck.newQuantity)
-  return _internal_newquantity();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::remaining_quantity() const {
+  // @@protoc_insertion_point(field_get:trade.ModifyOrderAck.remaining_quantity)
+  return _internal_remaining_quantity();
 }
-inline void ModifyOrderAck::_internal_set_newquantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void ModifyOrderAck::_internal_set_remaining_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  newquantity_ = value;
+  remaining_quantity_ = value;
 }
-inline void ModifyOrderAck::set_newquantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_newquantity(value);
-  // @@protoc_insertion_point(field_set:trade.ModifyOrderAck.newQuantity)
+inline void ModifyOrderAck::set_remaining_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_remaining_quantity(value);
+  // @@protoc_insertion_point(field_set:trade.ModifyOrderAck.remaining_quantity)
 }
 
-// uint64 subaccountId = 6;
-inline void ModifyOrderAck::clear_subaccountid() {
-  subaccountid_ = PROTOBUF_ULONGLONG(0);
+// uint64 subaccount_id = 6;
+inline void ModifyOrderAck::clear_subaccount_id() {
+  subaccount_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::_internal_subaccountid() const {
-  return subaccountid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::_internal_subaccount_id() const {
+  return subaccount_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::subaccountid() const {
-  // @@protoc_insertion_point(field_get:trade.ModifyOrderAck.subaccountId)
-  return _internal_subaccountid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::subaccount_id() const {
+  // @@protoc_insertion_point(field_get:trade.ModifyOrderAck.subaccount_id)
+  return _internal_subaccount_id();
 }
-inline void ModifyOrderAck::_internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void ModifyOrderAck::_internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  subaccountid_ = value;
+  subaccount_id_ = value;
 }
-inline void ModifyOrderAck::set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_subaccountid(value);
-  // @@protoc_insertion_point(field_set:trade.ModifyOrderAck.subaccountId)
+inline void ModifyOrderAck::set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_subaccount_id(value);
+  // @@protoc_insertion_point(field_set:trade.ModifyOrderAck.subaccount_id)
 }
 
-// uint64 marketId = 7;
-inline void ModifyOrderAck::clear_marketid() {
-  marketid_ = PROTOBUF_ULONGLONG(0);
+// uint64 market_id = 7;
+inline void ModifyOrderAck::clear_market_id() {
+  market_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::_internal_marketid() const {
-  return marketid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::_internal_market_id() const {
+  return market_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::marketid() const {
-  // @@protoc_insertion_point(field_get:trade.ModifyOrderAck.marketId)
-  return _internal_marketid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::market_id() const {
+  // @@protoc_insertion_point(field_get:trade.ModifyOrderAck.market_id)
+  return _internal_market_id();
 }
-inline void ModifyOrderAck::_internal_set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void ModifyOrderAck::_internal_set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  marketid_ = value;
+  market_id_ = value;
 }
-inline void ModifyOrderAck::set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_marketid(value);
-  // @@protoc_insertion_point(field_set:trade.ModifyOrderAck.marketId)
+inline void ModifyOrderAck::set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_market_id(value);
+  // @@protoc_insertion_point(field_set:trade.ModifyOrderAck.market_id)
 }
 
 // uint64 price = 8;
@@ -7889,88 +7995,128 @@ inline void ModifyOrderAck::set_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   // @@protoc_insertion_point(field_set:trade.ModifyOrderAck.price)
 }
 
+// uint64 quantity = 9;
+inline void ModifyOrderAck::clear_quantity() {
+  quantity_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::_internal_quantity() const {
+  return quantity_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::quantity() const {
+  // @@protoc_insertion_point(field_get:trade.ModifyOrderAck.quantity)
+  return _internal_quantity();
+}
+inline void ModifyOrderAck::_internal_set_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  quantity_ = value;
+}
+inline void ModifyOrderAck::set_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_quantity(value);
+  // @@protoc_insertion_point(field_set:trade.ModifyOrderAck.quantity)
+}
+
+// uint64 cumulative_quantity = 10;
+inline void ModifyOrderAck::clear_cumulative_quantity() {
+  cumulative_quantity_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::_internal_cumulative_quantity() const {
+  return cumulative_quantity_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderAck::cumulative_quantity() const {
+  // @@protoc_insertion_point(field_get:trade.ModifyOrderAck.cumulative_quantity)
+  return _internal_cumulative_quantity();
+}
+inline void ModifyOrderAck::_internal_set_cumulative_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  cumulative_quantity_ = value;
+}
+inline void ModifyOrderAck::set_cumulative_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_cumulative_quantity(value);
+  // @@protoc_insertion_point(field_set:trade.ModifyOrderAck.cumulative_quantity)
+}
+
 // -------------------------------------------------------------------
 
 // MassCancelAck
 
-// uint64 msgSeqNum = 1;
-inline void MassCancelAck::clear_msgseqnum() {
-  msgseqnum_ = PROTOBUF_ULONGLONG(0);
+// uint64 msg_seq_num = 1;
+inline void MassCancelAck::clear_msg_seq_num() {
+  msg_seq_num_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancelAck::_internal_msgseqnum() const {
-  return msgseqnum_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancelAck::_internal_msg_seq_num() const {
+  return msg_seq_num_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancelAck::msgseqnum() const {
-  // @@protoc_insertion_point(field_get:trade.MassCancelAck.msgSeqNum)
-  return _internal_msgseqnum();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancelAck::msg_seq_num() const {
+  // @@protoc_insertion_point(field_get:trade.MassCancelAck.msg_seq_num)
+  return _internal_msg_seq_num();
 }
-inline void MassCancelAck::_internal_set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void MassCancelAck::_internal_set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  msgseqnum_ = value;
+  msg_seq_num_ = value;
 }
-inline void MassCancelAck::set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_msgseqnum(value);
-  // @@protoc_insertion_point(field_set:trade.MassCancelAck.msgSeqNum)
+inline void MassCancelAck::set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_msg_seq_num(value);
+  // @@protoc_insertion_point(field_set:trade.MassCancelAck.msg_seq_num)
 }
 
-// uint64 subaccountId = 2;
-inline void MassCancelAck::clear_subaccountid() {
-  subaccountid_ = PROTOBUF_ULONGLONG(0);
+// uint64 subaccount_id = 2;
+inline void MassCancelAck::clear_subaccount_id() {
+  subaccount_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancelAck::_internal_subaccountid() const {
-  return subaccountid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancelAck::_internal_subaccount_id() const {
+  return subaccount_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancelAck::subaccountid() const {
-  // @@protoc_insertion_point(field_get:trade.MassCancelAck.subaccountId)
-  return _internal_subaccountid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancelAck::subaccount_id() const {
+  // @@protoc_insertion_point(field_get:trade.MassCancelAck.subaccount_id)
+  return _internal_subaccount_id();
 }
-inline void MassCancelAck::_internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void MassCancelAck::_internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  subaccountid_ = value;
+  subaccount_id_ = value;
 }
-inline void MassCancelAck::set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_subaccountid(value);
-  // @@protoc_insertion_point(field_set:trade.MassCancelAck.subaccountId)
+inline void MassCancelAck::set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_subaccount_id(value);
+  // @@protoc_insertion_point(field_set:trade.MassCancelAck.subaccount_id)
 }
 
-// uint64 requestId = 3;
-inline void MassCancelAck::clear_requestid() {
-  requestid_ = PROTOBUF_ULONGLONG(0);
+// uint64 request_id = 3;
+inline void MassCancelAck::clear_request_id() {
+  request_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancelAck::_internal_requestid() const {
-  return requestid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancelAck::_internal_request_id() const {
+  return request_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancelAck::requestid() const {
-  // @@protoc_insertion_point(field_get:trade.MassCancelAck.requestId)
-  return _internal_requestid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancelAck::request_id() const {
+  // @@protoc_insertion_point(field_get:trade.MassCancelAck.request_id)
+  return _internal_request_id();
 }
-inline void MassCancelAck::_internal_set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void MassCancelAck::_internal_set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  requestid_ = value;
+  request_id_ = value;
 }
-inline void MassCancelAck::set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_requestid(value);
-  // @@protoc_insertion_point(field_set:trade.MassCancelAck.requestId)
+inline void MassCancelAck::set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_request_id(value);
+  // @@protoc_insertion_point(field_set:trade.MassCancelAck.request_id)
 }
 
-// uint64 transactTime = 4;
-inline void MassCancelAck::clear_transacttime() {
-  transacttime_ = PROTOBUF_ULONGLONG(0);
+// uint64 transact_time = 4;
+inline void MassCancelAck::clear_transact_time() {
+  transact_time_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancelAck::_internal_transacttime() const {
-  return transacttime_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancelAck::_internal_transact_time() const {
+  return transact_time_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancelAck::transacttime() const {
-  // @@protoc_insertion_point(field_get:trade.MassCancelAck.transactTime)
-  return _internal_transacttime();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 MassCancelAck::transact_time() const {
+  // @@protoc_insertion_point(field_get:trade.MassCancelAck.transact_time)
+  return _internal_transact_time();
 }
-inline void MassCancelAck::_internal_set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void MassCancelAck::_internal_set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  transacttime_ = value;
+  transact_time_ = value;
 }
-inline void MassCancelAck::set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_transacttime(value);
-  // @@protoc_insertion_point(field_set:trade.MassCancelAck.transactTime)
+inline void MassCancelAck::set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_transact_time(value);
+  // @@protoc_insertion_point(field_set:trade.MassCancelAck.transact_time)
 }
 
 // .trade.MassCancelAck.Reason reason = 6;
@@ -8001,128 +8147,128 @@ inline void MassCancelAck::set_reason(::trade::MassCancelAck_Reason value) {
   // @@protoc_insertion_point(field_set:trade.MassCancelAck.reason)
 }
 
-// uint32 totalAffectedOrders = 7;
-inline void MassCancelAck::clear_totalaffectedorders() {
-  totalaffectedorders_ = 0u;
+// uint32 total_affected_orders = 7;
+inline void MassCancelAck::clear_total_affected_orders() {
+  total_affected_orders_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 MassCancelAck::_internal_totalaffectedorders() const {
-  return totalaffectedorders_;
+inline ::PROTOBUF_NAMESPACE_ID::uint32 MassCancelAck::_internal_total_affected_orders() const {
+  return total_affected_orders_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 MassCancelAck::totalaffectedorders() const {
-  // @@protoc_insertion_point(field_get:trade.MassCancelAck.totalAffectedOrders)
-  return _internal_totalaffectedorders();
+inline ::PROTOBUF_NAMESPACE_ID::uint32 MassCancelAck::total_affected_orders() const {
+  // @@protoc_insertion_point(field_get:trade.MassCancelAck.total_affected_orders)
+  return _internal_total_affected_orders();
 }
-inline void MassCancelAck::_internal_set_totalaffectedorders(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void MassCancelAck::_internal_set_total_affected_orders(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
-  totalaffectedorders_ = value;
+  total_affected_orders_ = value;
 }
-inline void MassCancelAck::set_totalaffectedorders(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_totalaffectedorders(value);
-  // @@protoc_insertion_point(field_set:trade.MassCancelAck.totalAffectedOrders)
+inline void MassCancelAck::set_total_affected_orders(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_total_affected_orders(value);
+  // @@protoc_insertion_point(field_set:trade.MassCancelAck.total_affected_orders)
 }
 
 // -------------------------------------------------------------------
 
 // NewOrderReject
 
-// uint64 msgSeqNum = 1;
-inline void NewOrderReject::clear_msgseqnum() {
-  msgseqnum_ = PROTOBUF_ULONGLONG(0);
+// uint64 msg_seq_num = 1;
+inline void NewOrderReject::clear_msg_seq_num() {
+  msg_seq_num_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderReject::_internal_msgseqnum() const {
-  return msgseqnum_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderReject::_internal_msg_seq_num() const {
+  return msg_seq_num_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderReject::msgseqnum() const {
-  // @@protoc_insertion_point(field_get:trade.NewOrderReject.msgSeqNum)
-  return _internal_msgseqnum();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderReject::msg_seq_num() const {
+  // @@protoc_insertion_point(field_get:trade.NewOrderReject.msg_seq_num)
+  return _internal_msg_seq_num();
 }
-inline void NewOrderReject::_internal_set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void NewOrderReject::_internal_set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  msgseqnum_ = value;
+  msg_seq_num_ = value;
 }
-inline void NewOrderReject::set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_msgseqnum(value);
-  // @@protoc_insertion_point(field_set:trade.NewOrderReject.msgSeqNum)
+inline void NewOrderReject::set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_msg_seq_num(value);
+  // @@protoc_insertion_point(field_set:trade.NewOrderReject.msg_seq_num)
 }
 
-// uint64 clientOrderId = 2;
-inline void NewOrderReject::clear_clientorderid() {
-  clientorderid_ = PROTOBUF_ULONGLONG(0);
+// uint64 client_order_id = 2;
+inline void NewOrderReject::clear_client_order_id() {
+  client_order_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderReject::_internal_clientorderid() const {
-  return clientorderid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderReject::_internal_client_order_id() const {
+  return client_order_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderReject::clientorderid() const {
-  // @@protoc_insertion_point(field_get:trade.NewOrderReject.clientOrderId)
-  return _internal_clientorderid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderReject::client_order_id() const {
+  // @@protoc_insertion_point(field_get:trade.NewOrderReject.client_order_id)
+  return _internal_client_order_id();
 }
-inline void NewOrderReject::_internal_set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void NewOrderReject::_internal_set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  clientorderid_ = value;
+  client_order_id_ = value;
 }
-inline void NewOrderReject::set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_clientorderid(value);
-  // @@protoc_insertion_point(field_set:trade.NewOrderReject.clientOrderId)
+inline void NewOrderReject::set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_client_order_id(value);
+  // @@protoc_insertion_point(field_set:trade.NewOrderReject.client_order_id)
 }
 
-// uint64 requestId = 3;
-inline void NewOrderReject::clear_requestid() {
-  requestid_ = PROTOBUF_ULONGLONG(0);
+// uint64 request_id = 3;
+inline void NewOrderReject::clear_request_id() {
+  request_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderReject::_internal_requestid() const {
-  return requestid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderReject::_internal_request_id() const {
+  return request_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderReject::requestid() const {
-  // @@protoc_insertion_point(field_get:trade.NewOrderReject.requestId)
-  return _internal_requestid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderReject::request_id() const {
+  // @@protoc_insertion_point(field_get:trade.NewOrderReject.request_id)
+  return _internal_request_id();
 }
-inline void NewOrderReject::_internal_set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void NewOrderReject::_internal_set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  requestid_ = value;
+  request_id_ = value;
 }
-inline void NewOrderReject::set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_requestid(value);
-  // @@protoc_insertion_point(field_set:trade.NewOrderReject.requestId)
+inline void NewOrderReject::set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_request_id(value);
+  // @@protoc_insertion_point(field_set:trade.NewOrderReject.request_id)
 }
 
-// uint64 transactTime = 4;
-inline void NewOrderReject::clear_transacttime() {
-  transacttime_ = PROTOBUF_ULONGLONG(0);
+// uint64 transact_time = 4;
+inline void NewOrderReject::clear_transact_time() {
+  transact_time_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderReject::_internal_transacttime() const {
-  return transacttime_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderReject::_internal_transact_time() const {
+  return transact_time_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderReject::transacttime() const {
-  // @@protoc_insertion_point(field_get:trade.NewOrderReject.transactTime)
-  return _internal_transacttime();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderReject::transact_time() const {
+  // @@protoc_insertion_point(field_get:trade.NewOrderReject.transact_time)
+  return _internal_transact_time();
 }
-inline void NewOrderReject::_internal_set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void NewOrderReject::_internal_set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  transacttime_ = value;
+  transact_time_ = value;
 }
-inline void NewOrderReject::set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_transacttime(value);
-  // @@protoc_insertion_point(field_set:trade.NewOrderReject.transactTime)
+inline void NewOrderReject::set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_transact_time(value);
+  // @@protoc_insertion_point(field_set:trade.NewOrderReject.transact_time)
 }
 
-// uint64 subaccountId = 5;
-inline void NewOrderReject::clear_subaccountid() {
-  subaccountid_ = PROTOBUF_ULONGLONG(0);
+// uint64 subaccount_id = 5;
+inline void NewOrderReject::clear_subaccount_id() {
+  subaccount_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderReject::_internal_subaccountid() const {
-  return subaccountid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderReject::_internal_subaccount_id() const {
+  return subaccount_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderReject::subaccountid() const {
-  // @@protoc_insertion_point(field_get:trade.NewOrderReject.subaccountId)
-  return _internal_subaccountid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderReject::subaccount_id() const {
+  // @@protoc_insertion_point(field_get:trade.NewOrderReject.subaccount_id)
+  return _internal_subaccount_id();
 }
-inline void NewOrderReject::_internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void NewOrderReject::_internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  subaccountid_ = value;
+  subaccount_id_ = value;
 }
-inline void NewOrderReject::set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_subaccountid(value);
-  // @@protoc_insertion_point(field_set:trade.NewOrderReject.subaccountId)
+inline void NewOrderReject::set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_subaccount_id(value);
+  // @@protoc_insertion_point(field_set:trade.NewOrderReject.subaccount_id)
 }
 
 // .trade.NewOrderReject.Reason reason = 6;
@@ -8145,24 +8291,24 @@ inline void NewOrderReject::set_reason(::trade::NewOrderReject_Reason value) {
   // @@protoc_insertion_point(field_set:trade.NewOrderReject.reason)
 }
 
-// uint64 marketId = 7;
-inline void NewOrderReject::clear_marketid() {
-  marketid_ = PROTOBUF_ULONGLONG(0);
+// uint64 market_id = 7;
+inline void NewOrderReject::clear_market_id() {
+  market_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderReject::_internal_marketid() const {
-  return marketid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderReject::_internal_market_id() const {
+  return market_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderReject::marketid() const {
-  // @@protoc_insertion_point(field_get:trade.NewOrderReject.marketId)
-  return _internal_marketid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 NewOrderReject::market_id() const {
+  // @@protoc_insertion_point(field_get:trade.NewOrderReject.market_id)
+  return _internal_market_id();
 }
-inline void NewOrderReject::_internal_set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void NewOrderReject::_internal_set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  marketid_ = value;
+  market_id_ = value;
 }
-inline void NewOrderReject::set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_marketid(value);
-  // @@protoc_insertion_point(field_set:trade.NewOrderReject.marketId)
+inline void NewOrderReject::set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_market_id(value);
+  // @@protoc_insertion_point(field_set:trade.NewOrderReject.market_id)
 }
 
 // uint64 price = 8;
@@ -8233,148 +8379,148 @@ inline void NewOrderReject::set_side(::trade::Side value) {
   // @@protoc_insertion_point(field_set:trade.NewOrderReject.side)
 }
 
-// .trade.TimeInForce timeInForce = 11;
-inline void NewOrderReject::clear_timeinforce() {
-  timeinforce_ = 0;
+// .trade.TimeInForce time_in_force = 11;
+inline void NewOrderReject::clear_time_in_force() {
+  time_in_force_ = 0;
 }
-inline ::trade::TimeInForce NewOrderReject::_internal_timeinforce() const {
-  return static_cast< ::trade::TimeInForce >(timeinforce_);
+inline ::trade::TimeInForce NewOrderReject::_internal_time_in_force() const {
+  return static_cast< ::trade::TimeInForce >(time_in_force_);
 }
-inline ::trade::TimeInForce NewOrderReject::timeinforce() const {
-  // @@protoc_insertion_point(field_get:trade.NewOrderReject.timeInForce)
-  return _internal_timeinforce();
+inline ::trade::TimeInForce NewOrderReject::time_in_force() const {
+  // @@protoc_insertion_point(field_get:trade.NewOrderReject.time_in_force)
+  return _internal_time_in_force();
 }
-inline void NewOrderReject::_internal_set_timeinforce(::trade::TimeInForce value) {
+inline void NewOrderReject::_internal_set_time_in_force(::trade::TimeInForce value) {
   
-  timeinforce_ = value;
+  time_in_force_ = value;
 }
-inline void NewOrderReject::set_timeinforce(::trade::TimeInForce value) {
-  _internal_set_timeinforce(value);
-  // @@protoc_insertion_point(field_set:trade.NewOrderReject.timeInForce)
+inline void NewOrderReject::set_time_in_force(::trade::TimeInForce value) {
+  _internal_set_time_in_force(value);
+  // @@protoc_insertion_point(field_set:trade.NewOrderReject.time_in_force)
 }
 
-// .trade.OrderType orderType = 12;
-inline void NewOrderReject::clear_ordertype() {
-  ordertype_ = 0;
+// .trade.OrderType order_type = 12;
+inline void NewOrderReject::clear_order_type() {
+  order_type_ = 0;
 }
-inline ::trade::OrderType NewOrderReject::_internal_ordertype() const {
-  return static_cast< ::trade::OrderType >(ordertype_);
+inline ::trade::OrderType NewOrderReject::_internal_order_type() const {
+  return static_cast< ::trade::OrderType >(order_type_);
 }
-inline ::trade::OrderType NewOrderReject::ordertype() const {
-  // @@protoc_insertion_point(field_get:trade.NewOrderReject.orderType)
-  return _internal_ordertype();
+inline ::trade::OrderType NewOrderReject::order_type() const {
+  // @@protoc_insertion_point(field_get:trade.NewOrderReject.order_type)
+  return _internal_order_type();
 }
-inline void NewOrderReject::_internal_set_ordertype(::trade::OrderType value) {
+inline void NewOrderReject::_internal_set_order_type(::trade::OrderType value) {
   
-  ordertype_ = value;
+  order_type_ = value;
 }
-inline void NewOrderReject::set_ordertype(::trade::OrderType value) {
-  _internal_set_ordertype(value);
-  // @@protoc_insertion_point(field_set:trade.NewOrderReject.orderType)
+inline void NewOrderReject::set_order_type(::trade::OrderType value) {
+  _internal_set_order_type(value);
+  // @@protoc_insertion_point(field_set:trade.NewOrderReject.order_type)
 }
 
 // -------------------------------------------------------------------
 
 // CancelOrderReject
 
-// uint64 msgSeqNum = 1;
-inline void CancelOrderReject::clear_msgseqnum() {
-  msgseqnum_ = PROTOBUF_ULONGLONG(0);
+// uint64 msg_seq_num = 1;
+inline void CancelOrderReject::clear_msg_seq_num() {
+  msg_seq_num_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderReject::_internal_msgseqnum() const {
-  return msgseqnum_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderReject::_internal_msg_seq_num() const {
+  return msg_seq_num_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderReject::msgseqnum() const {
-  // @@protoc_insertion_point(field_get:trade.CancelOrderReject.msgSeqNum)
-  return _internal_msgseqnum();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderReject::msg_seq_num() const {
+  // @@protoc_insertion_point(field_get:trade.CancelOrderReject.msg_seq_num)
+  return _internal_msg_seq_num();
 }
-inline void CancelOrderReject::_internal_set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void CancelOrderReject::_internal_set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  msgseqnum_ = value;
+  msg_seq_num_ = value;
 }
-inline void CancelOrderReject::set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_msgseqnum(value);
-  // @@protoc_insertion_point(field_set:trade.CancelOrderReject.msgSeqNum)
+inline void CancelOrderReject::set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_msg_seq_num(value);
+  // @@protoc_insertion_point(field_set:trade.CancelOrderReject.msg_seq_num)
 }
 
-// uint64 clientOrderId = 2;
-inline void CancelOrderReject::clear_clientorderid() {
-  clientorderid_ = PROTOBUF_ULONGLONG(0);
+// uint64 client_order_id = 2;
+inline void CancelOrderReject::clear_client_order_id() {
+  client_order_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderReject::_internal_clientorderid() const {
-  return clientorderid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderReject::_internal_client_order_id() const {
+  return client_order_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderReject::clientorderid() const {
-  // @@protoc_insertion_point(field_get:trade.CancelOrderReject.clientOrderId)
-  return _internal_clientorderid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderReject::client_order_id() const {
+  // @@protoc_insertion_point(field_get:trade.CancelOrderReject.client_order_id)
+  return _internal_client_order_id();
 }
-inline void CancelOrderReject::_internal_set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void CancelOrderReject::_internal_set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  clientorderid_ = value;
+  client_order_id_ = value;
 }
-inline void CancelOrderReject::set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_clientorderid(value);
-  // @@protoc_insertion_point(field_set:trade.CancelOrderReject.clientOrderId)
+inline void CancelOrderReject::set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_client_order_id(value);
+  // @@protoc_insertion_point(field_set:trade.CancelOrderReject.client_order_id)
 }
 
-// uint64 requestId = 3;
-inline void CancelOrderReject::clear_requestid() {
-  requestid_ = PROTOBUF_ULONGLONG(0);
+// uint64 request_id = 3;
+inline void CancelOrderReject::clear_request_id() {
+  request_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderReject::_internal_requestid() const {
-  return requestid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderReject::_internal_request_id() const {
+  return request_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderReject::requestid() const {
-  // @@protoc_insertion_point(field_get:trade.CancelOrderReject.requestId)
-  return _internal_requestid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderReject::request_id() const {
+  // @@protoc_insertion_point(field_get:trade.CancelOrderReject.request_id)
+  return _internal_request_id();
 }
-inline void CancelOrderReject::_internal_set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void CancelOrderReject::_internal_set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  requestid_ = value;
+  request_id_ = value;
 }
-inline void CancelOrderReject::set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_requestid(value);
-  // @@protoc_insertion_point(field_set:trade.CancelOrderReject.requestId)
+inline void CancelOrderReject::set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_request_id(value);
+  // @@protoc_insertion_point(field_set:trade.CancelOrderReject.request_id)
 }
 
-// uint64 transactTime = 4;
-inline void CancelOrderReject::clear_transacttime() {
-  transacttime_ = PROTOBUF_ULONGLONG(0);
+// uint64 transact_time = 4;
+inline void CancelOrderReject::clear_transact_time() {
+  transact_time_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderReject::_internal_transacttime() const {
-  return transacttime_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderReject::_internal_transact_time() const {
+  return transact_time_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderReject::transacttime() const {
-  // @@protoc_insertion_point(field_get:trade.CancelOrderReject.transactTime)
-  return _internal_transacttime();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderReject::transact_time() const {
+  // @@protoc_insertion_point(field_get:trade.CancelOrderReject.transact_time)
+  return _internal_transact_time();
 }
-inline void CancelOrderReject::_internal_set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void CancelOrderReject::_internal_set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  transacttime_ = value;
+  transact_time_ = value;
 }
-inline void CancelOrderReject::set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_transacttime(value);
-  // @@protoc_insertion_point(field_set:trade.CancelOrderReject.transactTime)
+inline void CancelOrderReject::set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_transact_time(value);
+  // @@protoc_insertion_point(field_set:trade.CancelOrderReject.transact_time)
 }
 
-// uint64 subaccountId = 5;
-inline void CancelOrderReject::clear_subaccountid() {
-  subaccountid_ = PROTOBUF_ULONGLONG(0);
+// uint64 subaccount_id = 5;
+inline void CancelOrderReject::clear_subaccount_id() {
+  subaccount_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderReject::_internal_subaccountid() const {
-  return subaccountid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderReject::_internal_subaccount_id() const {
+  return subaccount_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderReject::subaccountid() const {
-  // @@protoc_insertion_point(field_get:trade.CancelOrderReject.subaccountId)
-  return _internal_subaccountid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderReject::subaccount_id() const {
+  // @@protoc_insertion_point(field_get:trade.CancelOrderReject.subaccount_id)
+  return _internal_subaccount_id();
 }
-inline void CancelOrderReject::_internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void CancelOrderReject::_internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  subaccountid_ = value;
+  subaccount_id_ = value;
 }
-inline void CancelOrderReject::set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_subaccountid(value);
-  // @@protoc_insertion_point(field_set:trade.CancelOrderReject.subaccountId)
+inline void CancelOrderReject::set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_subaccount_id(value);
+  // @@protoc_insertion_point(field_set:trade.CancelOrderReject.subaccount_id)
 }
 
 // .trade.CancelOrderReject.Reason reason = 6;
@@ -8397,128 +8543,128 @@ inline void CancelOrderReject::set_reason(::trade::CancelOrderReject_Reason valu
   // @@protoc_insertion_point(field_set:trade.CancelOrderReject.reason)
 }
 
-// uint64 marketId = 7;
-inline void CancelOrderReject::clear_marketid() {
-  marketid_ = PROTOBUF_ULONGLONG(0);
+// uint64 market_id = 7;
+inline void CancelOrderReject::clear_market_id() {
+  market_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderReject::_internal_marketid() const {
-  return marketid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderReject::_internal_market_id() const {
+  return market_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderReject::marketid() const {
-  // @@protoc_insertion_point(field_get:trade.CancelOrderReject.marketId)
-  return _internal_marketid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 CancelOrderReject::market_id() const {
+  // @@protoc_insertion_point(field_get:trade.CancelOrderReject.market_id)
+  return _internal_market_id();
 }
-inline void CancelOrderReject::_internal_set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void CancelOrderReject::_internal_set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  marketid_ = value;
+  market_id_ = value;
 }
-inline void CancelOrderReject::set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_marketid(value);
-  // @@protoc_insertion_point(field_set:trade.CancelOrderReject.marketId)
+inline void CancelOrderReject::set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_market_id(value);
+  // @@protoc_insertion_point(field_set:trade.CancelOrderReject.market_id)
 }
 
 // -------------------------------------------------------------------
 
 // ModifyOrderReject
 
-// uint64 msgSeqNum = 1;
-inline void ModifyOrderReject::clear_msgseqnum() {
-  msgseqnum_ = PROTOBUF_ULONGLONG(0);
+// uint64 msg_seq_num = 1;
+inline void ModifyOrderReject::clear_msg_seq_num() {
+  msg_seq_num_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderReject::_internal_msgseqnum() const {
-  return msgseqnum_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderReject::_internal_msg_seq_num() const {
+  return msg_seq_num_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderReject::msgseqnum() const {
-  // @@protoc_insertion_point(field_get:trade.ModifyOrderReject.msgSeqNum)
-  return _internal_msgseqnum();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderReject::msg_seq_num() const {
+  // @@protoc_insertion_point(field_get:trade.ModifyOrderReject.msg_seq_num)
+  return _internal_msg_seq_num();
 }
-inline void ModifyOrderReject::_internal_set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void ModifyOrderReject::_internal_set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  msgseqnum_ = value;
+  msg_seq_num_ = value;
 }
-inline void ModifyOrderReject::set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_msgseqnum(value);
-  // @@protoc_insertion_point(field_set:trade.ModifyOrderReject.msgSeqNum)
+inline void ModifyOrderReject::set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_msg_seq_num(value);
+  // @@protoc_insertion_point(field_set:trade.ModifyOrderReject.msg_seq_num)
 }
 
-// uint64 clientOrderId = 2;
-inline void ModifyOrderReject::clear_clientorderid() {
-  clientorderid_ = PROTOBUF_ULONGLONG(0);
+// uint64 client_order_id = 2;
+inline void ModifyOrderReject::clear_client_order_id() {
+  client_order_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderReject::_internal_clientorderid() const {
-  return clientorderid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderReject::_internal_client_order_id() const {
+  return client_order_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderReject::clientorderid() const {
-  // @@protoc_insertion_point(field_get:trade.ModifyOrderReject.clientOrderId)
-  return _internal_clientorderid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderReject::client_order_id() const {
+  // @@protoc_insertion_point(field_get:trade.ModifyOrderReject.client_order_id)
+  return _internal_client_order_id();
 }
-inline void ModifyOrderReject::_internal_set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void ModifyOrderReject::_internal_set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  clientorderid_ = value;
+  client_order_id_ = value;
 }
-inline void ModifyOrderReject::set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_clientorderid(value);
-  // @@protoc_insertion_point(field_set:trade.ModifyOrderReject.clientOrderId)
+inline void ModifyOrderReject::set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_client_order_id(value);
+  // @@protoc_insertion_point(field_set:trade.ModifyOrderReject.client_order_id)
 }
 
-// uint64 requestId = 3;
-inline void ModifyOrderReject::clear_requestid() {
-  requestid_ = PROTOBUF_ULONGLONG(0);
+// uint64 request_id = 3;
+inline void ModifyOrderReject::clear_request_id() {
+  request_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderReject::_internal_requestid() const {
-  return requestid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderReject::_internal_request_id() const {
+  return request_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderReject::requestid() const {
-  // @@protoc_insertion_point(field_get:trade.ModifyOrderReject.requestId)
-  return _internal_requestid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderReject::request_id() const {
+  // @@protoc_insertion_point(field_get:trade.ModifyOrderReject.request_id)
+  return _internal_request_id();
 }
-inline void ModifyOrderReject::_internal_set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void ModifyOrderReject::_internal_set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  requestid_ = value;
+  request_id_ = value;
 }
-inline void ModifyOrderReject::set_requestid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_requestid(value);
-  // @@protoc_insertion_point(field_set:trade.ModifyOrderReject.requestId)
+inline void ModifyOrderReject::set_request_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_request_id(value);
+  // @@protoc_insertion_point(field_set:trade.ModifyOrderReject.request_id)
 }
 
-// uint64 transactTime = 4;
-inline void ModifyOrderReject::clear_transacttime() {
-  transacttime_ = PROTOBUF_ULONGLONG(0);
+// uint64 transact_time = 4;
+inline void ModifyOrderReject::clear_transact_time() {
+  transact_time_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderReject::_internal_transacttime() const {
-  return transacttime_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderReject::_internal_transact_time() const {
+  return transact_time_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderReject::transacttime() const {
-  // @@protoc_insertion_point(field_get:trade.ModifyOrderReject.transactTime)
-  return _internal_transacttime();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderReject::transact_time() const {
+  // @@protoc_insertion_point(field_get:trade.ModifyOrderReject.transact_time)
+  return _internal_transact_time();
 }
-inline void ModifyOrderReject::_internal_set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void ModifyOrderReject::_internal_set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  transacttime_ = value;
+  transact_time_ = value;
 }
-inline void ModifyOrderReject::set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_transacttime(value);
-  // @@protoc_insertion_point(field_set:trade.ModifyOrderReject.transactTime)
+inline void ModifyOrderReject::set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_transact_time(value);
+  // @@protoc_insertion_point(field_set:trade.ModifyOrderReject.transact_time)
 }
 
-// uint64 subaccountId = 5;
-inline void ModifyOrderReject::clear_subaccountid() {
-  subaccountid_ = PROTOBUF_ULONGLONG(0);
+// uint64 subaccount_id = 5;
+inline void ModifyOrderReject::clear_subaccount_id() {
+  subaccount_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderReject::_internal_subaccountid() const {
-  return subaccountid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderReject::_internal_subaccount_id() const {
+  return subaccount_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderReject::subaccountid() const {
-  // @@protoc_insertion_point(field_get:trade.ModifyOrderReject.subaccountId)
-  return _internal_subaccountid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderReject::subaccount_id() const {
+  // @@protoc_insertion_point(field_get:trade.ModifyOrderReject.subaccount_id)
+  return _internal_subaccount_id();
 }
-inline void ModifyOrderReject::_internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void ModifyOrderReject::_internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  subaccountid_ = value;
+  subaccount_id_ = value;
 }
-inline void ModifyOrderReject::set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_subaccountid(value);
-  // @@protoc_insertion_point(field_set:trade.ModifyOrderReject.subaccountId)
+inline void ModifyOrderReject::set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_subaccount_id(value);
+  // @@protoc_insertion_point(field_set:trade.ModifyOrderReject.subaccount_id)
 }
 
 // .trade.ModifyOrderReject.Reason reason = 6;
@@ -8541,252 +8687,272 @@ inline void ModifyOrderReject::set_reason(::trade::ModifyOrderReject_Reason valu
   // @@protoc_insertion_point(field_set:trade.ModifyOrderReject.reason)
 }
 
-// uint64 marketId = 7;
-inline void ModifyOrderReject::clear_marketid() {
-  marketid_ = PROTOBUF_ULONGLONG(0);
+// uint64 market_id = 7;
+inline void ModifyOrderReject::clear_market_id() {
+  market_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderReject::_internal_marketid() const {
-  return marketid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderReject::_internal_market_id() const {
+  return market_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderReject::marketid() const {
-  // @@protoc_insertion_point(field_get:trade.ModifyOrderReject.marketId)
-  return _internal_marketid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 ModifyOrderReject::market_id() const {
+  // @@protoc_insertion_point(field_get:trade.ModifyOrderReject.market_id)
+  return _internal_market_id();
 }
-inline void ModifyOrderReject::_internal_set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void ModifyOrderReject::_internal_set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  marketid_ = value;
+  market_id_ = value;
 }
-inline void ModifyOrderReject::set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_marketid(value);
-  // @@protoc_insertion_point(field_set:trade.ModifyOrderReject.marketId)
+inline void ModifyOrderReject::set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_market_id(value);
+  // @@protoc_insertion_point(field_set:trade.ModifyOrderReject.market_id)
 }
 
 // -------------------------------------------------------------------
 
 // Fill
 
-// uint64 msgSeqNum = 1;
-inline void Fill::clear_msgseqnum() {
-  msgseqnum_ = PROTOBUF_ULONGLONG(0);
+// uint64 msg_seq_num = 1;
+inline void Fill::clear_msg_seq_num() {
+  msg_seq_num_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::_internal_msgseqnum() const {
-  return msgseqnum_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::_internal_msg_seq_num() const {
+  return msg_seq_num_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::msgseqnum() const {
-  // @@protoc_insertion_point(field_get:trade.Fill.msgSeqNum)
-  return _internal_msgseqnum();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::msg_seq_num() const {
+  // @@protoc_insertion_point(field_get:trade.Fill.msg_seq_num)
+  return _internal_msg_seq_num();
 }
-inline void Fill::_internal_set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Fill::_internal_set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  msgseqnum_ = value;
+  msg_seq_num_ = value;
 }
-inline void Fill::set_msgseqnum(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_msgseqnum(value);
-  // @@protoc_insertion_point(field_set:trade.Fill.msgSeqNum)
+inline void Fill::set_msg_seq_num(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_msg_seq_num(value);
+  // @@protoc_insertion_point(field_set:trade.Fill.msg_seq_num)
 }
 
-// uint64 marketId = 2;
-inline void Fill::clear_marketid() {
-  marketid_ = PROTOBUF_ULONGLONG(0);
+// uint64 market_id = 2;
+inline void Fill::clear_market_id() {
+  market_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::_internal_marketid() const {
-  return marketid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::_internal_market_id() const {
+  return market_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::marketid() const {
-  // @@protoc_insertion_point(field_get:trade.Fill.marketId)
-  return _internal_marketid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::market_id() const {
+  // @@protoc_insertion_point(field_get:trade.Fill.market_id)
+  return _internal_market_id();
 }
-inline void Fill::_internal_set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Fill::_internal_set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  marketid_ = value;
+  market_id_ = value;
 }
-inline void Fill::set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_marketid(value);
-  // @@protoc_insertion_point(field_set:trade.Fill.marketId)
+inline void Fill::set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_market_id(value);
+  // @@protoc_insertion_point(field_set:trade.Fill.market_id)
 }
 
-// uint64 clientOrderId = 3;
-inline void Fill::clear_clientorderid() {
-  clientorderid_ = PROTOBUF_ULONGLONG(0);
+// uint64 client_order_id = 3;
+inline void Fill::clear_client_order_id() {
+  client_order_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::_internal_clientorderid() const {
-  return clientorderid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::_internal_client_order_id() const {
+  return client_order_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::clientorderid() const {
-  // @@protoc_insertion_point(field_get:trade.Fill.clientOrderId)
-  return _internal_clientorderid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::client_order_id() const {
+  // @@protoc_insertion_point(field_get:trade.Fill.client_order_id)
+  return _internal_client_order_id();
 }
-inline void Fill::_internal_set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Fill::_internal_set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  clientorderid_ = value;
+  client_order_id_ = value;
 }
-inline void Fill::set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_clientorderid(value);
-  // @@protoc_insertion_point(field_set:trade.Fill.clientOrderId)
+inline void Fill::set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_client_order_id(value);
+  // @@protoc_insertion_point(field_set:trade.Fill.client_order_id)
 }
 
-// uint64 exchangeOrderId = 4;
-inline void Fill::clear_exchangeorderid() {
-  exchangeorderid_ = PROTOBUF_ULONGLONG(0);
+// uint64 exchange_order_id = 4;
+inline void Fill::clear_exchange_order_id() {
+  exchange_order_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::_internal_exchangeorderid() const {
-  return exchangeorderid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::_internal_exchange_order_id() const {
+  return exchange_order_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::exchangeorderid() const {
-  // @@protoc_insertion_point(field_get:trade.Fill.exchangeOrderId)
-  return _internal_exchangeorderid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::exchange_order_id() const {
+  // @@protoc_insertion_point(field_get:trade.Fill.exchange_order_id)
+  return _internal_exchange_order_id();
 }
-inline void Fill::_internal_set_exchangeorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Fill::_internal_set_exchange_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  exchangeorderid_ = value;
+  exchange_order_id_ = value;
 }
-inline void Fill::set_exchangeorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_exchangeorderid(value);
-  // @@protoc_insertion_point(field_set:trade.Fill.exchangeOrderId)
+inline void Fill::set_exchange_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_exchange_order_id(value);
+  // @@protoc_insertion_point(field_set:trade.Fill.exchange_order_id)
 }
 
-// uint64 fillPrice = 5;
-inline void Fill::clear_fillprice() {
-  fillprice_ = PROTOBUF_ULONGLONG(0);
+// uint64 fill_price = 5;
+inline void Fill::clear_fill_price() {
+  fill_price_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::_internal_fillprice() const {
-  return fillprice_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::_internal_fill_price() const {
+  return fill_price_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::fillprice() const {
-  // @@protoc_insertion_point(field_get:trade.Fill.fillPrice)
-  return _internal_fillprice();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::fill_price() const {
+  // @@protoc_insertion_point(field_get:trade.Fill.fill_price)
+  return _internal_fill_price();
 }
-inline void Fill::_internal_set_fillprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Fill::_internal_set_fill_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  fillprice_ = value;
+  fill_price_ = value;
 }
-inline void Fill::set_fillprice(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_fillprice(value);
-  // @@protoc_insertion_point(field_set:trade.Fill.fillPrice)
+inline void Fill::set_fill_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_fill_price(value);
+  // @@protoc_insertion_point(field_set:trade.Fill.fill_price)
 }
 
-// uint64 fillQuantity = 6;
-inline void Fill::clear_fillquantity() {
-  fillquantity_ = PROTOBUF_ULONGLONG(0);
+// uint64 fill_quantity = 6;
+inline void Fill::clear_fill_quantity() {
+  fill_quantity_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::_internal_fillquantity() const {
-  return fillquantity_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::_internal_fill_quantity() const {
+  return fill_quantity_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::fillquantity() const {
-  // @@protoc_insertion_point(field_get:trade.Fill.fillQuantity)
-  return _internal_fillquantity();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::fill_quantity() const {
+  // @@protoc_insertion_point(field_get:trade.Fill.fill_quantity)
+  return _internal_fill_quantity();
 }
-inline void Fill::_internal_set_fillquantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Fill::_internal_set_fill_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  fillquantity_ = value;
+  fill_quantity_ = value;
 }
-inline void Fill::set_fillquantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_fillquantity(value);
-  // @@protoc_insertion_point(field_set:trade.Fill.fillQuantity)
+inline void Fill::set_fill_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_fill_quantity(value);
+  // @@protoc_insertion_point(field_set:trade.Fill.fill_quantity)
 }
 
-// uint64 leavesQuantity = 7;
-inline void Fill::clear_leavesquantity() {
-  leavesquantity_ = PROTOBUF_ULONGLONG(0);
+// uint64 leaves_quantity = 7;
+inline void Fill::clear_leaves_quantity() {
+  leaves_quantity_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::_internal_leavesquantity() const {
-  return leavesquantity_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::_internal_leaves_quantity() const {
+  return leaves_quantity_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::leavesquantity() const {
-  // @@protoc_insertion_point(field_get:trade.Fill.leavesQuantity)
-  return _internal_leavesquantity();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::leaves_quantity() const {
+  // @@protoc_insertion_point(field_get:trade.Fill.leaves_quantity)
+  return _internal_leaves_quantity();
 }
-inline void Fill::_internal_set_leavesquantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Fill::_internal_set_leaves_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  leavesquantity_ = value;
+  leaves_quantity_ = value;
 }
-inline void Fill::set_leavesquantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_leavesquantity(value);
-  // @@protoc_insertion_point(field_set:trade.Fill.leavesQuantity)
+inline void Fill::set_leaves_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_leaves_quantity(value);
+  // @@protoc_insertion_point(field_set:trade.Fill.leaves_quantity)
 }
 
-// uint64 transactTime = 8;
-inline void Fill::clear_transacttime() {
-  transacttime_ = PROTOBUF_ULONGLONG(0);
+// uint64 transact_time = 8;
+inline void Fill::clear_transact_time() {
+  transact_time_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::_internal_transacttime() const {
-  return transacttime_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::_internal_transact_time() const {
+  return transact_time_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::transacttime() const {
-  // @@protoc_insertion_point(field_get:trade.Fill.transactTime)
-  return _internal_transacttime();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::transact_time() const {
+  // @@protoc_insertion_point(field_get:trade.Fill.transact_time)
+  return _internal_transact_time();
 }
-inline void Fill::_internal_set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Fill::_internal_set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  transacttime_ = value;
+  transact_time_ = value;
 }
-inline void Fill::set_transacttime(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_transacttime(value);
-  // @@protoc_insertion_point(field_set:trade.Fill.transactTime)
+inline void Fill::set_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_transact_time(value);
+  // @@protoc_insertion_point(field_set:trade.Fill.transact_time)
 }
 
-// uint64 subaccountId = 9;
-inline void Fill::clear_subaccountid() {
-  subaccountid_ = PROTOBUF_ULONGLONG(0);
+// uint64 subaccount_id = 9;
+inline void Fill::clear_subaccount_id() {
+  subaccount_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::_internal_subaccountid() const {
-  return subaccountid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::_internal_subaccount_id() const {
+  return subaccount_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::subaccountid() const {
-  // @@protoc_insertion_point(field_get:trade.Fill.subaccountId)
-  return _internal_subaccountid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::subaccount_id() const {
+  // @@protoc_insertion_point(field_get:trade.Fill.subaccount_id)
+  return _internal_subaccount_id();
 }
-inline void Fill::_internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Fill::_internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  subaccountid_ = value;
+  subaccount_id_ = value;
 }
-inline void Fill::set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_subaccountid(value);
-  // @@protoc_insertion_point(field_set:trade.Fill.subaccountId)
+inline void Fill::set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_subaccount_id(value);
+  // @@protoc_insertion_point(field_set:trade.Fill.subaccount_id)
+}
+
+// uint64 cumulative_quantity = 10;
+inline void Fill::clear_cumulative_quantity() {
+  cumulative_quantity_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::_internal_cumulative_quantity() const {
+  return cumulative_quantity_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Fill::cumulative_quantity() const {
+  // @@protoc_insertion_point(field_get:trade.Fill.cumulative_quantity)
+  return _internal_cumulative_quantity();
+}
+inline void Fill::_internal_set_cumulative_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  cumulative_quantity_ = value;
+}
+inline void Fill::set_cumulative_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_cumulative_quantity(value);
+  // @@protoc_insertion_point(field_set:trade.Fill.cumulative_quantity)
 }
 
 // -------------------------------------------------------------------
 
 // AssetPosition
 
-// uint64 subaccountId = 1;
-inline void AssetPosition::clear_subaccountid() {
-  subaccountid_ = PROTOBUF_ULONGLONG(0);
+// uint64 subaccount_id = 1;
+inline void AssetPosition::clear_subaccount_id() {
+  subaccount_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 AssetPosition::_internal_subaccountid() const {
-  return subaccountid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 AssetPosition::_internal_subaccount_id() const {
+  return subaccount_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 AssetPosition::subaccountid() const {
-  // @@protoc_insertion_point(field_get:trade.AssetPosition.subaccountId)
-  return _internal_subaccountid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 AssetPosition::subaccount_id() const {
+  // @@protoc_insertion_point(field_get:trade.AssetPosition.subaccount_id)
+  return _internal_subaccount_id();
 }
-inline void AssetPosition::_internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void AssetPosition::_internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  subaccountid_ = value;
+  subaccount_id_ = value;
 }
-inline void AssetPosition::set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_subaccountid(value);
-  // @@protoc_insertion_point(field_set:trade.AssetPosition.subaccountId)
+inline void AssetPosition::set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_subaccount_id(value);
+  // @@protoc_insertion_point(field_set:trade.AssetPosition.subaccount_id)
 }
 
-// uint64 assetId = 2;
-inline void AssetPosition::clear_assetid() {
-  assetid_ = PROTOBUF_ULONGLONG(0);
+// uint64 asset_id = 2;
+inline void AssetPosition::clear_asset_id() {
+  asset_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 AssetPosition::_internal_assetid() const {
-  return assetid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 AssetPosition::_internal_asset_id() const {
+  return asset_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 AssetPosition::assetid() const {
-  // @@protoc_insertion_point(field_get:trade.AssetPosition.assetId)
-  return _internal_assetid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 AssetPosition::asset_id() const {
+  // @@protoc_insertion_point(field_get:trade.AssetPosition.asset_id)
+  return _internal_asset_id();
 }
-inline void AssetPosition::_internal_set_assetid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void AssetPosition::_internal_set_asset_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  assetid_ = value;
+  asset_id_ = value;
 }
-inline void AssetPosition::set_assetid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_assetid(value);
-  // @@protoc_insertion_point(field_set:trade.AssetPosition.assetId)
+inline void AssetPosition::set_asset_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_asset_id(value);
+  // @@protoc_insertion_point(field_set:trade.AssetPosition.asset_id)
 }
 
 // .trade.RawUnits total = 3;
@@ -9361,88 +9527,88 @@ AssetPositions::positions() const {
 
 // Done
 
-// uint64 latestTransactTime = 1;
-inline void Done::clear_latesttransacttime() {
-  latesttransacttime_ = PROTOBUF_ULONGLONG(0);
+// uint64 latest_transact_time = 1;
+inline void Done::clear_latest_transact_time() {
+  latest_transact_time_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Done::_internal_latesttransacttime() const {
-  return latesttransacttime_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Done::_internal_latest_transact_time() const {
+  return latest_transact_time_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 Done::latesttransacttime() const {
-  // @@protoc_insertion_point(field_get:trade.Done.latestTransactTime)
-  return _internal_latesttransacttime();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 Done::latest_transact_time() const {
+  // @@protoc_insertion_point(field_get:trade.Done.latest_transact_time)
+  return _internal_latest_transact_time();
 }
-inline void Done::_internal_set_latesttransacttime(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void Done::_internal_set_latest_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  latesttransacttime_ = value;
+  latest_transact_time_ = value;
 }
-inline void Done::set_latesttransacttime(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_latesttransacttime(value);
-  // @@protoc_insertion_point(field_set:trade.Done.latestTransactTime)
+inline void Done::set_latest_transact_time(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_latest_transact_time(value);
+  // @@protoc_insertion_point(field_set:trade.Done.latest_transact_time)
 }
 
 // -------------------------------------------------------------------
 
 // RestingOrder
 
-// uint64 clientOrderId = 1;
-inline void RestingOrder::clear_clientorderid() {
-  clientorderid_ = PROTOBUF_ULONGLONG(0);
+// uint64 client_order_id = 1;
+inline void RestingOrder::clear_client_order_id() {
+  client_order_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::_internal_clientorderid() const {
-  return clientorderid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::_internal_client_order_id() const {
+  return client_order_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::clientorderid() const {
-  // @@protoc_insertion_point(field_get:trade.RestingOrder.clientOrderId)
-  return _internal_clientorderid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::client_order_id() const {
+  // @@protoc_insertion_point(field_get:trade.RestingOrder.client_order_id)
+  return _internal_client_order_id();
 }
-inline void RestingOrder::_internal_set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void RestingOrder::_internal_set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  clientorderid_ = value;
+  client_order_id_ = value;
 }
-inline void RestingOrder::set_clientorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_clientorderid(value);
-  // @@protoc_insertion_point(field_set:trade.RestingOrder.clientOrderId)
+inline void RestingOrder::set_client_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_client_order_id(value);
+  // @@protoc_insertion_point(field_set:trade.RestingOrder.client_order_id)
 }
 
-// uint64 exchangeOrderId = 2;
-inline void RestingOrder::clear_exchangeorderid() {
-  exchangeorderid_ = PROTOBUF_ULONGLONG(0);
+// uint64 exchange_order_id = 2;
+inline void RestingOrder::clear_exchange_order_id() {
+  exchange_order_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::_internal_exchangeorderid() const {
-  return exchangeorderid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::_internal_exchange_order_id() const {
+  return exchange_order_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::exchangeorderid() const {
-  // @@protoc_insertion_point(field_get:trade.RestingOrder.exchangeOrderId)
-  return _internal_exchangeorderid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::exchange_order_id() const {
+  // @@protoc_insertion_point(field_get:trade.RestingOrder.exchange_order_id)
+  return _internal_exchange_order_id();
 }
-inline void RestingOrder::_internal_set_exchangeorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void RestingOrder::_internal_set_exchange_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  exchangeorderid_ = value;
+  exchange_order_id_ = value;
 }
-inline void RestingOrder::set_exchangeorderid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_exchangeorderid(value);
-  // @@protoc_insertion_point(field_set:trade.RestingOrder.exchangeOrderId)
+inline void RestingOrder::set_exchange_order_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_exchange_order_id(value);
+  // @@protoc_insertion_point(field_set:trade.RestingOrder.exchange_order_id)
 }
 
-// uint64 marketId = 3;
-inline void RestingOrder::clear_marketid() {
-  marketid_ = PROTOBUF_ULONGLONG(0);
+// uint64 market_id = 3;
+inline void RestingOrder::clear_market_id() {
+  market_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::_internal_marketid() const {
-  return marketid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::_internal_market_id() const {
+  return market_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::marketid() const {
-  // @@protoc_insertion_point(field_get:trade.RestingOrder.marketId)
-  return _internal_marketid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::market_id() const {
+  // @@protoc_insertion_point(field_get:trade.RestingOrder.market_id)
+  return _internal_market_id();
 }
-inline void RestingOrder::_internal_set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void RestingOrder::_internal_set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  marketid_ = value;
+  market_id_ = value;
 }
-inline void RestingOrder::set_marketid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_marketid(value);
-  // @@protoc_insertion_point(field_set:trade.RestingOrder.marketId)
+inline void RestingOrder::set_market_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_market_id(value);
+  // @@protoc_insertion_point(field_set:trade.RestingOrder.market_id)
 }
 
 // uint64 price = 4;
@@ -9465,24 +9631,24 @@ inline void RestingOrder::set_price(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   // @@protoc_insertion_point(field_set:trade.RestingOrder.price)
 }
 
-// uint64 originalQuantity = 5;
-inline void RestingOrder::clear_originalquantity() {
-  originalquantity_ = PROTOBUF_ULONGLONG(0);
+// uint64 order_quantity = 5;
+inline void RestingOrder::clear_order_quantity() {
+  order_quantity_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::_internal_originalquantity() const {
-  return originalquantity_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::_internal_order_quantity() const {
+  return order_quantity_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::originalquantity() const {
-  // @@protoc_insertion_point(field_get:trade.RestingOrder.originalQuantity)
-  return _internal_originalquantity();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::order_quantity() const {
+  // @@protoc_insertion_point(field_get:trade.RestingOrder.order_quantity)
+  return _internal_order_quantity();
 }
-inline void RestingOrder::_internal_set_originalquantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void RestingOrder::_internal_set_order_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  originalquantity_ = value;
+  order_quantity_ = value;
 }
-inline void RestingOrder::set_originalquantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_originalquantity(value);
-  // @@protoc_insertion_point(field_set:trade.RestingOrder.originalQuantity)
+inline void RestingOrder::set_order_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_order_quantity(value);
+  // @@protoc_insertion_point(field_set:trade.RestingOrder.order_quantity)
 }
 
 // .trade.Side side = 6;
@@ -9505,104 +9671,124 @@ inline void RestingOrder::set_side(::trade::Side value) {
   // @@protoc_insertion_point(field_set:trade.RestingOrder.side)
 }
 
-// .trade.TimeInForce timeInForce = 7;
-inline void RestingOrder::clear_timeinforce() {
-  timeinforce_ = 0;
+// .trade.TimeInForce time_in_force = 7;
+inline void RestingOrder::clear_time_in_force() {
+  time_in_force_ = 0;
 }
-inline ::trade::TimeInForce RestingOrder::_internal_timeinforce() const {
-  return static_cast< ::trade::TimeInForce >(timeinforce_);
+inline ::trade::TimeInForce RestingOrder::_internal_time_in_force() const {
+  return static_cast< ::trade::TimeInForce >(time_in_force_);
 }
-inline ::trade::TimeInForce RestingOrder::timeinforce() const {
-  // @@protoc_insertion_point(field_get:trade.RestingOrder.timeInForce)
-  return _internal_timeinforce();
+inline ::trade::TimeInForce RestingOrder::time_in_force() const {
+  // @@protoc_insertion_point(field_get:trade.RestingOrder.time_in_force)
+  return _internal_time_in_force();
 }
-inline void RestingOrder::_internal_set_timeinforce(::trade::TimeInForce value) {
+inline void RestingOrder::_internal_set_time_in_force(::trade::TimeInForce value) {
   
-  timeinforce_ = value;
+  time_in_force_ = value;
 }
-inline void RestingOrder::set_timeinforce(::trade::TimeInForce value) {
-  _internal_set_timeinforce(value);
-  // @@protoc_insertion_point(field_set:trade.RestingOrder.timeInForce)
+inline void RestingOrder::set_time_in_force(::trade::TimeInForce value) {
+  _internal_set_time_in_force(value);
+  // @@protoc_insertion_point(field_set:trade.RestingOrder.time_in_force)
 }
 
-// .trade.OrderType orderType = 8;
-inline void RestingOrder::clear_ordertype() {
-  ordertype_ = 0;
+// .trade.OrderType order_type = 8;
+inline void RestingOrder::clear_order_type() {
+  order_type_ = 0;
 }
-inline ::trade::OrderType RestingOrder::_internal_ordertype() const {
-  return static_cast< ::trade::OrderType >(ordertype_);
+inline ::trade::OrderType RestingOrder::_internal_order_type() const {
+  return static_cast< ::trade::OrderType >(order_type_);
 }
-inline ::trade::OrderType RestingOrder::ordertype() const {
-  // @@protoc_insertion_point(field_get:trade.RestingOrder.orderType)
-  return _internal_ordertype();
+inline ::trade::OrderType RestingOrder::order_type() const {
+  // @@protoc_insertion_point(field_get:trade.RestingOrder.order_type)
+  return _internal_order_type();
 }
-inline void RestingOrder::_internal_set_ordertype(::trade::OrderType value) {
+inline void RestingOrder::_internal_set_order_type(::trade::OrderType value) {
   
-  ordertype_ = value;
+  order_type_ = value;
 }
-inline void RestingOrder::set_ordertype(::trade::OrderType value) {
-  _internal_set_ordertype(value);
-  // @@protoc_insertion_point(field_set:trade.RestingOrder.orderType)
+inline void RestingOrder::set_order_type(::trade::OrderType value) {
+  _internal_set_order_type(value);
+  // @@protoc_insertion_point(field_set:trade.RestingOrder.order_type)
 }
 
-// uint64 remainingQuantity = 9;
-inline void RestingOrder::clear_remainingquantity() {
-  remainingquantity_ = PROTOBUF_ULONGLONG(0);
+// uint64 remaining_quantity = 9;
+inline void RestingOrder::clear_remaining_quantity() {
+  remaining_quantity_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::_internal_remainingquantity() const {
-  return remainingquantity_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::_internal_remaining_quantity() const {
+  return remaining_quantity_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::remainingquantity() const {
-  // @@protoc_insertion_point(field_get:trade.RestingOrder.remainingQuantity)
-  return _internal_remainingquantity();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::remaining_quantity() const {
+  // @@protoc_insertion_point(field_get:trade.RestingOrder.remaining_quantity)
+  return _internal_remaining_quantity();
 }
-inline void RestingOrder::_internal_set_remainingquantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void RestingOrder::_internal_set_remaining_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  remainingquantity_ = value;
+  remaining_quantity_ = value;
 }
-inline void RestingOrder::set_remainingquantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_remainingquantity(value);
-  // @@protoc_insertion_point(field_set:trade.RestingOrder.remainingQuantity)
+inline void RestingOrder::set_remaining_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_remaining_quantity(value);
+  // @@protoc_insertion_point(field_set:trade.RestingOrder.remaining_quantity)
 }
 
-// uint64 restTime = 10;
-inline void RestingOrder::clear_resttime() {
-  resttime_ = PROTOBUF_ULONGLONG(0);
+// uint64 rest_time = 10;
+inline void RestingOrder::clear_rest_time() {
+  rest_time_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::_internal_resttime() const {
-  return resttime_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::_internal_rest_time() const {
+  return rest_time_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::resttime() const {
-  // @@protoc_insertion_point(field_get:trade.RestingOrder.restTime)
-  return _internal_resttime();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::rest_time() const {
+  // @@protoc_insertion_point(field_get:trade.RestingOrder.rest_time)
+  return _internal_rest_time();
 }
-inline void RestingOrder::_internal_set_resttime(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void RestingOrder::_internal_set_rest_time(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  resttime_ = value;
+  rest_time_ = value;
 }
-inline void RestingOrder::set_resttime(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_resttime(value);
-  // @@protoc_insertion_point(field_set:trade.RestingOrder.restTime)
+inline void RestingOrder::set_rest_time(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_rest_time(value);
+  // @@protoc_insertion_point(field_set:trade.RestingOrder.rest_time)
 }
 
-// uint64 subaccountId = 11;
-inline void RestingOrder::clear_subaccountid() {
-  subaccountid_ = PROTOBUF_ULONGLONG(0);
+// uint64 subaccount_id = 11;
+inline void RestingOrder::clear_subaccount_id() {
+  subaccount_id_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::_internal_subaccountid() const {
-  return subaccountid_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::_internal_subaccount_id() const {
+  return subaccount_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::subaccountid() const {
-  // @@protoc_insertion_point(field_get:trade.RestingOrder.subaccountId)
-  return _internal_subaccountid();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::subaccount_id() const {
+  // @@protoc_insertion_point(field_get:trade.RestingOrder.subaccount_id)
+  return _internal_subaccount_id();
 }
-inline void RestingOrder::_internal_set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void RestingOrder::_internal_set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  subaccountid_ = value;
+  subaccount_id_ = value;
 }
-inline void RestingOrder::set_subaccountid(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_subaccountid(value);
-  // @@protoc_insertion_point(field_set:trade.RestingOrder.subaccountId)
+inline void RestingOrder::set_subaccount_id(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_subaccount_id(value);
+  // @@protoc_insertion_point(field_set:trade.RestingOrder.subaccount_id)
+}
+
+// uint64 cumulative_quantity = 12;
+inline void RestingOrder::clear_cumulative_quantity() {
+  cumulative_quantity_ = PROTOBUF_ULONGLONG(0);
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::_internal_cumulative_quantity() const {
+  return cumulative_quantity_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 RestingOrder::cumulative_quantity() const {
+  // @@protoc_insertion_point(field_get:trade.RestingOrder.cumulative_quantity)
+  return _internal_cumulative_quantity();
+}
+inline void RestingOrder::_internal_set_cumulative_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  cumulative_quantity_ = value;
+}
+inline void RestingOrder::set_cumulative_quantity(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_cumulative_quantity(value);
+  // @@protoc_insertion_point(field_set:trade.RestingOrder.cumulative_quantity)
 }
 
 #ifdef __GNUC__

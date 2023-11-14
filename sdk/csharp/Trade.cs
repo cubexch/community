@@ -24,155 +24,162 @@ namespace Cube.Trade {
     static TradeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cgt0cmFkZS5wcm90bxIFdHJhZGUiSAoLQ3JlZGVudGlhbHMSEwoLYWNjZXNz",
-            "S2V5SWQYASABKAkSEQoJc2lnbmF0dXJlGAIgASgJEhEKCXRpbWVzdGFtcBgD",
-            "IAEoBCLLAQoMT3JkZXJSZXF1ZXN0Eh4KA25ldxgBIAEoCzIPLnRyYWRlLk5l",
-            "d09yZGVySAASJAoGY2FuY2VsGAIgASgLMhIudHJhZGUuQ2FuY2VsT3JkZXJI",
-            "ABIkCgZtb2RpZnkYAyABKAsyEi50cmFkZS5Nb2RpZnlPcmRlckgAEiUKCWhl",
-            "YXJ0YmVhdBgEIAEoCzIQLnRyYWRlLkhlYXJ0YmVhdEgAEh8KAm1jGAUgASgL",
-            "MhEudHJhZGUuTWFzc0NhbmNlbEgAQgcKBWlubmVyIu4CCghOZXdPcmRlchIV",
-            "Cg1jbGllbnRPcmRlcklkGAEgASgEEhEKCXJlcXVlc3RJZBgCIAEoBBIQCght",
-            "YXJrZXRJZBgDIAEoBBISCgVwcmljZRgEIAEoBEgAiAEBEhAKCHF1YW50aXR5",
-            "GAUgASgEEhkKBHNpZGUYBiABKA4yCy50cmFkZS5TaWRlEicKC3RpbWVJbkZv",
-            "cmNlGAcgASgOMhIudHJhZGUuVGltZUluRm9yY2USIwoJb3JkZXJUeXBlGAgg",
-            "ASgOMhAudHJhZGUuT3JkZXJUeXBlEhQKDHN1YmFjY291bnRJZBgJIAEoBBI8",
-            "ChNzZWxmVHJhZGVQcmV2ZW50aW9uGAogASgOMhoudHJhZGUuU2VsZlRyYWRl",
-            "UHJldmVudGlvbkgBiAEBEiEKCHBvc3RPbmx5GAsgASgOMg8udHJhZGUuUG9z",
-            "dE9ubHlCCAoGX3ByaWNlQhYKFF9zZWxmVHJhZGVQcmV2ZW50aW9uIl8KC0Nh",
-            "bmNlbE9yZGVyEhAKCG1hcmtldElkGAEgASgEEhUKDWNsaWVudE9yZGVySWQY",
-            "AiABKAQSEQoJcmVxdWVzdElkGAMgASgEEhQKDHN1YmFjY291bnRJZBgEIAEo",
-            "BCL/AQoLTW9kaWZ5T3JkZXISEAoIbWFya2V0SWQYASABKAQSFQoNY2xpZW50",
-            "T3JkZXJJZBgCIAEoBBIRCglyZXF1ZXN0SWQYAyABKAQSEAoIbmV3UHJpY2UY",
-            "BCABKAQSEwoLbmV3UXVhbnRpdHkYBSABKAQSFAoMc3ViYWNjb3VudElkGAYg",
-            "ASgEEjwKE3NlbGZUcmFkZVByZXZlbnRpb24YByABKA4yGi50cmFkZS5TZWxm",
-            "VHJhZGVQcmV2ZW50aW9uSACIAQESIQoIcG9zdE9ubHkYCCABKA4yDy50cmFk",
-            "ZS5Qb3N0T25seUIWChRfc2VsZlRyYWRlUHJldmVudGlvbiKCAQoKTWFzc0Nh",
-            "bmNlbBIUCgxzdWJhY2NvdW50SWQYASABKAQSEQoJcmVxdWVzdElkGAIgASgE",
-            "EhUKCG1hcmtldElkGAMgASgESACIAQESHgoEc2lkZRgEIAEoDjILLnRyYWRl",
-            "LlNpZGVIAYgBAUILCglfbWFya2V0SWRCBwoFX3NpZGUiMQoJSGVhcnRiZWF0",
-            "EhEKCXJlcXVlc3RJZBgBIAEoBBIRCgl0aW1lc3RhbXAYAiABKAQiwwMKDU9y",
-            "ZGVyUmVzcG9uc2USJAoGbmV3QWNrGAEgASgLMhIudHJhZGUuTmV3T3JkZXJB",
-            "Y2tIABIqCgljYW5jZWxBY2sYAiABKAsyFS50cmFkZS5DYW5jZWxPcmRlckFj",
-            "a0gAEioKCW1vZGlmeUFjaxgDIAEoCzIVLnRyYWRlLk1vZGlmeU9yZGVyQWNr",
-            "SAASKgoJbmV3UmVqZWN0GAQgASgLMhUudHJhZGUuTmV3T3JkZXJSZWplY3RI",
-            "ABIwCgxjYW5jZWxSZWplY3QYBSABKAsyGC50cmFkZS5DYW5jZWxPcmRlclJl",
-            "amVjdEgAEjAKDG1vZGlmeVJlamVjdBgGIAEoCzIYLnRyYWRlLk1vZGlmeU9y",
-            "ZGVyUmVqZWN0SAASGwoEZmlsbBgHIAEoCzILLnRyYWRlLkZpbGxIABIlCglo",
-            "ZWFydGJlYXQYCCABKAsyEC50cmFkZS5IZWFydGJlYXRIABIoCghwb3NpdGlv",
-            "bhgJIAEoCzIULnRyYWRlLkFzc2V0UG9zaXRpb25IABItCg1tYXNzQ2FuY2Vs",
-            "QWNrGAogASgLMhQudHJhZGUuTWFzc0NhbmNlbEFja0gAQgcKBWlubmVyIroC",
-            "CgtOZXdPcmRlckFjaxIRCgltc2dTZXFOdW0YASABKAQSFQoNY2xpZW50T3Jk",
-            "ZXJJZBgCIAEoBBIRCglyZXF1ZXN0SWQYAyABKAQSFwoPZXhjaGFuZ2VPcmRl",
-            "cklkGAQgASgEEhAKCG1hcmtldElkGAUgASgEEhIKBXByaWNlGAYgASgESACI",
-            "AQESEAoIcXVhbnRpdHkYByABKAQSGQoEc2lkZRgIIAEoDjILLnRyYWRlLlNp",
-            "ZGUSJwoLdGltZUluRm9yY2UYCSABKA4yEi50cmFkZS5UaW1lSW5Gb3JjZRIj",
-            "CglvcmRlclR5cGUYCiABKA4yEC50cmFkZS5PcmRlclR5cGUSFAoMdHJhbnNh",
-            "Y3RUaW1lGAsgASgEEhQKDHN1YmFjY291bnRJZBgMIAEoBEIICgZfcHJpY2Ui",
-            "swIKDkNhbmNlbE9yZGVyQWNrEhEKCW1zZ1NlcU51bRgBIAEoBBIVCg1jbGll",
-            "bnRPcmRlcklkGAIgASgEEhEKCXJlcXVlc3RJZBgDIAEoBBIUCgx0cmFuc2Fj",
-            "dFRpbWUYBCABKAQSFAoMc3ViYWNjb3VudElkGAUgASgEEiwKBnJlYXNvbhgG",
-            "IAEoDjIcLnRyYWRlLkNhbmNlbE9yZGVyQWNrLlJlYXNvbhIQCghtYXJrZXRJ",
-            "ZBgHIAEoBCJ4CgZSZWFzb24SEAoMVU5DTEFTU0lGSUVEEAASDgoKRElTQ09O",
-            "TkVDVBABEg0KCVJFUVVFU1RFRBACEgcKA0lPQxADEg8KC1NUUF9SRVNUSU5H",
-            "EAQSEgoOU1RQX0FHR1JFU1NJTkcQBRIPCgtNQVNTX0NBTkNFTBAGIq8BCg5N",
-            "b2RpZnlPcmRlckFjaxIRCgltc2dTZXFOdW0YASABKAQSFQoNY2xpZW50T3Jk",
-            "ZXJJZBgCIAEoBBIRCglyZXF1ZXN0SWQYAyABKAQSFAoMdHJhbnNhY3RUaW1l",
-            "GAQgASgEEhMKC25ld1F1YW50aXR5GAUgASgEEhQKDHN1YmFjY291bnRJZBgG",
-            "IAEoBBIQCghtYXJrZXRJZBgHIAEoBBINCgVwcmljZRgIIAEoBCKAAgoNTWFz",
-            "c0NhbmNlbEFjaxIRCgltc2dTZXFOdW0YASABKAQSFAoMc3ViYWNjb3VudElk",
-            "GAIgASgEEhEKCXJlcXVlc3RJZBgDIAEoBBIUCgx0cmFuc2FjdFRpbWUYBCAB",
-            "KAQSMAoGcmVhc29uGAYgASgOMhsudHJhZGUuTWFzc0NhbmNlbEFjay5SZWFz",
-            "b25IAIgBARIbChN0b3RhbEFmZmVjdGVkT3JkZXJzGAcgASgNIkMKBlJlYXNv",
-            "bhIQCgxVTkNMQVNTSUZJRUQQABIVChFJTlZBTElEX01BUktFVF9JRBABEhAK",
-            "DElOVkFMSURfU0lERRACQgkKB19yZWFzb24ikQYKDk5ld09yZGVyUmVqZWN0",
-            "EhEKCW1zZ1NlcU51bRgBIAEoBBIVCg1jbGllbnRPcmRlcklkGAIgASgEEhEK",
-            "CXJlcXVlc3RJZBgDIAEoBBIUCgx0cmFuc2FjdFRpbWUYBCABKAQSFAoMc3Vi",
-            "YWNjb3VudElkGAUgASgEEiwKBnJlYXNvbhgGIAEoDjIcLnRyYWRlLk5ld09y",
-            "ZGVyUmVqZWN0LlJlYXNvbhIQCghtYXJrZXRJZBgHIAEoBBISCgVwcmljZRgI",
-            "IAEoBEgAiAEBEhAKCHF1YW50aXR5GAkgASgEEhkKBHNpZGUYCiABKA4yCy50",
-            "cmFkZS5TaWRlEicKC3RpbWVJbkZvcmNlGAsgASgOMhIudHJhZGUuVGltZUlu",
-            "Rm9yY2USIwoJb3JkZXJUeXBlGAwgASgOMhAudHJhZGUuT3JkZXJUeXBlIrwD",
-            "CgZSZWFzb24SEAoMVU5DTEFTU0lGSUVEEAASFAoQSU5WQUxJRF9RVUFOVElU",
-            "WRABEhUKEUlOVkFMSURfTUFSS0VUX0lEEAISFgoSRFVQTElDQVRFX09SREVS",
-            "X0lEEAMSEAoMSU5WQUxJRF9TSURFEAQSGQoVSU5WQUxJRF9USU1FX0lOX0ZP",
-            "UkNFEAUSFgoSSU5WQUxJRF9PUkRFUl9UWVBFEAYSFQoRSU5WQUxJRF9QT1NU",
-            "X09OTFkQBxIhCh1JTlZBTElEX1NFTEZfVFJBREVfUFJFVkVOVElPThAIEhIK",
-            "DlVOS05PV05fVFJBREVSEAkSGwoXUFJJQ0VfV0lUSF9NQVJLRVRfT1JERVIQ",
-            "ChIfChtQT1NUX09OTFlfV0lUSF9NQVJLRVRfT1JERVIQCxIeChpQT1NUX09O",
-            "TFlfV0lUSF9JTlZBTElEX1RJRhAMEhoKFkVYQ0VFREVEX1NQT1RfUE9TSVRJ",
-            "T04QDRIbChdOT19PUFBPU0lOR19MSU1JVF9PUkRFUhAOEhkKFVBPU1RfT05M",
-            "WV9XT1VMRF9UUkFERRAPEhYKEkRJRF9OT1RfRlVMTFlfRklMTBAQQggKBl9w",
-            "cmljZSKHAgoRQ2FuY2VsT3JkZXJSZWplY3QSEQoJbXNnU2VxTnVtGAEgASgE",
-            "EhUKDWNsaWVudE9yZGVySWQYAiABKAQSEQoJcmVxdWVzdElkGAMgASgEEhQK",
-            "DHRyYW5zYWN0VGltZRgEIAEoBBIUCgxzdWJhY2NvdW50SWQYBSABKAQSLwoG",
-            "cmVhc29uGAYgASgOMh8udHJhZGUuQ2FuY2VsT3JkZXJSZWplY3QuUmVhc29u",
-            "EhAKCG1hcmtldElkGAcgASgEIkYKBlJlYXNvbhIQCgxVTkNMQVNTSUZJRUQQ",
-            "ABIVChFJTlZBTElEX01BUktFVF9JRBABEhMKD09SREVSX05PVF9GT1VORBAC",
-            "IrQDChFNb2RpZnlPcmRlclJlamVjdBIRCgltc2dTZXFOdW0YASABKAQSFQoN",
-            "Y2xpZW50T3JkZXJJZBgCIAEoBBIRCglyZXF1ZXN0SWQYAyABKAQSFAoMdHJh",
-            "bnNhY3RUaW1lGAQgASgEEhQKDHN1YmFjY291bnRJZBgFIAEoBBIvCgZyZWFz",
-            "b24YBiABKA4yHy50cmFkZS5Nb2RpZnlPcmRlclJlamVjdC5SZWFzb24SEAoI",
-            "bWFya2V0SWQYByABKAQi8gEKBlJlYXNvbhIQCgxVTkNMQVNTSUZJRUQQABIU",
-            "ChBJTlZBTElEX1FVQU5USVRZEAESFQoRSU5WQUxJRF9NQVJLRVRfSUQQAhIT",
-            "Cg9PUkRFUl9OT1RfRk9VTkQQAxIPCgtJTlZBTElEX0lGTRAEEhUKEUlOVkFM",
-            "SURfUE9TVF9PTkxZEAUSIQodSU5WQUxJRF9TRUxGX1RSQURFX1BSRVZFTlRJ",
-            "T04QBhISCg5VTktOT1dOX1RSQURFUhAHEhoKFkVYQ0VFREVEX1NQT1RfUE9T",
-            "SVRJT04QCBIZChVQT1NUX09OTFlfV09VTERfVFJBREUQCSLIAQoERmlsbBIR",
-            "Cgltc2dTZXFOdW0YASABKAQSEAoIbWFya2V0SWQYAiABKAQSFQoNY2xpZW50",
-            "T3JkZXJJZBgDIAEoBBIXCg9leGNoYW5nZU9yZGVySWQYBCABKAQSEQoJZmls",
-            "bFByaWNlGAUgASgEEhQKDGZpbGxRdWFudGl0eRgGIAEoBBIWCg5sZWF2ZXNR",
-            "dWFudGl0eRgHIAEoBBIUCgx0cmFuc2FjdFRpbWUYCCABKAQSFAoMc3ViYWNj",
-            "b3VudElkGAkgASgEInoKDUFzc2V0UG9zaXRpb24SFAoMc3ViYWNjb3VudElk",
-            "GAEgASgEEg8KB2Fzc2V0SWQYAiABKAQSHgoFdG90YWwYAyABKAsyDy50cmFk",
-            "ZS5SYXdVbml0cxIiCglhdmFpbGFibGUYBCABKAsyDy50cmFkZS5SYXdVbml0",
-            "cyJGCghSYXdVbml0cxINCgV3b3JkMBgBIAEoBBINCgV3b3JkMRgCIAEoBBIN",
-            "CgV3b3JkMhgDIAEoBBINCgV3b3JkMxgEIAEoBCKFAQoJQm9vdHN0cmFwEhsK",
-            "BGRvbmUYASABKAsyCy50cmFkZS5Eb25lSAASJwoHcmVzdGluZxgCIAEoCzIU",
-            "LnRyYWRlLlJlc3RpbmdPcmRlcnNIABIpCghwb3NpdGlvbhgDIAEoCzIVLnRy",
-            "YWRlLkFzc2V0UG9zaXRpb25zSABCBwoFaW5uZXIiNAoNUmVzdGluZ09yZGVy",
-            "cxIjCgZvcmRlcnMYASADKAsyEy50cmFkZS5SZXN0aW5nT3JkZXIiOQoOQXNz",
-            "ZXRQb3NpdGlvbnMSJwoJcG9zaXRpb25zGAEgAygLMhQudHJhZGUuQXNzZXRQ",
-            "b3NpdGlvbiIiCgREb25lEhoKEmxhdGVzdFRyYW5zYWN0VGltZRgBIAEoBCKl",
-            "AgoMUmVzdGluZ09yZGVyEhUKDWNsaWVudE9yZGVySWQYASABKAQSFwoPZXhj",
-            "aGFuZ2VPcmRlcklkGAIgASgEEhAKCG1hcmtldElkGAMgASgEEg0KBXByaWNl",
-            "GAQgASgEEhgKEG9yaWdpbmFsUXVhbnRpdHkYBSABKAQSGQoEc2lkZRgGIAEo",
-            "DjILLnRyYWRlLlNpZGUSJwoLdGltZUluRm9yY2UYByABKA4yEi50cmFkZS5U",
-            "aW1lSW5Gb3JjZRIjCglvcmRlclR5cGUYCCABKA4yEC50cmFkZS5PcmRlclR5",
-            "cGUSGQoRcmVtYWluaW5nUXVhbnRpdHkYCSABKAQSEAoIcmVzdFRpbWUYCiAB",
-            "KAQSFAoMc3ViYWNjb3VudElkGAsgASgEKhgKBFNpZGUSBwoDQklEEAASBwoD",
-            "QVNLEAEqTgoLVGltZUluRm9yY2USFwoTSU1NRURJQVRFX09SX0NBTkNFTBAA",
-            "EhQKEEdPT0RfRk9SX1NFU1NJT04QARIQCgxGSUxMX09SX0tJTEwQAipECglP",
-            "cmRlclR5cGUSCQoFTElNSVQQABIQCgxNQVJLRVRfTElNSVQQARIaChZNQVJL",
-            "RVRfV0lUSF9QUk9URUNUSU9OEAIqVgoTU2VsZlRyYWRlUHJldmVudGlvbhIS",
-            "Cg5DQU5DRUxfUkVTVElORxAAEhUKEUNBTkNFTF9BR0dSRVNTSU5HEAESFAoQ",
-            "QUxMT1dfU0VMRl9UUkFERRACKiUKCFBvc3RPbmx5EgwKCERJU0FCTEVEEAAS",
-            "CwoHRU5BQkxFRBABQhJaA2dvL6oCCkN1YmUuVHJhZGViBnByb3RvMw=="));
+            "Cgt0cmFkZS5wcm90bxIFdHJhZGUiSgoLQ3JlZGVudGlhbHMSFQoNYWNjZXNz",
+            "X2tleV9pZBgBIAEoCRIRCglzaWduYXR1cmUYAiABKAkSEQoJdGltZXN0YW1w",
+            "GAMgASgEIssBCgxPcmRlclJlcXVlc3QSHgoDbmV3GAEgASgLMg8udHJhZGUu",
+            "TmV3T3JkZXJIABIkCgZjYW5jZWwYAiABKAsyEi50cmFkZS5DYW5jZWxPcmRl",
+            "ckgAEiQKBm1vZGlmeRgDIAEoCzISLnRyYWRlLk1vZGlmeU9yZGVySAASJQoJ",
+            "aGVhcnRiZWF0GAQgASgLMhAudHJhZGUuSGVhcnRiZWF0SAASHwoCbWMYBSAB",
+            "KAsyES50cmFkZS5NYXNzQ2FuY2VsSABCBwoFaW5uZXIimQMKCE5ld09yZGVy",
+            "EhcKD2NsaWVudF9vcmRlcl9pZBgBIAEoBBISCgpyZXF1ZXN0X2lkGAIgASgE",
+            "EhEKCW1hcmtldF9pZBgDIAEoBBISCgVwcmljZRgEIAEoBEgAiAEBEhAKCHF1",
+            "YW50aXR5GAUgASgEEhkKBHNpZGUYBiABKA4yCy50cmFkZS5TaWRlEikKDXRp",
+            "bWVfaW5fZm9yY2UYByABKA4yEi50cmFkZS5UaW1lSW5Gb3JjZRIkCgpvcmRl",
+            "cl90eXBlGAggASgOMhAudHJhZGUuT3JkZXJUeXBlEhUKDXN1YmFjY291bnRf",
+            "aWQYCSABKAQSPgoVc2VsZl90cmFkZV9wcmV2ZW50aW9uGAogASgOMhoudHJh",
+            "ZGUuU2VsZlRyYWRlUHJldmVudGlvbkgBiAEBEiIKCXBvc3Rfb25seRgLIAEo",
+            "DjIPLnRyYWRlLlBvc3RPbmx5EhwKFGNhbmNlbF9vbl9kaXNjb25uZWN0GAwg",
+            "ASgIQggKBl9wcmljZUIYChZfc2VsZl90cmFkZV9wcmV2ZW50aW9uImQKC0Nh",
+            "bmNlbE9yZGVyEhEKCW1hcmtldF9pZBgBIAEoBBIXCg9jbGllbnRfb3JkZXJf",
+            "aWQYAiABKAQSEgoKcmVxdWVzdF9pZBgDIAEoBBIVCg1zdWJhY2NvdW50X2lk",
+            "GAQgASgEIosCCgtNb2RpZnlPcmRlchIRCgltYXJrZXRfaWQYASABKAQSFwoP",
+            "Y2xpZW50X29yZGVyX2lkGAIgASgEEhIKCnJlcXVlc3RfaWQYAyABKAQSEQoJ",
+            "bmV3X3ByaWNlGAQgASgEEhQKDG5ld19xdWFudGl0eRgFIAEoBBIVCg1zdWJh",
+            "Y2NvdW50X2lkGAYgASgEEj4KFXNlbGZfdHJhZGVfcHJldmVudGlvbhgHIAEo",
+            "DjIaLnRyYWRlLlNlbGZUcmFkZVByZXZlbnRpb25IAIgBARIiCglwb3N0X29u",
+            "bHkYCCABKA4yDy50cmFkZS5Qb3N0T25seUIYChZfc2VsZl90cmFkZV9wcmV2",
+            "ZW50aW9uIoYBCgpNYXNzQ2FuY2VsEhUKDXN1YmFjY291bnRfaWQYASABKAQS",
+            "EgoKcmVxdWVzdF9pZBgCIAEoBBIWCgltYXJrZXRfaWQYAyABKARIAIgBARIe",
+            "CgRzaWRlGAQgASgOMgsudHJhZGUuU2lkZUgBiAEBQgwKCl9tYXJrZXRfaWRC",
+            "BwoFX3NpZGUiMgoJSGVhcnRiZWF0EhIKCnJlcXVlc3RfaWQYASABKAQSEQoJ",
+            "dGltZXN0YW1wGAIgASgEIssDCg1PcmRlclJlc3BvbnNlEiUKB25ld19hY2sY",
+            "ASABKAsyEi50cmFkZS5OZXdPcmRlckFja0gAEisKCmNhbmNlbF9hY2sYAiAB",
+            "KAsyFS50cmFkZS5DYW5jZWxPcmRlckFja0gAEisKCm1vZGlmeV9hY2sYAyAB",
+            "KAsyFS50cmFkZS5Nb2RpZnlPcmRlckFja0gAEisKCm5ld19yZWplY3QYBCAB",
+            "KAsyFS50cmFkZS5OZXdPcmRlclJlamVjdEgAEjEKDWNhbmNlbF9yZWplY3QY",
+            "BSABKAsyGC50cmFkZS5DYW5jZWxPcmRlclJlamVjdEgAEjEKDW1vZGlmeV9y",
+            "ZWplY3QYBiABKAsyGC50cmFkZS5Nb2RpZnlPcmRlclJlamVjdEgAEhsKBGZp",
+            "bGwYByABKAsyCy50cmFkZS5GaWxsSAASJQoJaGVhcnRiZWF0GAggASgLMhAu",
+            "dHJhZGUuSGVhcnRiZWF0SAASKAoIcG9zaXRpb24YCSABKAsyFC50cmFkZS5B",
+            "c3NldFBvc2l0aW9uSAASLwoPbWFzc19jYW5jZWxfYWNrGAogASgLMhQudHJh",
+            "ZGUuTWFzc0NhbmNlbEFja0gAQgcKBWlubmVyIuUCCgtOZXdPcmRlckFjaxIT",
+            "Cgttc2dfc2VxX251bRgBIAEoBBIXCg9jbGllbnRfb3JkZXJfaWQYAiABKAQS",
+            "EgoKcmVxdWVzdF9pZBgDIAEoBBIZChFleGNoYW5nZV9vcmRlcl9pZBgEIAEo",
+            "BBIRCgltYXJrZXRfaWQYBSABKAQSEgoFcHJpY2UYBiABKARIAIgBARIQCghx",
+            "dWFudGl0eRgHIAEoBBIZCgRzaWRlGAggASgOMgsudHJhZGUuU2lkZRIpCg10",
+            "aW1lX2luX2ZvcmNlGAkgASgOMhIudHJhZGUuVGltZUluRm9yY2USJAoKb3Jk",
+            "ZXJfdHlwZRgKIAEoDjIQLnRyYWRlLk9yZGVyVHlwZRIVCg10cmFuc2FjdF90",
+            "aW1lGAsgASgEEhUKDXN1YmFjY291bnRfaWQYDCABKAQSHAoUY2FuY2VsX29u",
+            "X2Rpc2Nvbm5lY3QYDSABKAhCCAoGX3ByaWNlIrsCCg5DYW5jZWxPcmRlckFj",
+            "axITCgttc2dfc2VxX251bRgBIAEoBBIXCg9jbGllbnRfb3JkZXJfaWQYAiAB",
+            "KAQSEgoKcmVxdWVzdF9pZBgDIAEoBBIVCg10cmFuc2FjdF90aW1lGAQgASgE",
+            "EhUKDXN1YmFjY291bnRfaWQYBSABKAQSLAoGcmVhc29uGAYgASgOMhwudHJh",
+            "ZGUuQ2FuY2VsT3JkZXJBY2suUmVhc29uEhEKCW1hcmtldF9pZBgHIAEoBCJ4",
+            "CgZSZWFzb24SEAoMVU5DTEFTU0lGSUVEEAASDgoKRElTQ09OTkVDVBABEg0K",
+            "CVJFUVVFU1RFRBACEgcKA0lPQxADEg8KC1NUUF9SRVNUSU5HEAQSEgoOU1RQ",
+            "X0FHR1JFU1NJTkcQBRIPCgtNQVNTX0NBTkNFTBAGIu0BCg5Nb2RpZnlPcmRl",
+            "ckFjaxITCgttc2dfc2VxX251bRgBIAEoBBIXCg9jbGllbnRfb3JkZXJfaWQY",
+            "AiABKAQSEgoKcmVxdWVzdF9pZBgDIAEoBBIVCg10cmFuc2FjdF90aW1lGAQg",
+            "ASgEEhoKEnJlbWFpbmluZ19xdWFudGl0eRgFIAEoBBIVCg1zdWJhY2NvdW50",
+            "X2lkGAYgASgEEhEKCW1hcmtldF9pZBgHIAEoBBINCgVwcmljZRgIIAEoBBIQ",
+            "CghxdWFudGl0eRgJIAEoBBIbChNjdW11bGF0aXZlX3F1YW50aXR5GAogASgE",
+            "IocCCg1NYXNzQ2FuY2VsQWNrEhMKC21zZ19zZXFfbnVtGAEgASgEEhUKDXN1",
+            "YmFjY291bnRfaWQYAiABKAQSEgoKcmVxdWVzdF9pZBgDIAEoBBIVCg10cmFu",
+            "c2FjdF90aW1lGAQgASgEEjAKBnJlYXNvbhgGIAEoDjIbLnRyYWRlLk1hc3ND",
+            "YW5jZWxBY2suUmVhc29uSACIAQESHQoVdG90YWxfYWZmZWN0ZWRfb3JkZXJz",
+            "GAcgASgNIkMKBlJlYXNvbhIQCgxVTkNMQVNTSUZJRUQQABIVChFJTlZBTElE",
+            "X01BUktFVF9JRBABEhAKDElOVkFMSURfU0lERRACQgkKB19yZWFzb24inAYK",
+            "Dk5ld09yZGVyUmVqZWN0EhMKC21zZ19zZXFfbnVtGAEgASgEEhcKD2NsaWVu",
+            "dF9vcmRlcl9pZBgCIAEoBBISCgpyZXF1ZXN0X2lkGAMgASgEEhUKDXRyYW5z",
+            "YWN0X3RpbWUYBCABKAQSFQoNc3ViYWNjb3VudF9pZBgFIAEoBBIsCgZyZWFz",
+            "b24YBiABKA4yHC50cmFkZS5OZXdPcmRlclJlamVjdC5SZWFzb24SEQoJbWFy",
+            "a2V0X2lkGAcgASgEEhIKBXByaWNlGAggASgESACIAQESEAoIcXVhbnRpdHkY",
+            "CSABKAQSGQoEc2lkZRgKIAEoDjILLnRyYWRlLlNpZGUSKQoNdGltZV9pbl9m",
+            "b3JjZRgLIAEoDjISLnRyYWRlLlRpbWVJbkZvcmNlEiQKCm9yZGVyX3R5cGUY",
+            "DCABKA4yEC50cmFkZS5PcmRlclR5cGUivAMKBlJlYXNvbhIQCgxVTkNMQVNT",
+            "SUZJRUQQABIUChBJTlZBTElEX1FVQU5USVRZEAESFQoRSU5WQUxJRF9NQVJL",
+            "RVRfSUQQAhIWChJEVVBMSUNBVEVfT1JERVJfSUQQAxIQCgxJTlZBTElEX1NJ",
+            "REUQBBIZChVJTlZBTElEX1RJTUVfSU5fRk9SQ0UQBRIWChJJTlZBTElEX09S",
+            "REVSX1RZUEUQBhIVChFJTlZBTElEX1BPU1RfT05MWRAHEiEKHUlOVkFMSURf",
+            "U0VMRl9UUkFERV9QUkVWRU5USU9OEAgSEgoOVU5LTk9XTl9UUkFERVIQCRIb",
+            "ChdQUklDRV9XSVRIX01BUktFVF9PUkRFUhAKEh8KG1BPU1RfT05MWV9XSVRI",
+            "X01BUktFVF9PUkRFUhALEh4KGlBPU1RfT05MWV9XSVRIX0lOVkFMSURfVElG",
+            "EAwSGgoWRVhDRUVERURfU1BPVF9QT1NJVElPThANEhsKF05PX09QUE9TSU5H",
+            "X0xJTUlUX09SREVSEA4SGQoVUE9TVF9PTkxZX1dPVUxEX1RSQURFEA8SFgoS",
+            "RElEX05PVF9GVUxMWV9GSUxMEBBCCAoGX3ByaWNlIo8CChFDYW5jZWxPcmRl",
+            "clJlamVjdBITCgttc2dfc2VxX251bRgBIAEoBBIXCg9jbGllbnRfb3JkZXJf",
+            "aWQYAiABKAQSEgoKcmVxdWVzdF9pZBgDIAEoBBIVCg10cmFuc2FjdF90aW1l",
+            "GAQgASgEEhUKDXN1YmFjY291bnRfaWQYBSABKAQSLwoGcmVhc29uGAYgASgO",
+            "Mh8udHJhZGUuQ2FuY2VsT3JkZXJSZWplY3QuUmVhc29uEhEKCW1hcmtldF9p",
+            "ZBgHIAEoBCJGCgZSZWFzb24SEAoMVU5DTEFTU0lGSUVEEAASFQoRSU5WQUxJ",
+            "RF9NQVJLRVRfSUQQARITCg9PUkRFUl9OT1RfRk9VTkQQAiK8AwoRTW9kaWZ5",
+            "T3JkZXJSZWplY3QSEwoLbXNnX3NlcV9udW0YASABKAQSFwoPY2xpZW50X29y",
+            "ZGVyX2lkGAIgASgEEhIKCnJlcXVlc3RfaWQYAyABKAQSFQoNdHJhbnNhY3Rf",
+            "dGltZRgEIAEoBBIVCg1zdWJhY2NvdW50X2lkGAUgASgEEi8KBnJlYXNvbhgG",
+            "IAEoDjIfLnRyYWRlLk1vZGlmeU9yZGVyUmVqZWN0LlJlYXNvbhIRCgltYXJr",
+            "ZXRfaWQYByABKAQi8gEKBlJlYXNvbhIQCgxVTkNMQVNTSUZJRUQQABIUChBJ",
+            "TlZBTElEX1FVQU5USVRZEAESFQoRSU5WQUxJRF9NQVJLRVRfSUQQAhITCg9P",
+            "UkRFUl9OT1RfRk9VTkQQAxIPCgtJTlZBTElEX0lGTRAEEhUKEUlOVkFMSURf",
+            "UE9TVF9PTkxZEAUSIQodSU5WQUxJRF9TRUxGX1RSQURFX1BSRVZFTlRJT04Q",
+            "BhISCg5VTktOT1dOX1RSQURFUhAHEhoKFkVYQ0VFREVEX1NQT1RfUE9TSVRJ",
+            "T04QCBIZChVQT1NUX09OTFlfV09VTERfVFJBREUQCSLxAQoERmlsbBITCgtt",
+            "c2dfc2VxX251bRgBIAEoBBIRCgltYXJrZXRfaWQYAiABKAQSFwoPY2xpZW50",
+            "X29yZGVyX2lkGAMgASgEEhkKEWV4Y2hhbmdlX29yZGVyX2lkGAQgASgEEhIK",
+            "CmZpbGxfcHJpY2UYBSABKAQSFQoNZmlsbF9xdWFudGl0eRgGIAEoBBIXCg9s",
+            "ZWF2ZXNfcXVhbnRpdHkYByABKAQSFQoNdHJhbnNhY3RfdGltZRgIIAEoBBIV",
+            "Cg1zdWJhY2NvdW50X2lkGAkgASgEEhsKE2N1bXVsYXRpdmVfcXVhbnRpdHkY",
+            "CiABKAQifAoNQXNzZXRQb3NpdGlvbhIVCg1zdWJhY2NvdW50X2lkGAEgASgE",
+            "EhAKCGFzc2V0X2lkGAIgASgEEh4KBXRvdGFsGAMgASgLMg8udHJhZGUuUmF3",
+            "VW5pdHMSIgoJYXZhaWxhYmxlGAQgASgLMg8udHJhZGUuUmF3VW5pdHMiRgoI",
+            "UmF3VW5pdHMSDQoFd29yZDAYASABKAQSDQoFd29yZDEYAiABKAQSDQoFd29y",
+            "ZDIYAyABKAQSDQoFd29yZDMYBCABKAQihQEKCUJvb3RzdHJhcBIbCgRkb25l",
+            "GAEgASgLMgsudHJhZGUuRG9uZUgAEicKB3Jlc3RpbmcYAiABKAsyFC50cmFk",
+            "ZS5SZXN0aW5nT3JkZXJzSAASKQoIcG9zaXRpb24YAyABKAsyFS50cmFkZS5B",
+            "c3NldFBvc2l0aW9uc0gAQgcKBWlubmVyIjQKDVJlc3RpbmdPcmRlcnMSIwoG",
+            "b3JkZXJzGAEgAygLMhMudHJhZGUuUmVzdGluZ09yZGVyIjkKDkFzc2V0UG9z",
+            "aXRpb25zEicKCXBvc2l0aW9ucxgBIAMoCzIULnRyYWRlLkFzc2V0UG9zaXRp",
+            "b24iJAoERG9uZRIcChRsYXRlc3RfdHJhbnNhY3RfdGltZRgBIAEoBCLLAgoM",
+            "UmVzdGluZ09yZGVyEhcKD2NsaWVudF9vcmRlcl9pZBgBIAEoBBIZChFleGNo",
+            "YW5nZV9vcmRlcl9pZBgCIAEoBBIRCgltYXJrZXRfaWQYAyABKAQSDQoFcHJp",
+            "Y2UYBCABKAQSFgoOb3JkZXJfcXVhbnRpdHkYBSABKAQSGQoEc2lkZRgGIAEo",
+            "DjILLnRyYWRlLlNpZGUSKQoNdGltZV9pbl9mb3JjZRgHIAEoDjISLnRyYWRl",
+            "LlRpbWVJbkZvcmNlEiQKCm9yZGVyX3R5cGUYCCABKA4yEC50cmFkZS5PcmRl",
+            "clR5cGUSGgoScmVtYWluaW5nX3F1YW50aXR5GAkgASgEEhEKCXJlc3RfdGlt",
+            "ZRgKIAEoBBIVCg1zdWJhY2NvdW50X2lkGAsgASgEEhsKE2N1bXVsYXRpdmVf",
+            "cXVhbnRpdHkYDCABKAQqGAoEU2lkZRIHCgNCSUQQABIHCgNBU0sQASpOCgtU",
+            "aW1lSW5Gb3JjZRIXChNJTU1FRElBVEVfT1JfQ0FOQ0VMEAASFAoQR09PRF9G",
+            "T1JfU0VTU0lPThABEhAKDEZJTExfT1JfS0lMTBACKkQKCU9yZGVyVHlwZRIJ",
+            "CgVMSU1JVBAAEhAKDE1BUktFVF9MSU1JVBABEhoKFk1BUktFVF9XSVRIX1BS",
+            "T1RFQ1RJT04QAipWChNTZWxmVHJhZGVQcmV2ZW50aW9uEhIKDkNBTkNFTF9S",
+            "RVNUSU5HEAASFQoRQ0FOQ0VMX0FHR1JFU1NJTkcQARIUChBBTExPV19TRUxG",
+            "X1RSQURFEAIqJQoIUG9zdE9ubHkSDAoIRElTQUJMRUQQABILCgdFTkFCTEVE",
+            "EAFCEloDZ28vqgIKQ3ViZS5UcmFkZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Cube.Trade.Side), typeof(global::Cube.Trade.TimeInForce), typeof(global::Cube.Trade.OrderType), typeof(global::Cube.Trade.SelfTradePrevention), typeof(global::Cube.Trade.PostOnly), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.Credentials), global::Cube.Trade.Credentials.Parser, new[]{ "AccessKeyId", "Signature", "Timestamp" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.OrderRequest), global::Cube.Trade.OrderRequest.Parser, new[]{ "New", "Cancel", "Modify", "Heartbeat", "Mc" }, new[]{ "Inner" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.NewOrder), global::Cube.Trade.NewOrder.Parser, new[]{ "ClientOrderId", "RequestId", "MarketId", "Price", "Quantity", "Side", "TimeInForce", "OrderType", "SubaccountId", "SelfTradePrevention", "PostOnly" }, new[]{ "Price", "SelfTradePrevention" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.NewOrder), global::Cube.Trade.NewOrder.Parser, new[]{ "ClientOrderId", "RequestId", "MarketId", "Price", "Quantity", "Side", "TimeInForce", "OrderType", "SubaccountId", "SelfTradePrevention", "PostOnly", "CancelOnDisconnect" }, new[]{ "Price", "SelfTradePrevention" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.CancelOrder), global::Cube.Trade.CancelOrder.Parser, new[]{ "MarketId", "ClientOrderId", "RequestId", "SubaccountId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.ModifyOrder), global::Cube.Trade.ModifyOrder.Parser, new[]{ "MarketId", "ClientOrderId", "RequestId", "NewPrice", "NewQuantity", "SubaccountId", "SelfTradePrevention", "PostOnly" }, new[]{ "SelfTradePrevention" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.MassCancel), global::Cube.Trade.MassCancel.Parser, new[]{ "SubaccountId", "RequestId", "MarketId", "Side" }, new[]{ "MarketId", "Side" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.Heartbeat), global::Cube.Trade.Heartbeat.Parser, new[]{ "RequestId", "Timestamp" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.OrderResponse), global::Cube.Trade.OrderResponse.Parser, new[]{ "NewAck", "CancelAck", "ModifyAck", "NewReject", "CancelReject", "ModifyReject", "Fill", "Heartbeat", "Position", "MassCancelAck" }, new[]{ "Inner" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.NewOrderAck), global::Cube.Trade.NewOrderAck.Parser, new[]{ "MsgSeqNum", "ClientOrderId", "RequestId", "ExchangeOrderId", "MarketId", "Price", "Quantity", "Side", "TimeInForce", "OrderType", "TransactTime", "SubaccountId" }, new[]{ "Price" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.NewOrderAck), global::Cube.Trade.NewOrderAck.Parser, new[]{ "MsgSeqNum", "ClientOrderId", "RequestId", "ExchangeOrderId", "MarketId", "Price", "Quantity", "Side", "TimeInForce", "OrderType", "TransactTime", "SubaccountId", "CancelOnDisconnect" }, new[]{ "Price" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.CancelOrderAck), global::Cube.Trade.CancelOrderAck.Parser, new[]{ "MsgSeqNum", "ClientOrderId", "RequestId", "TransactTime", "SubaccountId", "Reason", "MarketId" }, null, new[]{ typeof(global::Cube.Trade.CancelOrderAck.Types.Reason) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.ModifyOrderAck), global::Cube.Trade.ModifyOrderAck.Parser, new[]{ "MsgSeqNum", "ClientOrderId", "RequestId", "TransactTime", "NewQuantity", "SubaccountId", "MarketId", "Price" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.ModifyOrderAck), global::Cube.Trade.ModifyOrderAck.Parser, new[]{ "MsgSeqNum", "ClientOrderId", "RequestId", "TransactTime", "RemainingQuantity", "SubaccountId", "MarketId", "Price", "Quantity", "CumulativeQuantity" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.MassCancelAck), global::Cube.Trade.MassCancelAck.Parser, new[]{ "MsgSeqNum", "SubaccountId", "RequestId", "TransactTime", "Reason", "TotalAffectedOrders" }, new[]{ "Reason" }, new[]{ typeof(global::Cube.Trade.MassCancelAck.Types.Reason) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.NewOrderReject), global::Cube.Trade.NewOrderReject.Parser, new[]{ "MsgSeqNum", "ClientOrderId", "RequestId", "TransactTime", "SubaccountId", "Reason", "MarketId", "Price", "Quantity", "Side", "TimeInForce", "OrderType" }, new[]{ "Price" }, new[]{ typeof(global::Cube.Trade.NewOrderReject.Types.Reason) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.CancelOrderReject), global::Cube.Trade.CancelOrderReject.Parser, new[]{ "MsgSeqNum", "ClientOrderId", "RequestId", "TransactTime", "SubaccountId", "Reason", "MarketId" }, null, new[]{ typeof(global::Cube.Trade.CancelOrderReject.Types.Reason) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.ModifyOrderReject), global::Cube.Trade.ModifyOrderReject.Parser, new[]{ "MsgSeqNum", "ClientOrderId", "RequestId", "TransactTime", "SubaccountId", "Reason", "MarketId" }, null, new[]{ typeof(global::Cube.Trade.ModifyOrderReject.Types.Reason) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.Fill), global::Cube.Trade.Fill.Parser, new[]{ "MsgSeqNum", "MarketId", "ClientOrderId", "ExchangeOrderId", "FillPrice", "FillQuantity", "LeavesQuantity", "TransactTime", "SubaccountId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.Fill), global::Cube.Trade.Fill.Parser, new[]{ "MsgSeqNum", "MarketId", "ClientOrderId", "ExchangeOrderId", "FillPrice", "FillQuantity", "LeavesQuantity", "TransactTime", "SubaccountId", "CumulativeQuantity" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.AssetPosition), global::Cube.Trade.AssetPosition.Parser, new[]{ "SubaccountId", "AssetId", "Total", "Available" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.RawUnits), global::Cube.Trade.RawUnits.Parser, new[]{ "Word0", "Word1", "Word2", "Word3" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.Bootstrap), global::Cube.Trade.Bootstrap.Parser, new[]{ "Done", "Resting", "Position" }, new[]{ "Inner" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.RestingOrders), global::Cube.Trade.RestingOrders.Parser, new[]{ "Orders" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.AssetPositions), global::Cube.Trade.AssetPositions.Parser, new[]{ "Positions" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.Done), global::Cube.Trade.Done.Parser, new[]{ "LatestTransactTime" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.RestingOrder), global::Cube.Trade.RestingOrder.Parser, new[]{ "ClientOrderId", "ExchangeOrderId", "MarketId", "Price", "OriginalQuantity", "Side", "TimeInForce", "OrderType", "RemainingQuantity", "RestTime", "SubaccountId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cube.Trade.RestingOrder), global::Cube.Trade.RestingOrder.Parser, new[]{ "ClientOrderId", "ExchangeOrderId", "MarketId", "Price", "OrderQuantity", "Side", "TimeInForce", "OrderType", "RemainingQuantity", "RestTime", "SubaccountId", "CumulativeQuantity" }, null, null, null, null)
           }));
     }
     #endregion
@@ -250,7 +257,7 @@ namespace Cube.Trade {
   /// <summary>
   /// Self-trade-prevention (STP) allows market participants to prevent the matching
   /// of orders for accounts with common ownership. Currently, STP only applies for
-  /// orders with the same subaccountId. STP will only be applied when a match is
+  /// orders with the same subaccount_id. STP will only be applied when a match is
   /// about to occur between the two orders. That is, if the aggressing order is
   /// fully filled before reaching the resting order in FIFO order, no STP cancels
   /// will happen.
@@ -355,7 +362,7 @@ namespace Cube.Trade {
       return new Credentials(this);
     }
 
-    /// <summary>Field number for the "accessKeyId" field.</summary>
+    /// <summary>Field number for the "access_key_id" field.</summary>
     public const int AccessKeyIdFieldNumber = 1;
     private string accessKeyId_ = "";
     /// <summary>
@@ -1038,6 +1045,7 @@ namespace Cube.Trade {
       subaccountId_ = other.subaccountId_;
       selfTradePrevention_ = other.selfTradePrevention_;
       postOnly_ = other.postOnly_;
+      cancelOnDisconnect_ = other.cancelOnDisconnect_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1046,7 +1054,7 @@ namespace Cube.Trade {
       return new NewOrder(this);
     }
 
-    /// <summary>Field number for the "clientOrderId" field.</summary>
+    /// <summary>Field number for the "client_order_id" field.</summary>
     public const int ClientOrderIdFieldNumber = 1;
     private ulong clientOrderId_;
     /// <summary>
@@ -1061,7 +1069,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "requestId" field.</summary>
+    /// <summary>Field number for the "request_id" field.</summary>
     public const int RequestIdFieldNumber = 2;
     private ulong requestId_;
     /// <summary>
@@ -1075,7 +1083,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "marketId" field.</summary>
+    /// <summary>Field number for the "market_id" field.</summary>
     public const int MarketIdFieldNumber = 3;
     private ulong marketId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1130,7 +1138,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "timeInForce" field.</summary>
+    /// <summary>Field number for the "time_in_force" field.</summary>
     public const int TimeInForceFieldNumber = 7;
     private global::Cube.Trade.TimeInForce timeInForce_ = global::Cube.Trade.TimeInForce.ImmediateOrCancel;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1141,7 +1149,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "orderType" field.</summary>
+    /// <summary>Field number for the "order_type" field.</summary>
     public const int OrderTypeFieldNumber = 8;
     private global::Cube.Trade.OrderType orderType_ = global::Cube.Trade.OrderType.Limit;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1152,7 +1160,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "subaccountId" field.</summary>
+    /// <summary>Field number for the "subaccount_id" field.</summary>
     public const int SubaccountIdFieldNumber = 9;
     private ulong subaccountId_;
     /// <summary>
@@ -1167,7 +1175,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "selfTradePrevention" field.</summary>
+    /// <summary>Field number for the "self_trade_prevention" field.</summary>
     public const int SelfTradePreventionFieldNumber = 10;
     private global::Cube.Trade.SelfTradePrevention selfTradePrevention_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1178,18 +1186,18 @@ namespace Cube.Trade {
         selfTradePrevention_ = value;
       }
     }
-    /// <summary>Gets whether the "selfTradePrevention" field is set</summary>
+    /// <summary>Gets whether the "self_trade_prevention" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasSelfTradePrevention {
       get { return (_hasBits0 & 2) != 0; }
     }
-    /// <summary>Clears the value of the "selfTradePrevention" field</summary>
+    /// <summary>Clears the value of the "self_trade_prevention" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearSelfTradePrevention() {
       _hasBits0 &= ~2;
     }
 
-    /// <summary>Field number for the "postOnly" field.</summary>
+    /// <summary>Field number for the "post_only" field.</summary>
     public const int PostOnlyFieldNumber = 11;
     private global::Cube.Trade.PostOnly postOnly_ = global::Cube.Trade.PostOnly.Disabled;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1197,6 +1205,28 @@ namespace Cube.Trade {
       get { return postOnly_; }
       set {
         postOnly_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cancel_on_disconnect" field.</summary>
+    public const int CancelOnDisconnectFieldNumber = 12;
+    private bool cancelOnDisconnect_;
+    /// <summary>
+    /// If true, this order will be automatically cancelled
+    /// after the closure of the network connection
+    /// between Cube's servers and the client that placed the order.
+    ///
+    /// If the client initiates the disconnect or network instability drops the connection,
+    /// the order will be cancelled when Cube's servers recognize the disconnection.
+    ///
+    /// In the event of a server-side disconnect that causes a halt in trading,
+    /// such as scheduled downtime, the order will be cancelled before trading resumes.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool CancelOnDisconnect {
+      get { return cancelOnDisconnect_; }
+      set {
+        cancelOnDisconnect_ = value;
       }
     }
 
@@ -1224,6 +1254,7 @@ namespace Cube.Trade {
       if (SubaccountId != other.SubaccountId) return false;
       if (SelfTradePrevention != other.SelfTradePrevention) return false;
       if (PostOnly != other.PostOnly) return false;
+      if (CancelOnDisconnect != other.CancelOnDisconnect) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1241,6 +1272,7 @@ namespace Cube.Trade {
       if (SubaccountId != 0UL) hash ^= SubaccountId.GetHashCode();
       if (HasSelfTradePrevention) hash ^= SelfTradePrevention.GetHashCode();
       if (PostOnly != global::Cube.Trade.PostOnly.Disabled) hash ^= PostOnly.GetHashCode();
+      if (CancelOnDisconnect != false) hash ^= CancelOnDisconnect.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1301,6 +1333,10 @@ namespace Cube.Trade {
         output.WriteRawTag(88);
         output.WriteEnum((int) PostOnly);
       }
+      if (CancelOnDisconnect != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(CancelOnDisconnect);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1354,6 +1390,10 @@ namespace Cube.Trade {
         output.WriteRawTag(88);
         output.WriteEnum((int) PostOnly);
       }
+      if (CancelOnDisconnect != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(CancelOnDisconnect);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1395,6 +1435,9 @@ namespace Cube.Trade {
       }
       if (PostOnly != global::Cube.Trade.PostOnly.Disabled) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) PostOnly);
+      }
+      if (CancelOnDisconnect != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1439,6 +1482,9 @@ namespace Cube.Trade {
       }
       if (other.PostOnly != global::Cube.Trade.PostOnly.Disabled) {
         PostOnly = other.PostOnly;
+      }
+      if (other.CancelOnDisconnect != false) {
+        CancelOnDisconnect = other.CancelOnDisconnect;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1496,6 +1542,10 @@ namespace Cube.Trade {
           }
           case 88: {
             PostOnly = (global::Cube.Trade.PostOnly) input.ReadEnum();
+            break;
+          }
+          case 96: {
+            CancelOnDisconnect = input.ReadBool();
             break;
           }
         }
@@ -1556,6 +1606,10 @@ namespace Cube.Trade {
             PostOnly = (global::Cube.Trade.PostOnly) input.ReadEnum();
             break;
           }
+          case 96: {
+            CancelOnDisconnect = input.ReadBool();
+            break;
+          }
         }
       }
     }
@@ -1566,7 +1620,7 @@ namespace Cube.Trade {
   /// <summary>
   /// Cancel a resting order.
   /// Note that this can be done before the order is acknowledged (an aggressive
-  /// cancel) since the identifying field is the `clientOrderId`.
+  /// cancel) since the identifying field is the `client_order_id`.
   /// </summary>
   public sealed partial class CancelOrder : pb::IMessage<CancelOrder>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1609,7 +1663,7 @@ namespace Cube.Trade {
       return new CancelOrder(this);
     }
 
-    /// <summary>Field number for the "marketId" field.</summary>
+    /// <summary>Field number for the "market_id" field.</summary>
     public const int MarketIdFieldNumber = 1;
     private ulong marketId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1620,7 +1674,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "clientOrderId" field.</summary>
+    /// <summary>Field number for the "client_order_id" field.</summary>
     public const int ClientOrderIdFieldNumber = 2;
     private ulong clientOrderId_;
     /// <summary>
@@ -1634,7 +1688,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "requestId" field.</summary>
+    /// <summary>Field number for the "request_id" field.</summary>
     public const int RequestIdFieldNumber = 3;
     private ulong requestId_;
     /// <summary>
@@ -1648,7 +1702,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "subaccountId" field.</summary>
+    /// <summary>Field number for the "subaccount_id" field.</summary>
     public const int SubaccountIdFieldNumber = 4;
     private ulong subaccountId_;
     /// <summary>
@@ -1880,6 +1934,9 @@ namespace Cube.Trade {
   /// ```
   ///
   /// The post-modify quantity will be `newQuantity - filled = 4 - 2 = 2`.
+  ///
+  /// Regardless of IFM, the invariant for order quantity is that `quantity =
+  /// remaining_quantity + cumulative_quantity`.
   /// </summary>
   public sealed partial class ModifyOrder : pb::IMessage<ModifyOrder>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1928,7 +1985,7 @@ namespace Cube.Trade {
       return new ModifyOrder(this);
     }
 
-    /// <summary>Field number for the "marketId" field.</summary>
+    /// <summary>Field number for the "market_id" field.</summary>
     public const int MarketIdFieldNumber = 1;
     private ulong marketId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1939,7 +1996,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "clientOrderId" field.</summary>
+    /// <summary>Field number for the "client_order_id" field.</summary>
     public const int ClientOrderIdFieldNumber = 2;
     private ulong clientOrderId_;
     /// <summary>
@@ -1953,7 +2010,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "requestId" field.</summary>
+    /// <summary>Field number for the "request_id" field.</summary>
     public const int RequestIdFieldNumber = 3;
     private ulong requestId_;
     /// <summary>
@@ -1967,7 +2024,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "newPrice" field.</summary>
+    /// <summary>Field number for the "new_price" field.</summary>
     public const int NewPriceFieldNumber = 4;
     private ulong newPrice_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1978,7 +2035,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "newQuantity" field.</summary>
+    /// <summary>Field number for the "new_quantity" field.</summary>
     public const int NewQuantityFieldNumber = 5;
     private ulong newQuantity_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1989,7 +2046,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "subaccountId" field.</summary>
+    /// <summary>Field number for the "subaccount_id" field.</summary>
     public const int SubaccountIdFieldNumber = 6;
     private ulong subaccountId_;
     /// <summary>
@@ -2003,7 +2060,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "selfTradePrevention" field.</summary>
+    /// <summary>Field number for the "self_trade_prevention" field.</summary>
     public const int SelfTradePreventionFieldNumber = 7;
     private global::Cube.Trade.SelfTradePrevention selfTradePrevention_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2014,18 +2071,18 @@ namespace Cube.Trade {
         selfTradePrevention_ = value;
       }
     }
-    /// <summary>Gets whether the "selfTradePrevention" field is set</summary>
+    /// <summary>Gets whether the "self_trade_prevention" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasSelfTradePrevention {
       get { return (_hasBits0 & 1) != 0; }
     }
-    /// <summary>Clears the value of the "selfTradePrevention" field</summary>
+    /// <summary>Clears the value of the "self_trade_prevention" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearSelfTradePrevention() {
       _hasBits0 &= ~1;
     }
 
-    /// <summary>Field number for the "postOnly" field.</summary>
+    /// <summary>Field number for the "post_only" field.</summary>
     public const int PostOnlyFieldNumber = 8;
     private global::Cube.Trade.PostOnly postOnly_ = global::Cube.Trade.PostOnly.Disabled;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2374,7 +2431,7 @@ namespace Cube.Trade {
       return new MassCancel(this);
     }
 
-    /// <summary>Field number for the "subaccountId" field.</summary>
+    /// <summary>Field number for the "subaccount_id" field.</summary>
     public const int SubaccountIdFieldNumber = 1;
     private ulong subaccountId_;
     /// <summary>
@@ -2388,7 +2445,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "requestId" field.</summary>
+    /// <summary>Field number for the "request_id" field.</summary>
     public const int RequestIdFieldNumber = 2;
     private ulong requestId_;
     /// <summary>
@@ -2403,7 +2460,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "marketId" field.</summary>
+    /// <summary>Field number for the "market_id" field.</summary>
     public const int MarketIdFieldNumber = 3;
     private ulong marketId_;
     /// <summary>
@@ -2417,12 +2474,12 @@ namespace Cube.Trade {
         marketId_ = value;
       }
     }
-    /// <summary>Gets whether the "marketId" field is set</summary>
+    /// <summary>Gets whether the "market_id" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool HasMarketId {
       get { return (_hasBits0 & 1) != 0; }
     }
-    /// <summary>Clears the value of the "marketId" field</summary>
+    /// <summary>Clears the value of the "market_id" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void ClearMarketId() {
       _hasBits0 &= ~1;
@@ -2651,7 +2708,7 @@ namespace Cube.Trade {
   /// <summary>
   /// A client and server heartbeat. The heartbeat reply, including the timestamp
   /// value, comes from the order service and not the matching engine. Matching
-  /// engine timestamps can be extracted from `transactTime` (below).
+  /// engine timestamps can be extracted from `transact_time` (below).
   ///
   /// Latency can be estimated from this, but only the relative difference between
   /// successive server messages should be used. In particular, the client and
@@ -2696,7 +2753,7 @@ namespace Cube.Trade {
       return new Heartbeat(this);
     }
 
-    /// <summary>Field number for the "requestId" field.</summary>
+    /// <summary>Field number for the "request_id" field.</summary>
     public const int RequestIdFieldNumber = 1;
     private ulong requestId_;
     /// <summary>
@@ -2942,7 +2999,7 @@ namespace Cube.Trade {
       return new OrderResponse(this);
     }
 
-    /// <summary>Field number for the "newAck" field.</summary>
+    /// <summary>Field number for the "new_ack" field.</summary>
     public const int NewAckFieldNumber = 1;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Cube.Trade.NewOrderAck NewAck {
@@ -2953,7 +3010,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "cancelAck" field.</summary>
+    /// <summary>Field number for the "cancel_ack" field.</summary>
     public const int CancelAckFieldNumber = 2;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Cube.Trade.CancelOrderAck CancelAck {
@@ -2964,7 +3021,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "modifyAck" field.</summary>
+    /// <summary>Field number for the "modify_ack" field.</summary>
     public const int ModifyAckFieldNumber = 3;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Cube.Trade.ModifyOrderAck ModifyAck {
@@ -2975,7 +3032,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "newReject" field.</summary>
+    /// <summary>Field number for the "new_reject" field.</summary>
     public const int NewRejectFieldNumber = 4;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Cube.Trade.NewOrderReject NewReject {
@@ -2986,7 +3043,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "cancelReject" field.</summary>
+    /// <summary>Field number for the "cancel_reject" field.</summary>
     public const int CancelRejectFieldNumber = 5;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Cube.Trade.CancelOrderReject CancelReject {
@@ -2997,7 +3054,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "modifyReject" field.</summary>
+    /// <summary>Field number for the "modify_reject" field.</summary>
     public const int ModifyRejectFieldNumber = 6;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Cube.Trade.ModifyOrderReject ModifyReject {
@@ -3041,7 +3098,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "massCancelAck" field.</summary>
+    /// <summary>Field number for the "mass_cancel_ack" field.</summary>
     public const int MassCancelAckFieldNumber = 10;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Cube.Trade.MassCancelAck MassCancelAck {
@@ -3600,6 +3657,7 @@ namespace Cube.Trade {
       orderType_ = other.orderType_;
       transactTime_ = other.transactTime_;
       subaccountId_ = other.subaccountId_;
+      cancelOnDisconnect_ = other.cancelOnDisconnect_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -3608,7 +3666,7 @@ namespace Cube.Trade {
       return new NewOrderAck(this);
     }
 
-    /// <summary>Field number for the "msgSeqNum" field.</summary>
+    /// <summary>Field number for the "msg_seq_num" field.</summary>
     public const int MsgSeqNumFieldNumber = 1;
     private ulong msgSeqNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3619,7 +3677,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "clientOrderId" field.</summary>
+    /// <summary>Field number for the "client_order_id" field.</summary>
     public const int ClientOrderIdFieldNumber = 2;
     private ulong clientOrderId_;
     /// <summary>
@@ -3633,7 +3691,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "requestId" field.</summary>
+    /// <summary>Field number for the "request_id" field.</summary>
     public const int RequestIdFieldNumber = 3;
     private ulong requestId_;
     /// <summary>
@@ -3647,7 +3705,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "exchangeOrderId" field.</summary>
+    /// <summary>Field number for the "exchange_order_id" field.</summary>
     public const int ExchangeOrderIdFieldNumber = 4;
     private ulong exchangeOrderId_;
     /// <summary>
@@ -3661,7 +3719,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "marketId" field.</summary>
+    /// <summary>Field number for the "market_id" field.</summary>
     public const int MarketIdFieldNumber = 5;
     private ulong marketId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3723,7 +3781,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "timeInForce" field.</summary>
+    /// <summary>Field number for the "time_in_force" field.</summary>
     public const int TimeInForceFieldNumber = 9;
     private global::Cube.Trade.TimeInForce timeInForce_ = global::Cube.Trade.TimeInForce.ImmediateOrCancel;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3734,7 +3792,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "orderType" field.</summary>
+    /// <summary>Field number for the "order_type" field.</summary>
     public const int OrderTypeFieldNumber = 10;
     private global::Cube.Trade.OrderType orderType_ = global::Cube.Trade.OrderType.Limit;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3745,7 +3803,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "transactTime" field.</summary>
+    /// <summary>Field number for the "transact_time" field.</summary>
     public const int TransactTimeFieldNumber = 11;
     private ulong transactTime_;
     /// <summary>
@@ -3759,7 +3817,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "subaccountId" field.</summary>
+    /// <summary>Field number for the "subaccount_id" field.</summary>
     public const int SubaccountIdFieldNumber = 12;
     private ulong subaccountId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3767,6 +3825,17 @@ namespace Cube.Trade {
       get { return subaccountId_; }
       set {
         subaccountId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cancel_on_disconnect" field.</summary>
+    public const int CancelOnDisconnectFieldNumber = 13;
+    private bool cancelOnDisconnect_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool CancelOnDisconnect {
+      get { return cancelOnDisconnect_; }
+      set {
+        cancelOnDisconnect_ = value;
       }
     }
 
@@ -3795,6 +3864,7 @@ namespace Cube.Trade {
       if (OrderType != other.OrderType) return false;
       if (TransactTime != other.TransactTime) return false;
       if (SubaccountId != other.SubaccountId) return false;
+      if (CancelOnDisconnect != other.CancelOnDisconnect) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -3813,6 +3883,7 @@ namespace Cube.Trade {
       if (OrderType != global::Cube.Trade.OrderType.Limit) hash ^= OrderType.GetHashCode();
       if (TransactTime != 0UL) hash ^= TransactTime.GetHashCode();
       if (SubaccountId != 0UL) hash ^= SubaccountId.GetHashCode();
+      if (CancelOnDisconnect != false) hash ^= CancelOnDisconnect.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -3877,6 +3948,10 @@ namespace Cube.Trade {
         output.WriteRawTag(96);
         output.WriteUInt64(SubaccountId);
       }
+      if (CancelOnDisconnect != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(CancelOnDisconnect);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -3934,6 +4009,10 @@ namespace Cube.Trade {
         output.WriteRawTag(96);
         output.WriteUInt64(SubaccountId);
       }
+      if (CancelOnDisconnect != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(CancelOnDisconnect);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -3978,6 +4057,9 @@ namespace Cube.Trade {
       }
       if (SubaccountId != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(SubaccountId);
+      }
+      if (CancelOnDisconnect != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -4025,6 +4107,9 @@ namespace Cube.Trade {
       }
       if (other.SubaccountId != 0UL) {
         SubaccountId = other.SubaccountId;
+      }
+      if (other.CancelOnDisconnect != false) {
+        CancelOnDisconnect = other.CancelOnDisconnect;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -4086,6 +4171,10 @@ namespace Cube.Trade {
           }
           case 96: {
             SubaccountId = input.ReadUInt64();
+            break;
+          }
+          case 104: {
+            CancelOnDisconnect = input.ReadBool();
             break;
           }
         }
@@ -4150,6 +4239,10 @@ namespace Cube.Trade {
             SubaccountId = input.ReadUInt64();
             break;
           }
+          case 104: {
+            CancelOnDisconnect = input.ReadBool();
+            break;
+          }
         }
       }
     }
@@ -4205,7 +4298,7 @@ namespace Cube.Trade {
       return new CancelOrderAck(this);
     }
 
-    /// <summary>Field number for the "msgSeqNum" field.</summary>
+    /// <summary>Field number for the "msg_seq_num" field.</summary>
     public const int MsgSeqNumFieldNumber = 1;
     private ulong msgSeqNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4216,7 +4309,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "clientOrderId" field.</summary>
+    /// <summary>Field number for the "client_order_id" field.</summary>
     public const int ClientOrderIdFieldNumber = 2;
     private ulong clientOrderId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4227,14 +4320,14 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "requestId" field.</summary>
+    /// <summary>Field number for the "request_id" field.</summary>
     public const int RequestIdFieldNumber = 3;
     private ulong requestId_;
     /// <summary>
     /// If the Reason is `DISCONNECT`, `IOC`, `STP_RESTING`, or `STP_AGGRESSING`,
     /// this request ID will be `u64::MAX`. Otherwise, it will be the request ID of
     /// the initiated cancel action. For a mass cancel, each cancel order ack will
-    /// have the MassCancel's requestId.
+    /// have the MassCancel's request_id.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong RequestId {
@@ -4244,7 +4337,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "transactTime" field.</summary>
+    /// <summary>Field number for the "transact_time" field.</summary>
     public const int TransactTimeFieldNumber = 4;
     private ulong transactTime_;
     /// <summary>
@@ -4258,7 +4351,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "subaccountId" field.</summary>
+    /// <summary>Field number for the "subaccount_id" field.</summary>
     public const int SubaccountIdFieldNumber = 5;
     private ulong subaccountId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4280,7 +4373,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "marketId" field.</summary>
+    /// <summary>Field number for the "market_id" field.</summary>
     public const int MarketIdFieldNumber = 7;
     private ulong marketId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4628,10 +4721,12 @@ namespace Cube.Trade {
       clientOrderId_ = other.clientOrderId_;
       requestId_ = other.requestId_;
       transactTime_ = other.transactTime_;
-      newQuantity_ = other.newQuantity_;
+      remainingQuantity_ = other.remainingQuantity_;
       subaccountId_ = other.subaccountId_;
       marketId_ = other.marketId_;
       price_ = other.price_;
+      quantity_ = other.quantity_;
+      cumulativeQuantity_ = other.cumulativeQuantity_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -4640,7 +4735,7 @@ namespace Cube.Trade {
       return new ModifyOrderAck(this);
     }
 
-    /// <summary>Field number for the "msgSeqNum" field.</summary>
+    /// <summary>Field number for the "msg_seq_num" field.</summary>
     public const int MsgSeqNumFieldNumber = 1;
     private ulong msgSeqNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4651,7 +4746,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "clientOrderId" field.</summary>
+    /// <summary>Field number for the "client_order_id" field.</summary>
     public const int ClientOrderIdFieldNumber = 2;
     private ulong clientOrderId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4662,7 +4757,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "requestId" field.</summary>
+    /// <summary>Field number for the "request_id" field.</summary>
     public const int RequestIdFieldNumber = 3;
     private ulong requestId_;
     /// <summary>
@@ -4676,7 +4771,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "transactTime" field.</summary>
+    /// <summary>Field number for the "transact_time" field.</summary>
     public const int TransactTimeFieldNumber = 4;
     private ulong transactTime_;
     /// <summary>
@@ -4690,22 +4785,21 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "newQuantity" field.</summary>
-    public const int NewQuantityFieldNumber = 5;
-    private ulong newQuantity_;
+    /// <summary>Field number for the "remaining_quantity" field.</summary>
+    public const int RemainingQuantityFieldNumber = 5;
+    private ulong remainingQuantity_;
     /// <summary>
-    /// The quantity submitted in the modify request after applying IFM
-    /// logic.
+    /// The quantity remaining on the book after applying the modify request.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ulong NewQuantity {
-      get { return newQuantity_; }
+    public ulong RemainingQuantity {
+      get { return remainingQuantity_; }
       set {
-        newQuantity_ = value;
+        remainingQuantity_ = value;
       }
     }
 
-    /// <summary>Field number for the "subaccountId" field.</summary>
+    /// <summary>Field number for the "subaccount_id" field.</summary>
     public const int SubaccountIdFieldNumber = 6;
     private ulong subaccountId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4716,7 +4810,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "marketId" field.</summary>
+    /// <summary>Field number for the "market_id" field.</summary>
     public const int MarketIdFieldNumber = 7;
     private ulong marketId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4738,6 +4832,34 @@ namespace Cube.Trade {
       }
     }
 
+    /// <summary>Field number for the "quantity" field.</summary>
+    public const int QuantityFieldNumber = 9;
+    private ulong quantity_;
+    /// <summary>
+    /// The quantity submitted in the modify request.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ulong Quantity {
+      get { return quantity_; }
+      set {
+        quantity_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cumulative_quantity" field.</summary>
+    public const int CumulativeQuantityFieldNumber = 10;
+    private ulong cumulativeQuantity_;
+    /// <summary>
+    /// The cumulative filled quantity for this order.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ulong CumulativeQuantity {
+      get { return cumulativeQuantity_; }
+      set {
+        cumulativeQuantity_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as ModifyOrderAck);
@@ -4755,10 +4877,12 @@ namespace Cube.Trade {
       if (ClientOrderId != other.ClientOrderId) return false;
       if (RequestId != other.RequestId) return false;
       if (TransactTime != other.TransactTime) return false;
-      if (NewQuantity != other.NewQuantity) return false;
+      if (RemainingQuantity != other.RemainingQuantity) return false;
       if (SubaccountId != other.SubaccountId) return false;
       if (MarketId != other.MarketId) return false;
       if (Price != other.Price) return false;
+      if (Quantity != other.Quantity) return false;
+      if (CumulativeQuantity != other.CumulativeQuantity) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -4769,10 +4893,12 @@ namespace Cube.Trade {
       if (ClientOrderId != 0UL) hash ^= ClientOrderId.GetHashCode();
       if (RequestId != 0UL) hash ^= RequestId.GetHashCode();
       if (TransactTime != 0UL) hash ^= TransactTime.GetHashCode();
-      if (NewQuantity != 0UL) hash ^= NewQuantity.GetHashCode();
+      if (RemainingQuantity != 0UL) hash ^= RemainingQuantity.GetHashCode();
       if (SubaccountId != 0UL) hash ^= SubaccountId.GetHashCode();
       if (MarketId != 0UL) hash ^= MarketId.GetHashCode();
       if (Price != 0UL) hash ^= Price.GetHashCode();
+      if (Quantity != 0UL) hash ^= Quantity.GetHashCode();
+      if (CumulativeQuantity != 0UL) hash ^= CumulativeQuantity.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4805,9 +4931,9 @@ namespace Cube.Trade {
         output.WriteRawTag(32);
         output.WriteUInt64(TransactTime);
       }
-      if (NewQuantity != 0UL) {
+      if (RemainingQuantity != 0UL) {
         output.WriteRawTag(40);
-        output.WriteUInt64(NewQuantity);
+        output.WriteUInt64(RemainingQuantity);
       }
       if (SubaccountId != 0UL) {
         output.WriteRawTag(48);
@@ -4820,6 +4946,14 @@ namespace Cube.Trade {
       if (Price != 0UL) {
         output.WriteRawTag(64);
         output.WriteUInt64(Price);
+      }
+      if (Quantity != 0UL) {
+        output.WriteRawTag(72);
+        output.WriteUInt64(Quantity);
+      }
+      if (CumulativeQuantity != 0UL) {
+        output.WriteRawTag(80);
+        output.WriteUInt64(CumulativeQuantity);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -4846,9 +4980,9 @@ namespace Cube.Trade {
         output.WriteRawTag(32);
         output.WriteUInt64(TransactTime);
       }
-      if (NewQuantity != 0UL) {
+      if (RemainingQuantity != 0UL) {
         output.WriteRawTag(40);
-        output.WriteUInt64(NewQuantity);
+        output.WriteUInt64(RemainingQuantity);
       }
       if (SubaccountId != 0UL) {
         output.WriteRawTag(48);
@@ -4861,6 +4995,14 @@ namespace Cube.Trade {
       if (Price != 0UL) {
         output.WriteRawTag(64);
         output.WriteUInt64(Price);
+      }
+      if (Quantity != 0UL) {
+        output.WriteRawTag(72);
+        output.WriteUInt64(Quantity);
+      }
+      if (CumulativeQuantity != 0UL) {
+        output.WriteRawTag(80);
+        output.WriteUInt64(CumulativeQuantity);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -4883,8 +5025,8 @@ namespace Cube.Trade {
       if (TransactTime != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(TransactTime);
       }
-      if (NewQuantity != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(NewQuantity);
+      if (RemainingQuantity != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(RemainingQuantity);
       }
       if (SubaccountId != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(SubaccountId);
@@ -4894,6 +5036,12 @@ namespace Cube.Trade {
       }
       if (Price != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Price);
+      }
+      if (Quantity != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Quantity);
+      }
+      if (CumulativeQuantity != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(CumulativeQuantity);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -4918,8 +5066,8 @@ namespace Cube.Trade {
       if (other.TransactTime != 0UL) {
         TransactTime = other.TransactTime;
       }
-      if (other.NewQuantity != 0UL) {
-        NewQuantity = other.NewQuantity;
+      if (other.RemainingQuantity != 0UL) {
+        RemainingQuantity = other.RemainingQuantity;
       }
       if (other.SubaccountId != 0UL) {
         SubaccountId = other.SubaccountId;
@@ -4929,6 +5077,12 @@ namespace Cube.Trade {
       }
       if (other.Price != 0UL) {
         Price = other.Price;
+      }
+      if (other.Quantity != 0UL) {
+        Quantity = other.Quantity;
+      }
+      if (other.CumulativeQuantity != 0UL) {
+        CumulativeQuantity = other.CumulativeQuantity;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -4961,7 +5115,7 @@ namespace Cube.Trade {
             break;
           }
           case 40: {
-            NewQuantity = input.ReadUInt64();
+            RemainingQuantity = input.ReadUInt64();
             break;
           }
           case 48: {
@@ -4974,6 +5128,14 @@ namespace Cube.Trade {
           }
           case 64: {
             Price = input.ReadUInt64();
+            break;
+          }
+          case 72: {
+            Quantity = input.ReadUInt64();
+            break;
+          }
+          case 80: {
+            CumulativeQuantity = input.ReadUInt64();
             break;
           }
         }
@@ -5007,7 +5169,7 @@ namespace Cube.Trade {
             break;
           }
           case 40: {
-            NewQuantity = input.ReadUInt64();
+            RemainingQuantity = input.ReadUInt64();
             break;
           }
           case 48: {
@@ -5020,6 +5182,14 @@ namespace Cube.Trade {
           }
           case 64: {
             Price = input.ReadUInt64();
+            break;
+          }
+          case 72: {
+            Quantity = input.ReadUInt64();
+            break;
+          }
+          case 80: {
+            CumulativeQuantity = input.ReadUInt64();
             break;
           }
         }
@@ -5079,7 +5249,7 @@ namespace Cube.Trade {
       return new MassCancelAck(this);
     }
 
-    /// <summary>Field number for the "msgSeqNum" field.</summary>
+    /// <summary>Field number for the "msg_seq_num" field.</summary>
     public const int MsgSeqNumFieldNumber = 1;
     private ulong msgSeqNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5090,7 +5260,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "subaccountId" field.</summary>
+    /// <summary>Field number for the "subaccount_id" field.</summary>
     public const int SubaccountIdFieldNumber = 2;
     private ulong subaccountId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5101,7 +5271,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "requestId" field.</summary>
+    /// <summary>Field number for the "request_id" field.</summary>
     public const int RequestIdFieldNumber = 3;
     private ulong requestId_;
     /// <summary>
@@ -5115,7 +5285,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "transactTime" field.</summary>
+    /// <summary>Field number for the "transact_time" field.</summary>
     public const int TransactTimeFieldNumber = 4;
     private ulong transactTime_;
     /// <summary>
@@ -5151,7 +5321,7 @@ namespace Cube.Trade {
       _hasBits0 &= ~1;
     }
 
-    /// <summary>Field number for the "totalAffectedOrders" field.</summary>
+    /// <summary>Field number for the "total_affected_orders" field.</summary>
     public const int TotalAffectedOrdersFieldNumber = 7;
     private uint totalAffectedOrders_;
     /// <summary>
@@ -5475,7 +5645,7 @@ namespace Cube.Trade {
       return new NewOrderReject(this);
     }
 
-    /// <summary>Field number for the "msgSeqNum" field.</summary>
+    /// <summary>Field number for the "msg_seq_num" field.</summary>
     public const int MsgSeqNumFieldNumber = 1;
     private ulong msgSeqNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5486,7 +5656,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "clientOrderId" field.</summary>
+    /// <summary>Field number for the "client_order_id" field.</summary>
     public const int ClientOrderIdFieldNumber = 2;
     private ulong clientOrderId_;
     /// <summary>
@@ -5500,7 +5670,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "requestId" field.</summary>
+    /// <summary>Field number for the "request_id" field.</summary>
     public const int RequestIdFieldNumber = 3;
     private ulong requestId_;
     /// <summary>
@@ -5514,7 +5684,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "transactTime" field.</summary>
+    /// <summary>Field number for the "transact_time" field.</summary>
     public const int TransactTimeFieldNumber = 4;
     private ulong transactTime_;
     /// <summary>
@@ -5528,7 +5698,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "subaccountId" field.</summary>
+    /// <summary>Field number for the "subaccount_id" field.</summary>
     public const int SubaccountIdFieldNumber = 5;
     private ulong subaccountId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5550,7 +5720,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "marketId" field.</summary>
+    /// <summary>Field number for the "market_id" field.</summary>
     public const int MarketIdFieldNumber = 7;
     private ulong marketId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5605,7 +5775,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "timeInForce" field.</summary>
+    /// <summary>Field number for the "time_in_force" field.</summary>
     public const int TimeInForceFieldNumber = 11;
     private global::Cube.Trade.TimeInForce timeInForce_ = global::Cube.Trade.TimeInForce.ImmediateOrCancel;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5616,7 +5786,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "orderType" field.</summary>
+    /// <summary>Field number for the "order_type" field.</summary>
     public const int OrderTypeFieldNumber = 12;
     private global::Cube.Trade.OrderType orderType_ = global::Cube.Trade.OrderType.Limit;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6117,7 +6287,7 @@ namespace Cube.Trade {
       return new CancelOrderReject(this);
     }
 
-    /// <summary>Field number for the "msgSeqNum" field.</summary>
+    /// <summary>Field number for the "msg_seq_num" field.</summary>
     public const int MsgSeqNumFieldNumber = 1;
     private ulong msgSeqNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6128,7 +6298,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "clientOrderId" field.</summary>
+    /// <summary>Field number for the "client_order_id" field.</summary>
     public const int ClientOrderIdFieldNumber = 2;
     private ulong clientOrderId_;
     /// <summary>
@@ -6142,7 +6312,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "requestId" field.</summary>
+    /// <summary>Field number for the "request_id" field.</summary>
     public const int RequestIdFieldNumber = 3;
     private ulong requestId_;
     /// <summary>
@@ -6156,7 +6326,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "transactTime" field.</summary>
+    /// <summary>Field number for the "transact_time" field.</summary>
     public const int TransactTimeFieldNumber = 4;
     private ulong transactTime_;
     /// <summary>
@@ -6170,7 +6340,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "subaccountId" field.</summary>
+    /// <summary>Field number for the "subaccount_id" field.</summary>
     public const int SubaccountIdFieldNumber = 5;
     private ulong subaccountId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6192,7 +6362,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "marketId" field.</summary>
+    /// <summary>Field number for the "market_id" field.</summary>
     public const int MarketIdFieldNumber = 7;
     private ulong marketId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6537,7 +6707,7 @@ namespace Cube.Trade {
       return new ModifyOrderReject(this);
     }
 
-    /// <summary>Field number for the "msgSeqNum" field.</summary>
+    /// <summary>Field number for the "msg_seq_num" field.</summary>
     public const int MsgSeqNumFieldNumber = 1;
     private ulong msgSeqNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6548,7 +6718,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "clientOrderId" field.</summary>
+    /// <summary>Field number for the "client_order_id" field.</summary>
     public const int ClientOrderIdFieldNumber = 2;
     private ulong clientOrderId_;
     /// <summary>
@@ -6562,7 +6732,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "requestId" field.</summary>
+    /// <summary>Field number for the "request_id" field.</summary>
     public const int RequestIdFieldNumber = 3;
     private ulong requestId_;
     /// <summary>
@@ -6576,7 +6746,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "transactTime" field.</summary>
+    /// <summary>Field number for the "transact_time" field.</summary>
     public const int TransactTimeFieldNumber = 4;
     private ulong transactTime_;
     /// <summary>
@@ -6590,7 +6760,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "subaccountId" field.</summary>
+    /// <summary>Field number for the "subaccount_id" field.</summary>
     public const int SubaccountIdFieldNumber = 5;
     private ulong subaccountId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6612,7 +6782,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "marketId" field.</summary>
+    /// <summary>Field number for the "market_id" field.</summary>
     public const int MarketIdFieldNumber = 7;
     private ulong marketId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6977,6 +7147,7 @@ namespace Cube.Trade {
       leavesQuantity_ = other.leavesQuantity_;
       transactTime_ = other.transactTime_;
       subaccountId_ = other.subaccountId_;
+      cumulativeQuantity_ = other.cumulativeQuantity_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -6985,7 +7156,7 @@ namespace Cube.Trade {
       return new Fill(this);
     }
 
-    /// <summary>Field number for the "msgSeqNum" field.</summary>
+    /// <summary>Field number for the "msg_seq_num" field.</summary>
     public const int MsgSeqNumFieldNumber = 1;
     private ulong msgSeqNum_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6996,7 +7167,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "marketId" field.</summary>
+    /// <summary>Field number for the "market_id" field.</summary>
     public const int MarketIdFieldNumber = 2;
     private ulong marketId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7007,7 +7178,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "clientOrderId" field.</summary>
+    /// <summary>Field number for the "client_order_id" field.</summary>
     public const int ClientOrderIdFieldNumber = 3;
     private ulong clientOrderId_;
     /// <summary>
@@ -7021,7 +7192,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "exchangeOrderId" field.</summary>
+    /// <summary>Field number for the "exchange_order_id" field.</summary>
     public const int ExchangeOrderIdFieldNumber = 4;
     private ulong exchangeOrderId_;
     /// <summary>
@@ -7035,7 +7206,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "fillPrice" field.</summary>
+    /// <summary>Field number for the "fill_price" field.</summary>
     public const int FillPriceFieldNumber = 5;
     private ulong fillPrice_;
     /// <summary>
@@ -7049,7 +7220,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "fillQuantity" field.</summary>
+    /// <summary>Field number for the "fill_quantity" field.</summary>
     public const int FillQuantityFieldNumber = 6;
     private ulong fillQuantity_;
     /// <summary>
@@ -7063,7 +7234,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "leavesQuantity" field.</summary>
+    /// <summary>Field number for the "leaves_quantity" field.</summary>
     public const int LeavesQuantityFieldNumber = 7;
     private ulong leavesQuantity_;
     /// <summary>
@@ -7077,7 +7248,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "transactTime" field.</summary>
+    /// <summary>Field number for the "transact_time" field.</summary>
     public const int TransactTimeFieldNumber = 8;
     private ulong transactTime_;
     /// <summary>
@@ -7091,7 +7262,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "subaccountId" field.</summary>
+    /// <summary>Field number for the "subaccount_id" field.</summary>
     public const int SubaccountIdFieldNumber = 9;
     private ulong subaccountId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7099,6 +7270,20 @@ namespace Cube.Trade {
       get { return subaccountId_; }
       set {
         subaccountId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cumulative_quantity" field.</summary>
+    public const int CumulativeQuantityFieldNumber = 10;
+    private ulong cumulativeQuantity_;
+    /// <summary>
+    /// The cumulative filled quantity for this order after the fill is applied.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ulong CumulativeQuantity {
+      get { return cumulativeQuantity_; }
+      set {
+        cumulativeQuantity_ = value;
       }
     }
 
@@ -7124,6 +7309,7 @@ namespace Cube.Trade {
       if (LeavesQuantity != other.LeavesQuantity) return false;
       if (TransactTime != other.TransactTime) return false;
       if (SubaccountId != other.SubaccountId) return false;
+      if (CumulativeQuantity != other.CumulativeQuantity) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -7139,6 +7325,7 @@ namespace Cube.Trade {
       if (LeavesQuantity != 0UL) hash ^= LeavesQuantity.GetHashCode();
       if (TransactTime != 0UL) hash ^= TransactTime.GetHashCode();
       if (SubaccountId != 0UL) hash ^= SubaccountId.GetHashCode();
+      if (CumulativeQuantity != 0UL) hash ^= CumulativeQuantity.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -7191,6 +7378,10 @@ namespace Cube.Trade {
         output.WriteRawTag(72);
         output.WriteUInt64(SubaccountId);
       }
+      if (CumulativeQuantity != 0UL) {
+        output.WriteRawTag(80);
+        output.WriteUInt64(CumulativeQuantity);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -7236,6 +7427,10 @@ namespace Cube.Trade {
         output.WriteRawTag(72);
         output.WriteUInt64(SubaccountId);
       }
+      if (CumulativeQuantity != 0UL) {
+        output.WriteRawTag(80);
+        output.WriteUInt64(CumulativeQuantity);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -7271,6 +7466,9 @@ namespace Cube.Trade {
       }
       if (SubaccountId != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(SubaccountId);
+      }
+      if (CumulativeQuantity != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(CumulativeQuantity);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -7309,6 +7507,9 @@ namespace Cube.Trade {
       }
       if (other.SubaccountId != 0UL) {
         SubaccountId = other.SubaccountId;
+      }
+      if (other.CumulativeQuantity != 0UL) {
+        CumulativeQuantity = other.CumulativeQuantity;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -7360,6 +7561,10 @@ namespace Cube.Trade {
             SubaccountId = input.ReadUInt64();
             break;
           }
+          case 80: {
+            CumulativeQuantity = input.ReadUInt64();
+            break;
+          }
         }
       }
     #endif
@@ -7408,6 +7613,10 @@ namespace Cube.Trade {
           }
           case 72: {
             SubaccountId = input.ReadUInt64();
+            break;
+          }
+          case 80: {
+            CumulativeQuantity = input.ReadUInt64();
             break;
           }
         }
@@ -7463,7 +7672,7 @@ namespace Cube.Trade {
       return new AssetPosition(this);
     }
 
-    /// <summary>Field number for the "subaccountId" field.</summary>
+    /// <summary>Field number for the "subaccount_id" field.</summary>
     public const int SubaccountIdFieldNumber = 1;
     private ulong subaccountId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7474,7 +7683,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "assetId" field.</summary>
+    /// <summary>Field number for the "asset_id" field.</summary>
     public const int AssetIdFieldNumber = 2;
     private ulong assetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8705,7 +8914,7 @@ namespace Cube.Trade {
       return new Done(this);
     }
 
-    /// <summary>Field number for the "latestTransactTime" field.</summary>
+    /// <summary>Field number for the "latest_transact_time" field.</summary>
     public const int LatestTransactTimeFieldNumber = 1;
     private ulong latestTransactTime_;
     /// <summary>
@@ -8878,13 +9087,14 @@ namespace Cube.Trade {
       exchangeOrderId_ = other.exchangeOrderId_;
       marketId_ = other.marketId_;
       price_ = other.price_;
-      originalQuantity_ = other.originalQuantity_;
+      orderQuantity_ = other.orderQuantity_;
       side_ = other.side_;
       timeInForce_ = other.timeInForce_;
       orderType_ = other.orderType_;
       remainingQuantity_ = other.remainingQuantity_;
       restTime_ = other.restTime_;
       subaccountId_ = other.subaccountId_;
+      cumulativeQuantity_ = other.cumulativeQuantity_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -8893,7 +9103,7 @@ namespace Cube.Trade {
       return new RestingOrder(this);
     }
 
-    /// <summary>Field number for the "clientOrderId" field.</summary>
+    /// <summary>Field number for the "client_order_id" field.</summary>
     public const int ClientOrderIdFieldNumber = 1;
     private ulong clientOrderId_;
     /// <summary>
@@ -8907,7 +9117,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "exchangeOrderId" field.</summary>
+    /// <summary>Field number for the "exchange_order_id" field.</summary>
     public const int ExchangeOrderIdFieldNumber = 2;
     private ulong exchangeOrderId_;
     /// <summary>
@@ -8921,7 +9131,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "marketId" field.</summary>
+    /// <summary>Field number for the "market_id" field.</summary>
     public const int MarketIdFieldNumber = 3;
     private ulong marketId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8943,17 +9153,20 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "originalQuantity" field.</summary>
-    public const int OriginalQuantityFieldNumber = 5;
-    private ulong originalQuantity_;
+    /// <summary>Field number for the "order_quantity" field.</summary>
+    public const int OrderQuantityFieldNumber = 5;
+    private ulong orderQuantity_;
     /// <summary>
-    /// The quantity submitted in the new-order request.
+    /// The quantity submitted in the latest quantity-modifying request. If the
+    /// order has not been modified, then it is the quantity on the new-order-ack.
+    /// If it has been modified, then it is the quantity of the latest
+    /// modify-order-ack.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public ulong OriginalQuantity {
-      get { return originalQuantity_; }
+    public ulong OrderQuantity {
+      get { return orderQuantity_; }
       set {
-        originalQuantity_ = value;
+        orderQuantity_ = value;
       }
     }
 
@@ -8968,7 +9181,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "timeInForce" field.</summary>
+    /// <summary>Field number for the "time_in_force" field.</summary>
     public const int TimeInForceFieldNumber = 7;
     private global::Cube.Trade.TimeInForce timeInForce_ = global::Cube.Trade.TimeInForce.ImmediateOrCancel;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8979,7 +9192,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "orderType" field.</summary>
+    /// <summary>Field number for the "order_type" field.</summary>
     public const int OrderTypeFieldNumber = 8;
     private global::Cube.Trade.OrderType orderType_ = global::Cube.Trade.OrderType.Limit;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8990,7 +9203,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "remainingQuantity" field.</summary>
+    /// <summary>Field number for the "remaining_quantity" field.</summary>
     public const int RemainingQuantityFieldNumber = 9;
     private ulong remainingQuantity_;
     /// <summary>
@@ -9004,7 +9217,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "restTime" field.</summary>
+    /// <summary>Field number for the "rest_time" field.</summary>
     public const int RestTimeFieldNumber = 10;
     private ulong restTime_;
     /// <summary>
@@ -9018,7 +9231,7 @@ namespace Cube.Trade {
       }
     }
 
-    /// <summary>Field number for the "subaccountId" field.</summary>
+    /// <summary>Field number for the "subaccount_id" field.</summary>
     public const int SubaccountIdFieldNumber = 11;
     private ulong subaccountId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9026,6 +9239,20 @@ namespace Cube.Trade {
       get { return subaccountId_; }
       set {
         subaccountId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cumulative_quantity" field.</summary>
+    public const int CumulativeQuantityFieldNumber = 12;
+    private ulong cumulativeQuantity_;
+    /// <summary>
+    /// The cumulative filled quantity for this order.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ulong CumulativeQuantity {
+      get { return cumulativeQuantity_; }
+      set {
+        cumulativeQuantity_ = value;
       }
     }
 
@@ -9046,13 +9273,14 @@ namespace Cube.Trade {
       if (ExchangeOrderId != other.ExchangeOrderId) return false;
       if (MarketId != other.MarketId) return false;
       if (Price != other.Price) return false;
-      if (OriginalQuantity != other.OriginalQuantity) return false;
+      if (OrderQuantity != other.OrderQuantity) return false;
       if (Side != other.Side) return false;
       if (TimeInForce != other.TimeInForce) return false;
       if (OrderType != other.OrderType) return false;
       if (RemainingQuantity != other.RemainingQuantity) return false;
       if (RestTime != other.RestTime) return false;
       if (SubaccountId != other.SubaccountId) return false;
+      if (CumulativeQuantity != other.CumulativeQuantity) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -9063,13 +9291,14 @@ namespace Cube.Trade {
       if (ExchangeOrderId != 0UL) hash ^= ExchangeOrderId.GetHashCode();
       if (MarketId != 0UL) hash ^= MarketId.GetHashCode();
       if (Price != 0UL) hash ^= Price.GetHashCode();
-      if (OriginalQuantity != 0UL) hash ^= OriginalQuantity.GetHashCode();
+      if (OrderQuantity != 0UL) hash ^= OrderQuantity.GetHashCode();
       if (Side != global::Cube.Trade.Side.Bid) hash ^= Side.GetHashCode();
       if (TimeInForce != global::Cube.Trade.TimeInForce.ImmediateOrCancel) hash ^= TimeInForce.GetHashCode();
       if (OrderType != global::Cube.Trade.OrderType.Limit) hash ^= OrderType.GetHashCode();
       if (RemainingQuantity != 0UL) hash ^= RemainingQuantity.GetHashCode();
       if (RestTime != 0UL) hash ^= RestTime.GetHashCode();
       if (SubaccountId != 0UL) hash ^= SubaccountId.GetHashCode();
+      if (CumulativeQuantity != 0UL) hash ^= CumulativeQuantity.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -9102,9 +9331,9 @@ namespace Cube.Trade {
         output.WriteRawTag(32);
         output.WriteUInt64(Price);
       }
-      if (OriginalQuantity != 0UL) {
+      if (OrderQuantity != 0UL) {
         output.WriteRawTag(40);
-        output.WriteUInt64(OriginalQuantity);
+        output.WriteUInt64(OrderQuantity);
       }
       if (Side != global::Cube.Trade.Side.Bid) {
         output.WriteRawTag(48);
@@ -9129,6 +9358,10 @@ namespace Cube.Trade {
       if (SubaccountId != 0UL) {
         output.WriteRawTag(88);
         output.WriteUInt64(SubaccountId);
+      }
+      if (CumulativeQuantity != 0UL) {
+        output.WriteRawTag(96);
+        output.WriteUInt64(CumulativeQuantity);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -9155,9 +9388,9 @@ namespace Cube.Trade {
         output.WriteRawTag(32);
         output.WriteUInt64(Price);
       }
-      if (OriginalQuantity != 0UL) {
+      if (OrderQuantity != 0UL) {
         output.WriteRawTag(40);
-        output.WriteUInt64(OriginalQuantity);
+        output.WriteUInt64(OrderQuantity);
       }
       if (Side != global::Cube.Trade.Side.Bid) {
         output.WriteRawTag(48);
@@ -9183,6 +9416,10 @@ namespace Cube.Trade {
         output.WriteRawTag(88);
         output.WriteUInt64(SubaccountId);
       }
+      if (CumulativeQuantity != 0UL) {
+        output.WriteRawTag(96);
+        output.WriteUInt64(CumulativeQuantity);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -9204,8 +9441,8 @@ namespace Cube.Trade {
       if (Price != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Price);
       }
-      if (OriginalQuantity != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(OriginalQuantity);
+      if (OrderQuantity != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(OrderQuantity);
       }
       if (Side != global::Cube.Trade.Side.Bid) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Side);
@@ -9224,6 +9461,9 @@ namespace Cube.Trade {
       }
       if (SubaccountId != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(SubaccountId);
+      }
+      if (CumulativeQuantity != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(CumulativeQuantity);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -9248,8 +9488,8 @@ namespace Cube.Trade {
       if (other.Price != 0UL) {
         Price = other.Price;
       }
-      if (other.OriginalQuantity != 0UL) {
-        OriginalQuantity = other.OriginalQuantity;
+      if (other.OrderQuantity != 0UL) {
+        OrderQuantity = other.OrderQuantity;
       }
       if (other.Side != global::Cube.Trade.Side.Bid) {
         Side = other.Side;
@@ -9268,6 +9508,9 @@ namespace Cube.Trade {
       }
       if (other.SubaccountId != 0UL) {
         SubaccountId = other.SubaccountId;
+      }
+      if (other.CumulativeQuantity != 0UL) {
+        CumulativeQuantity = other.CumulativeQuantity;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -9300,7 +9543,7 @@ namespace Cube.Trade {
             break;
           }
           case 40: {
-            OriginalQuantity = input.ReadUInt64();
+            OrderQuantity = input.ReadUInt64();
             break;
           }
           case 48: {
@@ -9325,6 +9568,10 @@ namespace Cube.Trade {
           }
           case 88: {
             SubaccountId = input.ReadUInt64();
+            break;
+          }
+          case 96: {
+            CumulativeQuantity = input.ReadUInt64();
             break;
           }
         }
@@ -9358,7 +9605,7 @@ namespace Cube.Trade {
             break;
           }
           case 40: {
-            OriginalQuantity = input.ReadUInt64();
+            OrderQuantity = input.ReadUInt64();
             break;
           }
           case 48: {
@@ -9383,6 +9630,10 @@ namespace Cube.Trade {
           }
           case 88: {
             SubaccountId = input.ReadUInt64();
+            break;
+          }
+          case 96: {
+            CumulativeQuantity = input.ReadUInt64();
             break;
           }
         }

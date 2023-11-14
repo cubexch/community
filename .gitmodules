@@ -1,0 +1,3 @@
+[submodule "sdk/build/protos"]
+	path = sdk/build/protos
+	url = git@github.com:cubexch/ws-api.git

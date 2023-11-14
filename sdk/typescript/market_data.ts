@@ -4,7 +4,7 @@
  * source: market_data.proto
  * git: https://github.com/thesayyn/protoc-gen-ts */
 import * as pb_1 from "google-protobuf";
-export namespace md {
+export namespace market_data {
     export enum Side {
         BID = 0,
         ASK = 1
@@ -27,73 +27,73 @@ export namespace md {
             heartbeat?: Heartbeat;
             summary?: never;
             trades?: never;
-            mboSnapshot?: never;
-            mboDiff?: never;
-            mbpSnapshot?: never;
-            mbpDiff?: never;
+            mbo_snapshot?: never;
+            mbo_diff?: never;
+            mbp_snapshot?: never;
+            mbp_diff?: never;
             kline?: never;
         } | {
             heartbeat?: never;
             summary?: Summary;
             trades?: never;
-            mboSnapshot?: never;
-            mboDiff?: never;
-            mbpSnapshot?: never;
-            mbpDiff?: never;
+            mbo_snapshot?: never;
+            mbo_diff?: never;
+            mbp_snapshot?: never;
+            mbp_diff?: never;
             kline?: never;
         } | {
             heartbeat?: never;
             summary?: never;
             trades?: Trades;
-            mboSnapshot?: never;
-            mboDiff?: never;
-            mbpSnapshot?: never;
-            mbpDiff?: never;
+            mbo_snapshot?: never;
+            mbo_diff?: never;
+            mbp_snapshot?: never;
+            mbp_diff?: never;
             kline?: never;
         } | {
             heartbeat?: never;
             summary?: never;
             trades?: never;
-            mboSnapshot?: MarketByOrder;
-            mboDiff?: never;
-            mbpSnapshot?: never;
-            mbpDiff?: never;
+            mbo_snapshot?: MarketByOrder;
+            mbo_diff?: never;
+            mbp_snapshot?: never;
+            mbp_diff?: never;
             kline?: never;
         } | {
             heartbeat?: never;
             summary?: never;
             trades?: never;
-            mboSnapshot?: never;
-            mboDiff?: MarketByOrderDiff;
-            mbpSnapshot?: never;
-            mbpDiff?: never;
+            mbo_snapshot?: never;
+            mbo_diff?: MarketByOrderDiff;
+            mbp_snapshot?: never;
+            mbp_diff?: never;
             kline?: never;
         } | {
             heartbeat?: never;
             summary?: never;
             trades?: never;
-            mboSnapshot?: never;
-            mboDiff?: never;
-            mbpSnapshot?: MarketByPrice;
-            mbpDiff?: never;
+            mbo_snapshot?: never;
+            mbo_diff?: never;
+            mbp_snapshot?: MarketByPrice;
+            mbp_diff?: never;
             kline?: never;
         } | {
             heartbeat?: never;
             summary?: never;
             trades?: never;
-            mboSnapshot?: never;
-            mboDiff?: never;
-            mbpSnapshot?: never;
-            mbpDiff?: MarketByPriceDiff;
+            mbo_snapshot?: never;
+            mbo_diff?: never;
+            mbp_snapshot?: never;
+            mbp_diff?: MarketByPriceDiff;
             kline?: never;
         } | {
             heartbeat?: never;
             summary?: never;
             trades?: never;
-            mboSnapshot?: never;
-            mboDiff?: never;
-            mbpSnapshot?: never;
-            mbpDiff?: never;
+            mbo_snapshot?: never;
+            mbo_diff?: never;
+            mbp_snapshot?: never;
+            mbp_diff?: never;
             kline?: Kline;
         })))) {
             super();
@@ -108,17 +108,17 @@ export namespace md {
                 if ("trades" in data && data.trades != undefined) {
                     this.trades = data.trades;
                 }
-                if ("mboSnapshot" in data && data.mboSnapshot != undefined) {
-                    this.mboSnapshot = data.mboSnapshot;
+                if ("mbo_snapshot" in data && data.mbo_snapshot != undefined) {
+                    this.mbo_snapshot = data.mbo_snapshot;
                 }
-                if ("mboDiff" in data && data.mboDiff != undefined) {
-                    this.mboDiff = data.mboDiff;
+                if ("mbo_diff" in data && data.mbo_diff != undefined) {
+                    this.mbo_diff = data.mbo_diff;
                 }
-                if ("mbpSnapshot" in data && data.mbpSnapshot != undefined) {
-                    this.mbpSnapshot = data.mbpSnapshot;
+                if ("mbp_snapshot" in data && data.mbp_snapshot != undefined) {
+                    this.mbp_snapshot = data.mbp_snapshot;
                 }
-                if ("mbpDiff" in data && data.mbpDiff != undefined) {
-                    this.mbpDiff = data.mbpDiff;
+                if ("mbp_diff" in data && data.mbp_diff != undefined) {
+                    this.mbp_diff = data.mbp_diff;
                 }
                 if ("kline" in data && data.kline != undefined) {
                     this.kline = data.kline;
@@ -152,40 +152,40 @@ export namespace md {
         get has_trades() {
             return pb_1.Message.getField(this, 3) != null;
         }
-        get mboSnapshot() {
+        get mbo_snapshot() {
             return pb_1.Message.getWrapperField(this, MarketByOrder, 4) as MarketByOrder;
         }
-        set mboSnapshot(value: MarketByOrder) {
+        set mbo_snapshot(value: MarketByOrder) {
             pb_1.Message.setOneofWrapperField(this, 4, this.#one_of_decls[0], value);
         }
-        get has_mboSnapshot() {
+        get has_mbo_snapshot() {
             return pb_1.Message.getField(this, 4) != null;
         }
-        get mboDiff() {
+        get mbo_diff() {
             return pb_1.Message.getWrapperField(this, MarketByOrderDiff, 5) as MarketByOrderDiff;
         }
-        set mboDiff(value: MarketByOrderDiff) {
+        set mbo_diff(value: MarketByOrderDiff) {
             pb_1.Message.setOneofWrapperField(this, 5, this.#one_of_decls[0], value);
         }
-        get has_mboDiff() {
+        get has_mbo_diff() {
             return pb_1.Message.getField(this, 5) != null;
         }
-        get mbpSnapshot() {
+        get mbp_snapshot() {
             return pb_1.Message.getWrapperField(this, MarketByPrice, 6) as MarketByPrice;
         }
-        set mbpSnapshot(value: MarketByPrice) {
+        set mbp_snapshot(value: MarketByPrice) {
             pb_1.Message.setOneofWrapperField(this, 6, this.#one_of_decls[0], value);
         }
-        get has_mbpSnapshot() {
+        get has_mbp_snapshot() {
             return pb_1.Message.getField(this, 6) != null;
         }
-        get mbpDiff() {
+        get mbp_diff() {
             return pb_1.Message.getWrapperField(this, MarketByPriceDiff, 7) as MarketByPriceDiff;
         }
-        set mbpDiff(value: MarketByPriceDiff) {
+        set mbp_diff(value: MarketByPriceDiff) {
             pb_1.Message.setOneofWrapperField(this, 7, this.#one_of_decls[0], value);
         }
-        get has_mbpDiff() {
+        get has_mbp_diff() {
             return pb_1.Message.getField(this, 7) != null;
         }
         get kline() {
@@ -199,16 +199,16 @@ export namespace md {
         }
         get inner() {
             const cases: {
-                [index: number]: "none" | "heartbeat" | "summary" | "trades" | "mboSnapshot" | "mboDiff" | "mbpSnapshot" | "mbpDiff" | "kline";
+                [index: number]: "none" | "heartbeat" | "summary" | "trades" | "mbo_snapshot" | "mbo_diff" | "mbp_snapshot" | "mbp_diff" | "kline";
             } = {
                 0: "none",
                 1: "heartbeat",
                 2: "summary",
                 3: "trades",
-                4: "mboSnapshot",
-                5: "mboDiff",
-                6: "mbpSnapshot",
-                7: "mbpDiff",
+                4: "mbo_snapshot",
+                5: "mbo_diff",
+                6: "mbp_snapshot",
+                7: "mbp_diff",
                 8: "kline"
             };
             return cases[pb_1.Message.computeOneofCase(this, [1, 2, 3, 4, 5, 6, 7, 8])];
@@ -217,10 +217,10 @@ export namespace md {
             heartbeat?: ReturnType<typeof Heartbeat.prototype.toObject>;
             summary?: ReturnType<typeof Summary.prototype.toObject>;
             trades?: ReturnType<typeof Trades.prototype.toObject>;
-            mboSnapshot?: ReturnType<typeof MarketByOrder.prototype.toObject>;
-            mboDiff?: ReturnType<typeof MarketByOrderDiff.prototype.toObject>;
-            mbpSnapshot?: ReturnType<typeof MarketByPrice.prototype.toObject>;
-            mbpDiff?: ReturnType<typeof MarketByPriceDiff.prototype.toObject>;
+            mbo_snapshot?: ReturnType<typeof MarketByOrder.prototype.toObject>;
+            mbo_diff?: ReturnType<typeof MarketByOrderDiff.prototype.toObject>;
+            mbp_snapshot?: ReturnType<typeof MarketByPrice.prototype.toObject>;
+            mbp_diff?: ReturnType<typeof MarketByPriceDiff.prototype.toObject>;
             kline?: ReturnType<typeof Kline.prototype.toObject>;
         }): MdMessage {
             const message = new MdMessage({});
@@ -233,17 +233,17 @@ export namespace md {
             if (data.trades != null) {
                 message.trades = Trades.fromObject(data.trades);
             }
-            if (data.mboSnapshot != null) {
-                message.mboSnapshot = MarketByOrder.fromObject(data.mboSnapshot);
+            if (data.mbo_snapshot != null) {
+                message.mbo_snapshot = MarketByOrder.fromObject(data.mbo_snapshot);
             }
-            if (data.mboDiff != null) {
-                message.mboDiff = MarketByOrderDiff.fromObject(data.mboDiff);
+            if (data.mbo_diff != null) {
+                message.mbo_diff = MarketByOrderDiff.fromObject(data.mbo_diff);
             }
-            if (data.mbpSnapshot != null) {
-                message.mbpSnapshot = MarketByPrice.fromObject(data.mbpSnapshot);
+            if (data.mbp_snapshot != null) {
+                message.mbp_snapshot = MarketByPrice.fromObject(data.mbp_snapshot);
             }
-            if (data.mbpDiff != null) {
-                message.mbpDiff = MarketByPriceDiff.fromObject(data.mbpDiff);
+            if (data.mbp_diff != null) {
+                message.mbp_diff = MarketByPriceDiff.fromObject(data.mbp_diff);
             }
             if (data.kline != null) {
                 message.kline = Kline.fromObject(data.kline);
@@ -255,10 +255,10 @@ export namespace md {
                 heartbeat?: ReturnType<typeof Heartbeat.prototype.toObject>;
                 summary?: ReturnType<typeof Summary.prototype.toObject>;
                 trades?: ReturnType<typeof Trades.prototype.toObject>;
-                mboSnapshot?: ReturnType<typeof MarketByOrder.prototype.toObject>;
-                mboDiff?: ReturnType<typeof MarketByOrderDiff.prototype.toObject>;
-                mbpSnapshot?: ReturnType<typeof MarketByPrice.prototype.toObject>;
-                mbpDiff?: ReturnType<typeof MarketByPriceDiff.prototype.toObject>;
+                mbo_snapshot?: ReturnType<typeof MarketByOrder.prototype.toObject>;
+                mbo_diff?: ReturnType<typeof MarketByOrderDiff.prototype.toObject>;
+                mbp_snapshot?: ReturnType<typeof MarketByPrice.prototype.toObject>;
+                mbp_diff?: ReturnType<typeof MarketByPriceDiff.prototype.toObject>;
                 kline?: ReturnType<typeof Kline.prototype.toObject>;
             } = {};
             if (this.heartbeat != null) {
@@ -270,17 +270,17 @@ export namespace md {
             if (this.trades != null) {
                 data.trades = this.trades.toObject();
             }
-            if (this.mboSnapshot != null) {
-                data.mboSnapshot = this.mboSnapshot.toObject();
+            if (this.mbo_snapshot != null) {
+                data.mbo_snapshot = this.mbo_snapshot.toObject();
             }
-            if (this.mboDiff != null) {
-                data.mboDiff = this.mboDiff.toObject();
+            if (this.mbo_diff != null) {
+                data.mbo_diff = this.mbo_diff.toObject();
             }
-            if (this.mbpSnapshot != null) {
-                data.mbpSnapshot = this.mbpSnapshot.toObject();
+            if (this.mbp_snapshot != null) {
+                data.mbp_snapshot = this.mbp_snapshot.toObject();
             }
-            if (this.mbpDiff != null) {
-                data.mbpDiff = this.mbpDiff.toObject();
+            if (this.mbp_diff != null) {
+                data.mbp_diff = this.mbp_diff.toObject();
             }
             if (this.kline != null) {
                 data.kline = this.kline.toObject();
@@ -297,14 +297,14 @@ export namespace md {
                 writer.writeMessage(2, this.summary, () => this.summary.serialize(writer));
             if (this.has_trades)
                 writer.writeMessage(3, this.trades, () => this.trades.serialize(writer));
-            if (this.has_mboSnapshot)
-                writer.writeMessage(4, this.mboSnapshot, () => this.mboSnapshot.serialize(writer));
-            if (this.has_mboDiff)
-                writer.writeMessage(5, this.mboDiff, () => this.mboDiff.serialize(writer));
-            if (this.has_mbpSnapshot)
-                writer.writeMessage(6, this.mbpSnapshot, () => this.mbpSnapshot.serialize(writer));
-            if (this.has_mbpDiff)
-                writer.writeMessage(7, this.mbpDiff, () => this.mbpDiff.serialize(writer));
+            if (this.has_mbo_snapshot)
+                writer.writeMessage(4, this.mbo_snapshot, () => this.mbo_snapshot.serialize(writer));
+            if (this.has_mbo_diff)
+                writer.writeMessage(5, this.mbo_diff, () => this.mbo_diff.serialize(writer));
+            if (this.has_mbp_snapshot)
+                writer.writeMessage(6, this.mbp_snapshot, () => this.mbp_snapshot.serialize(writer));
+            if (this.has_mbp_diff)
+                writer.writeMessage(7, this.mbp_diff, () => this.mbp_diff.serialize(writer));
             if (this.has_kline)
                 writer.writeMessage(8, this.kline, () => this.kline.serialize(writer));
             if (!w)
@@ -326,16 +326,16 @@ export namespace md {
                         reader.readMessage(message.trades, () => message.trades = Trades.deserialize(reader));
                         break;
                     case 4:
-                        reader.readMessage(message.mboSnapshot, () => message.mboSnapshot = MarketByOrder.deserialize(reader));
+                        reader.readMessage(message.mbo_snapshot, () => message.mbo_snapshot = MarketByOrder.deserialize(reader));
                         break;
                     case 5:
-                        reader.readMessage(message.mboDiff, () => message.mboDiff = MarketByOrderDiff.deserialize(reader));
+                        reader.readMessage(message.mbo_diff, () => message.mbo_diff = MarketByOrderDiff.deserialize(reader));
                         break;
                     case 6:
-                        reader.readMessage(message.mbpSnapshot, () => message.mbpSnapshot = MarketByPrice.deserialize(reader));
+                        reader.readMessage(message.mbp_snapshot, () => message.mbp_snapshot = MarketByPrice.deserialize(reader));
                         break;
                     case 7:
-                        reader.readMessage(message.mbpDiff, () => message.mbpDiff = MarketByPriceDiff.deserialize(reader));
+                        reader.readMessage(message.mbp_diff, () => message.mbp_diff = MarketByPriceDiff.deserialize(reader));
                         break;
                     case 8:
                         reader.readMessage(message.kline, () => message.kline = Kline.deserialize(reader));
@@ -357,7 +357,7 @@ export namespace md {
         constructor(data?: any[] | {
             levels?: MarketByPrice.Level[];
             chunk?: number;
-            numChunks?: number;
+            num_chunks?: number;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [1], this.#one_of_decls);
@@ -368,8 +368,8 @@ export namespace md {
                 if ("chunk" in data && data.chunk != undefined) {
                     this.chunk = data.chunk;
                 }
-                if ("numChunks" in data && data.numChunks != undefined) {
-                    this.numChunks = data.numChunks;
+                if ("num_chunks" in data && data.num_chunks != undefined) {
+                    this.num_chunks = data.num_chunks;
                 }
             }
         }
@@ -385,16 +385,16 @@ export namespace md {
         set chunk(value: number) {
             pb_1.Message.setField(this, 2, value);
         }
-        get numChunks() {
+        get num_chunks() {
             return pb_1.Message.getFieldWithDefault(this, 3, 0) as number;
         }
-        set numChunks(value: number) {
+        set num_chunks(value: number) {
             pb_1.Message.setField(this, 3, value);
         }
         static fromObject(data: {
             levels?: ReturnType<typeof MarketByPrice.Level.prototype.toObject>[];
             chunk?: number;
-            numChunks?: number;
+            num_chunks?: number;
         }): MarketByPrice {
             const message = new MarketByPrice({});
             if (data.levels != null) {
@@ -403,8 +403,8 @@ export namespace md {
             if (data.chunk != null) {
                 message.chunk = data.chunk;
             }
-            if (data.numChunks != null) {
-                message.numChunks = data.numChunks;
+            if (data.num_chunks != null) {
+                message.num_chunks = data.num_chunks;
             }
             return message;
         }
@@ -412,7 +412,7 @@ export namespace md {
             const data: {
                 levels?: ReturnType<typeof MarketByPrice.Level.prototype.toObject>[];
                 chunk?: number;
-                numChunks?: number;
+                num_chunks?: number;
             } = {};
             if (this.levels != null) {
                 data.levels = this.levels.map((item: MarketByPrice.Level) => item.toObject());
@@ -420,8 +420,8 @@ export namespace md {
             if (this.chunk != null) {
                 data.chunk = this.chunk;
             }
-            if (this.numChunks != null) {
-                data.numChunks = this.numChunks;
+            if (this.num_chunks != null) {
+                data.num_chunks = this.num_chunks;
             }
             return data;
         }
@@ -433,8 +433,8 @@ export namespace md {
                 writer.writeRepeatedMessage(1, this.levels, (item: MarketByPrice.Level) => item.serialize(writer));
             if (this.chunk != 0)
                 writer.writeUint32(2, this.chunk);
-            if (this.numChunks != 0)
-                writer.writeUint32(3, this.numChunks);
+            if (this.num_chunks != 0)
+                writer.writeUint32(3, this.num_chunks);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -451,7 +451,7 @@ export namespace md {
                         message.chunk = reader.readUint32();
                         break;
                     case 3:
-                        message.numChunks = reader.readUint32();
+                        message.num_chunks = reader.readUint32();
                         break;
                     default: reader.skipField();
                 }
@@ -584,8 +584,8 @@ export namespace md {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
             diffs?: MarketByPriceDiff.Diff[];
-            totalBidLevels?: number;
-            totalAskLevels?: number;
+            total_bid_levels?: number;
+            total_ask_levels?: number;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [1], this.#one_of_decls);
@@ -593,11 +593,11 @@ export namespace md {
                 if ("diffs" in data && data.diffs != undefined) {
                     this.diffs = data.diffs;
                 }
-                if ("totalBidLevels" in data && data.totalBidLevels != undefined) {
-                    this.totalBidLevels = data.totalBidLevels;
+                if ("total_bid_levels" in data && data.total_bid_levels != undefined) {
+                    this.total_bid_levels = data.total_bid_levels;
                 }
-                if ("totalAskLevels" in data && data.totalAskLevels != undefined) {
-                    this.totalAskLevels = data.totalAskLevels;
+                if ("total_ask_levels" in data && data.total_ask_levels != undefined) {
+                    this.total_ask_levels = data.total_ask_levels;
                 }
             }
         }
@@ -607,49 +607,49 @@ export namespace md {
         set diffs(value: MarketByPriceDiff.Diff[]) {
             pb_1.Message.setRepeatedWrapperField(this, 1, value);
         }
-        get totalBidLevels() {
+        get total_bid_levels() {
             return pb_1.Message.getFieldWithDefault(this, 2, 0) as number;
         }
-        set totalBidLevels(value: number) {
+        set total_bid_levels(value: number) {
             pb_1.Message.setField(this, 2, value);
         }
-        get totalAskLevels() {
+        get total_ask_levels() {
             return pb_1.Message.getFieldWithDefault(this, 3, 0) as number;
         }
-        set totalAskLevels(value: number) {
+        set total_ask_levels(value: number) {
             pb_1.Message.setField(this, 3, value);
         }
         static fromObject(data: {
             diffs?: ReturnType<typeof MarketByPriceDiff.Diff.prototype.toObject>[];
-            totalBidLevels?: number;
-            totalAskLevels?: number;
+            total_bid_levels?: number;
+            total_ask_levels?: number;
         }): MarketByPriceDiff {
             const message = new MarketByPriceDiff({});
             if (data.diffs != null) {
                 message.diffs = data.diffs.map(item => MarketByPriceDiff.Diff.fromObject(item));
             }
-            if (data.totalBidLevels != null) {
-                message.totalBidLevels = data.totalBidLevels;
+            if (data.total_bid_levels != null) {
+                message.total_bid_levels = data.total_bid_levels;
             }
-            if (data.totalAskLevels != null) {
-                message.totalAskLevels = data.totalAskLevels;
+            if (data.total_ask_levels != null) {
+                message.total_ask_levels = data.total_ask_levels;
             }
             return message;
         }
         toObject() {
             const data: {
                 diffs?: ReturnType<typeof MarketByPriceDiff.Diff.prototype.toObject>[];
-                totalBidLevels?: number;
-                totalAskLevels?: number;
+                total_bid_levels?: number;
+                total_ask_levels?: number;
             } = {};
             if (this.diffs != null) {
                 data.diffs = this.diffs.map((item: MarketByPriceDiff.Diff) => item.toObject());
             }
-            if (this.totalBidLevels != null) {
-                data.totalBidLevels = this.totalBidLevels;
+            if (this.total_bid_levels != null) {
+                data.total_bid_levels = this.total_bid_levels;
             }
-            if (this.totalAskLevels != null) {
-                data.totalAskLevels = this.totalAskLevels;
+            if (this.total_ask_levels != null) {
+                data.total_ask_levels = this.total_ask_levels;
             }
             return data;
         }
@@ -659,10 +659,10 @@ export namespace md {
             const writer = w || new pb_1.BinaryWriter();
             if (this.diffs.length)
                 writer.writeRepeatedMessage(1, this.diffs, (item: MarketByPriceDiff.Diff) => item.serialize(writer));
-            if (this.totalBidLevels != 0)
-                writer.writeUint32(2, this.totalBidLevels);
-            if (this.totalAskLevels != 0)
-                writer.writeUint32(3, this.totalAskLevels);
+            if (this.total_bid_levels != 0)
+                writer.writeUint32(2, this.total_bid_levels);
+            if (this.total_ask_levels != 0)
+                writer.writeUint32(3, this.total_ask_levels);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -676,10 +676,10 @@ export namespace md {
                         reader.readMessage(message.diffs, () => pb_1.Message.addToRepeatedWrapperField(message, 1, MarketByPriceDiff.Diff.deserialize(reader), MarketByPriceDiff.Diff));
                         break;
                     case 2:
-                        message.totalBidLevels = reader.readUint32();
+                        message.total_bid_levels = reader.readUint32();
                         break;
                     case 3:
-                        message.totalAskLevels = reader.readUint32();
+                        message.total_ask_levels = reader.readUint32();
                         break;
                     default: reader.skipField();
                 }
@@ -841,7 +841,7 @@ export namespace md {
         constructor(data?: any[] | {
             orders?: MarketByOrder.Order[];
             chunk?: number;
-            numChunks?: number;
+            num_chunks?: number;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [1], this.#one_of_decls);
@@ -852,8 +852,8 @@ export namespace md {
                 if ("chunk" in data && data.chunk != undefined) {
                     this.chunk = data.chunk;
                 }
-                if ("numChunks" in data && data.numChunks != undefined) {
-                    this.numChunks = data.numChunks;
+                if ("num_chunks" in data && data.num_chunks != undefined) {
+                    this.num_chunks = data.num_chunks;
                 }
             }
         }
@@ -869,16 +869,16 @@ export namespace md {
         set chunk(value: number) {
             pb_1.Message.setField(this, 2, value);
         }
-        get numChunks() {
+        get num_chunks() {
             return pb_1.Message.getFieldWithDefault(this, 3, 0) as number;
         }
-        set numChunks(value: number) {
+        set num_chunks(value: number) {
             pb_1.Message.setField(this, 3, value);
         }
         static fromObject(data: {
             orders?: ReturnType<typeof MarketByOrder.Order.prototype.toObject>[];
             chunk?: number;
-            numChunks?: number;
+            num_chunks?: number;
         }): MarketByOrder {
             const message = new MarketByOrder({});
             if (data.orders != null) {
@@ -887,8 +887,8 @@ export namespace md {
             if (data.chunk != null) {
                 message.chunk = data.chunk;
             }
-            if (data.numChunks != null) {
-                message.numChunks = data.numChunks;
+            if (data.num_chunks != null) {
+                message.num_chunks = data.num_chunks;
             }
             return message;
         }
@@ -896,7 +896,7 @@ export namespace md {
             const data: {
                 orders?: ReturnType<typeof MarketByOrder.Order.prototype.toObject>[];
                 chunk?: number;
-                numChunks?: number;
+                num_chunks?: number;
             } = {};
             if (this.orders != null) {
                 data.orders = this.orders.map((item: MarketByOrder.Order) => item.toObject());
@@ -904,8 +904,8 @@ export namespace md {
             if (this.chunk != null) {
                 data.chunk = this.chunk;
             }
-            if (this.numChunks != null) {
-                data.numChunks = this.numChunks;
+            if (this.num_chunks != null) {
+                data.num_chunks = this.num_chunks;
             }
             return data;
         }
@@ -917,8 +917,8 @@ export namespace md {
                 writer.writeRepeatedMessage(1, this.orders, (item: MarketByOrder.Order) => item.serialize(writer));
             if (this.chunk != 0)
                 writer.writeUint32(2, this.chunk);
-            if (this.numChunks != 0)
-                writer.writeUint32(3, this.numChunks);
+            if (this.num_chunks != 0)
+                writer.writeUint32(3, this.num_chunks);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -935,7 +935,7 @@ export namespace md {
                         message.chunk = reader.readUint32();
                         break;
                     case 3:
-                        message.numChunks = reader.readUint32();
+                        message.num_chunks = reader.readUint32();
                         break;
                     default: reader.skipField();
                 }
@@ -955,8 +955,9 @@ export namespace md {
             constructor(data?: any[] | {
                 price?: number;
                 quantity?: number;
-                exchangeOrderId?: number;
+                exchange_order_id?: number;
                 side?: Side;
+                priority?: number;
             }) {
                 super();
                 pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
@@ -967,11 +968,14 @@ export namespace md {
                     if ("quantity" in data && data.quantity != undefined) {
                         this.quantity = data.quantity;
                     }
-                    if ("exchangeOrderId" in data && data.exchangeOrderId != undefined) {
-                        this.exchangeOrderId = data.exchangeOrderId;
+                    if ("exchange_order_id" in data && data.exchange_order_id != undefined) {
+                        this.exchange_order_id = data.exchange_order_id;
                     }
                     if ("side" in data && data.side != undefined) {
                         this.side = data.side;
+                    }
+                    if ("priority" in data && data.priority != undefined) {
+                        this.priority = data.priority;
                     }
                 }
             }
@@ -987,10 +991,10 @@ export namespace md {
             set quantity(value: number) {
                 pb_1.Message.setField(this, 2, value);
             }
-            get exchangeOrderId() {
+            get exchange_order_id() {
                 return pb_1.Message.getFieldWithDefault(this, 3, 0) as number;
             }
-            set exchangeOrderId(value: number) {
+            set exchange_order_id(value: number) {
                 pb_1.Message.setField(this, 3, value);
             }
             get side() {
@@ -999,11 +1003,18 @@ export namespace md {
             set side(value: Side) {
                 pb_1.Message.setField(this, 4, value);
             }
+            get priority() {
+                return pb_1.Message.getFieldWithDefault(this, 5, 0) as number;
+            }
+            set priority(value: number) {
+                pb_1.Message.setField(this, 5, value);
+            }
             static fromObject(data: {
                 price?: number;
                 quantity?: number;
-                exchangeOrderId?: number;
+                exchange_order_id?: number;
                 side?: Side;
+                priority?: number;
             }): Order {
                 const message = new Order({});
                 if (data.price != null) {
@@ -1012,11 +1023,14 @@ export namespace md {
                 if (data.quantity != null) {
                     message.quantity = data.quantity;
                 }
-                if (data.exchangeOrderId != null) {
-                    message.exchangeOrderId = data.exchangeOrderId;
+                if (data.exchange_order_id != null) {
+                    message.exchange_order_id = data.exchange_order_id;
                 }
                 if (data.side != null) {
                     message.side = data.side;
+                }
+                if (data.priority != null) {
+                    message.priority = data.priority;
                 }
                 return message;
             }
@@ -1024,8 +1038,9 @@ export namespace md {
                 const data: {
                     price?: number;
                     quantity?: number;
-                    exchangeOrderId?: number;
+                    exchange_order_id?: number;
                     side?: Side;
+                    priority?: number;
                 } = {};
                 if (this.price != null) {
                     data.price = this.price;
@@ -1033,11 +1048,14 @@ export namespace md {
                 if (this.quantity != null) {
                     data.quantity = this.quantity;
                 }
-                if (this.exchangeOrderId != null) {
-                    data.exchangeOrderId = this.exchangeOrderId;
+                if (this.exchange_order_id != null) {
+                    data.exchange_order_id = this.exchange_order_id;
                 }
                 if (this.side != null) {
                     data.side = this.side;
+                }
+                if (this.priority != null) {
+                    data.priority = this.priority;
                 }
                 return data;
             }
@@ -1049,10 +1067,12 @@ export namespace md {
                     writer.writeUint64(1, this.price);
                 if (this.quantity != 0)
                     writer.writeUint64(2, this.quantity);
-                if (this.exchangeOrderId != 0)
-                    writer.writeUint64(3, this.exchangeOrderId);
+                if (this.exchange_order_id != 0)
+                    writer.writeUint64(3, this.exchange_order_id);
                 if (this.side != Side.BID)
                     writer.writeEnum(4, this.side);
+                if (this.priority != 0)
+                    writer.writeUint64(5, this.priority);
                 if (!w)
                     return writer.getResultBuffer();
             }
@@ -1069,10 +1089,13 @@ export namespace md {
                             message.quantity = reader.readUint64();
                             break;
                         case 3:
-                            message.exchangeOrderId = reader.readUint64();
+                            message.exchange_order_id = reader.readUint64();
                             break;
                         case 4:
                             message.side = reader.readEnum();
+                            break;
+                        case 5:
+                            message.priority = reader.readUint64();
                             break;
                         default: reader.skipField();
                     }
@@ -1091,10 +1114,10 @@ export namespace md {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
             diffs?: MarketByOrderDiff.Diff[];
-            totalBidLevels?: number;
-            totalAskLevels?: number;
-            totalBidOrders?: number;
-            totalAskOrders?: number;
+            total_bid_levels?: number;
+            total_ask_levels?: number;
+            total_bid_orders?: number;
+            total_ask_orders?: number;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [1], this.#one_of_decls);
@@ -1102,17 +1125,17 @@ export namespace md {
                 if ("diffs" in data && data.diffs != undefined) {
                     this.diffs = data.diffs;
                 }
-                if ("totalBidLevels" in data && data.totalBidLevels != undefined) {
-                    this.totalBidLevels = data.totalBidLevels;
+                if ("total_bid_levels" in data && data.total_bid_levels != undefined) {
+                    this.total_bid_levels = data.total_bid_levels;
                 }
-                if ("totalAskLevels" in data && data.totalAskLevels != undefined) {
-                    this.totalAskLevels = data.totalAskLevels;
+                if ("total_ask_levels" in data && data.total_ask_levels != undefined) {
+                    this.total_ask_levels = data.total_ask_levels;
                 }
-                if ("totalBidOrders" in data && data.totalBidOrders != undefined) {
-                    this.totalBidOrders = data.totalBidOrders;
+                if ("total_bid_orders" in data && data.total_bid_orders != undefined) {
+                    this.total_bid_orders = data.total_bid_orders;
                 }
-                if ("totalAskOrders" in data && data.totalAskOrders != undefined) {
-                    this.totalAskOrders = data.totalAskOrders;
+                if ("total_ask_orders" in data && data.total_ask_orders != undefined) {
+                    this.total_ask_orders = data.total_ask_orders;
                 }
             }
         }
@@ -1122,77 +1145,77 @@ export namespace md {
         set diffs(value: MarketByOrderDiff.Diff[]) {
             pb_1.Message.setRepeatedWrapperField(this, 1, value);
         }
-        get totalBidLevels() {
+        get total_bid_levels() {
             return pb_1.Message.getFieldWithDefault(this, 2, 0) as number;
         }
-        set totalBidLevels(value: number) {
+        set total_bid_levels(value: number) {
             pb_1.Message.setField(this, 2, value);
         }
-        get totalAskLevels() {
+        get total_ask_levels() {
             return pb_1.Message.getFieldWithDefault(this, 3, 0) as number;
         }
-        set totalAskLevels(value: number) {
+        set total_ask_levels(value: number) {
             pb_1.Message.setField(this, 3, value);
         }
-        get totalBidOrders() {
+        get total_bid_orders() {
             return pb_1.Message.getFieldWithDefault(this, 4, 0) as number;
         }
-        set totalBidOrders(value: number) {
+        set total_bid_orders(value: number) {
             pb_1.Message.setField(this, 4, value);
         }
-        get totalAskOrders() {
+        get total_ask_orders() {
             return pb_1.Message.getFieldWithDefault(this, 5, 0) as number;
         }
-        set totalAskOrders(value: number) {
+        set total_ask_orders(value: number) {
             pb_1.Message.setField(this, 5, value);
         }
         static fromObject(data: {
             diffs?: ReturnType<typeof MarketByOrderDiff.Diff.prototype.toObject>[];
-            totalBidLevels?: number;
-            totalAskLevels?: number;
-            totalBidOrders?: number;
-            totalAskOrders?: number;
+            total_bid_levels?: number;
+            total_ask_levels?: number;
+            total_bid_orders?: number;
+            total_ask_orders?: number;
         }): MarketByOrderDiff {
             const message = new MarketByOrderDiff({});
             if (data.diffs != null) {
                 message.diffs = data.diffs.map(item => MarketByOrderDiff.Diff.fromObject(item));
             }
-            if (data.totalBidLevels != null) {
-                message.totalBidLevels = data.totalBidLevels;
+            if (data.total_bid_levels != null) {
+                message.total_bid_levels = data.total_bid_levels;
             }
-            if (data.totalAskLevels != null) {
-                message.totalAskLevels = data.totalAskLevels;
+            if (data.total_ask_levels != null) {
+                message.total_ask_levels = data.total_ask_levels;
             }
-            if (data.totalBidOrders != null) {
-                message.totalBidOrders = data.totalBidOrders;
+            if (data.total_bid_orders != null) {
+                message.total_bid_orders = data.total_bid_orders;
             }
-            if (data.totalAskOrders != null) {
-                message.totalAskOrders = data.totalAskOrders;
+            if (data.total_ask_orders != null) {
+                message.total_ask_orders = data.total_ask_orders;
             }
             return message;
         }
         toObject() {
             const data: {
                 diffs?: ReturnType<typeof MarketByOrderDiff.Diff.prototype.toObject>[];
-                totalBidLevels?: number;
-                totalAskLevels?: number;
-                totalBidOrders?: number;
-                totalAskOrders?: number;
+                total_bid_levels?: number;
+                total_ask_levels?: number;
+                total_bid_orders?: number;
+                total_ask_orders?: number;
             } = {};
             if (this.diffs != null) {
                 data.diffs = this.diffs.map((item: MarketByOrderDiff.Diff) => item.toObject());
             }
-            if (this.totalBidLevels != null) {
-                data.totalBidLevels = this.totalBidLevels;
+            if (this.total_bid_levels != null) {
+                data.total_bid_levels = this.total_bid_levels;
             }
-            if (this.totalAskLevels != null) {
-                data.totalAskLevels = this.totalAskLevels;
+            if (this.total_ask_levels != null) {
+                data.total_ask_levels = this.total_ask_levels;
             }
-            if (this.totalBidOrders != null) {
-                data.totalBidOrders = this.totalBidOrders;
+            if (this.total_bid_orders != null) {
+                data.total_bid_orders = this.total_bid_orders;
             }
-            if (this.totalAskOrders != null) {
-                data.totalAskOrders = this.totalAskOrders;
+            if (this.total_ask_orders != null) {
+                data.total_ask_orders = this.total_ask_orders;
             }
             return data;
         }
@@ -1202,14 +1225,14 @@ export namespace md {
             const writer = w || new pb_1.BinaryWriter();
             if (this.diffs.length)
                 writer.writeRepeatedMessage(1, this.diffs, (item: MarketByOrderDiff.Diff) => item.serialize(writer));
-            if (this.totalBidLevels != 0)
-                writer.writeUint32(2, this.totalBidLevels);
-            if (this.totalAskLevels != 0)
-                writer.writeUint32(3, this.totalAskLevels);
-            if (this.totalBidOrders != 0)
-                writer.writeUint32(4, this.totalBidOrders);
-            if (this.totalAskOrders != 0)
-                writer.writeUint32(5, this.totalAskOrders);
+            if (this.total_bid_levels != 0)
+                writer.writeUint32(2, this.total_bid_levels);
+            if (this.total_ask_levels != 0)
+                writer.writeUint32(3, this.total_ask_levels);
+            if (this.total_bid_orders != 0)
+                writer.writeUint32(4, this.total_bid_orders);
+            if (this.total_ask_orders != 0)
+                writer.writeUint32(5, this.total_ask_orders);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -1223,16 +1246,16 @@ export namespace md {
                         reader.readMessage(message.diffs, () => pb_1.Message.addToRepeatedWrapperField(message, 1, MarketByOrderDiff.Diff.deserialize(reader), MarketByOrderDiff.Diff));
                         break;
                     case 2:
-                        message.totalBidLevels = reader.readUint32();
+                        message.total_bid_levels = reader.readUint32();
                         break;
                     case 3:
-                        message.totalAskLevels = reader.readUint32();
+                        message.total_ask_levels = reader.readUint32();
                         break;
                     case 4:
-                        message.totalBidOrders = reader.readUint32();
+                        message.total_bid_orders = reader.readUint32();
                         break;
                     case 5:
-                        message.totalAskOrders = reader.readUint32();
+                        message.total_ask_orders = reader.readUint32();
                         break;
                     default: reader.skipField();
                 }
@@ -1257,9 +1280,10 @@ export namespace md {
             constructor(data?: any[] | {
                 price?: number;
                 quantity?: number;
-                exchangeOrderId?: number;
+                exchange_order_id?: number;
                 side?: Side;
                 op?: MarketByOrderDiff.DiffOp;
+                priority?: number;
             }) {
                 super();
                 pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
@@ -1270,14 +1294,17 @@ export namespace md {
                     if ("quantity" in data && data.quantity != undefined) {
                         this.quantity = data.quantity;
                     }
-                    if ("exchangeOrderId" in data && data.exchangeOrderId != undefined) {
-                        this.exchangeOrderId = data.exchangeOrderId;
+                    if ("exchange_order_id" in data && data.exchange_order_id != undefined) {
+                        this.exchange_order_id = data.exchange_order_id;
                     }
                     if ("side" in data && data.side != undefined) {
                         this.side = data.side;
                     }
                     if ("op" in data && data.op != undefined) {
                         this.op = data.op;
+                    }
+                    if ("priority" in data && data.priority != undefined) {
+                        this.priority = data.priority;
                     }
                 }
             }
@@ -1293,10 +1320,10 @@ export namespace md {
             set quantity(value: number) {
                 pb_1.Message.setField(this, 2, value);
             }
-            get exchangeOrderId() {
+            get exchange_order_id() {
                 return pb_1.Message.getFieldWithDefault(this, 3, 0) as number;
             }
-            set exchangeOrderId(value: number) {
+            set exchange_order_id(value: number) {
                 pb_1.Message.setField(this, 3, value);
             }
             get side() {
@@ -1311,12 +1338,19 @@ export namespace md {
             set op(value: MarketByOrderDiff.DiffOp) {
                 pb_1.Message.setField(this, 5, value);
             }
+            get priority() {
+                return pb_1.Message.getFieldWithDefault(this, 6, 0) as number;
+            }
+            set priority(value: number) {
+                pb_1.Message.setField(this, 6, value);
+            }
             static fromObject(data: {
                 price?: number;
                 quantity?: number;
-                exchangeOrderId?: number;
+                exchange_order_id?: number;
                 side?: Side;
                 op?: MarketByOrderDiff.DiffOp;
+                priority?: number;
             }): Diff {
                 const message = new Diff({});
                 if (data.price != null) {
@@ -1325,8 +1359,8 @@ export namespace md {
                 if (data.quantity != null) {
                     message.quantity = data.quantity;
                 }
-                if (data.exchangeOrderId != null) {
-                    message.exchangeOrderId = data.exchangeOrderId;
+                if (data.exchange_order_id != null) {
+                    message.exchange_order_id = data.exchange_order_id;
                 }
                 if (data.side != null) {
                     message.side = data.side;
@@ -1334,15 +1368,19 @@ export namespace md {
                 if (data.op != null) {
                     message.op = data.op;
                 }
+                if (data.priority != null) {
+                    message.priority = data.priority;
+                }
                 return message;
             }
             toObject() {
                 const data: {
                     price?: number;
                     quantity?: number;
-                    exchangeOrderId?: number;
+                    exchange_order_id?: number;
                     side?: Side;
                     op?: MarketByOrderDiff.DiffOp;
+                    priority?: number;
                 } = {};
                 if (this.price != null) {
                     data.price = this.price;
@@ -1350,14 +1388,17 @@ export namespace md {
                 if (this.quantity != null) {
                     data.quantity = this.quantity;
                 }
-                if (this.exchangeOrderId != null) {
-                    data.exchangeOrderId = this.exchangeOrderId;
+                if (this.exchange_order_id != null) {
+                    data.exchange_order_id = this.exchange_order_id;
                 }
                 if (this.side != null) {
                     data.side = this.side;
                 }
                 if (this.op != null) {
                     data.op = this.op;
+                }
+                if (this.priority != null) {
+                    data.priority = this.priority;
                 }
                 return data;
             }
@@ -1369,12 +1410,14 @@ export namespace md {
                     writer.writeUint64(1, this.price);
                 if (this.quantity != 0)
                     writer.writeUint64(2, this.quantity);
-                if (this.exchangeOrderId != 0)
-                    writer.writeUint64(3, this.exchangeOrderId);
+                if (this.exchange_order_id != 0)
+                    writer.writeUint64(3, this.exchange_order_id);
                 if (this.side != Side.BID)
                     writer.writeEnum(4, this.side);
                 if (this.op != MarketByOrderDiff.DiffOp.ADD)
                     writer.writeEnum(5, this.op);
+                if (this.priority != 0)
+                    writer.writeUint64(6, this.priority);
                 if (!w)
                     return writer.getResultBuffer();
             }
@@ -1391,13 +1434,16 @@ export namespace md {
                             message.quantity = reader.readUint64();
                             break;
                         case 3:
-                            message.exchangeOrderId = reader.readUint64();
+                            message.exchange_order_id = reader.readUint64();
                             break;
                         case 4:
                             message.side = reader.readEnum();
                             break;
                         case 5:
                             message.op = reader.readEnum();
+                            break;
+                        case 6:
+                            message.priority = reader.readUint64();
                             break;
                         default: reader.skipField();
                     }
@@ -1485,11 +1531,11 @@ export namespace md {
             constructor(data?: any[] | {
                 tradeId?: number;
                 price?: number;
-                aggressingSide?: Side;
-                restingExchangeOrderId?: number;
-                fillQuantity?: number;
-                transactTime?: number;
-                aggressingExchangeOrderId?: number;
+                aggressing_side?: Side;
+                resting_exchange_order_id?: number;
+                fill_quantity?: number;
+                transact_time?: number;
+                aggressing_exchange_order_id?: number;
             }) {
                 super();
                 pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
@@ -1500,20 +1546,20 @@ export namespace md {
                     if ("price" in data && data.price != undefined) {
                         this.price = data.price;
                     }
-                    if ("aggressingSide" in data && data.aggressingSide != undefined) {
-                        this.aggressingSide = data.aggressingSide;
+                    if ("aggressing_side" in data && data.aggressing_side != undefined) {
+                        this.aggressing_side = data.aggressing_side;
                     }
-                    if ("restingExchangeOrderId" in data && data.restingExchangeOrderId != undefined) {
-                        this.restingExchangeOrderId = data.restingExchangeOrderId;
+                    if ("resting_exchange_order_id" in data && data.resting_exchange_order_id != undefined) {
+                        this.resting_exchange_order_id = data.resting_exchange_order_id;
                     }
-                    if ("fillQuantity" in data && data.fillQuantity != undefined) {
-                        this.fillQuantity = data.fillQuantity;
+                    if ("fill_quantity" in data && data.fill_quantity != undefined) {
+                        this.fill_quantity = data.fill_quantity;
                     }
-                    if ("transactTime" in data && data.transactTime != undefined) {
-                        this.transactTime = data.transactTime;
+                    if ("transact_time" in data && data.transact_time != undefined) {
+                        this.transact_time = data.transact_time;
                     }
-                    if ("aggressingExchangeOrderId" in data && data.aggressingExchangeOrderId != undefined) {
-                        this.aggressingExchangeOrderId = data.aggressingExchangeOrderId;
+                    if ("aggressing_exchange_order_id" in data && data.aggressing_exchange_order_id != undefined) {
+                        this.aggressing_exchange_order_id = data.aggressing_exchange_order_id;
                     }
                 }
             }
@@ -1529,44 +1575,44 @@ export namespace md {
             set price(value: number) {
                 pb_1.Message.setField(this, 2, value);
             }
-            get aggressingSide() {
+            get aggressing_side() {
                 return pb_1.Message.getFieldWithDefault(this, 3, Side.BID) as Side;
             }
-            set aggressingSide(value: Side) {
+            set aggressing_side(value: Side) {
                 pb_1.Message.setField(this, 3, value);
             }
-            get restingExchangeOrderId() {
+            get resting_exchange_order_id() {
                 return pb_1.Message.getFieldWithDefault(this, 4, 0) as number;
             }
-            set restingExchangeOrderId(value: number) {
+            set resting_exchange_order_id(value: number) {
                 pb_1.Message.setField(this, 4, value);
             }
-            get fillQuantity() {
+            get fill_quantity() {
                 return pb_1.Message.getFieldWithDefault(this, 5, 0) as number;
             }
-            set fillQuantity(value: number) {
+            set fill_quantity(value: number) {
                 pb_1.Message.setField(this, 5, value);
             }
-            get transactTime() {
+            get transact_time() {
                 return pb_1.Message.getFieldWithDefault(this, 6, 0) as number;
             }
-            set transactTime(value: number) {
+            set transact_time(value: number) {
                 pb_1.Message.setField(this, 6, value);
             }
-            get aggressingExchangeOrderId() {
+            get aggressing_exchange_order_id() {
                 return pb_1.Message.getFieldWithDefault(this, 7, 0) as number;
             }
-            set aggressingExchangeOrderId(value: number) {
+            set aggressing_exchange_order_id(value: number) {
                 pb_1.Message.setField(this, 7, value);
             }
             static fromObject(data: {
                 tradeId?: number;
                 price?: number;
-                aggressingSide?: Side;
-                restingExchangeOrderId?: number;
-                fillQuantity?: number;
-                transactTime?: number;
-                aggressingExchangeOrderId?: number;
+                aggressing_side?: Side;
+                resting_exchange_order_id?: number;
+                fill_quantity?: number;
+                transact_time?: number;
+                aggressing_exchange_order_id?: number;
             }): Trade {
                 const message = new Trade({});
                 if (data.tradeId != null) {
@@ -1575,20 +1621,20 @@ export namespace md {
                 if (data.price != null) {
                     message.price = data.price;
                 }
-                if (data.aggressingSide != null) {
-                    message.aggressingSide = data.aggressingSide;
+                if (data.aggressing_side != null) {
+                    message.aggressing_side = data.aggressing_side;
                 }
-                if (data.restingExchangeOrderId != null) {
-                    message.restingExchangeOrderId = data.restingExchangeOrderId;
+                if (data.resting_exchange_order_id != null) {
+                    message.resting_exchange_order_id = data.resting_exchange_order_id;
                 }
-                if (data.fillQuantity != null) {
-                    message.fillQuantity = data.fillQuantity;
+                if (data.fill_quantity != null) {
+                    message.fill_quantity = data.fill_quantity;
                 }
-                if (data.transactTime != null) {
-                    message.transactTime = data.transactTime;
+                if (data.transact_time != null) {
+                    message.transact_time = data.transact_time;
                 }
-                if (data.aggressingExchangeOrderId != null) {
-                    message.aggressingExchangeOrderId = data.aggressingExchangeOrderId;
+                if (data.aggressing_exchange_order_id != null) {
+                    message.aggressing_exchange_order_id = data.aggressing_exchange_order_id;
                 }
                 return message;
             }
@@ -1596,11 +1642,11 @@ export namespace md {
                 const data: {
                     tradeId?: number;
                     price?: number;
-                    aggressingSide?: Side;
-                    restingExchangeOrderId?: number;
-                    fillQuantity?: number;
-                    transactTime?: number;
-                    aggressingExchangeOrderId?: number;
+                    aggressing_side?: Side;
+                    resting_exchange_order_id?: number;
+                    fill_quantity?: number;
+                    transact_time?: number;
+                    aggressing_exchange_order_id?: number;
                 } = {};
                 if (this.tradeId != null) {
                     data.tradeId = this.tradeId;
@@ -1608,20 +1654,20 @@ export namespace md {
                 if (this.price != null) {
                     data.price = this.price;
                 }
-                if (this.aggressingSide != null) {
-                    data.aggressingSide = this.aggressingSide;
+                if (this.aggressing_side != null) {
+                    data.aggressing_side = this.aggressing_side;
                 }
-                if (this.restingExchangeOrderId != null) {
-                    data.restingExchangeOrderId = this.restingExchangeOrderId;
+                if (this.resting_exchange_order_id != null) {
+                    data.resting_exchange_order_id = this.resting_exchange_order_id;
                 }
-                if (this.fillQuantity != null) {
-                    data.fillQuantity = this.fillQuantity;
+                if (this.fill_quantity != null) {
+                    data.fill_quantity = this.fill_quantity;
                 }
-                if (this.transactTime != null) {
-                    data.transactTime = this.transactTime;
+                if (this.transact_time != null) {
+                    data.transact_time = this.transact_time;
                 }
-                if (this.aggressingExchangeOrderId != null) {
-                    data.aggressingExchangeOrderId = this.aggressingExchangeOrderId;
+                if (this.aggressing_exchange_order_id != null) {
+                    data.aggressing_exchange_order_id = this.aggressing_exchange_order_id;
                 }
                 return data;
             }
@@ -1633,16 +1679,16 @@ export namespace md {
                     writer.writeUint64(1, this.tradeId);
                 if (this.price != 0)
                     writer.writeUint64(2, this.price);
-                if (this.aggressingSide != Side.BID)
-                    writer.writeEnum(3, this.aggressingSide);
-                if (this.restingExchangeOrderId != 0)
-                    writer.writeUint64(4, this.restingExchangeOrderId);
-                if (this.fillQuantity != 0)
-                    writer.writeUint64(5, this.fillQuantity);
-                if (this.transactTime != 0)
-                    writer.writeUint64(6, this.transactTime);
-                if (this.aggressingExchangeOrderId != 0)
-                    writer.writeUint64(7, this.aggressingExchangeOrderId);
+                if (this.aggressing_side != Side.BID)
+                    writer.writeEnum(3, this.aggressing_side);
+                if (this.resting_exchange_order_id != 0)
+                    writer.writeUint64(4, this.resting_exchange_order_id);
+                if (this.fill_quantity != 0)
+                    writer.writeUint64(5, this.fill_quantity);
+                if (this.transact_time != 0)
+                    writer.writeUint64(6, this.transact_time);
+                if (this.aggressing_exchange_order_id != 0)
+                    writer.writeUint64(7, this.aggressing_exchange_order_id);
                 if (!w)
                     return writer.getResultBuffer();
             }
@@ -1659,19 +1705,19 @@ export namespace md {
                             message.price = reader.readUint64();
                             break;
                         case 3:
-                            message.aggressingSide = reader.readEnum();
+                            message.aggressing_side = reader.readEnum();
                             break;
                         case 4:
-                            message.restingExchangeOrderId = reader.readUint64();
+                            message.resting_exchange_order_id = reader.readUint64();
                             break;
                         case 5:
-                            message.fillQuantity = reader.readUint64();
+                            message.fill_quantity = reader.readUint64();
                             break;
                         case 6:
-                            message.transactTime = reader.readUint64();
+                            message.transact_time = reader.readUint64();
                             break;
                         case 7:
-                            message.aggressingExchangeOrderId = reader.readUint64();
+                            message.aggressing_exchange_order_id = reader.readUint64();
                             break;
                         default: reader.skipField();
                     }
@@ -1693,10 +1739,10 @@ export namespace md {
             close?: number;
             low?: number;
             high?: number;
-            baseVolumeLo?: number;
-            baseVolumeHi?: number;
-            quoteVolumeLo?: number;
-            quoteVolumeHi?: number;
+            base_volume_lo?: number;
+            base_volume_hi?: number;
+            quote_volume_lo?: number;
+            quote_volume_hi?: number;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
@@ -1713,17 +1759,17 @@ export namespace md {
                 if ("high" in data && data.high != undefined) {
                     this.high = data.high;
                 }
-                if ("baseVolumeLo" in data && data.baseVolumeLo != undefined) {
-                    this.baseVolumeLo = data.baseVolumeLo;
+                if ("base_volume_lo" in data && data.base_volume_lo != undefined) {
+                    this.base_volume_lo = data.base_volume_lo;
                 }
-                if ("baseVolumeHi" in data && data.baseVolumeHi != undefined) {
-                    this.baseVolumeHi = data.baseVolumeHi;
+                if ("base_volume_hi" in data && data.base_volume_hi != undefined) {
+                    this.base_volume_hi = data.base_volume_hi;
                 }
-                if ("quoteVolumeLo" in data && data.quoteVolumeLo != undefined) {
-                    this.quoteVolumeLo = data.quoteVolumeLo;
+                if ("quote_volume_lo" in data && data.quote_volume_lo != undefined) {
+                    this.quote_volume_lo = data.quote_volume_lo;
                 }
-                if ("quoteVolumeHi" in data && data.quoteVolumeHi != undefined) {
-                    this.quoteVolumeHi = data.quoteVolumeHi;
+                if ("quote_volume_hi" in data && data.quote_volume_hi != undefined) {
+                    this.quote_volume_hi = data.quote_volume_hi;
                 }
             }
         }
@@ -1751,28 +1797,28 @@ export namespace md {
         set high(value: number) {
             pb_1.Message.setField(this, 4, value);
         }
-        get baseVolumeLo() {
+        get base_volume_lo() {
             return pb_1.Message.getFieldWithDefault(this, 5, 0) as number;
         }
-        set baseVolumeLo(value: number) {
+        set base_volume_lo(value: number) {
             pb_1.Message.setField(this, 5, value);
         }
-        get baseVolumeHi() {
+        get base_volume_hi() {
             return pb_1.Message.getFieldWithDefault(this, 6, 0) as number;
         }
-        set baseVolumeHi(value: number) {
+        set base_volume_hi(value: number) {
             pb_1.Message.setField(this, 6, value);
         }
-        get quoteVolumeLo() {
+        get quote_volume_lo() {
             return pb_1.Message.getFieldWithDefault(this, 7, 0) as number;
         }
-        set quoteVolumeLo(value: number) {
+        set quote_volume_lo(value: number) {
             pb_1.Message.setField(this, 7, value);
         }
-        get quoteVolumeHi() {
+        get quote_volume_hi() {
             return pb_1.Message.getFieldWithDefault(this, 8, 0) as number;
         }
-        set quoteVolumeHi(value: number) {
+        set quote_volume_hi(value: number) {
             pb_1.Message.setField(this, 8, value);
         }
         static fromObject(data: {
@@ -1780,10 +1826,10 @@ export namespace md {
             close?: number;
             low?: number;
             high?: number;
-            baseVolumeLo?: number;
-            baseVolumeHi?: number;
-            quoteVolumeLo?: number;
-            quoteVolumeHi?: number;
+            base_volume_lo?: number;
+            base_volume_hi?: number;
+            quote_volume_lo?: number;
+            quote_volume_hi?: number;
         }): Summary {
             const message = new Summary({});
             if (data.open != null) {
@@ -1798,17 +1844,17 @@ export namespace md {
             if (data.high != null) {
                 message.high = data.high;
             }
-            if (data.baseVolumeLo != null) {
-                message.baseVolumeLo = data.baseVolumeLo;
+            if (data.base_volume_lo != null) {
+                message.base_volume_lo = data.base_volume_lo;
             }
-            if (data.baseVolumeHi != null) {
-                message.baseVolumeHi = data.baseVolumeHi;
+            if (data.base_volume_hi != null) {
+                message.base_volume_hi = data.base_volume_hi;
             }
-            if (data.quoteVolumeLo != null) {
-                message.quoteVolumeLo = data.quoteVolumeLo;
+            if (data.quote_volume_lo != null) {
+                message.quote_volume_lo = data.quote_volume_lo;
             }
-            if (data.quoteVolumeHi != null) {
-                message.quoteVolumeHi = data.quoteVolumeHi;
+            if (data.quote_volume_hi != null) {
+                message.quote_volume_hi = data.quote_volume_hi;
             }
             return message;
         }
@@ -1818,10 +1864,10 @@ export namespace md {
                 close?: number;
                 low?: number;
                 high?: number;
-                baseVolumeLo?: number;
-                baseVolumeHi?: number;
-                quoteVolumeLo?: number;
-                quoteVolumeHi?: number;
+                base_volume_lo?: number;
+                base_volume_hi?: number;
+                quote_volume_lo?: number;
+                quote_volume_hi?: number;
             } = {};
             if (this.open != null) {
                 data.open = this.open;
@@ -1835,17 +1881,17 @@ export namespace md {
             if (this.high != null) {
                 data.high = this.high;
             }
-            if (this.baseVolumeLo != null) {
-                data.baseVolumeLo = this.baseVolumeLo;
+            if (this.base_volume_lo != null) {
+                data.base_volume_lo = this.base_volume_lo;
             }
-            if (this.baseVolumeHi != null) {
-                data.baseVolumeHi = this.baseVolumeHi;
+            if (this.base_volume_hi != null) {
+                data.base_volume_hi = this.base_volume_hi;
             }
-            if (this.quoteVolumeLo != null) {
-                data.quoteVolumeLo = this.quoteVolumeLo;
+            if (this.quote_volume_lo != null) {
+                data.quote_volume_lo = this.quote_volume_lo;
             }
-            if (this.quoteVolumeHi != null) {
-                data.quoteVolumeHi = this.quoteVolumeHi;
+            if (this.quote_volume_hi != null) {
+                data.quote_volume_hi = this.quote_volume_hi;
             }
             return data;
         }
@@ -1861,14 +1907,14 @@ export namespace md {
                 writer.writeUint64(3, this.low);
             if (this.high != 0)
                 writer.writeUint64(4, this.high);
-            if (this.baseVolumeLo != 0)
-                writer.writeUint64(5, this.baseVolumeLo);
-            if (this.baseVolumeHi != 0)
-                writer.writeUint64(6, this.baseVolumeHi);
-            if (this.quoteVolumeLo != 0)
-                writer.writeUint64(7, this.quoteVolumeLo);
-            if (this.quoteVolumeHi != 0)
-                writer.writeUint64(8, this.quoteVolumeHi);
+            if (this.base_volume_lo != 0)
+                writer.writeUint64(5, this.base_volume_lo);
+            if (this.base_volume_hi != 0)
+                writer.writeUint64(6, this.base_volume_hi);
+            if (this.quote_volume_lo != 0)
+                writer.writeUint64(7, this.quote_volume_lo);
+            if (this.quote_volume_hi != 0)
+                writer.writeUint64(8, this.quote_volume_hi);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -1891,16 +1937,16 @@ export namespace md {
                         message.high = reader.readUint64();
                         break;
                     case 5:
-                        message.baseVolumeLo = reader.readUint64();
+                        message.base_volume_lo = reader.readUint64();
                         break;
                     case 6:
-                        message.baseVolumeHi = reader.readUint64();
+                        message.base_volume_hi = reader.readUint64();
                         break;
                     case 7:
-                        message.quoteVolumeLo = reader.readUint64();
+                        message.quote_volume_lo = reader.readUint64();
                         break;
                     case 8:
-                        message.quoteVolumeHi = reader.readUint64();
+                        message.quote_volume_hi = reader.readUint64();
                         break;
                     default: reader.skipField();
                 }
@@ -1918,13 +1964,13 @@ export namespace md {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
             interval?: KlineInterval;
-            startTime?: number;
+            start_time?: number;
             open?: number;
             close?: number;
             high?: number;
             low?: number;
-            volumeLo?: number;
-            volumeHi?: number;
+            volume_lo?: number;
+            volume_hi?: number;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
@@ -1932,8 +1978,8 @@ export namespace md {
                 if ("interval" in data && data.interval != undefined) {
                     this.interval = data.interval;
                 }
-                if ("startTime" in data && data.startTime != undefined) {
-                    this.startTime = data.startTime;
+                if ("start_time" in data && data.start_time != undefined) {
+                    this.start_time = data.start_time;
                 }
                 if ("open" in data && data.open != undefined) {
                     this.open = data.open;
@@ -1947,11 +1993,11 @@ export namespace md {
                 if ("low" in data && data.low != undefined) {
                     this.low = data.low;
                 }
-                if ("volumeLo" in data && data.volumeLo != undefined) {
-                    this.volumeLo = data.volumeLo;
+                if ("volume_lo" in data && data.volume_lo != undefined) {
+                    this.volume_lo = data.volume_lo;
                 }
-                if ("volumeHi" in data && data.volumeHi != undefined) {
-                    this.volumeHi = data.volumeHi;
+                if ("volume_hi" in data && data.volume_hi != undefined) {
+                    this.volume_hi = data.volume_hi;
                 }
             }
         }
@@ -1961,10 +2007,10 @@ export namespace md {
         set interval(value: KlineInterval) {
             pb_1.Message.setField(this, 1, value);
         }
-        get startTime() {
+        get start_time() {
             return pb_1.Message.getFieldWithDefault(this, 2, 0) as number;
         }
-        set startTime(value: number) {
+        set start_time(value: number) {
             pb_1.Message.setField(this, 2, value);
         }
         get open() {
@@ -1991,34 +2037,34 @@ export namespace md {
         set low(value: number) {
             pb_1.Message.setField(this, 6, value);
         }
-        get volumeLo() {
+        get volume_lo() {
             return pb_1.Message.getFieldWithDefault(this, 7, 0) as number;
         }
-        set volumeLo(value: number) {
+        set volume_lo(value: number) {
             pb_1.Message.setField(this, 7, value);
         }
-        get volumeHi() {
+        get volume_hi() {
             return pb_1.Message.getFieldWithDefault(this, 8, 0) as number;
         }
-        set volumeHi(value: number) {
+        set volume_hi(value: number) {
             pb_1.Message.setField(this, 8, value);
         }
         static fromObject(data: {
             interval?: KlineInterval;
-            startTime?: number;
+            start_time?: number;
             open?: number;
             close?: number;
             high?: number;
             low?: number;
-            volumeLo?: number;
-            volumeHi?: number;
+            volume_lo?: number;
+            volume_hi?: number;
         }): Kline {
             const message = new Kline({});
             if (data.interval != null) {
                 message.interval = data.interval;
             }
-            if (data.startTime != null) {
-                message.startTime = data.startTime;
+            if (data.start_time != null) {
+                message.start_time = data.start_time;
             }
             if (data.open != null) {
                 message.open = data.open;
@@ -2032,30 +2078,30 @@ export namespace md {
             if (data.low != null) {
                 message.low = data.low;
             }
-            if (data.volumeLo != null) {
-                message.volumeLo = data.volumeLo;
+            if (data.volume_lo != null) {
+                message.volume_lo = data.volume_lo;
             }
-            if (data.volumeHi != null) {
-                message.volumeHi = data.volumeHi;
+            if (data.volume_hi != null) {
+                message.volume_hi = data.volume_hi;
             }
             return message;
         }
         toObject() {
             const data: {
                 interval?: KlineInterval;
-                startTime?: number;
+                start_time?: number;
                 open?: number;
                 close?: number;
                 high?: number;
                 low?: number;
-                volumeLo?: number;
-                volumeHi?: number;
+                volume_lo?: number;
+                volume_hi?: number;
             } = {};
             if (this.interval != null) {
                 data.interval = this.interval;
             }
-            if (this.startTime != null) {
-                data.startTime = this.startTime;
+            if (this.start_time != null) {
+                data.start_time = this.start_time;
             }
             if (this.open != null) {
                 data.open = this.open;
@@ -2069,11 +2115,11 @@ export namespace md {
             if (this.low != null) {
                 data.low = this.low;
             }
-            if (this.volumeLo != null) {
-                data.volumeLo = this.volumeLo;
+            if (this.volume_lo != null) {
+                data.volume_lo = this.volume_lo;
             }
-            if (this.volumeHi != null) {
-                data.volumeHi = this.volumeHi;
+            if (this.volume_hi != null) {
+                data.volume_hi = this.volume_hi;
             }
             return data;
         }
@@ -2083,8 +2129,8 @@ export namespace md {
             const writer = w || new pb_1.BinaryWriter();
             if (this.interval != KlineInterval.S1)
                 writer.writeEnum(1, this.interval);
-            if (this.startTime != 0)
-                writer.writeUint64(2, this.startTime);
+            if (this.start_time != 0)
+                writer.writeUint64(2, this.start_time);
             if (this.open != 0)
                 writer.writeUint64(3, this.open);
             if (this.close != 0)
@@ -2093,10 +2139,10 @@ export namespace md {
                 writer.writeUint64(5, this.high);
             if (this.low != 0)
                 writer.writeUint64(6, this.low);
-            if (this.volumeLo != 0)
-                writer.writeUint64(7, this.volumeLo);
-            if (this.volumeHi != 0)
-                writer.writeUint64(8, this.volumeHi);
+            if (this.volume_lo != 0)
+                writer.writeUint64(7, this.volume_lo);
+            if (this.volume_hi != 0)
+                writer.writeUint64(8, this.volume_hi);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -2110,7 +2156,7 @@ export namespace md {
                         message.interval = reader.readEnum();
                         break;
                     case 2:
-                        message.startTime = reader.readUint64();
+                        message.start_time = reader.readUint64();
                         break;
                     case 3:
                         message.open = reader.readUint64();
@@ -2125,10 +2171,10 @@ export namespace md {
                         message.low = reader.readUint64();
                         break;
                     case 7:
-                        message.volumeLo = reader.readUint64();
+                        message.volume_lo = reader.readUint64();
                         break;
                     case 8:
-                        message.volumeHi = reader.readUint64();
+                        message.volume_hi = reader.readUint64();
                         break;
                     default: reader.skipField();
                 }
@@ -2145,24 +2191,24 @@ export namespace md {
     export class Heartbeat extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            requestId?: number;
+            request_id?: number;
             timestamp?: number;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("requestId" in data && data.requestId != undefined) {
-                    this.requestId = data.requestId;
+                if ("request_id" in data && data.request_id != undefined) {
+                    this.request_id = data.request_id;
                 }
                 if ("timestamp" in data && data.timestamp != undefined) {
                     this.timestamp = data.timestamp;
                 }
             }
         }
-        get requestId() {
+        get request_id() {
             return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
         }
-        set requestId(value: number) {
+        set request_id(value: number) {
             pb_1.Message.setField(this, 1, value);
         }
         get timestamp() {
@@ -2172,12 +2218,12 @@ export namespace md {
             pb_1.Message.setField(this, 2, value);
         }
         static fromObject(data: {
-            requestId?: number;
+            request_id?: number;
             timestamp?: number;
         }): Heartbeat {
             const message = new Heartbeat({});
-            if (data.requestId != null) {
-                message.requestId = data.requestId;
+            if (data.request_id != null) {
+                message.request_id = data.request_id;
             }
             if (data.timestamp != null) {
                 message.timestamp = data.timestamp;
@@ -2186,11 +2232,11 @@ export namespace md {
         }
         toObject() {
             const data: {
-                requestId?: number;
+                request_id?: number;
                 timestamp?: number;
             } = {};
-            if (this.requestId != null) {
-                data.requestId = this.requestId;
+            if (this.request_id != null) {
+                data.request_id = this.request_id;
             }
             if (this.timestamp != null) {
                 data.timestamp = this.timestamp;
@@ -2201,8 +2247,8 @@ export namespace md {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.requestId != 0)
-                writer.writeUint64(1, this.requestId);
+            if (this.request_id != 0)
+                writer.writeUint64(1, this.request_id);
             if (this.timestamp != 0)
                 writer.writeUint64(2, this.timestamp);
             if (!w)
@@ -2215,7 +2261,7 @@ export namespace md {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.requestId = reader.readUint64();
+                        message.request_id = reader.readUint64();
                         break;
                     case 2:
                         message.timestamp = reader.readUint64();
@@ -2303,16 +2349,16 @@ export namespace md {
         #one_of_decls: number[][] = [[1, 2, 3]];
         constructor(data?: any[] | ({} & (({
             heartbeat?: Heartbeat;
-            topOfBooks?: never;
-            rateUpdates?: never;
+            top_of_books?: never;
+            rate_updates?: never;
         } | {
             heartbeat?: never;
-            topOfBooks?: TopOfBooks;
-            rateUpdates?: never;
+            top_of_books?: TopOfBooks;
+            rate_updates?: never;
         } | {
             heartbeat?: never;
-            topOfBooks?: never;
-            rateUpdates?: RateUpdates;
+            top_of_books?: never;
+            rate_updates?: RateUpdates;
         })))) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
@@ -2320,11 +2366,11 @@ export namespace md {
                 if ("heartbeat" in data && data.heartbeat != undefined) {
                     this.heartbeat = data.heartbeat;
                 }
-                if ("topOfBooks" in data && data.topOfBooks != undefined) {
-                    this.topOfBooks = data.topOfBooks;
+                if ("top_of_books" in data && data.top_of_books != undefined) {
+                    this.top_of_books = data.top_of_books;
                 }
-                if ("rateUpdates" in data && data.rateUpdates != undefined) {
-                    this.rateUpdates = data.rateUpdates;
+                if ("rate_updates" in data && data.rate_updates != undefined) {
+                    this.rate_updates = data.rate_updates;
                 }
             }
         }
@@ -2337,66 +2383,66 @@ export namespace md {
         get has_heartbeat() {
             return pb_1.Message.getField(this, 1) != null;
         }
-        get topOfBooks() {
+        get top_of_books() {
             return pb_1.Message.getWrapperField(this, TopOfBooks, 2) as TopOfBooks;
         }
-        set topOfBooks(value: TopOfBooks) {
+        set top_of_books(value: TopOfBooks) {
             pb_1.Message.setOneofWrapperField(this, 2, this.#one_of_decls[0], value);
         }
-        get has_topOfBooks() {
+        get has_top_of_books() {
             return pb_1.Message.getField(this, 2) != null;
         }
-        get rateUpdates() {
+        get rate_updates() {
             return pb_1.Message.getWrapperField(this, RateUpdates, 3) as RateUpdates;
         }
-        set rateUpdates(value: RateUpdates) {
+        set rate_updates(value: RateUpdates) {
             pb_1.Message.setOneofWrapperField(this, 3, this.#one_of_decls[0], value);
         }
-        get has_rateUpdates() {
+        get has_rate_updates() {
             return pb_1.Message.getField(this, 3) != null;
         }
         get inner() {
             const cases: {
-                [index: number]: "none" | "heartbeat" | "topOfBooks" | "rateUpdates";
+                [index: number]: "none" | "heartbeat" | "top_of_books" | "rate_updates";
             } = {
                 0: "none",
                 1: "heartbeat",
-                2: "topOfBooks",
-                3: "rateUpdates"
+                2: "top_of_books",
+                3: "rate_updates"
             };
             return cases[pb_1.Message.computeOneofCase(this, [1, 2, 3])];
         }
         static fromObject(data: {
             heartbeat?: ReturnType<typeof Heartbeat.prototype.toObject>;
-            topOfBooks?: ReturnType<typeof TopOfBooks.prototype.toObject>;
-            rateUpdates?: ReturnType<typeof RateUpdates.prototype.toObject>;
+            top_of_books?: ReturnType<typeof TopOfBooks.prototype.toObject>;
+            rate_updates?: ReturnType<typeof RateUpdates.prototype.toObject>;
         }): AggMessage {
             const message = new AggMessage({});
             if (data.heartbeat != null) {
                 message.heartbeat = Heartbeat.fromObject(data.heartbeat);
             }
-            if (data.topOfBooks != null) {
-                message.topOfBooks = TopOfBooks.fromObject(data.topOfBooks);
+            if (data.top_of_books != null) {
+                message.top_of_books = TopOfBooks.fromObject(data.top_of_books);
             }
-            if (data.rateUpdates != null) {
-                message.rateUpdates = RateUpdates.fromObject(data.rateUpdates);
+            if (data.rate_updates != null) {
+                message.rate_updates = RateUpdates.fromObject(data.rate_updates);
             }
             return message;
         }
         toObject() {
             const data: {
                 heartbeat?: ReturnType<typeof Heartbeat.prototype.toObject>;
-                topOfBooks?: ReturnType<typeof TopOfBooks.prototype.toObject>;
-                rateUpdates?: ReturnType<typeof RateUpdates.prototype.toObject>;
+                top_of_books?: ReturnType<typeof TopOfBooks.prototype.toObject>;
+                rate_updates?: ReturnType<typeof RateUpdates.prototype.toObject>;
             } = {};
             if (this.heartbeat != null) {
                 data.heartbeat = this.heartbeat.toObject();
             }
-            if (this.topOfBooks != null) {
-                data.topOfBooks = this.topOfBooks.toObject();
+            if (this.top_of_books != null) {
+                data.top_of_books = this.top_of_books.toObject();
             }
-            if (this.rateUpdates != null) {
-                data.rateUpdates = this.rateUpdates.toObject();
+            if (this.rate_updates != null) {
+                data.rate_updates = this.rate_updates.toObject();
             }
             return data;
         }
@@ -2406,10 +2452,10 @@ export namespace md {
             const writer = w || new pb_1.BinaryWriter();
             if (this.has_heartbeat)
                 writer.writeMessage(1, this.heartbeat, () => this.heartbeat.serialize(writer));
-            if (this.has_topOfBooks)
-                writer.writeMessage(2, this.topOfBooks, () => this.topOfBooks.serialize(writer));
-            if (this.has_rateUpdates)
-                writer.writeMessage(3, this.rateUpdates, () => this.rateUpdates.serialize(writer));
+            if (this.has_top_of_books)
+                writer.writeMessage(2, this.top_of_books, () => this.top_of_books.serialize(writer));
+            if (this.has_rate_updates)
+                writer.writeMessage(3, this.rate_updates, () => this.rate_updates.serialize(writer));
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -2423,10 +2469,10 @@ export namespace md {
                         reader.readMessage(message.heartbeat, () => message.heartbeat = Heartbeat.deserialize(reader));
                         break;
                     case 2:
-                        reader.readMessage(message.topOfBooks, () => message.topOfBooks = TopOfBooks.deserialize(reader));
+                        reader.readMessage(message.top_of_books, () => message.top_of_books = TopOfBooks.deserialize(reader));
                         break;
                     case 3:
-                        reader.readMessage(message.rateUpdates, () => message.rateUpdates = RateUpdates.deserialize(reader));
+                        reader.readMessage(message.rate_updates, () => message.rate_updates = RateUpdates.deserialize(reader));
                         break;
                     default: reader.skipField();
                 }
@@ -2443,163 +2489,163 @@ export namespace md {
     export class TopOfBook extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            marketId?: number;
-            transactTime?: number;
-            bidPrice?: number;
-            bidQuantity?: number;
-            askPrice?: number;
-            askQuantity?: number;
-            lastPrice?: number;
-            rolling24hPrice?: number;
+            market_id?: number;
+            transact_time?: number;
+            bid_price?: number;
+            bid_quantity?: number;
+            ask_price?: number;
+            ask_quantity?: number;
+            last_price?: number;
+            rolling24h_price?: number;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("marketId" in data && data.marketId != undefined) {
-                    this.marketId = data.marketId;
+                if ("market_id" in data && data.market_id != undefined) {
+                    this.market_id = data.market_id;
                 }
-                if ("transactTime" in data && data.transactTime != undefined) {
-                    this.transactTime = data.transactTime;
+                if ("transact_time" in data && data.transact_time != undefined) {
+                    this.transact_time = data.transact_time;
                 }
-                if ("bidPrice" in data && data.bidPrice != undefined) {
-                    this.bidPrice = data.bidPrice;
+                if ("bid_price" in data && data.bid_price != undefined) {
+                    this.bid_price = data.bid_price;
                 }
-                if ("bidQuantity" in data && data.bidQuantity != undefined) {
-                    this.bidQuantity = data.bidQuantity;
+                if ("bid_quantity" in data && data.bid_quantity != undefined) {
+                    this.bid_quantity = data.bid_quantity;
                 }
-                if ("askPrice" in data && data.askPrice != undefined) {
-                    this.askPrice = data.askPrice;
+                if ("ask_price" in data && data.ask_price != undefined) {
+                    this.ask_price = data.ask_price;
                 }
-                if ("askQuantity" in data && data.askQuantity != undefined) {
-                    this.askQuantity = data.askQuantity;
+                if ("ask_quantity" in data && data.ask_quantity != undefined) {
+                    this.ask_quantity = data.ask_quantity;
                 }
-                if ("lastPrice" in data && data.lastPrice != undefined) {
-                    this.lastPrice = data.lastPrice;
+                if ("last_price" in data && data.last_price != undefined) {
+                    this.last_price = data.last_price;
                 }
-                if ("rolling24hPrice" in data && data.rolling24hPrice != undefined) {
-                    this.rolling24hPrice = data.rolling24hPrice;
+                if ("rolling24h_price" in data && data.rolling24h_price != undefined) {
+                    this.rolling24h_price = data.rolling24h_price;
                 }
             }
         }
-        get marketId() {
+        get market_id() {
             return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
         }
-        set marketId(value: number) {
+        set market_id(value: number) {
             pb_1.Message.setField(this, 1, value);
         }
-        get transactTime() {
+        get transact_time() {
             return pb_1.Message.getFieldWithDefault(this, 2, 0) as number;
         }
-        set transactTime(value: number) {
+        set transact_time(value: number) {
             pb_1.Message.setField(this, 2, value);
         }
-        get bidPrice() {
+        get bid_price() {
             return pb_1.Message.getFieldWithDefault(this, 3, 0) as number;
         }
-        set bidPrice(value: number) {
+        set bid_price(value: number) {
             pb_1.Message.setField(this, 3, value);
         }
-        get bidQuantity() {
+        get bid_quantity() {
             return pb_1.Message.getFieldWithDefault(this, 4, 0) as number;
         }
-        set bidQuantity(value: number) {
+        set bid_quantity(value: number) {
             pb_1.Message.setField(this, 4, value);
         }
-        get askPrice() {
+        get ask_price() {
             return pb_1.Message.getFieldWithDefault(this, 5, 0) as number;
         }
-        set askPrice(value: number) {
+        set ask_price(value: number) {
             pb_1.Message.setField(this, 5, value);
         }
-        get askQuantity() {
+        get ask_quantity() {
             return pb_1.Message.getFieldWithDefault(this, 6, 0) as number;
         }
-        set askQuantity(value: number) {
+        set ask_quantity(value: number) {
             pb_1.Message.setField(this, 6, value);
         }
-        get lastPrice() {
+        get last_price() {
             return pb_1.Message.getFieldWithDefault(this, 7, 0) as number;
         }
-        set lastPrice(value: number) {
+        set last_price(value: number) {
             pb_1.Message.setField(this, 7, value);
         }
-        get rolling24hPrice() {
+        get rolling24h_price() {
             return pb_1.Message.getFieldWithDefault(this, 8, 0) as number;
         }
-        set rolling24hPrice(value: number) {
+        set rolling24h_price(value: number) {
             pb_1.Message.setField(this, 8, value);
         }
         static fromObject(data: {
-            marketId?: number;
-            transactTime?: number;
-            bidPrice?: number;
-            bidQuantity?: number;
-            askPrice?: number;
-            askQuantity?: number;
-            lastPrice?: number;
-            rolling24hPrice?: number;
+            market_id?: number;
+            transact_time?: number;
+            bid_price?: number;
+            bid_quantity?: number;
+            ask_price?: number;
+            ask_quantity?: number;
+            last_price?: number;
+            rolling24h_price?: number;
         }): TopOfBook {
             const message = new TopOfBook({});
-            if (data.marketId != null) {
-                message.marketId = data.marketId;
+            if (data.market_id != null) {
+                message.market_id = data.market_id;
             }
-            if (data.transactTime != null) {
-                message.transactTime = data.transactTime;
+            if (data.transact_time != null) {
+                message.transact_time = data.transact_time;
             }
-            if (data.bidPrice != null) {
-                message.bidPrice = data.bidPrice;
+            if (data.bid_price != null) {
+                message.bid_price = data.bid_price;
             }
-            if (data.bidQuantity != null) {
-                message.bidQuantity = data.bidQuantity;
+            if (data.bid_quantity != null) {
+                message.bid_quantity = data.bid_quantity;
             }
-            if (data.askPrice != null) {
-                message.askPrice = data.askPrice;
+            if (data.ask_price != null) {
+                message.ask_price = data.ask_price;
             }
-            if (data.askQuantity != null) {
-                message.askQuantity = data.askQuantity;
+            if (data.ask_quantity != null) {
+                message.ask_quantity = data.ask_quantity;
             }
-            if (data.lastPrice != null) {
-                message.lastPrice = data.lastPrice;
+            if (data.last_price != null) {
+                message.last_price = data.last_price;
             }
-            if (data.rolling24hPrice != null) {
-                message.rolling24hPrice = data.rolling24hPrice;
+            if (data.rolling24h_price != null) {
+                message.rolling24h_price = data.rolling24h_price;
             }
             return message;
         }
         toObject() {
             const data: {
-                marketId?: number;
-                transactTime?: number;
-                bidPrice?: number;
-                bidQuantity?: number;
-                askPrice?: number;
-                askQuantity?: number;
-                lastPrice?: number;
-                rolling24hPrice?: number;
+                market_id?: number;
+                transact_time?: number;
+                bid_price?: number;
+                bid_quantity?: number;
+                ask_price?: number;
+                ask_quantity?: number;
+                last_price?: number;
+                rolling24h_price?: number;
             } = {};
-            if (this.marketId != null) {
-                data.marketId = this.marketId;
+            if (this.market_id != null) {
+                data.market_id = this.market_id;
             }
-            if (this.transactTime != null) {
-                data.transactTime = this.transactTime;
+            if (this.transact_time != null) {
+                data.transact_time = this.transact_time;
             }
-            if (this.bidPrice != null) {
-                data.bidPrice = this.bidPrice;
+            if (this.bid_price != null) {
+                data.bid_price = this.bid_price;
             }
-            if (this.bidQuantity != null) {
-                data.bidQuantity = this.bidQuantity;
+            if (this.bid_quantity != null) {
+                data.bid_quantity = this.bid_quantity;
             }
-            if (this.askPrice != null) {
-                data.askPrice = this.askPrice;
+            if (this.ask_price != null) {
+                data.ask_price = this.ask_price;
             }
-            if (this.askQuantity != null) {
-                data.askQuantity = this.askQuantity;
+            if (this.ask_quantity != null) {
+                data.ask_quantity = this.ask_quantity;
             }
-            if (this.lastPrice != null) {
-                data.lastPrice = this.lastPrice;
+            if (this.last_price != null) {
+                data.last_price = this.last_price;
             }
-            if (this.rolling24hPrice != null) {
-                data.rolling24hPrice = this.rolling24hPrice;
+            if (this.rolling24h_price != null) {
+                data.rolling24h_price = this.rolling24h_price;
             }
             return data;
         }
@@ -2607,22 +2653,22 @@ export namespace md {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.marketId != 0)
-                writer.writeUint64(1, this.marketId);
-            if (this.transactTime != 0)
-                writer.writeUint64(2, this.transactTime);
-            if (this.bidPrice != 0)
-                writer.writeUint64(3, this.bidPrice);
-            if (this.bidQuantity != 0)
-                writer.writeUint64(4, this.bidQuantity);
-            if (this.askPrice != 0)
-                writer.writeUint64(5, this.askPrice);
-            if (this.askQuantity != 0)
-                writer.writeUint64(6, this.askQuantity);
-            if (this.lastPrice != 0)
-                writer.writeUint64(7, this.lastPrice);
-            if (this.rolling24hPrice != 0)
-                writer.writeUint64(8, this.rolling24hPrice);
+            if (this.market_id != 0)
+                writer.writeUint64(1, this.market_id);
+            if (this.transact_time != 0)
+                writer.writeUint64(2, this.transact_time);
+            if (this.bid_price != 0)
+                writer.writeUint64(3, this.bid_price);
+            if (this.bid_quantity != 0)
+                writer.writeUint64(4, this.bid_quantity);
+            if (this.ask_price != 0)
+                writer.writeUint64(5, this.ask_price);
+            if (this.ask_quantity != 0)
+                writer.writeUint64(6, this.ask_quantity);
+            if (this.last_price != 0)
+                writer.writeUint64(7, this.last_price);
+            if (this.rolling24h_price != 0)
+                writer.writeUint64(8, this.rolling24h_price);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -2633,28 +2679,28 @@ export namespace md {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.marketId = reader.readUint64();
+                        message.market_id = reader.readUint64();
                         break;
                     case 2:
-                        message.transactTime = reader.readUint64();
+                        message.transact_time = reader.readUint64();
                         break;
                     case 3:
-                        message.bidPrice = reader.readUint64();
+                        message.bid_price = reader.readUint64();
                         break;
                     case 4:
-                        message.bidQuantity = reader.readUint64();
+                        message.bid_quantity = reader.readUint64();
                         break;
                     case 5:
-                        message.askPrice = reader.readUint64();
+                        message.ask_price = reader.readUint64();
                         break;
                     case 6:
-                        message.askQuantity = reader.readUint64();
+                        message.ask_quantity = reader.readUint64();
                         break;
                     case 7:
-                        message.lastPrice = reader.readUint64();
+                        message.last_price = reader.readUint64();
                         break;
                     case 8:
-                        message.rolling24hPrice = reader.readUint64();
+                        message.rolling24h_price = reader.readUint64();
                         break;
                     default: reader.skipField();
                 }
@@ -2738,7 +2784,7 @@ export namespace md {
     export class RateUpdate extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            assetId?: number;
+            asset_id?: number;
             timestamp?: number;
             rate?: number;
             side?: RateUpdateSide;
@@ -2746,8 +2792,8 @@ export namespace md {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("assetId" in data && data.assetId != undefined) {
-                    this.assetId = data.assetId;
+                if ("asset_id" in data && data.asset_id != undefined) {
+                    this.asset_id = data.asset_id;
                 }
                 if ("timestamp" in data && data.timestamp != undefined) {
                     this.timestamp = data.timestamp;
@@ -2760,10 +2806,10 @@ export namespace md {
                 }
             }
         }
-        get assetId() {
+        get asset_id() {
             return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
         }
-        set assetId(value: number) {
+        set asset_id(value: number) {
             pb_1.Message.setField(this, 1, value);
         }
         get timestamp() {
@@ -2785,14 +2831,14 @@ export namespace md {
             pb_1.Message.setField(this, 4, value);
         }
         static fromObject(data: {
-            assetId?: number;
+            asset_id?: number;
             timestamp?: number;
             rate?: number;
             side?: RateUpdateSide;
         }): RateUpdate {
             const message = new RateUpdate({});
-            if (data.assetId != null) {
-                message.assetId = data.assetId;
+            if (data.asset_id != null) {
+                message.asset_id = data.asset_id;
             }
             if (data.timestamp != null) {
                 message.timestamp = data.timestamp;
@@ -2807,13 +2853,13 @@ export namespace md {
         }
         toObject() {
             const data: {
-                assetId?: number;
+                asset_id?: number;
                 timestamp?: number;
                 rate?: number;
                 side?: RateUpdateSide;
             } = {};
-            if (this.assetId != null) {
-                data.assetId = this.assetId;
+            if (this.asset_id != null) {
+                data.asset_id = this.asset_id;
             }
             if (this.timestamp != null) {
                 data.timestamp = this.timestamp;
@@ -2830,8 +2876,8 @@ export namespace md {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.assetId != 0)
-                writer.writeUint64(1, this.assetId);
+            if (this.asset_id != 0)
+                writer.writeUint64(1, this.asset_id);
             if (this.timestamp != 0)
                 writer.writeUint64(2, this.timestamp);
             if (this.rate != 0)
@@ -2848,7 +2894,7 @@ export namespace md {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.assetId = reader.readUint64();
+                        message.asset_id = reader.readUint64();
                         break;
                     case 2:
                         message.timestamp = reader.readUint64();

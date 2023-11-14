@@ -1,0 +1,22 @@
+{
+  "name": "cube-ts",
+  "version": "0.1.0",
+  "description": "a typescript library generated from protobufs for https://cube.exchange's api. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cubexch/community.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cubexch/community/issues"
+  },
+  "homepage": "https://github.com/cubexch/community#readme",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}

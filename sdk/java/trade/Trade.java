@@ -469,7 +469,7 @@ public final class Trade {
    * <pre>
    * Self-trade-prevention (STP) allows market participants to prevent the matching
    * of orders for accounts with common ownership. Currently, STP only applies for
-   * orders with the same subaccountId. STP will only be applied when a match is
+   * orders with the same subaccount_id. STP will only be applied when a match is
    * about to occur between the two orders. That is, if the aggressing order is
    * fully filled before reaching the resting order in FIFO order, no STP cancels
    * will happen.
@@ -746,7 +746,7 @@ public final class Trade {
      * Public API key
      * </pre>
      *
-     * <code>string accessKeyId = 1;</code>
+     * <code>string access_key_id = 1;</code>
      * @return The accessKeyId.
      */
     java.lang.String getAccessKeyId();
@@ -755,7 +755,7 @@ public final class Trade {
      * Public API key
      * </pre>
      *
-     * <code>string accessKeyId = 1;</code>
+     * <code>string access_key_id = 1;</code>
      * @return The bytes for accessKeyId.
      */
     com.google.protobuf.ByteString
@@ -912,14 +912,14 @@ public final class Trade {
               trade.Trade.Credentials.class, trade.Trade.Credentials.Builder.class);
     }
 
-    public static final int ACCESSKEYID_FIELD_NUMBER = 1;
+    public static final int ACCESS_KEY_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object accessKeyId_;
     /**
      * <pre>
      * Public API key
      * </pre>
      *
-     * <code>string accessKeyId = 1;</code>
+     * <code>string access_key_id = 1;</code>
      * @return The accessKeyId.
      */
     @java.lang.Override
@@ -940,7 +940,7 @@ public final class Trade {
      * Public API key
      * </pre>
      *
-     * <code>string accessKeyId = 1;</code>
+     * <code>string access_key_id = 1;</code>
      * @return The bytes for accessKeyId.
      */
     @java.lang.Override
@@ -1093,7 +1093,7 @@ public final class Trade {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ACCESSKEYID_FIELD_NUMBER;
+      hash = (37 * hash) + ACCESS_KEY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAccessKeyId().hashCode();
       hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
       hash = (53 * hash) + getSignature().hashCode();
@@ -1387,7 +1387,7 @@ public final class Trade {
        * Public API key
        * </pre>
        *
-       * <code>string accessKeyId = 1;</code>
+       * <code>string access_key_id = 1;</code>
        * @return The accessKeyId.
        */
       public java.lang.String getAccessKeyId() {
@@ -1407,7 +1407,7 @@ public final class Trade {
        * Public API key
        * </pre>
        *
-       * <code>string accessKeyId = 1;</code>
+       * <code>string access_key_id = 1;</code>
        * @return The bytes for accessKeyId.
        */
       public com.google.protobuf.ByteString
@@ -1428,7 +1428,7 @@ public final class Trade {
        * Public API key
        * </pre>
        *
-       * <code>string accessKeyId = 1;</code>
+       * <code>string access_key_id = 1;</code>
        * @param value The accessKeyId to set.
        * @return This builder for chaining.
        */
@@ -1447,7 +1447,7 @@ public final class Trade {
        * Public API key
        * </pre>
        *
-       * <code>string accessKeyId = 1;</code>
+       * <code>string access_key_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearAccessKeyId() {
@@ -1461,7 +1461,7 @@ public final class Trade {
        * Public API key
        * </pre>
        *
-       * <code>string accessKeyId = 1;</code>
+       * <code>string access_key_id = 1;</code>
        * @param value The bytes for accessKeyId to set.
        * @return This builder for chaining.
        */
@@ -3322,7 +3322,7 @@ public final class Trade {
      * unique among open orders by this subaccount.
      * </pre>
      *
-     * <code>uint64 clientOrderId = 1;</code>
+     * <code>uint64 client_order_id = 1;</code>
      * @return The clientOrderId.
      */
     long getClientOrderId();
@@ -3332,13 +3332,13 @@ public final class Trade {
      * A request ID that is echoed back on the NewOrderAck or NewOrderReject
      * </pre>
      *
-     * <code>uint64 requestId = 2;</code>
+     * <code>uint64 request_id = 2;</code>
      * @return The requestId.
      */
     long getRequestId();
 
     /**
-     * <code>uint64 marketId = 3;</code>
+     * <code>uint64 market_id = 3;</code>
      * @return The marketId.
      */
     long getMarketId();
@@ -3372,23 +3372,23 @@ public final class Trade {
     trade.Trade.Side getSide();
 
     /**
-     * <code>.trade.TimeInForce timeInForce = 7;</code>
+     * <code>.trade.TimeInForce time_in_force = 7;</code>
      * @return The enum numeric value on the wire for timeInForce.
      */
     int getTimeInForceValue();
     /**
-     * <code>.trade.TimeInForce timeInForce = 7;</code>
+     * <code>.trade.TimeInForce time_in_force = 7;</code>
      * @return The timeInForce.
      */
     trade.Trade.TimeInForce getTimeInForce();
 
     /**
-     * <code>.trade.OrderType orderType = 8;</code>
+     * <code>.trade.OrderType order_type = 8;</code>
      * @return The enum numeric value on the wire for orderType.
      */
     int getOrderTypeValue();
     /**
-     * <code>.trade.OrderType orderType = 8;</code>
+     * <code>.trade.OrderType order_type = 8;</code>
      * @return The orderType.
      */
     trade.Trade.OrderType getOrderType();
@@ -3399,37 +3399,53 @@ public final class Trade {
      * the API key specified in the Credentials message.
      * </pre>
      *
-     * <code>uint64 subaccountId = 9;</code>
+     * <code>uint64 subaccount_id = 9;</code>
      * @return The subaccountId.
      */
     long getSubaccountId();
 
     /**
-     * <code>.trade.SelfTradePrevention selfTradePrevention = 10;</code>
+     * <code>.trade.SelfTradePrevention self_trade_prevention = 10;</code>
      * @return Whether the selfTradePrevention field is set.
      */
     boolean hasSelfTradePrevention();
     /**
-     * <code>.trade.SelfTradePrevention selfTradePrevention = 10;</code>
+     * <code>.trade.SelfTradePrevention self_trade_prevention = 10;</code>
      * @return The enum numeric value on the wire for selfTradePrevention.
      */
     int getSelfTradePreventionValue();
     /**
-     * <code>.trade.SelfTradePrevention selfTradePrevention = 10;</code>
+     * <code>.trade.SelfTradePrevention self_trade_prevention = 10;</code>
      * @return The selfTradePrevention.
      */
     trade.Trade.SelfTradePrevention getSelfTradePrevention();
 
     /**
-     * <code>.trade.PostOnly postOnly = 11;</code>
+     * <code>.trade.PostOnly post_only = 11;</code>
      * @return The enum numeric value on the wire for postOnly.
      */
     int getPostOnlyValue();
     /**
-     * <code>.trade.PostOnly postOnly = 11;</code>
+     * <code>.trade.PostOnly post_only = 11;</code>
      * @return The postOnly.
      */
     trade.Trade.PostOnly getPostOnly();
+
+    /**
+     * <pre>
+     * If true, this order will be automatically cancelled
+     * after the closure of the network connection
+     * between Cube's servers and the client that placed the order.
+     * If the client initiates the disconnect or network instability drops the connection,
+     * the order will be cancelled when Cube's servers recognize the disconnection.
+     * In the event of a server-side disconnect that causes a halt in trading,
+     * such as scheduled downtime, the order will be cancelled before trading resumes.
+     * </pre>
+     *
+     * <code>bool cancel_on_disconnect = 12;</code>
+     * @return The cancelOnDisconnect.
+     */
+    boolean getCancelOnDisconnect();
   }
   /**
    * <pre>
@@ -3546,6 +3562,11 @@ public final class Trade {
               postOnly_ = rawValue;
               break;
             }
+            case 96: {
+
+              cancelOnDisconnect_ = input.readBool();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -3579,7 +3600,7 @@ public final class Trade {
     }
 
     private int bitField0_;
-    public static final int CLIENTORDERID_FIELD_NUMBER = 1;
+    public static final int CLIENT_ORDER_ID_FIELD_NUMBER = 1;
     private long clientOrderId_;
     /**
      * <pre>
@@ -3587,7 +3608,7 @@ public final class Trade {
      * unique among open orders by this subaccount.
      * </pre>
      *
-     * <code>uint64 clientOrderId = 1;</code>
+     * <code>uint64 client_order_id = 1;</code>
      * @return The clientOrderId.
      */
     @java.lang.Override
@@ -3595,14 +3616,14 @@ public final class Trade {
       return clientOrderId_;
     }
 
-    public static final int REQUESTID_FIELD_NUMBER = 2;
+    public static final int REQUEST_ID_FIELD_NUMBER = 2;
     private long requestId_;
     /**
      * <pre>
      * A request ID that is echoed back on the NewOrderAck or NewOrderReject
      * </pre>
      *
-     * <code>uint64 requestId = 2;</code>
+     * <code>uint64 request_id = 2;</code>
      * @return The requestId.
      */
     @java.lang.Override
@@ -3610,10 +3631,10 @@ public final class Trade {
       return requestId_;
     }
 
-    public static final int MARKETID_FIELD_NUMBER = 3;
+    public static final int MARKET_ID_FIELD_NUMBER = 3;
     private long marketId_;
     /**
-     * <code>uint64 marketId = 3;</code>
+     * <code>uint64 market_id = 3;</code>
      * @return The marketId.
      */
     @java.lang.Override
@@ -3670,17 +3691,17 @@ public final class Trade {
       return result == null ? trade.Trade.Side.UNRECOGNIZED : result;
     }
 
-    public static final int TIMEINFORCE_FIELD_NUMBER = 7;
+    public static final int TIME_IN_FORCE_FIELD_NUMBER = 7;
     private int timeInForce_;
     /**
-     * <code>.trade.TimeInForce timeInForce = 7;</code>
+     * <code>.trade.TimeInForce time_in_force = 7;</code>
      * @return The enum numeric value on the wire for timeInForce.
      */
     @java.lang.Override public int getTimeInForceValue() {
       return timeInForce_;
     }
     /**
-     * <code>.trade.TimeInForce timeInForce = 7;</code>
+     * <code>.trade.TimeInForce time_in_force = 7;</code>
      * @return The timeInForce.
      */
     @java.lang.Override public trade.Trade.TimeInForce getTimeInForce() {
@@ -3689,17 +3710,17 @@ public final class Trade {
       return result == null ? trade.Trade.TimeInForce.UNRECOGNIZED : result;
     }
 
-    public static final int ORDERTYPE_FIELD_NUMBER = 8;
+    public static final int ORDER_TYPE_FIELD_NUMBER = 8;
     private int orderType_;
     /**
-     * <code>.trade.OrderType orderType = 8;</code>
+     * <code>.trade.OrderType order_type = 8;</code>
      * @return The enum numeric value on the wire for orderType.
      */
     @java.lang.Override public int getOrderTypeValue() {
       return orderType_;
     }
     /**
-     * <code>.trade.OrderType orderType = 8;</code>
+     * <code>.trade.OrderType order_type = 8;</code>
      * @return The orderType.
      */
     @java.lang.Override public trade.Trade.OrderType getOrderType() {
@@ -3708,7 +3729,7 @@ public final class Trade {
       return result == null ? trade.Trade.OrderType.UNRECOGNIZED : result;
     }
 
-    public static final int SUBACCOUNTID_FIELD_NUMBER = 9;
+    public static final int SUBACCOUNT_ID_FIELD_NUMBER = 9;
     private long subaccountId_;
     /**
      * <pre>
@@ -3716,7 +3737,7 @@ public final class Trade {
      * the API key specified in the Credentials message.
      * </pre>
      *
-     * <code>uint64 subaccountId = 9;</code>
+     * <code>uint64 subaccount_id = 9;</code>
      * @return The subaccountId.
      */
     @java.lang.Override
@@ -3724,24 +3745,24 @@ public final class Trade {
       return subaccountId_;
     }
 
-    public static final int SELFTRADEPREVENTION_FIELD_NUMBER = 10;
+    public static final int SELF_TRADE_PREVENTION_FIELD_NUMBER = 10;
     private int selfTradePrevention_;
     /**
-     * <code>.trade.SelfTradePrevention selfTradePrevention = 10;</code>
+     * <code>.trade.SelfTradePrevention self_trade_prevention = 10;</code>
      * @return Whether the selfTradePrevention field is set.
      */
     @java.lang.Override public boolean hasSelfTradePrevention() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>.trade.SelfTradePrevention selfTradePrevention = 10;</code>
+     * <code>.trade.SelfTradePrevention self_trade_prevention = 10;</code>
      * @return The enum numeric value on the wire for selfTradePrevention.
      */
     @java.lang.Override public int getSelfTradePreventionValue() {
       return selfTradePrevention_;
     }
     /**
-     * <code>.trade.SelfTradePrevention selfTradePrevention = 10;</code>
+     * <code>.trade.SelfTradePrevention self_trade_prevention = 10;</code>
      * @return The selfTradePrevention.
      */
     @java.lang.Override public trade.Trade.SelfTradePrevention getSelfTradePrevention() {
@@ -3750,23 +3771,44 @@ public final class Trade {
       return result == null ? trade.Trade.SelfTradePrevention.UNRECOGNIZED : result;
     }
 
-    public static final int POSTONLY_FIELD_NUMBER = 11;
+    public static final int POST_ONLY_FIELD_NUMBER = 11;
     private int postOnly_;
     /**
-     * <code>.trade.PostOnly postOnly = 11;</code>
+     * <code>.trade.PostOnly post_only = 11;</code>
      * @return The enum numeric value on the wire for postOnly.
      */
     @java.lang.Override public int getPostOnlyValue() {
       return postOnly_;
     }
     /**
-     * <code>.trade.PostOnly postOnly = 11;</code>
+     * <code>.trade.PostOnly post_only = 11;</code>
      * @return The postOnly.
      */
     @java.lang.Override public trade.Trade.PostOnly getPostOnly() {
       @SuppressWarnings("deprecation")
       trade.Trade.PostOnly result = trade.Trade.PostOnly.valueOf(postOnly_);
       return result == null ? trade.Trade.PostOnly.UNRECOGNIZED : result;
+    }
+
+    public static final int CANCEL_ON_DISCONNECT_FIELD_NUMBER = 12;
+    private boolean cancelOnDisconnect_;
+    /**
+     * <pre>
+     * If true, this order will be automatically cancelled
+     * after the closure of the network connection
+     * between Cube's servers and the client that placed the order.
+     * If the client initiates the disconnect or network instability drops the connection,
+     * the order will be cancelled when Cube's servers recognize the disconnection.
+     * In the event of a server-side disconnect that causes a halt in trading,
+     * such as scheduled downtime, the order will be cancelled before trading resumes.
+     * </pre>
+     *
+     * <code>bool cancel_on_disconnect = 12;</code>
+     * @return The cancelOnDisconnect.
+     */
+    @java.lang.Override
+    public boolean getCancelOnDisconnect() {
+      return cancelOnDisconnect_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3815,6 +3857,9 @@ public final class Trade {
       }
       if (postOnly_ != trade.Trade.PostOnly.DISABLED.getNumber()) {
         output.writeEnum(11, postOnly_);
+      }
+      if (cancelOnDisconnect_ != false) {
+        output.writeBool(12, cancelOnDisconnect_);
       }
       unknownFields.writeTo(output);
     }
@@ -3869,6 +3914,10 @@ public final class Trade {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(11, postOnly_);
       }
+      if (cancelOnDisconnect_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(12, cancelOnDisconnect_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3907,6 +3956,8 @@ public final class Trade {
         if (selfTradePrevention_ != other.selfTradePrevention_) return false;
       }
       if (postOnly_ != other.postOnly_) return false;
+      if (getCancelOnDisconnect()
+          != other.getCancelOnDisconnect()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3918,13 +3969,13 @@ public final class Trade {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CLIENTORDERID_FIELD_NUMBER;
+      hash = (37 * hash) + CLIENT_ORDER_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getClientOrderId());
-      hash = (37 * hash) + REQUESTID_FIELD_NUMBER;
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRequestId());
-      hash = (37 * hash) + MARKETID_FIELD_NUMBER;
+      hash = (37 * hash) + MARKET_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMarketId());
       if (hasPrice()) {
@@ -3937,19 +3988,22 @@ public final class Trade {
           getQuantity());
       hash = (37 * hash) + SIDE_FIELD_NUMBER;
       hash = (53 * hash) + side_;
-      hash = (37 * hash) + TIMEINFORCE_FIELD_NUMBER;
+      hash = (37 * hash) + TIME_IN_FORCE_FIELD_NUMBER;
       hash = (53 * hash) + timeInForce_;
-      hash = (37 * hash) + ORDERTYPE_FIELD_NUMBER;
+      hash = (37 * hash) + ORDER_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + orderType_;
-      hash = (37 * hash) + SUBACCOUNTID_FIELD_NUMBER;
+      hash = (37 * hash) + SUBACCOUNT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSubaccountId());
       if (hasSelfTradePrevention()) {
-        hash = (37 * hash) + SELFTRADEPREVENTION_FIELD_NUMBER;
+        hash = (37 * hash) + SELF_TRADE_PREVENTION_FIELD_NUMBER;
         hash = (53 * hash) + selfTradePrevention_;
       }
-      hash = (37 * hash) + POSTONLY_FIELD_NUMBER;
+      hash = (37 * hash) + POST_ONLY_FIELD_NUMBER;
       hash = (53 * hash) + postOnly_;
+      hash = (37 * hash) + CANCEL_ON_DISCONNECT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getCancelOnDisconnect());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4109,6 +4163,8 @@ public final class Trade {
         bitField0_ = (bitField0_ & ~0x00000002);
         postOnly_ = 0;
 
+        cancelOnDisconnect_ = false;
+
         return this;
       }
 
@@ -4154,6 +4210,7 @@ public final class Trade {
         }
         result.selfTradePrevention_ = selfTradePrevention_;
         result.postOnly_ = postOnly_;
+        result.cancelOnDisconnect_ = cancelOnDisconnect_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -4236,6 +4293,9 @@ public final class Trade {
         if (other.postOnly_ != 0) {
           setPostOnlyValue(other.getPostOnlyValue());
         }
+        if (other.getCancelOnDisconnect() != false) {
+          setCancelOnDisconnect(other.getCancelOnDisconnect());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -4273,7 +4333,7 @@ public final class Trade {
        * unique among open orders by this subaccount.
        * </pre>
        *
-       * <code>uint64 clientOrderId = 1;</code>
+       * <code>uint64 client_order_id = 1;</code>
        * @return The clientOrderId.
        */
       @java.lang.Override
@@ -4286,7 +4346,7 @@ public final class Trade {
        * unique among open orders by this subaccount.
        * </pre>
        *
-       * <code>uint64 clientOrderId = 1;</code>
+       * <code>uint64 client_order_id = 1;</code>
        * @param value The clientOrderId to set.
        * @return This builder for chaining.
        */
@@ -4302,7 +4362,7 @@ public final class Trade {
        * unique among open orders by this subaccount.
        * </pre>
        *
-       * <code>uint64 clientOrderId = 1;</code>
+       * <code>uint64 client_order_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearClientOrderId() {
@@ -4318,7 +4378,7 @@ public final class Trade {
        * A request ID that is echoed back on the NewOrderAck or NewOrderReject
        * </pre>
        *
-       * <code>uint64 requestId = 2;</code>
+       * <code>uint64 request_id = 2;</code>
        * @return The requestId.
        */
       @java.lang.Override
@@ -4330,7 +4390,7 @@ public final class Trade {
        * A request ID that is echoed back on the NewOrderAck or NewOrderReject
        * </pre>
        *
-       * <code>uint64 requestId = 2;</code>
+       * <code>uint64 request_id = 2;</code>
        * @param value The requestId to set.
        * @return This builder for chaining.
        */
@@ -4345,7 +4405,7 @@ public final class Trade {
        * A request ID that is echoed back on the NewOrderAck or NewOrderReject
        * </pre>
        *
-       * <code>uint64 requestId = 2;</code>
+       * <code>uint64 request_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearRequestId() {
@@ -4357,7 +4417,7 @@ public final class Trade {
 
       private long marketId_ ;
       /**
-       * <code>uint64 marketId = 3;</code>
+       * <code>uint64 market_id = 3;</code>
        * @return The marketId.
        */
       @java.lang.Override
@@ -4365,7 +4425,7 @@ public final class Trade {
         return marketId_;
       }
       /**
-       * <code>uint64 marketId = 3;</code>
+       * <code>uint64 market_id = 3;</code>
        * @param value The marketId to set.
        * @return This builder for chaining.
        */
@@ -4376,7 +4436,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 marketId = 3;</code>
+       * <code>uint64 market_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearMarketId() {
@@ -4512,14 +4572,14 @@ public final class Trade {
 
       private int timeInForce_ = 0;
       /**
-       * <code>.trade.TimeInForce timeInForce = 7;</code>
+       * <code>.trade.TimeInForce time_in_force = 7;</code>
        * @return The enum numeric value on the wire for timeInForce.
        */
       @java.lang.Override public int getTimeInForceValue() {
         return timeInForce_;
       }
       /**
-       * <code>.trade.TimeInForce timeInForce = 7;</code>
+       * <code>.trade.TimeInForce time_in_force = 7;</code>
        * @param value The enum numeric value on the wire for timeInForce to set.
        * @return This builder for chaining.
        */
@@ -4530,7 +4590,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.TimeInForce timeInForce = 7;</code>
+       * <code>.trade.TimeInForce time_in_force = 7;</code>
        * @return The timeInForce.
        */
       @java.lang.Override
@@ -4540,7 +4600,7 @@ public final class Trade {
         return result == null ? trade.Trade.TimeInForce.UNRECOGNIZED : result;
       }
       /**
-       * <code>.trade.TimeInForce timeInForce = 7;</code>
+       * <code>.trade.TimeInForce time_in_force = 7;</code>
        * @param value The timeInForce to set.
        * @return This builder for chaining.
        */
@@ -4554,7 +4614,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.TimeInForce timeInForce = 7;</code>
+       * <code>.trade.TimeInForce time_in_force = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimeInForce() {
@@ -4566,14 +4626,14 @@ public final class Trade {
 
       private int orderType_ = 0;
       /**
-       * <code>.trade.OrderType orderType = 8;</code>
+       * <code>.trade.OrderType order_type = 8;</code>
        * @return The enum numeric value on the wire for orderType.
        */
       @java.lang.Override public int getOrderTypeValue() {
         return orderType_;
       }
       /**
-       * <code>.trade.OrderType orderType = 8;</code>
+       * <code>.trade.OrderType order_type = 8;</code>
        * @param value The enum numeric value on the wire for orderType to set.
        * @return This builder for chaining.
        */
@@ -4584,7 +4644,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.OrderType orderType = 8;</code>
+       * <code>.trade.OrderType order_type = 8;</code>
        * @return The orderType.
        */
       @java.lang.Override
@@ -4594,7 +4654,7 @@ public final class Trade {
         return result == null ? trade.Trade.OrderType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.trade.OrderType orderType = 8;</code>
+       * <code>.trade.OrderType order_type = 8;</code>
        * @param value The orderType to set.
        * @return This builder for chaining.
        */
@@ -4608,7 +4668,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.OrderType orderType = 8;</code>
+       * <code>.trade.OrderType order_type = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearOrderType() {
@@ -4625,7 +4685,7 @@ public final class Trade {
        * the API key specified in the Credentials message.
        * </pre>
        *
-       * <code>uint64 subaccountId = 9;</code>
+       * <code>uint64 subaccount_id = 9;</code>
        * @return The subaccountId.
        */
       @java.lang.Override
@@ -4638,7 +4698,7 @@ public final class Trade {
        * the API key specified in the Credentials message.
        * </pre>
        *
-       * <code>uint64 subaccountId = 9;</code>
+       * <code>uint64 subaccount_id = 9;</code>
        * @param value The subaccountId to set.
        * @return This builder for chaining.
        */
@@ -4654,7 +4714,7 @@ public final class Trade {
        * the API key specified in the Credentials message.
        * </pre>
        *
-       * <code>uint64 subaccountId = 9;</code>
+       * <code>uint64 subaccount_id = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearSubaccountId() {
@@ -4666,21 +4726,21 @@ public final class Trade {
 
       private int selfTradePrevention_ = 0;
       /**
-       * <code>.trade.SelfTradePrevention selfTradePrevention = 10;</code>
+       * <code>.trade.SelfTradePrevention self_trade_prevention = 10;</code>
        * @return Whether the selfTradePrevention field is set.
        */
       @java.lang.Override public boolean hasSelfTradePrevention() {
         return ((bitField0_ & 0x00000002) != 0);
       }
       /**
-       * <code>.trade.SelfTradePrevention selfTradePrevention = 10;</code>
+       * <code>.trade.SelfTradePrevention self_trade_prevention = 10;</code>
        * @return The enum numeric value on the wire for selfTradePrevention.
        */
       @java.lang.Override public int getSelfTradePreventionValue() {
         return selfTradePrevention_;
       }
       /**
-       * <code>.trade.SelfTradePrevention selfTradePrevention = 10;</code>
+       * <code>.trade.SelfTradePrevention self_trade_prevention = 10;</code>
        * @param value The enum numeric value on the wire for selfTradePrevention to set.
        * @return This builder for chaining.
        */
@@ -4691,7 +4751,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.SelfTradePrevention selfTradePrevention = 10;</code>
+       * <code>.trade.SelfTradePrevention self_trade_prevention = 10;</code>
        * @return The selfTradePrevention.
        */
       @java.lang.Override
@@ -4701,7 +4761,7 @@ public final class Trade {
         return result == null ? trade.Trade.SelfTradePrevention.UNRECOGNIZED : result;
       }
       /**
-       * <code>.trade.SelfTradePrevention selfTradePrevention = 10;</code>
+       * <code>.trade.SelfTradePrevention self_trade_prevention = 10;</code>
        * @param value The selfTradePrevention to set.
        * @return This builder for chaining.
        */
@@ -4715,7 +4775,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.SelfTradePrevention selfTradePrevention = 10;</code>
+       * <code>.trade.SelfTradePrevention self_trade_prevention = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearSelfTradePrevention() {
@@ -4727,14 +4787,14 @@ public final class Trade {
 
       private int postOnly_ = 0;
       /**
-       * <code>.trade.PostOnly postOnly = 11;</code>
+       * <code>.trade.PostOnly post_only = 11;</code>
        * @return The enum numeric value on the wire for postOnly.
        */
       @java.lang.Override public int getPostOnlyValue() {
         return postOnly_;
       }
       /**
-       * <code>.trade.PostOnly postOnly = 11;</code>
+       * <code>.trade.PostOnly post_only = 11;</code>
        * @param value The enum numeric value on the wire for postOnly to set.
        * @return This builder for chaining.
        */
@@ -4745,7 +4805,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.PostOnly postOnly = 11;</code>
+       * <code>.trade.PostOnly post_only = 11;</code>
        * @return The postOnly.
        */
       @java.lang.Override
@@ -4755,7 +4815,7 @@ public final class Trade {
         return result == null ? trade.Trade.PostOnly.UNRECOGNIZED : result;
       }
       /**
-       * <code>.trade.PostOnly postOnly = 11;</code>
+       * <code>.trade.PostOnly post_only = 11;</code>
        * @param value The postOnly to set.
        * @return This builder for chaining.
        */
@@ -4769,12 +4829,73 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.PostOnly postOnly = 11;</code>
+       * <code>.trade.PostOnly post_only = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearPostOnly() {
         
         postOnly_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean cancelOnDisconnect_ ;
+      /**
+       * <pre>
+       * If true, this order will be automatically cancelled
+       * after the closure of the network connection
+       * between Cube's servers and the client that placed the order.
+       * If the client initiates the disconnect or network instability drops the connection,
+       * the order will be cancelled when Cube's servers recognize the disconnection.
+       * In the event of a server-side disconnect that causes a halt in trading,
+       * such as scheduled downtime, the order will be cancelled before trading resumes.
+       * </pre>
+       *
+       * <code>bool cancel_on_disconnect = 12;</code>
+       * @return The cancelOnDisconnect.
+       */
+      @java.lang.Override
+      public boolean getCancelOnDisconnect() {
+        return cancelOnDisconnect_;
+      }
+      /**
+       * <pre>
+       * If true, this order will be automatically cancelled
+       * after the closure of the network connection
+       * between Cube's servers and the client that placed the order.
+       * If the client initiates the disconnect or network instability drops the connection,
+       * the order will be cancelled when Cube's servers recognize the disconnection.
+       * In the event of a server-side disconnect that causes a halt in trading,
+       * such as scheduled downtime, the order will be cancelled before trading resumes.
+       * </pre>
+       *
+       * <code>bool cancel_on_disconnect = 12;</code>
+       * @param value The cancelOnDisconnect to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCancelOnDisconnect(boolean value) {
+        
+        cancelOnDisconnect_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If true, this order will be automatically cancelled
+       * after the closure of the network connection
+       * between Cube's servers and the client that placed the order.
+       * If the client initiates the disconnect or network instability drops the connection,
+       * the order will be cancelled when Cube's servers recognize the disconnection.
+       * In the event of a server-side disconnect that causes a halt in trading,
+       * such as scheduled downtime, the order will be cancelled before trading resumes.
+       * </pre>
+       *
+       * <code>bool cancel_on_disconnect = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCancelOnDisconnect() {
+        
+        cancelOnDisconnect_ = false;
         onChanged();
         return this;
       }
@@ -4836,7 +4957,7 @@ public final class Trade {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 marketId = 1;</code>
+     * <code>uint64 market_id = 1;</code>
      * @return The marketId.
      */
     long getMarketId();
@@ -4846,7 +4967,7 @@ public final class Trade {
      * The order ID specified by the client on the NewOrder request.
      * </pre>
      *
-     * <code>uint64 clientOrderId = 2;</code>
+     * <code>uint64 client_order_id = 2;</code>
      * @return The clientOrderId.
      */
     long getClientOrderId();
@@ -4856,7 +4977,7 @@ public final class Trade {
      * A request ID that is echoed back on the CancelOrderAck or CancelOrderReject
      * </pre>
      *
-     * <code>uint64 requestId = 3;</code>
+     * <code>uint64 request_id = 3;</code>
      * @return The requestId.
      */
     long getRequestId();
@@ -4866,7 +4987,7 @@ public final class Trade {
      * The subaccount that the NewOrder was placed on.
      * </pre>
      *
-     * <code>uint64 subaccountId = 4;</code>
+     * <code>uint64 subaccount_id = 4;</code>
      * @return The subaccountId.
      */
     long getSubaccountId();
@@ -4875,7 +4996,7 @@ public final class Trade {
    * <pre>
    * Cancel a resting order.
    * Note that this can be done before the order is acknowledged (an aggressive
-   * cancel) since the identifying field is the `clientOrderId`.
+   * cancel) since the identifying field is the `client_order_id`.
    * </pre>
    *
    * Protobuf type {@code trade.CancelOrder}
@@ -4974,10 +5095,10 @@ public final class Trade {
               trade.Trade.CancelOrder.class, trade.Trade.CancelOrder.Builder.class);
     }
 
-    public static final int MARKETID_FIELD_NUMBER = 1;
+    public static final int MARKET_ID_FIELD_NUMBER = 1;
     private long marketId_;
     /**
-     * <code>uint64 marketId = 1;</code>
+     * <code>uint64 market_id = 1;</code>
      * @return The marketId.
      */
     @java.lang.Override
@@ -4985,14 +5106,14 @@ public final class Trade {
       return marketId_;
     }
 
-    public static final int CLIENTORDERID_FIELD_NUMBER = 2;
+    public static final int CLIENT_ORDER_ID_FIELD_NUMBER = 2;
     private long clientOrderId_;
     /**
      * <pre>
      * The order ID specified by the client on the NewOrder request.
      * </pre>
      *
-     * <code>uint64 clientOrderId = 2;</code>
+     * <code>uint64 client_order_id = 2;</code>
      * @return The clientOrderId.
      */
     @java.lang.Override
@@ -5000,14 +5121,14 @@ public final class Trade {
       return clientOrderId_;
     }
 
-    public static final int REQUESTID_FIELD_NUMBER = 3;
+    public static final int REQUEST_ID_FIELD_NUMBER = 3;
     private long requestId_;
     /**
      * <pre>
      * A request ID that is echoed back on the CancelOrderAck or CancelOrderReject
      * </pre>
      *
-     * <code>uint64 requestId = 3;</code>
+     * <code>uint64 request_id = 3;</code>
      * @return The requestId.
      */
     @java.lang.Override
@@ -5015,14 +5136,14 @@ public final class Trade {
       return requestId_;
     }
 
-    public static final int SUBACCOUNTID_FIELD_NUMBER = 4;
+    public static final int SUBACCOUNT_ID_FIELD_NUMBER = 4;
     private long subaccountId_;
     /**
      * <pre>
      * The subaccount that the NewOrder was placed on.
      * </pre>
      *
-     * <code>uint64 subaccountId = 4;</code>
+     * <code>uint64 subaccount_id = 4;</code>
      * @return The subaccountId.
      */
     @java.lang.Override
@@ -5115,16 +5236,16 @@ public final class Trade {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MARKETID_FIELD_NUMBER;
+      hash = (37 * hash) + MARKET_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMarketId());
-      hash = (37 * hash) + CLIENTORDERID_FIELD_NUMBER;
+      hash = (37 * hash) + CLIENT_ORDER_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getClientOrderId());
-      hash = (37 * hash) + REQUESTID_FIELD_NUMBER;
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRequestId());
-      hash = (37 * hash) + SUBACCOUNTID_FIELD_NUMBER;
+      hash = (37 * hash) + SUBACCOUNT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSubaccountId());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -5226,7 +5347,7 @@ public final class Trade {
      * <pre>
      * Cancel a resting order.
      * Note that this can be done before the order is acknowledged (an aggressive
-     * cancel) since the identifying field is the `clientOrderId`.
+     * cancel) since the identifying field is the `client_order_id`.
      * </pre>
      *
      * Protobuf type {@code trade.CancelOrder}
@@ -5395,7 +5516,7 @@ public final class Trade {
 
       private long marketId_ ;
       /**
-       * <code>uint64 marketId = 1;</code>
+       * <code>uint64 market_id = 1;</code>
        * @return The marketId.
        */
       @java.lang.Override
@@ -5403,7 +5524,7 @@ public final class Trade {
         return marketId_;
       }
       /**
-       * <code>uint64 marketId = 1;</code>
+       * <code>uint64 market_id = 1;</code>
        * @param value The marketId to set.
        * @return This builder for chaining.
        */
@@ -5414,7 +5535,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 marketId = 1;</code>
+       * <code>uint64 market_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearMarketId() {
@@ -5430,7 +5551,7 @@ public final class Trade {
        * The order ID specified by the client on the NewOrder request.
        * </pre>
        *
-       * <code>uint64 clientOrderId = 2;</code>
+       * <code>uint64 client_order_id = 2;</code>
        * @return The clientOrderId.
        */
       @java.lang.Override
@@ -5442,7 +5563,7 @@ public final class Trade {
        * The order ID specified by the client on the NewOrder request.
        * </pre>
        *
-       * <code>uint64 clientOrderId = 2;</code>
+       * <code>uint64 client_order_id = 2;</code>
        * @param value The clientOrderId to set.
        * @return This builder for chaining.
        */
@@ -5457,7 +5578,7 @@ public final class Trade {
        * The order ID specified by the client on the NewOrder request.
        * </pre>
        *
-       * <code>uint64 clientOrderId = 2;</code>
+       * <code>uint64 client_order_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearClientOrderId() {
@@ -5473,7 +5594,7 @@ public final class Trade {
        * A request ID that is echoed back on the CancelOrderAck or CancelOrderReject
        * </pre>
        *
-       * <code>uint64 requestId = 3;</code>
+       * <code>uint64 request_id = 3;</code>
        * @return The requestId.
        */
       @java.lang.Override
@@ -5485,7 +5606,7 @@ public final class Trade {
        * A request ID that is echoed back on the CancelOrderAck or CancelOrderReject
        * </pre>
        *
-       * <code>uint64 requestId = 3;</code>
+       * <code>uint64 request_id = 3;</code>
        * @param value The requestId to set.
        * @return This builder for chaining.
        */
@@ -5500,7 +5621,7 @@ public final class Trade {
        * A request ID that is echoed back on the CancelOrderAck or CancelOrderReject
        * </pre>
        *
-       * <code>uint64 requestId = 3;</code>
+       * <code>uint64 request_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearRequestId() {
@@ -5516,7 +5637,7 @@ public final class Trade {
        * The subaccount that the NewOrder was placed on.
        * </pre>
        *
-       * <code>uint64 subaccountId = 4;</code>
+       * <code>uint64 subaccount_id = 4;</code>
        * @return The subaccountId.
        */
       @java.lang.Override
@@ -5528,7 +5649,7 @@ public final class Trade {
        * The subaccount that the NewOrder was placed on.
        * </pre>
        *
-       * <code>uint64 subaccountId = 4;</code>
+       * <code>uint64 subaccount_id = 4;</code>
        * @param value The subaccountId to set.
        * @return This builder for chaining.
        */
@@ -5543,7 +5664,7 @@ public final class Trade {
        * The subaccount that the NewOrder was placed on.
        * </pre>
        *
-       * <code>uint64 subaccountId = 4;</code>
+       * <code>uint64 subaccount_id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearSubaccountId() {
@@ -5610,7 +5731,7 @@ public final class Trade {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 marketId = 1;</code>
+     * <code>uint64 market_id = 1;</code>
      * @return The marketId.
      */
     long getMarketId();
@@ -5620,7 +5741,7 @@ public final class Trade {
      * The order ID specified by the client on the NewOrder request.
      * </pre>
      *
-     * <code>uint64 clientOrderId = 2;</code>
+     * <code>uint64 client_order_id = 2;</code>
      * @return The clientOrderId.
      */
     long getClientOrderId();
@@ -5630,19 +5751,19 @@ public final class Trade {
      * A request ID that is echoed back on the ModifyOrderAck or ModifyOrderReject
      * </pre>
      *
-     * <code>uint64 requestId = 3;</code>
+     * <code>uint64 request_id = 3;</code>
      * @return The requestId.
      */
     long getRequestId();
 
     /**
-     * <code>uint64 newPrice = 4;</code>
+     * <code>uint64 new_price = 4;</code>
      * @return The newPrice.
      */
     long getNewPrice();
 
     /**
-     * <code>uint64 newQuantity = 5;</code>
+     * <code>uint64 new_quantity = 5;</code>
      * @return The newQuantity.
      */
     long getNewQuantity();
@@ -5652,34 +5773,34 @@ public final class Trade {
      * The subaccount that the NewOrder was placed on.
      * </pre>
      *
-     * <code>uint64 subaccountId = 6;</code>
+     * <code>uint64 subaccount_id = 6;</code>
      * @return The subaccountId.
      */
     long getSubaccountId();
 
     /**
-     * <code>.trade.SelfTradePrevention selfTradePrevention = 7;</code>
+     * <code>.trade.SelfTradePrevention self_trade_prevention = 7;</code>
      * @return Whether the selfTradePrevention field is set.
      */
     boolean hasSelfTradePrevention();
     /**
-     * <code>.trade.SelfTradePrevention selfTradePrevention = 7;</code>
+     * <code>.trade.SelfTradePrevention self_trade_prevention = 7;</code>
      * @return The enum numeric value on the wire for selfTradePrevention.
      */
     int getSelfTradePreventionValue();
     /**
-     * <code>.trade.SelfTradePrevention selfTradePrevention = 7;</code>
+     * <code>.trade.SelfTradePrevention self_trade_prevention = 7;</code>
      * @return The selfTradePrevention.
      */
     trade.Trade.SelfTradePrevention getSelfTradePrevention();
 
     /**
-     * <code>.trade.PostOnly postOnly = 8;</code>
+     * <code>.trade.PostOnly post_only = 8;</code>
      * @return The enum numeric value on the wire for postOnly.
      */
     int getPostOnlyValue();
     /**
-     * <code>.trade.PostOnly postOnly = 8;</code>
+     * <code>.trade.PostOnly post_only = 8;</code>
      * @return The postOnly.
      */
     trade.Trade.PostOnly getPostOnly();
@@ -5705,6 +5826,8 @@ public final class Trade {
    * Modify 4 | 2       | 2
    * ```
    * The post-modify quantity will be `newQuantity - filled = 4 - 2 = 2`.
+   * Regardless of IFM, the invariant for order quantity is that `quantity =
+   * remaining_quantity + cumulative_quantity`.
    * </pre>
    *
    * Protobuf type {@code trade.ModifyOrder}
@@ -5829,10 +5952,10 @@ public final class Trade {
     }
 
     private int bitField0_;
-    public static final int MARKETID_FIELD_NUMBER = 1;
+    public static final int MARKET_ID_FIELD_NUMBER = 1;
     private long marketId_;
     /**
-     * <code>uint64 marketId = 1;</code>
+     * <code>uint64 market_id = 1;</code>
      * @return The marketId.
      */
     @java.lang.Override
@@ -5840,14 +5963,14 @@ public final class Trade {
       return marketId_;
     }
 
-    public static final int CLIENTORDERID_FIELD_NUMBER = 2;
+    public static final int CLIENT_ORDER_ID_FIELD_NUMBER = 2;
     private long clientOrderId_;
     /**
      * <pre>
      * The order ID specified by the client on the NewOrder request.
      * </pre>
      *
-     * <code>uint64 clientOrderId = 2;</code>
+     * <code>uint64 client_order_id = 2;</code>
      * @return The clientOrderId.
      */
     @java.lang.Override
@@ -5855,14 +5978,14 @@ public final class Trade {
       return clientOrderId_;
     }
 
-    public static final int REQUESTID_FIELD_NUMBER = 3;
+    public static final int REQUEST_ID_FIELD_NUMBER = 3;
     private long requestId_;
     /**
      * <pre>
      * A request ID that is echoed back on the ModifyOrderAck or ModifyOrderReject
      * </pre>
      *
-     * <code>uint64 requestId = 3;</code>
+     * <code>uint64 request_id = 3;</code>
      * @return The requestId.
      */
     @java.lang.Override
@@ -5870,10 +5993,10 @@ public final class Trade {
       return requestId_;
     }
 
-    public static final int NEWPRICE_FIELD_NUMBER = 4;
+    public static final int NEW_PRICE_FIELD_NUMBER = 4;
     private long newPrice_;
     /**
-     * <code>uint64 newPrice = 4;</code>
+     * <code>uint64 new_price = 4;</code>
      * @return The newPrice.
      */
     @java.lang.Override
@@ -5881,10 +6004,10 @@ public final class Trade {
       return newPrice_;
     }
 
-    public static final int NEWQUANTITY_FIELD_NUMBER = 5;
+    public static final int NEW_QUANTITY_FIELD_NUMBER = 5;
     private long newQuantity_;
     /**
-     * <code>uint64 newQuantity = 5;</code>
+     * <code>uint64 new_quantity = 5;</code>
      * @return The newQuantity.
      */
     @java.lang.Override
@@ -5892,14 +6015,14 @@ public final class Trade {
       return newQuantity_;
     }
 
-    public static final int SUBACCOUNTID_FIELD_NUMBER = 6;
+    public static final int SUBACCOUNT_ID_FIELD_NUMBER = 6;
     private long subaccountId_;
     /**
      * <pre>
      * The subaccount that the NewOrder was placed on.
      * </pre>
      *
-     * <code>uint64 subaccountId = 6;</code>
+     * <code>uint64 subaccount_id = 6;</code>
      * @return The subaccountId.
      */
     @java.lang.Override
@@ -5907,24 +6030,24 @@ public final class Trade {
       return subaccountId_;
     }
 
-    public static final int SELFTRADEPREVENTION_FIELD_NUMBER = 7;
+    public static final int SELF_TRADE_PREVENTION_FIELD_NUMBER = 7;
     private int selfTradePrevention_;
     /**
-     * <code>.trade.SelfTradePrevention selfTradePrevention = 7;</code>
+     * <code>.trade.SelfTradePrevention self_trade_prevention = 7;</code>
      * @return Whether the selfTradePrevention field is set.
      */
     @java.lang.Override public boolean hasSelfTradePrevention() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.trade.SelfTradePrevention selfTradePrevention = 7;</code>
+     * <code>.trade.SelfTradePrevention self_trade_prevention = 7;</code>
      * @return The enum numeric value on the wire for selfTradePrevention.
      */
     @java.lang.Override public int getSelfTradePreventionValue() {
       return selfTradePrevention_;
     }
     /**
-     * <code>.trade.SelfTradePrevention selfTradePrevention = 7;</code>
+     * <code>.trade.SelfTradePrevention self_trade_prevention = 7;</code>
      * @return The selfTradePrevention.
      */
     @java.lang.Override public trade.Trade.SelfTradePrevention getSelfTradePrevention() {
@@ -5933,17 +6056,17 @@ public final class Trade {
       return result == null ? trade.Trade.SelfTradePrevention.UNRECOGNIZED : result;
     }
 
-    public static final int POSTONLY_FIELD_NUMBER = 8;
+    public static final int POST_ONLY_FIELD_NUMBER = 8;
     private int postOnly_;
     /**
-     * <code>.trade.PostOnly postOnly = 8;</code>
+     * <code>.trade.PostOnly post_only = 8;</code>
      * @return The enum numeric value on the wire for postOnly.
      */
     @java.lang.Override public int getPostOnlyValue() {
       return postOnly_;
     }
     /**
-     * <code>.trade.PostOnly postOnly = 8;</code>
+     * <code>.trade.PostOnly post_only = 8;</code>
      * @return The postOnly.
      */
     @java.lang.Override public trade.Trade.PostOnly getPostOnly() {
@@ -6074,29 +6197,29 @@ public final class Trade {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MARKETID_FIELD_NUMBER;
+      hash = (37 * hash) + MARKET_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMarketId());
-      hash = (37 * hash) + CLIENTORDERID_FIELD_NUMBER;
+      hash = (37 * hash) + CLIENT_ORDER_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getClientOrderId());
-      hash = (37 * hash) + REQUESTID_FIELD_NUMBER;
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRequestId());
-      hash = (37 * hash) + NEWPRICE_FIELD_NUMBER;
+      hash = (37 * hash) + NEW_PRICE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getNewPrice());
-      hash = (37 * hash) + NEWQUANTITY_FIELD_NUMBER;
+      hash = (37 * hash) + NEW_QUANTITY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getNewQuantity());
-      hash = (37 * hash) + SUBACCOUNTID_FIELD_NUMBER;
+      hash = (37 * hash) + SUBACCOUNT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSubaccountId());
       if (hasSelfTradePrevention()) {
-        hash = (37 * hash) + SELFTRADEPREVENTION_FIELD_NUMBER;
+        hash = (37 * hash) + SELF_TRADE_PREVENTION_FIELD_NUMBER;
         hash = (53 * hash) + selfTradePrevention_;
       }
-      hash = (37 * hash) + POSTONLY_FIELD_NUMBER;
+      hash = (37 * hash) + POST_ONLY_FIELD_NUMBER;
       hash = (53 * hash) + postOnly_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -6214,6 +6337,8 @@ public final class Trade {
      * Modify 4 | 2       | 2
      * ```
      * The post-modify quantity will be `newQuantity - filled = 4 - 2 = 2`.
+     * Regardless of IFM, the invariant for order quantity is that `quantity =
+     * remaining_quantity + cumulative_quantity`.
      * </pre>
      *
      * Protobuf type {@code trade.ModifyOrder}
@@ -6413,7 +6538,7 @@ public final class Trade {
 
       private long marketId_ ;
       /**
-       * <code>uint64 marketId = 1;</code>
+       * <code>uint64 market_id = 1;</code>
        * @return The marketId.
        */
       @java.lang.Override
@@ -6421,7 +6546,7 @@ public final class Trade {
         return marketId_;
       }
       /**
-       * <code>uint64 marketId = 1;</code>
+       * <code>uint64 market_id = 1;</code>
        * @param value The marketId to set.
        * @return This builder for chaining.
        */
@@ -6432,7 +6557,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 marketId = 1;</code>
+       * <code>uint64 market_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearMarketId() {
@@ -6448,7 +6573,7 @@ public final class Trade {
        * The order ID specified by the client on the NewOrder request.
        * </pre>
        *
-       * <code>uint64 clientOrderId = 2;</code>
+       * <code>uint64 client_order_id = 2;</code>
        * @return The clientOrderId.
        */
       @java.lang.Override
@@ -6460,7 +6585,7 @@ public final class Trade {
        * The order ID specified by the client on the NewOrder request.
        * </pre>
        *
-       * <code>uint64 clientOrderId = 2;</code>
+       * <code>uint64 client_order_id = 2;</code>
        * @param value The clientOrderId to set.
        * @return This builder for chaining.
        */
@@ -6475,7 +6600,7 @@ public final class Trade {
        * The order ID specified by the client on the NewOrder request.
        * </pre>
        *
-       * <code>uint64 clientOrderId = 2;</code>
+       * <code>uint64 client_order_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearClientOrderId() {
@@ -6491,7 +6616,7 @@ public final class Trade {
        * A request ID that is echoed back on the ModifyOrderAck or ModifyOrderReject
        * </pre>
        *
-       * <code>uint64 requestId = 3;</code>
+       * <code>uint64 request_id = 3;</code>
        * @return The requestId.
        */
       @java.lang.Override
@@ -6503,7 +6628,7 @@ public final class Trade {
        * A request ID that is echoed back on the ModifyOrderAck or ModifyOrderReject
        * </pre>
        *
-       * <code>uint64 requestId = 3;</code>
+       * <code>uint64 request_id = 3;</code>
        * @param value The requestId to set.
        * @return This builder for chaining.
        */
@@ -6518,7 +6643,7 @@ public final class Trade {
        * A request ID that is echoed back on the ModifyOrderAck or ModifyOrderReject
        * </pre>
        *
-       * <code>uint64 requestId = 3;</code>
+       * <code>uint64 request_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearRequestId() {
@@ -6530,7 +6655,7 @@ public final class Trade {
 
       private long newPrice_ ;
       /**
-       * <code>uint64 newPrice = 4;</code>
+       * <code>uint64 new_price = 4;</code>
        * @return The newPrice.
        */
       @java.lang.Override
@@ -6538,7 +6663,7 @@ public final class Trade {
         return newPrice_;
       }
       /**
-       * <code>uint64 newPrice = 4;</code>
+       * <code>uint64 new_price = 4;</code>
        * @param value The newPrice to set.
        * @return This builder for chaining.
        */
@@ -6549,7 +6674,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 newPrice = 4;</code>
+       * <code>uint64 new_price = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearNewPrice() {
@@ -6561,7 +6686,7 @@ public final class Trade {
 
       private long newQuantity_ ;
       /**
-       * <code>uint64 newQuantity = 5;</code>
+       * <code>uint64 new_quantity = 5;</code>
        * @return The newQuantity.
        */
       @java.lang.Override
@@ -6569,7 +6694,7 @@ public final class Trade {
         return newQuantity_;
       }
       /**
-       * <code>uint64 newQuantity = 5;</code>
+       * <code>uint64 new_quantity = 5;</code>
        * @param value The newQuantity to set.
        * @return This builder for chaining.
        */
@@ -6580,7 +6705,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 newQuantity = 5;</code>
+       * <code>uint64 new_quantity = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearNewQuantity() {
@@ -6596,7 +6721,7 @@ public final class Trade {
        * The subaccount that the NewOrder was placed on.
        * </pre>
        *
-       * <code>uint64 subaccountId = 6;</code>
+       * <code>uint64 subaccount_id = 6;</code>
        * @return The subaccountId.
        */
       @java.lang.Override
@@ -6608,7 +6733,7 @@ public final class Trade {
        * The subaccount that the NewOrder was placed on.
        * </pre>
        *
-       * <code>uint64 subaccountId = 6;</code>
+       * <code>uint64 subaccount_id = 6;</code>
        * @param value The subaccountId to set.
        * @return This builder for chaining.
        */
@@ -6623,7 +6748,7 @@ public final class Trade {
        * The subaccount that the NewOrder was placed on.
        * </pre>
        *
-       * <code>uint64 subaccountId = 6;</code>
+       * <code>uint64 subaccount_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearSubaccountId() {
@@ -6635,21 +6760,21 @@ public final class Trade {
 
       private int selfTradePrevention_ = 0;
       /**
-       * <code>.trade.SelfTradePrevention selfTradePrevention = 7;</code>
+       * <code>.trade.SelfTradePrevention self_trade_prevention = 7;</code>
        * @return Whether the selfTradePrevention field is set.
        */
       @java.lang.Override public boolean hasSelfTradePrevention() {
         return ((bitField0_ & 0x00000001) != 0);
       }
       /**
-       * <code>.trade.SelfTradePrevention selfTradePrevention = 7;</code>
+       * <code>.trade.SelfTradePrevention self_trade_prevention = 7;</code>
        * @return The enum numeric value on the wire for selfTradePrevention.
        */
       @java.lang.Override public int getSelfTradePreventionValue() {
         return selfTradePrevention_;
       }
       /**
-       * <code>.trade.SelfTradePrevention selfTradePrevention = 7;</code>
+       * <code>.trade.SelfTradePrevention self_trade_prevention = 7;</code>
        * @param value The enum numeric value on the wire for selfTradePrevention to set.
        * @return This builder for chaining.
        */
@@ -6660,7 +6785,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.SelfTradePrevention selfTradePrevention = 7;</code>
+       * <code>.trade.SelfTradePrevention self_trade_prevention = 7;</code>
        * @return The selfTradePrevention.
        */
       @java.lang.Override
@@ -6670,7 +6795,7 @@ public final class Trade {
         return result == null ? trade.Trade.SelfTradePrevention.UNRECOGNIZED : result;
       }
       /**
-       * <code>.trade.SelfTradePrevention selfTradePrevention = 7;</code>
+       * <code>.trade.SelfTradePrevention self_trade_prevention = 7;</code>
        * @param value The selfTradePrevention to set.
        * @return This builder for chaining.
        */
@@ -6684,7 +6809,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.SelfTradePrevention selfTradePrevention = 7;</code>
+       * <code>.trade.SelfTradePrevention self_trade_prevention = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearSelfTradePrevention() {
@@ -6696,14 +6821,14 @@ public final class Trade {
 
       private int postOnly_ = 0;
       /**
-       * <code>.trade.PostOnly postOnly = 8;</code>
+       * <code>.trade.PostOnly post_only = 8;</code>
        * @return The enum numeric value on the wire for postOnly.
        */
       @java.lang.Override public int getPostOnlyValue() {
         return postOnly_;
       }
       /**
-       * <code>.trade.PostOnly postOnly = 8;</code>
+       * <code>.trade.PostOnly post_only = 8;</code>
        * @param value The enum numeric value on the wire for postOnly to set.
        * @return This builder for chaining.
        */
@@ -6714,7 +6839,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.PostOnly postOnly = 8;</code>
+       * <code>.trade.PostOnly post_only = 8;</code>
        * @return The postOnly.
        */
       @java.lang.Override
@@ -6724,7 +6849,7 @@ public final class Trade {
         return result == null ? trade.Trade.PostOnly.UNRECOGNIZED : result;
       }
       /**
-       * <code>.trade.PostOnly postOnly = 8;</code>
+       * <code>.trade.PostOnly post_only = 8;</code>
        * @param value The postOnly to set.
        * @return This builder for chaining.
        */
@@ -6738,7 +6863,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.PostOnly postOnly = 8;</code>
+       * <code>.trade.PostOnly post_only = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearPostOnly() {
@@ -6809,7 +6934,7 @@ public final class Trade {
      * The subaccount to cancel orders for.
      * </pre>
      *
-     * <code>uint64 subaccountId = 1;</code>
+     * <code>uint64 subaccount_id = 1;</code>
      * @return The subaccountId.
      */
     long getSubaccountId();
@@ -6820,7 +6945,7 @@ public final class Trade {
      * CancelOrderAck's.
      * </pre>
      *
-     * <code>uint64 requestId = 2;</code>
+     * <code>uint64 request_id = 2;</code>
      * @return The requestId.
      */
     long getRequestId();
@@ -6830,7 +6955,7 @@ public final class Trade {
      * If specified, only orders on the corresponding market will be canceled.
      * </pre>
      *
-     * <code>uint64 marketId = 3;</code>
+     * <code>uint64 market_id = 3;</code>
      * @return Whether the marketId field is set.
      */
     boolean hasMarketId();
@@ -6839,7 +6964,7 @@ public final class Trade {
      * If specified, only orders on the corresponding market will be canceled.
      * </pre>
      *
-     * <code>uint64 marketId = 3;</code>
+     * <code>uint64 market_id = 3;</code>
      * @return The marketId.
      */
     long getMarketId();
@@ -6978,14 +7103,14 @@ public final class Trade {
     }
 
     private int bitField0_;
-    public static final int SUBACCOUNTID_FIELD_NUMBER = 1;
+    public static final int SUBACCOUNT_ID_FIELD_NUMBER = 1;
     private long subaccountId_;
     /**
      * <pre>
      * The subaccount to cancel orders for.
      * </pre>
      *
-     * <code>uint64 subaccountId = 1;</code>
+     * <code>uint64 subaccount_id = 1;</code>
      * @return The subaccountId.
      */
     @java.lang.Override
@@ -6993,7 +7118,7 @@ public final class Trade {
       return subaccountId_;
     }
 
-    public static final int REQUESTID_FIELD_NUMBER = 2;
+    public static final int REQUEST_ID_FIELD_NUMBER = 2;
     private long requestId_;
     /**
      * <pre>
@@ -7001,7 +7126,7 @@ public final class Trade {
      * CancelOrderAck's.
      * </pre>
      *
-     * <code>uint64 requestId = 2;</code>
+     * <code>uint64 request_id = 2;</code>
      * @return The requestId.
      */
     @java.lang.Override
@@ -7009,14 +7134,14 @@ public final class Trade {
       return requestId_;
     }
 
-    public static final int MARKETID_FIELD_NUMBER = 3;
+    public static final int MARKET_ID_FIELD_NUMBER = 3;
     private long marketId_;
     /**
      * <pre>
      * If specified, only orders on the corresponding market will be canceled.
      * </pre>
      *
-     * <code>uint64 marketId = 3;</code>
+     * <code>uint64 market_id = 3;</code>
      * @return Whether the marketId field is set.
      */
     @java.lang.Override
@@ -7028,7 +7153,7 @@ public final class Trade {
      * If specified, only orders on the corresponding market will be canceled.
      * </pre>
      *
-     * <code>uint64 marketId = 3;</code>
+     * <code>uint64 market_id = 3;</code>
      * @return The marketId.
      */
     @java.lang.Override
@@ -7164,14 +7289,14 @@ public final class Trade {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SUBACCOUNTID_FIELD_NUMBER;
+      hash = (37 * hash) + SUBACCOUNT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSubaccountId());
-      hash = (37 * hash) + REQUESTID_FIELD_NUMBER;
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRequestId());
       if (hasMarketId()) {
-        hash = (37 * hash) + MARKETID_FIELD_NUMBER;
+        hash = (37 * hash) + MARKET_ID_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             getMarketId());
       }
@@ -7460,7 +7585,7 @@ public final class Trade {
        * The subaccount to cancel orders for.
        * </pre>
        *
-       * <code>uint64 subaccountId = 1;</code>
+       * <code>uint64 subaccount_id = 1;</code>
        * @return The subaccountId.
        */
       @java.lang.Override
@@ -7472,7 +7597,7 @@ public final class Trade {
        * The subaccount to cancel orders for.
        * </pre>
        *
-       * <code>uint64 subaccountId = 1;</code>
+       * <code>uint64 subaccount_id = 1;</code>
        * @param value The subaccountId to set.
        * @return This builder for chaining.
        */
@@ -7487,7 +7612,7 @@ public final class Trade {
        * The subaccount to cancel orders for.
        * </pre>
        *
-       * <code>uint64 subaccountId = 1;</code>
+       * <code>uint64 subaccount_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearSubaccountId() {
@@ -7504,7 +7629,7 @@ public final class Trade {
        * CancelOrderAck's.
        * </pre>
        *
-       * <code>uint64 requestId = 2;</code>
+       * <code>uint64 request_id = 2;</code>
        * @return The requestId.
        */
       @java.lang.Override
@@ -7517,7 +7642,7 @@ public final class Trade {
        * CancelOrderAck's.
        * </pre>
        *
-       * <code>uint64 requestId = 2;</code>
+       * <code>uint64 request_id = 2;</code>
        * @param value The requestId to set.
        * @return This builder for chaining.
        */
@@ -7533,7 +7658,7 @@ public final class Trade {
        * CancelOrderAck's.
        * </pre>
        *
-       * <code>uint64 requestId = 2;</code>
+       * <code>uint64 request_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearRequestId() {
@@ -7549,7 +7674,7 @@ public final class Trade {
        * If specified, only orders on the corresponding market will be canceled.
        * </pre>
        *
-       * <code>uint64 marketId = 3;</code>
+       * <code>uint64 market_id = 3;</code>
        * @return Whether the marketId field is set.
        */
       @java.lang.Override
@@ -7561,7 +7686,7 @@ public final class Trade {
        * If specified, only orders on the corresponding market will be canceled.
        * </pre>
        *
-       * <code>uint64 marketId = 3;</code>
+       * <code>uint64 market_id = 3;</code>
        * @return The marketId.
        */
       @java.lang.Override
@@ -7573,7 +7698,7 @@ public final class Trade {
        * If specified, only orders on the corresponding market will be canceled.
        * </pre>
        *
-       * <code>uint64 marketId = 3;</code>
+       * <code>uint64 market_id = 3;</code>
        * @param value The marketId to set.
        * @return This builder for chaining.
        */
@@ -7588,7 +7713,7 @@ public final class Trade {
        * If specified, only orders on the corresponding market will be canceled.
        * </pre>
        *
-       * <code>uint64 marketId = 3;</code>
+       * <code>uint64 market_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearMarketId() {
@@ -7744,7 +7869,7 @@ public final class Trade {
      * A request ID that is echoed back on the Heartbeat
      * </pre>
      *
-     * <code>uint64 requestId = 1;</code>
+     * <code>uint64 request_id = 1;</code>
      * @return The requestId.
      */
     long getRequestId();
@@ -7759,7 +7884,7 @@ public final class Trade {
    * <pre>
    * A client and server heartbeat. The heartbeat reply, including the timestamp
    * value, comes from the order service and not the matching engine. Matching
-   * engine timestamps can be extracted from `transactTime` (below).
+   * engine timestamps can be extracted from `transact_time` (below).
    * Latency can be estimated from this, but only the relative difference between
    * successive server messages should be used. In particular, the client and
    * server clock should not be expected to be synchronized.
@@ -7851,14 +7976,14 @@ public final class Trade {
               trade.Trade.Heartbeat.class, trade.Trade.Heartbeat.Builder.class);
     }
 
-    public static final int REQUESTID_FIELD_NUMBER = 1;
+    public static final int REQUEST_ID_FIELD_NUMBER = 1;
     private long requestId_;
     /**
      * <pre>
      * A request ID that is echoed back on the Heartbeat
      * </pre>
      *
-     * <code>uint64 requestId = 1;</code>
+     * <code>uint64 request_id = 1;</code>
      * @return The requestId.
      */
     @java.lang.Override
@@ -7944,7 +8069,7 @@ public final class Trade {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + REQUESTID_FIELD_NUMBER;
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRequestId());
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
@@ -8049,7 +8174,7 @@ public final class Trade {
      * <pre>
      * A client and server heartbeat. The heartbeat reply, including the timestamp
      * value, comes from the order service and not the matching engine. Matching
-     * engine timestamps can be extracted from `transactTime` (below).
+     * engine timestamps can be extracted from `transact_time` (below).
      * Latency can be estimated from this, but only the relative difference between
      * successive server messages should be used. In particular, the client and
      * server clock should not be expected to be synchronized.
@@ -8213,7 +8338,7 @@ public final class Trade {
        * A request ID that is echoed back on the Heartbeat
        * </pre>
        *
-       * <code>uint64 requestId = 1;</code>
+       * <code>uint64 request_id = 1;</code>
        * @return The requestId.
        */
       @java.lang.Override
@@ -8225,7 +8350,7 @@ public final class Trade {
        * A request ID that is echoed back on the Heartbeat
        * </pre>
        *
-       * <code>uint64 requestId = 1;</code>
+       * <code>uint64 request_id = 1;</code>
        * @param value The requestId to set.
        * @return This builder for chaining.
        */
@@ -8240,7 +8365,7 @@ public final class Trade {
        * A request ID that is echoed back on the Heartbeat
        * </pre>
        *
-       * <code>uint64 requestId = 1;</code>
+       * <code>uint64 request_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearRequestId() {
@@ -8338,92 +8463,92 @@ public final class Trade {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.trade.NewOrderAck newAck = 1;</code>
+     * <code>.trade.NewOrderAck new_ack = 1;</code>
      * @return Whether the newAck field is set.
      */
     boolean hasNewAck();
     /**
-     * <code>.trade.NewOrderAck newAck = 1;</code>
+     * <code>.trade.NewOrderAck new_ack = 1;</code>
      * @return The newAck.
      */
     trade.Trade.NewOrderAck getNewAck();
     /**
-     * <code>.trade.NewOrderAck newAck = 1;</code>
+     * <code>.trade.NewOrderAck new_ack = 1;</code>
      */
     trade.Trade.NewOrderAckOrBuilder getNewAckOrBuilder();
 
     /**
-     * <code>.trade.CancelOrderAck cancelAck = 2;</code>
+     * <code>.trade.CancelOrderAck cancel_ack = 2;</code>
      * @return Whether the cancelAck field is set.
      */
     boolean hasCancelAck();
     /**
-     * <code>.trade.CancelOrderAck cancelAck = 2;</code>
+     * <code>.trade.CancelOrderAck cancel_ack = 2;</code>
      * @return The cancelAck.
      */
     trade.Trade.CancelOrderAck getCancelAck();
     /**
-     * <code>.trade.CancelOrderAck cancelAck = 2;</code>
+     * <code>.trade.CancelOrderAck cancel_ack = 2;</code>
      */
     trade.Trade.CancelOrderAckOrBuilder getCancelAckOrBuilder();
 
     /**
-     * <code>.trade.ModifyOrderAck modifyAck = 3;</code>
+     * <code>.trade.ModifyOrderAck modify_ack = 3;</code>
      * @return Whether the modifyAck field is set.
      */
     boolean hasModifyAck();
     /**
-     * <code>.trade.ModifyOrderAck modifyAck = 3;</code>
+     * <code>.trade.ModifyOrderAck modify_ack = 3;</code>
      * @return The modifyAck.
      */
     trade.Trade.ModifyOrderAck getModifyAck();
     /**
-     * <code>.trade.ModifyOrderAck modifyAck = 3;</code>
+     * <code>.trade.ModifyOrderAck modify_ack = 3;</code>
      */
     trade.Trade.ModifyOrderAckOrBuilder getModifyAckOrBuilder();
 
     /**
-     * <code>.trade.NewOrderReject newReject = 4;</code>
+     * <code>.trade.NewOrderReject new_reject = 4;</code>
      * @return Whether the newReject field is set.
      */
     boolean hasNewReject();
     /**
-     * <code>.trade.NewOrderReject newReject = 4;</code>
+     * <code>.trade.NewOrderReject new_reject = 4;</code>
      * @return The newReject.
      */
     trade.Trade.NewOrderReject getNewReject();
     /**
-     * <code>.trade.NewOrderReject newReject = 4;</code>
+     * <code>.trade.NewOrderReject new_reject = 4;</code>
      */
     trade.Trade.NewOrderRejectOrBuilder getNewRejectOrBuilder();
 
     /**
-     * <code>.trade.CancelOrderReject cancelReject = 5;</code>
+     * <code>.trade.CancelOrderReject cancel_reject = 5;</code>
      * @return Whether the cancelReject field is set.
      */
     boolean hasCancelReject();
     /**
-     * <code>.trade.CancelOrderReject cancelReject = 5;</code>
+     * <code>.trade.CancelOrderReject cancel_reject = 5;</code>
      * @return The cancelReject.
      */
     trade.Trade.CancelOrderReject getCancelReject();
     /**
-     * <code>.trade.CancelOrderReject cancelReject = 5;</code>
+     * <code>.trade.CancelOrderReject cancel_reject = 5;</code>
      */
     trade.Trade.CancelOrderRejectOrBuilder getCancelRejectOrBuilder();
 
     /**
-     * <code>.trade.ModifyOrderReject modifyReject = 6;</code>
+     * <code>.trade.ModifyOrderReject modify_reject = 6;</code>
      * @return Whether the modifyReject field is set.
      */
     boolean hasModifyReject();
     /**
-     * <code>.trade.ModifyOrderReject modifyReject = 6;</code>
+     * <code>.trade.ModifyOrderReject modify_reject = 6;</code>
      * @return The modifyReject.
      */
     trade.Trade.ModifyOrderReject getModifyReject();
     /**
-     * <code>.trade.ModifyOrderReject modifyReject = 6;</code>
+     * <code>.trade.ModifyOrderReject modify_reject = 6;</code>
      */
     trade.Trade.ModifyOrderRejectOrBuilder getModifyRejectOrBuilder();
 
@@ -8473,17 +8598,17 @@ public final class Trade {
     trade.Trade.AssetPositionOrBuilder getPositionOrBuilder();
 
     /**
-     * <code>.trade.MassCancelAck massCancelAck = 10;</code>
+     * <code>.trade.MassCancelAck mass_cancel_ack = 10;</code>
      * @return Whether the massCancelAck field is set.
      */
     boolean hasMassCancelAck();
     /**
-     * <code>.trade.MassCancelAck massCancelAck = 10;</code>
+     * <code>.trade.MassCancelAck mass_cancel_ack = 10;</code>
      * @return The massCancelAck.
      */
     trade.Trade.MassCancelAck getMassCancelAck();
     /**
-     * <code>.trade.MassCancelAck massCancelAck = 10;</code>
+     * <code>.trade.MassCancelAck mass_cancel_ack = 10;</code>
      */
     trade.Trade.MassCancelAckOrBuilder getMassCancelAckOrBuilder();
 
@@ -8716,16 +8841,16 @@ public final class Trade {
     public enum InnerCase
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      NEWACK(1),
-      CANCELACK(2),
-      MODIFYACK(3),
-      NEWREJECT(4),
-      CANCELREJECT(5),
-      MODIFYREJECT(6),
+      NEW_ACK(1),
+      CANCEL_ACK(2),
+      MODIFY_ACK(3),
+      NEW_REJECT(4),
+      CANCEL_REJECT(5),
+      MODIFY_REJECT(6),
       FILL(7),
       HEARTBEAT(8),
       POSITION(9),
-      MASSCANCELACK(10),
+      MASS_CANCEL_ACK(10),
       INNER_NOT_SET(0);
       private final int value;
       private InnerCase(int value) {
@@ -8743,16 +8868,16 @@ public final class Trade {
 
       public static InnerCase forNumber(int value) {
         switch (value) {
-          case 1: return NEWACK;
-          case 2: return CANCELACK;
-          case 3: return MODIFYACK;
-          case 4: return NEWREJECT;
-          case 5: return CANCELREJECT;
-          case 6: return MODIFYREJECT;
+          case 1: return NEW_ACK;
+          case 2: return CANCEL_ACK;
+          case 3: return MODIFY_ACK;
+          case 4: return NEW_REJECT;
+          case 5: return CANCEL_REJECT;
+          case 6: return MODIFY_REJECT;
           case 7: return FILL;
           case 8: return HEARTBEAT;
           case 9: return POSITION;
-          case 10: return MASSCANCELACK;
+          case 10: return MASS_CANCEL_ACK;
           case 0: return INNER_NOT_SET;
           default: return null;
         }
@@ -8768,9 +8893,9 @@ public final class Trade {
           innerCase_);
     }
 
-    public static final int NEWACK_FIELD_NUMBER = 1;
+    public static final int NEW_ACK_FIELD_NUMBER = 1;
     /**
-     * <code>.trade.NewOrderAck newAck = 1;</code>
+     * <code>.trade.NewOrderAck new_ack = 1;</code>
      * @return Whether the newAck field is set.
      */
     @java.lang.Override
@@ -8778,7 +8903,7 @@ public final class Trade {
       return innerCase_ == 1;
     }
     /**
-     * <code>.trade.NewOrderAck newAck = 1;</code>
+     * <code>.trade.NewOrderAck new_ack = 1;</code>
      * @return The newAck.
      */
     @java.lang.Override
@@ -8789,7 +8914,7 @@ public final class Trade {
       return trade.Trade.NewOrderAck.getDefaultInstance();
     }
     /**
-     * <code>.trade.NewOrderAck newAck = 1;</code>
+     * <code>.trade.NewOrderAck new_ack = 1;</code>
      */
     @java.lang.Override
     public trade.Trade.NewOrderAckOrBuilder getNewAckOrBuilder() {
@@ -8799,9 +8924,9 @@ public final class Trade {
       return trade.Trade.NewOrderAck.getDefaultInstance();
     }
 
-    public static final int CANCELACK_FIELD_NUMBER = 2;
+    public static final int CANCEL_ACK_FIELD_NUMBER = 2;
     /**
-     * <code>.trade.CancelOrderAck cancelAck = 2;</code>
+     * <code>.trade.CancelOrderAck cancel_ack = 2;</code>
      * @return Whether the cancelAck field is set.
      */
     @java.lang.Override
@@ -8809,7 +8934,7 @@ public final class Trade {
       return innerCase_ == 2;
     }
     /**
-     * <code>.trade.CancelOrderAck cancelAck = 2;</code>
+     * <code>.trade.CancelOrderAck cancel_ack = 2;</code>
      * @return The cancelAck.
      */
     @java.lang.Override
@@ -8820,7 +8945,7 @@ public final class Trade {
       return trade.Trade.CancelOrderAck.getDefaultInstance();
     }
     /**
-     * <code>.trade.CancelOrderAck cancelAck = 2;</code>
+     * <code>.trade.CancelOrderAck cancel_ack = 2;</code>
      */
     @java.lang.Override
     public trade.Trade.CancelOrderAckOrBuilder getCancelAckOrBuilder() {
@@ -8830,9 +8955,9 @@ public final class Trade {
       return trade.Trade.CancelOrderAck.getDefaultInstance();
     }
 
-    public static final int MODIFYACK_FIELD_NUMBER = 3;
+    public static final int MODIFY_ACK_FIELD_NUMBER = 3;
     /**
-     * <code>.trade.ModifyOrderAck modifyAck = 3;</code>
+     * <code>.trade.ModifyOrderAck modify_ack = 3;</code>
      * @return Whether the modifyAck field is set.
      */
     @java.lang.Override
@@ -8840,7 +8965,7 @@ public final class Trade {
       return innerCase_ == 3;
     }
     /**
-     * <code>.trade.ModifyOrderAck modifyAck = 3;</code>
+     * <code>.trade.ModifyOrderAck modify_ack = 3;</code>
      * @return The modifyAck.
      */
     @java.lang.Override
@@ -8851,7 +8976,7 @@ public final class Trade {
       return trade.Trade.ModifyOrderAck.getDefaultInstance();
     }
     /**
-     * <code>.trade.ModifyOrderAck modifyAck = 3;</code>
+     * <code>.trade.ModifyOrderAck modify_ack = 3;</code>
      */
     @java.lang.Override
     public trade.Trade.ModifyOrderAckOrBuilder getModifyAckOrBuilder() {
@@ -8861,9 +8986,9 @@ public final class Trade {
       return trade.Trade.ModifyOrderAck.getDefaultInstance();
     }
 
-    public static final int NEWREJECT_FIELD_NUMBER = 4;
+    public static final int NEW_REJECT_FIELD_NUMBER = 4;
     /**
-     * <code>.trade.NewOrderReject newReject = 4;</code>
+     * <code>.trade.NewOrderReject new_reject = 4;</code>
      * @return Whether the newReject field is set.
      */
     @java.lang.Override
@@ -8871,7 +8996,7 @@ public final class Trade {
       return innerCase_ == 4;
     }
     /**
-     * <code>.trade.NewOrderReject newReject = 4;</code>
+     * <code>.trade.NewOrderReject new_reject = 4;</code>
      * @return The newReject.
      */
     @java.lang.Override
@@ -8882,7 +9007,7 @@ public final class Trade {
       return trade.Trade.NewOrderReject.getDefaultInstance();
     }
     /**
-     * <code>.trade.NewOrderReject newReject = 4;</code>
+     * <code>.trade.NewOrderReject new_reject = 4;</code>
      */
     @java.lang.Override
     public trade.Trade.NewOrderRejectOrBuilder getNewRejectOrBuilder() {
@@ -8892,9 +9017,9 @@ public final class Trade {
       return trade.Trade.NewOrderReject.getDefaultInstance();
     }
 
-    public static final int CANCELREJECT_FIELD_NUMBER = 5;
+    public static final int CANCEL_REJECT_FIELD_NUMBER = 5;
     /**
-     * <code>.trade.CancelOrderReject cancelReject = 5;</code>
+     * <code>.trade.CancelOrderReject cancel_reject = 5;</code>
      * @return Whether the cancelReject field is set.
      */
     @java.lang.Override
@@ -8902,7 +9027,7 @@ public final class Trade {
       return innerCase_ == 5;
     }
     /**
-     * <code>.trade.CancelOrderReject cancelReject = 5;</code>
+     * <code>.trade.CancelOrderReject cancel_reject = 5;</code>
      * @return The cancelReject.
      */
     @java.lang.Override
@@ -8913,7 +9038,7 @@ public final class Trade {
       return trade.Trade.CancelOrderReject.getDefaultInstance();
     }
     /**
-     * <code>.trade.CancelOrderReject cancelReject = 5;</code>
+     * <code>.trade.CancelOrderReject cancel_reject = 5;</code>
      */
     @java.lang.Override
     public trade.Trade.CancelOrderRejectOrBuilder getCancelRejectOrBuilder() {
@@ -8923,9 +9048,9 @@ public final class Trade {
       return trade.Trade.CancelOrderReject.getDefaultInstance();
     }
 
-    public static final int MODIFYREJECT_FIELD_NUMBER = 6;
+    public static final int MODIFY_REJECT_FIELD_NUMBER = 6;
     /**
-     * <code>.trade.ModifyOrderReject modifyReject = 6;</code>
+     * <code>.trade.ModifyOrderReject modify_reject = 6;</code>
      * @return Whether the modifyReject field is set.
      */
     @java.lang.Override
@@ -8933,7 +9058,7 @@ public final class Trade {
       return innerCase_ == 6;
     }
     /**
-     * <code>.trade.ModifyOrderReject modifyReject = 6;</code>
+     * <code>.trade.ModifyOrderReject modify_reject = 6;</code>
      * @return The modifyReject.
      */
     @java.lang.Override
@@ -8944,7 +9069,7 @@ public final class Trade {
       return trade.Trade.ModifyOrderReject.getDefaultInstance();
     }
     /**
-     * <code>.trade.ModifyOrderReject modifyReject = 6;</code>
+     * <code>.trade.ModifyOrderReject modify_reject = 6;</code>
      */
     @java.lang.Override
     public trade.Trade.ModifyOrderRejectOrBuilder getModifyRejectOrBuilder() {
@@ -9047,9 +9172,9 @@ public final class Trade {
       return trade.Trade.AssetPosition.getDefaultInstance();
     }
 
-    public static final int MASSCANCELACK_FIELD_NUMBER = 10;
+    public static final int MASS_CANCEL_ACK_FIELD_NUMBER = 10;
     /**
-     * <code>.trade.MassCancelAck massCancelAck = 10;</code>
+     * <code>.trade.MassCancelAck mass_cancel_ack = 10;</code>
      * @return Whether the massCancelAck field is set.
      */
     @java.lang.Override
@@ -9057,7 +9182,7 @@ public final class Trade {
       return innerCase_ == 10;
     }
     /**
-     * <code>.trade.MassCancelAck massCancelAck = 10;</code>
+     * <code>.trade.MassCancelAck mass_cancel_ack = 10;</code>
      * @return The massCancelAck.
      */
     @java.lang.Override
@@ -9068,7 +9193,7 @@ public final class Trade {
       return trade.Trade.MassCancelAck.getDefaultInstance();
     }
     /**
-     * <code>.trade.MassCancelAck massCancelAck = 10;</code>
+     * <code>.trade.MassCancelAck mass_cancel_ack = 10;</code>
      */
     @java.lang.Override
     public trade.Trade.MassCancelAckOrBuilder getMassCancelAckOrBuilder() {
@@ -9244,27 +9369,27 @@ public final class Trade {
       hash = (19 * hash) + getDescriptor().hashCode();
       switch (innerCase_) {
         case 1:
-          hash = (37 * hash) + NEWACK_FIELD_NUMBER;
+          hash = (37 * hash) + NEW_ACK_FIELD_NUMBER;
           hash = (53 * hash) + getNewAck().hashCode();
           break;
         case 2:
-          hash = (37 * hash) + CANCELACK_FIELD_NUMBER;
+          hash = (37 * hash) + CANCEL_ACK_FIELD_NUMBER;
           hash = (53 * hash) + getCancelAck().hashCode();
           break;
         case 3:
-          hash = (37 * hash) + MODIFYACK_FIELD_NUMBER;
+          hash = (37 * hash) + MODIFY_ACK_FIELD_NUMBER;
           hash = (53 * hash) + getModifyAck().hashCode();
           break;
         case 4:
-          hash = (37 * hash) + NEWREJECT_FIELD_NUMBER;
+          hash = (37 * hash) + NEW_REJECT_FIELD_NUMBER;
           hash = (53 * hash) + getNewReject().hashCode();
           break;
         case 5:
-          hash = (37 * hash) + CANCELREJECT_FIELD_NUMBER;
+          hash = (37 * hash) + CANCEL_REJECT_FIELD_NUMBER;
           hash = (53 * hash) + getCancelReject().hashCode();
           break;
         case 6:
-          hash = (37 * hash) + MODIFYREJECT_FIELD_NUMBER;
+          hash = (37 * hash) + MODIFY_REJECT_FIELD_NUMBER;
           hash = (53 * hash) + getModifyReject().hashCode();
           break;
         case 7:
@@ -9280,7 +9405,7 @@ public final class Trade {
           hash = (53 * hash) + getPosition().hashCode();
           break;
         case 10:
-          hash = (37 * hash) + MASSCANCELACK_FIELD_NUMBER;
+          hash = (37 * hash) + MASS_CANCEL_ACK_FIELD_NUMBER;
           hash = (53 * hash) + getMassCancelAck().hashCode();
           break;
         case 0:
@@ -9572,27 +9697,27 @@ public final class Trade {
       public Builder mergeFrom(trade.Trade.OrderResponse other) {
         if (other == trade.Trade.OrderResponse.getDefaultInstance()) return this;
         switch (other.getInnerCase()) {
-          case NEWACK: {
+          case NEW_ACK: {
             mergeNewAck(other.getNewAck());
             break;
           }
-          case CANCELACK: {
+          case CANCEL_ACK: {
             mergeCancelAck(other.getCancelAck());
             break;
           }
-          case MODIFYACK: {
+          case MODIFY_ACK: {
             mergeModifyAck(other.getModifyAck());
             break;
           }
-          case NEWREJECT: {
+          case NEW_REJECT: {
             mergeNewReject(other.getNewReject());
             break;
           }
-          case CANCELREJECT: {
+          case CANCEL_REJECT: {
             mergeCancelReject(other.getCancelReject());
             break;
           }
-          case MODIFYREJECT: {
+          case MODIFY_REJECT: {
             mergeModifyReject(other.getModifyReject());
             break;
           }
@@ -9608,7 +9733,7 @@ public final class Trade {
             mergePosition(other.getPosition());
             break;
           }
-          case MASSCANCELACK: {
+          case MASS_CANCEL_ACK: {
             mergeMassCancelAck(other.getMassCancelAck());
             break;
           }
@@ -9663,7 +9788,7 @@ public final class Trade {
       private com.google.protobuf.SingleFieldBuilderV3<
           trade.Trade.NewOrderAck, trade.Trade.NewOrderAck.Builder, trade.Trade.NewOrderAckOrBuilder> newAckBuilder_;
       /**
-       * <code>.trade.NewOrderAck newAck = 1;</code>
+       * <code>.trade.NewOrderAck new_ack = 1;</code>
        * @return Whether the newAck field is set.
        */
       @java.lang.Override
@@ -9671,7 +9796,7 @@ public final class Trade {
         return innerCase_ == 1;
       }
       /**
-       * <code>.trade.NewOrderAck newAck = 1;</code>
+       * <code>.trade.NewOrderAck new_ack = 1;</code>
        * @return The newAck.
        */
       @java.lang.Override
@@ -9689,7 +9814,7 @@ public final class Trade {
         }
       }
       /**
-       * <code>.trade.NewOrderAck newAck = 1;</code>
+       * <code>.trade.NewOrderAck new_ack = 1;</code>
        */
       public Builder setNewAck(trade.Trade.NewOrderAck value) {
         if (newAckBuilder_ == null) {
@@ -9705,7 +9830,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.NewOrderAck newAck = 1;</code>
+       * <code>.trade.NewOrderAck new_ack = 1;</code>
        */
       public Builder setNewAck(
           trade.Trade.NewOrderAck.Builder builderForValue) {
@@ -9719,7 +9844,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.NewOrderAck newAck = 1;</code>
+       * <code>.trade.NewOrderAck new_ack = 1;</code>
        */
       public Builder mergeNewAck(trade.Trade.NewOrderAck value) {
         if (newAckBuilder_ == null) {
@@ -9741,7 +9866,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.NewOrderAck newAck = 1;</code>
+       * <code>.trade.NewOrderAck new_ack = 1;</code>
        */
       public Builder clearNewAck() {
         if (newAckBuilder_ == null) {
@@ -9760,13 +9885,13 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.NewOrderAck newAck = 1;</code>
+       * <code>.trade.NewOrderAck new_ack = 1;</code>
        */
       public trade.Trade.NewOrderAck.Builder getNewAckBuilder() {
         return getNewAckFieldBuilder().getBuilder();
       }
       /**
-       * <code>.trade.NewOrderAck newAck = 1;</code>
+       * <code>.trade.NewOrderAck new_ack = 1;</code>
        */
       @java.lang.Override
       public trade.Trade.NewOrderAckOrBuilder getNewAckOrBuilder() {
@@ -9780,7 +9905,7 @@ public final class Trade {
         }
       }
       /**
-       * <code>.trade.NewOrderAck newAck = 1;</code>
+       * <code>.trade.NewOrderAck new_ack = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           trade.Trade.NewOrderAck, trade.Trade.NewOrderAck.Builder, trade.Trade.NewOrderAckOrBuilder> 
@@ -9804,7 +9929,7 @@ public final class Trade {
       private com.google.protobuf.SingleFieldBuilderV3<
           trade.Trade.CancelOrderAck, trade.Trade.CancelOrderAck.Builder, trade.Trade.CancelOrderAckOrBuilder> cancelAckBuilder_;
       /**
-       * <code>.trade.CancelOrderAck cancelAck = 2;</code>
+       * <code>.trade.CancelOrderAck cancel_ack = 2;</code>
        * @return Whether the cancelAck field is set.
        */
       @java.lang.Override
@@ -9812,7 +9937,7 @@ public final class Trade {
         return innerCase_ == 2;
       }
       /**
-       * <code>.trade.CancelOrderAck cancelAck = 2;</code>
+       * <code>.trade.CancelOrderAck cancel_ack = 2;</code>
        * @return The cancelAck.
        */
       @java.lang.Override
@@ -9830,7 +9955,7 @@ public final class Trade {
         }
       }
       /**
-       * <code>.trade.CancelOrderAck cancelAck = 2;</code>
+       * <code>.trade.CancelOrderAck cancel_ack = 2;</code>
        */
       public Builder setCancelAck(trade.Trade.CancelOrderAck value) {
         if (cancelAckBuilder_ == null) {
@@ -9846,7 +9971,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.CancelOrderAck cancelAck = 2;</code>
+       * <code>.trade.CancelOrderAck cancel_ack = 2;</code>
        */
       public Builder setCancelAck(
           trade.Trade.CancelOrderAck.Builder builderForValue) {
@@ -9860,7 +9985,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.CancelOrderAck cancelAck = 2;</code>
+       * <code>.trade.CancelOrderAck cancel_ack = 2;</code>
        */
       public Builder mergeCancelAck(trade.Trade.CancelOrderAck value) {
         if (cancelAckBuilder_ == null) {
@@ -9882,7 +10007,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.CancelOrderAck cancelAck = 2;</code>
+       * <code>.trade.CancelOrderAck cancel_ack = 2;</code>
        */
       public Builder clearCancelAck() {
         if (cancelAckBuilder_ == null) {
@@ -9901,13 +10026,13 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.CancelOrderAck cancelAck = 2;</code>
+       * <code>.trade.CancelOrderAck cancel_ack = 2;</code>
        */
       public trade.Trade.CancelOrderAck.Builder getCancelAckBuilder() {
         return getCancelAckFieldBuilder().getBuilder();
       }
       /**
-       * <code>.trade.CancelOrderAck cancelAck = 2;</code>
+       * <code>.trade.CancelOrderAck cancel_ack = 2;</code>
        */
       @java.lang.Override
       public trade.Trade.CancelOrderAckOrBuilder getCancelAckOrBuilder() {
@@ -9921,7 +10046,7 @@ public final class Trade {
         }
       }
       /**
-       * <code>.trade.CancelOrderAck cancelAck = 2;</code>
+       * <code>.trade.CancelOrderAck cancel_ack = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           trade.Trade.CancelOrderAck, trade.Trade.CancelOrderAck.Builder, trade.Trade.CancelOrderAckOrBuilder> 
@@ -9945,7 +10070,7 @@ public final class Trade {
       private com.google.protobuf.SingleFieldBuilderV3<
           trade.Trade.ModifyOrderAck, trade.Trade.ModifyOrderAck.Builder, trade.Trade.ModifyOrderAckOrBuilder> modifyAckBuilder_;
       /**
-       * <code>.trade.ModifyOrderAck modifyAck = 3;</code>
+       * <code>.trade.ModifyOrderAck modify_ack = 3;</code>
        * @return Whether the modifyAck field is set.
        */
       @java.lang.Override
@@ -9953,7 +10078,7 @@ public final class Trade {
         return innerCase_ == 3;
       }
       /**
-       * <code>.trade.ModifyOrderAck modifyAck = 3;</code>
+       * <code>.trade.ModifyOrderAck modify_ack = 3;</code>
        * @return The modifyAck.
        */
       @java.lang.Override
@@ -9971,7 +10096,7 @@ public final class Trade {
         }
       }
       /**
-       * <code>.trade.ModifyOrderAck modifyAck = 3;</code>
+       * <code>.trade.ModifyOrderAck modify_ack = 3;</code>
        */
       public Builder setModifyAck(trade.Trade.ModifyOrderAck value) {
         if (modifyAckBuilder_ == null) {
@@ -9987,7 +10112,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.ModifyOrderAck modifyAck = 3;</code>
+       * <code>.trade.ModifyOrderAck modify_ack = 3;</code>
        */
       public Builder setModifyAck(
           trade.Trade.ModifyOrderAck.Builder builderForValue) {
@@ -10001,7 +10126,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.ModifyOrderAck modifyAck = 3;</code>
+       * <code>.trade.ModifyOrderAck modify_ack = 3;</code>
        */
       public Builder mergeModifyAck(trade.Trade.ModifyOrderAck value) {
         if (modifyAckBuilder_ == null) {
@@ -10023,7 +10148,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.ModifyOrderAck modifyAck = 3;</code>
+       * <code>.trade.ModifyOrderAck modify_ack = 3;</code>
        */
       public Builder clearModifyAck() {
         if (modifyAckBuilder_ == null) {
@@ -10042,13 +10167,13 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.ModifyOrderAck modifyAck = 3;</code>
+       * <code>.trade.ModifyOrderAck modify_ack = 3;</code>
        */
       public trade.Trade.ModifyOrderAck.Builder getModifyAckBuilder() {
         return getModifyAckFieldBuilder().getBuilder();
       }
       /**
-       * <code>.trade.ModifyOrderAck modifyAck = 3;</code>
+       * <code>.trade.ModifyOrderAck modify_ack = 3;</code>
        */
       @java.lang.Override
       public trade.Trade.ModifyOrderAckOrBuilder getModifyAckOrBuilder() {
@@ -10062,7 +10187,7 @@ public final class Trade {
         }
       }
       /**
-       * <code>.trade.ModifyOrderAck modifyAck = 3;</code>
+       * <code>.trade.ModifyOrderAck modify_ack = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           trade.Trade.ModifyOrderAck, trade.Trade.ModifyOrderAck.Builder, trade.Trade.ModifyOrderAckOrBuilder> 
@@ -10086,7 +10211,7 @@ public final class Trade {
       private com.google.protobuf.SingleFieldBuilderV3<
           trade.Trade.NewOrderReject, trade.Trade.NewOrderReject.Builder, trade.Trade.NewOrderRejectOrBuilder> newRejectBuilder_;
       /**
-       * <code>.trade.NewOrderReject newReject = 4;</code>
+       * <code>.trade.NewOrderReject new_reject = 4;</code>
        * @return Whether the newReject field is set.
        */
       @java.lang.Override
@@ -10094,7 +10219,7 @@ public final class Trade {
         return innerCase_ == 4;
       }
       /**
-       * <code>.trade.NewOrderReject newReject = 4;</code>
+       * <code>.trade.NewOrderReject new_reject = 4;</code>
        * @return The newReject.
        */
       @java.lang.Override
@@ -10112,7 +10237,7 @@ public final class Trade {
         }
       }
       /**
-       * <code>.trade.NewOrderReject newReject = 4;</code>
+       * <code>.trade.NewOrderReject new_reject = 4;</code>
        */
       public Builder setNewReject(trade.Trade.NewOrderReject value) {
         if (newRejectBuilder_ == null) {
@@ -10128,7 +10253,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.NewOrderReject newReject = 4;</code>
+       * <code>.trade.NewOrderReject new_reject = 4;</code>
        */
       public Builder setNewReject(
           trade.Trade.NewOrderReject.Builder builderForValue) {
@@ -10142,7 +10267,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.NewOrderReject newReject = 4;</code>
+       * <code>.trade.NewOrderReject new_reject = 4;</code>
        */
       public Builder mergeNewReject(trade.Trade.NewOrderReject value) {
         if (newRejectBuilder_ == null) {
@@ -10164,7 +10289,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.NewOrderReject newReject = 4;</code>
+       * <code>.trade.NewOrderReject new_reject = 4;</code>
        */
       public Builder clearNewReject() {
         if (newRejectBuilder_ == null) {
@@ -10183,13 +10308,13 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.NewOrderReject newReject = 4;</code>
+       * <code>.trade.NewOrderReject new_reject = 4;</code>
        */
       public trade.Trade.NewOrderReject.Builder getNewRejectBuilder() {
         return getNewRejectFieldBuilder().getBuilder();
       }
       /**
-       * <code>.trade.NewOrderReject newReject = 4;</code>
+       * <code>.trade.NewOrderReject new_reject = 4;</code>
        */
       @java.lang.Override
       public trade.Trade.NewOrderRejectOrBuilder getNewRejectOrBuilder() {
@@ -10203,7 +10328,7 @@ public final class Trade {
         }
       }
       /**
-       * <code>.trade.NewOrderReject newReject = 4;</code>
+       * <code>.trade.NewOrderReject new_reject = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           trade.Trade.NewOrderReject, trade.Trade.NewOrderReject.Builder, trade.Trade.NewOrderRejectOrBuilder> 
@@ -10227,7 +10352,7 @@ public final class Trade {
       private com.google.protobuf.SingleFieldBuilderV3<
           trade.Trade.CancelOrderReject, trade.Trade.CancelOrderReject.Builder, trade.Trade.CancelOrderRejectOrBuilder> cancelRejectBuilder_;
       /**
-       * <code>.trade.CancelOrderReject cancelReject = 5;</code>
+       * <code>.trade.CancelOrderReject cancel_reject = 5;</code>
        * @return Whether the cancelReject field is set.
        */
       @java.lang.Override
@@ -10235,7 +10360,7 @@ public final class Trade {
         return innerCase_ == 5;
       }
       /**
-       * <code>.trade.CancelOrderReject cancelReject = 5;</code>
+       * <code>.trade.CancelOrderReject cancel_reject = 5;</code>
        * @return The cancelReject.
        */
       @java.lang.Override
@@ -10253,7 +10378,7 @@ public final class Trade {
         }
       }
       /**
-       * <code>.trade.CancelOrderReject cancelReject = 5;</code>
+       * <code>.trade.CancelOrderReject cancel_reject = 5;</code>
        */
       public Builder setCancelReject(trade.Trade.CancelOrderReject value) {
         if (cancelRejectBuilder_ == null) {
@@ -10269,7 +10394,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.CancelOrderReject cancelReject = 5;</code>
+       * <code>.trade.CancelOrderReject cancel_reject = 5;</code>
        */
       public Builder setCancelReject(
           trade.Trade.CancelOrderReject.Builder builderForValue) {
@@ -10283,7 +10408,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.CancelOrderReject cancelReject = 5;</code>
+       * <code>.trade.CancelOrderReject cancel_reject = 5;</code>
        */
       public Builder mergeCancelReject(trade.Trade.CancelOrderReject value) {
         if (cancelRejectBuilder_ == null) {
@@ -10305,7 +10430,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.CancelOrderReject cancelReject = 5;</code>
+       * <code>.trade.CancelOrderReject cancel_reject = 5;</code>
        */
       public Builder clearCancelReject() {
         if (cancelRejectBuilder_ == null) {
@@ -10324,13 +10449,13 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.CancelOrderReject cancelReject = 5;</code>
+       * <code>.trade.CancelOrderReject cancel_reject = 5;</code>
        */
       public trade.Trade.CancelOrderReject.Builder getCancelRejectBuilder() {
         return getCancelRejectFieldBuilder().getBuilder();
       }
       /**
-       * <code>.trade.CancelOrderReject cancelReject = 5;</code>
+       * <code>.trade.CancelOrderReject cancel_reject = 5;</code>
        */
       @java.lang.Override
       public trade.Trade.CancelOrderRejectOrBuilder getCancelRejectOrBuilder() {
@@ -10344,7 +10469,7 @@ public final class Trade {
         }
       }
       /**
-       * <code>.trade.CancelOrderReject cancelReject = 5;</code>
+       * <code>.trade.CancelOrderReject cancel_reject = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           trade.Trade.CancelOrderReject, trade.Trade.CancelOrderReject.Builder, trade.Trade.CancelOrderRejectOrBuilder> 
@@ -10368,7 +10493,7 @@ public final class Trade {
       private com.google.protobuf.SingleFieldBuilderV3<
           trade.Trade.ModifyOrderReject, trade.Trade.ModifyOrderReject.Builder, trade.Trade.ModifyOrderRejectOrBuilder> modifyRejectBuilder_;
       /**
-       * <code>.trade.ModifyOrderReject modifyReject = 6;</code>
+       * <code>.trade.ModifyOrderReject modify_reject = 6;</code>
        * @return Whether the modifyReject field is set.
        */
       @java.lang.Override
@@ -10376,7 +10501,7 @@ public final class Trade {
         return innerCase_ == 6;
       }
       /**
-       * <code>.trade.ModifyOrderReject modifyReject = 6;</code>
+       * <code>.trade.ModifyOrderReject modify_reject = 6;</code>
        * @return The modifyReject.
        */
       @java.lang.Override
@@ -10394,7 +10519,7 @@ public final class Trade {
         }
       }
       /**
-       * <code>.trade.ModifyOrderReject modifyReject = 6;</code>
+       * <code>.trade.ModifyOrderReject modify_reject = 6;</code>
        */
       public Builder setModifyReject(trade.Trade.ModifyOrderReject value) {
         if (modifyRejectBuilder_ == null) {
@@ -10410,7 +10535,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.ModifyOrderReject modifyReject = 6;</code>
+       * <code>.trade.ModifyOrderReject modify_reject = 6;</code>
        */
       public Builder setModifyReject(
           trade.Trade.ModifyOrderReject.Builder builderForValue) {
@@ -10424,7 +10549,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.ModifyOrderReject modifyReject = 6;</code>
+       * <code>.trade.ModifyOrderReject modify_reject = 6;</code>
        */
       public Builder mergeModifyReject(trade.Trade.ModifyOrderReject value) {
         if (modifyRejectBuilder_ == null) {
@@ -10446,7 +10571,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.ModifyOrderReject modifyReject = 6;</code>
+       * <code>.trade.ModifyOrderReject modify_reject = 6;</code>
        */
       public Builder clearModifyReject() {
         if (modifyRejectBuilder_ == null) {
@@ -10465,13 +10590,13 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.ModifyOrderReject modifyReject = 6;</code>
+       * <code>.trade.ModifyOrderReject modify_reject = 6;</code>
        */
       public trade.Trade.ModifyOrderReject.Builder getModifyRejectBuilder() {
         return getModifyRejectFieldBuilder().getBuilder();
       }
       /**
-       * <code>.trade.ModifyOrderReject modifyReject = 6;</code>
+       * <code>.trade.ModifyOrderReject modify_reject = 6;</code>
        */
       @java.lang.Override
       public trade.Trade.ModifyOrderRejectOrBuilder getModifyRejectOrBuilder() {
@@ -10485,7 +10610,7 @@ public final class Trade {
         }
       }
       /**
-       * <code>.trade.ModifyOrderReject modifyReject = 6;</code>
+       * <code>.trade.ModifyOrderReject modify_reject = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           trade.Trade.ModifyOrderReject, trade.Trade.ModifyOrderReject.Builder, trade.Trade.ModifyOrderRejectOrBuilder> 
@@ -10932,7 +11057,7 @@ public final class Trade {
       private com.google.protobuf.SingleFieldBuilderV3<
           trade.Trade.MassCancelAck, trade.Trade.MassCancelAck.Builder, trade.Trade.MassCancelAckOrBuilder> massCancelAckBuilder_;
       /**
-       * <code>.trade.MassCancelAck massCancelAck = 10;</code>
+       * <code>.trade.MassCancelAck mass_cancel_ack = 10;</code>
        * @return Whether the massCancelAck field is set.
        */
       @java.lang.Override
@@ -10940,7 +11065,7 @@ public final class Trade {
         return innerCase_ == 10;
       }
       /**
-       * <code>.trade.MassCancelAck massCancelAck = 10;</code>
+       * <code>.trade.MassCancelAck mass_cancel_ack = 10;</code>
        * @return The massCancelAck.
        */
       @java.lang.Override
@@ -10958,7 +11083,7 @@ public final class Trade {
         }
       }
       /**
-       * <code>.trade.MassCancelAck massCancelAck = 10;</code>
+       * <code>.trade.MassCancelAck mass_cancel_ack = 10;</code>
        */
       public Builder setMassCancelAck(trade.Trade.MassCancelAck value) {
         if (massCancelAckBuilder_ == null) {
@@ -10974,7 +11099,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.MassCancelAck massCancelAck = 10;</code>
+       * <code>.trade.MassCancelAck mass_cancel_ack = 10;</code>
        */
       public Builder setMassCancelAck(
           trade.Trade.MassCancelAck.Builder builderForValue) {
@@ -10988,7 +11113,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.MassCancelAck massCancelAck = 10;</code>
+       * <code>.trade.MassCancelAck mass_cancel_ack = 10;</code>
        */
       public Builder mergeMassCancelAck(trade.Trade.MassCancelAck value) {
         if (massCancelAckBuilder_ == null) {
@@ -11010,7 +11135,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.MassCancelAck massCancelAck = 10;</code>
+       * <code>.trade.MassCancelAck mass_cancel_ack = 10;</code>
        */
       public Builder clearMassCancelAck() {
         if (massCancelAckBuilder_ == null) {
@@ -11029,13 +11154,13 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.MassCancelAck massCancelAck = 10;</code>
+       * <code>.trade.MassCancelAck mass_cancel_ack = 10;</code>
        */
       public trade.Trade.MassCancelAck.Builder getMassCancelAckBuilder() {
         return getMassCancelAckFieldBuilder().getBuilder();
       }
       /**
-       * <code>.trade.MassCancelAck massCancelAck = 10;</code>
+       * <code>.trade.MassCancelAck mass_cancel_ack = 10;</code>
        */
       @java.lang.Override
       public trade.Trade.MassCancelAckOrBuilder getMassCancelAckOrBuilder() {
@@ -11049,7 +11174,7 @@ public final class Trade {
         }
       }
       /**
-       * <code>.trade.MassCancelAck massCancelAck = 10;</code>
+       * <code>.trade.MassCancelAck mass_cancel_ack = 10;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           trade.Trade.MassCancelAck, trade.Trade.MassCancelAck.Builder, trade.Trade.MassCancelAckOrBuilder> 
@@ -11127,7 +11252,7 @@ public final class Trade {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 msgSeqNum = 1;</code>
+     * <code>uint64 msg_seq_num = 1;</code>
      * @return The msgSeqNum.
      */
     long getMsgSeqNum();
@@ -11137,7 +11262,7 @@ public final class Trade {
      * The client order ID specified in the new-order request.
      * </pre>
      *
-     * <code>uint64 clientOrderId = 2;</code>
+     * <code>uint64 client_order_id = 2;</code>
      * @return The clientOrderId.
      */
     long getClientOrderId();
@@ -11147,7 +11272,7 @@ public final class Trade {
      * The request ID specified in the new-order request.
      * </pre>
      *
-     * <code>uint64 requestId = 3;</code>
+     * <code>uint64 request_id = 3;</code>
      * @return The requestId.
      */
     long getRequestId();
@@ -11157,13 +11282,13 @@ public final class Trade {
      * [Exchange order ID](#exchange-order-id)
      * </pre>
      *
-     * <code>uint64 exchangeOrderId = 4;</code>
+     * <code>uint64 exchange_order_id = 4;</code>
      * @return The exchangeOrderId.
      */
     long getExchangeOrderId();
 
     /**
-     * <code>uint64 marketId = 5;</code>
+     * <code>uint64 market_id = 5;</code>
      * @return The marketId.
      */
     long getMarketId();
@@ -11211,23 +11336,23 @@ public final class Trade {
     trade.Trade.Side getSide();
 
     /**
-     * <code>.trade.TimeInForce timeInForce = 9;</code>
+     * <code>.trade.TimeInForce time_in_force = 9;</code>
      * @return The enum numeric value on the wire for timeInForce.
      */
     int getTimeInForceValue();
     /**
-     * <code>.trade.TimeInForce timeInForce = 9;</code>
+     * <code>.trade.TimeInForce time_in_force = 9;</code>
      * @return The timeInForce.
      */
     trade.Trade.TimeInForce getTimeInForce();
 
     /**
-     * <code>.trade.OrderType orderType = 10;</code>
+     * <code>.trade.OrderType order_type = 10;</code>
      * @return The enum numeric value on the wire for orderType.
      */
     int getOrderTypeValue();
     /**
-     * <code>.trade.OrderType orderType = 10;</code>
+     * <code>.trade.OrderType order_type = 10;</code>
      * @return The orderType.
      */
     trade.Trade.OrderType getOrderType();
@@ -11237,16 +11362,22 @@ public final class Trade {
      * [Transact time](#transact-time)
      * </pre>
      *
-     * <code>uint64 transactTime = 11;</code>
+     * <code>uint64 transact_time = 11;</code>
      * @return The transactTime.
      */
     long getTransactTime();
 
     /**
-     * <code>uint64 subaccountId = 12;</code>
+     * <code>uint64 subaccount_id = 12;</code>
      * @return The subaccountId.
      */
     long getSubaccountId();
+
+    /**
+     * <code>bool cancel_on_disconnect = 13;</code>
+     * @return The cancelOnDisconnect.
+     */
+    boolean getCancelOnDisconnect();
   }
   /**
    * <pre>
@@ -11365,6 +11496,11 @@ public final class Trade {
               subaccountId_ = input.readUInt64();
               break;
             }
+            case 104: {
+
+              cancelOnDisconnect_ = input.readBool();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -11398,10 +11534,10 @@ public final class Trade {
     }
 
     private int bitField0_;
-    public static final int MSGSEQNUM_FIELD_NUMBER = 1;
+    public static final int MSG_SEQ_NUM_FIELD_NUMBER = 1;
     private long msgSeqNum_;
     /**
-     * <code>uint64 msgSeqNum = 1;</code>
+     * <code>uint64 msg_seq_num = 1;</code>
      * @return The msgSeqNum.
      */
     @java.lang.Override
@@ -11409,14 +11545,14 @@ public final class Trade {
       return msgSeqNum_;
     }
 
-    public static final int CLIENTORDERID_FIELD_NUMBER = 2;
+    public static final int CLIENT_ORDER_ID_FIELD_NUMBER = 2;
     private long clientOrderId_;
     /**
      * <pre>
      * The client order ID specified in the new-order request.
      * </pre>
      *
-     * <code>uint64 clientOrderId = 2;</code>
+     * <code>uint64 client_order_id = 2;</code>
      * @return The clientOrderId.
      */
     @java.lang.Override
@@ -11424,14 +11560,14 @@ public final class Trade {
       return clientOrderId_;
     }
 
-    public static final int REQUESTID_FIELD_NUMBER = 3;
+    public static final int REQUEST_ID_FIELD_NUMBER = 3;
     private long requestId_;
     /**
      * <pre>
      * The request ID specified in the new-order request.
      * </pre>
      *
-     * <code>uint64 requestId = 3;</code>
+     * <code>uint64 request_id = 3;</code>
      * @return The requestId.
      */
     @java.lang.Override
@@ -11439,14 +11575,14 @@ public final class Trade {
       return requestId_;
     }
 
-    public static final int EXCHANGEORDERID_FIELD_NUMBER = 4;
+    public static final int EXCHANGE_ORDER_ID_FIELD_NUMBER = 4;
     private long exchangeOrderId_;
     /**
      * <pre>
      * [Exchange order ID](#exchange-order-id)
      * </pre>
      *
-     * <code>uint64 exchangeOrderId = 4;</code>
+     * <code>uint64 exchange_order_id = 4;</code>
      * @return The exchangeOrderId.
      */
     @java.lang.Override
@@ -11454,10 +11590,10 @@ public final class Trade {
       return exchangeOrderId_;
     }
 
-    public static final int MARKETID_FIELD_NUMBER = 5;
+    public static final int MARKET_ID_FIELD_NUMBER = 5;
     private long marketId_;
     /**
-     * <code>uint64 marketId = 5;</code>
+     * <code>uint64 market_id = 5;</code>
      * @return The marketId.
      */
     @java.lang.Override
@@ -11528,17 +11664,17 @@ public final class Trade {
       return result == null ? trade.Trade.Side.UNRECOGNIZED : result;
     }
 
-    public static final int TIMEINFORCE_FIELD_NUMBER = 9;
+    public static final int TIME_IN_FORCE_FIELD_NUMBER = 9;
     private int timeInForce_;
     /**
-     * <code>.trade.TimeInForce timeInForce = 9;</code>
+     * <code>.trade.TimeInForce time_in_force = 9;</code>
      * @return The enum numeric value on the wire for timeInForce.
      */
     @java.lang.Override public int getTimeInForceValue() {
       return timeInForce_;
     }
     /**
-     * <code>.trade.TimeInForce timeInForce = 9;</code>
+     * <code>.trade.TimeInForce time_in_force = 9;</code>
      * @return The timeInForce.
      */
     @java.lang.Override public trade.Trade.TimeInForce getTimeInForce() {
@@ -11547,17 +11683,17 @@ public final class Trade {
       return result == null ? trade.Trade.TimeInForce.UNRECOGNIZED : result;
     }
 
-    public static final int ORDERTYPE_FIELD_NUMBER = 10;
+    public static final int ORDER_TYPE_FIELD_NUMBER = 10;
     private int orderType_;
     /**
-     * <code>.trade.OrderType orderType = 10;</code>
+     * <code>.trade.OrderType order_type = 10;</code>
      * @return The enum numeric value on the wire for orderType.
      */
     @java.lang.Override public int getOrderTypeValue() {
       return orderType_;
     }
     /**
-     * <code>.trade.OrderType orderType = 10;</code>
+     * <code>.trade.OrderType order_type = 10;</code>
      * @return The orderType.
      */
     @java.lang.Override public trade.Trade.OrderType getOrderType() {
@@ -11566,14 +11702,14 @@ public final class Trade {
       return result == null ? trade.Trade.OrderType.UNRECOGNIZED : result;
     }
 
-    public static final int TRANSACTTIME_FIELD_NUMBER = 11;
+    public static final int TRANSACT_TIME_FIELD_NUMBER = 11;
     private long transactTime_;
     /**
      * <pre>
      * [Transact time](#transact-time)
      * </pre>
      *
-     * <code>uint64 transactTime = 11;</code>
+     * <code>uint64 transact_time = 11;</code>
      * @return The transactTime.
      */
     @java.lang.Override
@@ -11581,15 +11717,26 @@ public final class Trade {
       return transactTime_;
     }
 
-    public static final int SUBACCOUNTID_FIELD_NUMBER = 12;
+    public static final int SUBACCOUNT_ID_FIELD_NUMBER = 12;
     private long subaccountId_;
     /**
-     * <code>uint64 subaccountId = 12;</code>
+     * <code>uint64 subaccount_id = 12;</code>
      * @return The subaccountId.
      */
     @java.lang.Override
     public long getSubaccountId() {
       return subaccountId_;
+    }
+
+    public static final int CANCEL_ON_DISCONNECT_FIELD_NUMBER = 13;
+    private boolean cancelOnDisconnect_;
+    /**
+     * <code>bool cancel_on_disconnect = 13;</code>
+     * @return The cancelOnDisconnect.
+     */
+    @java.lang.Override
+    public boolean getCancelOnDisconnect() {
+      return cancelOnDisconnect_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -11641,6 +11788,9 @@ public final class Trade {
       }
       if (subaccountId_ != 0L) {
         output.writeUInt64(12, subaccountId_);
+      }
+      if (cancelOnDisconnect_ != false) {
+        output.writeBool(13, cancelOnDisconnect_);
       }
       unknownFields.writeTo(output);
     }
@@ -11699,6 +11849,10 @@ public final class Trade {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(12, subaccountId_);
       }
+      if (cancelOnDisconnect_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(13, cancelOnDisconnect_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -11738,6 +11892,8 @@ public final class Trade {
           != other.getTransactTime()) return false;
       if (getSubaccountId()
           != other.getSubaccountId()) return false;
+      if (getCancelOnDisconnect()
+          != other.getCancelOnDisconnect()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -11749,19 +11905,19 @@ public final class Trade {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MSGSEQNUM_FIELD_NUMBER;
+      hash = (37 * hash) + MSG_SEQ_NUM_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMsgSeqNum());
-      hash = (37 * hash) + CLIENTORDERID_FIELD_NUMBER;
+      hash = (37 * hash) + CLIENT_ORDER_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getClientOrderId());
-      hash = (37 * hash) + REQUESTID_FIELD_NUMBER;
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRequestId());
-      hash = (37 * hash) + EXCHANGEORDERID_FIELD_NUMBER;
+      hash = (37 * hash) + EXCHANGE_ORDER_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getExchangeOrderId());
-      hash = (37 * hash) + MARKETID_FIELD_NUMBER;
+      hash = (37 * hash) + MARKET_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMarketId());
       if (hasPrice()) {
@@ -11774,16 +11930,19 @@ public final class Trade {
           getQuantity());
       hash = (37 * hash) + SIDE_FIELD_NUMBER;
       hash = (53 * hash) + side_;
-      hash = (37 * hash) + TIMEINFORCE_FIELD_NUMBER;
+      hash = (37 * hash) + TIME_IN_FORCE_FIELD_NUMBER;
       hash = (53 * hash) + timeInForce_;
-      hash = (37 * hash) + ORDERTYPE_FIELD_NUMBER;
+      hash = (37 * hash) + ORDER_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + orderType_;
-      hash = (37 * hash) + TRANSACTTIME_FIELD_NUMBER;
+      hash = (37 * hash) + TRANSACT_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTransactTime());
-      hash = (37 * hash) + SUBACCOUNTID_FIELD_NUMBER;
+      hash = (37 * hash) + SUBACCOUNT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSubaccountId());
+      hash = (37 * hash) + CANCEL_ON_DISCONNECT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getCancelOnDisconnect());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11946,6 +12105,8 @@ public final class Trade {
 
         subaccountId_ = 0L;
 
+        cancelOnDisconnect_ = false;
+
         return this;
       }
 
@@ -11989,6 +12150,7 @@ public final class Trade {
         result.orderType_ = orderType_;
         result.transactTime_ = transactTime_;
         result.subaccountId_ = subaccountId_;
+        result.cancelOnDisconnect_ = cancelOnDisconnect_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -12074,6 +12236,9 @@ public final class Trade {
         if (other.getSubaccountId() != 0L) {
           setSubaccountId(other.getSubaccountId());
         }
+        if (other.getCancelOnDisconnect() != false) {
+          setCancelOnDisconnect(other.getCancelOnDisconnect());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -12106,7 +12271,7 @@ public final class Trade {
 
       private long msgSeqNum_ ;
       /**
-       * <code>uint64 msgSeqNum = 1;</code>
+       * <code>uint64 msg_seq_num = 1;</code>
        * @return The msgSeqNum.
        */
       @java.lang.Override
@@ -12114,7 +12279,7 @@ public final class Trade {
         return msgSeqNum_;
       }
       /**
-       * <code>uint64 msgSeqNum = 1;</code>
+       * <code>uint64 msg_seq_num = 1;</code>
        * @param value The msgSeqNum to set.
        * @return This builder for chaining.
        */
@@ -12125,7 +12290,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 msgSeqNum = 1;</code>
+       * <code>uint64 msg_seq_num = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearMsgSeqNum() {
@@ -12141,7 +12306,7 @@ public final class Trade {
        * The client order ID specified in the new-order request.
        * </pre>
        *
-       * <code>uint64 clientOrderId = 2;</code>
+       * <code>uint64 client_order_id = 2;</code>
        * @return The clientOrderId.
        */
       @java.lang.Override
@@ -12153,7 +12318,7 @@ public final class Trade {
        * The client order ID specified in the new-order request.
        * </pre>
        *
-       * <code>uint64 clientOrderId = 2;</code>
+       * <code>uint64 client_order_id = 2;</code>
        * @param value The clientOrderId to set.
        * @return This builder for chaining.
        */
@@ -12168,7 +12333,7 @@ public final class Trade {
        * The client order ID specified in the new-order request.
        * </pre>
        *
-       * <code>uint64 clientOrderId = 2;</code>
+       * <code>uint64 client_order_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearClientOrderId() {
@@ -12184,7 +12349,7 @@ public final class Trade {
        * The request ID specified in the new-order request.
        * </pre>
        *
-       * <code>uint64 requestId = 3;</code>
+       * <code>uint64 request_id = 3;</code>
        * @return The requestId.
        */
       @java.lang.Override
@@ -12196,7 +12361,7 @@ public final class Trade {
        * The request ID specified in the new-order request.
        * </pre>
        *
-       * <code>uint64 requestId = 3;</code>
+       * <code>uint64 request_id = 3;</code>
        * @param value The requestId to set.
        * @return This builder for chaining.
        */
@@ -12211,7 +12376,7 @@ public final class Trade {
        * The request ID specified in the new-order request.
        * </pre>
        *
-       * <code>uint64 requestId = 3;</code>
+       * <code>uint64 request_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearRequestId() {
@@ -12227,7 +12392,7 @@ public final class Trade {
        * [Exchange order ID](#exchange-order-id)
        * </pre>
        *
-       * <code>uint64 exchangeOrderId = 4;</code>
+       * <code>uint64 exchange_order_id = 4;</code>
        * @return The exchangeOrderId.
        */
       @java.lang.Override
@@ -12239,7 +12404,7 @@ public final class Trade {
        * [Exchange order ID](#exchange-order-id)
        * </pre>
        *
-       * <code>uint64 exchangeOrderId = 4;</code>
+       * <code>uint64 exchange_order_id = 4;</code>
        * @param value The exchangeOrderId to set.
        * @return This builder for chaining.
        */
@@ -12254,7 +12419,7 @@ public final class Trade {
        * [Exchange order ID](#exchange-order-id)
        * </pre>
        *
-       * <code>uint64 exchangeOrderId = 4;</code>
+       * <code>uint64 exchange_order_id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearExchangeOrderId() {
@@ -12266,7 +12431,7 @@ public final class Trade {
 
       private long marketId_ ;
       /**
-       * <code>uint64 marketId = 5;</code>
+       * <code>uint64 market_id = 5;</code>
        * @return The marketId.
        */
       @java.lang.Override
@@ -12274,7 +12439,7 @@ public final class Trade {
         return marketId_;
       }
       /**
-       * <code>uint64 marketId = 5;</code>
+       * <code>uint64 market_id = 5;</code>
        * @param value The marketId to set.
        * @return This builder for chaining.
        */
@@ -12285,7 +12450,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 marketId = 5;</code>
+       * <code>uint64 market_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearMarketId() {
@@ -12453,14 +12618,14 @@ public final class Trade {
 
       private int timeInForce_ = 0;
       /**
-       * <code>.trade.TimeInForce timeInForce = 9;</code>
+       * <code>.trade.TimeInForce time_in_force = 9;</code>
        * @return The enum numeric value on the wire for timeInForce.
        */
       @java.lang.Override public int getTimeInForceValue() {
         return timeInForce_;
       }
       /**
-       * <code>.trade.TimeInForce timeInForce = 9;</code>
+       * <code>.trade.TimeInForce time_in_force = 9;</code>
        * @param value The enum numeric value on the wire for timeInForce to set.
        * @return This builder for chaining.
        */
@@ -12471,7 +12636,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.TimeInForce timeInForce = 9;</code>
+       * <code>.trade.TimeInForce time_in_force = 9;</code>
        * @return The timeInForce.
        */
       @java.lang.Override
@@ -12481,7 +12646,7 @@ public final class Trade {
         return result == null ? trade.Trade.TimeInForce.UNRECOGNIZED : result;
       }
       /**
-       * <code>.trade.TimeInForce timeInForce = 9;</code>
+       * <code>.trade.TimeInForce time_in_force = 9;</code>
        * @param value The timeInForce to set.
        * @return This builder for chaining.
        */
@@ -12495,7 +12660,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.TimeInForce timeInForce = 9;</code>
+       * <code>.trade.TimeInForce time_in_force = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimeInForce() {
@@ -12507,14 +12672,14 @@ public final class Trade {
 
       private int orderType_ = 0;
       /**
-       * <code>.trade.OrderType orderType = 10;</code>
+       * <code>.trade.OrderType order_type = 10;</code>
        * @return The enum numeric value on the wire for orderType.
        */
       @java.lang.Override public int getOrderTypeValue() {
         return orderType_;
       }
       /**
-       * <code>.trade.OrderType orderType = 10;</code>
+       * <code>.trade.OrderType order_type = 10;</code>
        * @param value The enum numeric value on the wire for orderType to set.
        * @return This builder for chaining.
        */
@@ -12525,7 +12690,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.OrderType orderType = 10;</code>
+       * <code>.trade.OrderType order_type = 10;</code>
        * @return The orderType.
        */
       @java.lang.Override
@@ -12535,7 +12700,7 @@ public final class Trade {
         return result == null ? trade.Trade.OrderType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.trade.OrderType orderType = 10;</code>
+       * <code>.trade.OrderType order_type = 10;</code>
        * @param value The orderType to set.
        * @return This builder for chaining.
        */
@@ -12549,7 +12714,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.OrderType orderType = 10;</code>
+       * <code>.trade.OrderType order_type = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearOrderType() {
@@ -12565,7 +12730,7 @@ public final class Trade {
        * [Transact time](#transact-time)
        * </pre>
        *
-       * <code>uint64 transactTime = 11;</code>
+       * <code>uint64 transact_time = 11;</code>
        * @return The transactTime.
        */
       @java.lang.Override
@@ -12577,7 +12742,7 @@ public final class Trade {
        * [Transact time](#transact-time)
        * </pre>
        *
-       * <code>uint64 transactTime = 11;</code>
+       * <code>uint64 transact_time = 11;</code>
        * @param value The transactTime to set.
        * @return This builder for chaining.
        */
@@ -12592,7 +12757,7 @@ public final class Trade {
        * [Transact time](#transact-time)
        * </pre>
        *
-       * <code>uint64 transactTime = 11;</code>
+       * <code>uint64 transact_time = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearTransactTime() {
@@ -12604,7 +12769,7 @@ public final class Trade {
 
       private long subaccountId_ ;
       /**
-       * <code>uint64 subaccountId = 12;</code>
+       * <code>uint64 subaccount_id = 12;</code>
        * @return The subaccountId.
        */
       @java.lang.Override
@@ -12612,7 +12777,7 @@ public final class Trade {
         return subaccountId_;
       }
       /**
-       * <code>uint64 subaccountId = 12;</code>
+       * <code>uint64 subaccount_id = 12;</code>
        * @param value The subaccountId to set.
        * @return This builder for chaining.
        */
@@ -12623,12 +12788,43 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 subaccountId = 12;</code>
+       * <code>uint64 subaccount_id = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearSubaccountId() {
         
         subaccountId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private boolean cancelOnDisconnect_ ;
+      /**
+       * <code>bool cancel_on_disconnect = 13;</code>
+       * @return The cancelOnDisconnect.
+       */
+      @java.lang.Override
+      public boolean getCancelOnDisconnect() {
+        return cancelOnDisconnect_;
+      }
+      /**
+       * <code>bool cancel_on_disconnect = 13;</code>
+       * @param value The cancelOnDisconnect to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCancelOnDisconnect(boolean value) {
+        
+        cancelOnDisconnect_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool cancel_on_disconnect = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCancelOnDisconnect() {
+        
+        cancelOnDisconnect_ = false;
         onChanged();
         return this;
       }
@@ -12690,13 +12886,13 @@ public final class Trade {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 msgSeqNum = 1;</code>
+     * <code>uint64 msg_seq_num = 1;</code>
      * @return The msgSeqNum.
      */
     long getMsgSeqNum();
 
     /**
-     * <code>uint64 clientOrderId = 2;</code>
+     * <code>uint64 client_order_id = 2;</code>
      * @return The clientOrderId.
      */
     long getClientOrderId();
@@ -12706,10 +12902,10 @@ public final class Trade {
      * If the Reason is `DISCONNECT`, `IOC`, `STP_RESTING`, or `STP_AGGRESSING`,
      * this request ID will be `u64::MAX`. Otherwise, it will be the request ID of
      * the initiated cancel action. For a mass cancel, each cancel order ack will
-     * have the MassCancel's requestId.
+     * have the MassCancel's request_id.
      * </pre>
      *
-     * <code>uint64 requestId = 3;</code>
+     * <code>uint64 request_id = 3;</code>
      * @return The requestId.
      */
     long getRequestId();
@@ -12719,13 +12915,13 @@ public final class Trade {
      * [Transact time](#transact-time)
      * </pre>
      *
-     * <code>uint64 transactTime = 4;</code>
+     * <code>uint64 transact_time = 4;</code>
      * @return The transactTime.
      */
     long getTransactTime();
 
     /**
-     * <code>uint64 subaccountId = 5;</code>
+     * <code>uint64 subaccount_id = 5;</code>
      * @return The subaccountId.
      */
     long getSubaccountId();
@@ -12742,7 +12938,7 @@ public final class Trade {
     trade.Trade.CancelOrderAck.Reason getReason();
 
     /**
-     * <code>uint64 marketId = 7;</code>
+     * <code>uint64 market_id = 7;</code>
      * @return The marketId.
      */
     long getMarketId();
@@ -13059,10 +13255,10 @@ public final class Trade {
       // @@protoc_insertion_point(enum_scope:trade.CancelOrderAck.Reason)
     }
 
-    public static final int MSGSEQNUM_FIELD_NUMBER = 1;
+    public static final int MSG_SEQ_NUM_FIELD_NUMBER = 1;
     private long msgSeqNum_;
     /**
-     * <code>uint64 msgSeqNum = 1;</code>
+     * <code>uint64 msg_seq_num = 1;</code>
      * @return The msgSeqNum.
      */
     @java.lang.Override
@@ -13070,10 +13266,10 @@ public final class Trade {
       return msgSeqNum_;
     }
 
-    public static final int CLIENTORDERID_FIELD_NUMBER = 2;
+    public static final int CLIENT_ORDER_ID_FIELD_NUMBER = 2;
     private long clientOrderId_;
     /**
-     * <code>uint64 clientOrderId = 2;</code>
+     * <code>uint64 client_order_id = 2;</code>
      * @return The clientOrderId.
      */
     @java.lang.Override
@@ -13081,17 +13277,17 @@ public final class Trade {
       return clientOrderId_;
     }
 
-    public static final int REQUESTID_FIELD_NUMBER = 3;
+    public static final int REQUEST_ID_FIELD_NUMBER = 3;
     private long requestId_;
     /**
      * <pre>
      * If the Reason is `DISCONNECT`, `IOC`, `STP_RESTING`, or `STP_AGGRESSING`,
      * this request ID will be `u64::MAX`. Otherwise, it will be the request ID of
      * the initiated cancel action. For a mass cancel, each cancel order ack will
-     * have the MassCancel's requestId.
+     * have the MassCancel's request_id.
      * </pre>
      *
-     * <code>uint64 requestId = 3;</code>
+     * <code>uint64 request_id = 3;</code>
      * @return The requestId.
      */
     @java.lang.Override
@@ -13099,14 +13295,14 @@ public final class Trade {
       return requestId_;
     }
 
-    public static final int TRANSACTTIME_FIELD_NUMBER = 4;
+    public static final int TRANSACT_TIME_FIELD_NUMBER = 4;
     private long transactTime_;
     /**
      * <pre>
      * [Transact time](#transact-time)
      * </pre>
      *
-     * <code>uint64 transactTime = 4;</code>
+     * <code>uint64 transact_time = 4;</code>
      * @return The transactTime.
      */
     @java.lang.Override
@@ -13114,10 +13310,10 @@ public final class Trade {
       return transactTime_;
     }
 
-    public static final int SUBACCOUNTID_FIELD_NUMBER = 5;
+    public static final int SUBACCOUNT_ID_FIELD_NUMBER = 5;
     private long subaccountId_;
     /**
-     * <code>uint64 subaccountId = 5;</code>
+     * <code>uint64 subaccount_id = 5;</code>
      * @return The subaccountId.
      */
     @java.lang.Override
@@ -13144,10 +13340,10 @@ public final class Trade {
       return result == null ? trade.Trade.CancelOrderAck.Reason.UNRECOGNIZED : result;
     }
 
-    public static final int MARKETID_FIELD_NUMBER = 7;
+    public static final int MARKET_ID_FIELD_NUMBER = 7;
     private long marketId_;
     /**
-     * <code>uint64 marketId = 7;</code>
+     * <code>uint64 market_id = 7;</code>
      * @return The marketId.
      */
     @java.lang.Override
@@ -13266,24 +13462,24 @@ public final class Trade {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MSGSEQNUM_FIELD_NUMBER;
+      hash = (37 * hash) + MSG_SEQ_NUM_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMsgSeqNum());
-      hash = (37 * hash) + CLIENTORDERID_FIELD_NUMBER;
+      hash = (37 * hash) + CLIENT_ORDER_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getClientOrderId());
-      hash = (37 * hash) + REQUESTID_FIELD_NUMBER;
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRequestId());
-      hash = (37 * hash) + TRANSACTTIME_FIELD_NUMBER;
+      hash = (37 * hash) + TRANSACT_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTransactTime());
-      hash = (37 * hash) + SUBACCOUNTID_FIELD_NUMBER;
+      hash = (37 * hash) + SUBACCOUNT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSubaccountId());
       hash = (37 * hash) + REASON_FIELD_NUMBER;
       hash = (53 * hash) + reason_;
-      hash = (37 * hash) + MARKETID_FIELD_NUMBER;
+      hash = (37 * hash) + MARKET_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMarketId());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -13571,7 +13767,7 @@ public final class Trade {
 
       private long msgSeqNum_ ;
       /**
-       * <code>uint64 msgSeqNum = 1;</code>
+       * <code>uint64 msg_seq_num = 1;</code>
        * @return The msgSeqNum.
        */
       @java.lang.Override
@@ -13579,7 +13775,7 @@ public final class Trade {
         return msgSeqNum_;
       }
       /**
-       * <code>uint64 msgSeqNum = 1;</code>
+       * <code>uint64 msg_seq_num = 1;</code>
        * @param value The msgSeqNum to set.
        * @return This builder for chaining.
        */
@@ -13590,7 +13786,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 msgSeqNum = 1;</code>
+       * <code>uint64 msg_seq_num = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearMsgSeqNum() {
@@ -13602,7 +13798,7 @@ public final class Trade {
 
       private long clientOrderId_ ;
       /**
-       * <code>uint64 clientOrderId = 2;</code>
+       * <code>uint64 client_order_id = 2;</code>
        * @return The clientOrderId.
        */
       @java.lang.Override
@@ -13610,7 +13806,7 @@ public final class Trade {
         return clientOrderId_;
       }
       /**
-       * <code>uint64 clientOrderId = 2;</code>
+       * <code>uint64 client_order_id = 2;</code>
        * @param value The clientOrderId to set.
        * @return This builder for chaining.
        */
@@ -13621,7 +13817,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 clientOrderId = 2;</code>
+       * <code>uint64 client_order_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearClientOrderId() {
@@ -13637,10 +13833,10 @@ public final class Trade {
        * If the Reason is `DISCONNECT`, `IOC`, `STP_RESTING`, or `STP_AGGRESSING`,
        * this request ID will be `u64::MAX`. Otherwise, it will be the request ID of
        * the initiated cancel action. For a mass cancel, each cancel order ack will
-       * have the MassCancel's requestId.
+       * have the MassCancel's request_id.
        * </pre>
        *
-       * <code>uint64 requestId = 3;</code>
+       * <code>uint64 request_id = 3;</code>
        * @return The requestId.
        */
       @java.lang.Override
@@ -13652,10 +13848,10 @@ public final class Trade {
        * If the Reason is `DISCONNECT`, `IOC`, `STP_RESTING`, or `STP_AGGRESSING`,
        * this request ID will be `u64::MAX`. Otherwise, it will be the request ID of
        * the initiated cancel action. For a mass cancel, each cancel order ack will
-       * have the MassCancel's requestId.
+       * have the MassCancel's request_id.
        * </pre>
        *
-       * <code>uint64 requestId = 3;</code>
+       * <code>uint64 request_id = 3;</code>
        * @param value The requestId to set.
        * @return This builder for chaining.
        */
@@ -13670,10 +13866,10 @@ public final class Trade {
        * If the Reason is `DISCONNECT`, `IOC`, `STP_RESTING`, or `STP_AGGRESSING`,
        * this request ID will be `u64::MAX`. Otherwise, it will be the request ID of
        * the initiated cancel action. For a mass cancel, each cancel order ack will
-       * have the MassCancel's requestId.
+       * have the MassCancel's request_id.
        * </pre>
        *
-       * <code>uint64 requestId = 3;</code>
+       * <code>uint64 request_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearRequestId() {
@@ -13689,7 +13885,7 @@ public final class Trade {
        * [Transact time](#transact-time)
        * </pre>
        *
-       * <code>uint64 transactTime = 4;</code>
+       * <code>uint64 transact_time = 4;</code>
        * @return The transactTime.
        */
       @java.lang.Override
@@ -13701,7 +13897,7 @@ public final class Trade {
        * [Transact time](#transact-time)
        * </pre>
        *
-       * <code>uint64 transactTime = 4;</code>
+       * <code>uint64 transact_time = 4;</code>
        * @param value The transactTime to set.
        * @return This builder for chaining.
        */
@@ -13716,7 +13912,7 @@ public final class Trade {
        * [Transact time](#transact-time)
        * </pre>
        *
-       * <code>uint64 transactTime = 4;</code>
+       * <code>uint64 transact_time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTransactTime() {
@@ -13728,7 +13924,7 @@ public final class Trade {
 
       private long subaccountId_ ;
       /**
-       * <code>uint64 subaccountId = 5;</code>
+       * <code>uint64 subaccount_id = 5;</code>
        * @return The subaccountId.
        */
       @java.lang.Override
@@ -13736,7 +13932,7 @@ public final class Trade {
         return subaccountId_;
       }
       /**
-       * <code>uint64 subaccountId = 5;</code>
+       * <code>uint64 subaccount_id = 5;</code>
        * @param value The subaccountId to set.
        * @return This builder for chaining.
        */
@@ -13747,7 +13943,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 subaccountId = 5;</code>
+       * <code>uint64 subaccount_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearSubaccountId() {
@@ -13813,7 +14009,7 @@ public final class Trade {
 
       private long marketId_ ;
       /**
-       * <code>uint64 marketId = 7;</code>
+       * <code>uint64 market_id = 7;</code>
        * @return The marketId.
        */
       @java.lang.Override
@@ -13821,7 +14017,7 @@ public final class Trade {
         return marketId_;
       }
       /**
-       * <code>uint64 marketId = 7;</code>
+       * <code>uint64 market_id = 7;</code>
        * @param value The marketId to set.
        * @return This builder for chaining.
        */
@@ -13832,7 +14028,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 marketId = 7;</code>
+       * <code>uint64 market_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearMarketId() {
@@ -13899,13 +14095,13 @@ public final class Trade {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 msgSeqNum = 1;</code>
+     * <code>uint64 msg_seq_num = 1;</code>
      * @return The msgSeqNum.
      */
     long getMsgSeqNum();
 
     /**
-     * <code>uint64 clientOrderId = 2;</code>
+     * <code>uint64 client_order_id = 2;</code>
      * @return The clientOrderId.
      */
     long getClientOrderId();
@@ -13915,7 +14111,7 @@ public final class Trade {
      * The request ID specified in the modify request.
      * </pre>
      *
-     * <code>uint64 requestId = 3;</code>
+     * <code>uint64 request_id = 3;</code>
      * @return The requestId.
      */
     long getRequestId();
@@ -13925,30 +14121,29 @@ public final class Trade {
      * [Transact time](#transact-time)
      * </pre>
      *
-     * <code>uint64 transactTime = 4;</code>
+     * <code>uint64 transact_time = 4;</code>
      * @return The transactTime.
      */
     long getTransactTime();
 
     /**
      * <pre>
-     * The quantity submitted in the modify request after applying IFM
-     * logic.
+     * The quantity remaining on the book after applying the modify request.
      * </pre>
      *
-     * <code>uint64 newQuantity = 5;</code>
-     * @return The newQuantity.
+     * <code>uint64 remaining_quantity = 5;</code>
+     * @return The remainingQuantity.
      */
-    long getNewQuantity();
+    long getRemainingQuantity();
 
     /**
-     * <code>uint64 subaccountId = 6;</code>
+     * <code>uint64 subaccount_id = 6;</code>
      * @return The subaccountId.
      */
     long getSubaccountId();
 
     /**
-     * <code>uint64 marketId = 7;</code>
+     * <code>uint64 market_id = 7;</code>
      * @return The marketId.
      */
     long getMarketId();
@@ -13958,6 +14153,26 @@ public final class Trade {
      * @return The price.
      */
     long getPrice();
+
+    /**
+     * <pre>
+     * The quantity submitted in the modify request.
+     * </pre>
+     *
+     * <code>uint64 quantity = 9;</code>
+     * @return The quantity.
+     */
+    long getQuantity();
+
+    /**
+     * <pre>
+     * The cumulative filled quantity for this order.
+     * </pre>
+     *
+     * <code>uint64 cumulative_quantity = 10;</code>
+     * @return The cumulativeQuantity.
+     */
+    long getCumulativeQuantity();
   }
   /**
    * <pre>
@@ -14032,7 +14247,7 @@ public final class Trade {
             }
             case 40: {
 
-              newQuantity_ = input.readUInt64();
+              remainingQuantity_ = input.readUInt64();
               break;
             }
             case 48: {
@@ -14048,6 +14263,16 @@ public final class Trade {
             case 64: {
 
               price_ = input.readUInt64();
+              break;
+            }
+            case 72: {
+
+              quantity_ = input.readUInt64();
+              break;
+            }
+            case 80: {
+
+              cumulativeQuantity_ = input.readUInt64();
               break;
             }
             default: {
@@ -14082,10 +14307,10 @@ public final class Trade {
               trade.Trade.ModifyOrderAck.class, trade.Trade.ModifyOrderAck.Builder.class);
     }
 
-    public static final int MSGSEQNUM_FIELD_NUMBER = 1;
+    public static final int MSG_SEQ_NUM_FIELD_NUMBER = 1;
     private long msgSeqNum_;
     /**
-     * <code>uint64 msgSeqNum = 1;</code>
+     * <code>uint64 msg_seq_num = 1;</code>
      * @return The msgSeqNum.
      */
     @java.lang.Override
@@ -14093,10 +14318,10 @@ public final class Trade {
       return msgSeqNum_;
     }
 
-    public static final int CLIENTORDERID_FIELD_NUMBER = 2;
+    public static final int CLIENT_ORDER_ID_FIELD_NUMBER = 2;
     private long clientOrderId_;
     /**
-     * <code>uint64 clientOrderId = 2;</code>
+     * <code>uint64 client_order_id = 2;</code>
      * @return The clientOrderId.
      */
     @java.lang.Override
@@ -14104,14 +14329,14 @@ public final class Trade {
       return clientOrderId_;
     }
 
-    public static final int REQUESTID_FIELD_NUMBER = 3;
+    public static final int REQUEST_ID_FIELD_NUMBER = 3;
     private long requestId_;
     /**
      * <pre>
      * The request ID specified in the modify request.
      * </pre>
      *
-     * <code>uint64 requestId = 3;</code>
+     * <code>uint64 request_id = 3;</code>
      * @return The requestId.
      */
     @java.lang.Override
@@ -14119,14 +14344,14 @@ public final class Trade {
       return requestId_;
     }
 
-    public static final int TRANSACTTIME_FIELD_NUMBER = 4;
+    public static final int TRANSACT_TIME_FIELD_NUMBER = 4;
     private long transactTime_;
     /**
      * <pre>
      * [Transact time](#transact-time)
      * </pre>
      *
-     * <code>uint64 transactTime = 4;</code>
+     * <code>uint64 transact_time = 4;</code>
      * @return The transactTime.
      */
     @java.lang.Override
@@ -14134,26 +14359,25 @@ public final class Trade {
       return transactTime_;
     }
 
-    public static final int NEWQUANTITY_FIELD_NUMBER = 5;
-    private long newQuantity_;
+    public static final int REMAINING_QUANTITY_FIELD_NUMBER = 5;
+    private long remainingQuantity_;
     /**
      * <pre>
-     * The quantity submitted in the modify request after applying IFM
-     * logic.
+     * The quantity remaining on the book after applying the modify request.
      * </pre>
      *
-     * <code>uint64 newQuantity = 5;</code>
-     * @return The newQuantity.
+     * <code>uint64 remaining_quantity = 5;</code>
+     * @return The remainingQuantity.
      */
     @java.lang.Override
-    public long getNewQuantity() {
-      return newQuantity_;
+    public long getRemainingQuantity() {
+      return remainingQuantity_;
     }
 
-    public static final int SUBACCOUNTID_FIELD_NUMBER = 6;
+    public static final int SUBACCOUNT_ID_FIELD_NUMBER = 6;
     private long subaccountId_;
     /**
-     * <code>uint64 subaccountId = 6;</code>
+     * <code>uint64 subaccount_id = 6;</code>
      * @return The subaccountId.
      */
     @java.lang.Override
@@ -14161,10 +14385,10 @@ public final class Trade {
       return subaccountId_;
     }
 
-    public static final int MARKETID_FIELD_NUMBER = 7;
+    public static final int MARKET_ID_FIELD_NUMBER = 7;
     private long marketId_;
     /**
-     * <code>uint64 marketId = 7;</code>
+     * <code>uint64 market_id = 7;</code>
      * @return The marketId.
      */
     @java.lang.Override
@@ -14181,6 +14405,36 @@ public final class Trade {
     @java.lang.Override
     public long getPrice() {
       return price_;
+    }
+
+    public static final int QUANTITY_FIELD_NUMBER = 9;
+    private long quantity_;
+    /**
+     * <pre>
+     * The quantity submitted in the modify request.
+     * </pre>
+     *
+     * <code>uint64 quantity = 9;</code>
+     * @return The quantity.
+     */
+    @java.lang.Override
+    public long getQuantity() {
+      return quantity_;
+    }
+
+    public static final int CUMULATIVE_QUANTITY_FIELD_NUMBER = 10;
+    private long cumulativeQuantity_;
+    /**
+     * <pre>
+     * The cumulative filled quantity for this order.
+     * </pre>
+     *
+     * <code>uint64 cumulative_quantity = 10;</code>
+     * @return The cumulativeQuantity.
+     */
+    @java.lang.Override
+    public long getCumulativeQuantity() {
+      return cumulativeQuantity_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -14209,8 +14463,8 @@ public final class Trade {
       if (transactTime_ != 0L) {
         output.writeUInt64(4, transactTime_);
       }
-      if (newQuantity_ != 0L) {
-        output.writeUInt64(5, newQuantity_);
+      if (remainingQuantity_ != 0L) {
+        output.writeUInt64(5, remainingQuantity_);
       }
       if (subaccountId_ != 0L) {
         output.writeUInt64(6, subaccountId_);
@@ -14220,6 +14474,12 @@ public final class Trade {
       }
       if (price_ != 0L) {
         output.writeUInt64(8, price_);
+      }
+      if (quantity_ != 0L) {
+        output.writeUInt64(9, quantity_);
+      }
+      if (cumulativeQuantity_ != 0L) {
+        output.writeUInt64(10, cumulativeQuantity_);
       }
       unknownFields.writeTo(output);
     }
@@ -14246,9 +14506,9 @@ public final class Trade {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(4, transactTime_);
       }
-      if (newQuantity_ != 0L) {
+      if (remainingQuantity_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(5, newQuantity_);
+          .computeUInt64Size(5, remainingQuantity_);
       }
       if (subaccountId_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -14261,6 +14521,14 @@ public final class Trade {
       if (price_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(8, price_);
+      }
+      if (quantity_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(9, quantity_);
+      }
+      if (cumulativeQuantity_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(10, cumulativeQuantity_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -14285,14 +14553,18 @@ public final class Trade {
           != other.getRequestId()) return false;
       if (getTransactTime()
           != other.getTransactTime()) return false;
-      if (getNewQuantity()
-          != other.getNewQuantity()) return false;
+      if (getRemainingQuantity()
+          != other.getRemainingQuantity()) return false;
       if (getSubaccountId()
           != other.getSubaccountId()) return false;
       if (getMarketId()
           != other.getMarketId()) return false;
       if (getPrice()
           != other.getPrice()) return false;
+      if (getQuantity()
+          != other.getQuantity()) return false;
+      if (getCumulativeQuantity()
+          != other.getCumulativeQuantity()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -14304,30 +14576,36 @@ public final class Trade {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MSGSEQNUM_FIELD_NUMBER;
+      hash = (37 * hash) + MSG_SEQ_NUM_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMsgSeqNum());
-      hash = (37 * hash) + CLIENTORDERID_FIELD_NUMBER;
+      hash = (37 * hash) + CLIENT_ORDER_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getClientOrderId());
-      hash = (37 * hash) + REQUESTID_FIELD_NUMBER;
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRequestId());
-      hash = (37 * hash) + TRANSACTTIME_FIELD_NUMBER;
+      hash = (37 * hash) + TRANSACT_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTransactTime());
-      hash = (37 * hash) + NEWQUANTITY_FIELD_NUMBER;
+      hash = (37 * hash) + REMAINING_QUANTITY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getNewQuantity());
-      hash = (37 * hash) + SUBACCOUNTID_FIELD_NUMBER;
+          getRemainingQuantity());
+      hash = (37 * hash) + SUBACCOUNT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSubaccountId());
-      hash = (37 * hash) + MARKETID_FIELD_NUMBER;
+      hash = (37 * hash) + MARKET_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMarketId());
       hash = (37 * hash) + PRICE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getPrice());
+      hash = (37 * hash) + QUANTITY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getQuantity());
+      hash = (37 * hash) + CUMULATIVE_QUANTITY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCumulativeQuantity());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -14475,13 +14753,17 @@ public final class Trade {
 
         transactTime_ = 0L;
 
-        newQuantity_ = 0L;
+        remainingQuantity_ = 0L;
 
         subaccountId_ = 0L;
 
         marketId_ = 0L;
 
         price_ = 0L;
+
+        quantity_ = 0L;
+
+        cumulativeQuantity_ = 0L;
 
         return this;
       }
@@ -14513,10 +14795,12 @@ public final class Trade {
         result.clientOrderId_ = clientOrderId_;
         result.requestId_ = requestId_;
         result.transactTime_ = transactTime_;
-        result.newQuantity_ = newQuantity_;
+        result.remainingQuantity_ = remainingQuantity_;
         result.subaccountId_ = subaccountId_;
         result.marketId_ = marketId_;
         result.price_ = price_;
+        result.quantity_ = quantity_;
+        result.cumulativeQuantity_ = cumulativeQuantity_;
         onBuilt();
         return result;
       }
@@ -14577,8 +14861,8 @@ public final class Trade {
         if (other.getTransactTime() != 0L) {
           setTransactTime(other.getTransactTime());
         }
-        if (other.getNewQuantity() != 0L) {
-          setNewQuantity(other.getNewQuantity());
+        if (other.getRemainingQuantity() != 0L) {
+          setRemainingQuantity(other.getRemainingQuantity());
         }
         if (other.getSubaccountId() != 0L) {
           setSubaccountId(other.getSubaccountId());
@@ -14588,6 +14872,12 @@ public final class Trade {
         }
         if (other.getPrice() != 0L) {
           setPrice(other.getPrice());
+        }
+        if (other.getQuantity() != 0L) {
+          setQuantity(other.getQuantity());
+        }
+        if (other.getCumulativeQuantity() != 0L) {
+          setCumulativeQuantity(other.getCumulativeQuantity());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -14620,7 +14910,7 @@ public final class Trade {
 
       private long msgSeqNum_ ;
       /**
-       * <code>uint64 msgSeqNum = 1;</code>
+       * <code>uint64 msg_seq_num = 1;</code>
        * @return The msgSeqNum.
        */
       @java.lang.Override
@@ -14628,7 +14918,7 @@ public final class Trade {
         return msgSeqNum_;
       }
       /**
-       * <code>uint64 msgSeqNum = 1;</code>
+       * <code>uint64 msg_seq_num = 1;</code>
        * @param value The msgSeqNum to set.
        * @return This builder for chaining.
        */
@@ -14639,7 +14929,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 msgSeqNum = 1;</code>
+       * <code>uint64 msg_seq_num = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearMsgSeqNum() {
@@ -14651,7 +14941,7 @@ public final class Trade {
 
       private long clientOrderId_ ;
       /**
-       * <code>uint64 clientOrderId = 2;</code>
+       * <code>uint64 client_order_id = 2;</code>
        * @return The clientOrderId.
        */
       @java.lang.Override
@@ -14659,7 +14949,7 @@ public final class Trade {
         return clientOrderId_;
       }
       /**
-       * <code>uint64 clientOrderId = 2;</code>
+       * <code>uint64 client_order_id = 2;</code>
        * @param value The clientOrderId to set.
        * @return This builder for chaining.
        */
@@ -14670,7 +14960,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 clientOrderId = 2;</code>
+       * <code>uint64 client_order_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearClientOrderId() {
@@ -14686,7 +14976,7 @@ public final class Trade {
        * The request ID specified in the modify request.
        * </pre>
        *
-       * <code>uint64 requestId = 3;</code>
+       * <code>uint64 request_id = 3;</code>
        * @return The requestId.
        */
       @java.lang.Override
@@ -14698,7 +14988,7 @@ public final class Trade {
        * The request ID specified in the modify request.
        * </pre>
        *
-       * <code>uint64 requestId = 3;</code>
+       * <code>uint64 request_id = 3;</code>
        * @param value The requestId to set.
        * @return This builder for chaining.
        */
@@ -14713,7 +15003,7 @@ public final class Trade {
        * The request ID specified in the modify request.
        * </pre>
        *
-       * <code>uint64 requestId = 3;</code>
+       * <code>uint64 request_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearRequestId() {
@@ -14729,7 +15019,7 @@ public final class Trade {
        * [Transact time](#transact-time)
        * </pre>
        *
-       * <code>uint64 transactTime = 4;</code>
+       * <code>uint64 transact_time = 4;</code>
        * @return The transactTime.
        */
       @java.lang.Override
@@ -14741,7 +15031,7 @@ public final class Trade {
        * [Transact time](#transact-time)
        * </pre>
        *
-       * <code>uint64 transactTime = 4;</code>
+       * <code>uint64 transact_time = 4;</code>
        * @param value The transactTime to set.
        * @return This builder for chaining.
        */
@@ -14756,7 +15046,7 @@ public final class Trade {
        * [Transact time](#transact-time)
        * </pre>
        *
-       * <code>uint64 transactTime = 4;</code>
+       * <code>uint64 transact_time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTransactTime() {
@@ -14766,55 +15056,52 @@ public final class Trade {
         return this;
       }
 
-      private long newQuantity_ ;
+      private long remainingQuantity_ ;
       /**
        * <pre>
-       * The quantity submitted in the modify request after applying IFM
-       * logic.
+       * The quantity remaining on the book after applying the modify request.
        * </pre>
        *
-       * <code>uint64 newQuantity = 5;</code>
-       * @return The newQuantity.
+       * <code>uint64 remaining_quantity = 5;</code>
+       * @return The remainingQuantity.
        */
       @java.lang.Override
-      public long getNewQuantity() {
-        return newQuantity_;
+      public long getRemainingQuantity() {
+        return remainingQuantity_;
       }
       /**
        * <pre>
-       * The quantity submitted in the modify request after applying IFM
-       * logic.
+       * The quantity remaining on the book after applying the modify request.
        * </pre>
        *
-       * <code>uint64 newQuantity = 5;</code>
-       * @param value The newQuantity to set.
+       * <code>uint64 remaining_quantity = 5;</code>
+       * @param value The remainingQuantity to set.
        * @return This builder for chaining.
        */
-      public Builder setNewQuantity(long value) {
+      public Builder setRemainingQuantity(long value) {
         
-        newQuantity_ = value;
+        remainingQuantity_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The quantity submitted in the modify request after applying IFM
-       * logic.
+       * The quantity remaining on the book after applying the modify request.
        * </pre>
        *
-       * <code>uint64 newQuantity = 5;</code>
+       * <code>uint64 remaining_quantity = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearNewQuantity() {
+      public Builder clearRemainingQuantity() {
         
-        newQuantity_ = 0L;
+        remainingQuantity_ = 0L;
         onChanged();
         return this;
       }
 
       private long subaccountId_ ;
       /**
-       * <code>uint64 subaccountId = 6;</code>
+       * <code>uint64 subaccount_id = 6;</code>
        * @return The subaccountId.
        */
       @java.lang.Override
@@ -14822,7 +15109,7 @@ public final class Trade {
         return subaccountId_;
       }
       /**
-       * <code>uint64 subaccountId = 6;</code>
+       * <code>uint64 subaccount_id = 6;</code>
        * @param value The subaccountId to set.
        * @return This builder for chaining.
        */
@@ -14833,7 +15120,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 subaccountId = 6;</code>
+       * <code>uint64 subaccount_id = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearSubaccountId() {
@@ -14845,7 +15132,7 @@ public final class Trade {
 
       private long marketId_ ;
       /**
-       * <code>uint64 marketId = 7;</code>
+       * <code>uint64 market_id = 7;</code>
        * @return The marketId.
        */
       @java.lang.Override
@@ -14853,7 +15140,7 @@ public final class Trade {
         return marketId_;
       }
       /**
-       * <code>uint64 marketId = 7;</code>
+       * <code>uint64 market_id = 7;</code>
        * @param value The marketId to set.
        * @return This builder for chaining.
        */
@@ -14864,7 +15151,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 marketId = 7;</code>
+       * <code>uint64 market_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearMarketId() {
@@ -14901,6 +15188,92 @@ public final class Trade {
       public Builder clearPrice() {
         
         price_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long quantity_ ;
+      /**
+       * <pre>
+       * The quantity submitted in the modify request.
+       * </pre>
+       *
+       * <code>uint64 quantity = 9;</code>
+       * @return The quantity.
+       */
+      @java.lang.Override
+      public long getQuantity() {
+        return quantity_;
+      }
+      /**
+       * <pre>
+       * The quantity submitted in the modify request.
+       * </pre>
+       *
+       * <code>uint64 quantity = 9;</code>
+       * @param value The quantity to set.
+       * @return This builder for chaining.
+       */
+      public Builder setQuantity(long value) {
+        
+        quantity_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The quantity submitted in the modify request.
+       * </pre>
+       *
+       * <code>uint64 quantity = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearQuantity() {
+        
+        quantity_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long cumulativeQuantity_ ;
+      /**
+       * <pre>
+       * The cumulative filled quantity for this order.
+       * </pre>
+       *
+       * <code>uint64 cumulative_quantity = 10;</code>
+       * @return The cumulativeQuantity.
+       */
+      @java.lang.Override
+      public long getCumulativeQuantity() {
+        return cumulativeQuantity_;
+      }
+      /**
+       * <pre>
+       * The cumulative filled quantity for this order.
+       * </pre>
+       *
+       * <code>uint64 cumulative_quantity = 10;</code>
+       * @param value The cumulativeQuantity to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCumulativeQuantity(long value) {
+        
+        cumulativeQuantity_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The cumulative filled quantity for this order.
+       * </pre>
+       *
+       * <code>uint64 cumulative_quantity = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCumulativeQuantity() {
+        
+        cumulativeQuantity_ = 0L;
         onChanged();
         return this;
       }
@@ -14962,13 +15335,13 @@ public final class Trade {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 msgSeqNum = 1;</code>
+     * <code>uint64 msg_seq_num = 1;</code>
      * @return The msgSeqNum.
      */
     long getMsgSeqNum();
 
     /**
-     * <code>uint64 subaccountId = 2;</code>
+     * <code>uint64 subaccount_id = 2;</code>
      * @return The subaccountId.
      */
     long getSubaccountId();
@@ -14978,7 +15351,7 @@ public final class Trade {
      * The request ID specified in the mass-cancel request.
      * </pre>
      *
-     * <code>uint64 requestId = 3;</code>
+     * <code>uint64 request_id = 3;</code>
      * @return The requestId.
      */
     long getRequestId();
@@ -14988,7 +15361,7 @@ public final class Trade {
      * [Transact time](#transact-time)
      * </pre>
      *
-     * <code>uint64 transactTime = 4;</code>
+     * <code>uint64 transact_time = 4;</code>
      * @return The transactTime.
      */
     long getTransactTime();
@@ -15014,7 +15387,7 @@ public final class Trade {
      * The total number of orders that were canceled.
      * </pre>
      *
-     * <code>uint32 totalAffectedOrders = 7;</code>
+     * <code>uint32 total_affected_orders = 7;</code>
      * @return The totalAffectedOrders.
      */
     int getTotalAffectedOrders();
@@ -15253,10 +15626,10 @@ public final class Trade {
     }
 
     private int bitField0_;
-    public static final int MSGSEQNUM_FIELD_NUMBER = 1;
+    public static final int MSG_SEQ_NUM_FIELD_NUMBER = 1;
     private long msgSeqNum_;
     /**
-     * <code>uint64 msgSeqNum = 1;</code>
+     * <code>uint64 msg_seq_num = 1;</code>
      * @return The msgSeqNum.
      */
     @java.lang.Override
@@ -15264,10 +15637,10 @@ public final class Trade {
       return msgSeqNum_;
     }
 
-    public static final int SUBACCOUNTID_FIELD_NUMBER = 2;
+    public static final int SUBACCOUNT_ID_FIELD_NUMBER = 2;
     private long subaccountId_;
     /**
-     * <code>uint64 subaccountId = 2;</code>
+     * <code>uint64 subaccount_id = 2;</code>
      * @return The subaccountId.
      */
     @java.lang.Override
@@ -15275,14 +15648,14 @@ public final class Trade {
       return subaccountId_;
     }
 
-    public static final int REQUESTID_FIELD_NUMBER = 3;
+    public static final int REQUEST_ID_FIELD_NUMBER = 3;
     private long requestId_;
     /**
      * <pre>
      * The request ID specified in the mass-cancel request.
      * </pre>
      *
-     * <code>uint64 requestId = 3;</code>
+     * <code>uint64 request_id = 3;</code>
      * @return The requestId.
      */
     @java.lang.Override
@@ -15290,14 +15663,14 @@ public final class Trade {
       return requestId_;
     }
 
-    public static final int TRANSACTTIME_FIELD_NUMBER = 4;
+    public static final int TRANSACT_TIME_FIELD_NUMBER = 4;
     private long transactTime_;
     /**
      * <pre>
      * [Transact time](#transact-time)
      * </pre>
      *
-     * <code>uint64 transactTime = 4;</code>
+     * <code>uint64 transact_time = 4;</code>
      * @return The transactTime.
      */
     @java.lang.Override
@@ -15331,14 +15704,14 @@ public final class Trade {
       return result == null ? trade.Trade.MassCancelAck.Reason.UNRECOGNIZED : result;
     }
 
-    public static final int TOTALAFFECTEDORDERS_FIELD_NUMBER = 7;
+    public static final int TOTAL_AFFECTED_ORDERS_FIELD_NUMBER = 7;
     private int totalAffectedOrders_;
     /**
      * <pre>
      * The total number of orders that were canceled.
      * </pre>
      *
-     * <code>uint32 totalAffectedOrders = 7;</code>
+     * <code>uint32 total_affected_orders = 7;</code>
      * @return The totalAffectedOrders.
      */
     @java.lang.Override
@@ -15451,23 +15824,23 @@ public final class Trade {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MSGSEQNUM_FIELD_NUMBER;
+      hash = (37 * hash) + MSG_SEQ_NUM_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMsgSeqNum());
-      hash = (37 * hash) + SUBACCOUNTID_FIELD_NUMBER;
+      hash = (37 * hash) + SUBACCOUNT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSubaccountId());
-      hash = (37 * hash) + REQUESTID_FIELD_NUMBER;
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRequestId());
-      hash = (37 * hash) + TRANSACTTIME_FIELD_NUMBER;
+      hash = (37 * hash) + TRANSACT_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTransactTime());
       if (hasReason()) {
         hash = (37 * hash) + REASON_FIELD_NUMBER;
         hash = (53 * hash) + reason_;
       }
-      hash = (37 * hash) + TOTALAFFECTEDORDERS_FIELD_NUMBER;
+      hash = (37 * hash) + TOTAL_AFFECTED_ORDERS_FIELD_NUMBER;
       hash = (53 * hash) + getTotalAffectedOrders();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -15756,7 +16129,7 @@ public final class Trade {
 
       private long msgSeqNum_ ;
       /**
-       * <code>uint64 msgSeqNum = 1;</code>
+       * <code>uint64 msg_seq_num = 1;</code>
        * @return The msgSeqNum.
        */
       @java.lang.Override
@@ -15764,7 +16137,7 @@ public final class Trade {
         return msgSeqNum_;
       }
       /**
-       * <code>uint64 msgSeqNum = 1;</code>
+       * <code>uint64 msg_seq_num = 1;</code>
        * @param value The msgSeqNum to set.
        * @return This builder for chaining.
        */
@@ -15775,7 +16148,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 msgSeqNum = 1;</code>
+       * <code>uint64 msg_seq_num = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearMsgSeqNum() {
@@ -15787,7 +16160,7 @@ public final class Trade {
 
       private long subaccountId_ ;
       /**
-       * <code>uint64 subaccountId = 2;</code>
+       * <code>uint64 subaccount_id = 2;</code>
        * @return The subaccountId.
        */
       @java.lang.Override
@@ -15795,7 +16168,7 @@ public final class Trade {
         return subaccountId_;
       }
       /**
-       * <code>uint64 subaccountId = 2;</code>
+       * <code>uint64 subaccount_id = 2;</code>
        * @param value The subaccountId to set.
        * @return This builder for chaining.
        */
@@ -15806,7 +16179,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 subaccountId = 2;</code>
+       * <code>uint64 subaccount_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearSubaccountId() {
@@ -15822,7 +16195,7 @@ public final class Trade {
        * The request ID specified in the mass-cancel request.
        * </pre>
        *
-       * <code>uint64 requestId = 3;</code>
+       * <code>uint64 request_id = 3;</code>
        * @return The requestId.
        */
       @java.lang.Override
@@ -15834,7 +16207,7 @@ public final class Trade {
        * The request ID specified in the mass-cancel request.
        * </pre>
        *
-       * <code>uint64 requestId = 3;</code>
+       * <code>uint64 request_id = 3;</code>
        * @param value The requestId to set.
        * @return This builder for chaining.
        */
@@ -15849,7 +16222,7 @@ public final class Trade {
        * The request ID specified in the mass-cancel request.
        * </pre>
        *
-       * <code>uint64 requestId = 3;</code>
+       * <code>uint64 request_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearRequestId() {
@@ -15865,7 +16238,7 @@ public final class Trade {
        * [Transact time](#transact-time)
        * </pre>
        *
-       * <code>uint64 transactTime = 4;</code>
+       * <code>uint64 transact_time = 4;</code>
        * @return The transactTime.
        */
       @java.lang.Override
@@ -15877,7 +16250,7 @@ public final class Trade {
        * [Transact time](#transact-time)
        * </pre>
        *
-       * <code>uint64 transactTime = 4;</code>
+       * <code>uint64 transact_time = 4;</code>
        * @param value The transactTime to set.
        * @return This builder for chaining.
        */
@@ -15892,7 +16265,7 @@ public final class Trade {
        * [Transact time](#transact-time)
        * </pre>
        *
-       * <code>uint64 transactTime = 4;</code>
+       * <code>uint64 transact_time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTransactTime() {
@@ -15969,7 +16342,7 @@ public final class Trade {
        * The total number of orders that were canceled.
        * </pre>
        *
-       * <code>uint32 totalAffectedOrders = 7;</code>
+       * <code>uint32 total_affected_orders = 7;</code>
        * @return The totalAffectedOrders.
        */
       @java.lang.Override
@@ -15981,7 +16354,7 @@ public final class Trade {
        * The total number of orders that were canceled.
        * </pre>
        *
-       * <code>uint32 totalAffectedOrders = 7;</code>
+       * <code>uint32 total_affected_orders = 7;</code>
        * @param value The totalAffectedOrders to set.
        * @return This builder for chaining.
        */
@@ -15996,7 +16369,7 @@ public final class Trade {
        * The total number of orders that were canceled.
        * </pre>
        *
-       * <code>uint32 totalAffectedOrders = 7;</code>
+       * <code>uint32 total_affected_orders = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearTotalAffectedOrders() {
@@ -16063,7 +16436,7 @@ public final class Trade {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 msgSeqNum = 1;</code>
+     * <code>uint64 msg_seq_num = 1;</code>
      * @return The msgSeqNum.
      */
     long getMsgSeqNum();
@@ -16073,7 +16446,7 @@ public final class Trade {
      * The client order ID specified in the new-order request.
      * </pre>
      *
-     * <code>uint64 clientOrderId = 2;</code>
+     * <code>uint64 client_order_id = 2;</code>
      * @return The clientOrderId.
      */
     long getClientOrderId();
@@ -16083,7 +16456,7 @@ public final class Trade {
      * The request ID specified in the new-order request.
      * </pre>
      *
-     * <code>uint64 requestId = 3;</code>
+     * <code>uint64 request_id = 3;</code>
      * @return The requestId.
      */
     long getRequestId();
@@ -16093,13 +16466,13 @@ public final class Trade {
      * [Transact time](#transact-time)
      * </pre>
      *
-     * <code>uint64 transactTime = 4;</code>
+     * <code>uint64 transact_time = 4;</code>
      * @return The transactTime.
      */
     long getTransactTime();
 
     /**
-     * <code>uint64 subaccountId = 5;</code>
+     * <code>uint64 subaccount_id = 5;</code>
      * @return The subaccountId.
      */
     long getSubaccountId();
@@ -16116,7 +16489,7 @@ public final class Trade {
     trade.Trade.NewOrderReject.Reason getReason();
 
     /**
-     * <code>uint64 marketId = 7;</code>
+     * <code>uint64 market_id = 7;</code>
      * @return The marketId.
      */
     long getMarketId();
@@ -16150,23 +16523,23 @@ public final class Trade {
     trade.Trade.Side getSide();
 
     /**
-     * <code>.trade.TimeInForce timeInForce = 11;</code>
+     * <code>.trade.TimeInForce time_in_force = 11;</code>
      * @return The enum numeric value on the wire for timeInForce.
      */
     int getTimeInForceValue();
     /**
-     * <code>.trade.TimeInForce timeInForce = 11;</code>
+     * <code>.trade.TimeInForce time_in_force = 11;</code>
      * @return The timeInForce.
      */
     trade.Trade.TimeInForce getTimeInForce();
 
     /**
-     * <code>.trade.OrderType orderType = 12;</code>
+     * <code>.trade.OrderType order_type = 12;</code>
      * @return The enum numeric value on the wire for orderType.
      */
     int getOrderTypeValue();
     /**
-     * <code>.trade.OrderType orderType = 12;</code>
+     * <code>.trade.OrderType order_type = 12;</code>
      * @return The orderType.
      */
     trade.Trade.OrderType getOrderType();
@@ -16634,10 +17007,10 @@ public final class Trade {
     }
 
     private int bitField0_;
-    public static final int MSGSEQNUM_FIELD_NUMBER = 1;
+    public static final int MSG_SEQ_NUM_FIELD_NUMBER = 1;
     private long msgSeqNum_;
     /**
-     * <code>uint64 msgSeqNum = 1;</code>
+     * <code>uint64 msg_seq_num = 1;</code>
      * @return The msgSeqNum.
      */
     @java.lang.Override
@@ -16645,14 +17018,14 @@ public final class Trade {
       return msgSeqNum_;
     }
 
-    public static final int CLIENTORDERID_FIELD_NUMBER = 2;
+    public static final int CLIENT_ORDER_ID_FIELD_NUMBER = 2;
     private long clientOrderId_;
     /**
      * <pre>
      * The client order ID specified in the new-order request.
      * </pre>
      *
-     * <code>uint64 clientOrderId = 2;</code>
+     * <code>uint64 client_order_id = 2;</code>
      * @return The clientOrderId.
      */
     @java.lang.Override
@@ -16660,14 +17033,14 @@ public final class Trade {
       return clientOrderId_;
     }
 
-    public static final int REQUESTID_FIELD_NUMBER = 3;
+    public static final int REQUEST_ID_FIELD_NUMBER = 3;
     private long requestId_;
     /**
      * <pre>
      * The request ID specified in the new-order request.
      * </pre>
      *
-     * <code>uint64 requestId = 3;</code>
+     * <code>uint64 request_id = 3;</code>
      * @return The requestId.
      */
     @java.lang.Override
@@ -16675,14 +17048,14 @@ public final class Trade {
       return requestId_;
     }
 
-    public static final int TRANSACTTIME_FIELD_NUMBER = 4;
+    public static final int TRANSACT_TIME_FIELD_NUMBER = 4;
     private long transactTime_;
     /**
      * <pre>
      * [Transact time](#transact-time)
      * </pre>
      *
-     * <code>uint64 transactTime = 4;</code>
+     * <code>uint64 transact_time = 4;</code>
      * @return The transactTime.
      */
     @java.lang.Override
@@ -16690,10 +17063,10 @@ public final class Trade {
       return transactTime_;
     }
 
-    public static final int SUBACCOUNTID_FIELD_NUMBER = 5;
+    public static final int SUBACCOUNT_ID_FIELD_NUMBER = 5;
     private long subaccountId_;
     /**
-     * <code>uint64 subaccountId = 5;</code>
+     * <code>uint64 subaccount_id = 5;</code>
      * @return The subaccountId.
      */
     @java.lang.Override
@@ -16720,10 +17093,10 @@ public final class Trade {
       return result == null ? trade.Trade.NewOrderReject.Reason.UNRECOGNIZED : result;
     }
 
-    public static final int MARKETID_FIELD_NUMBER = 7;
+    public static final int MARKET_ID_FIELD_NUMBER = 7;
     private long marketId_;
     /**
-     * <code>uint64 marketId = 7;</code>
+     * <code>uint64 market_id = 7;</code>
      * @return The marketId.
      */
     @java.lang.Override
@@ -16780,17 +17153,17 @@ public final class Trade {
       return result == null ? trade.Trade.Side.UNRECOGNIZED : result;
     }
 
-    public static final int TIMEINFORCE_FIELD_NUMBER = 11;
+    public static final int TIME_IN_FORCE_FIELD_NUMBER = 11;
     private int timeInForce_;
     /**
-     * <code>.trade.TimeInForce timeInForce = 11;</code>
+     * <code>.trade.TimeInForce time_in_force = 11;</code>
      * @return The enum numeric value on the wire for timeInForce.
      */
     @java.lang.Override public int getTimeInForceValue() {
       return timeInForce_;
     }
     /**
-     * <code>.trade.TimeInForce timeInForce = 11;</code>
+     * <code>.trade.TimeInForce time_in_force = 11;</code>
      * @return The timeInForce.
      */
     @java.lang.Override public trade.Trade.TimeInForce getTimeInForce() {
@@ -16799,17 +17172,17 @@ public final class Trade {
       return result == null ? trade.Trade.TimeInForce.UNRECOGNIZED : result;
     }
 
-    public static final int ORDERTYPE_FIELD_NUMBER = 12;
+    public static final int ORDER_TYPE_FIELD_NUMBER = 12;
     private int orderType_;
     /**
-     * <code>.trade.OrderType orderType = 12;</code>
+     * <code>.trade.OrderType order_type = 12;</code>
      * @return The enum numeric value on the wire for orderType.
      */
     @java.lang.Override public int getOrderTypeValue() {
       return orderType_;
     }
     /**
-     * <code>.trade.OrderType orderType = 12;</code>
+     * <code>.trade.OrderType order_type = 12;</code>
      * @return The orderType.
      */
     @java.lang.Override public trade.Trade.OrderType getOrderType() {
@@ -16974,24 +17347,24 @@ public final class Trade {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MSGSEQNUM_FIELD_NUMBER;
+      hash = (37 * hash) + MSG_SEQ_NUM_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMsgSeqNum());
-      hash = (37 * hash) + CLIENTORDERID_FIELD_NUMBER;
+      hash = (37 * hash) + CLIENT_ORDER_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getClientOrderId());
-      hash = (37 * hash) + REQUESTID_FIELD_NUMBER;
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRequestId());
-      hash = (37 * hash) + TRANSACTTIME_FIELD_NUMBER;
+      hash = (37 * hash) + TRANSACT_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTransactTime());
-      hash = (37 * hash) + SUBACCOUNTID_FIELD_NUMBER;
+      hash = (37 * hash) + SUBACCOUNT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSubaccountId());
       hash = (37 * hash) + REASON_FIELD_NUMBER;
       hash = (53 * hash) + reason_;
-      hash = (37 * hash) + MARKETID_FIELD_NUMBER;
+      hash = (37 * hash) + MARKET_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMarketId());
       if (hasPrice()) {
@@ -17004,9 +17377,9 @@ public final class Trade {
           getQuantity());
       hash = (37 * hash) + SIDE_FIELD_NUMBER;
       hash = (53 * hash) + side_;
-      hash = (37 * hash) + TIMEINFORCE_FIELD_NUMBER;
+      hash = (37 * hash) + TIME_IN_FORCE_FIELD_NUMBER;
       hash = (53 * hash) + timeInForce_;
-      hash = (37 * hash) + ORDERTYPE_FIELD_NUMBER;
+      hash = (37 * hash) + ORDER_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + orderType_;
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -17329,7 +17702,7 @@ public final class Trade {
 
       private long msgSeqNum_ ;
       /**
-       * <code>uint64 msgSeqNum = 1;</code>
+       * <code>uint64 msg_seq_num = 1;</code>
        * @return The msgSeqNum.
        */
       @java.lang.Override
@@ -17337,7 +17710,7 @@ public final class Trade {
         return msgSeqNum_;
       }
       /**
-       * <code>uint64 msgSeqNum = 1;</code>
+       * <code>uint64 msg_seq_num = 1;</code>
        * @param value The msgSeqNum to set.
        * @return This builder for chaining.
        */
@@ -17348,7 +17721,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 msgSeqNum = 1;</code>
+       * <code>uint64 msg_seq_num = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearMsgSeqNum() {
@@ -17364,7 +17737,7 @@ public final class Trade {
        * The client order ID specified in the new-order request.
        * </pre>
        *
-       * <code>uint64 clientOrderId = 2;</code>
+       * <code>uint64 client_order_id = 2;</code>
        * @return The clientOrderId.
        */
       @java.lang.Override
@@ -17376,7 +17749,7 @@ public final class Trade {
        * The client order ID specified in the new-order request.
        * </pre>
        *
-       * <code>uint64 clientOrderId = 2;</code>
+       * <code>uint64 client_order_id = 2;</code>
        * @param value The clientOrderId to set.
        * @return This builder for chaining.
        */
@@ -17391,7 +17764,7 @@ public final class Trade {
        * The client order ID specified in the new-order request.
        * </pre>
        *
-       * <code>uint64 clientOrderId = 2;</code>
+       * <code>uint64 client_order_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearClientOrderId() {
@@ -17407,7 +17780,7 @@ public final class Trade {
        * The request ID specified in the new-order request.
        * </pre>
        *
-       * <code>uint64 requestId = 3;</code>
+       * <code>uint64 request_id = 3;</code>
        * @return The requestId.
        */
       @java.lang.Override
@@ -17419,7 +17792,7 @@ public final class Trade {
        * The request ID specified in the new-order request.
        * </pre>
        *
-       * <code>uint64 requestId = 3;</code>
+       * <code>uint64 request_id = 3;</code>
        * @param value The requestId to set.
        * @return This builder for chaining.
        */
@@ -17434,7 +17807,7 @@ public final class Trade {
        * The request ID specified in the new-order request.
        * </pre>
        *
-       * <code>uint64 requestId = 3;</code>
+       * <code>uint64 request_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearRequestId() {
@@ -17450,7 +17823,7 @@ public final class Trade {
        * [Transact time](#transact-time)
        * </pre>
        *
-       * <code>uint64 transactTime = 4;</code>
+       * <code>uint64 transact_time = 4;</code>
        * @return The transactTime.
        */
       @java.lang.Override
@@ -17462,7 +17835,7 @@ public final class Trade {
        * [Transact time](#transact-time)
        * </pre>
        *
-       * <code>uint64 transactTime = 4;</code>
+       * <code>uint64 transact_time = 4;</code>
        * @param value The transactTime to set.
        * @return This builder for chaining.
        */
@@ -17477,7 +17850,7 @@ public final class Trade {
        * [Transact time](#transact-time)
        * </pre>
        *
-       * <code>uint64 transactTime = 4;</code>
+       * <code>uint64 transact_time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTransactTime() {
@@ -17489,7 +17862,7 @@ public final class Trade {
 
       private long subaccountId_ ;
       /**
-       * <code>uint64 subaccountId = 5;</code>
+       * <code>uint64 subaccount_id = 5;</code>
        * @return The subaccountId.
        */
       @java.lang.Override
@@ -17497,7 +17870,7 @@ public final class Trade {
         return subaccountId_;
       }
       /**
-       * <code>uint64 subaccountId = 5;</code>
+       * <code>uint64 subaccount_id = 5;</code>
        * @param value The subaccountId to set.
        * @return This builder for chaining.
        */
@@ -17508,7 +17881,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 subaccountId = 5;</code>
+       * <code>uint64 subaccount_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearSubaccountId() {
@@ -17574,7 +17947,7 @@ public final class Trade {
 
       private long marketId_ ;
       /**
-       * <code>uint64 marketId = 7;</code>
+       * <code>uint64 market_id = 7;</code>
        * @return The marketId.
        */
       @java.lang.Override
@@ -17582,7 +17955,7 @@ public final class Trade {
         return marketId_;
       }
       /**
-       * <code>uint64 marketId = 7;</code>
+       * <code>uint64 market_id = 7;</code>
        * @param value The marketId to set.
        * @return This builder for chaining.
        */
@@ -17593,7 +17966,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 marketId = 7;</code>
+       * <code>uint64 market_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearMarketId() {
@@ -17729,14 +18102,14 @@ public final class Trade {
 
       private int timeInForce_ = 0;
       /**
-       * <code>.trade.TimeInForce timeInForce = 11;</code>
+       * <code>.trade.TimeInForce time_in_force = 11;</code>
        * @return The enum numeric value on the wire for timeInForce.
        */
       @java.lang.Override public int getTimeInForceValue() {
         return timeInForce_;
       }
       /**
-       * <code>.trade.TimeInForce timeInForce = 11;</code>
+       * <code>.trade.TimeInForce time_in_force = 11;</code>
        * @param value The enum numeric value on the wire for timeInForce to set.
        * @return This builder for chaining.
        */
@@ -17747,7 +18120,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.TimeInForce timeInForce = 11;</code>
+       * <code>.trade.TimeInForce time_in_force = 11;</code>
        * @return The timeInForce.
        */
       @java.lang.Override
@@ -17757,7 +18130,7 @@ public final class Trade {
         return result == null ? trade.Trade.TimeInForce.UNRECOGNIZED : result;
       }
       /**
-       * <code>.trade.TimeInForce timeInForce = 11;</code>
+       * <code>.trade.TimeInForce time_in_force = 11;</code>
        * @param value The timeInForce to set.
        * @return This builder for chaining.
        */
@@ -17771,7 +18144,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.TimeInForce timeInForce = 11;</code>
+       * <code>.trade.TimeInForce time_in_force = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimeInForce() {
@@ -17783,14 +18156,14 @@ public final class Trade {
 
       private int orderType_ = 0;
       /**
-       * <code>.trade.OrderType orderType = 12;</code>
+       * <code>.trade.OrderType order_type = 12;</code>
        * @return The enum numeric value on the wire for orderType.
        */
       @java.lang.Override public int getOrderTypeValue() {
         return orderType_;
       }
       /**
-       * <code>.trade.OrderType orderType = 12;</code>
+       * <code>.trade.OrderType order_type = 12;</code>
        * @param value The enum numeric value on the wire for orderType to set.
        * @return This builder for chaining.
        */
@@ -17801,7 +18174,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.OrderType orderType = 12;</code>
+       * <code>.trade.OrderType order_type = 12;</code>
        * @return The orderType.
        */
       @java.lang.Override
@@ -17811,7 +18184,7 @@ public final class Trade {
         return result == null ? trade.Trade.OrderType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.trade.OrderType orderType = 12;</code>
+       * <code>.trade.OrderType order_type = 12;</code>
        * @param value The orderType to set.
        * @return This builder for chaining.
        */
@@ -17825,7 +18198,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.OrderType orderType = 12;</code>
+       * <code>.trade.OrderType order_type = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearOrderType() {
@@ -17892,7 +18265,7 @@ public final class Trade {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 msgSeqNum = 1;</code>
+     * <code>uint64 msg_seq_num = 1;</code>
      * @return The msgSeqNum.
      */
     long getMsgSeqNum();
@@ -17902,7 +18275,7 @@ public final class Trade {
      * The client order ID specified in the cancel-order request.
      * </pre>
      *
-     * <code>uint64 clientOrderId = 2;</code>
+     * <code>uint64 client_order_id = 2;</code>
      * @return The clientOrderId.
      */
     long getClientOrderId();
@@ -17912,7 +18285,7 @@ public final class Trade {
      * The request ID specified in the cancel-order request.
      * </pre>
      *
-     * <code>uint64 requestId = 3;</code>
+     * <code>uint64 request_id = 3;</code>
      * @return The requestId.
      */
     long getRequestId();
@@ -17922,13 +18295,13 @@ public final class Trade {
      * [Transact time](#transact-time)
      * </pre>
      *
-     * <code>uint64 transactTime = 4;</code>
+     * <code>uint64 transact_time = 4;</code>
      * @return The transactTime.
      */
     long getTransactTime();
 
     /**
-     * <code>uint64 subaccountId = 5;</code>
+     * <code>uint64 subaccount_id = 5;</code>
      * @return The subaccountId.
      */
     long getSubaccountId();
@@ -17945,7 +18318,7 @@ public final class Trade {
     trade.Trade.CancelOrderReject.Reason getReason();
 
     /**
-     * <code>uint64 marketId = 7;</code>
+     * <code>uint64 market_id = 7;</code>
      * @return The marketId.
      */
     long getMarketId();
@@ -18203,10 +18576,10 @@ public final class Trade {
       // @@protoc_insertion_point(enum_scope:trade.CancelOrderReject.Reason)
     }
 
-    public static final int MSGSEQNUM_FIELD_NUMBER = 1;
+    public static final int MSG_SEQ_NUM_FIELD_NUMBER = 1;
     private long msgSeqNum_;
     /**
-     * <code>uint64 msgSeqNum = 1;</code>
+     * <code>uint64 msg_seq_num = 1;</code>
      * @return The msgSeqNum.
      */
     @java.lang.Override
@@ -18214,14 +18587,14 @@ public final class Trade {
       return msgSeqNum_;
     }
 
-    public static final int CLIENTORDERID_FIELD_NUMBER = 2;
+    public static final int CLIENT_ORDER_ID_FIELD_NUMBER = 2;
     private long clientOrderId_;
     /**
      * <pre>
      * The client order ID specified in the cancel-order request.
      * </pre>
      *
-     * <code>uint64 clientOrderId = 2;</code>
+     * <code>uint64 client_order_id = 2;</code>
      * @return The clientOrderId.
      */
     @java.lang.Override
@@ -18229,14 +18602,14 @@ public final class Trade {
       return clientOrderId_;
     }
 
-    public static final int REQUESTID_FIELD_NUMBER = 3;
+    public static final int REQUEST_ID_FIELD_NUMBER = 3;
     private long requestId_;
     /**
      * <pre>
      * The request ID specified in the cancel-order request.
      * </pre>
      *
-     * <code>uint64 requestId = 3;</code>
+     * <code>uint64 request_id = 3;</code>
      * @return The requestId.
      */
     @java.lang.Override
@@ -18244,14 +18617,14 @@ public final class Trade {
       return requestId_;
     }
 
-    public static final int TRANSACTTIME_FIELD_NUMBER = 4;
+    public static final int TRANSACT_TIME_FIELD_NUMBER = 4;
     private long transactTime_;
     /**
      * <pre>
      * [Transact time](#transact-time)
      * </pre>
      *
-     * <code>uint64 transactTime = 4;</code>
+     * <code>uint64 transact_time = 4;</code>
      * @return The transactTime.
      */
     @java.lang.Override
@@ -18259,10 +18632,10 @@ public final class Trade {
       return transactTime_;
     }
 
-    public static final int SUBACCOUNTID_FIELD_NUMBER = 5;
+    public static final int SUBACCOUNT_ID_FIELD_NUMBER = 5;
     private long subaccountId_;
     /**
-     * <code>uint64 subaccountId = 5;</code>
+     * <code>uint64 subaccount_id = 5;</code>
      * @return The subaccountId.
      */
     @java.lang.Override
@@ -18289,10 +18662,10 @@ public final class Trade {
       return result == null ? trade.Trade.CancelOrderReject.Reason.UNRECOGNIZED : result;
     }
 
-    public static final int MARKETID_FIELD_NUMBER = 7;
+    public static final int MARKET_ID_FIELD_NUMBER = 7;
     private long marketId_;
     /**
-     * <code>uint64 marketId = 7;</code>
+     * <code>uint64 market_id = 7;</code>
      * @return The marketId.
      */
     @java.lang.Override
@@ -18411,24 +18784,24 @@ public final class Trade {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MSGSEQNUM_FIELD_NUMBER;
+      hash = (37 * hash) + MSG_SEQ_NUM_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMsgSeqNum());
-      hash = (37 * hash) + CLIENTORDERID_FIELD_NUMBER;
+      hash = (37 * hash) + CLIENT_ORDER_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getClientOrderId());
-      hash = (37 * hash) + REQUESTID_FIELD_NUMBER;
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRequestId());
-      hash = (37 * hash) + TRANSACTTIME_FIELD_NUMBER;
+      hash = (37 * hash) + TRANSACT_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTransactTime());
-      hash = (37 * hash) + SUBACCOUNTID_FIELD_NUMBER;
+      hash = (37 * hash) + SUBACCOUNT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSubaccountId());
       hash = (37 * hash) + REASON_FIELD_NUMBER;
       hash = (53 * hash) + reason_;
-      hash = (37 * hash) + MARKETID_FIELD_NUMBER;
+      hash = (37 * hash) + MARKET_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMarketId());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -18715,7 +19088,7 @@ public final class Trade {
 
       private long msgSeqNum_ ;
       /**
-       * <code>uint64 msgSeqNum = 1;</code>
+       * <code>uint64 msg_seq_num = 1;</code>
        * @return The msgSeqNum.
        */
       @java.lang.Override
@@ -18723,7 +19096,7 @@ public final class Trade {
         return msgSeqNum_;
       }
       /**
-       * <code>uint64 msgSeqNum = 1;</code>
+       * <code>uint64 msg_seq_num = 1;</code>
        * @param value The msgSeqNum to set.
        * @return This builder for chaining.
        */
@@ -18734,7 +19107,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 msgSeqNum = 1;</code>
+       * <code>uint64 msg_seq_num = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearMsgSeqNum() {
@@ -18750,7 +19123,7 @@ public final class Trade {
        * The client order ID specified in the cancel-order request.
        * </pre>
        *
-       * <code>uint64 clientOrderId = 2;</code>
+       * <code>uint64 client_order_id = 2;</code>
        * @return The clientOrderId.
        */
       @java.lang.Override
@@ -18762,7 +19135,7 @@ public final class Trade {
        * The client order ID specified in the cancel-order request.
        * </pre>
        *
-       * <code>uint64 clientOrderId = 2;</code>
+       * <code>uint64 client_order_id = 2;</code>
        * @param value The clientOrderId to set.
        * @return This builder for chaining.
        */
@@ -18777,7 +19150,7 @@ public final class Trade {
        * The client order ID specified in the cancel-order request.
        * </pre>
        *
-       * <code>uint64 clientOrderId = 2;</code>
+       * <code>uint64 client_order_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearClientOrderId() {
@@ -18793,7 +19166,7 @@ public final class Trade {
        * The request ID specified in the cancel-order request.
        * </pre>
        *
-       * <code>uint64 requestId = 3;</code>
+       * <code>uint64 request_id = 3;</code>
        * @return The requestId.
        */
       @java.lang.Override
@@ -18805,7 +19178,7 @@ public final class Trade {
        * The request ID specified in the cancel-order request.
        * </pre>
        *
-       * <code>uint64 requestId = 3;</code>
+       * <code>uint64 request_id = 3;</code>
        * @param value The requestId to set.
        * @return This builder for chaining.
        */
@@ -18820,7 +19193,7 @@ public final class Trade {
        * The request ID specified in the cancel-order request.
        * </pre>
        *
-       * <code>uint64 requestId = 3;</code>
+       * <code>uint64 request_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearRequestId() {
@@ -18836,7 +19209,7 @@ public final class Trade {
        * [Transact time](#transact-time)
        * </pre>
        *
-       * <code>uint64 transactTime = 4;</code>
+       * <code>uint64 transact_time = 4;</code>
        * @return The transactTime.
        */
       @java.lang.Override
@@ -18848,7 +19221,7 @@ public final class Trade {
        * [Transact time](#transact-time)
        * </pre>
        *
-       * <code>uint64 transactTime = 4;</code>
+       * <code>uint64 transact_time = 4;</code>
        * @param value The transactTime to set.
        * @return This builder for chaining.
        */
@@ -18863,7 +19236,7 @@ public final class Trade {
        * [Transact time](#transact-time)
        * </pre>
        *
-       * <code>uint64 transactTime = 4;</code>
+       * <code>uint64 transact_time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTransactTime() {
@@ -18875,7 +19248,7 @@ public final class Trade {
 
       private long subaccountId_ ;
       /**
-       * <code>uint64 subaccountId = 5;</code>
+       * <code>uint64 subaccount_id = 5;</code>
        * @return The subaccountId.
        */
       @java.lang.Override
@@ -18883,7 +19256,7 @@ public final class Trade {
         return subaccountId_;
       }
       /**
-       * <code>uint64 subaccountId = 5;</code>
+       * <code>uint64 subaccount_id = 5;</code>
        * @param value The subaccountId to set.
        * @return This builder for chaining.
        */
@@ -18894,7 +19267,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 subaccountId = 5;</code>
+       * <code>uint64 subaccount_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearSubaccountId() {
@@ -18960,7 +19333,7 @@ public final class Trade {
 
       private long marketId_ ;
       /**
-       * <code>uint64 marketId = 7;</code>
+       * <code>uint64 market_id = 7;</code>
        * @return The marketId.
        */
       @java.lang.Override
@@ -18968,7 +19341,7 @@ public final class Trade {
         return marketId_;
       }
       /**
-       * <code>uint64 marketId = 7;</code>
+       * <code>uint64 market_id = 7;</code>
        * @param value The marketId to set.
        * @return This builder for chaining.
        */
@@ -18979,7 +19352,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 marketId = 7;</code>
+       * <code>uint64 market_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearMarketId() {
@@ -19046,7 +19419,7 @@ public final class Trade {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 msgSeqNum = 1;</code>
+     * <code>uint64 msg_seq_num = 1;</code>
      * @return The msgSeqNum.
      */
     long getMsgSeqNum();
@@ -19056,7 +19429,7 @@ public final class Trade {
      * The client order ID specified in the modify-order request.
      * </pre>
      *
-     * <code>uint64 clientOrderId = 2;</code>
+     * <code>uint64 client_order_id = 2;</code>
      * @return The clientOrderId.
      */
     long getClientOrderId();
@@ -19066,7 +19439,7 @@ public final class Trade {
      * The request ID specified in the modify-order request.
      * </pre>
      *
-     * <code>uint64 requestId = 3;</code>
+     * <code>uint64 request_id = 3;</code>
      * @return The requestId.
      */
     long getRequestId();
@@ -19076,13 +19449,13 @@ public final class Trade {
      * [Transact time](#transact-time)
      * </pre>
      *
-     * <code>uint64 transactTime = 4;</code>
+     * <code>uint64 transact_time = 4;</code>
      * @return The transactTime.
      */
     long getTransactTime();
 
     /**
-     * <code>uint64 subaccountId = 5;</code>
+     * <code>uint64 subaccount_id = 5;</code>
      * @return The subaccountId.
      */
     long getSubaccountId();
@@ -19099,7 +19472,7 @@ public final class Trade {
     trade.Trade.ModifyOrderReject.Reason getReason();
 
     /**
-     * <code>uint64 marketId = 7;</code>
+     * <code>uint64 market_id = 7;</code>
      * @return The marketId.
      */
     long getMarketId();
@@ -19463,10 +19836,10 @@ public final class Trade {
       // @@protoc_insertion_point(enum_scope:trade.ModifyOrderReject.Reason)
     }
 
-    public static final int MSGSEQNUM_FIELD_NUMBER = 1;
+    public static final int MSG_SEQ_NUM_FIELD_NUMBER = 1;
     private long msgSeqNum_;
     /**
-     * <code>uint64 msgSeqNum = 1;</code>
+     * <code>uint64 msg_seq_num = 1;</code>
      * @return The msgSeqNum.
      */
     @java.lang.Override
@@ -19474,14 +19847,14 @@ public final class Trade {
       return msgSeqNum_;
     }
 
-    public static final int CLIENTORDERID_FIELD_NUMBER = 2;
+    public static final int CLIENT_ORDER_ID_FIELD_NUMBER = 2;
     private long clientOrderId_;
     /**
      * <pre>
      * The client order ID specified in the modify-order request.
      * </pre>
      *
-     * <code>uint64 clientOrderId = 2;</code>
+     * <code>uint64 client_order_id = 2;</code>
      * @return The clientOrderId.
      */
     @java.lang.Override
@@ -19489,14 +19862,14 @@ public final class Trade {
       return clientOrderId_;
     }
 
-    public static final int REQUESTID_FIELD_NUMBER = 3;
+    public static final int REQUEST_ID_FIELD_NUMBER = 3;
     private long requestId_;
     /**
      * <pre>
      * The request ID specified in the modify-order request.
      * </pre>
      *
-     * <code>uint64 requestId = 3;</code>
+     * <code>uint64 request_id = 3;</code>
      * @return The requestId.
      */
     @java.lang.Override
@@ -19504,14 +19877,14 @@ public final class Trade {
       return requestId_;
     }
 
-    public static final int TRANSACTTIME_FIELD_NUMBER = 4;
+    public static final int TRANSACT_TIME_FIELD_NUMBER = 4;
     private long transactTime_;
     /**
      * <pre>
      * [Transact time](#transact-time)
      * </pre>
      *
-     * <code>uint64 transactTime = 4;</code>
+     * <code>uint64 transact_time = 4;</code>
      * @return The transactTime.
      */
     @java.lang.Override
@@ -19519,10 +19892,10 @@ public final class Trade {
       return transactTime_;
     }
 
-    public static final int SUBACCOUNTID_FIELD_NUMBER = 5;
+    public static final int SUBACCOUNT_ID_FIELD_NUMBER = 5;
     private long subaccountId_;
     /**
-     * <code>uint64 subaccountId = 5;</code>
+     * <code>uint64 subaccount_id = 5;</code>
      * @return The subaccountId.
      */
     @java.lang.Override
@@ -19549,10 +19922,10 @@ public final class Trade {
       return result == null ? trade.Trade.ModifyOrderReject.Reason.UNRECOGNIZED : result;
     }
 
-    public static final int MARKETID_FIELD_NUMBER = 7;
+    public static final int MARKET_ID_FIELD_NUMBER = 7;
     private long marketId_;
     /**
-     * <code>uint64 marketId = 7;</code>
+     * <code>uint64 market_id = 7;</code>
      * @return The marketId.
      */
     @java.lang.Override
@@ -19671,24 +20044,24 @@ public final class Trade {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MSGSEQNUM_FIELD_NUMBER;
+      hash = (37 * hash) + MSG_SEQ_NUM_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMsgSeqNum());
-      hash = (37 * hash) + CLIENTORDERID_FIELD_NUMBER;
+      hash = (37 * hash) + CLIENT_ORDER_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getClientOrderId());
-      hash = (37 * hash) + REQUESTID_FIELD_NUMBER;
+      hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRequestId());
-      hash = (37 * hash) + TRANSACTTIME_FIELD_NUMBER;
+      hash = (37 * hash) + TRANSACT_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTransactTime());
-      hash = (37 * hash) + SUBACCOUNTID_FIELD_NUMBER;
+      hash = (37 * hash) + SUBACCOUNT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSubaccountId());
       hash = (37 * hash) + REASON_FIELD_NUMBER;
       hash = (53 * hash) + reason_;
-      hash = (37 * hash) + MARKETID_FIELD_NUMBER;
+      hash = (37 * hash) + MARKET_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMarketId());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -19975,7 +20348,7 @@ public final class Trade {
 
       private long msgSeqNum_ ;
       /**
-       * <code>uint64 msgSeqNum = 1;</code>
+       * <code>uint64 msg_seq_num = 1;</code>
        * @return The msgSeqNum.
        */
       @java.lang.Override
@@ -19983,7 +20356,7 @@ public final class Trade {
         return msgSeqNum_;
       }
       /**
-       * <code>uint64 msgSeqNum = 1;</code>
+       * <code>uint64 msg_seq_num = 1;</code>
        * @param value The msgSeqNum to set.
        * @return This builder for chaining.
        */
@@ -19994,7 +20367,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 msgSeqNum = 1;</code>
+       * <code>uint64 msg_seq_num = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearMsgSeqNum() {
@@ -20010,7 +20383,7 @@ public final class Trade {
        * The client order ID specified in the modify-order request.
        * </pre>
        *
-       * <code>uint64 clientOrderId = 2;</code>
+       * <code>uint64 client_order_id = 2;</code>
        * @return The clientOrderId.
        */
       @java.lang.Override
@@ -20022,7 +20395,7 @@ public final class Trade {
        * The client order ID specified in the modify-order request.
        * </pre>
        *
-       * <code>uint64 clientOrderId = 2;</code>
+       * <code>uint64 client_order_id = 2;</code>
        * @param value The clientOrderId to set.
        * @return This builder for chaining.
        */
@@ -20037,7 +20410,7 @@ public final class Trade {
        * The client order ID specified in the modify-order request.
        * </pre>
        *
-       * <code>uint64 clientOrderId = 2;</code>
+       * <code>uint64 client_order_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearClientOrderId() {
@@ -20053,7 +20426,7 @@ public final class Trade {
        * The request ID specified in the modify-order request.
        * </pre>
        *
-       * <code>uint64 requestId = 3;</code>
+       * <code>uint64 request_id = 3;</code>
        * @return The requestId.
        */
       @java.lang.Override
@@ -20065,7 +20438,7 @@ public final class Trade {
        * The request ID specified in the modify-order request.
        * </pre>
        *
-       * <code>uint64 requestId = 3;</code>
+       * <code>uint64 request_id = 3;</code>
        * @param value The requestId to set.
        * @return This builder for chaining.
        */
@@ -20080,7 +20453,7 @@ public final class Trade {
        * The request ID specified in the modify-order request.
        * </pre>
        *
-       * <code>uint64 requestId = 3;</code>
+       * <code>uint64 request_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearRequestId() {
@@ -20096,7 +20469,7 @@ public final class Trade {
        * [Transact time](#transact-time)
        * </pre>
        *
-       * <code>uint64 transactTime = 4;</code>
+       * <code>uint64 transact_time = 4;</code>
        * @return The transactTime.
        */
       @java.lang.Override
@@ -20108,7 +20481,7 @@ public final class Trade {
        * [Transact time](#transact-time)
        * </pre>
        *
-       * <code>uint64 transactTime = 4;</code>
+       * <code>uint64 transact_time = 4;</code>
        * @param value The transactTime to set.
        * @return This builder for chaining.
        */
@@ -20123,7 +20496,7 @@ public final class Trade {
        * [Transact time](#transact-time)
        * </pre>
        *
-       * <code>uint64 transactTime = 4;</code>
+       * <code>uint64 transact_time = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearTransactTime() {
@@ -20135,7 +20508,7 @@ public final class Trade {
 
       private long subaccountId_ ;
       /**
-       * <code>uint64 subaccountId = 5;</code>
+       * <code>uint64 subaccount_id = 5;</code>
        * @return The subaccountId.
        */
       @java.lang.Override
@@ -20143,7 +20516,7 @@ public final class Trade {
         return subaccountId_;
       }
       /**
-       * <code>uint64 subaccountId = 5;</code>
+       * <code>uint64 subaccount_id = 5;</code>
        * @param value The subaccountId to set.
        * @return This builder for chaining.
        */
@@ -20154,7 +20527,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 subaccountId = 5;</code>
+       * <code>uint64 subaccount_id = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearSubaccountId() {
@@ -20220,7 +20593,7 @@ public final class Trade {
 
       private long marketId_ ;
       /**
-       * <code>uint64 marketId = 7;</code>
+       * <code>uint64 market_id = 7;</code>
        * @return The marketId.
        */
       @java.lang.Override
@@ -20228,7 +20601,7 @@ public final class Trade {
         return marketId_;
       }
       /**
-       * <code>uint64 marketId = 7;</code>
+       * <code>uint64 market_id = 7;</code>
        * @param value The marketId to set.
        * @return This builder for chaining.
        */
@@ -20239,7 +20612,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 marketId = 7;</code>
+       * <code>uint64 market_id = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearMarketId() {
@@ -20306,13 +20679,13 @@ public final class Trade {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 msgSeqNum = 1;</code>
+     * <code>uint64 msg_seq_num = 1;</code>
      * @return The msgSeqNum.
      */
     long getMsgSeqNum();
 
     /**
-     * <code>uint64 marketId = 2;</code>
+     * <code>uint64 market_id = 2;</code>
      * @return The marketId.
      */
     long getMarketId();
@@ -20322,7 +20695,7 @@ public final class Trade {
      * The client order ID specified in the new-order request.
      * </pre>
      *
-     * <code>uint64 clientOrderId = 3;</code>
+     * <code>uint64 client_order_id = 3;</code>
      * @return The clientOrderId.
      */
     long getClientOrderId();
@@ -20332,7 +20705,7 @@ public final class Trade {
      * [Exchange order ID](#exchange-order-id)
      * </pre>
      *
-     * <code>uint64 exchangeOrderId = 4;</code>
+     * <code>uint64 exchange_order_id = 4;</code>
      * @return The exchangeOrderId.
      */
     long getExchangeOrderId();
@@ -20342,7 +20715,7 @@ public final class Trade {
      * The price that this trade occured at.
      * </pre>
      *
-     * <code>uint64 fillPrice = 5;</code>
+     * <code>uint64 fill_price = 5;</code>
      * @return The fillPrice.
      */
     long getFillPrice();
@@ -20352,7 +20725,7 @@ public final class Trade {
      * The quantity that was traded in this fill.
      * </pre>
      *
-     * <code>uint64 fillQuantity = 6;</code>
+     * <code>uint64 fill_quantity = 6;</code>
      * @return The fillQuantity.
      */
     long getFillQuantity();
@@ -20362,7 +20735,7 @@ public final class Trade {
      * The remaining quantity for this order after the fill is applied.
      * </pre>
      *
-     * <code>uint64 leavesQuantity = 7;</code>
+     * <code>uint64 leaves_quantity = 7;</code>
      * @return The leavesQuantity.
      */
     long getLeavesQuantity();
@@ -20372,16 +20745,26 @@ public final class Trade {
      * [Transact time](#transact-time)
      * </pre>
      *
-     * <code>uint64 transactTime = 8;</code>
+     * <code>uint64 transact_time = 8;</code>
      * @return The transactTime.
      */
     long getTransactTime();
 
     /**
-     * <code>uint64 subaccountId = 9;</code>
+     * <code>uint64 subaccount_id = 9;</code>
      * @return The subaccountId.
      */
     long getSubaccountId();
+
+    /**
+     * <pre>
+     * The cumulative filled quantity for this order after the fill is applied.
+     * </pre>
+     *
+     * <code>uint64 cumulative_quantity = 10;</code>
+     * @return The cumulativeQuantity.
+     */
+    long getCumulativeQuantity();
   }
   /**
    * <pre>
@@ -20477,6 +20860,11 @@ public final class Trade {
               subaccountId_ = input.readUInt64();
               break;
             }
+            case 80: {
+
+              cumulativeQuantity_ = input.readUInt64();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -20509,10 +20897,10 @@ public final class Trade {
               trade.Trade.Fill.class, trade.Trade.Fill.Builder.class);
     }
 
-    public static final int MSGSEQNUM_FIELD_NUMBER = 1;
+    public static final int MSG_SEQ_NUM_FIELD_NUMBER = 1;
     private long msgSeqNum_;
     /**
-     * <code>uint64 msgSeqNum = 1;</code>
+     * <code>uint64 msg_seq_num = 1;</code>
      * @return The msgSeqNum.
      */
     @java.lang.Override
@@ -20520,10 +20908,10 @@ public final class Trade {
       return msgSeqNum_;
     }
 
-    public static final int MARKETID_FIELD_NUMBER = 2;
+    public static final int MARKET_ID_FIELD_NUMBER = 2;
     private long marketId_;
     /**
-     * <code>uint64 marketId = 2;</code>
+     * <code>uint64 market_id = 2;</code>
      * @return The marketId.
      */
     @java.lang.Override
@@ -20531,14 +20919,14 @@ public final class Trade {
       return marketId_;
     }
 
-    public static final int CLIENTORDERID_FIELD_NUMBER = 3;
+    public static final int CLIENT_ORDER_ID_FIELD_NUMBER = 3;
     private long clientOrderId_;
     /**
      * <pre>
      * The client order ID specified in the new-order request.
      * </pre>
      *
-     * <code>uint64 clientOrderId = 3;</code>
+     * <code>uint64 client_order_id = 3;</code>
      * @return The clientOrderId.
      */
     @java.lang.Override
@@ -20546,14 +20934,14 @@ public final class Trade {
       return clientOrderId_;
     }
 
-    public static final int EXCHANGEORDERID_FIELD_NUMBER = 4;
+    public static final int EXCHANGE_ORDER_ID_FIELD_NUMBER = 4;
     private long exchangeOrderId_;
     /**
      * <pre>
      * [Exchange order ID](#exchange-order-id)
      * </pre>
      *
-     * <code>uint64 exchangeOrderId = 4;</code>
+     * <code>uint64 exchange_order_id = 4;</code>
      * @return The exchangeOrderId.
      */
     @java.lang.Override
@@ -20561,14 +20949,14 @@ public final class Trade {
       return exchangeOrderId_;
     }
 
-    public static final int FILLPRICE_FIELD_NUMBER = 5;
+    public static final int FILL_PRICE_FIELD_NUMBER = 5;
     private long fillPrice_;
     /**
      * <pre>
      * The price that this trade occured at.
      * </pre>
      *
-     * <code>uint64 fillPrice = 5;</code>
+     * <code>uint64 fill_price = 5;</code>
      * @return The fillPrice.
      */
     @java.lang.Override
@@ -20576,14 +20964,14 @@ public final class Trade {
       return fillPrice_;
     }
 
-    public static final int FILLQUANTITY_FIELD_NUMBER = 6;
+    public static final int FILL_QUANTITY_FIELD_NUMBER = 6;
     private long fillQuantity_;
     /**
      * <pre>
      * The quantity that was traded in this fill.
      * </pre>
      *
-     * <code>uint64 fillQuantity = 6;</code>
+     * <code>uint64 fill_quantity = 6;</code>
      * @return The fillQuantity.
      */
     @java.lang.Override
@@ -20591,14 +20979,14 @@ public final class Trade {
       return fillQuantity_;
     }
 
-    public static final int LEAVESQUANTITY_FIELD_NUMBER = 7;
+    public static final int LEAVES_QUANTITY_FIELD_NUMBER = 7;
     private long leavesQuantity_;
     /**
      * <pre>
      * The remaining quantity for this order after the fill is applied.
      * </pre>
      *
-     * <code>uint64 leavesQuantity = 7;</code>
+     * <code>uint64 leaves_quantity = 7;</code>
      * @return The leavesQuantity.
      */
     @java.lang.Override
@@ -20606,14 +20994,14 @@ public final class Trade {
       return leavesQuantity_;
     }
 
-    public static final int TRANSACTTIME_FIELD_NUMBER = 8;
+    public static final int TRANSACT_TIME_FIELD_NUMBER = 8;
     private long transactTime_;
     /**
      * <pre>
      * [Transact time](#transact-time)
      * </pre>
      *
-     * <code>uint64 transactTime = 8;</code>
+     * <code>uint64 transact_time = 8;</code>
      * @return The transactTime.
      */
     @java.lang.Override
@@ -20621,15 +21009,30 @@ public final class Trade {
       return transactTime_;
     }
 
-    public static final int SUBACCOUNTID_FIELD_NUMBER = 9;
+    public static final int SUBACCOUNT_ID_FIELD_NUMBER = 9;
     private long subaccountId_;
     /**
-     * <code>uint64 subaccountId = 9;</code>
+     * <code>uint64 subaccount_id = 9;</code>
      * @return The subaccountId.
      */
     @java.lang.Override
     public long getSubaccountId() {
       return subaccountId_;
+    }
+
+    public static final int CUMULATIVE_QUANTITY_FIELD_NUMBER = 10;
+    private long cumulativeQuantity_;
+    /**
+     * <pre>
+     * The cumulative filled quantity for this order after the fill is applied.
+     * </pre>
+     *
+     * <code>uint64 cumulative_quantity = 10;</code>
+     * @return The cumulativeQuantity.
+     */
+    @java.lang.Override
+    public long getCumulativeQuantity() {
+      return cumulativeQuantity_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -20672,6 +21075,9 @@ public final class Trade {
       }
       if (subaccountId_ != 0L) {
         output.writeUInt64(9, subaccountId_);
+      }
+      if (cumulativeQuantity_ != 0L) {
+        output.writeUInt64(10, cumulativeQuantity_);
       }
       unknownFields.writeTo(output);
     }
@@ -20718,6 +21124,10 @@ public final class Trade {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(9, subaccountId_);
       }
+      if (cumulativeQuantity_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(10, cumulativeQuantity_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -20751,6 +21161,8 @@ public final class Trade {
           != other.getTransactTime()) return false;
       if (getSubaccountId()
           != other.getSubaccountId()) return false;
+      if (getCumulativeQuantity()
+          != other.getCumulativeQuantity()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -20762,33 +21174,36 @@ public final class Trade {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MSGSEQNUM_FIELD_NUMBER;
+      hash = (37 * hash) + MSG_SEQ_NUM_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMsgSeqNum());
-      hash = (37 * hash) + MARKETID_FIELD_NUMBER;
+      hash = (37 * hash) + MARKET_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMarketId());
-      hash = (37 * hash) + CLIENTORDERID_FIELD_NUMBER;
+      hash = (37 * hash) + CLIENT_ORDER_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getClientOrderId());
-      hash = (37 * hash) + EXCHANGEORDERID_FIELD_NUMBER;
+      hash = (37 * hash) + EXCHANGE_ORDER_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getExchangeOrderId());
-      hash = (37 * hash) + FILLPRICE_FIELD_NUMBER;
+      hash = (37 * hash) + FILL_PRICE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getFillPrice());
-      hash = (37 * hash) + FILLQUANTITY_FIELD_NUMBER;
+      hash = (37 * hash) + FILL_QUANTITY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getFillQuantity());
-      hash = (37 * hash) + LEAVESQUANTITY_FIELD_NUMBER;
+      hash = (37 * hash) + LEAVES_QUANTITY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getLeavesQuantity());
-      hash = (37 * hash) + TRANSACTTIME_FIELD_NUMBER;
+      hash = (37 * hash) + TRANSACT_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTransactTime());
-      hash = (37 * hash) + SUBACCOUNTID_FIELD_NUMBER;
+      hash = (37 * hash) + SUBACCOUNT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSubaccountId());
+      hash = (37 * hash) + CUMULATIVE_QUANTITY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCumulativeQuantity());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -20944,6 +21359,8 @@ public final class Trade {
 
         subaccountId_ = 0L;
 
+        cumulativeQuantity_ = 0L;
+
         return this;
       }
 
@@ -20979,6 +21396,7 @@ public final class Trade {
         result.leavesQuantity_ = leavesQuantity_;
         result.transactTime_ = transactTime_;
         result.subaccountId_ = subaccountId_;
+        result.cumulativeQuantity_ = cumulativeQuantity_;
         onBuilt();
         return result;
       }
@@ -21054,6 +21472,9 @@ public final class Trade {
         if (other.getSubaccountId() != 0L) {
           setSubaccountId(other.getSubaccountId());
         }
+        if (other.getCumulativeQuantity() != 0L) {
+          setCumulativeQuantity(other.getCumulativeQuantity());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -21085,7 +21506,7 @@ public final class Trade {
 
       private long msgSeqNum_ ;
       /**
-       * <code>uint64 msgSeqNum = 1;</code>
+       * <code>uint64 msg_seq_num = 1;</code>
        * @return The msgSeqNum.
        */
       @java.lang.Override
@@ -21093,7 +21514,7 @@ public final class Trade {
         return msgSeqNum_;
       }
       /**
-       * <code>uint64 msgSeqNum = 1;</code>
+       * <code>uint64 msg_seq_num = 1;</code>
        * @param value The msgSeqNum to set.
        * @return This builder for chaining.
        */
@@ -21104,7 +21525,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 msgSeqNum = 1;</code>
+       * <code>uint64 msg_seq_num = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearMsgSeqNum() {
@@ -21116,7 +21537,7 @@ public final class Trade {
 
       private long marketId_ ;
       /**
-       * <code>uint64 marketId = 2;</code>
+       * <code>uint64 market_id = 2;</code>
        * @return The marketId.
        */
       @java.lang.Override
@@ -21124,7 +21545,7 @@ public final class Trade {
         return marketId_;
       }
       /**
-       * <code>uint64 marketId = 2;</code>
+       * <code>uint64 market_id = 2;</code>
        * @param value The marketId to set.
        * @return This builder for chaining.
        */
@@ -21135,7 +21556,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 marketId = 2;</code>
+       * <code>uint64 market_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearMarketId() {
@@ -21151,7 +21572,7 @@ public final class Trade {
        * The client order ID specified in the new-order request.
        * </pre>
        *
-       * <code>uint64 clientOrderId = 3;</code>
+       * <code>uint64 client_order_id = 3;</code>
        * @return The clientOrderId.
        */
       @java.lang.Override
@@ -21163,7 +21584,7 @@ public final class Trade {
        * The client order ID specified in the new-order request.
        * </pre>
        *
-       * <code>uint64 clientOrderId = 3;</code>
+       * <code>uint64 client_order_id = 3;</code>
        * @param value The clientOrderId to set.
        * @return This builder for chaining.
        */
@@ -21178,7 +21599,7 @@ public final class Trade {
        * The client order ID specified in the new-order request.
        * </pre>
        *
-       * <code>uint64 clientOrderId = 3;</code>
+       * <code>uint64 client_order_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearClientOrderId() {
@@ -21194,7 +21615,7 @@ public final class Trade {
        * [Exchange order ID](#exchange-order-id)
        * </pre>
        *
-       * <code>uint64 exchangeOrderId = 4;</code>
+       * <code>uint64 exchange_order_id = 4;</code>
        * @return The exchangeOrderId.
        */
       @java.lang.Override
@@ -21206,7 +21627,7 @@ public final class Trade {
        * [Exchange order ID](#exchange-order-id)
        * </pre>
        *
-       * <code>uint64 exchangeOrderId = 4;</code>
+       * <code>uint64 exchange_order_id = 4;</code>
        * @param value The exchangeOrderId to set.
        * @return This builder for chaining.
        */
@@ -21221,7 +21642,7 @@ public final class Trade {
        * [Exchange order ID](#exchange-order-id)
        * </pre>
        *
-       * <code>uint64 exchangeOrderId = 4;</code>
+       * <code>uint64 exchange_order_id = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearExchangeOrderId() {
@@ -21237,7 +21658,7 @@ public final class Trade {
        * The price that this trade occured at.
        * </pre>
        *
-       * <code>uint64 fillPrice = 5;</code>
+       * <code>uint64 fill_price = 5;</code>
        * @return The fillPrice.
        */
       @java.lang.Override
@@ -21249,7 +21670,7 @@ public final class Trade {
        * The price that this trade occured at.
        * </pre>
        *
-       * <code>uint64 fillPrice = 5;</code>
+       * <code>uint64 fill_price = 5;</code>
        * @param value The fillPrice to set.
        * @return This builder for chaining.
        */
@@ -21264,7 +21685,7 @@ public final class Trade {
        * The price that this trade occured at.
        * </pre>
        *
-       * <code>uint64 fillPrice = 5;</code>
+       * <code>uint64 fill_price = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearFillPrice() {
@@ -21280,7 +21701,7 @@ public final class Trade {
        * The quantity that was traded in this fill.
        * </pre>
        *
-       * <code>uint64 fillQuantity = 6;</code>
+       * <code>uint64 fill_quantity = 6;</code>
        * @return The fillQuantity.
        */
       @java.lang.Override
@@ -21292,7 +21713,7 @@ public final class Trade {
        * The quantity that was traded in this fill.
        * </pre>
        *
-       * <code>uint64 fillQuantity = 6;</code>
+       * <code>uint64 fill_quantity = 6;</code>
        * @param value The fillQuantity to set.
        * @return This builder for chaining.
        */
@@ -21307,7 +21728,7 @@ public final class Trade {
        * The quantity that was traded in this fill.
        * </pre>
        *
-       * <code>uint64 fillQuantity = 6;</code>
+       * <code>uint64 fill_quantity = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearFillQuantity() {
@@ -21323,7 +21744,7 @@ public final class Trade {
        * The remaining quantity for this order after the fill is applied.
        * </pre>
        *
-       * <code>uint64 leavesQuantity = 7;</code>
+       * <code>uint64 leaves_quantity = 7;</code>
        * @return The leavesQuantity.
        */
       @java.lang.Override
@@ -21335,7 +21756,7 @@ public final class Trade {
        * The remaining quantity for this order after the fill is applied.
        * </pre>
        *
-       * <code>uint64 leavesQuantity = 7;</code>
+       * <code>uint64 leaves_quantity = 7;</code>
        * @param value The leavesQuantity to set.
        * @return This builder for chaining.
        */
@@ -21350,7 +21771,7 @@ public final class Trade {
        * The remaining quantity for this order after the fill is applied.
        * </pre>
        *
-       * <code>uint64 leavesQuantity = 7;</code>
+       * <code>uint64 leaves_quantity = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearLeavesQuantity() {
@@ -21366,7 +21787,7 @@ public final class Trade {
        * [Transact time](#transact-time)
        * </pre>
        *
-       * <code>uint64 transactTime = 8;</code>
+       * <code>uint64 transact_time = 8;</code>
        * @return The transactTime.
        */
       @java.lang.Override
@@ -21378,7 +21799,7 @@ public final class Trade {
        * [Transact time](#transact-time)
        * </pre>
        *
-       * <code>uint64 transactTime = 8;</code>
+       * <code>uint64 transact_time = 8;</code>
        * @param value The transactTime to set.
        * @return This builder for chaining.
        */
@@ -21393,7 +21814,7 @@ public final class Trade {
        * [Transact time](#transact-time)
        * </pre>
        *
-       * <code>uint64 transactTime = 8;</code>
+       * <code>uint64 transact_time = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearTransactTime() {
@@ -21405,7 +21826,7 @@ public final class Trade {
 
       private long subaccountId_ ;
       /**
-       * <code>uint64 subaccountId = 9;</code>
+       * <code>uint64 subaccount_id = 9;</code>
        * @return The subaccountId.
        */
       @java.lang.Override
@@ -21413,7 +21834,7 @@ public final class Trade {
         return subaccountId_;
       }
       /**
-       * <code>uint64 subaccountId = 9;</code>
+       * <code>uint64 subaccount_id = 9;</code>
        * @param value The subaccountId to set.
        * @return This builder for chaining.
        */
@@ -21424,12 +21845,55 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 subaccountId = 9;</code>
+       * <code>uint64 subaccount_id = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearSubaccountId() {
         
         subaccountId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long cumulativeQuantity_ ;
+      /**
+       * <pre>
+       * The cumulative filled quantity for this order after the fill is applied.
+       * </pre>
+       *
+       * <code>uint64 cumulative_quantity = 10;</code>
+       * @return The cumulativeQuantity.
+       */
+      @java.lang.Override
+      public long getCumulativeQuantity() {
+        return cumulativeQuantity_;
+      }
+      /**
+       * <pre>
+       * The cumulative filled quantity for this order after the fill is applied.
+       * </pre>
+       *
+       * <code>uint64 cumulative_quantity = 10;</code>
+       * @param value The cumulativeQuantity to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCumulativeQuantity(long value) {
+        
+        cumulativeQuantity_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The cumulative filled quantity for this order after the fill is applied.
+       * </pre>
+       *
+       * <code>uint64 cumulative_quantity = 10;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCumulativeQuantity() {
+        
+        cumulativeQuantity_ = 0L;
         onChanged();
         return this;
       }
@@ -21491,13 +21955,13 @@ public final class Trade {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 subaccountId = 1;</code>
+     * <code>uint64 subaccount_id = 1;</code>
      * @return The subaccountId.
      */
     long getSubaccountId();
 
     /**
-     * <code>uint64 assetId = 2;</code>
+     * <code>uint64 asset_id = 2;</code>
      * @return The assetId.
      */
     long getAssetId();
@@ -21663,10 +22127,10 @@ public final class Trade {
               trade.Trade.AssetPosition.class, trade.Trade.AssetPosition.Builder.class);
     }
 
-    public static final int SUBACCOUNTID_FIELD_NUMBER = 1;
+    public static final int SUBACCOUNT_ID_FIELD_NUMBER = 1;
     private long subaccountId_;
     /**
-     * <code>uint64 subaccountId = 1;</code>
+     * <code>uint64 subaccount_id = 1;</code>
      * @return The subaccountId.
      */
     @java.lang.Override
@@ -21674,10 +22138,10 @@ public final class Trade {
       return subaccountId_;
     }
 
-    public static final int ASSETID_FIELD_NUMBER = 2;
+    public static final int ASSET_ID_FIELD_NUMBER = 2;
     private long assetId_;
     /**
-     * <code>uint64 assetId = 2;</code>
+     * <code>uint64 asset_id = 2;</code>
      * @return The assetId.
      */
     @java.lang.Override
@@ -21840,10 +22304,10 @@ public final class Trade {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + SUBACCOUNTID_FIELD_NUMBER;
+      hash = (37 * hash) + SUBACCOUNT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSubaccountId());
-      hash = (37 * hash) + ASSETID_FIELD_NUMBER;
+      hash = (37 * hash) + ASSET_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAssetId());
       if (hasTotal()) {
@@ -22138,7 +22602,7 @@ public final class Trade {
 
       private long subaccountId_ ;
       /**
-       * <code>uint64 subaccountId = 1;</code>
+       * <code>uint64 subaccount_id = 1;</code>
        * @return The subaccountId.
        */
       @java.lang.Override
@@ -22146,7 +22610,7 @@ public final class Trade {
         return subaccountId_;
       }
       /**
-       * <code>uint64 subaccountId = 1;</code>
+       * <code>uint64 subaccount_id = 1;</code>
        * @param value The subaccountId to set.
        * @return This builder for chaining.
        */
@@ -22157,7 +22621,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 subaccountId = 1;</code>
+       * <code>uint64 subaccount_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearSubaccountId() {
@@ -22169,7 +22633,7 @@ public final class Trade {
 
       private long assetId_ ;
       /**
-       * <code>uint64 assetId = 2;</code>
+       * <code>uint64 asset_id = 2;</code>
        * @return The assetId.
        */
       @java.lang.Override
@@ -22177,7 +22641,7 @@ public final class Trade {
         return assetId_;
       }
       /**
-       * <code>uint64 assetId = 2;</code>
+       * <code>uint64 asset_id = 2;</code>
        * @param value The assetId to set.
        * @return This builder for chaining.
        */
@@ -22188,7 +22652,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 assetId = 2;</code>
+       * <code>uint64 asset_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearAssetId() {
@@ -26047,7 +26511,7 @@ public final class Trade {
      * [Transact time](#transact-time)
      * </pre>
      *
-     * <code>uint64 latestTransactTime = 1;</code>
+     * <code>uint64 latest_transact_time = 1;</code>
      * @return The latestTransactTime.
      */
     long getLatestTransactTime();
@@ -26138,14 +26602,14 @@ public final class Trade {
               trade.Trade.Done.class, trade.Trade.Done.Builder.class);
     }
 
-    public static final int LATESTTRANSACTTIME_FIELD_NUMBER = 1;
+    public static final int LATEST_TRANSACT_TIME_FIELD_NUMBER = 1;
     private long latestTransactTime_;
     /**
      * <pre>
      * [Transact time](#transact-time)
      * </pre>
      *
-     * <code>uint64 latestTransactTime = 1;</code>
+     * <code>uint64 latest_transact_time = 1;</code>
      * @return The latestTransactTime.
      */
     @java.lang.Override
@@ -26211,7 +26675,7 @@ public final class Trade {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + LATESTTRANSACTTIME_FIELD_NUMBER;
+      hash = (37 * hash) + LATEST_TRANSACT_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getLatestTransactTime());
       hash = (29 * hash) + unknownFields.hashCode();
@@ -26466,7 +26930,7 @@ public final class Trade {
        * [Transact time](#transact-time)
        * </pre>
        *
-       * <code>uint64 latestTransactTime = 1;</code>
+       * <code>uint64 latest_transact_time = 1;</code>
        * @return The latestTransactTime.
        */
       @java.lang.Override
@@ -26478,7 +26942,7 @@ public final class Trade {
        * [Transact time](#transact-time)
        * </pre>
        *
-       * <code>uint64 latestTransactTime = 1;</code>
+       * <code>uint64 latest_transact_time = 1;</code>
        * @param value The latestTransactTime to set.
        * @return This builder for chaining.
        */
@@ -26493,7 +26957,7 @@ public final class Trade {
        * [Transact time](#transact-time)
        * </pre>
        *
-       * <code>uint64 latestTransactTime = 1;</code>
+       * <code>uint64 latest_transact_time = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearLatestTransactTime() {
@@ -26564,7 +27028,7 @@ public final class Trade {
      * The client order ID specified in the new-order request.
      * </pre>
      *
-     * <code>uint64 clientOrderId = 1;</code>
+     * <code>uint64 client_order_id = 1;</code>
      * @return The clientOrderId.
      */
     long getClientOrderId();
@@ -26574,13 +27038,13 @@ public final class Trade {
      * [Exchange order ID](#exchange-order-id)
      * </pre>
      *
-     * <code>uint64 exchangeOrderId = 2;</code>
+     * <code>uint64 exchange_order_id = 2;</code>
      * @return The exchangeOrderId.
      */
     long getExchangeOrderId();
 
     /**
-     * <code>uint64 marketId = 3;</code>
+     * <code>uint64 market_id = 3;</code>
      * @return The marketId.
      */
     long getMarketId();
@@ -26593,13 +27057,16 @@ public final class Trade {
 
     /**
      * <pre>
-     * The quantity submitted in the new-order request.
+     * The quantity submitted in the latest quantity-modifying request. If the
+     * order has not been modified, then it is the quantity on the new-order-ack.
+     * If it has been modified, then it is the quantity of the latest
+     * modify-order-ack.
      * </pre>
      *
-     * <code>uint64 originalQuantity = 5;</code>
-     * @return The originalQuantity.
+     * <code>uint64 order_quantity = 5;</code>
+     * @return The orderQuantity.
      */
-    long getOriginalQuantity();
+    long getOrderQuantity();
 
     /**
      * <code>.trade.Side side = 6;</code>
@@ -26613,23 +27080,23 @@ public final class Trade {
     trade.Trade.Side getSide();
 
     /**
-     * <code>.trade.TimeInForce timeInForce = 7;</code>
+     * <code>.trade.TimeInForce time_in_force = 7;</code>
      * @return The enum numeric value on the wire for timeInForce.
      */
     int getTimeInForceValue();
     /**
-     * <code>.trade.TimeInForce timeInForce = 7;</code>
+     * <code>.trade.TimeInForce time_in_force = 7;</code>
      * @return The timeInForce.
      */
     trade.Trade.TimeInForce getTimeInForce();
 
     /**
-     * <code>.trade.OrderType orderType = 8;</code>
+     * <code>.trade.OrderType order_type = 8;</code>
      * @return The enum numeric value on the wire for orderType.
      */
     int getOrderTypeValue();
     /**
-     * <code>.trade.OrderType orderType = 8;</code>
+     * <code>.trade.OrderType order_type = 8;</code>
      * @return The orderType.
      */
     trade.Trade.OrderType getOrderType();
@@ -26639,7 +27106,7 @@ public final class Trade {
      * The current remaining quantity on the book.
      * </pre>
      *
-     * <code>uint64 remainingQuantity = 9;</code>
+     * <code>uint64 remaining_quantity = 9;</code>
      * @return The remainingQuantity.
      */
     long getRemainingQuantity();
@@ -26649,16 +27116,26 @@ public final class Trade {
      * [Transact time](#transact-time) of the NewOrderAck
      * </pre>
      *
-     * <code>uint64 restTime = 10;</code>
+     * <code>uint64 rest_time = 10;</code>
      * @return The restTime.
      */
     long getRestTime();
 
     /**
-     * <code>uint64 subaccountId = 11;</code>
+     * <code>uint64 subaccount_id = 11;</code>
      * @return The subaccountId.
      */
     long getSubaccountId();
+
+    /**
+     * <pre>
+     * The cumulative filled quantity for this order.
+     * </pre>
+     *
+     * <code>uint64 cumulative_quantity = 12;</code>
+     * @return The cumulativeQuantity.
+     */
+    long getCumulativeQuantity();
   }
   /**
    * <pre>
@@ -26734,7 +27211,7 @@ public final class Trade {
             }
             case 40: {
 
-              originalQuantity_ = input.readUInt64();
+              orderQuantity_ = input.readUInt64();
               break;
             }
             case 48: {
@@ -26770,6 +27247,11 @@ public final class Trade {
               subaccountId_ = input.readUInt64();
               break;
             }
+            case 96: {
+
+              cumulativeQuantity_ = input.readUInt64();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -26802,14 +27284,14 @@ public final class Trade {
               trade.Trade.RestingOrder.class, trade.Trade.RestingOrder.Builder.class);
     }
 
-    public static final int CLIENTORDERID_FIELD_NUMBER = 1;
+    public static final int CLIENT_ORDER_ID_FIELD_NUMBER = 1;
     private long clientOrderId_;
     /**
      * <pre>
      * The client order ID specified in the new-order request.
      * </pre>
      *
-     * <code>uint64 clientOrderId = 1;</code>
+     * <code>uint64 client_order_id = 1;</code>
      * @return The clientOrderId.
      */
     @java.lang.Override
@@ -26817,14 +27299,14 @@ public final class Trade {
       return clientOrderId_;
     }
 
-    public static final int EXCHANGEORDERID_FIELD_NUMBER = 2;
+    public static final int EXCHANGE_ORDER_ID_FIELD_NUMBER = 2;
     private long exchangeOrderId_;
     /**
      * <pre>
      * [Exchange order ID](#exchange-order-id)
      * </pre>
      *
-     * <code>uint64 exchangeOrderId = 2;</code>
+     * <code>uint64 exchange_order_id = 2;</code>
      * @return The exchangeOrderId.
      */
     @java.lang.Override
@@ -26832,10 +27314,10 @@ public final class Trade {
       return exchangeOrderId_;
     }
 
-    public static final int MARKETID_FIELD_NUMBER = 3;
+    public static final int MARKET_ID_FIELD_NUMBER = 3;
     private long marketId_;
     /**
-     * <code>uint64 marketId = 3;</code>
+     * <code>uint64 market_id = 3;</code>
      * @return The marketId.
      */
     @java.lang.Override
@@ -26854,19 +27336,22 @@ public final class Trade {
       return price_;
     }
 
-    public static final int ORIGINALQUANTITY_FIELD_NUMBER = 5;
-    private long originalQuantity_;
+    public static final int ORDER_QUANTITY_FIELD_NUMBER = 5;
+    private long orderQuantity_;
     /**
      * <pre>
-     * The quantity submitted in the new-order request.
+     * The quantity submitted in the latest quantity-modifying request. If the
+     * order has not been modified, then it is the quantity on the new-order-ack.
+     * If it has been modified, then it is the quantity of the latest
+     * modify-order-ack.
      * </pre>
      *
-     * <code>uint64 originalQuantity = 5;</code>
-     * @return The originalQuantity.
+     * <code>uint64 order_quantity = 5;</code>
+     * @return The orderQuantity.
      */
     @java.lang.Override
-    public long getOriginalQuantity() {
-      return originalQuantity_;
+    public long getOrderQuantity() {
+      return orderQuantity_;
     }
 
     public static final int SIDE_FIELD_NUMBER = 6;
@@ -26888,17 +27373,17 @@ public final class Trade {
       return result == null ? trade.Trade.Side.UNRECOGNIZED : result;
     }
 
-    public static final int TIMEINFORCE_FIELD_NUMBER = 7;
+    public static final int TIME_IN_FORCE_FIELD_NUMBER = 7;
     private int timeInForce_;
     /**
-     * <code>.trade.TimeInForce timeInForce = 7;</code>
+     * <code>.trade.TimeInForce time_in_force = 7;</code>
      * @return The enum numeric value on the wire for timeInForce.
      */
     @java.lang.Override public int getTimeInForceValue() {
       return timeInForce_;
     }
     /**
-     * <code>.trade.TimeInForce timeInForce = 7;</code>
+     * <code>.trade.TimeInForce time_in_force = 7;</code>
      * @return The timeInForce.
      */
     @java.lang.Override public trade.Trade.TimeInForce getTimeInForce() {
@@ -26907,17 +27392,17 @@ public final class Trade {
       return result == null ? trade.Trade.TimeInForce.UNRECOGNIZED : result;
     }
 
-    public static final int ORDERTYPE_FIELD_NUMBER = 8;
+    public static final int ORDER_TYPE_FIELD_NUMBER = 8;
     private int orderType_;
     /**
-     * <code>.trade.OrderType orderType = 8;</code>
+     * <code>.trade.OrderType order_type = 8;</code>
      * @return The enum numeric value on the wire for orderType.
      */
     @java.lang.Override public int getOrderTypeValue() {
       return orderType_;
     }
     /**
-     * <code>.trade.OrderType orderType = 8;</code>
+     * <code>.trade.OrderType order_type = 8;</code>
      * @return The orderType.
      */
     @java.lang.Override public trade.Trade.OrderType getOrderType() {
@@ -26926,14 +27411,14 @@ public final class Trade {
       return result == null ? trade.Trade.OrderType.UNRECOGNIZED : result;
     }
 
-    public static final int REMAININGQUANTITY_FIELD_NUMBER = 9;
+    public static final int REMAINING_QUANTITY_FIELD_NUMBER = 9;
     private long remainingQuantity_;
     /**
      * <pre>
      * The current remaining quantity on the book.
      * </pre>
      *
-     * <code>uint64 remainingQuantity = 9;</code>
+     * <code>uint64 remaining_quantity = 9;</code>
      * @return The remainingQuantity.
      */
     @java.lang.Override
@@ -26941,14 +27426,14 @@ public final class Trade {
       return remainingQuantity_;
     }
 
-    public static final int RESTTIME_FIELD_NUMBER = 10;
+    public static final int REST_TIME_FIELD_NUMBER = 10;
     private long restTime_;
     /**
      * <pre>
      * [Transact time](#transact-time) of the NewOrderAck
      * </pre>
      *
-     * <code>uint64 restTime = 10;</code>
+     * <code>uint64 rest_time = 10;</code>
      * @return The restTime.
      */
     @java.lang.Override
@@ -26956,15 +27441,30 @@ public final class Trade {
       return restTime_;
     }
 
-    public static final int SUBACCOUNTID_FIELD_NUMBER = 11;
+    public static final int SUBACCOUNT_ID_FIELD_NUMBER = 11;
     private long subaccountId_;
     /**
-     * <code>uint64 subaccountId = 11;</code>
+     * <code>uint64 subaccount_id = 11;</code>
      * @return The subaccountId.
      */
     @java.lang.Override
     public long getSubaccountId() {
       return subaccountId_;
+    }
+
+    public static final int CUMULATIVE_QUANTITY_FIELD_NUMBER = 12;
+    private long cumulativeQuantity_;
+    /**
+     * <pre>
+     * The cumulative filled quantity for this order.
+     * </pre>
+     *
+     * <code>uint64 cumulative_quantity = 12;</code>
+     * @return The cumulativeQuantity.
+     */
+    @java.lang.Override
+    public long getCumulativeQuantity() {
+      return cumulativeQuantity_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -26993,8 +27493,8 @@ public final class Trade {
       if (price_ != 0L) {
         output.writeUInt64(4, price_);
       }
-      if (originalQuantity_ != 0L) {
-        output.writeUInt64(5, originalQuantity_);
+      if (orderQuantity_ != 0L) {
+        output.writeUInt64(5, orderQuantity_);
       }
       if (side_ != trade.Trade.Side.BID.getNumber()) {
         output.writeEnum(6, side_);
@@ -27013,6 +27513,9 @@ public final class Trade {
       }
       if (subaccountId_ != 0L) {
         output.writeUInt64(11, subaccountId_);
+      }
+      if (cumulativeQuantity_ != 0L) {
+        output.writeUInt64(12, cumulativeQuantity_);
       }
       unknownFields.writeTo(output);
     }
@@ -27039,9 +27542,9 @@ public final class Trade {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(4, price_);
       }
-      if (originalQuantity_ != 0L) {
+      if (orderQuantity_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(5, originalQuantity_);
+          .computeUInt64Size(5, orderQuantity_);
       }
       if (side_ != trade.Trade.Side.BID.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -27067,6 +27570,10 @@ public final class Trade {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(11, subaccountId_);
       }
+      if (cumulativeQuantity_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(12, cumulativeQuantity_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -27090,8 +27597,8 @@ public final class Trade {
           != other.getMarketId()) return false;
       if (getPrice()
           != other.getPrice()) return false;
-      if (getOriginalQuantity()
-          != other.getOriginalQuantity()) return false;
+      if (getOrderQuantity()
+          != other.getOrderQuantity()) return false;
       if (side_ != other.side_) return false;
       if (timeInForce_ != other.timeInForce_) return false;
       if (orderType_ != other.orderType_) return false;
@@ -27101,6 +27608,8 @@ public final class Trade {
           != other.getRestTime()) return false;
       if (getSubaccountId()
           != other.getSubaccountId()) return false;
+      if (getCumulativeQuantity()
+          != other.getCumulativeQuantity()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -27112,36 +27621,39 @@ public final class Trade {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CLIENTORDERID_FIELD_NUMBER;
+      hash = (37 * hash) + CLIENT_ORDER_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getClientOrderId());
-      hash = (37 * hash) + EXCHANGEORDERID_FIELD_NUMBER;
+      hash = (37 * hash) + EXCHANGE_ORDER_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getExchangeOrderId());
-      hash = (37 * hash) + MARKETID_FIELD_NUMBER;
+      hash = (37 * hash) + MARKET_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMarketId());
       hash = (37 * hash) + PRICE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getPrice());
-      hash = (37 * hash) + ORIGINALQUANTITY_FIELD_NUMBER;
+      hash = (37 * hash) + ORDER_QUANTITY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getOriginalQuantity());
+          getOrderQuantity());
       hash = (37 * hash) + SIDE_FIELD_NUMBER;
       hash = (53 * hash) + side_;
-      hash = (37 * hash) + TIMEINFORCE_FIELD_NUMBER;
+      hash = (37 * hash) + TIME_IN_FORCE_FIELD_NUMBER;
       hash = (53 * hash) + timeInForce_;
-      hash = (37 * hash) + ORDERTYPE_FIELD_NUMBER;
+      hash = (37 * hash) + ORDER_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + orderType_;
-      hash = (37 * hash) + REMAININGQUANTITY_FIELD_NUMBER;
+      hash = (37 * hash) + REMAINING_QUANTITY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRemainingQuantity());
-      hash = (37 * hash) + RESTTIME_FIELD_NUMBER;
+      hash = (37 * hash) + REST_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getRestTime());
-      hash = (37 * hash) + SUBACCOUNTID_FIELD_NUMBER;
+      hash = (37 * hash) + SUBACCOUNT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSubaccountId());
+      hash = (37 * hash) + CUMULATIVE_QUANTITY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCumulativeQuantity());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -27287,7 +27799,7 @@ public final class Trade {
 
         price_ = 0L;
 
-        originalQuantity_ = 0L;
+        orderQuantity_ = 0L;
 
         side_ = 0;
 
@@ -27300,6 +27812,8 @@ public final class Trade {
         restTime_ = 0L;
 
         subaccountId_ = 0L;
+
+        cumulativeQuantity_ = 0L;
 
         return this;
       }
@@ -27331,13 +27845,14 @@ public final class Trade {
         result.exchangeOrderId_ = exchangeOrderId_;
         result.marketId_ = marketId_;
         result.price_ = price_;
-        result.originalQuantity_ = originalQuantity_;
+        result.orderQuantity_ = orderQuantity_;
         result.side_ = side_;
         result.timeInForce_ = timeInForce_;
         result.orderType_ = orderType_;
         result.remainingQuantity_ = remainingQuantity_;
         result.restTime_ = restTime_;
         result.subaccountId_ = subaccountId_;
+        result.cumulativeQuantity_ = cumulativeQuantity_;
         onBuilt();
         return result;
       }
@@ -27398,8 +27913,8 @@ public final class Trade {
         if (other.getPrice() != 0L) {
           setPrice(other.getPrice());
         }
-        if (other.getOriginalQuantity() != 0L) {
-          setOriginalQuantity(other.getOriginalQuantity());
+        if (other.getOrderQuantity() != 0L) {
+          setOrderQuantity(other.getOrderQuantity());
         }
         if (other.side_ != 0) {
           setSideValue(other.getSideValue());
@@ -27418,6 +27933,9 @@ public final class Trade {
         }
         if (other.getSubaccountId() != 0L) {
           setSubaccountId(other.getSubaccountId());
+        }
+        if (other.getCumulativeQuantity() != 0L) {
+          setCumulativeQuantity(other.getCumulativeQuantity());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -27454,7 +27972,7 @@ public final class Trade {
        * The client order ID specified in the new-order request.
        * </pre>
        *
-       * <code>uint64 clientOrderId = 1;</code>
+       * <code>uint64 client_order_id = 1;</code>
        * @return The clientOrderId.
        */
       @java.lang.Override
@@ -27466,7 +27984,7 @@ public final class Trade {
        * The client order ID specified in the new-order request.
        * </pre>
        *
-       * <code>uint64 clientOrderId = 1;</code>
+       * <code>uint64 client_order_id = 1;</code>
        * @param value The clientOrderId to set.
        * @return This builder for chaining.
        */
@@ -27481,7 +27999,7 @@ public final class Trade {
        * The client order ID specified in the new-order request.
        * </pre>
        *
-       * <code>uint64 clientOrderId = 1;</code>
+       * <code>uint64 client_order_id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearClientOrderId() {
@@ -27497,7 +28015,7 @@ public final class Trade {
        * [Exchange order ID](#exchange-order-id)
        * </pre>
        *
-       * <code>uint64 exchangeOrderId = 2;</code>
+       * <code>uint64 exchange_order_id = 2;</code>
        * @return The exchangeOrderId.
        */
       @java.lang.Override
@@ -27509,7 +28027,7 @@ public final class Trade {
        * [Exchange order ID](#exchange-order-id)
        * </pre>
        *
-       * <code>uint64 exchangeOrderId = 2;</code>
+       * <code>uint64 exchange_order_id = 2;</code>
        * @param value The exchangeOrderId to set.
        * @return This builder for chaining.
        */
@@ -27524,7 +28042,7 @@ public final class Trade {
        * [Exchange order ID](#exchange-order-id)
        * </pre>
        *
-       * <code>uint64 exchangeOrderId = 2;</code>
+       * <code>uint64 exchange_order_id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearExchangeOrderId() {
@@ -27536,7 +28054,7 @@ public final class Trade {
 
       private long marketId_ ;
       /**
-       * <code>uint64 marketId = 3;</code>
+       * <code>uint64 market_id = 3;</code>
        * @return The marketId.
        */
       @java.lang.Override
@@ -27544,7 +28062,7 @@ public final class Trade {
         return marketId_;
       }
       /**
-       * <code>uint64 marketId = 3;</code>
+       * <code>uint64 market_id = 3;</code>
        * @param value The marketId to set.
        * @return This builder for chaining.
        */
@@ -27555,7 +28073,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 marketId = 3;</code>
+       * <code>uint64 market_id = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearMarketId() {
@@ -27596,45 +28114,54 @@ public final class Trade {
         return this;
       }
 
-      private long originalQuantity_ ;
+      private long orderQuantity_ ;
       /**
        * <pre>
-       * The quantity submitted in the new-order request.
+       * The quantity submitted in the latest quantity-modifying request. If the
+       * order has not been modified, then it is the quantity on the new-order-ack.
+       * If it has been modified, then it is the quantity of the latest
+       * modify-order-ack.
        * </pre>
        *
-       * <code>uint64 originalQuantity = 5;</code>
-       * @return The originalQuantity.
+       * <code>uint64 order_quantity = 5;</code>
+       * @return The orderQuantity.
        */
       @java.lang.Override
-      public long getOriginalQuantity() {
-        return originalQuantity_;
+      public long getOrderQuantity() {
+        return orderQuantity_;
       }
       /**
        * <pre>
-       * The quantity submitted in the new-order request.
+       * The quantity submitted in the latest quantity-modifying request. If the
+       * order has not been modified, then it is the quantity on the new-order-ack.
+       * If it has been modified, then it is the quantity of the latest
+       * modify-order-ack.
        * </pre>
        *
-       * <code>uint64 originalQuantity = 5;</code>
-       * @param value The originalQuantity to set.
+       * <code>uint64 order_quantity = 5;</code>
+       * @param value The orderQuantity to set.
        * @return This builder for chaining.
        */
-      public Builder setOriginalQuantity(long value) {
+      public Builder setOrderQuantity(long value) {
         
-        originalQuantity_ = value;
+        orderQuantity_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * The quantity submitted in the new-order request.
+       * The quantity submitted in the latest quantity-modifying request. If the
+       * order has not been modified, then it is the quantity on the new-order-ack.
+       * If it has been modified, then it is the quantity of the latest
+       * modify-order-ack.
        * </pre>
        *
-       * <code>uint64 originalQuantity = 5;</code>
+       * <code>uint64 order_quantity = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOriginalQuantity() {
+      public Builder clearOrderQuantity() {
         
-        originalQuantity_ = 0L;
+        orderQuantity_ = 0L;
         onChanged();
         return this;
       }
@@ -27695,14 +28222,14 @@ public final class Trade {
 
       private int timeInForce_ = 0;
       /**
-       * <code>.trade.TimeInForce timeInForce = 7;</code>
+       * <code>.trade.TimeInForce time_in_force = 7;</code>
        * @return The enum numeric value on the wire for timeInForce.
        */
       @java.lang.Override public int getTimeInForceValue() {
         return timeInForce_;
       }
       /**
-       * <code>.trade.TimeInForce timeInForce = 7;</code>
+       * <code>.trade.TimeInForce time_in_force = 7;</code>
        * @param value The enum numeric value on the wire for timeInForce to set.
        * @return This builder for chaining.
        */
@@ -27713,7 +28240,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.TimeInForce timeInForce = 7;</code>
+       * <code>.trade.TimeInForce time_in_force = 7;</code>
        * @return The timeInForce.
        */
       @java.lang.Override
@@ -27723,7 +28250,7 @@ public final class Trade {
         return result == null ? trade.Trade.TimeInForce.UNRECOGNIZED : result;
       }
       /**
-       * <code>.trade.TimeInForce timeInForce = 7;</code>
+       * <code>.trade.TimeInForce time_in_force = 7;</code>
        * @param value The timeInForce to set.
        * @return This builder for chaining.
        */
@@ -27737,7 +28264,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.TimeInForce timeInForce = 7;</code>
+       * <code>.trade.TimeInForce time_in_force = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearTimeInForce() {
@@ -27749,14 +28276,14 @@ public final class Trade {
 
       private int orderType_ = 0;
       /**
-       * <code>.trade.OrderType orderType = 8;</code>
+       * <code>.trade.OrderType order_type = 8;</code>
        * @return The enum numeric value on the wire for orderType.
        */
       @java.lang.Override public int getOrderTypeValue() {
         return orderType_;
       }
       /**
-       * <code>.trade.OrderType orderType = 8;</code>
+       * <code>.trade.OrderType order_type = 8;</code>
        * @param value The enum numeric value on the wire for orderType to set.
        * @return This builder for chaining.
        */
@@ -27767,7 +28294,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.OrderType orderType = 8;</code>
+       * <code>.trade.OrderType order_type = 8;</code>
        * @return The orderType.
        */
       @java.lang.Override
@@ -27777,7 +28304,7 @@ public final class Trade {
         return result == null ? trade.Trade.OrderType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.trade.OrderType orderType = 8;</code>
+       * <code>.trade.OrderType order_type = 8;</code>
        * @param value The orderType to set.
        * @return This builder for chaining.
        */
@@ -27791,7 +28318,7 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>.trade.OrderType orderType = 8;</code>
+       * <code>.trade.OrderType order_type = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearOrderType() {
@@ -27807,7 +28334,7 @@ public final class Trade {
        * The current remaining quantity on the book.
        * </pre>
        *
-       * <code>uint64 remainingQuantity = 9;</code>
+       * <code>uint64 remaining_quantity = 9;</code>
        * @return The remainingQuantity.
        */
       @java.lang.Override
@@ -27819,7 +28346,7 @@ public final class Trade {
        * The current remaining quantity on the book.
        * </pre>
        *
-       * <code>uint64 remainingQuantity = 9;</code>
+       * <code>uint64 remaining_quantity = 9;</code>
        * @param value The remainingQuantity to set.
        * @return This builder for chaining.
        */
@@ -27834,7 +28361,7 @@ public final class Trade {
        * The current remaining quantity on the book.
        * </pre>
        *
-       * <code>uint64 remainingQuantity = 9;</code>
+       * <code>uint64 remaining_quantity = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearRemainingQuantity() {
@@ -27850,7 +28377,7 @@ public final class Trade {
        * [Transact time](#transact-time) of the NewOrderAck
        * </pre>
        *
-       * <code>uint64 restTime = 10;</code>
+       * <code>uint64 rest_time = 10;</code>
        * @return The restTime.
        */
       @java.lang.Override
@@ -27862,7 +28389,7 @@ public final class Trade {
        * [Transact time](#transact-time) of the NewOrderAck
        * </pre>
        *
-       * <code>uint64 restTime = 10;</code>
+       * <code>uint64 rest_time = 10;</code>
        * @param value The restTime to set.
        * @return This builder for chaining.
        */
@@ -27877,7 +28404,7 @@ public final class Trade {
        * [Transact time](#transact-time) of the NewOrderAck
        * </pre>
        *
-       * <code>uint64 restTime = 10;</code>
+       * <code>uint64 rest_time = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearRestTime() {
@@ -27889,7 +28416,7 @@ public final class Trade {
 
       private long subaccountId_ ;
       /**
-       * <code>uint64 subaccountId = 11;</code>
+       * <code>uint64 subaccount_id = 11;</code>
        * @return The subaccountId.
        */
       @java.lang.Override
@@ -27897,7 +28424,7 @@ public final class Trade {
         return subaccountId_;
       }
       /**
-       * <code>uint64 subaccountId = 11;</code>
+       * <code>uint64 subaccount_id = 11;</code>
        * @param value The subaccountId to set.
        * @return This builder for chaining.
        */
@@ -27908,12 +28435,55 @@ public final class Trade {
         return this;
       }
       /**
-       * <code>uint64 subaccountId = 11;</code>
+       * <code>uint64 subaccount_id = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearSubaccountId() {
         
         subaccountId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long cumulativeQuantity_ ;
+      /**
+       * <pre>
+       * The cumulative filled quantity for this order.
+       * </pre>
+       *
+       * <code>uint64 cumulative_quantity = 12;</code>
+       * @return The cumulativeQuantity.
+       */
+      @java.lang.Override
+      public long getCumulativeQuantity() {
+        return cumulativeQuantity_;
+      }
+      /**
+       * <pre>
+       * The cumulative filled quantity for this order.
+       * </pre>
+       *
+       * <code>uint64 cumulative_quantity = 12;</code>
+       * @param value The cumulativeQuantity to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCumulativeQuantity(long value) {
+        
+        cumulativeQuantity_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The cumulative filled quantity for this order.
+       * </pre>
+       *
+       * <code>uint64 cumulative_quantity = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCumulativeQuantity() {
+        
+        cumulativeQuantity_ = 0L;
         onChanged();
         return this;
       }
@@ -28094,145 +28664,152 @@ public final class Trade {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\013trade.proto\022\005trade\"H\n\013Credentials\022\023\n\013a" +
-      "ccessKeyId\030\001 \001(\t\022\021\n\tsignature\030\002 \001(\t\022\021\n\tt" +
-      "imestamp\030\003 \001(\004\"\313\001\n\014OrderRequest\022\036\n\003new\030\001" +
-      " \001(\0132\017.trade.NewOrderH\000\022$\n\006cancel\030\002 \001(\0132" +
-      "\022.trade.CancelOrderH\000\022$\n\006modify\030\003 \001(\0132\022." +
-      "trade.ModifyOrderH\000\022%\n\theartbeat\030\004 \001(\0132\020" +
-      ".trade.HeartbeatH\000\022\037\n\002mc\030\005 \001(\0132\021.trade.M" +
-      "assCancelH\000B\007\n\005inner\"\356\002\n\010NewOrder\022\025\n\rcli" +
-      "entOrderId\030\001 \001(\004\022\021\n\trequestId\030\002 \001(\004\022\020\n\010m" +
-      "arketId\030\003 \001(\004\022\022\n\005price\030\004 \001(\004H\000\210\001\001\022\020\n\010qua" +
-      "ntity\030\005 \001(\004\022\031\n\004side\030\006 \001(\0162\013.trade.Side\022\'" +
-      "\n\013timeInForce\030\007 \001(\0162\022.trade.TimeInForce\022" +
-      "#\n\torderType\030\010 \001(\0162\020.trade.OrderType\022\024\n\014" +
-      "subaccountId\030\t \001(\004\022<\n\023selfTradePreventio" +
-      "n\030\n \001(\0162\032.trade.SelfTradePreventionH\001\210\001\001" +
-      "\022!\n\010postOnly\030\013 \001(\0162\017.trade.PostOnlyB\010\n\006_" +
-      "priceB\026\n\024_selfTradePrevention\"_\n\013CancelO" +
-      "rder\022\020\n\010marketId\030\001 \001(\004\022\025\n\rclientOrderId\030" +
-      "\002 \001(\004\022\021\n\trequestId\030\003 \001(\004\022\024\n\014subaccountId" +
-      "\030\004 \001(\004\"\377\001\n\013ModifyOrder\022\020\n\010marketId\030\001 \001(\004" +
-      "\022\025\n\rclientOrderId\030\002 \001(\004\022\021\n\trequestId\030\003 \001" +
-      "(\004\022\020\n\010newPrice\030\004 \001(\004\022\023\n\013newQuantity\030\005 \001(" +
-      "\004\022\024\n\014subaccountId\030\006 \001(\004\022<\n\023selfTradePrev" +
-      "ention\030\007 \001(\0162\032.trade.SelfTradePrevention" +
-      "H\000\210\001\001\022!\n\010postOnly\030\010 \001(\0162\017.trade.PostOnly" +
-      "B\026\n\024_selfTradePrevention\"\202\001\n\nMassCancel\022" +
-      "\024\n\014subaccountId\030\001 \001(\004\022\021\n\trequestId\030\002 \001(\004" +
-      "\022\025\n\010marketId\030\003 \001(\004H\000\210\001\001\022\036\n\004side\030\004 \001(\0162\013." +
-      "trade.SideH\001\210\001\001B\013\n\t_marketIdB\007\n\005_side\"1\n" +
-      "\tHeartbeat\022\021\n\trequestId\030\001 \001(\004\022\021\n\ttimesta" +
-      "mp\030\002 \001(\004\"\303\003\n\rOrderResponse\022$\n\006newAck\030\001 \001" +
-      "(\0132\022.trade.NewOrderAckH\000\022*\n\tcancelAck\030\002 " +
-      "\001(\0132\025.trade.CancelOrderAckH\000\022*\n\tmodifyAc" +
-      "k\030\003 \001(\0132\025.trade.ModifyOrderAckH\000\022*\n\tnewR" +
-      "eject\030\004 \001(\0132\025.trade.NewOrderRejectH\000\0220\n\014" +
-      "cancelReject\030\005 \001(\0132\030.trade.CancelOrderRe" +
-      "jectH\000\0220\n\014modifyReject\030\006 \001(\0132\030.trade.Mod" +
-      "ifyOrderRejectH\000\022\033\n\004fill\030\007 \001(\0132\013.trade.F" +
-      "illH\000\022%\n\theartbeat\030\010 \001(\0132\020.trade.Heartbe" +
-      "atH\000\022(\n\010position\030\t \001(\0132\024.trade.AssetPosi" +
-      "tionH\000\022-\n\rmassCancelAck\030\n \001(\0132\024.trade.Ma" +
-      "ssCancelAckH\000B\007\n\005inner\"\272\002\n\013NewOrderAck\022\021" +
-      "\n\tmsgSeqNum\030\001 \001(\004\022\025\n\rclientOrderId\030\002 \001(\004" +
-      "\022\021\n\trequestId\030\003 \001(\004\022\027\n\017exchangeOrderId\030\004" +
-      " \001(\004\022\020\n\010marketId\030\005 \001(\004\022\022\n\005price\030\006 \001(\004H\000\210" +
-      "\001\001\022\020\n\010quantity\030\007 \001(\004\022\031\n\004side\030\010 \001(\0162\013.tra" +
-      "de.Side\022\'\n\013timeInForce\030\t \001(\0162\022.trade.Tim" +
-      "eInForce\022#\n\torderType\030\n \001(\0162\020.trade.Orde" +
-      "rType\022\024\n\014transactTime\030\013 \001(\004\022\024\n\014subaccoun" +
-      "tId\030\014 \001(\004B\010\n\006_price\"\263\002\n\016CancelOrderAck\022\021" +
-      "\n\tmsgSeqNum\030\001 \001(\004\022\025\n\rclientOrderId\030\002 \001(\004" +
-      "\022\021\n\trequestId\030\003 \001(\004\022\024\n\014transactTime\030\004 \001(" +
-      "\004\022\024\n\014subaccountId\030\005 \001(\004\022,\n\006reason\030\006 \001(\0162" +
-      "\034.trade.CancelOrderAck.Reason\022\020\n\010marketI" +
-      "d\030\007 \001(\004\"x\n\006Reason\022\020\n\014UNCLASSIFIED\020\000\022\016\n\nD" +
-      "ISCONNECT\020\001\022\r\n\tREQUESTED\020\002\022\007\n\003IOC\020\003\022\017\n\013S" +
-      "TP_RESTING\020\004\022\022\n\016STP_AGGRESSING\020\005\022\017\n\013MASS" +
-      "_CANCEL\020\006\"\257\001\n\016ModifyOrderAck\022\021\n\tmsgSeqNu" +
-      "m\030\001 \001(\004\022\025\n\rclientOrderId\030\002 \001(\004\022\021\n\treques" +
-      "tId\030\003 \001(\004\022\024\n\014transactTime\030\004 \001(\004\022\023\n\013newQu" +
-      "antity\030\005 \001(\004\022\024\n\014subaccountId\030\006 \001(\004\022\020\n\010ma" +
-      "rketId\030\007 \001(\004\022\r\n\005price\030\010 \001(\004\"\200\002\n\rMassCanc" +
-      "elAck\022\021\n\tmsgSeqNum\030\001 \001(\004\022\024\n\014subaccountId" +
-      "\030\002 \001(\004\022\021\n\trequestId\030\003 \001(\004\022\024\n\014transactTim" +
-      "e\030\004 \001(\004\0220\n\006reason\030\006 \001(\0162\033.trade.MassCanc" +
-      "elAck.ReasonH\000\210\001\001\022\033\n\023totalAffectedOrders" +
-      "\030\007 \001(\r\"C\n\006Reason\022\020\n\014UNCLASSIFIED\020\000\022\025\n\021IN" +
-      "VALID_MARKET_ID\020\001\022\020\n\014INVALID_SIDE\020\002B\t\n\007_" +
-      "reason\"\221\006\n\016NewOrderReject\022\021\n\tmsgSeqNum\030\001" +
-      " \001(\004\022\025\n\rclientOrderId\030\002 \001(\004\022\021\n\trequestId" +
-      "\030\003 \001(\004\022\024\n\014transactTime\030\004 \001(\004\022\024\n\014subaccou" +
-      "ntId\030\005 \001(\004\022,\n\006reason\030\006 \001(\0162\034.trade.NewOr" +
-      "derReject.Reason\022\020\n\010marketId\030\007 \001(\004\022\022\n\005pr" +
-      "ice\030\010 \001(\004H\000\210\001\001\022\020\n\010quantity\030\t \001(\004\022\031\n\004side" +
-      "\030\n \001(\0162\013.trade.Side\022\'\n\013timeInForce\030\013 \001(\016" +
-      "2\022.trade.TimeInForce\022#\n\torderType\030\014 \001(\0162" +
-      "\020.trade.OrderType\"\274\003\n\006Reason\022\020\n\014UNCLASSI" +
-      "FIED\020\000\022\024\n\020INVALID_QUANTITY\020\001\022\025\n\021INVALID_" +
-      "MARKET_ID\020\002\022\026\n\022DUPLICATE_ORDER_ID\020\003\022\020\n\014I" +
-      "NVALID_SIDE\020\004\022\031\n\025INVALID_TIME_IN_FORCE\020\005" +
-      "\022\026\n\022INVALID_ORDER_TYPE\020\006\022\025\n\021INVALID_POST" +
-      "_ONLY\020\007\022!\n\035INVALID_SELF_TRADE_PREVENTION" +
-      "\020\010\022\022\n\016UNKNOWN_TRADER\020\t\022\033\n\027PRICE_WITH_MAR" +
-      "KET_ORDER\020\n\022\037\n\033POST_ONLY_WITH_MARKET_ORD" +
-      "ER\020\013\022\036\n\032POST_ONLY_WITH_INVALID_TIF\020\014\022\032\n\026" +
-      "EXCEEDED_SPOT_POSITION\020\r\022\033\n\027NO_OPPOSING_" +
-      "LIMIT_ORDER\020\016\022\031\n\025POST_ONLY_WOULD_TRADE\020\017" +
-      "\022\026\n\022DID_NOT_FULLY_FILL\020\020B\010\n\006_price\"\207\002\n\021C" +
-      "ancelOrderReject\022\021\n\tmsgSeqNum\030\001 \001(\004\022\025\n\rc" +
-      "lientOrderId\030\002 \001(\004\022\021\n\trequestId\030\003 \001(\004\022\024\n" +
-      "\014transactTime\030\004 \001(\004\022\024\n\014subaccountId\030\005 \001(" +
-      "\004\022/\n\006reason\030\006 \001(\0162\037.trade.CancelOrderRej" +
-      "ect.Reason\022\020\n\010marketId\030\007 \001(\004\"F\n\006Reason\022\020" +
-      "\n\014UNCLASSIFIED\020\000\022\025\n\021INVALID_MARKET_ID\020\001\022" +
-      "\023\n\017ORDER_NOT_FOUND\020\002\"\264\003\n\021ModifyOrderReje" +
-      "ct\022\021\n\tmsgSeqNum\030\001 \001(\004\022\025\n\rclientOrderId\030\002" +
-      " \001(\004\022\021\n\trequestId\030\003 \001(\004\022\024\n\014transactTime\030" +
-      "\004 \001(\004\022\024\n\014subaccountId\030\005 \001(\004\022/\n\006reason\030\006 " +
-      "\001(\0162\037.trade.ModifyOrderReject.Reason\022\020\n\010" +
-      "marketId\030\007 \001(\004\"\362\001\n\006Reason\022\020\n\014UNCLASSIFIE" +
-      "D\020\000\022\024\n\020INVALID_QUANTITY\020\001\022\025\n\021INVALID_MAR" +
-      "KET_ID\020\002\022\023\n\017ORDER_NOT_FOUND\020\003\022\017\n\013INVALID" +
-      "_IFM\020\004\022\025\n\021INVALID_POST_ONLY\020\005\022!\n\035INVALID" +
-      "_SELF_TRADE_PREVENTION\020\006\022\022\n\016UNKNOWN_TRAD" +
-      "ER\020\007\022\032\n\026EXCEEDED_SPOT_POSITION\020\010\022\031\n\025POST" +
-      "_ONLY_WOULD_TRADE\020\t\"\310\001\n\004Fill\022\021\n\tmsgSeqNu" +
-      "m\030\001 \001(\004\022\020\n\010marketId\030\002 \001(\004\022\025\n\rclientOrder" +
-      "Id\030\003 \001(\004\022\027\n\017exchangeOrderId\030\004 \001(\004\022\021\n\tfil" +
-      "lPrice\030\005 \001(\004\022\024\n\014fillQuantity\030\006 \001(\004\022\026\n\016le" +
-      "avesQuantity\030\007 \001(\004\022\024\n\014transactTime\030\010 \001(\004" +
-      "\022\024\n\014subaccountId\030\t \001(\004\"z\n\rAssetPosition\022" +
-      "\024\n\014subaccountId\030\001 \001(\004\022\017\n\007assetId\030\002 \001(\004\022\036" +
-      "\n\005total\030\003 \001(\0132\017.trade.RawUnits\022\"\n\tavaila" +
-      "ble\030\004 \001(\0132\017.trade.RawUnits\"F\n\010RawUnits\022\r" +
-      "\n\005word0\030\001 \001(\004\022\r\n\005word1\030\002 \001(\004\022\r\n\005word2\030\003 " +
-      "\001(\004\022\r\n\005word3\030\004 \001(\004\"\205\001\n\tBootstrap\022\033\n\004done" +
-      "\030\001 \001(\0132\013.trade.DoneH\000\022\'\n\007resting\030\002 \001(\0132\024" +
-      ".trade.RestingOrdersH\000\022)\n\010position\030\003 \001(\013" +
-      "2\025.trade.AssetPositionsH\000B\007\n\005inner\"4\n\rRe" +
-      "stingOrders\022#\n\006orders\030\001 \003(\0132\023.trade.Rest" +
-      "ingOrder\"9\n\016AssetPositions\022\'\n\tpositions\030" +
-      "\001 \003(\0132\024.trade.AssetPosition\"\"\n\004Done\022\032\n\022l" +
-      "atestTransactTime\030\001 \001(\004\"\245\002\n\014RestingOrder" +
-      "\022\025\n\rclientOrderId\030\001 \001(\004\022\027\n\017exchangeOrder" +
-      "Id\030\002 \001(\004\022\020\n\010marketId\030\003 \001(\004\022\r\n\005price\030\004 \001(" +
-      "\004\022\030\n\020originalQuantity\030\005 \001(\004\022\031\n\004side\030\006 \001(" +
-      "\0162\013.trade.Side\022\'\n\013timeInForce\030\007 \001(\0162\022.tr" +
-      "ade.TimeInForce\022#\n\torderType\030\010 \001(\0162\020.tra" +
-      "de.OrderType\022\031\n\021remainingQuantity\030\t \001(\004\022" +
-      "\020\n\010restTime\030\n \001(\004\022\024\n\014subaccountId\030\013 \001(\004*" +
-      "\030\n\004Side\022\007\n\003BID\020\000\022\007\n\003ASK\020\001*N\n\013TimeInForce" +
-      "\022\027\n\023IMMEDIATE_OR_CANCEL\020\000\022\024\n\020GOOD_FOR_SE" +
-      "SSION\020\001\022\020\n\014FILL_OR_KILL\020\002*D\n\tOrderType\022\t" +
-      "\n\005LIMIT\020\000\022\020\n\014MARKET_LIMIT\020\001\022\032\n\026MARKET_WI" +
-      "TH_PROTECTION\020\002*V\n\023SelfTradePrevention\022\022" +
-      "\n\016CANCEL_RESTING\020\000\022\025\n\021CANCEL_AGGRESSING\020" +
-      "\001\022\024\n\020ALLOW_SELF_TRADE\020\002*%\n\010PostOnly\022\014\n\010D" +
-      "ISABLED\020\000\022\013\n\007ENABLED\020\001B\022Z\003go/\252\002\nCube.Tra" +
-      "deb\006proto3"
+      "\n\013trade.proto\022\005trade\"J\n\013Credentials\022\025\n\ra" +
+      "ccess_key_id\030\001 \001(\t\022\021\n\tsignature\030\002 \001(\t\022\021\n" +
+      "\ttimestamp\030\003 \001(\004\"\313\001\n\014OrderRequest\022\036\n\003new" +
+      "\030\001 \001(\0132\017.trade.NewOrderH\000\022$\n\006cancel\030\002 \001(" +
+      "\0132\022.trade.CancelOrderH\000\022$\n\006modify\030\003 \001(\0132" +
+      "\022.trade.ModifyOrderH\000\022%\n\theartbeat\030\004 \001(\013" +
+      "2\020.trade.HeartbeatH\000\022\037\n\002mc\030\005 \001(\0132\021.trade" +
+      ".MassCancelH\000B\007\n\005inner\"\231\003\n\010NewOrder\022\027\n\017c" +
+      "lient_order_id\030\001 \001(\004\022\022\n\nrequest_id\030\002 \001(\004" +
+      "\022\021\n\tmarket_id\030\003 \001(\004\022\022\n\005price\030\004 \001(\004H\000\210\001\001\022" +
+      "\020\n\010quantity\030\005 \001(\004\022\031\n\004side\030\006 \001(\0162\013.trade." +
+      "Side\022)\n\rtime_in_force\030\007 \001(\0162\022.trade.Time" +
+      "InForce\022$\n\norder_type\030\010 \001(\0162\020.trade.Orde" +
+      "rType\022\025\n\rsubaccount_id\030\t \001(\004\022>\n\025self_tra" +
+      "de_prevention\030\n \001(\0162\032.trade.SelfTradePre" +
+      "ventionH\001\210\001\001\022\"\n\tpost_only\030\013 \001(\0162\017.trade." +
+      "PostOnly\022\034\n\024cancel_on_disconnect\030\014 \001(\010B\010" +
+      "\n\006_priceB\030\n\026_self_trade_prevention\"d\n\013Ca" +
+      "ncelOrder\022\021\n\tmarket_id\030\001 \001(\004\022\027\n\017client_o" +
+      "rder_id\030\002 \001(\004\022\022\n\nrequest_id\030\003 \001(\004\022\025\n\rsub" +
+      "account_id\030\004 \001(\004\"\213\002\n\013ModifyOrder\022\021\n\tmark" +
+      "et_id\030\001 \001(\004\022\027\n\017client_order_id\030\002 \001(\004\022\022\n\n" +
+      "request_id\030\003 \001(\004\022\021\n\tnew_price\030\004 \001(\004\022\024\n\014n" +
+      "ew_quantity\030\005 \001(\004\022\025\n\rsubaccount_id\030\006 \001(\004" +
+      "\022>\n\025self_trade_prevention\030\007 \001(\0162\032.trade." +
+      "SelfTradePreventionH\000\210\001\001\022\"\n\tpost_only\030\010 " +
+      "\001(\0162\017.trade.PostOnlyB\030\n\026_self_trade_prev" +
+      "ention\"\206\001\n\nMassCancel\022\025\n\rsubaccount_id\030\001" +
+      " \001(\004\022\022\n\nrequest_id\030\002 \001(\004\022\026\n\tmarket_id\030\003 " +
+      "\001(\004H\000\210\001\001\022\036\n\004side\030\004 \001(\0162\013.trade.SideH\001\210\001\001" +
+      "B\014\n\n_market_idB\007\n\005_side\"2\n\tHeartbeat\022\022\n\n" +
+      "request_id\030\001 \001(\004\022\021\n\ttimestamp\030\002 \001(\004\"\313\003\n\r" +
+      "OrderResponse\022%\n\007new_ack\030\001 \001(\0132\022.trade.N" +
+      "ewOrderAckH\000\022+\n\ncancel_ack\030\002 \001(\0132\025.trade" +
+      ".CancelOrderAckH\000\022+\n\nmodify_ack\030\003 \001(\0132\025." +
+      "trade.ModifyOrderAckH\000\022+\n\nnew_reject\030\004 \001" +
+      "(\0132\025.trade.NewOrderRejectH\000\0221\n\rcancel_re" +
+      "ject\030\005 \001(\0132\030.trade.CancelOrderRejectH\000\0221" +
+      "\n\rmodify_reject\030\006 \001(\0132\030.trade.ModifyOrde" +
+      "rRejectH\000\022\033\n\004fill\030\007 \001(\0132\013.trade.FillH\000\022%" +
+      "\n\theartbeat\030\010 \001(\0132\020.trade.HeartbeatH\000\022(\n" +
+      "\010position\030\t \001(\0132\024.trade.AssetPositionH\000\022" +
+      "/\n\017mass_cancel_ack\030\n \001(\0132\024.trade.MassCan" +
+      "celAckH\000B\007\n\005inner\"\345\002\n\013NewOrderAck\022\023\n\013msg" +
+      "_seq_num\030\001 \001(\004\022\027\n\017client_order_id\030\002 \001(\004\022" +
+      "\022\n\nrequest_id\030\003 \001(\004\022\031\n\021exchange_order_id" +
+      "\030\004 \001(\004\022\021\n\tmarket_id\030\005 \001(\004\022\022\n\005price\030\006 \001(\004" +
+      "H\000\210\001\001\022\020\n\010quantity\030\007 \001(\004\022\031\n\004side\030\010 \001(\0162\013." +
+      "trade.Side\022)\n\rtime_in_force\030\t \001(\0162\022.trad" +
+      "e.TimeInForce\022$\n\norder_type\030\n \001(\0162\020.trad" +
+      "e.OrderType\022\025\n\rtransact_time\030\013 \001(\004\022\025\n\rsu" +
+      "baccount_id\030\014 \001(\004\022\034\n\024cancel_on_disconnec" +
+      "t\030\r \001(\010B\010\n\006_price\"\273\002\n\016CancelOrderAck\022\023\n\013" +
+      "msg_seq_num\030\001 \001(\004\022\027\n\017client_order_id\030\002 \001" +
+      "(\004\022\022\n\nrequest_id\030\003 \001(\004\022\025\n\rtransact_time\030" +
+      "\004 \001(\004\022\025\n\rsubaccount_id\030\005 \001(\004\022,\n\006reason\030\006" +
+      " \001(\0162\034.trade.CancelOrderAck.Reason\022\021\n\tma" +
+      "rket_id\030\007 \001(\004\"x\n\006Reason\022\020\n\014UNCLASSIFIED\020" +
+      "\000\022\016\n\nDISCONNECT\020\001\022\r\n\tREQUESTED\020\002\022\007\n\003IOC\020" +
+      "\003\022\017\n\013STP_RESTING\020\004\022\022\n\016STP_AGGRESSING\020\005\022\017" +
+      "\n\013MASS_CANCEL\020\006\"\355\001\n\016ModifyOrderAck\022\023\n\013ms" +
+      "g_seq_num\030\001 \001(\004\022\027\n\017client_order_id\030\002 \001(\004" +
+      "\022\022\n\nrequest_id\030\003 \001(\004\022\025\n\rtransact_time\030\004 " +
+      "\001(\004\022\032\n\022remaining_quantity\030\005 \001(\004\022\025\n\rsubac" +
+      "count_id\030\006 \001(\004\022\021\n\tmarket_id\030\007 \001(\004\022\r\n\005pri" +
+      "ce\030\010 \001(\004\022\020\n\010quantity\030\t \001(\004\022\033\n\023cumulative" +
+      "_quantity\030\n \001(\004\"\207\002\n\rMassCancelAck\022\023\n\013msg" +
+      "_seq_num\030\001 \001(\004\022\025\n\rsubaccount_id\030\002 \001(\004\022\022\n" +
+      "\nrequest_id\030\003 \001(\004\022\025\n\rtransact_time\030\004 \001(\004" +
+      "\0220\n\006reason\030\006 \001(\0162\033.trade.MassCancelAck.R" +
+      "easonH\000\210\001\001\022\035\n\025total_affected_orders\030\007 \001(" +
+      "\r\"C\n\006Reason\022\020\n\014UNCLASSIFIED\020\000\022\025\n\021INVALID" +
+      "_MARKET_ID\020\001\022\020\n\014INVALID_SIDE\020\002B\t\n\007_reaso" +
+      "n\"\234\006\n\016NewOrderReject\022\023\n\013msg_seq_num\030\001 \001(" +
+      "\004\022\027\n\017client_order_id\030\002 \001(\004\022\022\n\nrequest_id" +
+      "\030\003 \001(\004\022\025\n\rtransact_time\030\004 \001(\004\022\025\n\rsubacco" +
+      "unt_id\030\005 \001(\004\022,\n\006reason\030\006 \001(\0162\034.trade.New" +
+      "OrderReject.Reason\022\021\n\tmarket_id\030\007 \001(\004\022\022\n" +
+      "\005price\030\010 \001(\004H\000\210\001\001\022\020\n\010quantity\030\t \001(\004\022\031\n\004s" +
+      "ide\030\n \001(\0162\013.trade.Side\022)\n\rtime_in_force\030" +
+      "\013 \001(\0162\022.trade.TimeInForce\022$\n\norder_type\030" +
+      "\014 \001(\0162\020.trade.OrderType\"\274\003\n\006Reason\022\020\n\014UN" +
+      "CLASSIFIED\020\000\022\024\n\020INVALID_QUANTITY\020\001\022\025\n\021IN" +
+      "VALID_MARKET_ID\020\002\022\026\n\022DUPLICATE_ORDER_ID\020" +
+      "\003\022\020\n\014INVALID_SIDE\020\004\022\031\n\025INVALID_TIME_IN_F" +
+      "ORCE\020\005\022\026\n\022INVALID_ORDER_TYPE\020\006\022\025\n\021INVALI" +
+      "D_POST_ONLY\020\007\022!\n\035INVALID_SELF_TRADE_PREV" +
+      "ENTION\020\010\022\022\n\016UNKNOWN_TRADER\020\t\022\033\n\027PRICE_WI" +
+      "TH_MARKET_ORDER\020\n\022\037\n\033POST_ONLY_WITH_MARK" +
+      "ET_ORDER\020\013\022\036\n\032POST_ONLY_WITH_INVALID_TIF" +
+      "\020\014\022\032\n\026EXCEEDED_SPOT_POSITION\020\r\022\033\n\027NO_OPP" +
+      "OSING_LIMIT_ORDER\020\016\022\031\n\025POST_ONLY_WOULD_T" +
+      "RADE\020\017\022\026\n\022DID_NOT_FULLY_FILL\020\020B\010\n\006_price" +
+      "\"\217\002\n\021CancelOrderReject\022\023\n\013msg_seq_num\030\001 " +
+      "\001(\004\022\027\n\017client_order_id\030\002 \001(\004\022\022\n\nrequest_" +
+      "id\030\003 \001(\004\022\025\n\rtransact_time\030\004 \001(\004\022\025\n\rsubac" +
+      "count_id\030\005 \001(\004\022/\n\006reason\030\006 \001(\0162\037.trade.C" +
+      "ancelOrderReject.Reason\022\021\n\tmarket_id\030\007 \001" +
+      "(\004\"F\n\006Reason\022\020\n\014UNCLASSIFIED\020\000\022\025\n\021INVALI" +
+      "D_MARKET_ID\020\001\022\023\n\017ORDER_NOT_FOUND\020\002\"\274\003\n\021M" +
+      "odifyOrderReject\022\023\n\013msg_seq_num\030\001 \001(\004\022\027\n" +
+      "\017client_order_id\030\002 \001(\004\022\022\n\nrequest_id\030\003 \001" +
+      "(\004\022\025\n\rtransact_time\030\004 \001(\004\022\025\n\rsubaccount_" +
+      "id\030\005 \001(\004\022/\n\006reason\030\006 \001(\0162\037.trade.ModifyO" +
+      "rderReject.Reason\022\021\n\tmarket_id\030\007 \001(\004\"\362\001\n" +
+      "\006Reason\022\020\n\014UNCLASSIFIED\020\000\022\024\n\020INVALID_QUA" +
+      "NTITY\020\001\022\025\n\021INVALID_MARKET_ID\020\002\022\023\n\017ORDER_" +
+      "NOT_FOUND\020\003\022\017\n\013INVALID_IFM\020\004\022\025\n\021INVALID_" +
+      "POST_ONLY\020\005\022!\n\035INVALID_SELF_TRADE_PREVEN" +
+      "TION\020\006\022\022\n\016UNKNOWN_TRADER\020\007\022\032\n\026EXCEEDED_S" +
+      "POT_POSITION\020\010\022\031\n\025POST_ONLY_WOULD_TRADE\020" +
+      "\t\"\361\001\n\004Fill\022\023\n\013msg_seq_num\030\001 \001(\004\022\021\n\tmarke" +
+      "t_id\030\002 \001(\004\022\027\n\017client_order_id\030\003 \001(\004\022\031\n\021e" +
+      "xchange_order_id\030\004 \001(\004\022\022\n\nfill_price\030\005 \001" +
+      "(\004\022\025\n\rfill_quantity\030\006 \001(\004\022\027\n\017leaves_quan" +
+      "tity\030\007 \001(\004\022\025\n\rtransact_time\030\010 \001(\004\022\025\n\rsub" +
+      "account_id\030\t \001(\004\022\033\n\023cumulative_quantity\030" +
+      "\n \001(\004\"|\n\rAssetPosition\022\025\n\rsubaccount_id\030" +
+      "\001 \001(\004\022\020\n\010asset_id\030\002 \001(\004\022\036\n\005total\030\003 \001(\0132\017" +
+      ".trade.RawUnits\022\"\n\tavailable\030\004 \001(\0132\017.tra" +
+      "de.RawUnits\"F\n\010RawUnits\022\r\n\005word0\030\001 \001(\004\022\r" +
+      "\n\005word1\030\002 \001(\004\022\r\n\005word2\030\003 \001(\004\022\r\n\005word3\030\004 " +
+      "\001(\004\"\205\001\n\tBootstrap\022\033\n\004done\030\001 \001(\0132\013.trade." +
+      "DoneH\000\022\'\n\007resting\030\002 \001(\0132\024.trade.RestingO" +
+      "rdersH\000\022)\n\010position\030\003 \001(\0132\025.trade.AssetP" +
+      "ositionsH\000B\007\n\005inner\"4\n\rRestingOrders\022#\n\006" +
+      "orders\030\001 \003(\0132\023.trade.RestingOrder\"9\n\016Ass" +
+      "etPositions\022\'\n\tpositions\030\001 \003(\0132\024.trade.A" +
+      "ssetPosition\"$\n\004Done\022\034\n\024latest_transact_" +
+      "time\030\001 \001(\004\"\313\002\n\014RestingOrder\022\027\n\017client_or" +
+      "der_id\030\001 \001(\004\022\031\n\021exchange_order_id\030\002 \001(\004\022" +
+      "\021\n\tmarket_id\030\003 \001(\004\022\r\n\005price\030\004 \001(\004\022\026\n\016ord" +
+      "er_quantity\030\005 \001(\004\022\031\n\004side\030\006 \001(\0162\013.trade." +
+      "Side\022)\n\rtime_in_force\030\007 \001(\0162\022.trade.Time" +
+      "InForce\022$\n\norder_type\030\010 \001(\0162\020.trade.Orde" +
+      "rType\022\032\n\022remaining_quantity\030\t \001(\004\022\021\n\tres" +
+      "t_time\030\n \001(\004\022\025\n\rsubaccount_id\030\013 \001(\004\022\033\n\023c" +
+      "umulative_quantity\030\014 \001(\004*\030\n\004Side\022\007\n\003BID\020" +
+      "\000\022\007\n\003ASK\020\001*N\n\013TimeInForce\022\027\n\023IMMEDIATE_O" +
+      "R_CANCEL\020\000\022\024\n\020GOOD_FOR_SESSION\020\001\022\020\n\014FILL" +
+      "_OR_KILL\020\002*D\n\tOrderType\022\t\n\005LIMIT\020\000\022\020\n\014MA" +
+      "RKET_LIMIT\020\001\022\032\n\026MARKET_WITH_PROTECTION\020\002" +
+      "*V\n\023SelfTradePrevention\022\022\n\016CANCEL_RESTIN" +
+      "G\020\000\022\025\n\021CANCEL_AGGRESSING\020\001\022\024\n\020ALLOW_SELF" +
+      "_TRADE\020\002*%\n\010PostOnly\022\014\n\010DISABLED\020\000\022\013\n\007EN" +
+      "ABLED\020\001B\022Z\003go/\252\002\nCube.Tradeb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -28255,7 +28832,7 @@ public final class Trade {
     internal_static_trade_NewOrder_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_trade_NewOrder_descriptor,
-        new java.lang.String[] { "ClientOrderId", "RequestId", "MarketId", "Price", "Quantity", "Side", "TimeInForce", "OrderType", "SubaccountId", "SelfTradePrevention", "PostOnly", "Price", "SelfTradePrevention", });
+        new java.lang.String[] { "ClientOrderId", "RequestId", "MarketId", "Price", "Quantity", "Side", "TimeInForce", "OrderType", "SubaccountId", "SelfTradePrevention", "PostOnly", "CancelOnDisconnect", "Price", "SelfTradePrevention", });
     internal_static_trade_CancelOrder_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_trade_CancelOrder_fieldAccessorTable = new
@@ -28291,7 +28868,7 @@ public final class Trade {
     internal_static_trade_NewOrderAck_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_trade_NewOrderAck_descriptor,
-        new java.lang.String[] { "MsgSeqNum", "ClientOrderId", "RequestId", "ExchangeOrderId", "MarketId", "Price", "Quantity", "Side", "TimeInForce", "OrderType", "TransactTime", "SubaccountId", "Price", });
+        new java.lang.String[] { "MsgSeqNum", "ClientOrderId", "RequestId", "ExchangeOrderId", "MarketId", "Price", "Quantity", "Side", "TimeInForce", "OrderType", "TransactTime", "SubaccountId", "CancelOnDisconnect", "Price", });
     internal_static_trade_CancelOrderAck_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_trade_CancelOrderAck_fieldAccessorTable = new
@@ -28303,7 +28880,7 @@ public final class Trade {
     internal_static_trade_ModifyOrderAck_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_trade_ModifyOrderAck_descriptor,
-        new java.lang.String[] { "MsgSeqNum", "ClientOrderId", "RequestId", "TransactTime", "NewQuantity", "SubaccountId", "MarketId", "Price", });
+        new java.lang.String[] { "MsgSeqNum", "ClientOrderId", "RequestId", "TransactTime", "RemainingQuantity", "SubaccountId", "MarketId", "Price", "Quantity", "CumulativeQuantity", });
     internal_static_trade_MassCancelAck_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_trade_MassCancelAck_fieldAccessorTable = new
@@ -28333,7 +28910,7 @@ public final class Trade {
     internal_static_trade_Fill_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_trade_Fill_descriptor,
-        new java.lang.String[] { "MsgSeqNum", "MarketId", "ClientOrderId", "ExchangeOrderId", "FillPrice", "FillQuantity", "LeavesQuantity", "TransactTime", "SubaccountId", });
+        new java.lang.String[] { "MsgSeqNum", "MarketId", "ClientOrderId", "ExchangeOrderId", "FillPrice", "FillQuantity", "LeavesQuantity", "TransactTime", "SubaccountId", "CumulativeQuantity", });
     internal_static_trade_AssetPosition_descriptor =
       getDescriptor().getMessageTypes().get(16);
     internal_static_trade_AssetPosition_fieldAccessorTable = new
@@ -28375,7 +28952,7 @@ public final class Trade {
     internal_static_trade_RestingOrder_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_trade_RestingOrder_descriptor,
-        new java.lang.String[] { "ClientOrderId", "ExchangeOrderId", "MarketId", "Price", "OriginalQuantity", "Side", "TimeInForce", "OrderType", "RemainingQuantity", "RestTime", "SubaccountId", });
+        new java.lang.String[] { "ClientOrderId", "ExchangeOrderId", "MarketId", "Price", "OrderQuantity", "Side", "TimeInForce", "OrderType", "RemainingQuantity", "RestTime", "SubaccountId", "CumulativeQuantity", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

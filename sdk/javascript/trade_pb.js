@@ -566,7 +566,7 @@ proto.trade.Credentials.prototype.toObject = function(opt_includeInstance) {
  */
 proto.trade.Credentials.toObject = function(includeInstance, msg) {
   var f, obj = {
-    accesskeyid: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    accessKeyId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     signature: jspb.Message.getFieldWithDefault(msg, 2, ""),
     timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
@@ -607,7 +607,7 @@ proto.trade.Credentials.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setAccesskeyid(value);
+      msg.setAccessKeyId(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -646,7 +646,7 @@ proto.trade.Credentials.prototype.serializeBinary = function() {
  */
 proto.trade.Credentials.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getAccesskeyid();
+  f = message.getAccessKeyId();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -671,10 +671,10 @@ proto.trade.Credentials.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional string accessKeyId = 1;
+ * optional string access_key_id = 1;
  * @return {string}
  */
-proto.trade.Credentials.prototype.getAccesskeyid = function() {
+proto.trade.Credentials.prototype.getAccessKeyId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -683,7 +683,7 @@ proto.trade.Credentials.prototype.getAccesskeyid = function() {
  * @param {string} value
  * @return {!proto.trade.Credentials} returns this
  */
-proto.trade.Credentials.prototype.setAccesskeyid = function(value) {
+proto.trade.Credentials.prototype.setAccessKeyId = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -1140,17 +1140,18 @@ proto.trade.NewOrder.prototype.toObject = function(opt_includeInstance) {
  */
 proto.trade.NewOrder.toObject = function(includeInstance, msg) {
   var f, obj = {
-    clientorderid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    requestid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    marketid: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    clientOrderId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    requestId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    marketId: jspb.Message.getFieldWithDefault(msg, 3, 0),
     price: jspb.Message.getFieldWithDefault(msg, 4, 0),
     quantity: jspb.Message.getFieldWithDefault(msg, 5, 0),
     side: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    timeinforce: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    ordertype: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    subaccountid: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    selftradeprevention: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    postonly: jspb.Message.getFieldWithDefault(msg, 11, 0)
+    timeInForce: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    orderType: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    subaccountId: jspb.Message.getFieldWithDefault(msg, 9, 0),
+    selfTradePrevention: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    postOnly: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    cancelOnDisconnect: jspb.Message.getBooleanFieldWithDefault(msg, 12, false)
   };
 
   if (includeInstance) {
@@ -1189,15 +1190,15 @@ proto.trade.NewOrder.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setClientorderid(value);
+      msg.setClientOrderId(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setRequestid(value);
+      msg.setRequestId(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readUint64());
@@ -1213,23 +1214,27 @@ proto.trade.NewOrder.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 7:
       var value = /** @type {!proto.trade.TimeInForce} */ (reader.readEnum());
-      msg.setTimeinforce(value);
+      msg.setTimeInForce(value);
       break;
     case 8:
       var value = /** @type {!proto.trade.OrderType} */ (reader.readEnum());
-      msg.setOrdertype(value);
+      msg.setOrderType(value);
       break;
     case 9:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setSubaccountid(value);
+      msg.setSubaccountId(value);
       break;
     case 10:
       var value = /** @type {!proto.trade.SelfTradePrevention} */ (reader.readEnum());
-      msg.setSelftradeprevention(value);
+      msg.setSelfTradePrevention(value);
       break;
     case 11:
       var value = /** @type {!proto.trade.PostOnly} */ (reader.readEnum());
-      msg.setPostonly(value);
+      msg.setPostOnly(value);
+      break;
+    case 12:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setCancelOnDisconnect(value);
       break;
     default:
       reader.skipField();
@@ -1260,21 +1265,21 @@ proto.trade.NewOrder.prototype.serializeBinary = function() {
  */
 proto.trade.NewOrder.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getClientorderid();
+  f = message.getClientOrderId();
   if (f !== 0) {
     writer.writeUint64(
       1,
       f
     );
   }
-  f = message.getRequestid();
+  f = message.getRequestId();
   if (f !== 0) {
     writer.writeUint64(
       2,
       f
     );
   }
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f !== 0) {
     writer.writeUint64(
       3,
@@ -1302,21 +1307,21 @@ proto.trade.NewOrder.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getTimeinforce();
+  f = message.getTimeInForce();
   if (f !== 0.0) {
     writer.writeEnum(
       7,
       f
     );
   }
-  f = message.getOrdertype();
+  f = message.getOrderType();
   if (f !== 0.0) {
     writer.writeEnum(
       8,
       f
     );
   }
-  f = message.getSubaccountid();
+  f = message.getSubaccountId();
   if (f !== 0) {
     writer.writeUint64(
       9,
@@ -1330,10 +1335,17 @@ proto.trade.NewOrder.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getPostonly();
+  f = message.getPostOnly();
   if (f !== 0.0) {
     writer.writeEnum(
       11,
+      f
+    );
+  }
+  f = message.getCancelOnDisconnect();
+  if (f) {
+    writer.writeBool(
+      12,
       f
     );
   }
@@ -1341,10 +1353,10 @@ proto.trade.NewOrder.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional uint64 clientOrderId = 1;
+ * optional uint64 client_order_id = 1;
  * @return {number}
  */
-proto.trade.NewOrder.prototype.getClientorderid = function() {
+proto.trade.NewOrder.prototype.getClientOrderId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -1353,16 +1365,16 @@ proto.trade.NewOrder.prototype.getClientorderid = function() {
  * @param {number} value
  * @return {!proto.trade.NewOrder} returns this
  */
-proto.trade.NewOrder.prototype.setClientorderid = function(value) {
+proto.trade.NewOrder.prototype.setClientOrderId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
 /**
- * optional uint64 requestId = 2;
+ * optional uint64 request_id = 2;
  * @return {number}
  */
-proto.trade.NewOrder.prototype.getRequestid = function() {
+proto.trade.NewOrder.prototype.getRequestId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -1371,16 +1383,16 @@ proto.trade.NewOrder.prototype.getRequestid = function() {
  * @param {number} value
  * @return {!proto.trade.NewOrder} returns this
  */
-proto.trade.NewOrder.prototype.setRequestid = function(value) {
+proto.trade.NewOrder.prototype.setRequestId = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
 /**
- * optional uint64 marketId = 3;
+ * optional uint64 market_id = 3;
  * @return {number}
  */
-proto.trade.NewOrder.prototype.getMarketid = function() {
+proto.trade.NewOrder.prototype.getMarketId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -1389,7 +1401,7 @@ proto.trade.NewOrder.prototype.getMarketid = function() {
  * @param {number} value
  * @return {!proto.trade.NewOrder} returns this
  */
-proto.trade.NewOrder.prototype.setMarketid = function(value) {
+proto.trade.NewOrder.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
 };
 
@@ -1467,10 +1479,10 @@ proto.trade.NewOrder.prototype.setSide = function(value) {
 
 
 /**
- * optional TimeInForce timeInForce = 7;
+ * optional TimeInForce time_in_force = 7;
  * @return {!proto.trade.TimeInForce}
  */
-proto.trade.NewOrder.prototype.getTimeinforce = function() {
+proto.trade.NewOrder.prototype.getTimeInForce = function() {
   return /** @type {!proto.trade.TimeInForce} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
@@ -1479,16 +1491,16 @@ proto.trade.NewOrder.prototype.getTimeinforce = function() {
  * @param {!proto.trade.TimeInForce} value
  * @return {!proto.trade.NewOrder} returns this
  */
-proto.trade.NewOrder.prototype.setTimeinforce = function(value) {
+proto.trade.NewOrder.prototype.setTimeInForce = function(value) {
   return jspb.Message.setProto3EnumField(this, 7, value);
 };
 
 
 /**
- * optional OrderType orderType = 8;
+ * optional OrderType order_type = 8;
  * @return {!proto.trade.OrderType}
  */
-proto.trade.NewOrder.prototype.getOrdertype = function() {
+proto.trade.NewOrder.prototype.getOrderType = function() {
   return /** @type {!proto.trade.OrderType} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
@@ -1497,16 +1509,16 @@ proto.trade.NewOrder.prototype.getOrdertype = function() {
  * @param {!proto.trade.OrderType} value
  * @return {!proto.trade.NewOrder} returns this
  */
-proto.trade.NewOrder.prototype.setOrdertype = function(value) {
+proto.trade.NewOrder.prototype.setOrderType = function(value) {
   return jspb.Message.setProto3EnumField(this, 8, value);
 };
 
 
 /**
- * optional uint64 subaccountId = 9;
+ * optional uint64 subaccount_id = 9;
  * @return {number}
  */
-proto.trade.NewOrder.prototype.getSubaccountid = function() {
+proto.trade.NewOrder.prototype.getSubaccountId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
 };
 
@@ -1515,16 +1527,16 @@ proto.trade.NewOrder.prototype.getSubaccountid = function() {
  * @param {number} value
  * @return {!proto.trade.NewOrder} returns this
  */
-proto.trade.NewOrder.prototype.setSubaccountid = function(value) {
+proto.trade.NewOrder.prototype.setSubaccountId = function(value) {
   return jspb.Message.setProto3IntField(this, 9, value);
 };
 
 
 /**
- * optional SelfTradePrevention selfTradePrevention = 10;
+ * optional SelfTradePrevention self_trade_prevention = 10;
  * @return {!proto.trade.SelfTradePrevention}
  */
-proto.trade.NewOrder.prototype.getSelftradeprevention = function() {
+proto.trade.NewOrder.prototype.getSelfTradePrevention = function() {
   return /** @type {!proto.trade.SelfTradePrevention} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
 };
 
@@ -1533,7 +1545,7 @@ proto.trade.NewOrder.prototype.getSelftradeprevention = function() {
  * @param {!proto.trade.SelfTradePrevention} value
  * @return {!proto.trade.NewOrder} returns this
  */
-proto.trade.NewOrder.prototype.setSelftradeprevention = function(value) {
+proto.trade.NewOrder.prototype.setSelfTradePrevention = function(value) {
   return jspb.Message.setField(this, 10, value);
 };
 
@@ -1542,7 +1554,7 @@ proto.trade.NewOrder.prototype.setSelftradeprevention = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.trade.NewOrder} returns this
  */
-proto.trade.NewOrder.prototype.clearSelftradeprevention = function() {
+proto.trade.NewOrder.prototype.clearSelfTradePrevention = function() {
   return jspb.Message.setField(this, 10, undefined);
 };
 
@@ -1551,16 +1563,16 @@ proto.trade.NewOrder.prototype.clearSelftradeprevention = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.trade.NewOrder.prototype.hasSelftradeprevention = function() {
+proto.trade.NewOrder.prototype.hasSelfTradePrevention = function() {
   return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * optional PostOnly postOnly = 11;
+ * optional PostOnly post_only = 11;
  * @return {!proto.trade.PostOnly}
  */
-proto.trade.NewOrder.prototype.getPostonly = function() {
+proto.trade.NewOrder.prototype.getPostOnly = function() {
   return /** @type {!proto.trade.PostOnly} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
@@ -1569,8 +1581,26 @@ proto.trade.NewOrder.prototype.getPostonly = function() {
  * @param {!proto.trade.PostOnly} value
  * @return {!proto.trade.NewOrder} returns this
  */
-proto.trade.NewOrder.prototype.setPostonly = function(value) {
+proto.trade.NewOrder.prototype.setPostOnly = function(value) {
   return jspb.Message.setProto3EnumField(this, 11, value);
+};
+
+
+/**
+ * optional bool cancel_on_disconnect = 12;
+ * @return {boolean}
+ */
+proto.trade.NewOrder.prototype.getCancelOnDisconnect = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.trade.NewOrder} returns this
+ */
+proto.trade.NewOrder.prototype.setCancelOnDisconnect = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 12, value);
 };
 
 
@@ -1606,10 +1636,10 @@ proto.trade.CancelOrder.prototype.toObject = function(opt_includeInstance) {
  */
 proto.trade.CancelOrder.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    clientorderid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    requestid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    subaccountid: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    clientOrderId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    requestId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    subaccountId: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -1648,19 +1678,19 @@ proto.trade.CancelOrder.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setClientorderid(value);
+      msg.setClientOrderId(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setRequestid(value);
+      msg.setRequestId(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setSubaccountid(value);
+      msg.setSubaccountId(value);
       break;
     default:
       reader.skipField();
@@ -1691,28 +1721,28 @@ proto.trade.CancelOrder.prototype.serializeBinary = function() {
  */
 proto.trade.CancelOrder.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f !== 0) {
     writer.writeUint64(
       1,
       f
     );
   }
-  f = message.getClientorderid();
+  f = message.getClientOrderId();
   if (f !== 0) {
     writer.writeUint64(
       2,
       f
     );
   }
-  f = message.getRequestid();
+  f = message.getRequestId();
   if (f !== 0) {
     writer.writeUint64(
       3,
       f
     );
   }
-  f = message.getSubaccountid();
+  f = message.getSubaccountId();
   if (f !== 0) {
     writer.writeUint64(
       4,
@@ -1723,10 +1753,10 @@ proto.trade.CancelOrder.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional uint64 marketId = 1;
+ * optional uint64 market_id = 1;
  * @return {number}
  */
-proto.trade.CancelOrder.prototype.getMarketid = function() {
+proto.trade.CancelOrder.prototype.getMarketId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -1735,16 +1765,16 @@ proto.trade.CancelOrder.prototype.getMarketid = function() {
  * @param {number} value
  * @return {!proto.trade.CancelOrder} returns this
  */
-proto.trade.CancelOrder.prototype.setMarketid = function(value) {
+proto.trade.CancelOrder.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
 /**
- * optional uint64 clientOrderId = 2;
+ * optional uint64 client_order_id = 2;
  * @return {number}
  */
-proto.trade.CancelOrder.prototype.getClientorderid = function() {
+proto.trade.CancelOrder.prototype.getClientOrderId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -1753,16 +1783,16 @@ proto.trade.CancelOrder.prototype.getClientorderid = function() {
  * @param {number} value
  * @return {!proto.trade.CancelOrder} returns this
  */
-proto.trade.CancelOrder.prototype.setClientorderid = function(value) {
+proto.trade.CancelOrder.prototype.setClientOrderId = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
 /**
- * optional uint64 requestId = 3;
+ * optional uint64 request_id = 3;
  * @return {number}
  */
-proto.trade.CancelOrder.prototype.getRequestid = function() {
+proto.trade.CancelOrder.prototype.getRequestId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -1771,16 +1801,16 @@ proto.trade.CancelOrder.prototype.getRequestid = function() {
  * @param {number} value
  * @return {!proto.trade.CancelOrder} returns this
  */
-proto.trade.CancelOrder.prototype.setRequestid = function(value) {
+proto.trade.CancelOrder.prototype.setRequestId = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
 /**
- * optional uint64 subaccountId = 4;
+ * optional uint64 subaccount_id = 4;
  * @return {number}
  */
-proto.trade.CancelOrder.prototype.getSubaccountid = function() {
+proto.trade.CancelOrder.prototype.getSubaccountId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
@@ -1789,7 +1819,7 @@ proto.trade.CancelOrder.prototype.getSubaccountid = function() {
  * @param {number} value
  * @return {!proto.trade.CancelOrder} returns this
  */
-proto.trade.CancelOrder.prototype.setSubaccountid = function(value) {
+proto.trade.CancelOrder.prototype.setSubaccountId = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
 };
 
@@ -1826,14 +1856,14 @@ proto.trade.ModifyOrder.prototype.toObject = function(opt_includeInstance) {
  */
 proto.trade.ModifyOrder.toObject = function(includeInstance, msg) {
   var f, obj = {
-    marketid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    clientorderid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    requestid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    newprice: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    newquantity: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    subaccountid: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    selftradeprevention: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    postonly: jspb.Message.getFieldWithDefault(msg, 8, 0)
+    marketId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    clientOrderId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    requestId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    newPrice: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    newQuantity: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    subaccountId: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    selfTradePrevention: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    postOnly: jspb.Message.getFieldWithDefault(msg, 8, 0)
   };
 
   if (includeInstance) {
@@ -1872,35 +1902,35 @@ proto.trade.ModifyOrder.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setClientorderid(value);
+      msg.setClientOrderId(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setRequestid(value);
+      msg.setRequestId(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setNewprice(value);
+      msg.setNewPrice(value);
       break;
     case 5:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setNewquantity(value);
+      msg.setNewQuantity(value);
       break;
     case 6:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setSubaccountid(value);
+      msg.setSubaccountId(value);
       break;
     case 7:
       var value = /** @type {!proto.trade.SelfTradePrevention} */ (reader.readEnum());
-      msg.setSelftradeprevention(value);
+      msg.setSelfTradePrevention(value);
       break;
     case 8:
       var value = /** @type {!proto.trade.PostOnly} */ (reader.readEnum());
-      msg.setPostonly(value);
+      msg.setPostOnly(value);
       break;
     default:
       reader.skipField();
@@ -1931,42 +1961,42 @@ proto.trade.ModifyOrder.prototype.serializeBinary = function() {
  */
 proto.trade.ModifyOrder.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f !== 0) {
     writer.writeUint64(
       1,
       f
     );
   }
-  f = message.getClientorderid();
+  f = message.getClientOrderId();
   if (f !== 0) {
     writer.writeUint64(
       2,
       f
     );
   }
-  f = message.getRequestid();
+  f = message.getRequestId();
   if (f !== 0) {
     writer.writeUint64(
       3,
       f
     );
   }
-  f = message.getNewprice();
+  f = message.getNewPrice();
   if (f !== 0) {
     writer.writeUint64(
       4,
       f
     );
   }
-  f = message.getNewquantity();
+  f = message.getNewQuantity();
   if (f !== 0) {
     writer.writeUint64(
       5,
       f
     );
   }
-  f = message.getSubaccountid();
+  f = message.getSubaccountId();
   if (f !== 0) {
     writer.writeUint64(
       6,
@@ -1980,7 +2010,7 @@ proto.trade.ModifyOrder.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getPostonly();
+  f = message.getPostOnly();
   if (f !== 0.0) {
     writer.writeEnum(
       8,
@@ -1991,10 +2021,10 @@ proto.trade.ModifyOrder.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional uint64 marketId = 1;
+ * optional uint64 market_id = 1;
  * @return {number}
  */
-proto.trade.ModifyOrder.prototype.getMarketid = function() {
+proto.trade.ModifyOrder.prototype.getMarketId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -2003,16 +2033,16 @@ proto.trade.ModifyOrder.prototype.getMarketid = function() {
  * @param {number} value
  * @return {!proto.trade.ModifyOrder} returns this
  */
-proto.trade.ModifyOrder.prototype.setMarketid = function(value) {
+proto.trade.ModifyOrder.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
 /**
- * optional uint64 clientOrderId = 2;
+ * optional uint64 client_order_id = 2;
  * @return {number}
  */
-proto.trade.ModifyOrder.prototype.getClientorderid = function() {
+proto.trade.ModifyOrder.prototype.getClientOrderId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -2021,16 +2051,16 @@ proto.trade.ModifyOrder.prototype.getClientorderid = function() {
  * @param {number} value
  * @return {!proto.trade.ModifyOrder} returns this
  */
-proto.trade.ModifyOrder.prototype.setClientorderid = function(value) {
+proto.trade.ModifyOrder.prototype.setClientOrderId = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
 /**
- * optional uint64 requestId = 3;
+ * optional uint64 request_id = 3;
  * @return {number}
  */
-proto.trade.ModifyOrder.prototype.getRequestid = function() {
+proto.trade.ModifyOrder.prototype.getRequestId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -2039,16 +2069,16 @@ proto.trade.ModifyOrder.prototype.getRequestid = function() {
  * @param {number} value
  * @return {!proto.trade.ModifyOrder} returns this
  */
-proto.trade.ModifyOrder.prototype.setRequestid = function(value) {
+proto.trade.ModifyOrder.prototype.setRequestId = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
 /**
- * optional uint64 newPrice = 4;
+ * optional uint64 new_price = 4;
  * @return {number}
  */
-proto.trade.ModifyOrder.prototype.getNewprice = function() {
+proto.trade.ModifyOrder.prototype.getNewPrice = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
@@ -2057,16 +2087,16 @@ proto.trade.ModifyOrder.prototype.getNewprice = function() {
  * @param {number} value
  * @return {!proto.trade.ModifyOrder} returns this
  */
-proto.trade.ModifyOrder.prototype.setNewprice = function(value) {
+proto.trade.ModifyOrder.prototype.setNewPrice = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
 /**
- * optional uint64 newQuantity = 5;
+ * optional uint64 new_quantity = 5;
  * @return {number}
  */
-proto.trade.ModifyOrder.prototype.getNewquantity = function() {
+proto.trade.ModifyOrder.prototype.getNewQuantity = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -2075,16 +2105,16 @@ proto.trade.ModifyOrder.prototype.getNewquantity = function() {
  * @param {number} value
  * @return {!proto.trade.ModifyOrder} returns this
  */
-proto.trade.ModifyOrder.prototype.setNewquantity = function(value) {
+proto.trade.ModifyOrder.prototype.setNewQuantity = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
 /**
- * optional uint64 subaccountId = 6;
+ * optional uint64 subaccount_id = 6;
  * @return {number}
  */
-proto.trade.ModifyOrder.prototype.getSubaccountid = function() {
+proto.trade.ModifyOrder.prototype.getSubaccountId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
@@ -2093,16 +2123,16 @@ proto.trade.ModifyOrder.prototype.getSubaccountid = function() {
  * @param {number} value
  * @return {!proto.trade.ModifyOrder} returns this
  */
-proto.trade.ModifyOrder.prototype.setSubaccountid = function(value) {
+proto.trade.ModifyOrder.prototype.setSubaccountId = function(value) {
   return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
 /**
- * optional SelfTradePrevention selfTradePrevention = 7;
+ * optional SelfTradePrevention self_trade_prevention = 7;
  * @return {!proto.trade.SelfTradePrevention}
  */
-proto.trade.ModifyOrder.prototype.getSelftradeprevention = function() {
+proto.trade.ModifyOrder.prototype.getSelfTradePrevention = function() {
   return /** @type {!proto.trade.SelfTradePrevention} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
@@ -2111,7 +2141,7 @@ proto.trade.ModifyOrder.prototype.getSelftradeprevention = function() {
  * @param {!proto.trade.SelfTradePrevention} value
  * @return {!proto.trade.ModifyOrder} returns this
  */
-proto.trade.ModifyOrder.prototype.setSelftradeprevention = function(value) {
+proto.trade.ModifyOrder.prototype.setSelfTradePrevention = function(value) {
   return jspb.Message.setField(this, 7, value);
 };
 
@@ -2120,7 +2150,7 @@ proto.trade.ModifyOrder.prototype.setSelftradeprevention = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.trade.ModifyOrder} returns this
  */
-proto.trade.ModifyOrder.prototype.clearSelftradeprevention = function() {
+proto.trade.ModifyOrder.prototype.clearSelfTradePrevention = function() {
   return jspb.Message.setField(this, 7, undefined);
 };
 
@@ -2129,16 +2159,16 @@ proto.trade.ModifyOrder.prototype.clearSelftradeprevention = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.trade.ModifyOrder.prototype.hasSelftradeprevention = function() {
+proto.trade.ModifyOrder.prototype.hasSelfTradePrevention = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional PostOnly postOnly = 8;
+ * optional PostOnly post_only = 8;
  * @return {!proto.trade.PostOnly}
  */
-proto.trade.ModifyOrder.prototype.getPostonly = function() {
+proto.trade.ModifyOrder.prototype.getPostOnly = function() {
   return /** @type {!proto.trade.PostOnly} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
@@ -2147,7 +2177,7 @@ proto.trade.ModifyOrder.prototype.getPostonly = function() {
  * @param {!proto.trade.PostOnly} value
  * @return {!proto.trade.ModifyOrder} returns this
  */
-proto.trade.ModifyOrder.prototype.setPostonly = function(value) {
+proto.trade.ModifyOrder.prototype.setPostOnly = function(value) {
   return jspb.Message.setProto3EnumField(this, 8, value);
 };
 
@@ -2184,9 +2214,9 @@ proto.trade.MassCancel.prototype.toObject = function(opt_includeInstance) {
  */
 proto.trade.MassCancel.toObject = function(includeInstance, msg) {
   var f, obj = {
-    subaccountid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    requestid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    marketid: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    subaccountId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    requestId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    marketId: jspb.Message.getFieldWithDefault(msg, 3, 0),
     side: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
@@ -2226,15 +2256,15 @@ proto.trade.MassCancel.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setSubaccountid(value);
+      msg.setSubaccountId(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setRequestid(value);
+      msg.setRequestId(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 4:
       var value = /** @type {!proto.trade.Side} */ (reader.readEnum());
@@ -2269,14 +2299,14 @@ proto.trade.MassCancel.prototype.serializeBinary = function() {
  */
 proto.trade.MassCancel.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSubaccountid();
+  f = message.getSubaccountId();
   if (f !== 0) {
     writer.writeUint64(
       1,
       f
     );
   }
-  f = message.getRequestid();
+  f = message.getRequestId();
   if (f !== 0) {
     writer.writeUint64(
       2,
@@ -2301,10 +2331,10 @@ proto.trade.MassCancel.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional uint64 subaccountId = 1;
+ * optional uint64 subaccount_id = 1;
  * @return {number}
  */
-proto.trade.MassCancel.prototype.getSubaccountid = function() {
+proto.trade.MassCancel.prototype.getSubaccountId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -2313,16 +2343,16 @@ proto.trade.MassCancel.prototype.getSubaccountid = function() {
  * @param {number} value
  * @return {!proto.trade.MassCancel} returns this
  */
-proto.trade.MassCancel.prototype.setSubaccountid = function(value) {
+proto.trade.MassCancel.prototype.setSubaccountId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
 /**
- * optional uint64 requestId = 2;
+ * optional uint64 request_id = 2;
  * @return {number}
  */
-proto.trade.MassCancel.prototype.getRequestid = function() {
+proto.trade.MassCancel.prototype.getRequestId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -2331,16 +2361,16 @@ proto.trade.MassCancel.prototype.getRequestid = function() {
  * @param {number} value
  * @return {!proto.trade.MassCancel} returns this
  */
-proto.trade.MassCancel.prototype.setRequestid = function(value) {
+proto.trade.MassCancel.prototype.setRequestId = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
 /**
- * optional uint64 marketId = 3;
+ * optional uint64 market_id = 3;
  * @return {number}
  */
-proto.trade.MassCancel.prototype.getMarketid = function() {
+proto.trade.MassCancel.prototype.getMarketId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -2349,7 +2379,7 @@ proto.trade.MassCancel.prototype.getMarketid = function() {
  * @param {number} value
  * @return {!proto.trade.MassCancel} returns this
  */
-proto.trade.MassCancel.prototype.setMarketid = function(value) {
+proto.trade.MassCancel.prototype.setMarketId = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -2358,7 +2388,7 @@ proto.trade.MassCancel.prototype.setMarketid = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.trade.MassCancel} returns this
  */
-proto.trade.MassCancel.prototype.clearMarketid = function() {
+proto.trade.MassCancel.prototype.clearMarketId = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -2367,7 +2397,7 @@ proto.trade.MassCancel.prototype.clearMarketid = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.trade.MassCancel.prototype.hasMarketid = function() {
+proto.trade.MassCancel.prototype.hasMarketId = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -2440,7 +2470,7 @@ proto.trade.Heartbeat.prototype.toObject = function(opt_includeInstance) {
  */
 proto.trade.Heartbeat.toObject = function(includeInstance, msg) {
   var f, obj = {
-    requestid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    requestId: jspb.Message.getFieldWithDefault(msg, 1, 0),
     timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
@@ -2480,7 +2510,7 @@ proto.trade.Heartbeat.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setRequestid(value);
+      msg.setRequestId(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readUint64());
@@ -2515,7 +2545,7 @@ proto.trade.Heartbeat.prototype.serializeBinary = function() {
  */
 proto.trade.Heartbeat.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getRequestid();
+  f = message.getRequestId();
   if (f !== 0) {
     writer.writeUint64(
       1,
@@ -2533,10 +2563,10 @@ proto.trade.Heartbeat.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional uint64 requestId = 1;
+ * optional uint64 request_id = 1;
  * @return {number}
  */
-proto.trade.Heartbeat.prototype.getRequestid = function() {
+proto.trade.Heartbeat.prototype.getRequestId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -2545,7 +2575,7 @@ proto.trade.Heartbeat.prototype.getRequestid = function() {
  * @param {number} value
  * @return {!proto.trade.Heartbeat} returns this
  */
-proto.trade.Heartbeat.prototype.setRequestid = function(value) {
+proto.trade.Heartbeat.prototype.setRequestId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
@@ -2584,16 +2614,16 @@ proto.trade.OrderResponse.oneofGroups_ = [[1,2,3,4,5,6,7,8,9,10]];
  */
 proto.trade.OrderResponse.InnerCase = {
   INNER_NOT_SET: 0,
-  NEWACK: 1,
-  CANCELACK: 2,
-  MODIFYACK: 3,
-  NEWREJECT: 4,
-  CANCELREJECT: 5,
-  MODIFYREJECT: 6,
+  NEW_ACK: 1,
+  CANCEL_ACK: 2,
+  MODIFY_ACK: 3,
+  NEW_REJECT: 4,
+  CANCEL_REJECT: 5,
+  MODIFY_REJECT: 6,
   FILL: 7,
   HEARTBEAT: 8,
   POSITION: 9,
-  MASSCANCELACK: 10
+  MASS_CANCEL_ACK: 10
 };
 
 /**
@@ -2634,16 +2664,16 @@ proto.trade.OrderResponse.prototype.toObject = function(opt_includeInstance) {
  */
 proto.trade.OrderResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    newack: (f = msg.getNewack()) && proto.trade.NewOrderAck.toObject(includeInstance, f),
-    cancelack: (f = msg.getCancelack()) && proto.trade.CancelOrderAck.toObject(includeInstance, f),
-    modifyack: (f = msg.getModifyack()) && proto.trade.ModifyOrderAck.toObject(includeInstance, f),
-    newreject: (f = msg.getNewreject()) && proto.trade.NewOrderReject.toObject(includeInstance, f),
-    cancelreject: (f = msg.getCancelreject()) && proto.trade.CancelOrderReject.toObject(includeInstance, f),
-    modifyreject: (f = msg.getModifyreject()) && proto.trade.ModifyOrderReject.toObject(includeInstance, f),
+    newAck: (f = msg.getNewAck()) && proto.trade.NewOrderAck.toObject(includeInstance, f),
+    cancelAck: (f = msg.getCancelAck()) && proto.trade.CancelOrderAck.toObject(includeInstance, f),
+    modifyAck: (f = msg.getModifyAck()) && proto.trade.ModifyOrderAck.toObject(includeInstance, f),
+    newReject: (f = msg.getNewReject()) && proto.trade.NewOrderReject.toObject(includeInstance, f),
+    cancelReject: (f = msg.getCancelReject()) && proto.trade.CancelOrderReject.toObject(includeInstance, f),
+    modifyReject: (f = msg.getModifyReject()) && proto.trade.ModifyOrderReject.toObject(includeInstance, f),
     fill: (f = msg.getFill()) && proto.trade.Fill.toObject(includeInstance, f),
     heartbeat: (f = msg.getHeartbeat()) && proto.trade.Heartbeat.toObject(includeInstance, f),
     position: (f = msg.getPosition()) && proto.trade.AssetPosition.toObject(includeInstance, f),
-    masscancelack: (f = msg.getMasscancelack()) && proto.trade.MassCancelAck.toObject(includeInstance, f)
+    massCancelAck: (f = msg.getMassCancelAck()) && proto.trade.MassCancelAck.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2683,32 +2713,32 @@ proto.trade.OrderResponse.deserializeBinaryFromReader = function(msg, reader) {
     case 1:
       var value = new proto.trade.NewOrderAck;
       reader.readMessage(value,proto.trade.NewOrderAck.deserializeBinaryFromReader);
-      msg.setNewack(value);
+      msg.setNewAck(value);
       break;
     case 2:
       var value = new proto.trade.CancelOrderAck;
       reader.readMessage(value,proto.trade.CancelOrderAck.deserializeBinaryFromReader);
-      msg.setCancelack(value);
+      msg.setCancelAck(value);
       break;
     case 3:
       var value = new proto.trade.ModifyOrderAck;
       reader.readMessage(value,proto.trade.ModifyOrderAck.deserializeBinaryFromReader);
-      msg.setModifyack(value);
+      msg.setModifyAck(value);
       break;
     case 4:
       var value = new proto.trade.NewOrderReject;
       reader.readMessage(value,proto.trade.NewOrderReject.deserializeBinaryFromReader);
-      msg.setNewreject(value);
+      msg.setNewReject(value);
       break;
     case 5:
       var value = new proto.trade.CancelOrderReject;
       reader.readMessage(value,proto.trade.CancelOrderReject.deserializeBinaryFromReader);
-      msg.setCancelreject(value);
+      msg.setCancelReject(value);
       break;
     case 6:
       var value = new proto.trade.ModifyOrderReject;
       reader.readMessage(value,proto.trade.ModifyOrderReject.deserializeBinaryFromReader);
-      msg.setModifyreject(value);
+      msg.setModifyReject(value);
       break;
     case 7:
       var value = new proto.trade.Fill;
@@ -2728,7 +2758,7 @@ proto.trade.OrderResponse.deserializeBinaryFromReader = function(msg, reader) {
     case 10:
       var value = new proto.trade.MassCancelAck;
       reader.readMessage(value,proto.trade.MassCancelAck.deserializeBinaryFromReader);
-      msg.setMasscancelack(value);
+      msg.setMassCancelAck(value);
       break;
     default:
       reader.skipField();
@@ -2759,7 +2789,7 @@ proto.trade.OrderResponse.prototype.serializeBinary = function() {
  */
 proto.trade.OrderResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNewack();
+  f = message.getNewAck();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -2767,7 +2797,7 @@ proto.trade.OrderResponse.serializeBinaryToWriter = function(message, writer) {
       proto.trade.NewOrderAck.serializeBinaryToWriter
     );
   }
-  f = message.getCancelack();
+  f = message.getCancelAck();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -2775,7 +2805,7 @@ proto.trade.OrderResponse.serializeBinaryToWriter = function(message, writer) {
       proto.trade.CancelOrderAck.serializeBinaryToWriter
     );
   }
-  f = message.getModifyack();
+  f = message.getModifyAck();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -2783,7 +2813,7 @@ proto.trade.OrderResponse.serializeBinaryToWriter = function(message, writer) {
       proto.trade.ModifyOrderAck.serializeBinaryToWriter
     );
   }
-  f = message.getNewreject();
+  f = message.getNewReject();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -2791,7 +2821,7 @@ proto.trade.OrderResponse.serializeBinaryToWriter = function(message, writer) {
       proto.trade.NewOrderReject.serializeBinaryToWriter
     );
   }
-  f = message.getCancelreject();
+  f = message.getCancelReject();
   if (f != null) {
     writer.writeMessage(
       5,
@@ -2799,7 +2829,7 @@ proto.trade.OrderResponse.serializeBinaryToWriter = function(message, writer) {
       proto.trade.CancelOrderReject.serializeBinaryToWriter
     );
   }
-  f = message.getModifyreject();
+  f = message.getModifyReject();
   if (f != null) {
     writer.writeMessage(
       6,
@@ -2831,7 +2861,7 @@ proto.trade.OrderResponse.serializeBinaryToWriter = function(message, writer) {
       proto.trade.AssetPosition.serializeBinaryToWriter
     );
   }
-  f = message.getMasscancelack();
+  f = message.getMassCancelAck();
   if (f != null) {
     writer.writeMessage(
       10,
@@ -2843,10 +2873,10 @@ proto.trade.OrderResponse.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional NewOrderAck newAck = 1;
+ * optional NewOrderAck new_ack = 1;
  * @return {?proto.trade.NewOrderAck}
  */
-proto.trade.OrderResponse.prototype.getNewack = function() {
+proto.trade.OrderResponse.prototype.getNewAck = function() {
   return /** @type{?proto.trade.NewOrderAck} */ (
     jspb.Message.getWrapperField(this, proto.trade.NewOrderAck, 1));
 };
@@ -2856,7 +2886,7 @@ proto.trade.OrderResponse.prototype.getNewack = function() {
  * @param {?proto.trade.NewOrderAck|undefined} value
  * @return {!proto.trade.OrderResponse} returns this
 */
-proto.trade.OrderResponse.prototype.setNewack = function(value) {
+proto.trade.OrderResponse.prototype.setNewAck = function(value) {
   return jspb.Message.setOneofWrapperField(this, 1, proto.trade.OrderResponse.oneofGroups_[0], value);
 };
 
@@ -2865,8 +2895,8 @@ proto.trade.OrderResponse.prototype.setNewack = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.trade.OrderResponse} returns this
  */
-proto.trade.OrderResponse.prototype.clearNewack = function() {
-  return this.setNewack(undefined);
+proto.trade.OrderResponse.prototype.clearNewAck = function() {
+  return this.setNewAck(undefined);
 };
 
 
@@ -2874,16 +2904,16 @@ proto.trade.OrderResponse.prototype.clearNewack = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.trade.OrderResponse.prototype.hasNewack = function() {
+proto.trade.OrderResponse.prototype.hasNewAck = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional CancelOrderAck cancelAck = 2;
+ * optional CancelOrderAck cancel_ack = 2;
  * @return {?proto.trade.CancelOrderAck}
  */
-proto.trade.OrderResponse.prototype.getCancelack = function() {
+proto.trade.OrderResponse.prototype.getCancelAck = function() {
   return /** @type{?proto.trade.CancelOrderAck} */ (
     jspb.Message.getWrapperField(this, proto.trade.CancelOrderAck, 2));
 };
@@ -2893,7 +2923,7 @@ proto.trade.OrderResponse.prototype.getCancelack = function() {
  * @param {?proto.trade.CancelOrderAck|undefined} value
  * @return {!proto.trade.OrderResponse} returns this
 */
-proto.trade.OrderResponse.prototype.setCancelack = function(value) {
+proto.trade.OrderResponse.prototype.setCancelAck = function(value) {
   return jspb.Message.setOneofWrapperField(this, 2, proto.trade.OrderResponse.oneofGroups_[0], value);
 };
 
@@ -2902,8 +2932,8 @@ proto.trade.OrderResponse.prototype.setCancelack = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.trade.OrderResponse} returns this
  */
-proto.trade.OrderResponse.prototype.clearCancelack = function() {
-  return this.setCancelack(undefined);
+proto.trade.OrderResponse.prototype.clearCancelAck = function() {
+  return this.setCancelAck(undefined);
 };
 
 
@@ -2911,16 +2941,16 @@ proto.trade.OrderResponse.prototype.clearCancelack = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.trade.OrderResponse.prototype.hasCancelack = function() {
+proto.trade.OrderResponse.prototype.hasCancelAck = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional ModifyOrderAck modifyAck = 3;
+ * optional ModifyOrderAck modify_ack = 3;
  * @return {?proto.trade.ModifyOrderAck}
  */
-proto.trade.OrderResponse.prototype.getModifyack = function() {
+proto.trade.OrderResponse.prototype.getModifyAck = function() {
   return /** @type{?proto.trade.ModifyOrderAck} */ (
     jspb.Message.getWrapperField(this, proto.trade.ModifyOrderAck, 3));
 };
@@ -2930,7 +2960,7 @@ proto.trade.OrderResponse.prototype.getModifyack = function() {
  * @param {?proto.trade.ModifyOrderAck|undefined} value
  * @return {!proto.trade.OrderResponse} returns this
 */
-proto.trade.OrderResponse.prototype.setModifyack = function(value) {
+proto.trade.OrderResponse.prototype.setModifyAck = function(value) {
   return jspb.Message.setOneofWrapperField(this, 3, proto.trade.OrderResponse.oneofGroups_[0], value);
 };
 
@@ -2939,8 +2969,8 @@ proto.trade.OrderResponse.prototype.setModifyack = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.trade.OrderResponse} returns this
  */
-proto.trade.OrderResponse.prototype.clearModifyack = function() {
-  return this.setModifyack(undefined);
+proto.trade.OrderResponse.prototype.clearModifyAck = function() {
+  return this.setModifyAck(undefined);
 };
 
 
@@ -2948,16 +2978,16 @@ proto.trade.OrderResponse.prototype.clearModifyack = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.trade.OrderResponse.prototype.hasModifyack = function() {
+proto.trade.OrderResponse.prototype.hasModifyAck = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional NewOrderReject newReject = 4;
+ * optional NewOrderReject new_reject = 4;
  * @return {?proto.trade.NewOrderReject}
  */
-proto.trade.OrderResponse.prototype.getNewreject = function() {
+proto.trade.OrderResponse.prototype.getNewReject = function() {
   return /** @type{?proto.trade.NewOrderReject} */ (
     jspb.Message.getWrapperField(this, proto.trade.NewOrderReject, 4));
 };
@@ -2967,7 +2997,7 @@ proto.trade.OrderResponse.prototype.getNewreject = function() {
  * @param {?proto.trade.NewOrderReject|undefined} value
  * @return {!proto.trade.OrderResponse} returns this
 */
-proto.trade.OrderResponse.prototype.setNewreject = function(value) {
+proto.trade.OrderResponse.prototype.setNewReject = function(value) {
   return jspb.Message.setOneofWrapperField(this, 4, proto.trade.OrderResponse.oneofGroups_[0], value);
 };
 
@@ -2976,8 +3006,8 @@ proto.trade.OrderResponse.prototype.setNewreject = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.trade.OrderResponse} returns this
  */
-proto.trade.OrderResponse.prototype.clearNewreject = function() {
-  return this.setNewreject(undefined);
+proto.trade.OrderResponse.prototype.clearNewReject = function() {
+  return this.setNewReject(undefined);
 };
 
 
@@ -2985,16 +3015,16 @@ proto.trade.OrderResponse.prototype.clearNewreject = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.trade.OrderResponse.prototype.hasNewreject = function() {
+proto.trade.OrderResponse.prototype.hasNewReject = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional CancelOrderReject cancelReject = 5;
+ * optional CancelOrderReject cancel_reject = 5;
  * @return {?proto.trade.CancelOrderReject}
  */
-proto.trade.OrderResponse.prototype.getCancelreject = function() {
+proto.trade.OrderResponse.prototype.getCancelReject = function() {
   return /** @type{?proto.trade.CancelOrderReject} */ (
     jspb.Message.getWrapperField(this, proto.trade.CancelOrderReject, 5));
 };
@@ -3004,7 +3034,7 @@ proto.trade.OrderResponse.prototype.getCancelreject = function() {
  * @param {?proto.trade.CancelOrderReject|undefined} value
  * @return {!proto.trade.OrderResponse} returns this
 */
-proto.trade.OrderResponse.prototype.setCancelreject = function(value) {
+proto.trade.OrderResponse.prototype.setCancelReject = function(value) {
   return jspb.Message.setOneofWrapperField(this, 5, proto.trade.OrderResponse.oneofGroups_[0], value);
 };
 
@@ -3013,8 +3043,8 @@ proto.trade.OrderResponse.prototype.setCancelreject = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.trade.OrderResponse} returns this
  */
-proto.trade.OrderResponse.prototype.clearCancelreject = function() {
-  return this.setCancelreject(undefined);
+proto.trade.OrderResponse.prototype.clearCancelReject = function() {
+  return this.setCancelReject(undefined);
 };
 
 
@@ -3022,16 +3052,16 @@ proto.trade.OrderResponse.prototype.clearCancelreject = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.trade.OrderResponse.prototype.hasCancelreject = function() {
+proto.trade.OrderResponse.prototype.hasCancelReject = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional ModifyOrderReject modifyReject = 6;
+ * optional ModifyOrderReject modify_reject = 6;
  * @return {?proto.trade.ModifyOrderReject}
  */
-proto.trade.OrderResponse.prototype.getModifyreject = function() {
+proto.trade.OrderResponse.prototype.getModifyReject = function() {
   return /** @type{?proto.trade.ModifyOrderReject} */ (
     jspb.Message.getWrapperField(this, proto.trade.ModifyOrderReject, 6));
 };
@@ -3041,7 +3071,7 @@ proto.trade.OrderResponse.prototype.getModifyreject = function() {
  * @param {?proto.trade.ModifyOrderReject|undefined} value
  * @return {!proto.trade.OrderResponse} returns this
 */
-proto.trade.OrderResponse.prototype.setModifyreject = function(value) {
+proto.trade.OrderResponse.prototype.setModifyReject = function(value) {
   return jspb.Message.setOneofWrapperField(this, 6, proto.trade.OrderResponse.oneofGroups_[0], value);
 };
 
@@ -3050,8 +3080,8 @@ proto.trade.OrderResponse.prototype.setModifyreject = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.trade.OrderResponse} returns this
  */
-proto.trade.OrderResponse.prototype.clearModifyreject = function() {
-  return this.setModifyreject(undefined);
+proto.trade.OrderResponse.prototype.clearModifyReject = function() {
+  return this.setModifyReject(undefined);
 };
 
 
@@ -3059,7 +3089,7 @@ proto.trade.OrderResponse.prototype.clearModifyreject = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.trade.OrderResponse.prototype.hasModifyreject = function() {
+proto.trade.OrderResponse.prototype.hasModifyReject = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
@@ -3176,10 +3206,10 @@ proto.trade.OrderResponse.prototype.hasPosition = function() {
 
 
 /**
- * optional MassCancelAck massCancelAck = 10;
+ * optional MassCancelAck mass_cancel_ack = 10;
  * @return {?proto.trade.MassCancelAck}
  */
-proto.trade.OrderResponse.prototype.getMasscancelack = function() {
+proto.trade.OrderResponse.prototype.getMassCancelAck = function() {
   return /** @type{?proto.trade.MassCancelAck} */ (
     jspb.Message.getWrapperField(this, proto.trade.MassCancelAck, 10));
 };
@@ -3189,7 +3219,7 @@ proto.trade.OrderResponse.prototype.getMasscancelack = function() {
  * @param {?proto.trade.MassCancelAck|undefined} value
  * @return {!proto.trade.OrderResponse} returns this
 */
-proto.trade.OrderResponse.prototype.setMasscancelack = function(value) {
+proto.trade.OrderResponse.prototype.setMassCancelAck = function(value) {
   return jspb.Message.setOneofWrapperField(this, 10, proto.trade.OrderResponse.oneofGroups_[0], value);
 };
 
@@ -3198,8 +3228,8 @@ proto.trade.OrderResponse.prototype.setMasscancelack = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.trade.OrderResponse} returns this
  */
-proto.trade.OrderResponse.prototype.clearMasscancelack = function() {
-  return this.setMasscancelack(undefined);
+proto.trade.OrderResponse.prototype.clearMassCancelAck = function() {
+  return this.setMassCancelAck(undefined);
 };
 
 
@@ -3207,7 +3237,7 @@ proto.trade.OrderResponse.prototype.clearMasscancelack = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.trade.OrderResponse.prototype.hasMasscancelack = function() {
+proto.trade.OrderResponse.prototype.hasMassCancelAck = function() {
   return jspb.Message.getField(this, 10) != null;
 };
 
@@ -3244,18 +3274,19 @@ proto.trade.NewOrderAck.prototype.toObject = function(opt_includeInstance) {
  */
 proto.trade.NewOrderAck.toObject = function(includeInstance, msg) {
   var f, obj = {
-    msgseqnum: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    clientorderid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    requestid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    exchangeorderid: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    marketid: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    msgSeqNum: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    clientOrderId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    requestId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    exchangeOrderId: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    marketId: jspb.Message.getFieldWithDefault(msg, 5, 0),
     price: jspb.Message.getFieldWithDefault(msg, 6, 0),
     quantity: jspb.Message.getFieldWithDefault(msg, 7, 0),
     side: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    timeinforce: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    ordertype: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    transacttime: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    subaccountid: jspb.Message.getFieldWithDefault(msg, 12, 0)
+    timeInForce: jspb.Message.getFieldWithDefault(msg, 9, 0),
+    orderType: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    transactTime: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    subaccountId: jspb.Message.getFieldWithDefault(msg, 12, 0),
+    cancelOnDisconnect: jspb.Message.getBooleanFieldWithDefault(msg, 13, false)
   };
 
   if (includeInstance) {
@@ -3294,23 +3325,23 @@ proto.trade.NewOrderAck.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setMsgseqnum(value);
+      msg.setMsgSeqNum(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setClientorderid(value);
+      msg.setClientOrderId(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setRequestid(value);
+      msg.setRequestId(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setExchangeorderid(value);
+      msg.setExchangeOrderId(value);
       break;
     case 5:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 6:
       var value = /** @type {number} */ (reader.readUint64());
@@ -3326,19 +3357,23 @@ proto.trade.NewOrderAck.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 9:
       var value = /** @type {!proto.trade.TimeInForce} */ (reader.readEnum());
-      msg.setTimeinforce(value);
+      msg.setTimeInForce(value);
       break;
     case 10:
       var value = /** @type {!proto.trade.OrderType} */ (reader.readEnum());
-      msg.setOrdertype(value);
+      msg.setOrderType(value);
       break;
     case 11:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setTransacttime(value);
+      msg.setTransactTime(value);
       break;
     case 12:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setSubaccountid(value);
+      msg.setSubaccountId(value);
+      break;
+    case 13:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setCancelOnDisconnect(value);
       break;
     default:
       reader.skipField();
@@ -3369,35 +3404,35 @@ proto.trade.NewOrderAck.prototype.serializeBinary = function() {
  */
 proto.trade.NewOrderAck.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMsgseqnum();
+  f = message.getMsgSeqNum();
   if (f !== 0) {
     writer.writeUint64(
       1,
       f
     );
   }
-  f = message.getClientorderid();
+  f = message.getClientOrderId();
   if (f !== 0) {
     writer.writeUint64(
       2,
       f
     );
   }
-  f = message.getRequestid();
+  f = message.getRequestId();
   if (f !== 0) {
     writer.writeUint64(
       3,
       f
     );
   }
-  f = message.getExchangeorderid();
+  f = message.getExchangeOrderId();
   if (f !== 0) {
     writer.writeUint64(
       4,
       f
     );
   }
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f !== 0) {
     writer.writeUint64(
       5,
@@ -3425,31 +3460,38 @@ proto.trade.NewOrderAck.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getTimeinforce();
+  f = message.getTimeInForce();
   if (f !== 0.0) {
     writer.writeEnum(
       9,
       f
     );
   }
-  f = message.getOrdertype();
+  f = message.getOrderType();
   if (f !== 0.0) {
     writer.writeEnum(
       10,
       f
     );
   }
-  f = message.getTransacttime();
+  f = message.getTransactTime();
   if (f !== 0) {
     writer.writeUint64(
       11,
       f
     );
   }
-  f = message.getSubaccountid();
+  f = message.getSubaccountId();
   if (f !== 0) {
     writer.writeUint64(
       12,
+      f
+    );
+  }
+  f = message.getCancelOnDisconnect();
+  if (f) {
+    writer.writeBool(
+      13,
       f
     );
   }
@@ -3457,10 +3499,10 @@ proto.trade.NewOrderAck.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional uint64 msgSeqNum = 1;
+ * optional uint64 msg_seq_num = 1;
  * @return {number}
  */
-proto.trade.NewOrderAck.prototype.getMsgseqnum = function() {
+proto.trade.NewOrderAck.prototype.getMsgSeqNum = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -3469,16 +3511,16 @@ proto.trade.NewOrderAck.prototype.getMsgseqnum = function() {
  * @param {number} value
  * @return {!proto.trade.NewOrderAck} returns this
  */
-proto.trade.NewOrderAck.prototype.setMsgseqnum = function(value) {
+proto.trade.NewOrderAck.prototype.setMsgSeqNum = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
 /**
- * optional uint64 clientOrderId = 2;
+ * optional uint64 client_order_id = 2;
  * @return {number}
  */
-proto.trade.NewOrderAck.prototype.getClientorderid = function() {
+proto.trade.NewOrderAck.prototype.getClientOrderId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -3487,16 +3529,16 @@ proto.trade.NewOrderAck.prototype.getClientorderid = function() {
  * @param {number} value
  * @return {!proto.trade.NewOrderAck} returns this
  */
-proto.trade.NewOrderAck.prototype.setClientorderid = function(value) {
+proto.trade.NewOrderAck.prototype.setClientOrderId = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
 /**
- * optional uint64 requestId = 3;
+ * optional uint64 request_id = 3;
  * @return {number}
  */
-proto.trade.NewOrderAck.prototype.getRequestid = function() {
+proto.trade.NewOrderAck.prototype.getRequestId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -3505,16 +3547,16 @@ proto.trade.NewOrderAck.prototype.getRequestid = function() {
  * @param {number} value
  * @return {!proto.trade.NewOrderAck} returns this
  */
-proto.trade.NewOrderAck.prototype.setRequestid = function(value) {
+proto.trade.NewOrderAck.prototype.setRequestId = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
 /**
- * optional uint64 exchangeOrderId = 4;
+ * optional uint64 exchange_order_id = 4;
  * @return {number}
  */
-proto.trade.NewOrderAck.prototype.getExchangeorderid = function() {
+proto.trade.NewOrderAck.prototype.getExchangeOrderId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
@@ -3523,16 +3565,16 @@ proto.trade.NewOrderAck.prototype.getExchangeorderid = function() {
  * @param {number} value
  * @return {!proto.trade.NewOrderAck} returns this
  */
-proto.trade.NewOrderAck.prototype.setExchangeorderid = function(value) {
+proto.trade.NewOrderAck.prototype.setExchangeOrderId = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
 /**
- * optional uint64 marketId = 5;
+ * optional uint64 market_id = 5;
  * @return {number}
  */
-proto.trade.NewOrderAck.prototype.getMarketid = function() {
+proto.trade.NewOrderAck.prototype.getMarketId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -3541,7 +3583,7 @@ proto.trade.NewOrderAck.prototype.getMarketid = function() {
  * @param {number} value
  * @return {!proto.trade.NewOrderAck} returns this
  */
-proto.trade.NewOrderAck.prototype.setMarketid = function(value) {
+proto.trade.NewOrderAck.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
 };
 
@@ -3619,10 +3661,10 @@ proto.trade.NewOrderAck.prototype.setSide = function(value) {
 
 
 /**
- * optional TimeInForce timeInForce = 9;
+ * optional TimeInForce time_in_force = 9;
  * @return {!proto.trade.TimeInForce}
  */
-proto.trade.NewOrderAck.prototype.getTimeinforce = function() {
+proto.trade.NewOrderAck.prototype.getTimeInForce = function() {
   return /** @type {!proto.trade.TimeInForce} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
 };
 
@@ -3631,16 +3673,16 @@ proto.trade.NewOrderAck.prototype.getTimeinforce = function() {
  * @param {!proto.trade.TimeInForce} value
  * @return {!proto.trade.NewOrderAck} returns this
  */
-proto.trade.NewOrderAck.prototype.setTimeinforce = function(value) {
+proto.trade.NewOrderAck.prototype.setTimeInForce = function(value) {
   return jspb.Message.setProto3EnumField(this, 9, value);
 };
 
 
 /**
- * optional OrderType orderType = 10;
+ * optional OrderType order_type = 10;
  * @return {!proto.trade.OrderType}
  */
-proto.trade.NewOrderAck.prototype.getOrdertype = function() {
+proto.trade.NewOrderAck.prototype.getOrderType = function() {
   return /** @type {!proto.trade.OrderType} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
 };
 
@@ -3649,16 +3691,16 @@ proto.trade.NewOrderAck.prototype.getOrdertype = function() {
  * @param {!proto.trade.OrderType} value
  * @return {!proto.trade.NewOrderAck} returns this
  */
-proto.trade.NewOrderAck.prototype.setOrdertype = function(value) {
+proto.trade.NewOrderAck.prototype.setOrderType = function(value) {
   return jspb.Message.setProto3EnumField(this, 10, value);
 };
 
 
 /**
- * optional uint64 transactTime = 11;
+ * optional uint64 transact_time = 11;
  * @return {number}
  */
-proto.trade.NewOrderAck.prototype.getTransacttime = function() {
+proto.trade.NewOrderAck.prototype.getTransactTime = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
@@ -3667,16 +3709,16 @@ proto.trade.NewOrderAck.prototype.getTransacttime = function() {
  * @param {number} value
  * @return {!proto.trade.NewOrderAck} returns this
  */
-proto.trade.NewOrderAck.prototype.setTransacttime = function(value) {
+proto.trade.NewOrderAck.prototype.setTransactTime = function(value) {
   return jspb.Message.setProto3IntField(this, 11, value);
 };
 
 
 /**
- * optional uint64 subaccountId = 12;
+ * optional uint64 subaccount_id = 12;
  * @return {number}
  */
-proto.trade.NewOrderAck.prototype.getSubaccountid = function() {
+proto.trade.NewOrderAck.prototype.getSubaccountId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
 };
 
@@ -3685,8 +3727,26 @@ proto.trade.NewOrderAck.prototype.getSubaccountid = function() {
  * @param {number} value
  * @return {!proto.trade.NewOrderAck} returns this
  */
-proto.trade.NewOrderAck.prototype.setSubaccountid = function(value) {
+proto.trade.NewOrderAck.prototype.setSubaccountId = function(value) {
   return jspb.Message.setProto3IntField(this, 12, value);
+};
+
+
+/**
+ * optional bool cancel_on_disconnect = 13;
+ * @return {boolean}
+ */
+proto.trade.NewOrderAck.prototype.getCancelOnDisconnect = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 13, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.trade.NewOrderAck} returns this
+ */
+proto.trade.NewOrderAck.prototype.setCancelOnDisconnect = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 13, value);
 };
 
 
@@ -3722,13 +3782,13 @@ proto.trade.CancelOrderAck.prototype.toObject = function(opt_includeInstance) {
  */
 proto.trade.CancelOrderAck.toObject = function(includeInstance, msg) {
   var f, obj = {
-    msgseqnum: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    clientorderid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    requestid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    transacttime: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    subaccountid: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    msgSeqNum: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    clientOrderId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    requestId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    transactTime: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    subaccountId: jspb.Message.getFieldWithDefault(msg, 5, 0),
     reason: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    marketid: jspb.Message.getFieldWithDefault(msg, 7, 0)
+    marketId: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -3767,23 +3827,23 @@ proto.trade.CancelOrderAck.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setMsgseqnum(value);
+      msg.setMsgSeqNum(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setClientorderid(value);
+      msg.setClientOrderId(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setRequestid(value);
+      msg.setRequestId(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setTransacttime(value);
+      msg.setTransactTime(value);
       break;
     case 5:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setSubaccountid(value);
+      msg.setSubaccountId(value);
       break;
     case 6:
       var value = /** @type {!proto.trade.CancelOrderAck.Reason} */ (reader.readEnum());
@@ -3791,7 +3851,7 @@ proto.trade.CancelOrderAck.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 7:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     default:
       reader.skipField();
@@ -3822,35 +3882,35 @@ proto.trade.CancelOrderAck.prototype.serializeBinary = function() {
  */
 proto.trade.CancelOrderAck.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMsgseqnum();
+  f = message.getMsgSeqNum();
   if (f !== 0) {
     writer.writeUint64(
       1,
       f
     );
   }
-  f = message.getClientorderid();
+  f = message.getClientOrderId();
   if (f !== 0) {
     writer.writeUint64(
       2,
       f
     );
   }
-  f = message.getRequestid();
+  f = message.getRequestId();
   if (f !== 0) {
     writer.writeUint64(
       3,
       f
     );
   }
-  f = message.getTransacttime();
+  f = message.getTransactTime();
   if (f !== 0) {
     writer.writeUint64(
       4,
       f
     );
   }
-  f = message.getSubaccountid();
+  f = message.getSubaccountId();
   if (f !== 0) {
     writer.writeUint64(
       5,
@@ -3864,7 +3924,7 @@ proto.trade.CancelOrderAck.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f !== 0) {
     writer.writeUint64(
       7,
@@ -3888,10 +3948,10 @@ proto.trade.CancelOrderAck.Reason = {
 };
 
 /**
- * optional uint64 msgSeqNum = 1;
+ * optional uint64 msg_seq_num = 1;
  * @return {number}
  */
-proto.trade.CancelOrderAck.prototype.getMsgseqnum = function() {
+proto.trade.CancelOrderAck.prototype.getMsgSeqNum = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -3900,16 +3960,16 @@ proto.trade.CancelOrderAck.prototype.getMsgseqnum = function() {
  * @param {number} value
  * @return {!proto.trade.CancelOrderAck} returns this
  */
-proto.trade.CancelOrderAck.prototype.setMsgseqnum = function(value) {
+proto.trade.CancelOrderAck.prototype.setMsgSeqNum = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
 /**
- * optional uint64 clientOrderId = 2;
+ * optional uint64 client_order_id = 2;
  * @return {number}
  */
-proto.trade.CancelOrderAck.prototype.getClientorderid = function() {
+proto.trade.CancelOrderAck.prototype.getClientOrderId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -3918,16 +3978,16 @@ proto.trade.CancelOrderAck.prototype.getClientorderid = function() {
  * @param {number} value
  * @return {!proto.trade.CancelOrderAck} returns this
  */
-proto.trade.CancelOrderAck.prototype.setClientorderid = function(value) {
+proto.trade.CancelOrderAck.prototype.setClientOrderId = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
 /**
- * optional uint64 requestId = 3;
+ * optional uint64 request_id = 3;
  * @return {number}
  */
-proto.trade.CancelOrderAck.prototype.getRequestid = function() {
+proto.trade.CancelOrderAck.prototype.getRequestId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -3936,16 +3996,16 @@ proto.trade.CancelOrderAck.prototype.getRequestid = function() {
  * @param {number} value
  * @return {!proto.trade.CancelOrderAck} returns this
  */
-proto.trade.CancelOrderAck.prototype.setRequestid = function(value) {
+proto.trade.CancelOrderAck.prototype.setRequestId = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
 /**
- * optional uint64 transactTime = 4;
+ * optional uint64 transact_time = 4;
  * @return {number}
  */
-proto.trade.CancelOrderAck.prototype.getTransacttime = function() {
+proto.trade.CancelOrderAck.prototype.getTransactTime = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
@@ -3954,16 +4014,16 @@ proto.trade.CancelOrderAck.prototype.getTransacttime = function() {
  * @param {number} value
  * @return {!proto.trade.CancelOrderAck} returns this
  */
-proto.trade.CancelOrderAck.prototype.setTransacttime = function(value) {
+proto.trade.CancelOrderAck.prototype.setTransactTime = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
 /**
- * optional uint64 subaccountId = 5;
+ * optional uint64 subaccount_id = 5;
  * @return {number}
  */
-proto.trade.CancelOrderAck.prototype.getSubaccountid = function() {
+proto.trade.CancelOrderAck.prototype.getSubaccountId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -3972,7 +4032,7 @@ proto.trade.CancelOrderAck.prototype.getSubaccountid = function() {
  * @param {number} value
  * @return {!proto.trade.CancelOrderAck} returns this
  */
-proto.trade.CancelOrderAck.prototype.setSubaccountid = function(value) {
+proto.trade.CancelOrderAck.prototype.setSubaccountId = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
 };
 
@@ -3996,10 +4056,10 @@ proto.trade.CancelOrderAck.prototype.setReason = function(value) {
 
 
 /**
- * optional uint64 marketId = 7;
+ * optional uint64 market_id = 7;
  * @return {number}
  */
-proto.trade.CancelOrderAck.prototype.getMarketid = function() {
+proto.trade.CancelOrderAck.prototype.getMarketId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
@@ -4008,7 +4068,7 @@ proto.trade.CancelOrderAck.prototype.getMarketid = function() {
  * @param {number} value
  * @return {!proto.trade.CancelOrderAck} returns this
  */
-proto.trade.CancelOrderAck.prototype.setMarketid = function(value) {
+proto.trade.CancelOrderAck.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3IntField(this, 7, value);
 };
 
@@ -4045,14 +4105,16 @@ proto.trade.ModifyOrderAck.prototype.toObject = function(opt_includeInstance) {
  */
 proto.trade.ModifyOrderAck.toObject = function(includeInstance, msg) {
   var f, obj = {
-    msgseqnum: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    clientorderid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    requestid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    transacttime: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    newquantity: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    subaccountid: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    marketid: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    price: jspb.Message.getFieldWithDefault(msg, 8, 0)
+    msgSeqNum: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    clientOrderId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    requestId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    transactTime: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    remainingQuantity: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    subaccountId: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    marketId: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    price: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    quantity: jspb.Message.getFieldWithDefault(msg, 9, 0),
+    cumulativeQuantity: jspb.Message.getFieldWithDefault(msg, 10, 0)
   };
 
   if (includeInstance) {
@@ -4091,35 +4153,43 @@ proto.trade.ModifyOrderAck.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setMsgseqnum(value);
+      msg.setMsgSeqNum(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setClientorderid(value);
+      msg.setClientOrderId(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setRequestid(value);
+      msg.setRequestId(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setTransacttime(value);
+      msg.setTransactTime(value);
       break;
     case 5:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setNewquantity(value);
+      msg.setRemainingQuantity(value);
       break;
     case 6:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setSubaccountid(value);
+      msg.setSubaccountId(value);
       break;
     case 7:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 8:
       var value = /** @type {number} */ (reader.readUint64());
       msg.setPrice(value);
+      break;
+    case 9:
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setQuantity(value);
+      break;
+    case 10:
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setCumulativeQuantity(value);
       break;
     default:
       reader.skipField();
@@ -4150,49 +4220,49 @@ proto.trade.ModifyOrderAck.prototype.serializeBinary = function() {
  */
 proto.trade.ModifyOrderAck.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMsgseqnum();
+  f = message.getMsgSeqNum();
   if (f !== 0) {
     writer.writeUint64(
       1,
       f
     );
   }
-  f = message.getClientorderid();
+  f = message.getClientOrderId();
   if (f !== 0) {
     writer.writeUint64(
       2,
       f
     );
   }
-  f = message.getRequestid();
+  f = message.getRequestId();
   if (f !== 0) {
     writer.writeUint64(
       3,
       f
     );
   }
-  f = message.getTransacttime();
+  f = message.getTransactTime();
   if (f !== 0) {
     writer.writeUint64(
       4,
       f
     );
   }
-  f = message.getNewquantity();
+  f = message.getRemainingQuantity();
   if (f !== 0) {
     writer.writeUint64(
       5,
       f
     );
   }
-  f = message.getSubaccountid();
+  f = message.getSubaccountId();
   if (f !== 0) {
     writer.writeUint64(
       6,
       f
     );
   }
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f !== 0) {
     writer.writeUint64(
       7,
@@ -4206,14 +4276,28 @@ proto.trade.ModifyOrderAck.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
+  f = message.getQuantity();
+  if (f !== 0) {
+    writer.writeUint64(
+      9,
+      f
+    );
+  }
+  f = message.getCumulativeQuantity();
+  if (f !== 0) {
+    writer.writeUint64(
+      10,
+      f
+    );
+  }
 };
 
 
 /**
- * optional uint64 msgSeqNum = 1;
+ * optional uint64 msg_seq_num = 1;
  * @return {number}
  */
-proto.trade.ModifyOrderAck.prototype.getMsgseqnum = function() {
+proto.trade.ModifyOrderAck.prototype.getMsgSeqNum = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -4222,16 +4306,16 @@ proto.trade.ModifyOrderAck.prototype.getMsgseqnum = function() {
  * @param {number} value
  * @return {!proto.trade.ModifyOrderAck} returns this
  */
-proto.trade.ModifyOrderAck.prototype.setMsgseqnum = function(value) {
+proto.trade.ModifyOrderAck.prototype.setMsgSeqNum = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
 /**
- * optional uint64 clientOrderId = 2;
+ * optional uint64 client_order_id = 2;
  * @return {number}
  */
-proto.trade.ModifyOrderAck.prototype.getClientorderid = function() {
+proto.trade.ModifyOrderAck.prototype.getClientOrderId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -4240,16 +4324,16 @@ proto.trade.ModifyOrderAck.prototype.getClientorderid = function() {
  * @param {number} value
  * @return {!proto.trade.ModifyOrderAck} returns this
  */
-proto.trade.ModifyOrderAck.prototype.setClientorderid = function(value) {
+proto.trade.ModifyOrderAck.prototype.setClientOrderId = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
 /**
- * optional uint64 requestId = 3;
+ * optional uint64 request_id = 3;
  * @return {number}
  */
-proto.trade.ModifyOrderAck.prototype.getRequestid = function() {
+proto.trade.ModifyOrderAck.prototype.getRequestId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -4258,16 +4342,16 @@ proto.trade.ModifyOrderAck.prototype.getRequestid = function() {
  * @param {number} value
  * @return {!proto.trade.ModifyOrderAck} returns this
  */
-proto.trade.ModifyOrderAck.prototype.setRequestid = function(value) {
+proto.trade.ModifyOrderAck.prototype.setRequestId = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
 /**
- * optional uint64 transactTime = 4;
+ * optional uint64 transact_time = 4;
  * @return {number}
  */
-proto.trade.ModifyOrderAck.prototype.getTransacttime = function() {
+proto.trade.ModifyOrderAck.prototype.getTransactTime = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
@@ -4276,16 +4360,16 @@ proto.trade.ModifyOrderAck.prototype.getTransacttime = function() {
  * @param {number} value
  * @return {!proto.trade.ModifyOrderAck} returns this
  */
-proto.trade.ModifyOrderAck.prototype.setTransacttime = function(value) {
+proto.trade.ModifyOrderAck.prototype.setTransactTime = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
 /**
- * optional uint64 newQuantity = 5;
+ * optional uint64 remaining_quantity = 5;
  * @return {number}
  */
-proto.trade.ModifyOrderAck.prototype.getNewquantity = function() {
+proto.trade.ModifyOrderAck.prototype.getRemainingQuantity = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -4294,16 +4378,16 @@ proto.trade.ModifyOrderAck.prototype.getNewquantity = function() {
  * @param {number} value
  * @return {!proto.trade.ModifyOrderAck} returns this
  */
-proto.trade.ModifyOrderAck.prototype.setNewquantity = function(value) {
+proto.trade.ModifyOrderAck.prototype.setRemainingQuantity = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
 /**
- * optional uint64 subaccountId = 6;
+ * optional uint64 subaccount_id = 6;
  * @return {number}
  */
-proto.trade.ModifyOrderAck.prototype.getSubaccountid = function() {
+proto.trade.ModifyOrderAck.prototype.getSubaccountId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
@@ -4312,16 +4396,16 @@ proto.trade.ModifyOrderAck.prototype.getSubaccountid = function() {
  * @param {number} value
  * @return {!proto.trade.ModifyOrderAck} returns this
  */
-proto.trade.ModifyOrderAck.prototype.setSubaccountid = function(value) {
+proto.trade.ModifyOrderAck.prototype.setSubaccountId = function(value) {
   return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
 /**
- * optional uint64 marketId = 7;
+ * optional uint64 market_id = 7;
  * @return {number}
  */
-proto.trade.ModifyOrderAck.prototype.getMarketid = function() {
+proto.trade.ModifyOrderAck.prototype.getMarketId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
@@ -4330,7 +4414,7 @@ proto.trade.ModifyOrderAck.prototype.getMarketid = function() {
  * @param {number} value
  * @return {!proto.trade.ModifyOrderAck} returns this
  */
-proto.trade.ModifyOrderAck.prototype.setMarketid = function(value) {
+proto.trade.ModifyOrderAck.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3IntField(this, 7, value);
 };
 
@@ -4350,6 +4434,42 @@ proto.trade.ModifyOrderAck.prototype.getPrice = function() {
  */
 proto.trade.ModifyOrderAck.prototype.setPrice = function(value) {
   return jspb.Message.setProto3IntField(this, 8, value);
+};
+
+
+/**
+ * optional uint64 quantity = 9;
+ * @return {number}
+ */
+proto.trade.ModifyOrderAck.prototype.getQuantity = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.trade.ModifyOrderAck} returns this
+ */
+proto.trade.ModifyOrderAck.prototype.setQuantity = function(value) {
+  return jspb.Message.setProto3IntField(this, 9, value);
+};
+
+
+/**
+ * optional uint64 cumulative_quantity = 10;
+ * @return {number}
+ */
+proto.trade.ModifyOrderAck.prototype.getCumulativeQuantity = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.trade.ModifyOrderAck} returns this
+ */
+proto.trade.ModifyOrderAck.prototype.setCumulativeQuantity = function(value) {
+  return jspb.Message.setProto3IntField(this, 10, value);
 };
 
 
@@ -4385,12 +4505,12 @@ proto.trade.MassCancelAck.prototype.toObject = function(opt_includeInstance) {
  */
 proto.trade.MassCancelAck.toObject = function(includeInstance, msg) {
   var f, obj = {
-    msgseqnum: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    subaccountid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    requestid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    transacttime: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    msgSeqNum: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    subaccountId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    requestId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    transactTime: jspb.Message.getFieldWithDefault(msg, 4, 0),
     reason: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    totalaffectedorders: jspb.Message.getFieldWithDefault(msg, 7, 0)
+    totalAffectedOrders: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -4429,19 +4549,19 @@ proto.trade.MassCancelAck.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setMsgseqnum(value);
+      msg.setMsgSeqNum(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setSubaccountid(value);
+      msg.setSubaccountId(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setRequestid(value);
+      msg.setRequestId(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setTransacttime(value);
+      msg.setTransactTime(value);
       break;
     case 6:
       var value = /** @type {!proto.trade.MassCancelAck.Reason} */ (reader.readEnum());
@@ -4449,7 +4569,7 @@ proto.trade.MassCancelAck.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 7:
       var value = /** @type {number} */ (reader.readUint32());
-      msg.setTotalaffectedorders(value);
+      msg.setTotalAffectedOrders(value);
       break;
     default:
       reader.skipField();
@@ -4480,28 +4600,28 @@ proto.trade.MassCancelAck.prototype.serializeBinary = function() {
  */
 proto.trade.MassCancelAck.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMsgseqnum();
+  f = message.getMsgSeqNum();
   if (f !== 0) {
     writer.writeUint64(
       1,
       f
     );
   }
-  f = message.getSubaccountid();
+  f = message.getSubaccountId();
   if (f !== 0) {
     writer.writeUint64(
       2,
       f
     );
   }
-  f = message.getRequestid();
+  f = message.getRequestId();
   if (f !== 0) {
     writer.writeUint64(
       3,
       f
     );
   }
-  f = message.getTransacttime();
+  f = message.getTransactTime();
   if (f !== 0) {
     writer.writeUint64(
       4,
@@ -4515,7 +4635,7 @@ proto.trade.MassCancelAck.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getTotalaffectedorders();
+  f = message.getTotalAffectedOrders();
   if (f !== 0) {
     writer.writeUint32(
       7,
@@ -4535,10 +4655,10 @@ proto.trade.MassCancelAck.Reason = {
 };
 
 /**
- * optional uint64 msgSeqNum = 1;
+ * optional uint64 msg_seq_num = 1;
  * @return {number}
  */
-proto.trade.MassCancelAck.prototype.getMsgseqnum = function() {
+proto.trade.MassCancelAck.prototype.getMsgSeqNum = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -4547,16 +4667,16 @@ proto.trade.MassCancelAck.prototype.getMsgseqnum = function() {
  * @param {number} value
  * @return {!proto.trade.MassCancelAck} returns this
  */
-proto.trade.MassCancelAck.prototype.setMsgseqnum = function(value) {
+proto.trade.MassCancelAck.prototype.setMsgSeqNum = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
 /**
- * optional uint64 subaccountId = 2;
+ * optional uint64 subaccount_id = 2;
  * @return {number}
  */
-proto.trade.MassCancelAck.prototype.getSubaccountid = function() {
+proto.trade.MassCancelAck.prototype.getSubaccountId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -4565,16 +4685,16 @@ proto.trade.MassCancelAck.prototype.getSubaccountid = function() {
  * @param {number} value
  * @return {!proto.trade.MassCancelAck} returns this
  */
-proto.trade.MassCancelAck.prototype.setSubaccountid = function(value) {
+proto.trade.MassCancelAck.prototype.setSubaccountId = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
 /**
- * optional uint64 requestId = 3;
+ * optional uint64 request_id = 3;
  * @return {number}
  */
-proto.trade.MassCancelAck.prototype.getRequestid = function() {
+proto.trade.MassCancelAck.prototype.getRequestId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -4583,16 +4703,16 @@ proto.trade.MassCancelAck.prototype.getRequestid = function() {
  * @param {number} value
  * @return {!proto.trade.MassCancelAck} returns this
  */
-proto.trade.MassCancelAck.prototype.setRequestid = function(value) {
+proto.trade.MassCancelAck.prototype.setRequestId = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
 /**
- * optional uint64 transactTime = 4;
+ * optional uint64 transact_time = 4;
  * @return {number}
  */
-proto.trade.MassCancelAck.prototype.getTransacttime = function() {
+proto.trade.MassCancelAck.prototype.getTransactTime = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
@@ -4601,7 +4721,7 @@ proto.trade.MassCancelAck.prototype.getTransacttime = function() {
  * @param {number} value
  * @return {!proto.trade.MassCancelAck} returns this
  */
-proto.trade.MassCancelAck.prototype.setTransacttime = function(value) {
+proto.trade.MassCancelAck.prototype.setTransactTime = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
 };
 
@@ -4643,10 +4763,10 @@ proto.trade.MassCancelAck.prototype.hasReason = function() {
 
 
 /**
- * optional uint32 totalAffectedOrders = 7;
+ * optional uint32 total_affected_orders = 7;
  * @return {number}
  */
-proto.trade.MassCancelAck.prototype.getTotalaffectedorders = function() {
+proto.trade.MassCancelAck.prototype.getTotalAffectedOrders = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
@@ -4655,7 +4775,7 @@ proto.trade.MassCancelAck.prototype.getTotalaffectedorders = function() {
  * @param {number} value
  * @return {!proto.trade.MassCancelAck} returns this
  */
-proto.trade.MassCancelAck.prototype.setTotalaffectedorders = function(value) {
+proto.trade.MassCancelAck.prototype.setTotalAffectedOrders = function(value) {
   return jspb.Message.setProto3IntField(this, 7, value);
 };
 
@@ -4692,18 +4812,18 @@ proto.trade.NewOrderReject.prototype.toObject = function(opt_includeInstance) {
  */
 proto.trade.NewOrderReject.toObject = function(includeInstance, msg) {
   var f, obj = {
-    msgseqnum: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    clientorderid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    requestid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    transacttime: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    subaccountid: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    msgSeqNum: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    clientOrderId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    requestId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    transactTime: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    subaccountId: jspb.Message.getFieldWithDefault(msg, 5, 0),
     reason: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    marketid: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    marketId: jspb.Message.getFieldWithDefault(msg, 7, 0),
     price: jspb.Message.getFieldWithDefault(msg, 8, 0),
     quantity: jspb.Message.getFieldWithDefault(msg, 9, 0),
     side: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    timeinforce: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    ordertype: jspb.Message.getFieldWithDefault(msg, 12, 0)
+    timeInForce: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    orderType: jspb.Message.getFieldWithDefault(msg, 12, 0)
   };
 
   if (includeInstance) {
@@ -4742,23 +4862,23 @@ proto.trade.NewOrderReject.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setMsgseqnum(value);
+      msg.setMsgSeqNum(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setClientorderid(value);
+      msg.setClientOrderId(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setRequestid(value);
+      msg.setRequestId(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setTransacttime(value);
+      msg.setTransactTime(value);
       break;
     case 5:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setSubaccountid(value);
+      msg.setSubaccountId(value);
       break;
     case 6:
       var value = /** @type {!proto.trade.NewOrderReject.Reason} */ (reader.readEnum());
@@ -4766,7 +4886,7 @@ proto.trade.NewOrderReject.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 7:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 8:
       var value = /** @type {number} */ (reader.readUint64());
@@ -4782,11 +4902,11 @@ proto.trade.NewOrderReject.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 11:
       var value = /** @type {!proto.trade.TimeInForce} */ (reader.readEnum());
-      msg.setTimeinforce(value);
+      msg.setTimeInForce(value);
       break;
     case 12:
       var value = /** @type {!proto.trade.OrderType} */ (reader.readEnum());
-      msg.setOrdertype(value);
+      msg.setOrderType(value);
       break;
     default:
       reader.skipField();
@@ -4817,35 +4937,35 @@ proto.trade.NewOrderReject.prototype.serializeBinary = function() {
  */
 proto.trade.NewOrderReject.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMsgseqnum();
+  f = message.getMsgSeqNum();
   if (f !== 0) {
     writer.writeUint64(
       1,
       f
     );
   }
-  f = message.getClientorderid();
+  f = message.getClientOrderId();
   if (f !== 0) {
     writer.writeUint64(
       2,
       f
     );
   }
-  f = message.getRequestid();
+  f = message.getRequestId();
   if (f !== 0) {
     writer.writeUint64(
       3,
       f
     );
   }
-  f = message.getTransacttime();
+  f = message.getTransactTime();
   if (f !== 0) {
     writer.writeUint64(
       4,
       f
     );
   }
-  f = message.getSubaccountid();
+  f = message.getSubaccountId();
   if (f !== 0) {
     writer.writeUint64(
       5,
@@ -4859,7 +4979,7 @@ proto.trade.NewOrderReject.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f !== 0) {
     writer.writeUint64(
       7,
@@ -4887,14 +5007,14 @@ proto.trade.NewOrderReject.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getTimeinforce();
+  f = message.getTimeInForce();
   if (f !== 0.0) {
     writer.writeEnum(
       11,
       f
     );
   }
-  f = message.getOrdertype();
+  f = message.getOrderType();
   if (f !== 0.0) {
     writer.writeEnum(
       12,
@@ -4928,10 +5048,10 @@ proto.trade.NewOrderReject.Reason = {
 };
 
 /**
- * optional uint64 msgSeqNum = 1;
+ * optional uint64 msg_seq_num = 1;
  * @return {number}
  */
-proto.trade.NewOrderReject.prototype.getMsgseqnum = function() {
+proto.trade.NewOrderReject.prototype.getMsgSeqNum = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -4940,16 +5060,16 @@ proto.trade.NewOrderReject.prototype.getMsgseqnum = function() {
  * @param {number} value
  * @return {!proto.trade.NewOrderReject} returns this
  */
-proto.trade.NewOrderReject.prototype.setMsgseqnum = function(value) {
+proto.trade.NewOrderReject.prototype.setMsgSeqNum = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
 /**
- * optional uint64 clientOrderId = 2;
+ * optional uint64 client_order_id = 2;
  * @return {number}
  */
-proto.trade.NewOrderReject.prototype.getClientorderid = function() {
+proto.trade.NewOrderReject.prototype.getClientOrderId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -4958,16 +5078,16 @@ proto.trade.NewOrderReject.prototype.getClientorderid = function() {
  * @param {number} value
  * @return {!proto.trade.NewOrderReject} returns this
  */
-proto.trade.NewOrderReject.prototype.setClientorderid = function(value) {
+proto.trade.NewOrderReject.prototype.setClientOrderId = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
 /**
- * optional uint64 requestId = 3;
+ * optional uint64 request_id = 3;
  * @return {number}
  */
-proto.trade.NewOrderReject.prototype.getRequestid = function() {
+proto.trade.NewOrderReject.prototype.getRequestId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -4976,16 +5096,16 @@ proto.trade.NewOrderReject.prototype.getRequestid = function() {
  * @param {number} value
  * @return {!proto.trade.NewOrderReject} returns this
  */
-proto.trade.NewOrderReject.prototype.setRequestid = function(value) {
+proto.trade.NewOrderReject.prototype.setRequestId = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
 /**
- * optional uint64 transactTime = 4;
+ * optional uint64 transact_time = 4;
  * @return {number}
  */
-proto.trade.NewOrderReject.prototype.getTransacttime = function() {
+proto.trade.NewOrderReject.prototype.getTransactTime = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
@@ -4994,16 +5114,16 @@ proto.trade.NewOrderReject.prototype.getTransacttime = function() {
  * @param {number} value
  * @return {!proto.trade.NewOrderReject} returns this
  */
-proto.trade.NewOrderReject.prototype.setTransacttime = function(value) {
+proto.trade.NewOrderReject.prototype.setTransactTime = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
 /**
- * optional uint64 subaccountId = 5;
+ * optional uint64 subaccount_id = 5;
  * @return {number}
  */
-proto.trade.NewOrderReject.prototype.getSubaccountid = function() {
+proto.trade.NewOrderReject.prototype.getSubaccountId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -5012,7 +5132,7 @@ proto.trade.NewOrderReject.prototype.getSubaccountid = function() {
  * @param {number} value
  * @return {!proto.trade.NewOrderReject} returns this
  */
-proto.trade.NewOrderReject.prototype.setSubaccountid = function(value) {
+proto.trade.NewOrderReject.prototype.setSubaccountId = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
 };
 
@@ -5036,10 +5156,10 @@ proto.trade.NewOrderReject.prototype.setReason = function(value) {
 
 
 /**
- * optional uint64 marketId = 7;
+ * optional uint64 market_id = 7;
  * @return {number}
  */
-proto.trade.NewOrderReject.prototype.getMarketid = function() {
+proto.trade.NewOrderReject.prototype.getMarketId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
@@ -5048,7 +5168,7 @@ proto.trade.NewOrderReject.prototype.getMarketid = function() {
  * @param {number} value
  * @return {!proto.trade.NewOrderReject} returns this
  */
-proto.trade.NewOrderReject.prototype.setMarketid = function(value) {
+proto.trade.NewOrderReject.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3IntField(this, 7, value);
 };
 
@@ -5126,10 +5246,10 @@ proto.trade.NewOrderReject.prototype.setSide = function(value) {
 
 
 /**
- * optional TimeInForce timeInForce = 11;
+ * optional TimeInForce time_in_force = 11;
  * @return {!proto.trade.TimeInForce}
  */
-proto.trade.NewOrderReject.prototype.getTimeinforce = function() {
+proto.trade.NewOrderReject.prototype.getTimeInForce = function() {
   return /** @type {!proto.trade.TimeInForce} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
@@ -5138,16 +5258,16 @@ proto.trade.NewOrderReject.prototype.getTimeinforce = function() {
  * @param {!proto.trade.TimeInForce} value
  * @return {!proto.trade.NewOrderReject} returns this
  */
-proto.trade.NewOrderReject.prototype.setTimeinforce = function(value) {
+proto.trade.NewOrderReject.prototype.setTimeInForce = function(value) {
   return jspb.Message.setProto3EnumField(this, 11, value);
 };
 
 
 /**
- * optional OrderType orderType = 12;
+ * optional OrderType order_type = 12;
  * @return {!proto.trade.OrderType}
  */
-proto.trade.NewOrderReject.prototype.getOrdertype = function() {
+proto.trade.NewOrderReject.prototype.getOrderType = function() {
   return /** @type {!proto.trade.OrderType} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
 };
 
@@ -5156,7 +5276,7 @@ proto.trade.NewOrderReject.prototype.getOrdertype = function() {
  * @param {!proto.trade.OrderType} value
  * @return {!proto.trade.NewOrderReject} returns this
  */
-proto.trade.NewOrderReject.prototype.setOrdertype = function(value) {
+proto.trade.NewOrderReject.prototype.setOrderType = function(value) {
   return jspb.Message.setProto3EnumField(this, 12, value);
 };
 
@@ -5193,13 +5313,13 @@ proto.trade.CancelOrderReject.prototype.toObject = function(opt_includeInstance)
  */
 proto.trade.CancelOrderReject.toObject = function(includeInstance, msg) {
   var f, obj = {
-    msgseqnum: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    clientorderid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    requestid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    transacttime: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    subaccountid: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    msgSeqNum: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    clientOrderId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    requestId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    transactTime: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    subaccountId: jspb.Message.getFieldWithDefault(msg, 5, 0),
     reason: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    marketid: jspb.Message.getFieldWithDefault(msg, 7, 0)
+    marketId: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -5238,23 +5358,23 @@ proto.trade.CancelOrderReject.deserializeBinaryFromReader = function(msg, reader
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setMsgseqnum(value);
+      msg.setMsgSeqNum(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setClientorderid(value);
+      msg.setClientOrderId(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setRequestid(value);
+      msg.setRequestId(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setTransacttime(value);
+      msg.setTransactTime(value);
       break;
     case 5:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setSubaccountid(value);
+      msg.setSubaccountId(value);
       break;
     case 6:
       var value = /** @type {!proto.trade.CancelOrderReject.Reason} */ (reader.readEnum());
@@ -5262,7 +5382,7 @@ proto.trade.CancelOrderReject.deserializeBinaryFromReader = function(msg, reader
       break;
     case 7:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     default:
       reader.skipField();
@@ -5293,35 +5413,35 @@ proto.trade.CancelOrderReject.prototype.serializeBinary = function() {
  */
 proto.trade.CancelOrderReject.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMsgseqnum();
+  f = message.getMsgSeqNum();
   if (f !== 0) {
     writer.writeUint64(
       1,
       f
     );
   }
-  f = message.getClientorderid();
+  f = message.getClientOrderId();
   if (f !== 0) {
     writer.writeUint64(
       2,
       f
     );
   }
-  f = message.getRequestid();
+  f = message.getRequestId();
   if (f !== 0) {
     writer.writeUint64(
       3,
       f
     );
   }
-  f = message.getTransacttime();
+  f = message.getTransactTime();
   if (f !== 0) {
     writer.writeUint64(
       4,
       f
     );
   }
-  f = message.getSubaccountid();
+  f = message.getSubaccountId();
   if (f !== 0) {
     writer.writeUint64(
       5,
@@ -5335,7 +5455,7 @@ proto.trade.CancelOrderReject.serializeBinaryToWriter = function(message, writer
       f
     );
   }
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f !== 0) {
     writer.writeUint64(
       7,
@@ -5355,10 +5475,10 @@ proto.trade.CancelOrderReject.Reason = {
 };
 
 /**
- * optional uint64 msgSeqNum = 1;
+ * optional uint64 msg_seq_num = 1;
  * @return {number}
  */
-proto.trade.CancelOrderReject.prototype.getMsgseqnum = function() {
+proto.trade.CancelOrderReject.prototype.getMsgSeqNum = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -5367,16 +5487,16 @@ proto.trade.CancelOrderReject.prototype.getMsgseqnum = function() {
  * @param {number} value
  * @return {!proto.trade.CancelOrderReject} returns this
  */
-proto.trade.CancelOrderReject.prototype.setMsgseqnum = function(value) {
+proto.trade.CancelOrderReject.prototype.setMsgSeqNum = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
 /**
- * optional uint64 clientOrderId = 2;
+ * optional uint64 client_order_id = 2;
  * @return {number}
  */
-proto.trade.CancelOrderReject.prototype.getClientorderid = function() {
+proto.trade.CancelOrderReject.prototype.getClientOrderId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -5385,16 +5505,16 @@ proto.trade.CancelOrderReject.prototype.getClientorderid = function() {
  * @param {number} value
  * @return {!proto.trade.CancelOrderReject} returns this
  */
-proto.trade.CancelOrderReject.prototype.setClientorderid = function(value) {
+proto.trade.CancelOrderReject.prototype.setClientOrderId = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
 /**
- * optional uint64 requestId = 3;
+ * optional uint64 request_id = 3;
  * @return {number}
  */
-proto.trade.CancelOrderReject.prototype.getRequestid = function() {
+proto.trade.CancelOrderReject.prototype.getRequestId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -5403,16 +5523,16 @@ proto.trade.CancelOrderReject.prototype.getRequestid = function() {
  * @param {number} value
  * @return {!proto.trade.CancelOrderReject} returns this
  */
-proto.trade.CancelOrderReject.prototype.setRequestid = function(value) {
+proto.trade.CancelOrderReject.prototype.setRequestId = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
 /**
- * optional uint64 transactTime = 4;
+ * optional uint64 transact_time = 4;
  * @return {number}
  */
-proto.trade.CancelOrderReject.prototype.getTransacttime = function() {
+proto.trade.CancelOrderReject.prototype.getTransactTime = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
@@ -5421,16 +5541,16 @@ proto.trade.CancelOrderReject.prototype.getTransacttime = function() {
  * @param {number} value
  * @return {!proto.trade.CancelOrderReject} returns this
  */
-proto.trade.CancelOrderReject.prototype.setTransacttime = function(value) {
+proto.trade.CancelOrderReject.prototype.setTransactTime = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
 /**
- * optional uint64 subaccountId = 5;
+ * optional uint64 subaccount_id = 5;
  * @return {number}
  */
-proto.trade.CancelOrderReject.prototype.getSubaccountid = function() {
+proto.trade.CancelOrderReject.prototype.getSubaccountId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -5439,7 +5559,7 @@ proto.trade.CancelOrderReject.prototype.getSubaccountid = function() {
  * @param {number} value
  * @return {!proto.trade.CancelOrderReject} returns this
  */
-proto.trade.CancelOrderReject.prototype.setSubaccountid = function(value) {
+proto.trade.CancelOrderReject.prototype.setSubaccountId = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
 };
 
@@ -5463,10 +5583,10 @@ proto.trade.CancelOrderReject.prototype.setReason = function(value) {
 
 
 /**
- * optional uint64 marketId = 7;
+ * optional uint64 market_id = 7;
  * @return {number}
  */
-proto.trade.CancelOrderReject.prototype.getMarketid = function() {
+proto.trade.CancelOrderReject.prototype.getMarketId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
@@ -5475,7 +5595,7 @@ proto.trade.CancelOrderReject.prototype.getMarketid = function() {
  * @param {number} value
  * @return {!proto.trade.CancelOrderReject} returns this
  */
-proto.trade.CancelOrderReject.prototype.setMarketid = function(value) {
+proto.trade.CancelOrderReject.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3IntField(this, 7, value);
 };
 
@@ -5512,13 +5632,13 @@ proto.trade.ModifyOrderReject.prototype.toObject = function(opt_includeInstance)
  */
 proto.trade.ModifyOrderReject.toObject = function(includeInstance, msg) {
   var f, obj = {
-    msgseqnum: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    clientorderid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    requestid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    transacttime: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    subaccountid: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    msgSeqNum: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    clientOrderId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    requestId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    transactTime: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    subaccountId: jspb.Message.getFieldWithDefault(msg, 5, 0),
     reason: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    marketid: jspb.Message.getFieldWithDefault(msg, 7, 0)
+    marketId: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -5557,23 +5677,23 @@ proto.trade.ModifyOrderReject.deserializeBinaryFromReader = function(msg, reader
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setMsgseqnum(value);
+      msg.setMsgSeqNum(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setClientorderid(value);
+      msg.setClientOrderId(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setRequestid(value);
+      msg.setRequestId(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setTransacttime(value);
+      msg.setTransactTime(value);
       break;
     case 5:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setSubaccountid(value);
+      msg.setSubaccountId(value);
       break;
     case 6:
       var value = /** @type {!proto.trade.ModifyOrderReject.Reason} */ (reader.readEnum());
@@ -5581,7 +5701,7 @@ proto.trade.ModifyOrderReject.deserializeBinaryFromReader = function(msg, reader
       break;
     case 7:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     default:
       reader.skipField();
@@ -5612,35 +5732,35 @@ proto.trade.ModifyOrderReject.prototype.serializeBinary = function() {
  */
 proto.trade.ModifyOrderReject.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMsgseqnum();
+  f = message.getMsgSeqNum();
   if (f !== 0) {
     writer.writeUint64(
       1,
       f
     );
   }
-  f = message.getClientorderid();
+  f = message.getClientOrderId();
   if (f !== 0) {
     writer.writeUint64(
       2,
       f
     );
   }
-  f = message.getRequestid();
+  f = message.getRequestId();
   if (f !== 0) {
     writer.writeUint64(
       3,
       f
     );
   }
-  f = message.getTransacttime();
+  f = message.getTransactTime();
   if (f !== 0) {
     writer.writeUint64(
       4,
       f
     );
   }
-  f = message.getSubaccountid();
+  f = message.getSubaccountId();
   if (f !== 0) {
     writer.writeUint64(
       5,
@@ -5654,7 +5774,7 @@ proto.trade.ModifyOrderReject.serializeBinaryToWriter = function(message, writer
       f
     );
   }
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f !== 0) {
     writer.writeUint64(
       7,
@@ -5681,10 +5801,10 @@ proto.trade.ModifyOrderReject.Reason = {
 };
 
 /**
- * optional uint64 msgSeqNum = 1;
+ * optional uint64 msg_seq_num = 1;
  * @return {number}
  */
-proto.trade.ModifyOrderReject.prototype.getMsgseqnum = function() {
+proto.trade.ModifyOrderReject.prototype.getMsgSeqNum = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -5693,16 +5813,16 @@ proto.trade.ModifyOrderReject.prototype.getMsgseqnum = function() {
  * @param {number} value
  * @return {!proto.trade.ModifyOrderReject} returns this
  */
-proto.trade.ModifyOrderReject.prototype.setMsgseqnum = function(value) {
+proto.trade.ModifyOrderReject.prototype.setMsgSeqNum = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
 /**
- * optional uint64 clientOrderId = 2;
+ * optional uint64 client_order_id = 2;
  * @return {number}
  */
-proto.trade.ModifyOrderReject.prototype.getClientorderid = function() {
+proto.trade.ModifyOrderReject.prototype.getClientOrderId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -5711,16 +5831,16 @@ proto.trade.ModifyOrderReject.prototype.getClientorderid = function() {
  * @param {number} value
  * @return {!proto.trade.ModifyOrderReject} returns this
  */
-proto.trade.ModifyOrderReject.prototype.setClientorderid = function(value) {
+proto.trade.ModifyOrderReject.prototype.setClientOrderId = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
 /**
- * optional uint64 requestId = 3;
+ * optional uint64 request_id = 3;
  * @return {number}
  */
-proto.trade.ModifyOrderReject.prototype.getRequestid = function() {
+proto.trade.ModifyOrderReject.prototype.getRequestId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -5729,16 +5849,16 @@ proto.trade.ModifyOrderReject.prototype.getRequestid = function() {
  * @param {number} value
  * @return {!proto.trade.ModifyOrderReject} returns this
  */
-proto.trade.ModifyOrderReject.prototype.setRequestid = function(value) {
+proto.trade.ModifyOrderReject.prototype.setRequestId = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
 /**
- * optional uint64 transactTime = 4;
+ * optional uint64 transact_time = 4;
  * @return {number}
  */
-proto.trade.ModifyOrderReject.prototype.getTransacttime = function() {
+proto.trade.ModifyOrderReject.prototype.getTransactTime = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
@@ -5747,16 +5867,16 @@ proto.trade.ModifyOrderReject.prototype.getTransacttime = function() {
  * @param {number} value
  * @return {!proto.trade.ModifyOrderReject} returns this
  */
-proto.trade.ModifyOrderReject.prototype.setTransacttime = function(value) {
+proto.trade.ModifyOrderReject.prototype.setTransactTime = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
 /**
- * optional uint64 subaccountId = 5;
+ * optional uint64 subaccount_id = 5;
  * @return {number}
  */
-proto.trade.ModifyOrderReject.prototype.getSubaccountid = function() {
+proto.trade.ModifyOrderReject.prototype.getSubaccountId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -5765,7 +5885,7 @@ proto.trade.ModifyOrderReject.prototype.getSubaccountid = function() {
  * @param {number} value
  * @return {!proto.trade.ModifyOrderReject} returns this
  */
-proto.trade.ModifyOrderReject.prototype.setSubaccountid = function(value) {
+proto.trade.ModifyOrderReject.prototype.setSubaccountId = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
 };
 
@@ -5789,10 +5909,10 @@ proto.trade.ModifyOrderReject.prototype.setReason = function(value) {
 
 
 /**
- * optional uint64 marketId = 7;
+ * optional uint64 market_id = 7;
  * @return {number}
  */
-proto.trade.ModifyOrderReject.prototype.getMarketid = function() {
+proto.trade.ModifyOrderReject.prototype.getMarketId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
@@ -5801,7 +5921,7 @@ proto.trade.ModifyOrderReject.prototype.getMarketid = function() {
  * @param {number} value
  * @return {!proto.trade.ModifyOrderReject} returns this
  */
-proto.trade.ModifyOrderReject.prototype.setMarketid = function(value) {
+proto.trade.ModifyOrderReject.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3IntField(this, 7, value);
 };
 
@@ -5838,15 +5958,16 @@ proto.trade.Fill.prototype.toObject = function(opt_includeInstance) {
  */
 proto.trade.Fill.toObject = function(includeInstance, msg) {
   var f, obj = {
-    msgseqnum: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    marketid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    clientorderid: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    exchangeorderid: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    fillprice: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    fillquantity: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    leavesquantity: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    transacttime: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    subaccountid: jspb.Message.getFieldWithDefault(msg, 9, 0)
+    msgSeqNum: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    marketId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    clientOrderId: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    exchangeOrderId: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    fillPrice: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    fillQuantity: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    leavesQuantity: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    transactTime: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    subaccountId: jspb.Message.getFieldWithDefault(msg, 9, 0),
+    cumulativeQuantity: jspb.Message.getFieldWithDefault(msg, 10, 0)
   };
 
   if (includeInstance) {
@@ -5885,39 +6006,43 @@ proto.trade.Fill.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setMsgseqnum(value);
+      msg.setMsgSeqNum(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setClientorderid(value);
+      msg.setClientOrderId(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setExchangeorderid(value);
+      msg.setExchangeOrderId(value);
       break;
     case 5:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setFillprice(value);
+      msg.setFillPrice(value);
       break;
     case 6:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setFillquantity(value);
+      msg.setFillQuantity(value);
       break;
     case 7:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setLeavesquantity(value);
+      msg.setLeavesQuantity(value);
       break;
     case 8:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setTransacttime(value);
+      msg.setTransactTime(value);
       break;
     case 9:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setSubaccountid(value);
+      msg.setSubaccountId(value);
+      break;
+    case 10:
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setCumulativeQuantity(value);
       break;
     default:
       reader.skipField();
@@ -5948,66 +6073,73 @@ proto.trade.Fill.prototype.serializeBinary = function() {
  */
 proto.trade.Fill.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMsgseqnum();
+  f = message.getMsgSeqNum();
   if (f !== 0) {
     writer.writeUint64(
       1,
       f
     );
   }
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f !== 0) {
     writer.writeUint64(
       2,
       f
     );
   }
-  f = message.getClientorderid();
+  f = message.getClientOrderId();
   if (f !== 0) {
     writer.writeUint64(
       3,
       f
     );
   }
-  f = message.getExchangeorderid();
+  f = message.getExchangeOrderId();
   if (f !== 0) {
     writer.writeUint64(
       4,
       f
     );
   }
-  f = message.getFillprice();
+  f = message.getFillPrice();
   if (f !== 0) {
     writer.writeUint64(
       5,
       f
     );
   }
-  f = message.getFillquantity();
+  f = message.getFillQuantity();
   if (f !== 0) {
     writer.writeUint64(
       6,
       f
     );
   }
-  f = message.getLeavesquantity();
+  f = message.getLeavesQuantity();
   if (f !== 0) {
     writer.writeUint64(
       7,
       f
     );
   }
-  f = message.getTransacttime();
+  f = message.getTransactTime();
   if (f !== 0) {
     writer.writeUint64(
       8,
       f
     );
   }
-  f = message.getSubaccountid();
+  f = message.getSubaccountId();
   if (f !== 0) {
     writer.writeUint64(
       9,
+      f
+    );
+  }
+  f = message.getCumulativeQuantity();
+  if (f !== 0) {
+    writer.writeUint64(
+      10,
       f
     );
   }
@@ -6015,10 +6147,10 @@ proto.trade.Fill.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional uint64 msgSeqNum = 1;
+ * optional uint64 msg_seq_num = 1;
  * @return {number}
  */
-proto.trade.Fill.prototype.getMsgseqnum = function() {
+proto.trade.Fill.prototype.getMsgSeqNum = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -6027,16 +6159,16 @@ proto.trade.Fill.prototype.getMsgseqnum = function() {
  * @param {number} value
  * @return {!proto.trade.Fill} returns this
  */
-proto.trade.Fill.prototype.setMsgseqnum = function(value) {
+proto.trade.Fill.prototype.setMsgSeqNum = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
 /**
- * optional uint64 marketId = 2;
+ * optional uint64 market_id = 2;
  * @return {number}
  */
-proto.trade.Fill.prototype.getMarketid = function() {
+proto.trade.Fill.prototype.getMarketId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -6045,16 +6177,16 @@ proto.trade.Fill.prototype.getMarketid = function() {
  * @param {number} value
  * @return {!proto.trade.Fill} returns this
  */
-proto.trade.Fill.prototype.setMarketid = function(value) {
+proto.trade.Fill.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
 /**
- * optional uint64 clientOrderId = 3;
+ * optional uint64 client_order_id = 3;
  * @return {number}
  */
-proto.trade.Fill.prototype.getClientorderid = function() {
+proto.trade.Fill.prototype.getClientOrderId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -6063,16 +6195,16 @@ proto.trade.Fill.prototype.getClientorderid = function() {
  * @param {number} value
  * @return {!proto.trade.Fill} returns this
  */
-proto.trade.Fill.prototype.setClientorderid = function(value) {
+proto.trade.Fill.prototype.setClientOrderId = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
 /**
- * optional uint64 exchangeOrderId = 4;
+ * optional uint64 exchange_order_id = 4;
  * @return {number}
  */
-proto.trade.Fill.prototype.getExchangeorderid = function() {
+proto.trade.Fill.prototype.getExchangeOrderId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
@@ -6081,16 +6213,16 @@ proto.trade.Fill.prototype.getExchangeorderid = function() {
  * @param {number} value
  * @return {!proto.trade.Fill} returns this
  */
-proto.trade.Fill.prototype.setExchangeorderid = function(value) {
+proto.trade.Fill.prototype.setExchangeOrderId = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
 /**
- * optional uint64 fillPrice = 5;
+ * optional uint64 fill_price = 5;
  * @return {number}
  */
-proto.trade.Fill.prototype.getFillprice = function() {
+proto.trade.Fill.prototype.getFillPrice = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -6099,16 +6231,16 @@ proto.trade.Fill.prototype.getFillprice = function() {
  * @param {number} value
  * @return {!proto.trade.Fill} returns this
  */
-proto.trade.Fill.prototype.setFillprice = function(value) {
+proto.trade.Fill.prototype.setFillPrice = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
 /**
- * optional uint64 fillQuantity = 6;
+ * optional uint64 fill_quantity = 6;
  * @return {number}
  */
-proto.trade.Fill.prototype.getFillquantity = function() {
+proto.trade.Fill.prototype.getFillQuantity = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
@@ -6117,16 +6249,16 @@ proto.trade.Fill.prototype.getFillquantity = function() {
  * @param {number} value
  * @return {!proto.trade.Fill} returns this
  */
-proto.trade.Fill.prototype.setFillquantity = function(value) {
+proto.trade.Fill.prototype.setFillQuantity = function(value) {
   return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
 /**
- * optional uint64 leavesQuantity = 7;
+ * optional uint64 leaves_quantity = 7;
  * @return {number}
  */
-proto.trade.Fill.prototype.getLeavesquantity = function() {
+proto.trade.Fill.prototype.getLeavesQuantity = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
@@ -6135,16 +6267,16 @@ proto.trade.Fill.prototype.getLeavesquantity = function() {
  * @param {number} value
  * @return {!proto.trade.Fill} returns this
  */
-proto.trade.Fill.prototype.setLeavesquantity = function(value) {
+proto.trade.Fill.prototype.setLeavesQuantity = function(value) {
   return jspb.Message.setProto3IntField(this, 7, value);
 };
 
 
 /**
- * optional uint64 transactTime = 8;
+ * optional uint64 transact_time = 8;
  * @return {number}
  */
-proto.trade.Fill.prototype.getTransacttime = function() {
+proto.trade.Fill.prototype.getTransactTime = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
@@ -6153,16 +6285,16 @@ proto.trade.Fill.prototype.getTransacttime = function() {
  * @param {number} value
  * @return {!proto.trade.Fill} returns this
  */
-proto.trade.Fill.prototype.setTransacttime = function(value) {
+proto.trade.Fill.prototype.setTransactTime = function(value) {
   return jspb.Message.setProto3IntField(this, 8, value);
 };
 
 
 /**
- * optional uint64 subaccountId = 9;
+ * optional uint64 subaccount_id = 9;
  * @return {number}
  */
-proto.trade.Fill.prototype.getSubaccountid = function() {
+proto.trade.Fill.prototype.getSubaccountId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
 };
 
@@ -6171,8 +6303,26 @@ proto.trade.Fill.prototype.getSubaccountid = function() {
  * @param {number} value
  * @return {!proto.trade.Fill} returns this
  */
-proto.trade.Fill.prototype.setSubaccountid = function(value) {
+proto.trade.Fill.prototype.setSubaccountId = function(value) {
   return jspb.Message.setProto3IntField(this, 9, value);
+};
+
+
+/**
+ * optional uint64 cumulative_quantity = 10;
+ * @return {number}
+ */
+proto.trade.Fill.prototype.getCumulativeQuantity = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.trade.Fill} returns this
+ */
+proto.trade.Fill.prototype.setCumulativeQuantity = function(value) {
+  return jspb.Message.setProto3IntField(this, 10, value);
 };
 
 
@@ -6208,8 +6358,8 @@ proto.trade.AssetPosition.prototype.toObject = function(opt_includeInstance) {
  */
 proto.trade.AssetPosition.toObject = function(includeInstance, msg) {
   var f, obj = {
-    subaccountid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    assetid: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    subaccountId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    assetId: jspb.Message.getFieldWithDefault(msg, 2, 0),
     total: (f = msg.getTotal()) && proto.trade.RawUnits.toObject(includeInstance, f),
     available: (f = msg.getAvailable()) && proto.trade.RawUnits.toObject(includeInstance, f)
   };
@@ -6250,11 +6400,11 @@ proto.trade.AssetPosition.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setSubaccountid(value);
+      msg.setSubaccountId(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setAssetid(value);
+      msg.setAssetId(value);
       break;
     case 3:
       var value = new proto.trade.RawUnits;
@@ -6295,14 +6445,14 @@ proto.trade.AssetPosition.prototype.serializeBinary = function() {
  */
 proto.trade.AssetPosition.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSubaccountid();
+  f = message.getSubaccountId();
   if (f !== 0) {
     writer.writeUint64(
       1,
       f
     );
   }
-  f = message.getAssetid();
+  f = message.getAssetId();
   if (f !== 0) {
     writer.writeUint64(
       2,
@@ -6329,10 +6479,10 @@ proto.trade.AssetPosition.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional uint64 subaccountId = 1;
+ * optional uint64 subaccount_id = 1;
  * @return {number}
  */
-proto.trade.AssetPosition.prototype.getSubaccountid = function() {
+proto.trade.AssetPosition.prototype.getSubaccountId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -6341,16 +6491,16 @@ proto.trade.AssetPosition.prototype.getSubaccountid = function() {
  * @param {number} value
  * @return {!proto.trade.AssetPosition} returns this
  */
-proto.trade.AssetPosition.prototype.setSubaccountid = function(value) {
+proto.trade.AssetPosition.prototype.setSubaccountId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
 /**
- * optional uint64 assetId = 2;
+ * optional uint64 asset_id = 2;
  * @return {number}
  */
-proto.trade.AssetPosition.prototype.getAssetid = function() {
+proto.trade.AssetPosition.prototype.getAssetId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -6359,7 +6509,7 @@ proto.trade.AssetPosition.prototype.getAssetid = function() {
  * @param {number} value
  * @return {!proto.trade.AssetPosition} returns this
  */
-proto.trade.AssetPosition.prototype.setAssetid = function(value) {
+proto.trade.AssetPosition.prototype.setAssetId = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
@@ -7290,7 +7440,7 @@ proto.trade.Done.prototype.toObject = function(opt_includeInstance) {
  */
 proto.trade.Done.toObject = function(includeInstance, msg) {
   var f, obj = {
-    latesttransacttime: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    latestTransactTime: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -7329,7 +7479,7 @@ proto.trade.Done.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setLatesttransacttime(value);
+      msg.setLatestTransactTime(value);
       break;
     default:
       reader.skipField();
@@ -7360,7 +7510,7 @@ proto.trade.Done.prototype.serializeBinary = function() {
  */
 proto.trade.Done.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getLatesttransacttime();
+  f = message.getLatestTransactTime();
   if (f !== 0) {
     writer.writeUint64(
       1,
@@ -7371,10 +7521,10 @@ proto.trade.Done.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional uint64 latestTransactTime = 1;
+ * optional uint64 latest_transact_time = 1;
  * @return {number}
  */
-proto.trade.Done.prototype.getLatesttransacttime = function() {
+proto.trade.Done.prototype.getLatestTransactTime = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -7383,7 +7533,7 @@ proto.trade.Done.prototype.getLatesttransacttime = function() {
  * @param {number} value
  * @return {!proto.trade.Done} returns this
  */
-proto.trade.Done.prototype.setLatesttransacttime = function(value) {
+proto.trade.Done.prototype.setLatestTransactTime = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
@@ -7420,17 +7570,18 @@ proto.trade.RestingOrder.prototype.toObject = function(opt_includeInstance) {
  */
 proto.trade.RestingOrder.toObject = function(includeInstance, msg) {
   var f, obj = {
-    clientorderid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    exchangeorderid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    marketid: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    clientOrderId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    exchangeOrderId: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    marketId: jspb.Message.getFieldWithDefault(msg, 3, 0),
     price: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    originalquantity: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    orderQuantity: jspb.Message.getFieldWithDefault(msg, 5, 0),
     side: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    timeinforce: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    ordertype: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    remainingquantity: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    resttime: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    subaccountid: jspb.Message.getFieldWithDefault(msg, 11, 0)
+    timeInForce: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    orderType: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    remainingQuantity: jspb.Message.getFieldWithDefault(msg, 9, 0),
+    restTime: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    subaccountId: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    cumulativeQuantity: jspb.Message.getFieldWithDefault(msg, 12, 0)
   };
 
   if (includeInstance) {
@@ -7469,15 +7620,15 @@ proto.trade.RestingOrder.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setClientorderid(value);
+      msg.setClientOrderId(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setExchangeorderid(value);
+      msg.setExchangeOrderId(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setMarketid(value);
+      msg.setMarketId(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readUint64());
@@ -7485,7 +7636,7 @@ proto.trade.RestingOrder.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 5:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setOriginalquantity(value);
+      msg.setOrderQuantity(value);
       break;
     case 6:
       var value = /** @type {!proto.trade.Side} */ (reader.readEnum());
@@ -7493,23 +7644,27 @@ proto.trade.RestingOrder.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 7:
       var value = /** @type {!proto.trade.TimeInForce} */ (reader.readEnum());
-      msg.setTimeinforce(value);
+      msg.setTimeInForce(value);
       break;
     case 8:
       var value = /** @type {!proto.trade.OrderType} */ (reader.readEnum());
-      msg.setOrdertype(value);
+      msg.setOrderType(value);
       break;
     case 9:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setRemainingquantity(value);
+      msg.setRemainingQuantity(value);
       break;
     case 10:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setResttime(value);
+      msg.setRestTime(value);
       break;
     case 11:
       var value = /** @type {number} */ (reader.readUint64());
-      msg.setSubaccountid(value);
+      msg.setSubaccountId(value);
+      break;
+    case 12:
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setCumulativeQuantity(value);
       break;
     default:
       reader.skipField();
@@ -7540,21 +7695,21 @@ proto.trade.RestingOrder.prototype.serializeBinary = function() {
  */
 proto.trade.RestingOrder.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getClientorderid();
+  f = message.getClientOrderId();
   if (f !== 0) {
     writer.writeUint64(
       1,
       f
     );
   }
-  f = message.getExchangeorderid();
+  f = message.getExchangeOrderId();
   if (f !== 0) {
     writer.writeUint64(
       2,
       f
     );
   }
-  f = message.getMarketid();
+  f = message.getMarketId();
   if (f !== 0) {
     writer.writeUint64(
       3,
@@ -7568,7 +7723,7 @@ proto.trade.RestingOrder.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getOriginalquantity();
+  f = message.getOrderQuantity();
   if (f !== 0) {
     writer.writeUint64(
       5,
@@ -7582,38 +7737,45 @@ proto.trade.RestingOrder.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getTimeinforce();
+  f = message.getTimeInForce();
   if (f !== 0.0) {
     writer.writeEnum(
       7,
       f
     );
   }
-  f = message.getOrdertype();
+  f = message.getOrderType();
   if (f !== 0.0) {
     writer.writeEnum(
       8,
       f
     );
   }
-  f = message.getRemainingquantity();
+  f = message.getRemainingQuantity();
   if (f !== 0) {
     writer.writeUint64(
       9,
       f
     );
   }
-  f = message.getResttime();
+  f = message.getRestTime();
   if (f !== 0) {
     writer.writeUint64(
       10,
       f
     );
   }
-  f = message.getSubaccountid();
+  f = message.getSubaccountId();
   if (f !== 0) {
     writer.writeUint64(
       11,
+      f
+    );
+  }
+  f = message.getCumulativeQuantity();
+  if (f !== 0) {
+    writer.writeUint64(
+      12,
       f
     );
   }
@@ -7621,10 +7783,10 @@ proto.trade.RestingOrder.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional uint64 clientOrderId = 1;
+ * optional uint64 client_order_id = 1;
  * @return {number}
  */
-proto.trade.RestingOrder.prototype.getClientorderid = function() {
+proto.trade.RestingOrder.prototype.getClientOrderId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -7633,16 +7795,16 @@ proto.trade.RestingOrder.prototype.getClientorderid = function() {
  * @param {number} value
  * @return {!proto.trade.RestingOrder} returns this
  */
-proto.trade.RestingOrder.prototype.setClientorderid = function(value) {
+proto.trade.RestingOrder.prototype.setClientOrderId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
 /**
- * optional uint64 exchangeOrderId = 2;
+ * optional uint64 exchange_order_id = 2;
  * @return {number}
  */
-proto.trade.RestingOrder.prototype.getExchangeorderid = function() {
+proto.trade.RestingOrder.prototype.getExchangeOrderId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -7651,16 +7813,16 @@ proto.trade.RestingOrder.prototype.getExchangeorderid = function() {
  * @param {number} value
  * @return {!proto.trade.RestingOrder} returns this
  */
-proto.trade.RestingOrder.prototype.setExchangeorderid = function(value) {
+proto.trade.RestingOrder.prototype.setExchangeOrderId = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
 /**
- * optional uint64 marketId = 3;
+ * optional uint64 market_id = 3;
  * @return {number}
  */
-proto.trade.RestingOrder.prototype.getMarketid = function() {
+proto.trade.RestingOrder.prototype.getMarketId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -7669,7 +7831,7 @@ proto.trade.RestingOrder.prototype.getMarketid = function() {
  * @param {number} value
  * @return {!proto.trade.RestingOrder} returns this
  */
-proto.trade.RestingOrder.prototype.setMarketid = function(value) {
+proto.trade.RestingOrder.prototype.setMarketId = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
 };
 
@@ -7693,10 +7855,10 @@ proto.trade.RestingOrder.prototype.setPrice = function(value) {
 
 
 /**
- * optional uint64 originalQuantity = 5;
+ * optional uint64 order_quantity = 5;
  * @return {number}
  */
-proto.trade.RestingOrder.prototype.getOriginalquantity = function() {
+proto.trade.RestingOrder.prototype.getOrderQuantity = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -7705,7 +7867,7 @@ proto.trade.RestingOrder.prototype.getOriginalquantity = function() {
  * @param {number} value
  * @return {!proto.trade.RestingOrder} returns this
  */
-proto.trade.RestingOrder.prototype.setOriginalquantity = function(value) {
+proto.trade.RestingOrder.prototype.setOrderQuantity = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
 };
 
@@ -7729,10 +7891,10 @@ proto.trade.RestingOrder.prototype.setSide = function(value) {
 
 
 /**
- * optional TimeInForce timeInForce = 7;
+ * optional TimeInForce time_in_force = 7;
  * @return {!proto.trade.TimeInForce}
  */
-proto.trade.RestingOrder.prototype.getTimeinforce = function() {
+proto.trade.RestingOrder.prototype.getTimeInForce = function() {
   return /** @type {!proto.trade.TimeInForce} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
@@ -7741,16 +7903,16 @@ proto.trade.RestingOrder.prototype.getTimeinforce = function() {
  * @param {!proto.trade.TimeInForce} value
  * @return {!proto.trade.RestingOrder} returns this
  */
-proto.trade.RestingOrder.prototype.setTimeinforce = function(value) {
+proto.trade.RestingOrder.prototype.setTimeInForce = function(value) {
   return jspb.Message.setProto3EnumField(this, 7, value);
 };
 
 
 /**
- * optional OrderType orderType = 8;
+ * optional OrderType order_type = 8;
  * @return {!proto.trade.OrderType}
  */
-proto.trade.RestingOrder.prototype.getOrdertype = function() {
+proto.trade.RestingOrder.prototype.getOrderType = function() {
   return /** @type {!proto.trade.OrderType} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
@@ -7759,16 +7921,16 @@ proto.trade.RestingOrder.prototype.getOrdertype = function() {
  * @param {!proto.trade.OrderType} value
  * @return {!proto.trade.RestingOrder} returns this
  */
-proto.trade.RestingOrder.prototype.setOrdertype = function(value) {
+proto.trade.RestingOrder.prototype.setOrderType = function(value) {
   return jspb.Message.setProto3EnumField(this, 8, value);
 };
 
 
 /**
- * optional uint64 remainingQuantity = 9;
+ * optional uint64 remaining_quantity = 9;
  * @return {number}
  */
-proto.trade.RestingOrder.prototype.getRemainingquantity = function() {
+proto.trade.RestingOrder.prototype.getRemainingQuantity = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
 };
 
@@ -7777,16 +7939,16 @@ proto.trade.RestingOrder.prototype.getRemainingquantity = function() {
  * @param {number} value
  * @return {!proto.trade.RestingOrder} returns this
  */
-proto.trade.RestingOrder.prototype.setRemainingquantity = function(value) {
+proto.trade.RestingOrder.prototype.setRemainingQuantity = function(value) {
   return jspb.Message.setProto3IntField(this, 9, value);
 };
 
 
 /**
- * optional uint64 restTime = 10;
+ * optional uint64 rest_time = 10;
  * @return {number}
  */
-proto.trade.RestingOrder.prototype.getResttime = function() {
+proto.trade.RestingOrder.prototype.getRestTime = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
 };
 
@@ -7795,16 +7957,16 @@ proto.trade.RestingOrder.prototype.getResttime = function() {
  * @param {number} value
  * @return {!proto.trade.RestingOrder} returns this
  */
-proto.trade.RestingOrder.prototype.setResttime = function(value) {
+proto.trade.RestingOrder.prototype.setRestTime = function(value) {
   return jspb.Message.setProto3IntField(this, 10, value);
 };
 
 
 /**
- * optional uint64 subaccountId = 11;
+ * optional uint64 subaccount_id = 11;
  * @return {number}
  */
-proto.trade.RestingOrder.prototype.getSubaccountid = function() {
+proto.trade.RestingOrder.prototype.getSubaccountId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
@@ -7813,8 +7975,26 @@ proto.trade.RestingOrder.prototype.getSubaccountid = function() {
  * @param {number} value
  * @return {!proto.trade.RestingOrder} returns this
  */
-proto.trade.RestingOrder.prototype.setSubaccountid = function(value) {
+proto.trade.RestingOrder.prototype.setSubaccountId = function(value) {
   return jspb.Message.setProto3IntField(this, 11, value);
+};
+
+
+/**
+ * optional uint64 cumulative_quantity = 12;
+ * @return {number}
+ */
+proto.trade.RestingOrder.prototype.getCumulativeQuantity = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.trade.RestingOrder} returns this
+ */
+proto.trade.RestingOrder.prototype.setCumulativeQuantity = function(value) {
+  return jspb.Message.setProto3IntField(this, 12, value);
 };
 
 

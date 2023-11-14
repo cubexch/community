@@ -31,15 +31,15 @@ export namespace trade {
     export class Credentials extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            accessKeyId?: string;
+            access_key_id?: string;
             signature?: string;
             timestamp?: number;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("accessKeyId" in data && data.accessKeyId != undefined) {
-                    this.accessKeyId = data.accessKeyId;
+                if ("access_key_id" in data && data.access_key_id != undefined) {
+                    this.access_key_id = data.access_key_id;
                 }
                 if ("signature" in data && data.signature != undefined) {
                     this.signature = data.signature;
@@ -49,10 +49,10 @@ export namespace trade {
                 }
             }
         }
-        get accessKeyId() {
+        get access_key_id() {
             return pb_1.Message.getFieldWithDefault(this, 1, "") as string;
         }
-        set accessKeyId(value: string) {
+        set access_key_id(value: string) {
             pb_1.Message.setField(this, 1, value);
         }
         get signature() {
@@ -68,13 +68,13 @@ export namespace trade {
             pb_1.Message.setField(this, 3, value);
         }
         static fromObject(data: {
-            accessKeyId?: string;
+            access_key_id?: string;
             signature?: string;
             timestamp?: number;
         }): Credentials {
             const message = new Credentials({});
-            if (data.accessKeyId != null) {
-                message.accessKeyId = data.accessKeyId;
+            if (data.access_key_id != null) {
+                message.access_key_id = data.access_key_id;
             }
             if (data.signature != null) {
                 message.signature = data.signature;
@@ -86,12 +86,12 @@ export namespace trade {
         }
         toObject() {
             const data: {
-                accessKeyId?: string;
+                access_key_id?: string;
                 signature?: string;
                 timestamp?: number;
             } = {};
-            if (this.accessKeyId != null) {
-                data.accessKeyId = this.accessKeyId;
+            if (this.access_key_id != null) {
+                data.access_key_id = this.access_key_id;
             }
             if (this.signature != null) {
                 data.signature = this.signature;
@@ -105,8 +105,8 @@ export namespace trade {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.accessKeyId.length)
-                writer.writeString(1, this.accessKeyId);
+            if (this.access_key_id.length)
+                writer.writeString(1, this.access_key_id);
             if (this.signature.length)
                 writer.writeString(2, this.signature);
             if (this.timestamp != 0)
@@ -121,7 +121,7 @@ export namespace trade {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.accessKeyId = reader.readString();
+                        message.access_key_id = reader.readString();
                         break;
                     case 2:
                         message.signature = reader.readString();
@@ -355,31 +355,32 @@ export namespace trade {
     export class NewOrder extends pb_1.Message {
         #one_of_decls: number[][] = [[4], [10]];
         constructor(data?: any[] | ({
-            clientOrderId?: number;
-            requestId?: number;
-            marketId?: number;
+            client_order_id?: number;
+            request_id?: number;
+            market_id?: number;
             quantity?: number;
             side?: Side;
-            timeInForce?: TimeInForce;
-            orderType?: OrderType;
-            subaccountId?: number;
-            postOnly?: PostOnly;
+            time_in_force?: TimeInForce;
+            order_type?: OrderType;
+            subaccount_id?: number;
+            post_only?: PostOnly;
+            cancel_on_disconnect?: boolean;
         } & (({
             price?: number;
         }) | ({
-            selfTradePrevention?: SelfTradePrevention;
+            self_trade_prevention?: SelfTradePrevention;
         })))) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("clientOrderId" in data && data.clientOrderId != undefined) {
-                    this.clientOrderId = data.clientOrderId;
+                if ("client_order_id" in data && data.client_order_id != undefined) {
+                    this.client_order_id = data.client_order_id;
                 }
-                if ("requestId" in data && data.requestId != undefined) {
-                    this.requestId = data.requestId;
+                if ("request_id" in data && data.request_id != undefined) {
+                    this.request_id = data.request_id;
                 }
-                if ("marketId" in data && data.marketId != undefined) {
-                    this.marketId = data.marketId;
+                if ("market_id" in data && data.market_id != undefined) {
+                    this.market_id = data.market_id;
                 }
                 if ("price" in data && data.price != undefined) {
                     this.price = data.price;
@@ -390,39 +391,42 @@ export namespace trade {
                 if ("side" in data && data.side != undefined) {
                     this.side = data.side;
                 }
-                if ("timeInForce" in data && data.timeInForce != undefined) {
-                    this.timeInForce = data.timeInForce;
+                if ("time_in_force" in data && data.time_in_force != undefined) {
+                    this.time_in_force = data.time_in_force;
                 }
-                if ("orderType" in data && data.orderType != undefined) {
-                    this.orderType = data.orderType;
+                if ("order_type" in data && data.order_type != undefined) {
+                    this.order_type = data.order_type;
                 }
-                if ("subaccountId" in data && data.subaccountId != undefined) {
-                    this.subaccountId = data.subaccountId;
+                if ("subaccount_id" in data && data.subaccount_id != undefined) {
+                    this.subaccount_id = data.subaccount_id;
                 }
-                if ("selfTradePrevention" in data && data.selfTradePrevention != undefined) {
-                    this.selfTradePrevention = data.selfTradePrevention;
+                if ("self_trade_prevention" in data && data.self_trade_prevention != undefined) {
+                    this.self_trade_prevention = data.self_trade_prevention;
                 }
-                if ("postOnly" in data && data.postOnly != undefined) {
-                    this.postOnly = data.postOnly;
+                if ("post_only" in data && data.post_only != undefined) {
+                    this.post_only = data.post_only;
+                }
+                if ("cancel_on_disconnect" in data && data.cancel_on_disconnect != undefined) {
+                    this.cancel_on_disconnect = data.cancel_on_disconnect;
                 }
             }
         }
-        get clientOrderId() {
+        get client_order_id() {
             return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
         }
-        set clientOrderId(value: number) {
+        set client_order_id(value: number) {
             pb_1.Message.setField(this, 1, value);
         }
-        get requestId() {
+        get request_id() {
             return pb_1.Message.getFieldWithDefault(this, 2, 0) as number;
         }
-        set requestId(value: number) {
+        set request_id(value: number) {
             pb_1.Message.setField(this, 2, value);
         }
-        get marketId() {
+        get market_id() {
             return pb_1.Message.getFieldWithDefault(this, 3, 0) as number;
         }
-        set marketId(value: number) {
+        set market_id(value: number) {
             pb_1.Message.setField(this, 3, value);
         }
         get price() {
@@ -446,38 +450,44 @@ export namespace trade {
         set side(value: Side) {
             pb_1.Message.setField(this, 6, value);
         }
-        get timeInForce() {
+        get time_in_force() {
             return pb_1.Message.getFieldWithDefault(this, 7, TimeInForce.IMMEDIATE_OR_CANCEL) as TimeInForce;
         }
-        set timeInForce(value: TimeInForce) {
+        set time_in_force(value: TimeInForce) {
             pb_1.Message.setField(this, 7, value);
         }
-        get orderType() {
+        get order_type() {
             return pb_1.Message.getFieldWithDefault(this, 8, OrderType.LIMIT) as OrderType;
         }
-        set orderType(value: OrderType) {
+        set order_type(value: OrderType) {
             pb_1.Message.setField(this, 8, value);
         }
-        get subaccountId() {
+        get subaccount_id() {
             return pb_1.Message.getFieldWithDefault(this, 9, 0) as number;
         }
-        set subaccountId(value: number) {
+        set subaccount_id(value: number) {
             pb_1.Message.setField(this, 9, value);
         }
-        get selfTradePrevention() {
+        get self_trade_prevention() {
             return pb_1.Message.getFieldWithDefault(this, 10, SelfTradePrevention.CANCEL_RESTING) as SelfTradePrevention;
         }
-        set selfTradePrevention(value: SelfTradePrevention) {
+        set self_trade_prevention(value: SelfTradePrevention) {
             pb_1.Message.setOneofField(this, 10, this.#one_of_decls[1], value);
         }
-        get has_selfTradePrevention() {
+        get has_self_trade_prevention() {
             return pb_1.Message.getField(this, 10) != null;
         }
-        get postOnly() {
+        get post_only() {
             return pb_1.Message.getFieldWithDefault(this, 11, PostOnly.DISABLED) as PostOnly;
         }
-        set postOnly(value: PostOnly) {
+        set post_only(value: PostOnly) {
             pb_1.Message.setField(this, 11, value);
+        }
+        get cancel_on_disconnect() {
+            return pb_1.Message.getFieldWithDefault(this, 12, false) as boolean;
+        }
+        set cancel_on_disconnect(value: boolean) {
+            pb_1.Message.setField(this, 12, value);
         }
         get _price() {
             const cases: {
@@ -488,37 +498,38 @@ export namespace trade {
             };
             return cases[pb_1.Message.computeOneofCase(this, [4])];
         }
-        get _selfTradePrevention() {
+        get _self_trade_prevention() {
             const cases: {
-                [index: number]: "none" | "selfTradePrevention";
+                [index: number]: "none" | "self_trade_prevention";
             } = {
                 0: "none",
-                10: "selfTradePrevention"
+                10: "self_trade_prevention"
             };
             return cases[pb_1.Message.computeOneofCase(this, [10])];
         }
         static fromObject(data: {
-            clientOrderId?: number;
-            requestId?: number;
-            marketId?: number;
+            client_order_id?: number;
+            request_id?: number;
+            market_id?: number;
             price?: number;
             quantity?: number;
             side?: Side;
-            timeInForce?: TimeInForce;
-            orderType?: OrderType;
-            subaccountId?: number;
-            selfTradePrevention?: SelfTradePrevention;
-            postOnly?: PostOnly;
+            time_in_force?: TimeInForce;
+            order_type?: OrderType;
+            subaccount_id?: number;
+            self_trade_prevention?: SelfTradePrevention;
+            post_only?: PostOnly;
+            cancel_on_disconnect?: boolean;
         }): NewOrder {
             const message = new NewOrder({});
-            if (data.clientOrderId != null) {
-                message.clientOrderId = data.clientOrderId;
+            if (data.client_order_id != null) {
+                message.client_order_id = data.client_order_id;
             }
-            if (data.requestId != null) {
-                message.requestId = data.requestId;
+            if (data.request_id != null) {
+                message.request_id = data.request_id;
             }
-            if (data.marketId != null) {
-                message.marketId = data.marketId;
+            if (data.market_id != null) {
+                message.market_id = data.market_id;
             }
             if (data.price != null) {
                 message.price = data.price;
@@ -529,45 +540,49 @@ export namespace trade {
             if (data.side != null) {
                 message.side = data.side;
             }
-            if (data.timeInForce != null) {
-                message.timeInForce = data.timeInForce;
+            if (data.time_in_force != null) {
+                message.time_in_force = data.time_in_force;
             }
-            if (data.orderType != null) {
-                message.orderType = data.orderType;
+            if (data.order_type != null) {
+                message.order_type = data.order_type;
             }
-            if (data.subaccountId != null) {
-                message.subaccountId = data.subaccountId;
+            if (data.subaccount_id != null) {
+                message.subaccount_id = data.subaccount_id;
             }
-            if (data.selfTradePrevention != null) {
-                message.selfTradePrevention = data.selfTradePrevention;
+            if (data.self_trade_prevention != null) {
+                message.self_trade_prevention = data.self_trade_prevention;
             }
-            if (data.postOnly != null) {
-                message.postOnly = data.postOnly;
+            if (data.post_only != null) {
+                message.post_only = data.post_only;
+            }
+            if (data.cancel_on_disconnect != null) {
+                message.cancel_on_disconnect = data.cancel_on_disconnect;
             }
             return message;
         }
         toObject() {
             const data: {
-                clientOrderId?: number;
-                requestId?: number;
-                marketId?: number;
+                client_order_id?: number;
+                request_id?: number;
+                market_id?: number;
                 price?: number;
                 quantity?: number;
                 side?: Side;
-                timeInForce?: TimeInForce;
-                orderType?: OrderType;
-                subaccountId?: number;
-                selfTradePrevention?: SelfTradePrevention;
-                postOnly?: PostOnly;
+                time_in_force?: TimeInForce;
+                order_type?: OrderType;
+                subaccount_id?: number;
+                self_trade_prevention?: SelfTradePrevention;
+                post_only?: PostOnly;
+                cancel_on_disconnect?: boolean;
             } = {};
-            if (this.clientOrderId != null) {
-                data.clientOrderId = this.clientOrderId;
+            if (this.client_order_id != null) {
+                data.client_order_id = this.client_order_id;
             }
-            if (this.requestId != null) {
-                data.requestId = this.requestId;
+            if (this.request_id != null) {
+                data.request_id = this.request_id;
             }
-            if (this.marketId != null) {
-                data.marketId = this.marketId;
+            if (this.market_id != null) {
+                data.market_id = this.market_id;
             }
             if (this.price != null) {
                 data.price = this.price;
@@ -578,20 +593,23 @@ export namespace trade {
             if (this.side != null) {
                 data.side = this.side;
             }
-            if (this.timeInForce != null) {
-                data.timeInForce = this.timeInForce;
+            if (this.time_in_force != null) {
+                data.time_in_force = this.time_in_force;
             }
-            if (this.orderType != null) {
-                data.orderType = this.orderType;
+            if (this.order_type != null) {
+                data.order_type = this.order_type;
             }
-            if (this.subaccountId != null) {
-                data.subaccountId = this.subaccountId;
+            if (this.subaccount_id != null) {
+                data.subaccount_id = this.subaccount_id;
             }
-            if (this.selfTradePrevention != null) {
-                data.selfTradePrevention = this.selfTradePrevention;
+            if (this.self_trade_prevention != null) {
+                data.self_trade_prevention = this.self_trade_prevention;
             }
-            if (this.postOnly != null) {
-                data.postOnly = this.postOnly;
+            if (this.post_only != null) {
+                data.post_only = this.post_only;
+            }
+            if (this.cancel_on_disconnect != null) {
+                data.cancel_on_disconnect = this.cancel_on_disconnect;
             }
             return data;
         }
@@ -599,28 +617,30 @@ export namespace trade {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.clientOrderId != 0)
-                writer.writeUint64(1, this.clientOrderId);
-            if (this.requestId != 0)
-                writer.writeUint64(2, this.requestId);
-            if (this.marketId != 0)
-                writer.writeUint64(3, this.marketId);
+            if (this.client_order_id != 0)
+                writer.writeUint64(1, this.client_order_id);
+            if (this.request_id != 0)
+                writer.writeUint64(2, this.request_id);
+            if (this.market_id != 0)
+                writer.writeUint64(3, this.market_id);
             if (this.has_price)
                 writer.writeUint64(4, this.price);
             if (this.quantity != 0)
                 writer.writeUint64(5, this.quantity);
             if (this.side != Side.BID)
                 writer.writeEnum(6, this.side);
-            if (this.timeInForce != TimeInForce.IMMEDIATE_OR_CANCEL)
-                writer.writeEnum(7, this.timeInForce);
-            if (this.orderType != OrderType.LIMIT)
-                writer.writeEnum(8, this.orderType);
-            if (this.subaccountId != 0)
-                writer.writeUint64(9, this.subaccountId);
-            if (this.has_selfTradePrevention)
-                writer.writeEnum(10, this.selfTradePrevention);
-            if (this.postOnly != PostOnly.DISABLED)
-                writer.writeEnum(11, this.postOnly);
+            if (this.time_in_force != TimeInForce.IMMEDIATE_OR_CANCEL)
+                writer.writeEnum(7, this.time_in_force);
+            if (this.order_type != OrderType.LIMIT)
+                writer.writeEnum(8, this.order_type);
+            if (this.subaccount_id != 0)
+                writer.writeUint64(9, this.subaccount_id);
+            if (this.has_self_trade_prevention)
+                writer.writeEnum(10, this.self_trade_prevention);
+            if (this.post_only != PostOnly.DISABLED)
+                writer.writeEnum(11, this.post_only);
+            if (this.cancel_on_disconnect != false)
+                writer.writeBool(12, this.cancel_on_disconnect);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -631,13 +651,13 @@ export namespace trade {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.clientOrderId = reader.readUint64();
+                        message.client_order_id = reader.readUint64();
                         break;
                     case 2:
-                        message.requestId = reader.readUint64();
+                        message.request_id = reader.readUint64();
                         break;
                     case 3:
-                        message.marketId = reader.readUint64();
+                        message.market_id = reader.readUint64();
                         break;
                     case 4:
                         message.price = reader.readUint64();
@@ -649,19 +669,22 @@ export namespace trade {
                         message.side = reader.readEnum();
                         break;
                     case 7:
-                        message.timeInForce = reader.readEnum();
+                        message.time_in_force = reader.readEnum();
                         break;
                     case 8:
-                        message.orderType = reader.readEnum();
+                        message.order_type = reader.readEnum();
                         break;
                     case 9:
-                        message.subaccountId = reader.readUint64();
+                        message.subaccount_id = reader.readUint64();
                         break;
                     case 10:
-                        message.selfTradePrevention = reader.readEnum();
+                        message.self_trade_prevention = reader.readEnum();
                         break;
                     case 11:
-                        message.postOnly = reader.readEnum();
+                        message.post_only = reader.readEnum();
+                        break;
+                    case 12:
+                        message.cancel_on_disconnect = reader.readBool();
                         break;
                     default: reader.skipField();
                 }
@@ -678,91 +701,91 @@ export namespace trade {
     export class CancelOrder extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            marketId?: number;
-            clientOrderId?: number;
-            requestId?: number;
-            subaccountId?: number;
+            market_id?: number;
+            client_order_id?: number;
+            request_id?: number;
+            subaccount_id?: number;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("marketId" in data && data.marketId != undefined) {
-                    this.marketId = data.marketId;
+                if ("market_id" in data && data.market_id != undefined) {
+                    this.market_id = data.market_id;
                 }
-                if ("clientOrderId" in data && data.clientOrderId != undefined) {
-                    this.clientOrderId = data.clientOrderId;
+                if ("client_order_id" in data && data.client_order_id != undefined) {
+                    this.client_order_id = data.client_order_id;
                 }
-                if ("requestId" in data && data.requestId != undefined) {
-                    this.requestId = data.requestId;
+                if ("request_id" in data && data.request_id != undefined) {
+                    this.request_id = data.request_id;
                 }
-                if ("subaccountId" in data && data.subaccountId != undefined) {
-                    this.subaccountId = data.subaccountId;
+                if ("subaccount_id" in data && data.subaccount_id != undefined) {
+                    this.subaccount_id = data.subaccount_id;
                 }
             }
         }
-        get marketId() {
+        get market_id() {
             return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
         }
-        set marketId(value: number) {
+        set market_id(value: number) {
             pb_1.Message.setField(this, 1, value);
         }
-        get clientOrderId() {
+        get client_order_id() {
             return pb_1.Message.getFieldWithDefault(this, 2, 0) as number;
         }
-        set clientOrderId(value: number) {
+        set client_order_id(value: number) {
             pb_1.Message.setField(this, 2, value);
         }
-        get requestId() {
+        get request_id() {
             return pb_1.Message.getFieldWithDefault(this, 3, 0) as number;
         }
-        set requestId(value: number) {
+        set request_id(value: number) {
             pb_1.Message.setField(this, 3, value);
         }
-        get subaccountId() {
+        get subaccount_id() {
             return pb_1.Message.getFieldWithDefault(this, 4, 0) as number;
         }
-        set subaccountId(value: number) {
+        set subaccount_id(value: number) {
             pb_1.Message.setField(this, 4, value);
         }
         static fromObject(data: {
-            marketId?: number;
-            clientOrderId?: number;
-            requestId?: number;
-            subaccountId?: number;
+            market_id?: number;
+            client_order_id?: number;
+            request_id?: number;
+            subaccount_id?: number;
         }): CancelOrder {
             const message = new CancelOrder({});
-            if (data.marketId != null) {
-                message.marketId = data.marketId;
+            if (data.market_id != null) {
+                message.market_id = data.market_id;
             }
-            if (data.clientOrderId != null) {
-                message.clientOrderId = data.clientOrderId;
+            if (data.client_order_id != null) {
+                message.client_order_id = data.client_order_id;
             }
-            if (data.requestId != null) {
-                message.requestId = data.requestId;
+            if (data.request_id != null) {
+                message.request_id = data.request_id;
             }
-            if (data.subaccountId != null) {
-                message.subaccountId = data.subaccountId;
+            if (data.subaccount_id != null) {
+                message.subaccount_id = data.subaccount_id;
             }
             return message;
         }
         toObject() {
             const data: {
-                marketId?: number;
-                clientOrderId?: number;
-                requestId?: number;
-                subaccountId?: number;
+                market_id?: number;
+                client_order_id?: number;
+                request_id?: number;
+                subaccount_id?: number;
             } = {};
-            if (this.marketId != null) {
-                data.marketId = this.marketId;
+            if (this.market_id != null) {
+                data.market_id = this.market_id;
             }
-            if (this.clientOrderId != null) {
-                data.clientOrderId = this.clientOrderId;
+            if (this.client_order_id != null) {
+                data.client_order_id = this.client_order_id;
             }
-            if (this.requestId != null) {
-                data.requestId = this.requestId;
+            if (this.request_id != null) {
+                data.request_id = this.request_id;
             }
-            if (this.subaccountId != null) {
-                data.subaccountId = this.subaccountId;
+            if (this.subaccount_id != null) {
+                data.subaccount_id = this.subaccount_id;
             }
             return data;
         }
@@ -770,14 +793,14 @@ export namespace trade {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.marketId != 0)
-                writer.writeUint64(1, this.marketId);
-            if (this.clientOrderId != 0)
-                writer.writeUint64(2, this.clientOrderId);
-            if (this.requestId != 0)
-                writer.writeUint64(3, this.requestId);
-            if (this.subaccountId != 0)
-                writer.writeUint64(4, this.subaccountId);
+            if (this.market_id != 0)
+                writer.writeUint64(1, this.market_id);
+            if (this.client_order_id != 0)
+                writer.writeUint64(2, this.client_order_id);
+            if (this.request_id != 0)
+                writer.writeUint64(3, this.request_id);
+            if (this.subaccount_id != 0)
+                writer.writeUint64(4, this.subaccount_id);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -788,16 +811,16 @@ export namespace trade {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.marketId = reader.readUint64();
+                        message.market_id = reader.readUint64();
                         break;
                     case 2:
-                        message.clientOrderId = reader.readUint64();
+                        message.client_order_id = reader.readUint64();
                         break;
                     case 3:
-                        message.requestId = reader.readUint64();
+                        message.request_id = reader.readUint64();
                         break;
                     case 4:
-                        message.subaccountId = reader.readUint64();
+                        message.subaccount_id = reader.readUint64();
                         break;
                     default: reader.skipField();
                 }
@@ -814,176 +837,176 @@ export namespace trade {
     export class ModifyOrder extends pb_1.Message {
         #one_of_decls: number[][] = [[7]];
         constructor(data?: any[] | ({
-            marketId?: number;
-            clientOrderId?: number;
-            requestId?: number;
-            newPrice?: number;
-            newQuantity?: number;
-            subaccountId?: number;
-            postOnly?: PostOnly;
+            market_id?: number;
+            client_order_id?: number;
+            request_id?: number;
+            new_price?: number;
+            new_quantity?: number;
+            subaccount_id?: number;
+            post_only?: PostOnly;
         } & (({
-            selfTradePrevention?: SelfTradePrevention;
+            self_trade_prevention?: SelfTradePrevention;
         })))) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("marketId" in data && data.marketId != undefined) {
-                    this.marketId = data.marketId;
+                if ("market_id" in data && data.market_id != undefined) {
+                    this.market_id = data.market_id;
                 }
-                if ("clientOrderId" in data && data.clientOrderId != undefined) {
-                    this.clientOrderId = data.clientOrderId;
+                if ("client_order_id" in data && data.client_order_id != undefined) {
+                    this.client_order_id = data.client_order_id;
                 }
-                if ("requestId" in data && data.requestId != undefined) {
-                    this.requestId = data.requestId;
+                if ("request_id" in data && data.request_id != undefined) {
+                    this.request_id = data.request_id;
                 }
-                if ("newPrice" in data && data.newPrice != undefined) {
-                    this.newPrice = data.newPrice;
+                if ("new_price" in data && data.new_price != undefined) {
+                    this.new_price = data.new_price;
                 }
-                if ("newQuantity" in data && data.newQuantity != undefined) {
-                    this.newQuantity = data.newQuantity;
+                if ("new_quantity" in data && data.new_quantity != undefined) {
+                    this.new_quantity = data.new_quantity;
                 }
-                if ("subaccountId" in data && data.subaccountId != undefined) {
-                    this.subaccountId = data.subaccountId;
+                if ("subaccount_id" in data && data.subaccount_id != undefined) {
+                    this.subaccount_id = data.subaccount_id;
                 }
-                if ("selfTradePrevention" in data && data.selfTradePrevention != undefined) {
-                    this.selfTradePrevention = data.selfTradePrevention;
+                if ("self_trade_prevention" in data && data.self_trade_prevention != undefined) {
+                    this.self_trade_prevention = data.self_trade_prevention;
                 }
-                if ("postOnly" in data && data.postOnly != undefined) {
-                    this.postOnly = data.postOnly;
+                if ("post_only" in data && data.post_only != undefined) {
+                    this.post_only = data.post_only;
                 }
             }
         }
-        get marketId() {
+        get market_id() {
             return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
         }
-        set marketId(value: number) {
+        set market_id(value: number) {
             pb_1.Message.setField(this, 1, value);
         }
-        get clientOrderId() {
+        get client_order_id() {
             return pb_1.Message.getFieldWithDefault(this, 2, 0) as number;
         }
-        set clientOrderId(value: number) {
+        set client_order_id(value: number) {
             pb_1.Message.setField(this, 2, value);
         }
-        get requestId() {
+        get request_id() {
             return pb_1.Message.getFieldWithDefault(this, 3, 0) as number;
         }
-        set requestId(value: number) {
+        set request_id(value: number) {
             pb_1.Message.setField(this, 3, value);
         }
-        get newPrice() {
+        get new_price() {
             return pb_1.Message.getFieldWithDefault(this, 4, 0) as number;
         }
-        set newPrice(value: number) {
+        set new_price(value: number) {
             pb_1.Message.setField(this, 4, value);
         }
-        get newQuantity() {
+        get new_quantity() {
             return pb_1.Message.getFieldWithDefault(this, 5, 0) as number;
         }
-        set newQuantity(value: number) {
+        set new_quantity(value: number) {
             pb_1.Message.setField(this, 5, value);
         }
-        get subaccountId() {
+        get subaccount_id() {
             return pb_1.Message.getFieldWithDefault(this, 6, 0) as number;
         }
-        set subaccountId(value: number) {
+        set subaccount_id(value: number) {
             pb_1.Message.setField(this, 6, value);
         }
-        get selfTradePrevention() {
+        get self_trade_prevention() {
             return pb_1.Message.getFieldWithDefault(this, 7, SelfTradePrevention.CANCEL_RESTING) as SelfTradePrevention;
         }
-        set selfTradePrevention(value: SelfTradePrevention) {
+        set self_trade_prevention(value: SelfTradePrevention) {
             pb_1.Message.setOneofField(this, 7, this.#one_of_decls[0], value);
         }
-        get has_selfTradePrevention() {
+        get has_self_trade_prevention() {
             return pb_1.Message.getField(this, 7) != null;
         }
-        get postOnly() {
+        get post_only() {
             return pb_1.Message.getFieldWithDefault(this, 8, PostOnly.DISABLED) as PostOnly;
         }
-        set postOnly(value: PostOnly) {
+        set post_only(value: PostOnly) {
             pb_1.Message.setField(this, 8, value);
         }
-        get _selfTradePrevention() {
+        get _self_trade_prevention() {
             const cases: {
-                [index: number]: "none" | "selfTradePrevention";
+                [index: number]: "none" | "self_trade_prevention";
             } = {
                 0: "none",
-                7: "selfTradePrevention"
+                7: "self_trade_prevention"
             };
             return cases[pb_1.Message.computeOneofCase(this, [7])];
         }
         static fromObject(data: {
-            marketId?: number;
-            clientOrderId?: number;
-            requestId?: number;
-            newPrice?: number;
-            newQuantity?: number;
-            subaccountId?: number;
-            selfTradePrevention?: SelfTradePrevention;
-            postOnly?: PostOnly;
+            market_id?: number;
+            client_order_id?: number;
+            request_id?: number;
+            new_price?: number;
+            new_quantity?: number;
+            subaccount_id?: number;
+            self_trade_prevention?: SelfTradePrevention;
+            post_only?: PostOnly;
         }): ModifyOrder {
             const message = new ModifyOrder({});
-            if (data.marketId != null) {
-                message.marketId = data.marketId;
+            if (data.market_id != null) {
+                message.market_id = data.market_id;
             }
-            if (data.clientOrderId != null) {
-                message.clientOrderId = data.clientOrderId;
+            if (data.client_order_id != null) {
+                message.client_order_id = data.client_order_id;
             }
-            if (data.requestId != null) {
-                message.requestId = data.requestId;
+            if (data.request_id != null) {
+                message.request_id = data.request_id;
             }
-            if (data.newPrice != null) {
-                message.newPrice = data.newPrice;
+            if (data.new_price != null) {
+                message.new_price = data.new_price;
             }
-            if (data.newQuantity != null) {
-                message.newQuantity = data.newQuantity;
+            if (data.new_quantity != null) {
+                message.new_quantity = data.new_quantity;
             }
-            if (data.subaccountId != null) {
-                message.subaccountId = data.subaccountId;
+            if (data.subaccount_id != null) {
+                message.subaccount_id = data.subaccount_id;
             }
-            if (data.selfTradePrevention != null) {
-                message.selfTradePrevention = data.selfTradePrevention;
+            if (data.self_trade_prevention != null) {
+                message.self_trade_prevention = data.self_trade_prevention;
             }
-            if (data.postOnly != null) {
-                message.postOnly = data.postOnly;
+            if (data.post_only != null) {
+                message.post_only = data.post_only;
             }
             return message;
         }
         toObject() {
             const data: {
-                marketId?: number;
-                clientOrderId?: number;
-                requestId?: number;
-                newPrice?: number;
-                newQuantity?: number;
-                subaccountId?: number;
-                selfTradePrevention?: SelfTradePrevention;
-                postOnly?: PostOnly;
+                market_id?: number;
+                client_order_id?: number;
+                request_id?: number;
+                new_price?: number;
+                new_quantity?: number;
+                subaccount_id?: number;
+                self_trade_prevention?: SelfTradePrevention;
+                post_only?: PostOnly;
             } = {};
-            if (this.marketId != null) {
-                data.marketId = this.marketId;
+            if (this.market_id != null) {
+                data.market_id = this.market_id;
             }
-            if (this.clientOrderId != null) {
-                data.clientOrderId = this.clientOrderId;
+            if (this.client_order_id != null) {
+                data.client_order_id = this.client_order_id;
             }
-            if (this.requestId != null) {
-                data.requestId = this.requestId;
+            if (this.request_id != null) {
+                data.request_id = this.request_id;
             }
-            if (this.newPrice != null) {
-                data.newPrice = this.newPrice;
+            if (this.new_price != null) {
+                data.new_price = this.new_price;
             }
-            if (this.newQuantity != null) {
-                data.newQuantity = this.newQuantity;
+            if (this.new_quantity != null) {
+                data.new_quantity = this.new_quantity;
             }
-            if (this.subaccountId != null) {
-                data.subaccountId = this.subaccountId;
+            if (this.subaccount_id != null) {
+                data.subaccount_id = this.subaccount_id;
             }
-            if (this.selfTradePrevention != null) {
-                data.selfTradePrevention = this.selfTradePrevention;
+            if (this.self_trade_prevention != null) {
+                data.self_trade_prevention = this.self_trade_prevention;
             }
-            if (this.postOnly != null) {
-                data.postOnly = this.postOnly;
+            if (this.post_only != null) {
+                data.post_only = this.post_only;
             }
             return data;
         }
@@ -991,22 +1014,22 @@ export namespace trade {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.marketId != 0)
-                writer.writeUint64(1, this.marketId);
-            if (this.clientOrderId != 0)
-                writer.writeUint64(2, this.clientOrderId);
-            if (this.requestId != 0)
-                writer.writeUint64(3, this.requestId);
-            if (this.newPrice != 0)
-                writer.writeUint64(4, this.newPrice);
-            if (this.newQuantity != 0)
-                writer.writeUint64(5, this.newQuantity);
-            if (this.subaccountId != 0)
-                writer.writeUint64(6, this.subaccountId);
-            if (this.has_selfTradePrevention)
-                writer.writeEnum(7, this.selfTradePrevention);
-            if (this.postOnly != PostOnly.DISABLED)
-                writer.writeEnum(8, this.postOnly);
+            if (this.market_id != 0)
+                writer.writeUint64(1, this.market_id);
+            if (this.client_order_id != 0)
+                writer.writeUint64(2, this.client_order_id);
+            if (this.request_id != 0)
+                writer.writeUint64(3, this.request_id);
+            if (this.new_price != 0)
+                writer.writeUint64(4, this.new_price);
+            if (this.new_quantity != 0)
+                writer.writeUint64(5, this.new_quantity);
+            if (this.subaccount_id != 0)
+                writer.writeUint64(6, this.subaccount_id);
+            if (this.has_self_trade_prevention)
+                writer.writeEnum(7, this.self_trade_prevention);
+            if (this.post_only != PostOnly.DISABLED)
+                writer.writeEnum(8, this.post_only);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -1017,28 +1040,28 @@ export namespace trade {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.marketId = reader.readUint64();
+                        message.market_id = reader.readUint64();
                         break;
                     case 2:
-                        message.clientOrderId = reader.readUint64();
+                        message.client_order_id = reader.readUint64();
                         break;
                     case 3:
-                        message.requestId = reader.readUint64();
+                        message.request_id = reader.readUint64();
                         break;
                     case 4:
-                        message.newPrice = reader.readUint64();
+                        message.new_price = reader.readUint64();
                         break;
                     case 5:
-                        message.newQuantity = reader.readUint64();
+                        message.new_quantity = reader.readUint64();
                         break;
                     case 6:
-                        message.subaccountId = reader.readUint64();
+                        message.subaccount_id = reader.readUint64();
                         break;
                     case 7:
-                        message.selfTradePrevention = reader.readEnum();
+                        message.self_trade_prevention = reader.readEnum();
                         break;
                     case 8:
-                        message.postOnly = reader.readEnum();
+                        message.post_only = reader.readEnum();
                         break;
                     default: reader.skipField();
                 }
@@ -1055,49 +1078,49 @@ export namespace trade {
     export class MassCancel extends pb_1.Message {
         #one_of_decls: number[][] = [[3], [4]];
         constructor(data?: any[] | ({
-            subaccountId?: number;
-            requestId?: number;
+            subaccount_id?: number;
+            request_id?: number;
         } & (({
-            marketId?: number;
+            market_id?: number;
         }) | ({
             side?: Side;
         })))) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("subaccountId" in data && data.subaccountId != undefined) {
-                    this.subaccountId = data.subaccountId;
+                if ("subaccount_id" in data && data.subaccount_id != undefined) {
+                    this.subaccount_id = data.subaccount_id;
                 }
-                if ("requestId" in data && data.requestId != undefined) {
-                    this.requestId = data.requestId;
+                if ("request_id" in data && data.request_id != undefined) {
+                    this.request_id = data.request_id;
                 }
-                if ("marketId" in data && data.marketId != undefined) {
-                    this.marketId = data.marketId;
+                if ("market_id" in data && data.market_id != undefined) {
+                    this.market_id = data.market_id;
                 }
                 if ("side" in data && data.side != undefined) {
                     this.side = data.side;
                 }
             }
         }
-        get subaccountId() {
+        get subaccount_id() {
             return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
         }
-        set subaccountId(value: number) {
+        set subaccount_id(value: number) {
             pb_1.Message.setField(this, 1, value);
         }
-        get requestId() {
+        get request_id() {
             return pb_1.Message.getFieldWithDefault(this, 2, 0) as number;
         }
-        set requestId(value: number) {
+        set request_id(value: number) {
             pb_1.Message.setField(this, 2, value);
         }
-        get marketId() {
+        get market_id() {
             return pb_1.Message.getFieldWithDefault(this, 3, 0) as number;
         }
-        set marketId(value: number) {
+        set market_id(value: number) {
             pb_1.Message.setOneofField(this, 3, this.#one_of_decls[0], value);
         }
-        get has_marketId() {
+        get has_market_id() {
             return pb_1.Message.getField(this, 3) != null;
         }
         get side() {
@@ -1109,12 +1132,12 @@ export namespace trade {
         get has_side() {
             return pb_1.Message.getField(this, 4) != null;
         }
-        get _marketId() {
+        get _market_id() {
             const cases: {
-                [index: number]: "none" | "marketId";
+                [index: number]: "none" | "market_id";
             } = {
                 0: "none",
-                3: "marketId"
+                3: "market_id"
             };
             return cases[pb_1.Message.computeOneofCase(this, [3])];
         }
@@ -1128,20 +1151,20 @@ export namespace trade {
             return cases[pb_1.Message.computeOneofCase(this, [4])];
         }
         static fromObject(data: {
-            subaccountId?: number;
-            requestId?: number;
-            marketId?: number;
+            subaccount_id?: number;
+            request_id?: number;
+            market_id?: number;
             side?: Side;
         }): MassCancel {
             const message = new MassCancel({});
-            if (data.subaccountId != null) {
-                message.subaccountId = data.subaccountId;
+            if (data.subaccount_id != null) {
+                message.subaccount_id = data.subaccount_id;
             }
-            if (data.requestId != null) {
-                message.requestId = data.requestId;
+            if (data.request_id != null) {
+                message.request_id = data.request_id;
             }
-            if (data.marketId != null) {
-                message.marketId = data.marketId;
+            if (data.market_id != null) {
+                message.market_id = data.market_id;
             }
             if (data.side != null) {
                 message.side = data.side;
@@ -1150,19 +1173,19 @@ export namespace trade {
         }
         toObject() {
             const data: {
-                subaccountId?: number;
-                requestId?: number;
-                marketId?: number;
+                subaccount_id?: number;
+                request_id?: number;
+                market_id?: number;
                 side?: Side;
             } = {};
-            if (this.subaccountId != null) {
-                data.subaccountId = this.subaccountId;
+            if (this.subaccount_id != null) {
+                data.subaccount_id = this.subaccount_id;
             }
-            if (this.requestId != null) {
-                data.requestId = this.requestId;
+            if (this.request_id != null) {
+                data.request_id = this.request_id;
             }
-            if (this.marketId != null) {
-                data.marketId = this.marketId;
+            if (this.market_id != null) {
+                data.market_id = this.market_id;
             }
             if (this.side != null) {
                 data.side = this.side;
@@ -1173,12 +1196,12 @@ export namespace trade {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.subaccountId != 0)
-                writer.writeUint64(1, this.subaccountId);
-            if (this.requestId != 0)
-                writer.writeUint64(2, this.requestId);
-            if (this.has_marketId)
-                writer.writeUint64(3, this.marketId);
+            if (this.subaccount_id != 0)
+                writer.writeUint64(1, this.subaccount_id);
+            if (this.request_id != 0)
+                writer.writeUint64(2, this.request_id);
+            if (this.has_market_id)
+                writer.writeUint64(3, this.market_id);
             if (this.has_side)
                 writer.writeEnum(4, this.side);
             if (!w)
@@ -1191,13 +1214,13 @@ export namespace trade {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.subaccountId = reader.readUint64();
+                        message.subaccount_id = reader.readUint64();
                         break;
                     case 2:
-                        message.requestId = reader.readUint64();
+                        message.request_id = reader.readUint64();
                         break;
                     case 3:
-                        message.marketId = reader.readUint64();
+                        message.market_id = reader.readUint64();
                         break;
                     case 4:
                         message.side = reader.readEnum();
@@ -1217,24 +1240,24 @@ export namespace trade {
     export class Heartbeat extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            requestId?: number;
+            request_id?: number;
             timestamp?: number;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("requestId" in data && data.requestId != undefined) {
-                    this.requestId = data.requestId;
+                if ("request_id" in data && data.request_id != undefined) {
+                    this.request_id = data.request_id;
                 }
                 if ("timestamp" in data && data.timestamp != undefined) {
                     this.timestamp = data.timestamp;
                 }
             }
         }
-        get requestId() {
+        get request_id() {
             return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
         }
-        set requestId(value: number) {
+        set request_id(value: number) {
             pb_1.Message.setField(this, 1, value);
         }
         get timestamp() {
@@ -1244,12 +1267,12 @@ export namespace trade {
             pb_1.Message.setField(this, 2, value);
         }
         static fromObject(data: {
-            requestId?: number;
+            request_id?: number;
             timestamp?: number;
         }): Heartbeat {
             const message = new Heartbeat({});
-            if (data.requestId != null) {
-                message.requestId = data.requestId;
+            if (data.request_id != null) {
+                message.request_id = data.request_id;
             }
             if (data.timestamp != null) {
                 message.timestamp = data.timestamp;
@@ -1258,11 +1281,11 @@ export namespace trade {
         }
         toObject() {
             const data: {
-                requestId?: number;
+                request_id?: number;
                 timestamp?: number;
             } = {};
-            if (this.requestId != null) {
-                data.requestId = this.requestId;
+            if (this.request_id != null) {
+                data.request_id = this.request_id;
             }
             if (this.timestamp != null) {
                 data.timestamp = this.timestamp;
@@ -1273,8 +1296,8 @@ export namespace trade {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.requestId != 0)
-                writer.writeUint64(1, this.requestId);
+            if (this.request_id != 0)
+                writer.writeUint64(1, this.request_id);
             if (this.timestamp != 0)
                 writer.writeUint64(2, this.timestamp);
             if (!w)
@@ -1287,7 +1310,7 @@ export namespace trade {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.requestId = reader.readUint64();
+                        message.request_id = reader.readUint64();
                         break;
                     case 2:
                         message.timestamp = reader.readUint64();
@@ -1307,136 +1330,136 @@ export namespace trade {
     export class OrderResponse extends pb_1.Message {
         #one_of_decls: number[][] = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]];
         constructor(data?: any[] | ({} & (({
-            newAck?: NewOrderAck;
-            cancelAck?: never;
-            modifyAck?: never;
-            newReject?: never;
-            cancelReject?: never;
-            modifyReject?: never;
+            new_ack?: NewOrderAck;
+            cancel_ack?: never;
+            modify_ack?: never;
+            new_reject?: never;
+            cancel_reject?: never;
+            modify_reject?: never;
             fill?: never;
             heartbeat?: never;
             position?: never;
-            massCancelAck?: never;
+            mass_cancel_ack?: never;
         } | {
-            newAck?: never;
-            cancelAck?: CancelOrderAck;
-            modifyAck?: never;
-            newReject?: never;
-            cancelReject?: never;
-            modifyReject?: never;
+            new_ack?: never;
+            cancel_ack?: CancelOrderAck;
+            modify_ack?: never;
+            new_reject?: never;
+            cancel_reject?: never;
+            modify_reject?: never;
             fill?: never;
             heartbeat?: never;
             position?: never;
-            massCancelAck?: never;
+            mass_cancel_ack?: never;
         } | {
-            newAck?: never;
-            cancelAck?: never;
-            modifyAck?: ModifyOrderAck;
-            newReject?: never;
-            cancelReject?: never;
-            modifyReject?: never;
+            new_ack?: never;
+            cancel_ack?: never;
+            modify_ack?: ModifyOrderAck;
+            new_reject?: never;
+            cancel_reject?: never;
+            modify_reject?: never;
             fill?: never;
             heartbeat?: never;
             position?: never;
-            massCancelAck?: never;
+            mass_cancel_ack?: never;
         } | {
-            newAck?: never;
-            cancelAck?: never;
-            modifyAck?: never;
-            newReject?: NewOrderReject;
-            cancelReject?: never;
-            modifyReject?: never;
+            new_ack?: never;
+            cancel_ack?: never;
+            modify_ack?: never;
+            new_reject?: NewOrderReject;
+            cancel_reject?: never;
+            modify_reject?: never;
             fill?: never;
             heartbeat?: never;
             position?: never;
-            massCancelAck?: never;
+            mass_cancel_ack?: never;
         } | {
-            newAck?: never;
-            cancelAck?: never;
-            modifyAck?: never;
-            newReject?: never;
-            cancelReject?: CancelOrderReject;
-            modifyReject?: never;
+            new_ack?: never;
+            cancel_ack?: never;
+            modify_ack?: never;
+            new_reject?: never;
+            cancel_reject?: CancelOrderReject;
+            modify_reject?: never;
             fill?: never;
             heartbeat?: never;
             position?: never;
-            massCancelAck?: never;
+            mass_cancel_ack?: never;
         } | {
-            newAck?: never;
-            cancelAck?: never;
-            modifyAck?: never;
-            newReject?: never;
-            cancelReject?: never;
-            modifyReject?: ModifyOrderReject;
+            new_ack?: never;
+            cancel_ack?: never;
+            modify_ack?: never;
+            new_reject?: never;
+            cancel_reject?: never;
+            modify_reject?: ModifyOrderReject;
             fill?: never;
             heartbeat?: never;
             position?: never;
-            massCancelAck?: never;
+            mass_cancel_ack?: never;
         } | {
-            newAck?: never;
-            cancelAck?: never;
-            modifyAck?: never;
-            newReject?: never;
-            cancelReject?: never;
-            modifyReject?: never;
+            new_ack?: never;
+            cancel_ack?: never;
+            modify_ack?: never;
+            new_reject?: never;
+            cancel_reject?: never;
+            modify_reject?: never;
             fill?: Fill;
             heartbeat?: never;
             position?: never;
-            massCancelAck?: never;
+            mass_cancel_ack?: never;
         } | {
-            newAck?: never;
-            cancelAck?: never;
-            modifyAck?: never;
-            newReject?: never;
-            cancelReject?: never;
-            modifyReject?: never;
+            new_ack?: never;
+            cancel_ack?: never;
+            modify_ack?: never;
+            new_reject?: never;
+            cancel_reject?: never;
+            modify_reject?: never;
             fill?: never;
             heartbeat?: Heartbeat;
             position?: never;
-            massCancelAck?: never;
+            mass_cancel_ack?: never;
         } | {
-            newAck?: never;
-            cancelAck?: never;
-            modifyAck?: never;
-            newReject?: never;
-            cancelReject?: never;
-            modifyReject?: never;
+            new_ack?: never;
+            cancel_ack?: never;
+            modify_ack?: never;
+            new_reject?: never;
+            cancel_reject?: never;
+            modify_reject?: never;
             fill?: never;
             heartbeat?: never;
             position?: AssetPosition;
-            massCancelAck?: never;
+            mass_cancel_ack?: never;
         } | {
-            newAck?: never;
-            cancelAck?: never;
-            modifyAck?: never;
-            newReject?: never;
-            cancelReject?: never;
-            modifyReject?: never;
+            new_ack?: never;
+            cancel_ack?: never;
+            modify_ack?: never;
+            new_reject?: never;
+            cancel_reject?: never;
+            modify_reject?: never;
             fill?: never;
             heartbeat?: never;
             position?: never;
-            massCancelAck?: MassCancelAck;
+            mass_cancel_ack?: MassCancelAck;
         })))) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("newAck" in data && data.newAck != undefined) {
-                    this.newAck = data.newAck;
+                if ("new_ack" in data && data.new_ack != undefined) {
+                    this.new_ack = data.new_ack;
                 }
-                if ("cancelAck" in data && data.cancelAck != undefined) {
-                    this.cancelAck = data.cancelAck;
+                if ("cancel_ack" in data && data.cancel_ack != undefined) {
+                    this.cancel_ack = data.cancel_ack;
                 }
-                if ("modifyAck" in data && data.modifyAck != undefined) {
-                    this.modifyAck = data.modifyAck;
+                if ("modify_ack" in data && data.modify_ack != undefined) {
+                    this.modify_ack = data.modify_ack;
                 }
-                if ("newReject" in data && data.newReject != undefined) {
-                    this.newReject = data.newReject;
+                if ("new_reject" in data && data.new_reject != undefined) {
+                    this.new_reject = data.new_reject;
                 }
-                if ("cancelReject" in data && data.cancelReject != undefined) {
-                    this.cancelReject = data.cancelReject;
+                if ("cancel_reject" in data && data.cancel_reject != undefined) {
+                    this.cancel_reject = data.cancel_reject;
                 }
-                if ("modifyReject" in data && data.modifyReject != undefined) {
-                    this.modifyReject = data.modifyReject;
+                if ("modify_reject" in data && data.modify_reject != undefined) {
+                    this.modify_reject = data.modify_reject;
                 }
                 if ("fill" in data && data.fill != undefined) {
                     this.fill = data.fill;
@@ -1447,63 +1470,63 @@ export namespace trade {
                 if ("position" in data && data.position != undefined) {
                     this.position = data.position;
                 }
-                if ("massCancelAck" in data && data.massCancelAck != undefined) {
-                    this.massCancelAck = data.massCancelAck;
+                if ("mass_cancel_ack" in data && data.mass_cancel_ack != undefined) {
+                    this.mass_cancel_ack = data.mass_cancel_ack;
                 }
             }
         }
-        get newAck() {
+        get new_ack() {
             return pb_1.Message.getWrapperField(this, NewOrderAck, 1) as NewOrderAck;
         }
-        set newAck(value: NewOrderAck) {
+        set new_ack(value: NewOrderAck) {
             pb_1.Message.setOneofWrapperField(this, 1, this.#one_of_decls[0], value);
         }
-        get has_newAck() {
+        get has_new_ack() {
             return pb_1.Message.getField(this, 1) != null;
         }
-        get cancelAck() {
+        get cancel_ack() {
             return pb_1.Message.getWrapperField(this, CancelOrderAck, 2) as CancelOrderAck;
         }
-        set cancelAck(value: CancelOrderAck) {
+        set cancel_ack(value: CancelOrderAck) {
             pb_1.Message.setOneofWrapperField(this, 2, this.#one_of_decls[0], value);
         }
-        get has_cancelAck() {
+        get has_cancel_ack() {
             return pb_1.Message.getField(this, 2) != null;
         }
-        get modifyAck() {
+        get modify_ack() {
             return pb_1.Message.getWrapperField(this, ModifyOrderAck, 3) as ModifyOrderAck;
         }
-        set modifyAck(value: ModifyOrderAck) {
+        set modify_ack(value: ModifyOrderAck) {
             pb_1.Message.setOneofWrapperField(this, 3, this.#one_of_decls[0], value);
         }
-        get has_modifyAck() {
+        get has_modify_ack() {
             return pb_1.Message.getField(this, 3) != null;
         }
-        get newReject() {
+        get new_reject() {
             return pb_1.Message.getWrapperField(this, NewOrderReject, 4) as NewOrderReject;
         }
-        set newReject(value: NewOrderReject) {
+        set new_reject(value: NewOrderReject) {
             pb_1.Message.setOneofWrapperField(this, 4, this.#one_of_decls[0], value);
         }
-        get has_newReject() {
+        get has_new_reject() {
             return pb_1.Message.getField(this, 4) != null;
         }
-        get cancelReject() {
+        get cancel_reject() {
             return pb_1.Message.getWrapperField(this, CancelOrderReject, 5) as CancelOrderReject;
         }
-        set cancelReject(value: CancelOrderReject) {
+        set cancel_reject(value: CancelOrderReject) {
             pb_1.Message.setOneofWrapperField(this, 5, this.#one_of_decls[0], value);
         }
-        get has_cancelReject() {
+        get has_cancel_reject() {
             return pb_1.Message.getField(this, 5) != null;
         }
-        get modifyReject() {
+        get modify_reject() {
             return pb_1.Message.getWrapperField(this, ModifyOrderReject, 6) as ModifyOrderReject;
         }
-        set modifyReject(value: ModifyOrderReject) {
+        set modify_reject(value: ModifyOrderReject) {
             pb_1.Message.setOneofWrapperField(this, 6, this.#one_of_decls[0], value);
         }
-        get has_modifyReject() {
+        get has_modify_reject() {
             return pb_1.Message.getField(this, 6) != null;
         }
         get fill() {
@@ -1533,63 +1556,63 @@ export namespace trade {
         get has_position() {
             return pb_1.Message.getField(this, 9) != null;
         }
-        get massCancelAck() {
+        get mass_cancel_ack() {
             return pb_1.Message.getWrapperField(this, MassCancelAck, 10) as MassCancelAck;
         }
-        set massCancelAck(value: MassCancelAck) {
+        set mass_cancel_ack(value: MassCancelAck) {
             pb_1.Message.setOneofWrapperField(this, 10, this.#one_of_decls[0], value);
         }
-        get has_massCancelAck() {
+        get has_mass_cancel_ack() {
             return pb_1.Message.getField(this, 10) != null;
         }
         get inner() {
             const cases: {
-                [index: number]: "none" | "newAck" | "cancelAck" | "modifyAck" | "newReject" | "cancelReject" | "modifyReject" | "fill" | "heartbeat" | "position" | "massCancelAck";
+                [index: number]: "none" | "new_ack" | "cancel_ack" | "modify_ack" | "new_reject" | "cancel_reject" | "modify_reject" | "fill" | "heartbeat" | "position" | "mass_cancel_ack";
             } = {
                 0: "none",
-                1: "newAck",
-                2: "cancelAck",
-                3: "modifyAck",
-                4: "newReject",
-                5: "cancelReject",
-                6: "modifyReject",
+                1: "new_ack",
+                2: "cancel_ack",
+                3: "modify_ack",
+                4: "new_reject",
+                5: "cancel_reject",
+                6: "modify_reject",
                 7: "fill",
                 8: "heartbeat",
                 9: "position",
-                10: "massCancelAck"
+                10: "mass_cancel_ack"
             };
             return cases[pb_1.Message.computeOneofCase(this, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])];
         }
         static fromObject(data: {
-            newAck?: ReturnType<typeof NewOrderAck.prototype.toObject>;
-            cancelAck?: ReturnType<typeof CancelOrderAck.prototype.toObject>;
-            modifyAck?: ReturnType<typeof ModifyOrderAck.prototype.toObject>;
-            newReject?: ReturnType<typeof NewOrderReject.prototype.toObject>;
-            cancelReject?: ReturnType<typeof CancelOrderReject.prototype.toObject>;
-            modifyReject?: ReturnType<typeof ModifyOrderReject.prototype.toObject>;
+            new_ack?: ReturnType<typeof NewOrderAck.prototype.toObject>;
+            cancel_ack?: ReturnType<typeof CancelOrderAck.prototype.toObject>;
+            modify_ack?: ReturnType<typeof ModifyOrderAck.prototype.toObject>;
+            new_reject?: ReturnType<typeof NewOrderReject.prototype.toObject>;
+            cancel_reject?: ReturnType<typeof CancelOrderReject.prototype.toObject>;
+            modify_reject?: ReturnType<typeof ModifyOrderReject.prototype.toObject>;
             fill?: ReturnType<typeof Fill.prototype.toObject>;
             heartbeat?: ReturnType<typeof Heartbeat.prototype.toObject>;
             position?: ReturnType<typeof AssetPosition.prototype.toObject>;
-            massCancelAck?: ReturnType<typeof MassCancelAck.prototype.toObject>;
+            mass_cancel_ack?: ReturnType<typeof MassCancelAck.prototype.toObject>;
         }): OrderResponse {
             const message = new OrderResponse({});
-            if (data.newAck != null) {
-                message.newAck = NewOrderAck.fromObject(data.newAck);
+            if (data.new_ack != null) {
+                message.new_ack = NewOrderAck.fromObject(data.new_ack);
             }
-            if (data.cancelAck != null) {
-                message.cancelAck = CancelOrderAck.fromObject(data.cancelAck);
+            if (data.cancel_ack != null) {
+                message.cancel_ack = CancelOrderAck.fromObject(data.cancel_ack);
             }
-            if (data.modifyAck != null) {
-                message.modifyAck = ModifyOrderAck.fromObject(data.modifyAck);
+            if (data.modify_ack != null) {
+                message.modify_ack = ModifyOrderAck.fromObject(data.modify_ack);
             }
-            if (data.newReject != null) {
-                message.newReject = NewOrderReject.fromObject(data.newReject);
+            if (data.new_reject != null) {
+                message.new_reject = NewOrderReject.fromObject(data.new_reject);
             }
-            if (data.cancelReject != null) {
-                message.cancelReject = CancelOrderReject.fromObject(data.cancelReject);
+            if (data.cancel_reject != null) {
+                message.cancel_reject = CancelOrderReject.fromObject(data.cancel_reject);
             }
-            if (data.modifyReject != null) {
-                message.modifyReject = ModifyOrderReject.fromObject(data.modifyReject);
+            if (data.modify_reject != null) {
+                message.modify_reject = ModifyOrderReject.fromObject(data.modify_reject);
             }
             if (data.fill != null) {
                 message.fill = Fill.fromObject(data.fill);
@@ -1600,41 +1623,41 @@ export namespace trade {
             if (data.position != null) {
                 message.position = AssetPosition.fromObject(data.position);
             }
-            if (data.massCancelAck != null) {
-                message.massCancelAck = MassCancelAck.fromObject(data.massCancelAck);
+            if (data.mass_cancel_ack != null) {
+                message.mass_cancel_ack = MassCancelAck.fromObject(data.mass_cancel_ack);
             }
             return message;
         }
         toObject() {
             const data: {
-                newAck?: ReturnType<typeof NewOrderAck.prototype.toObject>;
-                cancelAck?: ReturnType<typeof CancelOrderAck.prototype.toObject>;
-                modifyAck?: ReturnType<typeof ModifyOrderAck.prototype.toObject>;
-                newReject?: ReturnType<typeof NewOrderReject.prototype.toObject>;
-                cancelReject?: ReturnType<typeof CancelOrderReject.prototype.toObject>;
-                modifyReject?: ReturnType<typeof ModifyOrderReject.prototype.toObject>;
+                new_ack?: ReturnType<typeof NewOrderAck.prototype.toObject>;
+                cancel_ack?: ReturnType<typeof CancelOrderAck.prototype.toObject>;
+                modify_ack?: ReturnType<typeof ModifyOrderAck.prototype.toObject>;
+                new_reject?: ReturnType<typeof NewOrderReject.prototype.toObject>;
+                cancel_reject?: ReturnType<typeof CancelOrderReject.prototype.toObject>;
+                modify_reject?: ReturnType<typeof ModifyOrderReject.prototype.toObject>;
                 fill?: ReturnType<typeof Fill.prototype.toObject>;
                 heartbeat?: ReturnType<typeof Heartbeat.prototype.toObject>;
                 position?: ReturnType<typeof AssetPosition.prototype.toObject>;
-                massCancelAck?: ReturnType<typeof MassCancelAck.prototype.toObject>;
+                mass_cancel_ack?: ReturnType<typeof MassCancelAck.prototype.toObject>;
             } = {};
-            if (this.newAck != null) {
-                data.newAck = this.newAck.toObject();
+            if (this.new_ack != null) {
+                data.new_ack = this.new_ack.toObject();
             }
-            if (this.cancelAck != null) {
-                data.cancelAck = this.cancelAck.toObject();
+            if (this.cancel_ack != null) {
+                data.cancel_ack = this.cancel_ack.toObject();
             }
-            if (this.modifyAck != null) {
-                data.modifyAck = this.modifyAck.toObject();
+            if (this.modify_ack != null) {
+                data.modify_ack = this.modify_ack.toObject();
             }
-            if (this.newReject != null) {
-                data.newReject = this.newReject.toObject();
+            if (this.new_reject != null) {
+                data.new_reject = this.new_reject.toObject();
             }
-            if (this.cancelReject != null) {
-                data.cancelReject = this.cancelReject.toObject();
+            if (this.cancel_reject != null) {
+                data.cancel_reject = this.cancel_reject.toObject();
             }
-            if (this.modifyReject != null) {
-                data.modifyReject = this.modifyReject.toObject();
+            if (this.modify_reject != null) {
+                data.modify_reject = this.modify_reject.toObject();
             }
             if (this.fill != null) {
                 data.fill = this.fill.toObject();
@@ -1645,8 +1668,8 @@ export namespace trade {
             if (this.position != null) {
                 data.position = this.position.toObject();
             }
-            if (this.massCancelAck != null) {
-                data.massCancelAck = this.massCancelAck.toObject();
+            if (this.mass_cancel_ack != null) {
+                data.mass_cancel_ack = this.mass_cancel_ack.toObject();
             }
             return data;
         }
@@ -1654,26 +1677,26 @@ export namespace trade {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.has_newAck)
-                writer.writeMessage(1, this.newAck, () => this.newAck.serialize(writer));
-            if (this.has_cancelAck)
-                writer.writeMessage(2, this.cancelAck, () => this.cancelAck.serialize(writer));
-            if (this.has_modifyAck)
-                writer.writeMessage(3, this.modifyAck, () => this.modifyAck.serialize(writer));
-            if (this.has_newReject)
-                writer.writeMessage(4, this.newReject, () => this.newReject.serialize(writer));
-            if (this.has_cancelReject)
-                writer.writeMessage(5, this.cancelReject, () => this.cancelReject.serialize(writer));
-            if (this.has_modifyReject)
-                writer.writeMessage(6, this.modifyReject, () => this.modifyReject.serialize(writer));
+            if (this.has_new_ack)
+                writer.writeMessage(1, this.new_ack, () => this.new_ack.serialize(writer));
+            if (this.has_cancel_ack)
+                writer.writeMessage(2, this.cancel_ack, () => this.cancel_ack.serialize(writer));
+            if (this.has_modify_ack)
+                writer.writeMessage(3, this.modify_ack, () => this.modify_ack.serialize(writer));
+            if (this.has_new_reject)
+                writer.writeMessage(4, this.new_reject, () => this.new_reject.serialize(writer));
+            if (this.has_cancel_reject)
+                writer.writeMessage(5, this.cancel_reject, () => this.cancel_reject.serialize(writer));
+            if (this.has_modify_reject)
+                writer.writeMessage(6, this.modify_reject, () => this.modify_reject.serialize(writer));
             if (this.has_fill)
                 writer.writeMessage(7, this.fill, () => this.fill.serialize(writer));
             if (this.has_heartbeat)
                 writer.writeMessage(8, this.heartbeat, () => this.heartbeat.serialize(writer));
             if (this.has_position)
                 writer.writeMessage(9, this.position, () => this.position.serialize(writer));
-            if (this.has_massCancelAck)
-                writer.writeMessage(10, this.massCancelAck, () => this.massCancelAck.serialize(writer));
+            if (this.has_mass_cancel_ack)
+                writer.writeMessage(10, this.mass_cancel_ack, () => this.mass_cancel_ack.serialize(writer));
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -1684,22 +1707,22 @@ export namespace trade {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        reader.readMessage(message.newAck, () => message.newAck = NewOrderAck.deserialize(reader));
+                        reader.readMessage(message.new_ack, () => message.new_ack = NewOrderAck.deserialize(reader));
                         break;
                     case 2:
-                        reader.readMessage(message.cancelAck, () => message.cancelAck = CancelOrderAck.deserialize(reader));
+                        reader.readMessage(message.cancel_ack, () => message.cancel_ack = CancelOrderAck.deserialize(reader));
                         break;
                     case 3:
-                        reader.readMessage(message.modifyAck, () => message.modifyAck = ModifyOrderAck.deserialize(reader));
+                        reader.readMessage(message.modify_ack, () => message.modify_ack = ModifyOrderAck.deserialize(reader));
                         break;
                     case 4:
-                        reader.readMessage(message.newReject, () => message.newReject = NewOrderReject.deserialize(reader));
+                        reader.readMessage(message.new_reject, () => message.new_reject = NewOrderReject.deserialize(reader));
                         break;
                     case 5:
-                        reader.readMessage(message.cancelReject, () => message.cancelReject = CancelOrderReject.deserialize(reader));
+                        reader.readMessage(message.cancel_reject, () => message.cancel_reject = CancelOrderReject.deserialize(reader));
                         break;
                     case 6:
-                        reader.readMessage(message.modifyReject, () => message.modifyReject = ModifyOrderReject.deserialize(reader));
+                        reader.readMessage(message.modify_reject, () => message.modify_reject = ModifyOrderReject.deserialize(reader));
                         break;
                     case 7:
                         reader.readMessage(message.fill, () => message.fill = Fill.deserialize(reader));
@@ -1711,7 +1734,7 @@ export namespace trade {
                         reader.readMessage(message.position, () => message.position = AssetPosition.deserialize(reader));
                         break;
                     case 10:
-                        reader.readMessage(message.massCancelAck, () => message.massCancelAck = MassCancelAck.deserialize(reader));
+                        reader.readMessage(message.mass_cancel_ack, () => message.mass_cancel_ack = MassCancelAck.deserialize(reader));
                         break;
                     default: reader.skipField();
                 }
@@ -1728,37 +1751,38 @@ export namespace trade {
     export class NewOrderAck extends pb_1.Message {
         #one_of_decls: number[][] = [[6]];
         constructor(data?: any[] | ({
-            msgSeqNum?: number;
-            clientOrderId?: number;
-            requestId?: number;
-            exchangeOrderId?: number;
-            marketId?: number;
+            msg_seq_num?: number;
+            client_order_id?: number;
+            request_id?: number;
+            exchange_order_id?: number;
+            market_id?: number;
             quantity?: number;
             side?: Side;
-            timeInForce?: TimeInForce;
-            orderType?: OrderType;
-            transactTime?: number;
-            subaccountId?: number;
+            time_in_force?: TimeInForce;
+            order_type?: OrderType;
+            transact_time?: number;
+            subaccount_id?: number;
+            cancel_on_disconnect?: boolean;
         } & (({
             price?: number;
         })))) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("msgSeqNum" in data && data.msgSeqNum != undefined) {
-                    this.msgSeqNum = data.msgSeqNum;
+                if ("msg_seq_num" in data && data.msg_seq_num != undefined) {
+                    this.msg_seq_num = data.msg_seq_num;
                 }
-                if ("clientOrderId" in data && data.clientOrderId != undefined) {
-                    this.clientOrderId = data.clientOrderId;
+                if ("client_order_id" in data && data.client_order_id != undefined) {
+                    this.client_order_id = data.client_order_id;
                 }
-                if ("requestId" in data && data.requestId != undefined) {
-                    this.requestId = data.requestId;
+                if ("request_id" in data && data.request_id != undefined) {
+                    this.request_id = data.request_id;
                 }
-                if ("exchangeOrderId" in data && data.exchangeOrderId != undefined) {
-                    this.exchangeOrderId = data.exchangeOrderId;
+                if ("exchange_order_id" in data && data.exchange_order_id != undefined) {
+                    this.exchange_order_id = data.exchange_order_id;
                 }
-                if ("marketId" in data && data.marketId != undefined) {
-                    this.marketId = data.marketId;
+                if ("market_id" in data && data.market_id != undefined) {
+                    this.market_id = data.market_id;
                 }
                 if ("price" in data && data.price != undefined) {
                     this.price = data.price;
@@ -1769,48 +1793,51 @@ export namespace trade {
                 if ("side" in data && data.side != undefined) {
                     this.side = data.side;
                 }
-                if ("timeInForce" in data && data.timeInForce != undefined) {
-                    this.timeInForce = data.timeInForce;
+                if ("time_in_force" in data && data.time_in_force != undefined) {
+                    this.time_in_force = data.time_in_force;
                 }
-                if ("orderType" in data && data.orderType != undefined) {
-                    this.orderType = data.orderType;
+                if ("order_type" in data && data.order_type != undefined) {
+                    this.order_type = data.order_type;
                 }
-                if ("transactTime" in data && data.transactTime != undefined) {
-                    this.transactTime = data.transactTime;
+                if ("transact_time" in data && data.transact_time != undefined) {
+                    this.transact_time = data.transact_time;
                 }
-                if ("subaccountId" in data && data.subaccountId != undefined) {
-                    this.subaccountId = data.subaccountId;
+                if ("subaccount_id" in data && data.subaccount_id != undefined) {
+                    this.subaccount_id = data.subaccount_id;
+                }
+                if ("cancel_on_disconnect" in data && data.cancel_on_disconnect != undefined) {
+                    this.cancel_on_disconnect = data.cancel_on_disconnect;
                 }
             }
         }
-        get msgSeqNum() {
+        get msg_seq_num() {
             return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
         }
-        set msgSeqNum(value: number) {
+        set msg_seq_num(value: number) {
             pb_1.Message.setField(this, 1, value);
         }
-        get clientOrderId() {
+        get client_order_id() {
             return pb_1.Message.getFieldWithDefault(this, 2, 0) as number;
         }
-        set clientOrderId(value: number) {
+        set client_order_id(value: number) {
             pb_1.Message.setField(this, 2, value);
         }
-        get requestId() {
+        get request_id() {
             return pb_1.Message.getFieldWithDefault(this, 3, 0) as number;
         }
-        set requestId(value: number) {
+        set request_id(value: number) {
             pb_1.Message.setField(this, 3, value);
         }
-        get exchangeOrderId() {
+        get exchange_order_id() {
             return pb_1.Message.getFieldWithDefault(this, 4, 0) as number;
         }
-        set exchangeOrderId(value: number) {
+        set exchange_order_id(value: number) {
             pb_1.Message.setField(this, 4, value);
         }
-        get marketId() {
+        get market_id() {
             return pb_1.Message.getFieldWithDefault(this, 5, 0) as number;
         }
-        set marketId(value: number) {
+        set market_id(value: number) {
             pb_1.Message.setField(this, 5, value);
         }
         get price() {
@@ -1834,29 +1861,35 @@ export namespace trade {
         set side(value: Side) {
             pb_1.Message.setField(this, 8, value);
         }
-        get timeInForce() {
+        get time_in_force() {
             return pb_1.Message.getFieldWithDefault(this, 9, TimeInForce.IMMEDIATE_OR_CANCEL) as TimeInForce;
         }
-        set timeInForce(value: TimeInForce) {
+        set time_in_force(value: TimeInForce) {
             pb_1.Message.setField(this, 9, value);
         }
-        get orderType() {
+        get order_type() {
             return pb_1.Message.getFieldWithDefault(this, 10, OrderType.LIMIT) as OrderType;
         }
-        set orderType(value: OrderType) {
+        set order_type(value: OrderType) {
             pb_1.Message.setField(this, 10, value);
         }
-        get transactTime() {
+        get transact_time() {
             return pb_1.Message.getFieldWithDefault(this, 11, 0) as number;
         }
-        set transactTime(value: number) {
+        set transact_time(value: number) {
             pb_1.Message.setField(this, 11, value);
         }
-        get subaccountId() {
+        get subaccount_id() {
             return pb_1.Message.getFieldWithDefault(this, 12, 0) as number;
         }
-        set subaccountId(value: number) {
+        set subaccount_id(value: number) {
             pb_1.Message.setField(this, 12, value);
+        }
+        get cancel_on_disconnect() {
+            return pb_1.Message.getFieldWithDefault(this, 13, false) as boolean;
+        }
+        set cancel_on_disconnect(value: boolean) {
+            pb_1.Message.setField(this, 13, value);
         }
         get _price() {
             const cases: {
@@ -1868,34 +1901,35 @@ export namespace trade {
             return cases[pb_1.Message.computeOneofCase(this, [6])];
         }
         static fromObject(data: {
-            msgSeqNum?: number;
-            clientOrderId?: number;
-            requestId?: number;
-            exchangeOrderId?: number;
-            marketId?: number;
+            msg_seq_num?: number;
+            client_order_id?: number;
+            request_id?: number;
+            exchange_order_id?: number;
+            market_id?: number;
             price?: number;
             quantity?: number;
             side?: Side;
-            timeInForce?: TimeInForce;
-            orderType?: OrderType;
-            transactTime?: number;
-            subaccountId?: number;
+            time_in_force?: TimeInForce;
+            order_type?: OrderType;
+            transact_time?: number;
+            subaccount_id?: number;
+            cancel_on_disconnect?: boolean;
         }): NewOrderAck {
             const message = new NewOrderAck({});
-            if (data.msgSeqNum != null) {
-                message.msgSeqNum = data.msgSeqNum;
+            if (data.msg_seq_num != null) {
+                message.msg_seq_num = data.msg_seq_num;
             }
-            if (data.clientOrderId != null) {
-                message.clientOrderId = data.clientOrderId;
+            if (data.client_order_id != null) {
+                message.client_order_id = data.client_order_id;
             }
-            if (data.requestId != null) {
-                message.requestId = data.requestId;
+            if (data.request_id != null) {
+                message.request_id = data.request_id;
             }
-            if (data.exchangeOrderId != null) {
-                message.exchangeOrderId = data.exchangeOrderId;
+            if (data.exchange_order_id != null) {
+                message.exchange_order_id = data.exchange_order_id;
             }
-            if (data.marketId != null) {
-                message.marketId = data.marketId;
+            if (data.market_id != null) {
+                message.market_id = data.market_id;
             }
             if (data.price != null) {
                 message.price = data.price;
@@ -1906,49 +1940,53 @@ export namespace trade {
             if (data.side != null) {
                 message.side = data.side;
             }
-            if (data.timeInForce != null) {
-                message.timeInForce = data.timeInForce;
+            if (data.time_in_force != null) {
+                message.time_in_force = data.time_in_force;
             }
-            if (data.orderType != null) {
-                message.orderType = data.orderType;
+            if (data.order_type != null) {
+                message.order_type = data.order_type;
             }
-            if (data.transactTime != null) {
-                message.transactTime = data.transactTime;
+            if (data.transact_time != null) {
+                message.transact_time = data.transact_time;
             }
-            if (data.subaccountId != null) {
-                message.subaccountId = data.subaccountId;
+            if (data.subaccount_id != null) {
+                message.subaccount_id = data.subaccount_id;
+            }
+            if (data.cancel_on_disconnect != null) {
+                message.cancel_on_disconnect = data.cancel_on_disconnect;
             }
             return message;
         }
         toObject() {
             const data: {
-                msgSeqNum?: number;
-                clientOrderId?: number;
-                requestId?: number;
-                exchangeOrderId?: number;
-                marketId?: number;
+                msg_seq_num?: number;
+                client_order_id?: number;
+                request_id?: number;
+                exchange_order_id?: number;
+                market_id?: number;
                 price?: number;
                 quantity?: number;
                 side?: Side;
-                timeInForce?: TimeInForce;
-                orderType?: OrderType;
-                transactTime?: number;
-                subaccountId?: number;
+                time_in_force?: TimeInForce;
+                order_type?: OrderType;
+                transact_time?: number;
+                subaccount_id?: number;
+                cancel_on_disconnect?: boolean;
             } = {};
-            if (this.msgSeqNum != null) {
-                data.msgSeqNum = this.msgSeqNum;
+            if (this.msg_seq_num != null) {
+                data.msg_seq_num = this.msg_seq_num;
             }
-            if (this.clientOrderId != null) {
-                data.clientOrderId = this.clientOrderId;
+            if (this.client_order_id != null) {
+                data.client_order_id = this.client_order_id;
             }
-            if (this.requestId != null) {
-                data.requestId = this.requestId;
+            if (this.request_id != null) {
+                data.request_id = this.request_id;
             }
-            if (this.exchangeOrderId != null) {
-                data.exchangeOrderId = this.exchangeOrderId;
+            if (this.exchange_order_id != null) {
+                data.exchange_order_id = this.exchange_order_id;
             }
-            if (this.marketId != null) {
-                data.marketId = this.marketId;
+            if (this.market_id != null) {
+                data.market_id = this.market_id;
             }
             if (this.price != null) {
                 data.price = this.price;
@@ -1959,17 +1997,20 @@ export namespace trade {
             if (this.side != null) {
                 data.side = this.side;
             }
-            if (this.timeInForce != null) {
-                data.timeInForce = this.timeInForce;
+            if (this.time_in_force != null) {
+                data.time_in_force = this.time_in_force;
             }
-            if (this.orderType != null) {
-                data.orderType = this.orderType;
+            if (this.order_type != null) {
+                data.order_type = this.order_type;
             }
-            if (this.transactTime != null) {
-                data.transactTime = this.transactTime;
+            if (this.transact_time != null) {
+                data.transact_time = this.transact_time;
             }
-            if (this.subaccountId != null) {
-                data.subaccountId = this.subaccountId;
+            if (this.subaccount_id != null) {
+                data.subaccount_id = this.subaccount_id;
+            }
+            if (this.cancel_on_disconnect != null) {
+                data.cancel_on_disconnect = this.cancel_on_disconnect;
             }
             return data;
         }
@@ -1977,30 +2018,32 @@ export namespace trade {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.msgSeqNum != 0)
-                writer.writeUint64(1, this.msgSeqNum);
-            if (this.clientOrderId != 0)
-                writer.writeUint64(2, this.clientOrderId);
-            if (this.requestId != 0)
-                writer.writeUint64(3, this.requestId);
-            if (this.exchangeOrderId != 0)
-                writer.writeUint64(4, this.exchangeOrderId);
-            if (this.marketId != 0)
-                writer.writeUint64(5, this.marketId);
+            if (this.msg_seq_num != 0)
+                writer.writeUint64(1, this.msg_seq_num);
+            if (this.client_order_id != 0)
+                writer.writeUint64(2, this.client_order_id);
+            if (this.request_id != 0)
+                writer.writeUint64(3, this.request_id);
+            if (this.exchange_order_id != 0)
+                writer.writeUint64(4, this.exchange_order_id);
+            if (this.market_id != 0)
+                writer.writeUint64(5, this.market_id);
             if (this.has_price)
                 writer.writeUint64(6, this.price);
             if (this.quantity != 0)
                 writer.writeUint64(7, this.quantity);
             if (this.side != Side.BID)
                 writer.writeEnum(8, this.side);
-            if (this.timeInForce != TimeInForce.IMMEDIATE_OR_CANCEL)
-                writer.writeEnum(9, this.timeInForce);
-            if (this.orderType != OrderType.LIMIT)
-                writer.writeEnum(10, this.orderType);
-            if (this.transactTime != 0)
-                writer.writeUint64(11, this.transactTime);
-            if (this.subaccountId != 0)
-                writer.writeUint64(12, this.subaccountId);
+            if (this.time_in_force != TimeInForce.IMMEDIATE_OR_CANCEL)
+                writer.writeEnum(9, this.time_in_force);
+            if (this.order_type != OrderType.LIMIT)
+                writer.writeEnum(10, this.order_type);
+            if (this.transact_time != 0)
+                writer.writeUint64(11, this.transact_time);
+            if (this.subaccount_id != 0)
+                writer.writeUint64(12, this.subaccount_id);
+            if (this.cancel_on_disconnect != false)
+                writer.writeBool(13, this.cancel_on_disconnect);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -2011,19 +2054,19 @@ export namespace trade {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.msgSeqNum = reader.readUint64();
+                        message.msg_seq_num = reader.readUint64();
                         break;
                     case 2:
-                        message.clientOrderId = reader.readUint64();
+                        message.client_order_id = reader.readUint64();
                         break;
                     case 3:
-                        message.requestId = reader.readUint64();
+                        message.request_id = reader.readUint64();
                         break;
                     case 4:
-                        message.exchangeOrderId = reader.readUint64();
+                        message.exchange_order_id = reader.readUint64();
                         break;
                     case 5:
-                        message.marketId = reader.readUint64();
+                        message.market_id = reader.readUint64();
                         break;
                     case 6:
                         message.price = reader.readUint64();
@@ -2035,16 +2078,19 @@ export namespace trade {
                         message.side = reader.readEnum();
                         break;
                     case 9:
-                        message.timeInForce = reader.readEnum();
+                        message.time_in_force = reader.readEnum();
                         break;
                     case 10:
-                        message.orderType = reader.readEnum();
+                        message.order_type = reader.readEnum();
                         break;
                     case 11:
-                        message.transactTime = reader.readUint64();
+                        message.transact_time = reader.readUint64();
                         break;
                     case 12:
-                        message.subaccountId = reader.readUint64();
+                        message.subaccount_id = reader.readUint64();
+                        break;
+                    case 13:
+                        message.cancel_on_disconnect = reader.readBool();
                         break;
                     default: reader.skipField();
                 }
@@ -2061,68 +2107,68 @@ export namespace trade {
     export class CancelOrderAck extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            msgSeqNum?: number;
-            clientOrderId?: number;
-            requestId?: number;
-            transactTime?: number;
-            subaccountId?: number;
+            msg_seq_num?: number;
+            client_order_id?: number;
+            request_id?: number;
+            transact_time?: number;
+            subaccount_id?: number;
             reason?: CancelOrderAck.Reason;
-            marketId?: number;
+            market_id?: number;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("msgSeqNum" in data && data.msgSeqNum != undefined) {
-                    this.msgSeqNum = data.msgSeqNum;
+                if ("msg_seq_num" in data && data.msg_seq_num != undefined) {
+                    this.msg_seq_num = data.msg_seq_num;
                 }
-                if ("clientOrderId" in data && data.clientOrderId != undefined) {
-                    this.clientOrderId = data.clientOrderId;
+                if ("client_order_id" in data && data.client_order_id != undefined) {
+                    this.client_order_id = data.client_order_id;
                 }
-                if ("requestId" in data && data.requestId != undefined) {
-                    this.requestId = data.requestId;
+                if ("request_id" in data && data.request_id != undefined) {
+                    this.request_id = data.request_id;
                 }
-                if ("transactTime" in data && data.transactTime != undefined) {
-                    this.transactTime = data.transactTime;
+                if ("transact_time" in data && data.transact_time != undefined) {
+                    this.transact_time = data.transact_time;
                 }
-                if ("subaccountId" in data && data.subaccountId != undefined) {
-                    this.subaccountId = data.subaccountId;
+                if ("subaccount_id" in data && data.subaccount_id != undefined) {
+                    this.subaccount_id = data.subaccount_id;
                 }
                 if ("reason" in data && data.reason != undefined) {
                     this.reason = data.reason;
                 }
-                if ("marketId" in data && data.marketId != undefined) {
-                    this.marketId = data.marketId;
+                if ("market_id" in data && data.market_id != undefined) {
+                    this.market_id = data.market_id;
                 }
             }
         }
-        get msgSeqNum() {
+        get msg_seq_num() {
             return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
         }
-        set msgSeqNum(value: number) {
+        set msg_seq_num(value: number) {
             pb_1.Message.setField(this, 1, value);
         }
-        get clientOrderId() {
+        get client_order_id() {
             return pb_1.Message.getFieldWithDefault(this, 2, 0) as number;
         }
-        set clientOrderId(value: number) {
+        set client_order_id(value: number) {
             pb_1.Message.setField(this, 2, value);
         }
-        get requestId() {
+        get request_id() {
             return pb_1.Message.getFieldWithDefault(this, 3, 0) as number;
         }
-        set requestId(value: number) {
+        set request_id(value: number) {
             pb_1.Message.setField(this, 3, value);
         }
-        get transactTime() {
+        get transact_time() {
             return pb_1.Message.getFieldWithDefault(this, 4, 0) as number;
         }
-        set transactTime(value: number) {
+        set transact_time(value: number) {
             pb_1.Message.setField(this, 4, value);
         }
-        get subaccountId() {
+        get subaccount_id() {
             return pb_1.Message.getFieldWithDefault(this, 5, 0) as number;
         }
-        set subaccountId(value: number) {
+        set subaccount_id(value: number) {
             pb_1.Message.setField(this, 5, value);
         }
         get reason() {
@@ -2131,75 +2177,75 @@ export namespace trade {
         set reason(value: CancelOrderAck.Reason) {
             pb_1.Message.setField(this, 6, value);
         }
-        get marketId() {
+        get market_id() {
             return pb_1.Message.getFieldWithDefault(this, 7, 0) as number;
         }
-        set marketId(value: number) {
+        set market_id(value: number) {
             pb_1.Message.setField(this, 7, value);
         }
         static fromObject(data: {
-            msgSeqNum?: number;
-            clientOrderId?: number;
-            requestId?: number;
-            transactTime?: number;
-            subaccountId?: number;
+            msg_seq_num?: number;
+            client_order_id?: number;
+            request_id?: number;
+            transact_time?: number;
+            subaccount_id?: number;
             reason?: CancelOrderAck.Reason;
-            marketId?: number;
+            market_id?: number;
         }): CancelOrderAck {
             const message = new CancelOrderAck({});
-            if (data.msgSeqNum != null) {
-                message.msgSeqNum = data.msgSeqNum;
+            if (data.msg_seq_num != null) {
+                message.msg_seq_num = data.msg_seq_num;
             }
-            if (data.clientOrderId != null) {
-                message.clientOrderId = data.clientOrderId;
+            if (data.client_order_id != null) {
+                message.client_order_id = data.client_order_id;
             }
-            if (data.requestId != null) {
-                message.requestId = data.requestId;
+            if (data.request_id != null) {
+                message.request_id = data.request_id;
             }
-            if (data.transactTime != null) {
-                message.transactTime = data.transactTime;
+            if (data.transact_time != null) {
+                message.transact_time = data.transact_time;
             }
-            if (data.subaccountId != null) {
-                message.subaccountId = data.subaccountId;
+            if (data.subaccount_id != null) {
+                message.subaccount_id = data.subaccount_id;
             }
             if (data.reason != null) {
                 message.reason = data.reason;
             }
-            if (data.marketId != null) {
-                message.marketId = data.marketId;
+            if (data.market_id != null) {
+                message.market_id = data.market_id;
             }
             return message;
         }
         toObject() {
             const data: {
-                msgSeqNum?: number;
-                clientOrderId?: number;
-                requestId?: number;
-                transactTime?: number;
-                subaccountId?: number;
+                msg_seq_num?: number;
+                client_order_id?: number;
+                request_id?: number;
+                transact_time?: number;
+                subaccount_id?: number;
                 reason?: CancelOrderAck.Reason;
-                marketId?: number;
+                market_id?: number;
             } = {};
-            if (this.msgSeqNum != null) {
-                data.msgSeqNum = this.msgSeqNum;
+            if (this.msg_seq_num != null) {
+                data.msg_seq_num = this.msg_seq_num;
             }
-            if (this.clientOrderId != null) {
-                data.clientOrderId = this.clientOrderId;
+            if (this.client_order_id != null) {
+                data.client_order_id = this.client_order_id;
             }
-            if (this.requestId != null) {
-                data.requestId = this.requestId;
+            if (this.request_id != null) {
+                data.request_id = this.request_id;
             }
-            if (this.transactTime != null) {
-                data.transactTime = this.transactTime;
+            if (this.transact_time != null) {
+                data.transact_time = this.transact_time;
             }
-            if (this.subaccountId != null) {
-                data.subaccountId = this.subaccountId;
+            if (this.subaccount_id != null) {
+                data.subaccount_id = this.subaccount_id;
             }
             if (this.reason != null) {
                 data.reason = this.reason;
             }
-            if (this.marketId != null) {
-                data.marketId = this.marketId;
+            if (this.market_id != null) {
+                data.market_id = this.market_id;
             }
             return data;
         }
@@ -2207,20 +2253,20 @@ export namespace trade {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.msgSeqNum != 0)
-                writer.writeUint64(1, this.msgSeqNum);
-            if (this.clientOrderId != 0)
-                writer.writeUint64(2, this.clientOrderId);
-            if (this.requestId != 0)
-                writer.writeUint64(3, this.requestId);
-            if (this.transactTime != 0)
-                writer.writeUint64(4, this.transactTime);
-            if (this.subaccountId != 0)
-                writer.writeUint64(5, this.subaccountId);
+            if (this.msg_seq_num != 0)
+                writer.writeUint64(1, this.msg_seq_num);
+            if (this.client_order_id != 0)
+                writer.writeUint64(2, this.client_order_id);
+            if (this.request_id != 0)
+                writer.writeUint64(3, this.request_id);
+            if (this.transact_time != 0)
+                writer.writeUint64(4, this.transact_time);
+            if (this.subaccount_id != 0)
+                writer.writeUint64(5, this.subaccount_id);
             if (this.reason != CancelOrderAck.Reason.UNCLASSIFIED)
                 writer.writeEnum(6, this.reason);
-            if (this.marketId != 0)
-                writer.writeUint64(7, this.marketId);
+            if (this.market_id != 0)
+                writer.writeUint64(7, this.market_id);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -2231,25 +2277,25 @@ export namespace trade {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.msgSeqNum = reader.readUint64();
+                        message.msg_seq_num = reader.readUint64();
                         break;
                     case 2:
-                        message.clientOrderId = reader.readUint64();
+                        message.client_order_id = reader.readUint64();
                         break;
                     case 3:
-                        message.requestId = reader.readUint64();
+                        message.request_id = reader.readUint64();
                         break;
                     case 4:
-                        message.transactTime = reader.readUint64();
+                        message.transact_time = reader.readUint64();
                         break;
                     case 5:
-                        message.subaccountId = reader.readUint64();
+                        message.subaccount_id = reader.readUint64();
                         break;
                     case 6:
                         message.reason = reader.readEnum();
                         break;
                     case 7:
-                        message.marketId = reader.readUint64();
+                        message.market_id = reader.readUint64();
                         break;
                     default: reader.skipField();
                 }
@@ -2277,84 +2323,92 @@ export namespace trade {
     export class ModifyOrderAck extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            msgSeqNum?: number;
-            clientOrderId?: number;
-            requestId?: number;
-            transactTime?: number;
-            newQuantity?: number;
-            subaccountId?: number;
-            marketId?: number;
+            msg_seq_num?: number;
+            client_order_id?: number;
+            request_id?: number;
+            transact_time?: number;
+            remaining_quantity?: number;
+            subaccount_id?: number;
+            market_id?: number;
             price?: number;
+            quantity?: number;
+            cumulative_quantity?: number;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("msgSeqNum" in data && data.msgSeqNum != undefined) {
-                    this.msgSeqNum = data.msgSeqNum;
+                if ("msg_seq_num" in data && data.msg_seq_num != undefined) {
+                    this.msg_seq_num = data.msg_seq_num;
                 }
-                if ("clientOrderId" in data && data.clientOrderId != undefined) {
-                    this.clientOrderId = data.clientOrderId;
+                if ("client_order_id" in data && data.client_order_id != undefined) {
+                    this.client_order_id = data.client_order_id;
                 }
-                if ("requestId" in data && data.requestId != undefined) {
-                    this.requestId = data.requestId;
+                if ("request_id" in data && data.request_id != undefined) {
+                    this.request_id = data.request_id;
                 }
-                if ("transactTime" in data && data.transactTime != undefined) {
-                    this.transactTime = data.transactTime;
+                if ("transact_time" in data && data.transact_time != undefined) {
+                    this.transact_time = data.transact_time;
                 }
-                if ("newQuantity" in data && data.newQuantity != undefined) {
-                    this.newQuantity = data.newQuantity;
+                if ("remaining_quantity" in data && data.remaining_quantity != undefined) {
+                    this.remaining_quantity = data.remaining_quantity;
                 }
-                if ("subaccountId" in data && data.subaccountId != undefined) {
-                    this.subaccountId = data.subaccountId;
+                if ("subaccount_id" in data && data.subaccount_id != undefined) {
+                    this.subaccount_id = data.subaccount_id;
                 }
-                if ("marketId" in data && data.marketId != undefined) {
-                    this.marketId = data.marketId;
+                if ("market_id" in data && data.market_id != undefined) {
+                    this.market_id = data.market_id;
                 }
                 if ("price" in data && data.price != undefined) {
                     this.price = data.price;
                 }
+                if ("quantity" in data && data.quantity != undefined) {
+                    this.quantity = data.quantity;
+                }
+                if ("cumulative_quantity" in data && data.cumulative_quantity != undefined) {
+                    this.cumulative_quantity = data.cumulative_quantity;
+                }
             }
         }
-        get msgSeqNum() {
+        get msg_seq_num() {
             return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
         }
-        set msgSeqNum(value: number) {
+        set msg_seq_num(value: number) {
             pb_1.Message.setField(this, 1, value);
         }
-        get clientOrderId() {
+        get client_order_id() {
             return pb_1.Message.getFieldWithDefault(this, 2, 0) as number;
         }
-        set clientOrderId(value: number) {
+        set client_order_id(value: number) {
             pb_1.Message.setField(this, 2, value);
         }
-        get requestId() {
+        get request_id() {
             return pb_1.Message.getFieldWithDefault(this, 3, 0) as number;
         }
-        set requestId(value: number) {
+        set request_id(value: number) {
             pb_1.Message.setField(this, 3, value);
         }
-        get transactTime() {
+        get transact_time() {
             return pb_1.Message.getFieldWithDefault(this, 4, 0) as number;
         }
-        set transactTime(value: number) {
+        set transact_time(value: number) {
             pb_1.Message.setField(this, 4, value);
         }
-        get newQuantity() {
+        get remaining_quantity() {
             return pb_1.Message.getFieldWithDefault(this, 5, 0) as number;
         }
-        set newQuantity(value: number) {
+        set remaining_quantity(value: number) {
             pb_1.Message.setField(this, 5, value);
         }
-        get subaccountId() {
+        get subaccount_id() {
             return pb_1.Message.getFieldWithDefault(this, 6, 0) as number;
         }
-        set subaccountId(value: number) {
+        set subaccount_id(value: number) {
             pb_1.Message.setField(this, 6, value);
         }
-        get marketId() {
+        get market_id() {
             return pb_1.Message.getFieldWithDefault(this, 7, 0) as number;
         }
-        set marketId(value: number) {
+        set market_id(value: number) {
             pb_1.Message.setField(this, 7, value);
         }
         get price() {
@@ -2363,77 +2417,105 @@ export namespace trade {
         set price(value: number) {
             pb_1.Message.setField(this, 8, value);
         }
+        get quantity() {
+            return pb_1.Message.getFieldWithDefault(this, 9, 0) as number;
+        }
+        set quantity(value: number) {
+            pb_1.Message.setField(this, 9, value);
+        }
+        get cumulative_quantity() {
+            return pb_1.Message.getFieldWithDefault(this, 10, 0) as number;
+        }
+        set cumulative_quantity(value: number) {
+            pb_1.Message.setField(this, 10, value);
+        }
         static fromObject(data: {
-            msgSeqNum?: number;
-            clientOrderId?: number;
-            requestId?: number;
-            transactTime?: number;
-            newQuantity?: number;
-            subaccountId?: number;
-            marketId?: number;
+            msg_seq_num?: number;
+            client_order_id?: number;
+            request_id?: number;
+            transact_time?: number;
+            remaining_quantity?: number;
+            subaccount_id?: number;
+            market_id?: number;
             price?: number;
+            quantity?: number;
+            cumulative_quantity?: number;
         }): ModifyOrderAck {
             const message = new ModifyOrderAck({});
-            if (data.msgSeqNum != null) {
-                message.msgSeqNum = data.msgSeqNum;
+            if (data.msg_seq_num != null) {
+                message.msg_seq_num = data.msg_seq_num;
             }
-            if (data.clientOrderId != null) {
-                message.clientOrderId = data.clientOrderId;
+            if (data.client_order_id != null) {
+                message.client_order_id = data.client_order_id;
             }
-            if (data.requestId != null) {
-                message.requestId = data.requestId;
+            if (data.request_id != null) {
+                message.request_id = data.request_id;
             }
-            if (data.transactTime != null) {
-                message.transactTime = data.transactTime;
+            if (data.transact_time != null) {
+                message.transact_time = data.transact_time;
             }
-            if (data.newQuantity != null) {
-                message.newQuantity = data.newQuantity;
+            if (data.remaining_quantity != null) {
+                message.remaining_quantity = data.remaining_quantity;
             }
-            if (data.subaccountId != null) {
-                message.subaccountId = data.subaccountId;
+            if (data.subaccount_id != null) {
+                message.subaccount_id = data.subaccount_id;
             }
-            if (data.marketId != null) {
-                message.marketId = data.marketId;
+            if (data.market_id != null) {
+                message.market_id = data.market_id;
             }
             if (data.price != null) {
                 message.price = data.price;
+            }
+            if (data.quantity != null) {
+                message.quantity = data.quantity;
+            }
+            if (data.cumulative_quantity != null) {
+                message.cumulative_quantity = data.cumulative_quantity;
             }
             return message;
         }
         toObject() {
             const data: {
-                msgSeqNum?: number;
-                clientOrderId?: number;
-                requestId?: number;
-                transactTime?: number;
-                newQuantity?: number;
-                subaccountId?: number;
-                marketId?: number;
+                msg_seq_num?: number;
+                client_order_id?: number;
+                request_id?: number;
+                transact_time?: number;
+                remaining_quantity?: number;
+                subaccount_id?: number;
+                market_id?: number;
                 price?: number;
+                quantity?: number;
+                cumulative_quantity?: number;
             } = {};
-            if (this.msgSeqNum != null) {
-                data.msgSeqNum = this.msgSeqNum;
+            if (this.msg_seq_num != null) {
+                data.msg_seq_num = this.msg_seq_num;
             }
-            if (this.clientOrderId != null) {
-                data.clientOrderId = this.clientOrderId;
+            if (this.client_order_id != null) {
+                data.client_order_id = this.client_order_id;
             }
-            if (this.requestId != null) {
-                data.requestId = this.requestId;
+            if (this.request_id != null) {
+                data.request_id = this.request_id;
             }
-            if (this.transactTime != null) {
-                data.transactTime = this.transactTime;
+            if (this.transact_time != null) {
+                data.transact_time = this.transact_time;
             }
-            if (this.newQuantity != null) {
-                data.newQuantity = this.newQuantity;
+            if (this.remaining_quantity != null) {
+                data.remaining_quantity = this.remaining_quantity;
             }
-            if (this.subaccountId != null) {
-                data.subaccountId = this.subaccountId;
+            if (this.subaccount_id != null) {
+                data.subaccount_id = this.subaccount_id;
             }
-            if (this.marketId != null) {
-                data.marketId = this.marketId;
+            if (this.market_id != null) {
+                data.market_id = this.market_id;
             }
             if (this.price != null) {
                 data.price = this.price;
+            }
+            if (this.quantity != null) {
+                data.quantity = this.quantity;
+            }
+            if (this.cumulative_quantity != null) {
+                data.cumulative_quantity = this.cumulative_quantity;
             }
             return data;
         }
@@ -2441,22 +2523,26 @@ export namespace trade {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.msgSeqNum != 0)
-                writer.writeUint64(1, this.msgSeqNum);
-            if (this.clientOrderId != 0)
-                writer.writeUint64(2, this.clientOrderId);
-            if (this.requestId != 0)
-                writer.writeUint64(3, this.requestId);
-            if (this.transactTime != 0)
-                writer.writeUint64(4, this.transactTime);
-            if (this.newQuantity != 0)
-                writer.writeUint64(5, this.newQuantity);
-            if (this.subaccountId != 0)
-                writer.writeUint64(6, this.subaccountId);
-            if (this.marketId != 0)
-                writer.writeUint64(7, this.marketId);
+            if (this.msg_seq_num != 0)
+                writer.writeUint64(1, this.msg_seq_num);
+            if (this.client_order_id != 0)
+                writer.writeUint64(2, this.client_order_id);
+            if (this.request_id != 0)
+                writer.writeUint64(3, this.request_id);
+            if (this.transact_time != 0)
+                writer.writeUint64(4, this.transact_time);
+            if (this.remaining_quantity != 0)
+                writer.writeUint64(5, this.remaining_quantity);
+            if (this.subaccount_id != 0)
+                writer.writeUint64(6, this.subaccount_id);
+            if (this.market_id != 0)
+                writer.writeUint64(7, this.market_id);
             if (this.price != 0)
                 writer.writeUint64(8, this.price);
+            if (this.quantity != 0)
+                writer.writeUint64(9, this.quantity);
+            if (this.cumulative_quantity != 0)
+                writer.writeUint64(10, this.cumulative_quantity);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -2467,28 +2553,34 @@ export namespace trade {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.msgSeqNum = reader.readUint64();
+                        message.msg_seq_num = reader.readUint64();
                         break;
                     case 2:
-                        message.clientOrderId = reader.readUint64();
+                        message.client_order_id = reader.readUint64();
                         break;
                     case 3:
-                        message.requestId = reader.readUint64();
+                        message.request_id = reader.readUint64();
                         break;
                     case 4:
-                        message.transactTime = reader.readUint64();
+                        message.transact_time = reader.readUint64();
                         break;
                     case 5:
-                        message.newQuantity = reader.readUint64();
+                        message.remaining_quantity = reader.readUint64();
                         break;
                     case 6:
-                        message.subaccountId = reader.readUint64();
+                        message.subaccount_id = reader.readUint64();
                         break;
                     case 7:
-                        message.marketId = reader.readUint64();
+                        message.market_id = reader.readUint64();
                         break;
                     case 8:
                         message.price = reader.readUint64();
+                        break;
+                    case 9:
+                        message.quantity = reader.readUint64();
+                        break;
+                    case 10:
+                        message.cumulative_quantity = reader.readUint64();
                         break;
                     default: reader.skipField();
                 }
@@ -2505,59 +2597,59 @@ export namespace trade {
     export class MassCancelAck extends pb_1.Message {
         #one_of_decls: number[][] = [[6]];
         constructor(data?: any[] | ({
-            msgSeqNum?: number;
-            subaccountId?: number;
-            requestId?: number;
-            transactTime?: number;
-            totalAffectedOrders?: number;
+            msg_seq_num?: number;
+            subaccount_id?: number;
+            request_id?: number;
+            transact_time?: number;
+            total_affected_orders?: number;
         } & (({
             reason?: MassCancelAck.Reason;
         })))) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("msgSeqNum" in data && data.msgSeqNum != undefined) {
-                    this.msgSeqNum = data.msgSeqNum;
+                if ("msg_seq_num" in data && data.msg_seq_num != undefined) {
+                    this.msg_seq_num = data.msg_seq_num;
                 }
-                if ("subaccountId" in data && data.subaccountId != undefined) {
-                    this.subaccountId = data.subaccountId;
+                if ("subaccount_id" in data && data.subaccount_id != undefined) {
+                    this.subaccount_id = data.subaccount_id;
                 }
-                if ("requestId" in data && data.requestId != undefined) {
-                    this.requestId = data.requestId;
+                if ("request_id" in data && data.request_id != undefined) {
+                    this.request_id = data.request_id;
                 }
-                if ("transactTime" in data && data.transactTime != undefined) {
-                    this.transactTime = data.transactTime;
+                if ("transact_time" in data && data.transact_time != undefined) {
+                    this.transact_time = data.transact_time;
                 }
                 if ("reason" in data && data.reason != undefined) {
                     this.reason = data.reason;
                 }
-                if ("totalAffectedOrders" in data && data.totalAffectedOrders != undefined) {
-                    this.totalAffectedOrders = data.totalAffectedOrders;
+                if ("total_affected_orders" in data && data.total_affected_orders != undefined) {
+                    this.total_affected_orders = data.total_affected_orders;
                 }
             }
         }
-        get msgSeqNum() {
+        get msg_seq_num() {
             return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
         }
-        set msgSeqNum(value: number) {
+        set msg_seq_num(value: number) {
             pb_1.Message.setField(this, 1, value);
         }
-        get subaccountId() {
+        get subaccount_id() {
             return pb_1.Message.getFieldWithDefault(this, 2, 0) as number;
         }
-        set subaccountId(value: number) {
+        set subaccount_id(value: number) {
             pb_1.Message.setField(this, 2, value);
         }
-        get requestId() {
+        get request_id() {
             return pb_1.Message.getFieldWithDefault(this, 3, 0) as number;
         }
-        set requestId(value: number) {
+        set request_id(value: number) {
             pb_1.Message.setField(this, 3, value);
         }
-        get transactTime() {
+        get transact_time() {
             return pb_1.Message.getFieldWithDefault(this, 4, 0) as number;
         }
-        set transactTime(value: number) {
+        set transact_time(value: number) {
             pb_1.Message.setField(this, 4, value);
         }
         get reason() {
@@ -2569,10 +2661,10 @@ export namespace trade {
         get has_reason() {
             return pb_1.Message.getField(this, 6) != null;
         }
-        get totalAffectedOrders() {
+        get total_affected_orders() {
             return pb_1.Message.getFieldWithDefault(this, 7, 0) as number;
         }
-        set totalAffectedOrders(value: number) {
+        set total_affected_orders(value: number) {
             pb_1.Message.setField(this, 7, value);
         }
         get _reason() {
@@ -2585,60 +2677,60 @@ export namespace trade {
             return cases[pb_1.Message.computeOneofCase(this, [6])];
         }
         static fromObject(data: {
-            msgSeqNum?: number;
-            subaccountId?: number;
-            requestId?: number;
-            transactTime?: number;
+            msg_seq_num?: number;
+            subaccount_id?: number;
+            request_id?: number;
+            transact_time?: number;
             reason?: MassCancelAck.Reason;
-            totalAffectedOrders?: number;
+            total_affected_orders?: number;
         }): MassCancelAck {
             const message = new MassCancelAck({});
-            if (data.msgSeqNum != null) {
-                message.msgSeqNum = data.msgSeqNum;
+            if (data.msg_seq_num != null) {
+                message.msg_seq_num = data.msg_seq_num;
             }
-            if (data.subaccountId != null) {
-                message.subaccountId = data.subaccountId;
+            if (data.subaccount_id != null) {
+                message.subaccount_id = data.subaccount_id;
             }
-            if (data.requestId != null) {
-                message.requestId = data.requestId;
+            if (data.request_id != null) {
+                message.request_id = data.request_id;
             }
-            if (data.transactTime != null) {
-                message.transactTime = data.transactTime;
+            if (data.transact_time != null) {
+                message.transact_time = data.transact_time;
             }
             if (data.reason != null) {
                 message.reason = data.reason;
             }
-            if (data.totalAffectedOrders != null) {
-                message.totalAffectedOrders = data.totalAffectedOrders;
+            if (data.total_affected_orders != null) {
+                message.total_affected_orders = data.total_affected_orders;
             }
             return message;
         }
         toObject() {
             const data: {
-                msgSeqNum?: number;
-                subaccountId?: number;
-                requestId?: number;
-                transactTime?: number;
+                msg_seq_num?: number;
+                subaccount_id?: number;
+                request_id?: number;
+                transact_time?: number;
                 reason?: MassCancelAck.Reason;
-                totalAffectedOrders?: number;
+                total_affected_orders?: number;
             } = {};
-            if (this.msgSeqNum != null) {
-                data.msgSeqNum = this.msgSeqNum;
+            if (this.msg_seq_num != null) {
+                data.msg_seq_num = this.msg_seq_num;
             }
-            if (this.subaccountId != null) {
-                data.subaccountId = this.subaccountId;
+            if (this.subaccount_id != null) {
+                data.subaccount_id = this.subaccount_id;
             }
-            if (this.requestId != null) {
-                data.requestId = this.requestId;
+            if (this.request_id != null) {
+                data.request_id = this.request_id;
             }
-            if (this.transactTime != null) {
-                data.transactTime = this.transactTime;
+            if (this.transact_time != null) {
+                data.transact_time = this.transact_time;
             }
             if (this.reason != null) {
                 data.reason = this.reason;
             }
-            if (this.totalAffectedOrders != null) {
-                data.totalAffectedOrders = this.totalAffectedOrders;
+            if (this.total_affected_orders != null) {
+                data.total_affected_orders = this.total_affected_orders;
             }
             return data;
         }
@@ -2646,18 +2738,18 @@ export namespace trade {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.msgSeqNum != 0)
-                writer.writeUint64(1, this.msgSeqNum);
-            if (this.subaccountId != 0)
-                writer.writeUint64(2, this.subaccountId);
-            if (this.requestId != 0)
-                writer.writeUint64(3, this.requestId);
-            if (this.transactTime != 0)
-                writer.writeUint64(4, this.transactTime);
+            if (this.msg_seq_num != 0)
+                writer.writeUint64(1, this.msg_seq_num);
+            if (this.subaccount_id != 0)
+                writer.writeUint64(2, this.subaccount_id);
+            if (this.request_id != 0)
+                writer.writeUint64(3, this.request_id);
+            if (this.transact_time != 0)
+                writer.writeUint64(4, this.transact_time);
             if (this.has_reason)
                 writer.writeEnum(6, this.reason);
-            if (this.totalAffectedOrders != 0)
-                writer.writeUint32(7, this.totalAffectedOrders);
+            if (this.total_affected_orders != 0)
+                writer.writeUint32(7, this.total_affected_orders);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -2668,22 +2760,22 @@ export namespace trade {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.msgSeqNum = reader.readUint64();
+                        message.msg_seq_num = reader.readUint64();
                         break;
                     case 2:
-                        message.subaccountId = reader.readUint64();
+                        message.subaccount_id = reader.readUint64();
                         break;
                     case 3:
-                        message.requestId = reader.readUint64();
+                        message.request_id = reader.readUint64();
                         break;
                     case 4:
-                        message.transactTime = reader.readUint64();
+                        message.transact_time = reader.readUint64();
                         break;
                     case 6:
                         message.reason = reader.readEnum();
                         break;
                     case 7:
-                        message.totalAffectedOrders = reader.readUint32();
+                        message.total_affected_orders = reader.readUint32();
                         break;
                     default: reader.skipField();
                 }
@@ -2707,43 +2799,43 @@ export namespace trade {
     export class NewOrderReject extends pb_1.Message {
         #one_of_decls: number[][] = [[8]];
         constructor(data?: any[] | ({
-            msgSeqNum?: number;
-            clientOrderId?: number;
-            requestId?: number;
-            transactTime?: number;
-            subaccountId?: number;
+            msg_seq_num?: number;
+            client_order_id?: number;
+            request_id?: number;
+            transact_time?: number;
+            subaccount_id?: number;
             reason?: NewOrderReject.Reason;
-            marketId?: number;
+            market_id?: number;
             quantity?: number;
             side?: Side;
-            timeInForce?: TimeInForce;
-            orderType?: OrderType;
+            time_in_force?: TimeInForce;
+            order_type?: OrderType;
         } & (({
             price?: number;
         })))) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("msgSeqNum" in data && data.msgSeqNum != undefined) {
-                    this.msgSeqNum = data.msgSeqNum;
+                if ("msg_seq_num" in data && data.msg_seq_num != undefined) {
+                    this.msg_seq_num = data.msg_seq_num;
                 }
-                if ("clientOrderId" in data && data.clientOrderId != undefined) {
-                    this.clientOrderId = data.clientOrderId;
+                if ("client_order_id" in data && data.client_order_id != undefined) {
+                    this.client_order_id = data.client_order_id;
                 }
-                if ("requestId" in data && data.requestId != undefined) {
-                    this.requestId = data.requestId;
+                if ("request_id" in data && data.request_id != undefined) {
+                    this.request_id = data.request_id;
                 }
-                if ("transactTime" in data && data.transactTime != undefined) {
-                    this.transactTime = data.transactTime;
+                if ("transact_time" in data && data.transact_time != undefined) {
+                    this.transact_time = data.transact_time;
                 }
-                if ("subaccountId" in data && data.subaccountId != undefined) {
-                    this.subaccountId = data.subaccountId;
+                if ("subaccount_id" in data && data.subaccount_id != undefined) {
+                    this.subaccount_id = data.subaccount_id;
                 }
                 if ("reason" in data && data.reason != undefined) {
                     this.reason = data.reason;
                 }
-                if ("marketId" in data && data.marketId != undefined) {
-                    this.marketId = data.marketId;
+                if ("market_id" in data && data.market_id != undefined) {
+                    this.market_id = data.market_id;
                 }
                 if ("price" in data && data.price != undefined) {
                     this.price = data.price;
@@ -2754,42 +2846,42 @@ export namespace trade {
                 if ("side" in data && data.side != undefined) {
                     this.side = data.side;
                 }
-                if ("timeInForce" in data && data.timeInForce != undefined) {
-                    this.timeInForce = data.timeInForce;
+                if ("time_in_force" in data && data.time_in_force != undefined) {
+                    this.time_in_force = data.time_in_force;
                 }
-                if ("orderType" in data && data.orderType != undefined) {
-                    this.orderType = data.orderType;
+                if ("order_type" in data && data.order_type != undefined) {
+                    this.order_type = data.order_type;
                 }
             }
         }
-        get msgSeqNum() {
+        get msg_seq_num() {
             return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
         }
-        set msgSeqNum(value: number) {
+        set msg_seq_num(value: number) {
             pb_1.Message.setField(this, 1, value);
         }
-        get clientOrderId() {
+        get client_order_id() {
             return pb_1.Message.getFieldWithDefault(this, 2, 0) as number;
         }
-        set clientOrderId(value: number) {
+        set client_order_id(value: number) {
             pb_1.Message.setField(this, 2, value);
         }
-        get requestId() {
+        get request_id() {
             return pb_1.Message.getFieldWithDefault(this, 3, 0) as number;
         }
-        set requestId(value: number) {
+        set request_id(value: number) {
             pb_1.Message.setField(this, 3, value);
         }
-        get transactTime() {
+        get transact_time() {
             return pb_1.Message.getFieldWithDefault(this, 4, 0) as number;
         }
-        set transactTime(value: number) {
+        set transact_time(value: number) {
             pb_1.Message.setField(this, 4, value);
         }
-        get subaccountId() {
+        get subaccount_id() {
             return pb_1.Message.getFieldWithDefault(this, 5, 0) as number;
         }
-        set subaccountId(value: number) {
+        set subaccount_id(value: number) {
             pb_1.Message.setField(this, 5, value);
         }
         get reason() {
@@ -2798,10 +2890,10 @@ export namespace trade {
         set reason(value: NewOrderReject.Reason) {
             pb_1.Message.setField(this, 6, value);
         }
-        get marketId() {
+        get market_id() {
             return pb_1.Message.getFieldWithDefault(this, 7, 0) as number;
         }
-        set marketId(value: number) {
+        set market_id(value: number) {
             pb_1.Message.setField(this, 7, value);
         }
         get price() {
@@ -2825,16 +2917,16 @@ export namespace trade {
         set side(value: Side) {
             pb_1.Message.setField(this, 10, value);
         }
-        get timeInForce() {
+        get time_in_force() {
             return pb_1.Message.getFieldWithDefault(this, 11, TimeInForce.IMMEDIATE_OR_CANCEL) as TimeInForce;
         }
-        set timeInForce(value: TimeInForce) {
+        set time_in_force(value: TimeInForce) {
             pb_1.Message.setField(this, 11, value);
         }
-        get orderType() {
+        get order_type() {
             return pb_1.Message.getFieldWithDefault(this, 12, OrderType.LIMIT) as OrderType;
         }
-        set orderType(value: OrderType) {
+        set order_type(value: OrderType) {
             pb_1.Message.setField(this, 12, value);
         }
         get _price() {
@@ -2847,40 +2939,40 @@ export namespace trade {
             return cases[pb_1.Message.computeOneofCase(this, [8])];
         }
         static fromObject(data: {
-            msgSeqNum?: number;
-            clientOrderId?: number;
-            requestId?: number;
-            transactTime?: number;
-            subaccountId?: number;
+            msg_seq_num?: number;
+            client_order_id?: number;
+            request_id?: number;
+            transact_time?: number;
+            subaccount_id?: number;
             reason?: NewOrderReject.Reason;
-            marketId?: number;
+            market_id?: number;
             price?: number;
             quantity?: number;
             side?: Side;
-            timeInForce?: TimeInForce;
-            orderType?: OrderType;
+            time_in_force?: TimeInForce;
+            order_type?: OrderType;
         }): NewOrderReject {
             const message = new NewOrderReject({});
-            if (data.msgSeqNum != null) {
-                message.msgSeqNum = data.msgSeqNum;
+            if (data.msg_seq_num != null) {
+                message.msg_seq_num = data.msg_seq_num;
             }
-            if (data.clientOrderId != null) {
-                message.clientOrderId = data.clientOrderId;
+            if (data.client_order_id != null) {
+                message.client_order_id = data.client_order_id;
             }
-            if (data.requestId != null) {
-                message.requestId = data.requestId;
+            if (data.request_id != null) {
+                message.request_id = data.request_id;
             }
-            if (data.transactTime != null) {
-                message.transactTime = data.transactTime;
+            if (data.transact_time != null) {
+                message.transact_time = data.transact_time;
             }
-            if (data.subaccountId != null) {
-                message.subaccountId = data.subaccountId;
+            if (data.subaccount_id != null) {
+                message.subaccount_id = data.subaccount_id;
             }
             if (data.reason != null) {
                 message.reason = data.reason;
             }
-            if (data.marketId != null) {
-                message.marketId = data.marketId;
+            if (data.market_id != null) {
+                message.market_id = data.market_id;
             }
             if (data.price != null) {
                 message.price = data.price;
@@ -2891,49 +2983,49 @@ export namespace trade {
             if (data.side != null) {
                 message.side = data.side;
             }
-            if (data.timeInForce != null) {
-                message.timeInForce = data.timeInForce;
+            if (data.time_in_force != null) {
+                message.time_in_force = data.time_in_force;
             }
-            if (data.orderType != null) {
-                message.orderType = data.orderType;
+            if (data.order_type != null) {
+                message.order_type = data.order_type;
             }
             return message;
         }
         toObject() {
             const data: {
-                msgSeqNum?: number;
-                clientOrderId?: number;
-                requestId?: number;
-                transactTime?: number;
-                subaccountId?: number;
+                msg_seq_num?: number;
+                client_order_id?: number;
+                request_id?: number;
+                transact_time?: number;
+                subaccount_id?: number;
                 reason?: NewOrderReject.Reason;
-                marketId?: number;
+                market_id?: number;
                 price?: number;
                 quantity?: number;
                 side?: Side;
-                timeInForce?: TimeInForce;
-                orderType?: OrderType;
+                time_in_force?: TimeInForce;
+                order_type?: OrderType;
             } = {};
-            if (this.msgSeqNum != null) {
-                data.msgSeqNum = this.msgSeqNum;
+            if (this.msg_seq_num != null) {
+                data.msg_seq_num = this.msg_seq_num;
             }
-            if (this.clientOrderId != null) {
-                data.clientOrderId = this.clientOrderId;
+            if (this.client_order_id != null) {
+                data.client_order_id = this.client_order_id;
             }
-            if (this.requestId != null) {
-                data.requestId = this.requestId;
+            if (this.request_id != null) {
+                data.request_id = this.request_id;
             }
-            if (this.transactTime != null) {
-                data.transactTime = this.transactTime;
+            if (this.transact_time != null) {
+                data.transact_time = this.transact_time;
             }
-            if (this.subaccountId != null) {
-                data.subaccountId = this.subaccountId;
+            if (this.subaccount_id != null) {
+                data.subaccount_id = this.subaccount_id;
             }
             if (this.reason != null) {
                 data.reason = this.reason;
             }
-            if (this.marketId != null) {
-                data.marketId = this.marketId;
+            if (this.market_id != null) {
+                data.market_id = this.market_id;
             }
             if (this.price != null) {
                 data.price = this.price;
@@ -2944,11 +3036,11 @@ export namespace trade {
             if (this.side != null) {
                 data.side = this.side;
             }
-            if (this.timeInForce != null) {
-                data.timeInForce = this.timeInForce;
+            if (this.time_in_force != null) {
+                data.time_in_force = this.time_in_force;
             }
-            if (this.orderType != null) {
-                data.orderType = this.orderType;
+            if (this.order_type != null) {
+                data.order_type = this.order_type;
             }
             return data;
         }
@@ -2956,30 +3048,30 @@ export namespace trade {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.msgSeqNum != 0)
-                writer.writeUint64(1, this.msgSeqNum);
-            if (this.clientOrderId != 0)
-                writer.writeUint64(2, this.clientOrderId);
-            if (this.requestId != 0)
-                writer.writeUint64(3, this.requestId);
-            if (this.transactTime != 0)
-                writer.writeUint64(4, this.transactTime);
-            if (this.subaccountId != 0)
-                writer.writeUint64(5, this.subaccountId);
+            if (this.msg_seq_num != 0)
+                writer.writeUint64(1, this.msg_seq_num);
+            if (this.client_order_id != 0)
+                writer.writeUint64(2, this.client_order_id);
+            if (this.request_id != 0)
+                writer.writeUint64(3, this.request_id);
+            if (this.transact_time != 0)
+                writer.writeUint64(4, this.transact_time);
+            if (this.subaccount_id != 0)
+                writer.writeUint64(5, this.subaccount_id);
             if (this.reason != NewOrderReject.Reason.UNCLASSIFIED)
                 writer.writeEnum(6, this.reason);
-            if (this.marketId != 0)
-                writer.writeUint64(7, this.marketId);
+            if (this.market_id != 0)
+                writer.writeUint64(7, this.market_id);
             if (this.has_price)
                 writer.writeUint64(8, this.price);
             if (this.quantity != 0)
                 writer.writeUint64(9, this.quantity);
             if (this.side != Side.BID)
                 writer.writeEnum(10, this.side);
-            if (this.timeInForce != TimeInForce.IMMEDIATE_OR_CANCEL)
-                writer.writeEnum(11, this.timeInForce);
-            if (this.orderType != OrderType.LIMIT)
-                writer.writeEnum(12, this.orderType);
+            if (this.time_in_force != TimeInForce.IMMEDIATE_OR_CANCEL)
+                writer.writeEnum(11, this.time_in_force);
+            if (this.order_type != OrderType.LIMIT)
+                writer.writeEnum(12, this.order_type);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -2990,25 +3082,25 @@ export namespace trade {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.msgSeqNum = reader.readUint64();
+                        message.msg_seq_num = reader.readUint64();
                         break;
                     case 2:
-                        message.clientOrderId = reader.readUint64();
+                        message.client_order_id = reader.readUint64();
                         break;
                     case 3:
-                        message.requestId = reader.readUint64();
+                        message.request_id = reader.readUint64();
                         break;
                     case 4:
-                        message.transactTime = reader.readUint64();
+                        message.transact_time = reader.readUint64();
                         break;
                     case 5:
-                        message.subaccountId = reader.readUint64();
+                        message.subaccount_id = reader.readUint64();
                         break;
                     case 6:
                         message.reason = reader.readEnum();
                         break;
                     case 7:
-                        message.marketId = reader.readUint64();
+                        message.market_id = reader.readUint64();
                         break;
                     case 8:
                         message.price = reader.readUint64();
@@ -3020,10 +3112,10 @@ export namespace trade {
                         message.side = reader.readEnum();
                         break;
                     case 11:
-                        message.timeInForce = reader.readEnum();
+                        message.time_in_force = reader.readEnum();
                         break;
                     case 12:
-                        message.orderType = reader.readEnum();
+                        message.order_type = reader.readEnum();
                         break;
                     default: reader.skipField();
                 }
@@ -3061,68 +3153,68 @@ export namespace trade {
     export class CancelOrderReject extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            msgSeqNum?: number;
-            clientOrderId?: number;
-            requestId?: number;
-            transactTime?: number;
-            subaccountId?: number;
+            msg_seq_num?: number;
+            client_order_id?: number;
+            request_id?: number;
+            transact_time?: number;
+            subaccount_id?: number;
             reason?: CancelOrderReject.Reason;
-            marketId?: number;
+            market_id?: number;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("msgSeqNum" in data && data.msgSeqNum != undefined) {
-                    this.msgSeqNum = data.msgSeqNum;
+                if ("msg_seq_num" in data && data.msg_seq_num != undefined) {
+                    this.msg_seq_num = data.msg_seq_num;
                 }
-                if ("clientOrderId" in data && data.clientOrderId != undefined) {
-                    this.clientOrderId = data.clientOrderId;
+                if ("client_order_id" in data && data.client_order_id != undefined) {
+                    this.client_order_id = data.client_order_id;
                 }
-                if ("requestId" in data && data.requestId != undefined) {
-                    this.requestId = data.requestId;
+                if ("request_id" in data && data.request_id != undefined) {
+                    this.request_id = data.request_id;
                 }
-                if ("transactTime" in data && data.transactTime != undefined) {
-                    this.transactTime = data.transactTime;
+                if ("transact_time" in data && data.transact_time != undefined) {
+                    this.transact_time = data.transact_time;
                 }
-                if ("subaccountId" in data && data.subaccountId != undefined) {
-                    this.subaccountId = data.subaccountId;
+                if ("subaccount_id" in data && data.subaccount_id != undefined) {
+                    this.subaccount_id = data.subaccount_id;
                 }
                 if ("reason" in data && data.reason != undefined) {
                     this.reason = data.reason;
                 }
-                if ("marketId" in data && data.marketId != undefined) {
-                    this.marketId = data.marketId;
+                if ("market_id" in data && data.market_id != undefined) {
+                    this.market_id = data.market_id;
                 }
             }
         }
-        get msgSeqNum() {
+        get msg_seq_num() {
             return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
         }
-        set msgSeqNum(value: number) {
+        set msg_seq_num(value: number) {
             pb_1.Message.setField(this, 1, value);
         }
-        get clientOrderId() {
+        get client_order_id() {
             return pb_1.Message.getFieldWithDefault(this, 2, 0) as number;
         }
-        set clientOrderId(value: number) {
+        set client_order_id(value: number) {
             pb_1.Message.setField(this, 2, value);
         }
-        get requestId() {
+        get request_id() {
             return pb_1.Message.getFieldWithDefault(this, 3, 0) as number;
         }
-        set requestId(value: number) {
+        set request_id(value: number) {
             pb_1.Message.setField(this, 3, value);
         }
-        get transactTime() {
+        get transact_time() {
             return pb_1.Message.getFieldWithDefault(this, 4, 0) as number;
         }
-        set transactTime(value: number) {
+        set transact_time(value: number) {
             pb_1.Message.setField(this, 4, value);
         }
-        get subaccountId() {
+        get subaccount_id() {
             return pb_1.Message.getFieldWithDefault(this, 5, 0) as number;
         }
-        set subaccountId(value: number) {
+        set subaccount_id(value: number) {
             pb_1.Message.setField(this, 5, value);
         }
         get reason() {
@@ -3131,75 +3223,75 @@ export namespace trade {
         set reason(value: CancelOrderReject.Reason) {
             pb_1.Message.setField(this, 6, value);
         }
-        get marketId() {
+        get market_id() {
             return pb_1.Message.getFieldWithDefault(this, 7, 0) as number;
         }
-        set marketId(value: number) {
+        set market_id(value: number) {
             pb_1.Message.setField(this, 7, value);
         }
         static fromObject(data: {
-            msgSeqNum?: number;
-            clientOrderId?: number;
-            requestId?: number;
-            transactTime?: number;
-            subaccountId?: number;
+            msg_seq_num?: number;
+            client_order_id?: number;
+            request_id?: number;
+            transact_time?: number;
+            subaccount_id?: number;
             reason?: CancelOrderReject.Reason;
-            marketId?: number;
+            market_id?: number;
         }): CancelOrderReject {
             const message = new CancelOrderReject({});
-            if (data.msgSeqNum != null) {
-                message.msgSeqNum = data.msgSeqNum;
+            if (data.msg_seq_num != null) {
+                message.msg_seq_num = data.msg_seq_num;
             }
-            if (data.clientOrderId != null) {
-                message.clientOrderId = data.clientOrderId;
+            if (data.client_order_id != null) {
+                message.client_order_id = data.client_order_id;
             }
-            if (data.requestId != null) {
-                message.requestId = data.requestId;
+            if (data.request_id != null) {
+                message.request_id = data.request_id;
             }
-            if (data.transactTime != null) {
-                message.transactTime = data.transactTime;
+            if (data.transact_time != null) {
+                message.transact_time = data.transact_time;
             }
-            if (data.subaccountId != null) {
-                message.subaccountId = data.subaccountId;
+            if (data.subaccount_id != null) {
+                message.subaccount_id = data.subaccount_id;
             }
             if (data.reason != null) {
                 message.reason = data.reason;
             }
-            if (data.marketId != null) {
-                message.marketId = data.marketId;
+            if (data.market_id != null) {
+                message.market_id = data.market_id;
             }
             return message;
         }
         toObject() {
             const data: {
-                msgSeqNum?: number;
-                clientOrderId?: number;
-                requestId?: number;
-                transactTime?: number;
-                subaccountId?: number;
+                msg_seq_num?: number;
+                client_order_id?: number;
+                request_id?: number;
+                transact_time?: number;
+                subaccount_id?: number;
                 reason?: CancelOrderReject.Reason;
-                marketId?: number;
+                market_id?: number;
             } = {};
-            if (this.msgSeqNum != null) {
-                data.msgSeqNum = this.msgSeqNum;
+            if (this.msg_seq_num != null) {
+                data.msg_seq_num = this.msg_seq_num;
             }
-            if (this.clientOrderId != null) {
-                data.clientOrderId = this.clientOrderId;
+            if (this.client_order_id != null) {
+                data.client_order_id = this.client_order_id;
             }
-            if (this.requestId != null) {
-                data.requestId = this.requestId;
+            if (this.request_id != null) {
+                data.request_id = this.request_id;
             }
-            if (this.transactTime != null) {
-                data.transactTime = this.transactTime;
+            if (this.transact_time != null) {
+                data.transact_time = this.transact_time;
             }
-            if (this.subaccountId != null) {
-                data.subaccountId = this.subaccountId;
+            if (this.subaccount_id != null) {
+                data.subaccount_id = this.subaccount_id;
             }
             if (this.reason != null) {
                 data.reason = this.reason;
             }
-            if (this.marketId != null) {
-                data.marketId = this.marketId;
+            if (this.market_id != null) {
+                data.market_id = this.market_id;
             }
             return data;
         }
@@ -3207,20 +3299,20 @@ export namespace trade {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.msgSeqNum != 0)
-                writer.writeUint64(1, this.msgSeqNum);
-            if (this.clientOrderId != 0)
-                writer.writeUint64(2, this.clientOrderId);
-            if (this.requestId != 0)
-                writer.writeUint64(3, this.requestId);
-            if (this.transactTime != 0)
-                writer.writeUint64(4, this.transactTime);
-            if (this.subaccountId != 0)
-                writer.writeUint64(5, this.subaccountId);
+            if (this.msg_seq_num != 0)
+                writer.writeUint64(1, this.msg_seq_num);
+            if (this.client_order_id != 0)
+                writer.writeUint64(2, this.client_order_id);
+            if (this.request_id != 0)
+                writer.writeUint64(3, this.request_id);
+            if (this.transact_time != 0)
+                writer.writeUint64(4, this.transact_time);
+            if (this.subaccount_id != 0)
+                writer.writeUint64(5, this.subaccount_id);
             if (this.reason != CancelOrderReject.Reason.UNCLASSIFIED)
                 writer.writeEnum(6, this.reason);
-            if (this.marketId != 0)
-                writer.writeUint64(7, this.marketId);
+            if (this.market_id != 0)
+                writer.writeUint64(7, this.market_id);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -3231,25 +3323,25 @@ export namespace trade {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.msgSeqNum = reader.readUint64();
+                        message.msg_seq_num = reader.readUint64();
                         break;
                     case 2:
-                        message.clientOrderId = reader.readUint64();
+                        message.client_order_id = reader.readUint64();
                         break;
                     case 3:
-                        message.requestId = reader.readUint64();
+                        message.request_id = reader.readUint64();
                         break;
                     case 4:
-                        message.transactTime = reader.readUint64();
+                        message.transact_time = reader.readUint64();
                         break;
                     case 5:
-                        message.subaccountId = reader.readUint64();
+                        message.subaccount_id = reader.readUint64();
                         break;
                     case 6:
                         message.reason = reader.readEnum();
                         break;
                     case 7:
-                        message.marketId = reader.readUint64();
+                        message.market_id = reader.readUint64();
                         break;
                     default: reader.skipField();
                 }
@@ -3273,68 +3365,68 @@ export namespace trade {
     export class ModifyOrderReject extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            msgSeqNum?: number;
-            clientOrderId?: number;
-            requestId?: number;
-            transactTime?: number;
-            subaccountId?: number;
+            msg_seq_num?: number;
+            client_order_id?: number;
+            request_id?: number;
+            transact_time?: number;
+            subaccount_id?: number;
             reason?: ModifyOrderReject.Reason;
-            marketId?: number;
+            market_id?: number;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("msgSeqNum" in data && data.msgSeqNum != undefined) {
-                    this.msgSeqNum = data.msgSeqNum;
+                if ("msg_seq_num" in data && data.msg_seq_num != undefined) {
+                    this.msg_seq_num = data.msg_seq_num;
                 }
-                if ("clientOrderId" in data && data.clientOrderId != undefined) {
-                    this.clientOrderId = data.clientOrderId;
+                if ("client_order_id" in data && data.client_order_id != undefined) {
+                    this.client_order_id = data.client_order_id;
                 }
-                if ("requestId" in data && data.requestId != undefined) {
-                    this.requestId = data.requestId;
+                if ("request_id" in data && data.request_id != undefined) {
+                    this.request_id = data.request_id;
                 }
-                if ("transactTime" in data && data.transactTime != undefined) {
-                    this.transactTime = data.transactTime;
+                if ("transact_time" in data && data.transact_time != undefined) {
+                    this.transact_time = data.transact_time;
                 }
-                if ("subaccountId" in data && data.subaccountId != undefined) {
-                    this.subaccountId = data.subaccountId;
+                if ("subaccount_id" in data && data.subaccount_id != undefined) {
+                    this.subaccount_id = data.subaccount_id;
                 }
                 if ("reason" in data && data.reason != undefined) {
                     this.reason = data.reason;
                 }
-                if ("marketId" in data && data.marketId != undefined) {
-                    this.marketId = data.marketId;
+                if ("market_id" in data && data.market_id != undefined) {
+                    this.market_id = data.market_id;
                 }
             }
         }
-        get msgSeqNum() {
+        get msg_seq_num() {
             return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
         }
-        set msgSeqNum(value: number) {
+        set msg_seq_num(value: number) {
             pb_1.Message.setField(this, 1, value);
         }
-        get clientOrderId() {
+        get client_order_id() {
             return pb_1.Message.getFieldWithDefault(this, 2, 0) as number;
         }
-        set clientOrderId(value: number) {
+        set client_order_id(value: number) {
             pb_1.Message.setField(this, 2, value);
         }
-        get requestId() {
+        get request_id() {
             return pb_1.Message.getFieldWithDefault(this, 3, 0) as number;
         }
-        set requestId(value: number) {
+        set request_id(value: number) {
             pb_1.Message.setField(this, 3, value);
         }
-        get transactTime() {
+        get transact_time() {
             return pb_1.Message.getFieldWithDefault(this, 4, 0) as number;
         }
-        set transactTime(value: number) {
+        set transact_time(value: number) {
             pb_1.Message.setField(this, 4, value);
         }
-        get subaccountId() {
+        get subaccount_id() {
             return pb_1.Message.getFieldWithDefault(this, 5, 0) as number;
         }
-        set subaccountId(value: number) {
+        set subaccount_id(value: number) {
             pb_1.Message.setField(this, 5, value);
         }
         get reason() {
@@ -3343,75 +3435,75 @@ export namespace trade {
         set reason(value: ModifyOrderReject.Reason) {
             pb_1.Message.setField(this, 6, value);
         }
-        get marketId() {
+        get market_id() {
             return pb_1.Message.getFieldWithDefault(this, 7, 0) as number;
         }
-        set marketId(value: number) {
+        set market_id(value: number) {
             pb_1.Message.setField(this, 7, value);
         }
         static fromObject(data: {
-            msgSeqNum?: number;
-            clientOrderId?: number;
-            requestId?: number;
-            transactTime?: number;
-            subaccountId?: number;
+            msg_seq_num?: number;
+            client_order_id?: number;
+            request_id?: number;
+            transact_time?: number;
+            subaccount_id?: number;
             reason?: ModifyOrderReject.Reason;
-            marketId?: number;
+            market_id?: number;
         }): ModifyOrderReject {
             const message = new ModifyOrderReject({});
-            if (data.msgSeqNum != null) {
-                message.msgSeqNum = data.msgSeqNum;
+            if (data.msg_seq_num != null) {
+                message.msg_seq_num = data.msg_seq_num;
             }
-            if (data.clientOrderId != null) {
-                message.clientOrderId = data.clientOrderId;
+            if (data.client_order_id != null) {
+                message.client_order_id = data.client_order_id;
             }
-            if (data.requestId != null) {
-                message.requestId = data.requestId;
+            if (data.request_id != null) {
+                message.request_id = data.request_id;
             }
-            if (data.transactTime != null) {
-                message.transactTime = data.transactTime;
+            if (data.transact_time != null) {
+                message.transact_time = data.transact_time;
             }
-            if (data.subaccountId != null) {
-                message.subaccountId = data.subaccountId;
+            if (data.subaccount_id != null) {
+                message.subaccount_id = data.subaccount_id;
             }
             if (data.reason != null) {
                 message.reason = data.reason;
             }
-            if (data.marketId != null) {
-                message.marketId = data.marketId;
+            if (data.market_id != null) {
+                message.market_id = data.market_id;
             }
             return message;
         }
         toObject() {
             const data: {
-                msgSeqNum?: number;
-                clientOrderId?: number;
-                requestId?: number;
-                transactTime?: number;
-                subaccountId?: number;
+                msg_seq_num?: number;
+                client_order_id?: number;
+                request_id?: number;
+                transact_time?: number;
+                subaccount_id?: number;
                 reason?: ModifyOrderReject.Reason;
-                marketId?: number;
+                market_id?: number;
             } = {};
-            if (this.msgSeqNum != null) {
-                data.msgSeqNum = this.msgSeqNum;
+            if (this.msg_seq_num != null) {
+                data.msg_seq_num = this.msg_seq_num;
             }
-            if (this.clientOrderId != null) {
-                data.clientOrderId = this.clientOrderId;
+            if (this.client_order_id != null) {
+                data.client_order_id = this.client_order_id;
             }
-            if (this.requestId != null) {
-                data.requestId = this.requestId;
+            if (this.request_id != null) {
+                data.request_id = this.request_id;
             }
-            if (this.transactTime != null) {
-                data.transactTime = this.transactTime;
+            if (this.transact_time != null) {
+                data.transact_time = this.transact_time;
             }
-            if (this.subaccountId != null) {
-                data.subaccountId = this.subaccountId;
+            if (this.subaccount_id != null) {
+                data.subaccount_id = this.subaccount_id;
             }
             if (this.reason != null) {
                 data.reason = this.reason;
             }
-            if (this.marketId != null) {
-                data.marketId = this.marketId;
+            if (this.market_id != null) {
+                data.market_id = this.market_id;
             }
             return data;
         }
@@ -3419,20 +3511,20 @@ export namespace trade {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.msgSeqNum != 0)
-                writer.writeUint64(1, this.msgSeqNum);
-            if (this.clientOrderId != 0)
-                writer.writeUint64(2, this.clientOrderId);
-            if (this.requestId != 0)
-                writer.writeUint64(3, this.requestId);
-            if (this.transactTime != 0)
-                writer.writeUint64(4, this.transactTime);
-            if (this.subaccountId != 0)
-                writer.writeUint64(5, this.subaccountId);
+            if (this.msg_seq_num != 0)
+                writer.writeUint64(1, this.msg_seq_num);
+            if (this.client_order_id != 0)
+                writer.writeUint64(2, this.client_order_id);
+            if (this.request_id != 0)
+                writer.writeUint64(3, this.request_id);
+            if (this.transact_time != 0)
+                writer.writeUint64(4, this.transact_time);
+            if (this.subaccount_id != 0)
+                writer.writeUint64(5, this.subaccount_id);
             if (this.reason != ModifyOrderReject.Reason.UNCLASSIFIED)
                 writer.writeEnum(6, this.reason);
-            if (this.marketId != 0)
-                writer.writeUint64(7, this.marketId);
+            if (this.market_id != 0)
+                writer.writeUint64(7, this.market_id);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -3443,25 +3535,25 @@ export namespace trade {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.msgSeqNum = reader.readUint64();
+                        message.msg_seq_num = reader.readUint64();
                         break;
                     case 2:
-                        message.clientOrderId = reader.readUint64();
+                        message.client_order_id = reader.readUint64();
                         break;
                     case 3:
-                        message.requestId = reader.readUint64();
+                        message.request_id = reader.readUint64();
                         break;
                     case 4:
-                        message.transactTime = reader.readUint64();
+                        message.transact_time = reader.readUint64();
                         break;
                     case 5:
-                        message.subaccountId = reader.readUint64();
+                        message.subaccount_id = reader.readUint64();
                         break;
                     case 6:
                         message.reason = reader.readEnum();
                         break;
                     case 7:
-                        message.marketId = reader.readUint64();
+                        message.market_id = reader.readUint64();
                         break;
                     default: reader.skipField();
                 }
@@ -3492,181 +3584,199 @@ export namespace trade {
     export class Fill extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            msgSeqNum?: number;
-            marketId?: number;
-            clientOrderId?: number;
-            exchangeOrderId?: number;
-            fillPrice?: number;
-            fillQuantity?: number;
-            leavesQuantity?: number;
-            transactTime?: number;
-            subaccountId?: number;
+            msg_seq_num?: number;
+            market_id?: number;
+            client_order_id?: number;
+            exchange_order_id?: number;
+            fill_price?: number;
+            fill_quantity?: number;
+            leaves_quantity?: number;
+            transact_time?: number;
+            subaccount_id?: number;
+            cumulative_quantity?: number;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("msgSeqNum" in data && data.msgSeqNum != undefined) {
-                    this.msgSeqNum = data.msgSeqNum;
+                if ("msg_seq_num" in data && data.msg_seq_num != undefined) {
+                    this.msg_seq_num = data.msg_seq_num;
                 }
-                if ("marketId" in data && data.marketId != undefined) {
-                    this.marketId = data.marketId;
+                if ("market_id" in data && data.market_id != undefined) {
+                    this.market_id = data.market_id;
                 }
-                if ("clientOrderId" in data && data.clientOrderId != undefined) {
-                    this.clientOrderId = data.clientOrderId;
+                if ("client_order_id" in data && data.client_order_id != undefined) {
+                    this.client_order_id = data.client_order_id;
                 }
-                if ("exchangeOrderId" in data && data.exchangeOrderId != undefined) {
-                    this.exchangeOrderId = data.exchangeOrderId;
+                if ("exchange_order_id" in data && data.exchange_order_id != undefined) {
+                    this.exchange_order_id = data.exchange_order_id;
                 }
-                if ("fillPrice" in data && data.fillPrice != undefined) {
-                    this.fillPrice = data.fillPrice;
+                if ("fill_price" in data && data.fill_price != undefined) {
+                    this.fill_price = data.fill_price;
                 }
-                if ("fillQuantity" in data && data.fillQuantity != undefined) {
-                    this.fillQuantity = data.fillQuantity;
+                if ("fill_quantity" in data && data.fill_quantity != undefined) {
+                    this.fill_quantity = data.fill_quantity;
                 }
-                if ("leavesQuantity" in data && data.leavesQuantity != undefined) {
-                    this.leavesQuantity = data.leavesQuantity;
+                if ("leaves_quantity" in data && data.leaves_quantity != undefined) {
+                    this.leaves_quantity = data.leaves_quantity;
                 }
-                if ("transactTime" in data && data.transactTime != undefined) {
-                    this.transactTime = data.transactTime;
+                if ("transact_time" in data && data.transact_time != undefined) {
+                    this.transact_time = data.transact_time;
                 }
-                if ("subaccountId" in data && data.subaccountId != undefined) {
-                    this.subaccountId = data.subaccountId;
+                if ("subaccount_id" in data && data.subaccount_id != undefined) {
+                    this.subaccount_id = data.subaccount_id;
+                }
+                if ("cumulative_quantity" in data && data.cumulative_quantity != undefined) {
+                    this.cumulative_quantity = data.cumulative_quantity;
                 }
             }
         }
-        get msgSeqNum() {
+        get msg_seq_num() {
             return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
         }
-        set msgSeqNum(value: number) {
+        set msg_seq_num(value: number) {
             pb_1.Message.setField(this, 1, value);
         }
-        get marketId() {
+        get market_id() {
             return pb_1.Message.getFieldWithDefault(this, 2, 0) as number;
         }
-        set marketId(value: number) {
+        set market_id(value: number) {
             pb_1.Message.setField(this, 2, value);
         }
-        get clientOrderId() {
+        get client_order_id() {
             return pb_1.Message.getFieldWithDefault(this, 3, 0) as number;
         }
-        set clientOrderId(value: number) {
+        set client_order_id(value: number) {
             pb_1.Message.setField(this, 3, value);
         }
-        get exchangeOrderId() {
+        get exchange_order_id() {
             return pb_1.Message.getFieldWithDefault(this, 4, 0) as number;
         }
-        set exchangeOrderId(value: number) {
+        set exchange_order_id(value: number) {
             pb_1.Message.setField(this, 4, value);
         }
-        get fillPrice() {
+        get fill_price() {
             return pb_1.Message.getFieldWithDefault(this, 5, 0) as number;
         }
-        set fillPrice(value: number) {
+        set fill_price(value: number) {
             pb_1.Message.setField(this, 5, value);
         }
-        get fillQuantity() {
+        get fill_quantity() {
             return pb_1.Message.getFieldWithDefault(this, 6, 0) as number;
         }
-        set fillQuantity(value: number) {
+        set fill_quantity(value: number) {
             pb_1.Message.setField(this, 6, value);
         }
-        get leavesQuantity() {
+        get leaves_quantity() {
             return pb_1.Message.getFieldWithDefault(this, 7, 0) as number;
         }
-        set leavesQuantity(value: number) {
+        set leaves_quantity(value: number) {
             pb_1.Message.setField(this, 7, value);
         }
-        get transactTime() {
+        get transact_time() {
             return pb_1.Message.getFieldWithDefault(this, 8, 0) as number;
         }
-        set transactTime(value: number) {
+        set transact_time(value: number) {
             pb_1.Message.setField(this, 8, value);
         }
-        get subaccountId() {
+        get subaccount_id() {
             return pb_1.Message.getFieldWithDefault(this, 9, 0) as number;
         }
-        set subaccountId(value: number) {
+        set subaccount_id(value: number) {
             pb_1.Message.setField(this, 9, value);
         }
+        get cumulative_quantity() {
+            return pb_1.Message.getFieldWithDefault(this, 10, 0) as number;
+        }
+        set cumulative_quantity(value: number) {
+            pb_1.Message.setField(this, 10, value);
+        }
         static fromObject(data: {
-            msgSeqNum?: number;
-            marketId?: number;
-            clientOrderId?: number;
-            exchangeOrderId?: number;
-            fillPrice?: number;
-            fillQuantity?: number;
-            leavesQuantity?: number;
-            transactTime?: number;
-            subaccountId?: number;
+            msg_seq_num?: number;
+            market_id?: number;
+            client_order_id?: number;
+            exchange_order_id?: number;
+            fill_price?: number;
+            fill_quantity?: number;
+            leaves_quantity?: number;
+            transact_time?: number;
+            subaccount_id?: number;
+            cumulative_quantity?: number;
         }): Fill {
             const message = new Fill({});
-            if (data.msgSeqNum != null) {
-                message.msgSeqNum = data.msgSeqNum;
+            if (data.msg_seq_num != null) {
+                message.msg_seq_num = data.msg_seq_num;
             }
-            if (data.marketId != null) {
-                message.marketId = data.marketId;
+            if (data.market_id != null) {
+                message.market_id = data.market_id;
             }
-            if (data.clientOrderId != null) {
-                message.clientOrderId = data.clientOrderId;
+            if (data.client_order_id != null) {
+                message.client_order_id = data.client_order_id;
             }
-            if (data.exchangeOrderId != null) {
-                message.exchangeOrderId = data.exchangeOrderId;
+            if (data.exchange_order_id != null) {
+                message.exchange_order_id = data.exchange_order_id;
             }
-            if (data.fillPrice != null) {
-                message.fillPrice = data.fillPrice;
+            if (data.fill_price != null) {
+                message.fill_price = data.fill_price;
             }
-            if (data.fillQuantity != null) {
-                message.fillQuantity = data.fillQuantity;
+            if (data.fill_quantity != null) {
+                message.fill_quantity = data.fill_quantity;
             }
-            if (data.leavesQuantity != null) {
-                message.leavesQuantity = data.leavesQuantity;
+            if (data.leaves_quantity != null) {
+                message.leaves_quantity = data.leaves_quantity;
             }
-            if (data.transactTime != null) {
-                message.transactTime = data.transactTime;
+            if (data.transact_time != null) {
+                message.transact_time = data.transact_time;
             }
-            if (data.subaccountId != null) {
-                message.subaccountId = data.subaccountId;
+            if (data.subaccount_id != null) {
+                message.subaccount_id = data.subaccount_id;
+            }
+            if (data.cumulative_quantity != null) {
+                message.cumulative_quantity = data.cumulative_quantity;
             }
             return message;
         }
         toObject() {
             const data: {
-                msgSeqNum?: number;
-                marketId?: number;
-                clientOrderId?: number;
-                exchangeOrderId?: number;
-                fillPrice?: number;
-                fillQuantity?: number;
-                leavesQuantity?: number;
-                transactTime?: number;
-                subaccountId?: number;
+                msg_seq_num?: number;
+                market_id?: number;
+                client_order_id?: number;
+                exchange_order_id?: number;
+                fill_price?: number;
+                fill_quantity?: number;
+                leaves_quantity?: number;
+                transact_time?: number;
+                subaccount_id?: number;
+                cumulative_quantity?: number;
             } = {};
-            if (this.msgSeqNum != null) {
-                data.msgSeqNum = this.msgSeqNum;
+            if (this.msg_seq_num != null) {
+                data.msg_seq_num = this.msg_seq_num;
             }
-            if (this.marketId != null) {
-                data.marketId = this.marketId;
+            if (this.market_id != null) {
+                data.market_id = this.market_id;
             }
-            if (this.clientOrderId != null) {
-                data.clientOrderId = this.clientOrderId;
+            if (this.client_order_id != null) {
+                data.client_order_id = this.client_order_id;
             }
-            if (this.exchangeOrderId != null) {
-                data.exchangeOrderId = this.exchangeOrderId;
+            if (this.exchange_order_id != null) {
+                data.exchange_order_id = this.exchange_order_id;
             }
-            if (this.fillPrice != null) {
-                data.fillPrice = this.fillPrice;
+            if (this.fill_price != null) {
+                data.fill_price = this.fill_price;
             }
-            if (this.fillQuantity != null) {
-                data.fillQuantity = this.fillQuantity;
+            if (this.fill_quantity != null) {
+                data.fill_quantity = this.fill_quantity;
             }
-            if (this.leavesQuantity != null) {
-                data.leavesQuantity = this.leavesQuantity;
+            if (this.leaves_quantity != null) {
+                data.leaves_quantity = this.leaves_quantity;
             }
-            if (this.transactTime != null) {
-                data.transactTime = this.transactTime;
+            if (this.transact_time != null) {
+                data.transact_time = this.transact_time;
             }
-            if (this.subaccountId != null) {
-                data.subaccountId = this.subaccountId;
+            if (this.subaccount_id != null) {
+                data.subaccount_id = this.subaccount_id;
+            }
+            if (this.cumulative_quantity != null) {
+                data.cumulative_quantity = this.cumulative_quantity;
             }
             return data;
         }
@@ -3674,24 +3784,26 @@ export namespace trade {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.msgSeqNum != 0)
-                writer.writeUint64(1, this.msgSeqNum);
-            if (this.marketId != 0)
-                writer.writeUint64(2, this.marketId);
-            if (this.clientOrderId != 0)
-                writer.writeUint64(3, this.clientOrderId);
-            if (this.exchangeOrderId != 0)
-                writer.writeUint64(4, this.exchangeOrderId);
-            if (this.fillPrice != 0)
-                writer.writeUint64(5, this.fillPrice);
-            if (this.fillQuantity != 0)
-                writer.writeUint64(6, this.fillQuantity);
-            if (this.leavesQuantity != 0)
-                writer.writeUint64(7, this.leavesQuantity);
-            if (this.transactTime != 0)
-                writer.writeUint64(8, this.transactTime);
-            if (this.subaccountId != 0)
-                writer.writeUint64(9, this.subaccountId);
+            if (this.msg_seq_num != 0)
+                writer.writeUint64(1, this.msg_seq_num);
+            if (this.market_id != 0)
+                writer.writeUint64(2, this.market_id);
+            if (this.client_order_id != 0)
+                writer.writeUint64(3, this.client_order_id);
+            if (this.exchange_order_id != 0)
+                writer.writeUint64(4, this.exchange_order_id);
+            if (this.fill_price != 0)
+                writer.writeUint64(5, this.fill_price);
+            if (this.fill_quantity != 0)
+                writer.writeUint64(6, this.fill_quantity);
+            if (this.leaves_quantity != 0)
+                writer.writeUint64(7, this.leaves_quantity);
+            if (this.transact_time != 0)
+                writer.writeUint64(8, this.transact_time);
+            if (this.subaccount_id != 0)
+                writer.writeUint64(9, this.subaccount_id);
+            if (this.cumulative_quantity != 0)
+                writer.writeUint64(10, this.cumulative_quantity);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -3702,31 +3814,34 @@ export namespace trade {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.msgSeqNum = reader.readUint64();
+                        message.msg_seq_num = reader.readUint64();
                         break;
                     case 2:
-                        message.marketId = reader.readUint64();
+                        message.market_id = reader.readUint64();
                         break;
                     case 3:
-                        message.clientOrderId = reader.readUint64();
+                        message.client_order_id = reader.readUint64();
                         break;
                     case 4:
-                        message.exchangeOrderId = reader.readUint64();
+                        message.exchange_order_id = reader.readUint64();
                         break;
                     case 5:
-                        message.fillPrice = reader.readUint64();
+                        message.fill_price = reader.readUint64();
                         break;
                     case 6:
-                        message.fillQuantity = reader.readUint64();
+                        message.fill_quantity = reader.readUint64();
                         break;
                     case 7:
-                        message.leavesQuantity = reader.readUint64();
+                        message.leaves_quantity = reader.readUint64();
                         break;
                     case 8:
-                        message.transactTime = reader.readUint64();
+                        message.transact_time = reader.readUint64();
                         break;
                     case 9:
-                        message.subaccountId = reader.readUint64();
+                        message.subaccount_id = reader.readUint64();
+                        break;
+                    case 10:
+                        message.cumulative_quantity = reader.readUint64();
                         break;
                     default: reader.skipField();
                 }
@@ -3743,19 +3858,19 @@ export namespace trade {
     export class AssetPosition extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            subaccountId?: number;
-            assetId?: number;
+            subaccount_id?: number;
+            asset_id?: number;
             total?: RawUnits;
             available?: RawUnits;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("subaccountId" in data && data.subaccountId != undefined) {
-                    this.subaccountId = data.subaccountId;
+                if ("subaccount_id" in data && data.subaccount_id != undefined) {
+                    this.subaccount_id = data.subaccount_id;
                 }
-                if ("assetId" in data && data.assetId != undefined) {
-                    this.assetId = data.assetId;
+                if ("asset_id" in data && data.asset_id != undefined) {
+                    this.asset_id = data.asset_id;
                 }
                 if ("total" in data && data.total != undefined) {
                     this.total = data.total;
@@ -3765,16 +3880,16 @@ export namespace trade {
                 }
             }
         }
-        get subaccountId() {
+        get subaccount_id() {
             return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
         }
-        set subaccountId(value: number) {
+        set subaccount_id(value: number) {
             pb_1.Message.setField(this, 1, value);
         }
-        get assetId() {
+        get asset_id() {
             return pb_1.Message.getFieldWithDefault(this, 2, 0) as number;
         }
-        set assetId(value: number) {
+        set asset_id(value: number) {
             pb_1.Message.setField(this, 2, value);
         }
         get total() {
@@ -3796,17 +3911,17 @@ export namespace trade {
             return pb_1.Message.getField(this, 4) != null;
         }
         static fromObject(data: {
-            subaccountId?: number;
-            assetId?: number;
+            subaccount_id?: number;
+            asset_id?: number;
             total?: ReturnType<typeof RawUnits.prototype.toObject>;
             available?: ReturnType<typeof RawUnits.prototype.toObject>;
         }): AssetPosition {
             const message = new AssetPosition({});
-            if (data.subaccountId != null) {
-                message.subaccountId = data.subaccountId;
+            if (data.subaccount_id != null) {
+                message.subaccount_id = data.subaccount_id;
             }
-            if (data.assetId != null) {
-                message.assetId = data.assetId;
+            if (data.asset_id != null) {
+                message.asset_id = data.asset_id;
             }
             if (data.total != null) {
                 message.total = RawUnits.fromObject(data.total);
@@ -3818,16 +3933,16 @@ export namespace trade {
         }
         toObject() {
             const data: {
-                subaccountId?: number;
-                assetId?: number;
+                subaccount_id?: number;
+                asset_id?: number;
                 total?: ReturnType<typeof RawUnits.prototype.toObject>;
                 available?: ReturnType<typeof RawUnits.prototype.toObject>;
             } = {};
-            if (this.subaccountId != null) {
-                data.subaccountId = this.subaccountId;
+            if (this.subaccount_id != null) {
+                data.subaccount_id = this.subaccount_id;
             }
-            if (this.assetId != null) {
-                data.assetId = this.assetId;
+            if (this.asset_id != null) {
+                data.asset_id = this.asset_id;
             }
             if (this.total != null) {
                 data.total = this.total.toObject();
@@ -3841,10 +3956,10 @@ export namespace trade {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.subaccountId != 0)
-                writer.writeUint64(1, this.subaccountId);
-            if (this.assetId != 0)
-                writer.writeUint64(2, this.assetId);
+            if (this.subaccount_id != 0)
+                writer.writeUint64(1, this.subaccount_id);
+            if (this.asset_id != 0)
+                writer.writeUint64(2, this.asset_id);
             if (this.has_total)
                 writer.writeMessage(3, this.total, () => this.total.serialize(writer));
             if (this.has_available)
@@ -3859,10 +3974,10 @@ export namespace trade {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.subaccountId = reader.readUint64();
+                        message.subaccount_id = reader.readUint64();
                         break;
                     case 2:
-                        message.assetId = reader.readUint64();
+                        message.asset_id = reader.readUint64();
                         break;
                     case 3:
                         reader.readMessage(message.total, () => message.total = RawUnits.deserialize(reader));
@@ -4296,37 +4411,37 @@ export namespace trade {
     export class Done extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            latestTransactTime?: number;
+            latest_transact_time?: number;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("latestTransactTime" in data && data.latestTransactTime != undefined) {
-                    this.latestTransactTime = data.latestTransactTime;
+                if ("latest_transact_time" in data && data.latest_transact_time != undefined) {
+                    this.latest_transact_time = data.latest_transact_time;
                 }
             }
         }
-        get latestTransactTime() {
+        get latest_transact_time() {
             return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
         }
-        set latestTransactTime(value: number) {
+        set latest_transact_time(value: number) {
             pb_1.Message.setField(this, 1, value);
         }
         static fromObject(data: {
-            latestTransactTime?: number;
+            latest_transact_time?: number;
         }): Done {
             const message = new Done({});
-            if (data.latestTransactTime != null) {
-                message.latestTransactTime = data.latestTransactTime;
+            if (data.latest_transact_time != null) {
+                message.latest_transact_time = data.latest_transact_time;
             }
             return message;
         }
         toObject() {
             const data: {
-                latestTransactTime?: number;
+                latest_transact_time?: number;
             } = {};
-            if (this.latestTransactTime != null) {
-                data.latestTransactTime = this.latestTransactTime;
+            if (this.latest_transact_time != null) {
+                data.latest_transact_time = this.latest_transact_time;
             }
             return data;
         }
@@ -4334,8 +4449,8 @@ export namespace trade {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.latestTransactTime != 0)
-                writer.writeUint64(1, this.latestTransactTime);
+            if (this.latest_transact_time != 0)
+                writer.writeUint64(1, this.latest_transact_time);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -4346,7 +4461,7 @@ export namespace trade {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.latestTransactTime = reader.readUint64();
+                        message.latest_transact_time = reader.readUint64();
                         break;
                     default: reader.skipField();
                 }
@@ -4363,72 +4478,76 @@ export namespace trade {
     export class RestingOrder extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            clientOrderId?: number;
-            exchangeOrderId?: number;
-            marketId?: number;
+            client_order_id?: number;
+            exchange_order_id?: number;
+            market_id?: number;
             price?: number;
-            originalQuantity?: number;
+            order_quantity?: number;
             side?: Side;
-            timeInForce?: TimeInForce;
-            orderType?: OrderType;
-            remainingQuantity?: number;
-            restTime?: number;
-            subaccountId?: number;
+            time_in_force?: TimeInForce;
+            order_type?: OrderType;
+            remaining_quantity?: number;
+            rest_time?: number;
+            subaccount_id?: number;
+            cumulative_quantity?: number;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("clientOrderId" in data && data.clientOrderId != undefined) {
-                    this.clientOrderId = data.clientOrderId;
+                if ("client_order_id" in data && data.client_order_id != undefined) {
+                    this.client_order_id = data.client_order_id;
                 }
-                if ("exchangeOrderId" in data && data.exchangeOrderId != undefined) {
-                    this.exchangeOrderId = data.exchangeOrderId;
+                if ("exchange_order_id" in data && data.exchange_order_id != undefined) {
+                    this.exchange_order_id = data.exchange_order_id;
                 }
-                if ("marketId" in data && data.marketId != undefined) {
-                    this.marketId = data.marketId;
+                if ("market_id" in data && data.market_id != undefined) {
+                    this.market_id = data.market_id;
                 }
                 if ("price" in data && data.price != undefined) {
                     this.price = data.price;
                 }
-                if ("originalQuantity" in data && data.originalQuantity != undefined) {
-                    this.originalQuantity = data.originalQuantity;
+                if ("order_quantity" in data && data.order_quantity != undefined) {
+                    this.order_quantity = data.order_quantity;
                 }
                 if ("side" in data && data.side != undefined) {
                     this.side = data.side;
                 }
-                if ("timeInForce" in data && data.timeInForce != undefined) {
-                    this.timeInForce = data.timeInForce;
+                if ("time_in_force" in data && data.time_in_force != undefined) {
+                    this.time_in_force = data.time_in_force;
                 }
-                if ("orderType" in data && data.orderType != undefined) {
-                    this.orderType = data.orderType;
+                if ("order_type" in data && data.order_type != undefined) {
+                    this.order_type = data.order_type;
                 }
-                if ("remainingQuantity" in data && data.remainingQuantity != undefined) {
-                    this.remainingQuantity = data.remainingQuantity;
+                if ("remaining_quantity" in data && data.remaining_quantity != undefined) {
+                    this.remaining_quantity = data.remaining_quantity;
                 }
-                if ("restTime" in data && data.restTime != undefined) {
-                    this.restTime = data.restTime;
+                if ("rest_time" in data && data.rest_time != undefined) {
+                    this.rest_time = data.rest_time;
                 }
-                if ("subaccountId" in data && data.subaccountId != undefined) {
-                    this.subaccountId = data.subaccountId;
+                if ("subaccount_id" in data && data.subaccount_id != undefined) {
+                    this.subaccount_id = data.subaccount_id;
+                }
+                if ("cumulative_quantity" in data && data.cumulative_quantity != undefined) {
+                    this.cumulative_quantity = data.cumulative_quantity;
                 }
             }
         }
-        get clientOrderId() {
+        get client_order_id() {
             return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
         }
-        set clientOrderId(value: number) {
+        set client_order_id(value: number) {
             pb_1.Message.setField(this, 1, value);
         }
-        get exchangeOrderId() {
+        get exchange_order_id() {
             return pb_1.Message.getFieldWithDefault(this, 2, 0) as number;
         }
-        set exchangeOrderId(value: number) {
+        set exchange_order_id(value: number) {
             pb_1.Message.setField(this, 2, value);
         }
-        get marketId() {
+        get market_id() {
             return pb_1.Message.getFieldWithDefault(this, 3, 0) as number;
         }
-        set marketId(value: number) {
+        set market_id(value: number) {
             pb_1.Message.setField(this, 3, value);
         }
         get price() {
@@ -4437,10 +4556,10 @@ export namespace trade {
         set price(value: number) {
             pb_1.Message.setField(this, 4, value);
         }
-        get originalQuantity() {
+        get order_quantity() {
             return pb_1.Message.getFieldWithDefault(this, 5, 0) as number;
         }
-        set originalQuantity(value: number) {
+        set order_quantity(value: number) {
             pb_1.Message.setField(this, 5, value);
         }
         get side() {
@@ -4449,131 +4568,145 @@ export namespace trade {
         set side(value: Side) {
             pb_1.Message.setField(this, 6, value);
         }
-        get timeInForce() {
+        get time_in_force() {
             return pb_1.Message.getFieldWithDefault(this, 7, TimeInForce.IMMEDIATE_OR_CANCEL) as TimeInForce;
         }
-        set timeInForce(value: TimeInForce) {
+        set time_in_force(value: TimeInForce) {
             pb_1.Message.setField(this, 7, value);
         }
-        get orderType() {
+        get order_type() {
             return pb_1.Message.getFieldWithDefault(this, 8, OrderType.LIMIT) as OrderType;
         }
-        set orderType(value: OrderType) {
+        set order_type(value: OrderType) {
             pb_1.Message.setField(this, 8, value);
         }
-        get remainingQuantity() {
+        get remaining_quantity() {
             return pb_1.Message.getFieldWithDefault(this, 9, 0) as number;
         }
-        set remainingQuantity(value: number) {
+        set remaining_quantity(value: number) {
             pb_1.Message.setField(this, 9, value);
         }
-        get restTime() {
+        get rest_time() {
             return pb_1.Message.getFieldWithDefault(this, 10, 0) as number;
         }
-        set restTime(value: number) {
+        set rest_time(value: number) {
             pb_1.Message.setField(this, 10, value);
         }
-        get subaccountId() {
+        get subaccount_id() {
             return pb_1.Message.getFieldWithDefault(this, 11, 0) as number;
         }
-        set subaccountId(value: number) {
+        set subaccount_id(value: number) {
             pb_1.Message.setField(this, 11, value);
         }
+        get cumulative_quantity() {
+            return pb_1.Message.getFieldWithDefault(this, 12, 0) as number;
+        }
+        set cumulative_quantity(value: number) {
+            pb_1.Message.setField(this, 12, value);
+        }
         static fromObject(data: {
-            clientOrderId?: number;
-            exchangeOrderId?: number;
-            marketId?: number;
+            client_order_id?: number;
+            exchange_order_id?: number;
+            market_id?: number;
             price?: number;
-            originalQuantity?: number;
+            order_quantity?: number;
             side?: Side;
-            timeInForce?: TimeInForce;
-            orderType?: OrderType;
-            remainingQuantity?: number;
-            restTime?: number;
-            subaccountId?: number;
+            time_in_force?: TimeInForce;
+            order_type?: OrderType;
+            remaining_quantity?: number;
+            rest_time?: number;
+            subaccount_id?: number;
+            cumulative_quantity?: number;
         }): RestingOrder {
             const message = new RestingOrder({});
-            if (data.clientOrderId != null) {
-                message.clientOrderId = data.clientOrderId;
+            if (data.client_order_id != null) {
+                message.client_order_id = data.client_order_id;
             }
-            if (data.exchangeOrderId != null) {
-                message.exchangeOrderId = data.exchangeOrderId;
+            if (data.exchange_order_id != null) {
+                message.exchange_order_id = data.exchange_order_id;
             }
-            if (data.marketId != null) {
-                message.marketId = data.marketId;
+            if (data.market_id != null) {
+                message.market_id = data.market_id;
             }
             if (data.price != null) {
                 message.price = data.price;
             }
-            if (data.originalQuantity != null) {
-                message.originalQuantity = data.originalQuantity;
+            if (data.order_quantity != null) {
+                message.order_quantity = data.order_quantity;
             }
             if (data.side != null) {
                 message.side = data.side;
             }
-            if (data.timeInForce != null) {
-                message.timeInForce = data.timeInForce;
+            if (data.time_in_force != null) {
+                message.time_in_force = data.time_in_force;
             }
-            if (data.orderType != null) {
-                message.orderType = data.orderType;
+            if (data.order_type != null) {
+                message.order_type = data.order_type;
             }
-            if (data.remainingQuantity != null) {
-                message.remainingQuantity = data.remainingQuantity;
+            if (data.remaining_quantity != null) {
+                message.remaining_quantity = data.remaining_quantity;
             }
-            if (data.restTime != null) {
-                message.restTime = data.restTime;
+            if (data.rest_time != null) {
+                message.rest_time = data.rest_time;
             }
-            if (data.subaccountId != null) {
-                message.subaccountId = data.subaccountId;
+            if (data.subaccount_id != null) {
+                message.subaccount_id = data.subaccount_id;
+            }
+            if (data.cumulative_quantity != null) {
+                message.cumulative_quantity = data.cumulative_quantity;
             }
             return message;
         }
         toObject() {
             const data: {
-                clientOrderId?: number;
-                exchangeOrderId?: number;
-                marketId?: number;
+                client_order_id?: number;
+                exchange_order_id?: number;
+                market_id?: number;
                 price?: number;
-                originalQuantity?: number;
+                order_quantity?: number;
                 side?: Side;
-                timeInForce?: TimeInForce;
-                orderType?: OrderType;
-                remainingQuantity?: number;
-                restTime?: number;
-                subaccountId?: number;
+                time_in_force?: TimeInForce;
+                order_type?: OrderType;
+                remaining_quantity?: number;
+                rest_time?: number;
+                subaccount_id?: number;
+                cumulative_quantity?: number;
             } = {};
-            if (this.clientOrderId != null) {
-                data.clientOrderId = this.clientOrderId;
+            if (this.client_order_id != null) {
+                data.client_order_id = this.client_order_id;
             }
-            if (this.exchangeOrderId != null) {
-                data.exchangeOrderId = this.exchangeOrderId;
+            if (this.exchange_order_id != null) {
+                data.exchange_order_id = this.exchange_order_id;
             }
-            if (this.marketId != null) {
-                data.marketId = this.marketId;
+            if (this.market_id != null) {
+                data.market_id = this.market_id;
             }
             if (this.price != null) {
                 data.price = this.price;
             }
-            if (this.originalQuantity != null) {
-                data.originalQuantity = this.originalQuantity;
+            if (this.order_quantity != null) {
+                data.order_quantity = this.order_quantity;
             }
             if (this.side != null) {
                 data.side = this.side;
             }
-            if (this.timeInForce != null) {
-                data.timeInForce = this.timeInForce;
+            if (this.time_in_force != null) {
+                data.time_in_force = this.time_in_force;
             }
-            if (this.orderType != null) {
-                data.orderType = this.orderType;
+            if (this.order_type != null) {
+                data.order_type = this.order_type;
             }
-            if (this.remainingQuantity != null) {
-                data.remainingQuantity = this.remainingQuantity;
+            if (this.remaining_quantity != null) {
+                data.remaining_quantity = this.remaining_quantity;
             }
-            if (this.restTime != null) {
-                data.restTime = this.restTime;
+            if (this.rest_time != null) {
+                data.rest_time = this.rest_time;
             }
-            if (this.subaccountId != null) {
-                data.subaccountId = this.subaccountId;
+            if (this.subaccount_id != null) {
+                data.subaccount_id = this.subaccount_id;
+            }
+            if (this.cumulative_quantity != null) {
+                data.cumulative_quantity = this.cumulative_quantity;
             }
             return data;
         }
@@ -4581,28 +4714,30 @@ export namespace trade {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.clientOrderId != 0)
-                writer.writeUint64(1, this.clientOrderId);
-            if (this.exchangeOrderId != 0)
-                writer.writeUint64(2, this.exchangeOrderId);
-            if (this.marketId != 0)
-                writer.writeUint64(3, this.marketId);
+            if (this.client_order_id != 0)
+                writer.writeUint64(1, this.client_order_id);
+            if (this.exchange_order_id != 0)
+                writer.writeUint64(2, this.exchange_order_id);
+            if (this.market_id != 0)
+                writer.writeUint64(3, this.market_id);
             if (this.price != 0)
                 writer.writeUint64(4, this.price);
-            if (this.originalQuantity != 0)
-                writer.writeUint64(5, this.originalQuantity);
+            if (this.order_quantity != 0)
+                writer.writeUint64(5, this.order_quantity);
             if (this.side != Side.BID)
                 writer.writeEnum(6, this.side);
-            if (this.timeInForce != TimeInForce.IMMEDIATE_OR_CANCEL)
-                writer.writeEnum(7, this.timeInForce);
-            if (this.orderType != OrderType.LIMIT)
-                writer.writeEnum(8, this.orderType);
-            if (this.remainingQuantity != 0)
-                writer.writeUint64(9, this.remainingQuantity);
-            if (this.restTime != 0)
-                writer.writeUint64(10, this.restTime);
-            if (this.subaccountId != 0)
-                writer.writeUint64(11, this.subaccountId);
+            if (this.time_in_force != TimeInForce.IMMEDIATE_OR_CANCEL)
+                writer.writeEnum(7, this.time_in_force);
+            if (this.order_type != OrderType.LIMIT)
+                writer.writeEnum(8, this.order_type);
+            if (this.remaining_quantity != 0)
+                writer.writeUint64(9, this.remaining_quantity);
+            if (this.rest_time != 0)
+                writer.writeUint64(10, this.rest_time);
+            if (this.subaccount_id != 0)
+                writer.writeUint64(11, this.subaccount_id);
+            if (this.cumulative_quantity != 0)
+                writer.writeUint64(12, this.cumulative_quantity);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -4613,37 +4748,40 @@ export namespace trade {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.clientOrderId = reader.readUint64();
+                        message.client_order_id = reader.readUint64();
                         break;
                     case 2:
-                        message.exchangeOrderId = reader.readUint64();
+                        message.exchange_order_id = reader.readUint64();
                         break;
                     case 3:
-                        message.marketId = reader.readUint64();
+                        message.market_id = reader.readUint64();
                         break;
                     case 4:
                         message.price = reader.readUint64();
                         break;
                     case 5:
-                        message.originalQuantity = reader.readUint64();
+                        message.order_quantity = reader.readUint64();
                         break;
                     case 6:
                         message.side = reader.readEnum();
                         break;
                     case 7:
-                        message.timeInForce = reader.readEnum();
+                        message.time_in_force = reader.readEnum();
                         break;
                     case 8:
-                        message.orderType = reader.readEnum();
+                        message.order_type = reader.readEnum();
                         break;
                     case 9:
-                        message.remainingQuantity = reader.readUint64();
+                        message.remaining_quantity = reader.readUint64();
                         break;
                     case 10:
-                        message.restTime = reader.readUint64();
+                        message.rest_time = reader.readUint64();
                         break;
                     case 11:
-                        message.subaccountId = reader.readUint64();
+                        message.subaccount_id = reader.readUint64();
+                        break;
+                    case 12:
+                        message.cumulative_quantity = reader.readUint64();
                         break;
                     default: reader.skipField();
                 }
