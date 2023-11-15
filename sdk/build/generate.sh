@@ -8,6 +8,11 @@
 # it relies upon a dependency container, which is generated using:
 # $ docker build -f deps.Dockerfile . -t cube-protoc-dependencies:latest
 
+# pull newest protos
+cd protos/
+git pull
+cd ../
+
 # build container and generate sdks on build
 docker build --file build.Dockerfile . --tag proto-build:latest
 

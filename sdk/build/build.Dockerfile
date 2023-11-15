@@ -1,6 +1,6 @@
 FROM cube-protoc-dependencies:v0.1
 
-COPY protos/ /home/proto/
+COPY protos/schema/ /home/proto/
 RUN mkdir python/ cpp/ java/ javascript/ typescript/ go/ csharp/
 
 RUN /home/proto/.local/bin/protoc --python_out=/home/proto/python/ *.proto

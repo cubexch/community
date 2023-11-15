@@ -31,7 +31,6 @@ RUN . "$NVM_DIR/nvm.sh" && nvm alias default v${NODE_VERSION}
 ENV PATH="/home/proto/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
 RUN npm install -g typescript google-protobuf protoc-gen-ts
 
-
 # set up golang for user & install golang protoc package
 RUN tar -C $HOME/.local -xzf $HOME/go1.21.0.linux-amd64.tar.gz
 ENV GOROOT="/home/proto/.local/go"

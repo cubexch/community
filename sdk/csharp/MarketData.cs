@@ -24,77 +24,85 @@ namespace Cube.MarketData {
     static MarketDataReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChFtYXJrZXRfZGF0YS5wcm90bxICbWQiugIKCU1kTWVzc2FnZRIiCgloZWFy",
-            "dGJlYXQYASABKAsyDS5tZC5IZWFydGJlYXRIABIeCgdzdW1tYXJ5GAIgASgL",
-            "MgsubWQuU3VtbWFyeUgAEhwKBnRyYWRlcxgDIAEoCzIKLm1kLlRyYWRlc0gA",
-            "EigKC21ib1NuYXBzaG90GAQgASgLMhEubWQuTWFya2V0QnlPcmRlckgAEigK",
-            "B21ib0RpZmYYBSABKAsyFS5tZC5NYXJrZXRCeU9yZGVyRGlmZkgAEigKC21i",
-            "cFNuYXBzaG90GAYgASgLMhEubWQuTWFya2V0QnlQcmljZUgAEigKB21icERp",
-            "ZmYYByABKAsyFS5tZC5NYXJrZXRCeVByaWNlRGlmZkgAEhoKBWtsaW5lGAgg",
-            "ASgLMgkubWQuS2xpbmVIAEIHCgVpbm5lciKcAQoNTWFya2V0QnlQcmljZRIn",
-            "CgZsZXZlbHMYASADKAsyFy5tZC5NYXJrZXRCeVByaWNlLkxldmVsEg0KBWNo",
-            "dW5rGAIgASgNEhEKCW51bUNodW5rcxgDIAEoDRpACgVMZXZlbBINCgVwcmlj",
-            "ZRgBIAEoBBIQCghxdWFudGl0eRgCIAEoBBIWCgRzaWRlGAMgASgOMggubWQu",
-            "U2lkZSKFAgoRTWFya2V0QnlQcmljZURpZmYSKQoFZGlmZnMYASADKAsyGi5t",
-            "ZC5NYXJrZXRCeVByaWNlRGlmZi5EaWZmEhYKDnRvdGFsQmlkTGV2ZWxzGAIg",
-            "ASgNEhYKDnRvdGFsQXNrTGV2ZWxzGAMgASgNGmkKBERpZmYSDQoFcHJpY2UY",
-            "ASABKAQSEAoIcXVhbnRpdHkYAiABKAQSFgoEc2lkZRgDIAEoDjIILm1kLlNp",
-            "ZGUSKAoCb3AYBCABKA4yHC5tZC5NYXJrZXRCeVByaWNlRGlmZi5EaWZmT3Ai",
-            "KgoGRGlmZk9wEgcKA0FERBAAEgoKBlJFTU9WRRABEgsKB1JFUExBQ0UQAiK1",
-            "AQoNTWFya2V0QnlPcmRlchInCgZvcmRlcnMYASADKAsyFy5tZC5NYXJrZXRC",
-            "eU9yZGVyLk9yZGVyEg0KBWNodW5rGAIgASgNEhEKCW51bUNodW5rcxgDIAEo",
-            "DRpZCgVPcmRlchINCgVwcmljZRgBIAEoBBIQCghxdWFudGl0eRgCIAEoBBIX",
-            "Cg9leGNoYW5nZU9yZGVySWQYAyABKAQSFgoEc2lkZRgEIAEoDjIILm1kLlNp",
-            "ZGUizwIKEU1hcmtldEJ5T3JkZXJEaWZmEikKBWRpZmZzGAEgAygLMhoubWQu",
-            "TWFya2V0QnlPcmRlckRpZmYuRGlmZhIWCg50b3RhbEJpZExldmVscxgCIAEo",
-            "DRIWCg50b3RhbEFza0xldmVscxgDIAEoDRIWCg50b3RhbEJpZE9yZGVycxgE",
-            "IAEoDRIWCg50b3RhbEFza09yZGVycxgFIAEoDRqCAQoERGlmZhINCgVwcmlj",
-            "ZRgBIAEoBBIQCghxdWFudGl0eRgCIAEoBBIXCg9leGNoYW5nZU9yZGVySWQY",
-            "AyABKAQSFgoEc2lkZRgEIAEoDjIILm1kLlNpZGUSKAoCb3AYBSABKA4yHC5t",
-            "ZC5NYXJrZXRCeU9yZGVyRGlmZi5EaWZmT3AiKgoGRGlmZk9wEgcKA0FERBAA",
-            "EgoKBlJFTU9WRRABEgsKB1JFUExBQ0UQAiLlAQoGVHJhZGVzEiAKBnRyYWRl",
-            "cxgBIAMoCzIQLm1kLlRyYWRlcy5UcmFkZRq4AQoFVHJhZGUSDwoHdHJhZGVJ",
-            "ZBgBIAEoBBINCgVwcmljZRgCIAEoBBIgCg5hZ2dyZXNzaW5nU2lkZRgDIAEo",
-            "DjIILm1kLlNpZGUSHgoWcmVzdGluZ0V4Y2hhbmdlT3JkZXJJZBgEIAEoBBIU",
-            "CgxmaWxsUXVhbnRpdHkYBSABKAQSFAoMdHJhbnNhY3RUaW1lGAYgASgEEiEK",
-            "GWFnZ3Jlc3NpbmdFeGNoYW5nZU9yZGVySWQYByABKAQimwEKB1N1bW1hcnkS",
-            "DAoEb3BlbhgBIAEoBBINCgVjbG9zZRgCIAEoBBILCgNsb3cYAyABKAQSDAoE",
-            "aGlnaBgEIAEoBBIUCgxiYXNlVm9sdW1lTG8YBSABKAQSFAoMYmFzZVZvbHVt",
-            "ZUhpGAYgASgEEhUKDXF1b3RlVm9sdW1lTG8YByABKAQSFQoNcXVvdGVWb2x1",
-            "bWVIaRgIIAEoBCKbAQoFS2xpbmUSIwoIaW50ZXJ2YWwYASABKA4yES5tZC5L",
-            "bGluZUludGVydmFsEhEKCXN0YXJ0VGltZRgCIAEoBBIMCgRvcGVuGAMgASgE",
-            "Eg0KBWNsb3NlGAQgASgEEgwKBGhpZ2gYBSABKAQSCwoDbG93GAYgASgEEhAK",
-            "CHZvbHVtZUxvGAcgASgEEhAKCHZvbHVtZUhpGAggASgEIjEKCUhlYXJ0YmVh",
-            "dBIRCglyZXF1ZXN0SWQYASABKAQSEQoJdGltZXN0YW1wGAIgASgEIi0KCk1k",
-            "TWVzc2FnZXMSHwoIbWVzc2FnZXMYASADKAsyDS5tZC5NZE1lc3NhZ2UihwEK",
-            "CkFnZ01lc3NhZ2USIgoJaGVhcnRiZWF0GAEgASgLMg0ubWQuSGVhcnRiZWF0",
-            "SAASJAoKdG9wT2ZCb29rcxgCIAEoCzIOLm1kLlRvcE9mQm9va3NIABImCgty",
-            "YXRlVXBkYXRlcxgDIAEoCzIPLm1kLlJhdGVVcGRhdGVzSABCBwoFaW5uZXIi",
-            "rQEKCVRvcE9mQm9vaxIQCghtYXJrZXRJZBgBIAEoBBIUCgx0cmFuc2FjdFRp",
-            "bWUYAiABKAQSEAoIYmlkUHJpY2UYAyABKAQSEwoLYmlkUXVhbnRpdHkYBCAB",
-            "KAQSEAoIYXNrUHJpY2UYBSABKAQSEwoLYXNrUXVhbnRpdHkYBiABKAQSEQoJ",
-            "bGFzdFByaWNlGAcgASgEEhcKD3JvbGxpbmcyNGhQcmljZRgIIAEoBCIpCgpU",
-            "b3BPZkJvb2tzEhsKBHRvcHMYASADKAsyDS5tZC5Ub3BPZkJvb2siYAoKUmF0",
-            "ZVVwZGF0ZRIPCgdhc3NldElkGAEgASgEEhEKCXRpbWVzdGFtcBgCIAEoBBIM",
-            "CgRyYXRlGAMgASgEEiAKBHNpZGUYBCABKA4yEi5tZC5SYXRlVXBkYXRlU2lk",
-            "ZSIuCgtSYXRlVXBkYXRlcxIfCgd1cGRhdGVzGAEgAygLMg4ubWQuUmF0ZVVw",
-            "ZGF0ZSJaCg1DbGllbnRNZXNzYWdlEiIKCWhlYXJ0YmVhdBgBIAEoCzINLm1k",
-            "LkhlYXJ0YmVhdEgAEhwKBmNvbmZpZxgCIAEoCzIKLm1kLkNvbmZpZ0gAQgcK",
-            "BWlubmVyImYKBkNvbmZpZxILCgNtYnAYASABKAgSCwoDbWJvGAIgASgIEg4K",
-            "BnRyYWRlcxgDIAEoCBIPCgdzdW1tYXJ5GAQgASgIEiEKBmtsaW5lcxgFIAMo",
-            "DjIRLm1kLktsaW5lSW50ZXJ2YWwqGAoEU2lkZRIHCgNCSUQQABIHCgNBU0sQ",
-            "ASpACg1LbGluZUludGVydmFsEgYKAlMxEAASBgoCTTEQARIHCgNNMTUQAhIG",
-            "CgJIMRADEgYKAkg0EAQSBgoCRDEQBSolCg5SYXRlVXBkYXRlU2lkZRIICgRC",
-            "QVNFEAASCQoFUVVPVEUQAUIXWgNnby+qAg9DdWJlLk1hcmtldERhdGFiBnBy",
-            "b3RvMw=="));
+            "ChFtYXJrZXRfZGF0YS5wcm90bxILbWFya2V0X2RhdGEihgMKCU1kTWVzc2Fn",
+            "ZRIrCgloZWFydGJlYXQYASABKAsyFi5tYXJrZXRfZGF0YS5IZWFydGJlYXRI",
+            "ABInCgdzdW1tYXJ5GAIgASgLMhQubWFya2V0X2RhdGEuU3VtbWFyeUgAEiUK",
+            "BnRyYWRlcxgDIAEoCzITLm1hcmtldF9kYXRhLlRyYWRlc0gAEjIKDG1ib19z",
+            "bmFwc2hvdBgEIAEoCzIaLm1hcmtldF9kYXRhLk1hcmtldEJ5T3JkZXJIABIy",
+            "CghtYm9fZGlmZhgFIAEoCzIeLm1hcmtldF9kYXRhLk1hcmtldEJ5T3JkZXJE",
+            "aWZmSAASMgoMbWJwX3NuYXBzaG90GAYgASgLMhoubWFya2V0X2RhdGEuTWFy",
+            "a2V0QnlQcmljZUgAEjIKCG1icF9kaWZmGAcgASgLMh4ubWFya2V0X2RhdGEu",
+            "TWFya2V0QnlQcmljZURpZmZIABIjCgVrbGluZRgIIAEoCzISLm1hcmtldF9k",
+            "YXRhLktsaW5lSABCBwoFaW5uZXIirwEKDU1hcmtldEJ5UHJpY2USMAoGbGV2",
+            "ZWxzGAEgAygLMiAubWFya2V0X2RhdGEuTWFya2V0QnlQcmljZS5MZXZlbBIN",
+            "CgVjaHVuaxgCIAEoDRISCgpudW1fY2h1bmtzGAMgASgNGkkKBUxldmVsEg0K",
+            "BXByaWNlGAEgASgEEhAKCHF1YW50aXR5GAIgASgEEh8KBHNpZGUYAyABKA4y",
+            "ES5tYXJrZXRfZGF0YS5TaWRlIqQCChFNYXJrZXRCeVByaWNlRGlmZhIyCgVk",
+            "aWZmcxgBIAMoCzIjLm1hcmtldF9kYXRhLk1hcmtldEJ5UHJpY2VEaWZmLkRp",
+            "ZmYSGAoQdG90YWxfYmlkX2xldmVscxgCIAEoDRIYChB0b3RhbF9hc2tfbGV2",
+            "ZWxzGAMgASgNGnsKBERpZmYSDQoFcHJpY2UYASABKAQSEAoIcXVhbnRpdHkY",
+            "AiABKAQSHwoEc2lkZRgDIAEoDjIRLm1hcmtldF9kYXRhLlNpZGUSMQoCb3AY",
+            "BCABKA4yJS5tYXJrZXRfZGF0YS5NYXJrZXRCeVByaWNlRGlmZi5EaWZmT3Ai",
+            "KgoGRGlmZk9wEgcKA0FERBAAEgoKBlJFTU9WRRABEgsKB1JFUExBQ0UQAiLc",
+            "AQoNTWFya2V0QnlPcmRlchIwCgZvcmRlcnMYASADKAsyIC5tYXJrZXRfZGF0",
+            "YS5NYXJrZXRCeU9yZGVyLk9yZGVyEg0KBWNodW5rGAIgASgNEhIKCm51bV9j",
+            "aHVua3MYAyABKA0adgoFT3JkZXISDQoFcHJpY2UYASABKAQSEAoIcXVhbnRp",
+            "dHkYAiABKAQSGQoRZXhjaGFuZ2Vfb3JkZXJfaWQYAyABKAQSHwoEc2lkZRgE",
+            "IAEoDjIRLm1hcmtldF9kYXRhLlNpZGUSEAoIcHJpb3JpdHkYBSABKAQihgMK",
+            "EU1hcmtldEJ5T3JkZXJEaWZmEjIKBWRpZmZzGAEgAygLMiMubWFya2V0X2Rh",
+            "dGEuTWFya2V0QnlPcmRlckRpZmYuRGlmZhIYChB0b3RhbF9iaWRfbGV2ZWxz",
+            "GAIgASgNEhgKEHRvdGFsX2Fza19sZXZlbHMYAyABKA0SGAoQdG90YWxfYmlk",
+            "X29yZGVycxgEIAEoDRIYChB0b3RhbF9hc2tfb3JkZXJzGAUgASgNGqgBCgRE",
+            "aWZmEg0KBXByaWNlGAEgASgEEhAKCHF1YW50aXR5GAIgASgEEhkKEWV4Y2hh",
+            "bmdlX29yZGVyX2lkGAMgASgEEh8KBHNpZGUYBCABKA4yES5tYXJrZXRfZGF0",
+            "YS5TaWRlEjEKAm9wGAUgASgOMiUubWFya2V0X2RhdGEuTWFya2V0QnlPcmRl",
+            "ckRpZmYuRGlmZk9wEhAKCHByaW9yaXR5GAYgASgEIioKBkRpZmZPcBIHCgNB",
+            "REQQABIKCgZSRU1PVkUQARILCgdSRVBMQUNFEAIigAIKBlRyYWRlcxIpCgZ0",
+            "cmFkZXMYASADKAsyGS5tYXJrZXRfZGF0YS5UcmFkZXMuVHJhZGUaygEKBVRy",
+            "YWRlEg8KB3RyYWRlSWQYASABKAQSDQoFcHJpY2UYAiABKAQSKgoPYWdncmVz",
+            "c2luZ19zaWRlGAMgASgOMhEubWFya2V0X2RhdGEuU2lkZRIhChlyZXN0aW5n",
+            "X2V4Y2hhbmdlX29yZGVyX2lkGAQgASgEEhUKDWZpbGxfcXVhbnRpdHkYBSAB",
+            "KAQSFQoNdHJhbnNhY3RfdGltZRgGIAEoBBIkChxhZ2dyZXNzaW5nX2V4Y2hh",
+            "bmdlX29yZGVyX2lkGAcgASgEIqMBCgdTdW1tYXJ5EgwKBG9wZW4YASABKAQS",
+            "DQoFY2xvc2UYAiABKAQSCwoDbG93GAMgASgEEgwKBGhpZ2gYBCABKAQSFgoO",
+            "YmFzZV92b2x1bWVfbG8YBSABKAQSFgoOYmFzZV92b2x1bWVfaGkYBiABKAQS",
+            "FwoPcXVvdGVfdm9sdW1lX2xvGAcgASgEEhcKD3F1b3RlX3ZvbHVtZV9oaRgI",
+            "IAEoBCKnAQoFS2xpbmUSLAoIaW50ZXJ2YWwYASABKA4yGi5tYXJrZXRfZGF0",
+            "YS5LbGluZUludGVydmFsEhIKCnN0YXJ0X3RpbWUYAiABKAQSDAoEb3BlbhgD",
+            "IAEoBBINCgVjbG9zZRgEIAEoBBIMCgRoaWdoGAUgASgEEgsKA2xvdxgGIAEo",
+            "BBIRCgl2b2x1bWVfbG8YByABKAQSEQoJdm9sdW1lX2hpGAggASgEIjIKCUhl",
+            "YXJ0YmVhdBISCgpyZXF1ZXN0X2lkGAEgASgEEhEKCXRpbWVzdGFtcBgCIAEo",
+            "BCI2CgpNZE1lc3NhZ2VzEigKCG1lc3NhZ2VzGAEgAygLMhYubWFya2V0X2Rh",
+            "dGEuTWRNZXNzYWdlIqUBCgpBZ2dNZXNzYWdlEisKCWhlYXJ0YmVhdBgBIAEo",
+            "CzIWLm1hcmtldF9kYXRhLkhlYXJ0YmVhdEgAEi8KDHRvcF9vZl9ib29rcxgC",
+            "IAEoCzIXLm1hcmtldF9kYXRhLlRvcE9mQm9va3NIABIwCgxyYXRlX3VwZGF0",
+            "ZXMYAyABKAsyGC5tYXJrZXRfZGF0YS5SYXRlVXBkYXRlc0gAQgcKBWlubmVy",
+            "IrUBCglUb3BPZkJvb2sSEQoJbWFya2V0X2lkGAEgASgEEhUKDXRyYW5zYWN0",
+            "X3RpbWUYAiABKAQSEQoJYmlkX3ByaWNlGAMgASgEEhQKDGJpZF9xdWFudGl0",
+            "eRgEIAEoBBIRCglhc2tfcHJpY2UYBSABKAQSFAoMYXNrX3F1YW50aXR5GAYg",
+            "ASgEEhIKCmxhc3RfcHJpY2UYByABKAQSGAoQcm9sbGluZzI0aF9wcmljZRgI",
+            "IAEoBCIyCgpUb3BPZkJvb2tzEiQKBHRvcHMYASADKAsyFi5tYXJrZXRfZGF0",
+            "YS5Ub3BPZkJvb2siagoKUmF0ZVVwZGF0ZRIQCghhc3NldF9pZBgBIAEoBBIR",
+            "Cgl0aW1lc3RhbXAYAiABKAQSDAoEcmF0ZRgDIAEoBBIpCgRzaWRlGAQgASgO",
+            "MhsubWFya2V0X2RhdGEuUmF0ZVVwZGF0ZVNpZGUiNwoLUmF0ZVVwZGF0ZXMS",
+            "KAoHdXBkYXRlcxgBIAMoCzIXLm1hcmtldF9kYXRhLlJhdGVVcGRhdGUibAoN",
+            "Q2xpZW50TWVzc2FnZRIrCgloZWFydGJlYXQYASABKAsyFi5tYXJrZXRfZGF0",
+            "YS5IZWFydGJlYXRIABIlCgZjb25maWcYAiABKAsyEy5tYXJrZXRfZGF0YS5D",
+            "b25maWdIAEIHCgVpbm5lciJvCgZDb25maWcSCwoDbWJwGAEgASgIEgsKA21i",
+            "bxgCIAEoCBIOCgZ0cmFkZXMYAyABKAgSDwoHc3VtbWFyeRgEIAEoCBIqCgZr",
+            "bGluZXMYBSADKA4yGi5tYXJrZXRfZGF0YS5LbGluZUludGVydmFsKhgKBFNp",
+            "ZGUSBwoDQklEEAASBwoDQVNLEAEqQAoNS2xpbmVJbnRlcnZhbBIGCgJTMRAA",
+            "EgYKAk0xEAESBwoDTTE1EAISBgoCSDEQAxIGCgJINBAEEgYKAkQxEAUqJQoO",
+            "UmF0ZVVwZGF0ZVNpZGUSCAoEQkFTRRAAEgkKBVFVT1RFEAFCF1oDZ28vqgIP",
+            "Q3ViZS5NYXJrZXREYXRhYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Cube.MarketData.Side), typeof(global::Cube.MarketData.KlineInterval), typeof(global::Cube.MarketData.RateUpdateSide), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.MdMessage), global::Cube.MarketData.MdMessage.Parser, new[]{ "Heartbeat", "Summary", "Trades", "MboSnapshot", "MboDiff", "MbpSnapshot", "MbpDiff", "Kline" }, new[]{ "Inner" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.MarketByPrice), global::Cube.MarketData.MarketByPrice.Parser, new[]{ "Levels", "Chunk", "NumChunks" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.MarketByPrice.Types.Level), global::Cube.MarketData.MarketByPrice.Types.Level.Parser, new[]{ "Price", "Quantity", "Side" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.MarketByPriceDiff), global::Cube.MarketData.MarketByPriceDiff.Parser, new[]{ "Diffs", "TotalBidLevels", "TotalAskLevels" }, null, new[]{ typeof(global::Cube.MarketData.MarketByPriceDiff.Types.DiffOp) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.MarketByPriceDiff.Types.Diff), global::Cube.MarketData.MarketByPriceDiff.Types.Diff.Parser, new[]{ "Price", "Quantity", "Side", "Op" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.MarketByOrder), global::Cube.MarketData.MarketByOrder.Parser, new[]{ "Orders", "Chunk", "NumChunks" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.MarketByOrder.Types.Order), global::Cube.MarketData.MarketByOrder.Types.Order.Parser, new[]{ "Price", "Quantity", "ExchangeOrderId", "Side" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.MarketByOrderDiff), global::Cube.MarketData.MarketByOrderDiff.Parser, new[]{ "Diffs", "TotalBidLevels", "TotalAskLevels", "TotalBidOrders", "TotalAskOrders" }, null, new[]{ typeof(global::Cube.MarketData.MarketByOrderDiff.Types.DiffOp) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.MarketByOrderDiff.Types.Diff), global::Cube.MarketData.MarketByOrderDiff.Types.Diff.Parser, new[]{ "Price", "Quantity", "ExchangeOrderId", "Side", "Op" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.MarketByOrder), global::Cube.MarketData.MarketByOrder.Parser, new[]{ "Orders", "Chunk", "NumChunks" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.MarketByOrder.Types.Order), global::Cube.MarketData.MarketByOrder.Types.Order.Parser, new[]{ "Price", "Quantity", "ExchangeOrderId", "Side", "Priority" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.MarketByOrderDiff), global::Cube.MarketData.MarketByOrderDiff.Parser, new[]{ "Diffs", "TotalBidLevels", "TotalAskLevels", "TotalBidOrders", "TotalAskOrders" }, null, new[]{ typeof(global::Cube.MarketData.MarketByOrderDiff.Types.DiffOp) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.MarketByOrderDiff.Types.Diff), global::Cube.MarketData.MarketByOrderDiff.Types.Diff.Parser, new[]{ "Price", "Quantity", "ExchangeOrderId", "Side", "Op", "Priority" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.Trades), global::Cube.MarketData.Trades.Parser, new[]{ "Trades_" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.Trades.Types.Trade), global::Cube.MarketData.Trades.Types.Trade.Parser, new[]{ "TradeId", "Price", "AggressingSide", "RestingExchangeOrderId", "FillQuantity", "TransactTime", "AggressingExchangeOrderId" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.Summary), global::Cube.MarketData.Summary.Parser, new[]{ "Open", "Close", "Low", "High", "BaseVolumeLo", "BaseVolumeHi", "QuoteVolumeLo", "QuoteVolumeHi" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Cube.MarketData.Kline), global::Cube.MarketData.Kline.Parser, new[]{ "Interval", "StartTime", "Open", "Close", "High", "Low", "VolumeLo", "VolumeHi" }, null, null, null, null),
@@ -286,7 +294,7 @@ namespace Cube.MarketData {
       }
     }
 
-    /// <summary>Field number for the "mboSnapshot" field.</summary>
+    /// <summary>Field number for the "mbo_snapshot" field.</summary>
     public const int MboSnapshotFieldNumber = 4;
     /// <summary>
     /// Market by order snapshot
@@ -300,7 +308,7 @@ namespace Cube.MarketData {
       }
     }
 
-    /// <summary>Field number for the "mboDiff" field.</summary>
+    /// <summary>Field number for the "mbo_diff" field.</summary>
     public const int MboDiffFieldNumber = 5;
     /// <summary>
     /// Market by order diff
@@ -314,7 +322,7 @@ namespace Cube.MarketData {
       }
     }
 
-    /// <summary>Field number for the "mbpSnapshot" field.</summary>
+    /// <summary>Field number for the "mbp_snapshot" field.</summary>
     public const int MbpSnapshotFieldNumber = 6;
     /// <summary>
     /// Market by price snapshot
@@ -328,7 +336,7 @@ namespace Cube.MarketData {
       }
     }
 
-    /// <summary>Field number for the "mbpDiff" field.</summary>
+    /// <summary>Field number for the "mbp_diff" field.</summary>
     public const int MbpDiffFieldNumber = 7;
     /// <summary>
     /// Market by price diff
@@ -782,9 +790,9 @@ namespace Cube.MarketData {
   }
 
   /// <summary>
-  /// Market by price snapshot message. This is chunked into `numChunks` and starts
+  /// Market by price snapshot message. This is chunked into `num_chunks` and starts
   /// with `chunk = 0`. A snapshot is sent on first connect. `Level`'s should be
-  /// concatened until `chunk = numChunks - 1`. Currently, the chunks and levels
+  /// concatened until `chunk = num_chunks - 1`. Currently, the chunks and levels
   /// are streamed from tightest price level outwards with interleaved Bid and Ask
   /// levels, but no ordering is guaranteed.
   /// </summary>
@@ -849,7 +857,7 @@ namespace Cube.MarketData {
       }
     }
 
-    /// <summary>Field number for the "numChunks" field.</summary>
+    /// <summary>Field number for the "num_chunks" field.</summary>
     public const int NumChunksFieldNumber = 3;
     private uint numChunks_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1331,7 +1339,7 @@ namespace Cube.MarketData {
       get { return diffs_; }
     }
 
-    /// <summary>Field number for the "totalBidLevels" field.</summary>
+    /// <summary>Field number for the "total_bid_levels" field.</summary>
     public const int TotalBidLevelsFieldNumber = 2;
     private uint totalBidLevels_;
     /// <summary>
@@ -1345,7 +1353,7 @@ namespace Cube.MarketData {
       }
     }
 
-    /// <summary>Field number for the "totalAskLevels" field.</summary>
+    /// <summary>Field number for the "total_ask_levels" field.</summary>
     public const int TotalAskLevelsFieldNumber = 3;
     private uint totalAskLevels_;
     /// <summary>
@@ -1821,9 +1829,9 @@ namespace Cube.MarketData {
   }
 
   /// <summary>
-  /// Market by order snapshot message. This is chunked into `numChunks` and starts
+  /// Market by order snapshot message. This is chunked into `num_chunks` and starts
   /// with `chunk = 0`. A snapshot is sent on first connect. `Level`'s should be
-  /// concatened until `chunk = numChunks - 1`. Orders are sent in order of FIFO
+  /// concatened until `chunk = num_chunks - 1`. Orders are sent in order of FIFO
   /// queue priority so the first order of a level should be the first order to be
   /// matched when that level is aggressed.
   /// </summary>
@@ -1888,7 +1896,7 @@ namespace Cube.MarketData {
       }
     }
 
-    /// <summary>Field number for the "numChunks" field.</summary>
+    /// <summary>Field number for the "num_chunks" field.</summary>
     public const int NumChunksFieldNumber = 3;
     private uint numChunks_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2098,6 +2106,7 @@ namespace Cube.MarketData {
           quantity_ = other.quantity_;
           exchangeOrderId_ = other.exchangeOrderId_;
           side_ = other.side_;
+          priority_ = other.priority_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -2128,7 +2137,7 @@ namespace Cube.MarketData {
           }
         }
 
-        /// <summary>Field number for the "exchangeOrderId" field.</summary>
+        /// <summary>Field number for the "exchange_order_id" field.</summary>
         public const int ExchangeOrderIdFieldNumber = 3;
         private ulong exchangeOrderId_;
         /// <summary>
@@ -2153,6 +2162,23 @@ namespace Cube.MarketData {
           }
         }
 
+        /// <summary>Field number for the "priority" field.</summary>
+        public const int PriorityFieldNumber = 5;
+        private ulong priority_;
+        /// <summary>
+        /// Order priority for execution. Valid within a price level and side. That
+        /// is, orders must first be sorted by side and price (in descending order
+        /// for bids and ascending for asks), and then the OrderPriority within the
+        /// level. A lower value is a higher priority.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public ulong Priority {
+          get { return priority_; }
+          set {
+            priority_ = value;
+          }
+        }
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override bool Equals(object other) {
           return Equals(other as Order);
@@ -2170,6 +2196,7 @@ namespace Cube.MarketData {
           if (Quantity != other.Quantity) return false;
           if (ExchangeOrderId != other.ExchangeOrderId) return false;
           if (Side != other.Side) return false;
+          if (Priority != other.Priority) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -2180,6 +2207,7 @@ namespace Cube.MarketData {
           if (Quantity != 0UL) hash ^= Quantity.GetHashCode();
           if (ExchangeOrderId != 0UL) hash ^= ExchangeOrderId.GetHashCode();
           if (Side != global::Cube.MarketData.Side.Bid) hash ^= Side.GetHashCode();
+          if (Priority != 0UL) hash ^= Priority.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -2212,6 +2240,10 @@ namespace Cube.MarketData {
             output.WriteRawTag(32);
             output.WriteEnum((int) Side);
           }
+          if (Priority != 0UL) {
+            output.WriteRawTag(40);
+            output.WriteUInt64(Priority);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -2237,6 +2269,10 @@ namespace Cube.MarketData {
             output.WriteRawTag(32);
             output.WriteEnum((int) Side);
           }
+          if (Priority != 0UL) {
+            output.WriteRawTag(40);
+            output.WriteUInt64(Priority);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
           }
@@ -2257,6 +2293,9 @@ namespace Cube.MarketData {
           }
           if (Side != global::Cube.MarketData.Side.Bid) {
             size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Side);
+          }
+          if (Priority != 0UL) {
+            size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Priority);
           }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
@@ -2280,6 +2319,9 @@ namespace Cube.MarketData {
           }
           if (other.Side != global::Cube.MarketData.Side.Bid) {
             Side = other.Side;
+          }
+          if (other.Priority != 0UL) {
+            Priority = other.Priority;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
@@ -2311,6 +2353,10 @@ namespace Cube.MarketData {
                 Side = (global::Cube.MarketData.Side) input.ReadEnum();
                 break;
               }
+              case 40: {
+                Priority = input.ReadUInt64();
+                break;
+              }
             }
           }
         #endif
@@ -2339,6 +2385,10 @@ namespace Cube.MarketData {
               }
               case 32: {
                 Side = (global::Cube.MarketData.Side) input.ReadEnum();
+                break;
+              }
+              case 40: {
+                Priority = input.ReadUInt64();
                 break;
               }
             }
@@ -2414,7 +2464,7 @@ namespace Cube.MarketData {
       get { return diffs_; }
     }
 
-    /// <summary>Field number for the "totalBidLevels" field.</summary>
+    /// <summary>Field number for the "total_bid_levels" field.</summary>
     public const int TotalBidLevelsFieldNumber = 2;
     private uint totalBidLevels_;
     /// <summary>
@@ -2428,7 +2478,7 @@ namespace Cube.MarketData {
       }
     }
 
-    /// <summary>Field number for the "totalAskLevels" field.</summary>
+    /// <summary>Field number for the "total_ask_levels" field.</summary>
     public const int TotalAskLevelsFieldNumber = 3;
     private uint totalAskLevels_;
     /// <summary>
@@ -2442,7 +2492,7 @@ namespace Cube.MarketData {
       }
     }
 
-    /// <summary>Field number for the "totalBidOrders" field.</summary>
+    /// <summary>Field number for the "total_bid_orders" field.</summary>
     public const int TotalBidOrdersFieldNumber = 4;
     private uint totalBidOrders_;
     /// <summary>
@@ -2456,7 +2506,7 @@ namespace Cube.MarketData {
       }
     }
 
-    /// <summary>Field number for the "totalAskOrders" field.</summary>
+    /// <summary>Field number for the "total_ask_orders" field.</summary>
     public const int TotalAskOrdersFieldNumber = 5;
     private uint totalAskOrders_;
     /// <summary>
@@ -2694,7 +2744,7 @@ namespace Cube.MarketData {
 
       /// <summary>
       /// An order diff creates, updates, or deletes a resting order based on the
-      /// `exchangeOrderId`
+      /// `exchange_order_id`
       /// </summary>
       public sealed partial class Diff : pb::IMessage<Diff>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2730,6 +2780,7 @@ namespace Cube.MarketData {
           exchangeOrderId_ = other.exchangeOrderId_;
           side_ = other.side_;
           op_ = other.op_;
+          priority_ = other.priority_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -2760,7 +2811,7 @@ namespace Cube.MarketData {
           }
         }
 
-        /// <summary>Field number for the "exchangeOrderId" field.</summary>
+        /// <summary>Field number for the "exchange_order_id" field.</summary>
         public const int ExchangeOrderIdFieldNumber = 3;
         private ulong exchangeOrderId_;
         /// <summary>
@@ -2796,6 +2847,20 @@ namespace Cube.MarketData {
           }
         }
 
+        /// <summary>Field number for the "priority" field.</summary>
+        public const int PriorityFieldNumber = 6;
+        private ulong priority_;
+        /// <summary>
+        /// See [`MarketByOrder.Order`](#market-by-order-order)
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public ulong Priority {
+          get { return priority_; }
+          set {
+            priority_ = value;
+          }
+        }
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override bool Equals(object other) {
           return Equals(other as Diff);
@@ -2814,6 +2879,7 @@ namespace Cube.MarketData {
           if (ExchangeOrderId != other.ExchangeOrderId) return false;
           if (Side != other.Side) return false;
           if (Op != other.Op) return false;
+          if (Priority != other.Priority) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -2825,6 +2891,7 @@ namespace Cube.MarketData {
           if (ExchangeOrderId != 0UL) hash ^= ExchangeOrderId.GetHashCode();
           if (Side != global::Cube.MarketData.Side.Bid) hash ^= Side.GetHashCode();
           if (Op != global::Cube.MarketData.MarketByOrderDiff.Types.DiffOp.Add) hash ^= Op.GetHashCode();
+          if (Priority != 0UL) hash ^= Priority.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -2861,6 +2928,10 @@ namespace Cube.MarketData {
             output.WriteRawTag(40);
             output.WriteEnum((int) Op);
           }
+          if (Priority != 0UL) {
+            output.WriteRawTag(48);
+            output.WriteUInt64(Priority);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -2890,6 +2961,10 @@ namespace Cube.MarketData {
             output.WriteRawTag(40);
             output.WriteEnum((int) Op);
           }
+          if (Priority != 0UL) {
+            output.WriteRawTag(48);
+            output.WriteUInt64(Priority);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
           }
@@ -2913,6 +2988,9 @@ namespace Cube.MarketData {
           }
           if (Op != global::Cube.MarketData.MarketByOrderDiff.Types.DiffOp.Add) {
             size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Op);
+          }
+          if (Priority != 0UL) {
+            size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Priority);
           }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
@@ -2939,6 +3017,9 @@ namespace Cube.MarketData {
           }
           if (other.Op != global::Cube.MarketData.MarketByOrderDiff.Types.DiffOp.Add) {
             Op = other.Op;
+          }
+          if (other.Priority != 0UL) {
+            Priority = other.Priority;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
@@ -2974,6 +3055,10 @@ namespace Cube.MarketData {
                 Op = (global::Cube.MarketData.MarketByOrderDiff.Types.DiffOp) input.ReadEnum();
                 break;
               }
+              case 48: {
+                Priority = input.ReadUInt64();
+                break;
+              }
             }
           }
         #endif
@@ -3006,6 +3091,10 @@ namespace Cube.MarketData {
               }
               case 40: {
                 Op = (global::Cube.MarketData.MarketByOrderDiff.Types.DiffOp) input.ReadEnum();
+                break;
+              }
+              case 48: {
+                Priority = input.ReadUInt64();
                 break;
               }
             }
@@ -3261,7 +3350,7 @@ namespace Cube.MarketData {
           }
         }
 
-        /// <summary>Field number for the "aggressingSide" field.</summary>
+        /// <summary>Field number for the "aggressing_side" field.</summary>
         public const int AggressingSideFieldNumber = 3;
         private global::Cube.MarketData.Side aggressingSide_ = global::Cube.MarketData.Side.Bid;
         /// <summary>
@@ -3275,7 +3364,7 @@ namespace Cube.MarketData {
           }
         }
 
-        /// <summary>Field number for the "restingExchangeOrderId" field.</summary>
+        /// <summary>Field number for the "resting_exchange_order_id" field.</summary>
         public const int RestingExchangeOrderIdFieldNumber = 4;
         private ulong restingExchangeOrderId_;
         /// <summary>
@@ -3290,7 +3379,7 @@ namespace Cube.MarketData {
           }
         }
 
-        /// <summary>Field number for the "fillQuantity" field.</summary>
+        /// <summary>Field number for the "fill_quantity" field.</summary>
         public const int FillQuantityFieldNumber = 5;
         private ulong fillQuantity_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3301,7 +3390,7 @@ namespace Cube.MarketData {
           }
         }
 
-        /// <summary>Field number for the "transactTime" field.</summary>
+        /// <summary>Field number for the "transact_time" field.</summary>
         public const int TransactTimeFieldNumber = 6;
         private ulong transactTime_;
         /// <summary>
@@ -3317,7 +3406,7 @@ namespace Cube.MarketData {
           }
         }
 
-        /// <summary>Field number for the "aggressingExchangeOrderId" field.</summary>
+        /// <summary>Field number for the "aggressing_exchange_order_id" field.</summary>
         public const int AggressingExchangeOrderIdFieldNumber = 7;
         private ulong aggressingExchangeOrderId_;
         /// <summary>
@@ -3708,7 +3797,7 @@ namespace Cube.MarketData {
       }
     }
 
-    /// <summary>Field number for the "baseVolumeLo" field.</summary>
+    /// <summary>Field number for the "base_volume_lo" field.</summary>
     public const int BaseVolumeLoFieldNumber = 5;
     private ulong baseVolumeLo_;
     /// <summary>
@@ -3722,7 +3811,7 @@ namespace Cube.MarketData {
       }
     }
 
-    /// <summary>Field number for the "baseVolumeHi" field.</summary>
+    /// <summary>Field number for the "base_volume_hi" field.</summary>
     public const int BaseVolumeHiFieldNumber = 6;
     private ulong baseVolumeHi_;
     /// <summary>
@@ -3736,7 +3825,7 @@ namespace Cube.MarketData {
       }
     }
 
-    /// <summary>Field number for the "quoteVolumeLo" field.</summary>
+    /// <summary>Field number for the "quote_volume_lo" field.</summary>
     public const int QuoteVolumeLoFieldNumber = 7;
     private ulong quoteVolumeLo_;
     /// <summary>
@@ -3750,7 +3839,7 @@ namespace Cube.MarketData {
       }
     }
 
-    /// <summary>Field number for the "quoteVolumeHi" field.</summary>
+    /// <summary>Field number for the "quote_volume_hi" field.</summary>
     public const int QuoteVolumeHiFieldNumber = 8;
     private ulong quoteVolumeHi_;
     /// <summary>
@@ -4114,7 +4203,7 @@ namespace Cube.MarketData {
       }
     }
 
-    /// <summary>Field number for the "startTime" field.</summary>
+    /// <summary>Field number for the "start_time" field.</summary>
     public const int StartTimeFieldNumber = 2;
     private ulong startTime_;
     /// <summary>
@@ -4184,7 +4273,7 @@ namespace Cube.MarketData {
       }
     }
 
-    /// <summary>Field number for the "volumeLo" field.</summary>
+    /// <summary>Field number for the "volume_lo" field.</summary>
     public const int VolumeLoFieldNumber = 7;
     private ulong volumeLo_;
     /// <summary>
@@ -4198,7 +4287,7 @@ namespace Cube.MarketData {
       }
     }
 
-    /// <summary>Field number for the "volumeHi" field.</summary>
+    /// <summary>Field number for the "volume_hi" field.</summary>
     public const int VolumeHiFieldNumber = 8;
     private ulong volumeHi_;
     /// <summary>
@@ -4546,7 +4635,7 @@ namespace Cube.MarketData {
       return new Heartbeat(this);
     }
 
-    /// <summary>Field number for the "requestId" field.</summary>
+    /// <summary>Field number for the "request_id" field.</summary>
     public const int RequestIdFieldNumber = 1;
     private ulong requestId_;
     /// <summary>
@@ -4945,7 +5034,7 @@ namespace Cube.MarketData {
       }
     }
 
-    /// <summary>Field number for the "topOfBooks" field.</summary>
+    /// <summary>Field number for the "top_of_books" field.</summary>
     public const int TopOfBooksFieldNumber = 2;
     /// <summary>
     /// Top of books
@@ -4959,7 +5048,7 @@ namespace Cube.MarketData {
       }
     }
 
-    /// <summary>Field number for the "rateUpdates" field.</summary>
+    /// <summary>Field number for the "rate_updates" field.</summary>
     public const int RateUpdatesFieldNumber = 3;
     /// <summary>
     /// Rates for all assets
@@ -5256,7 +5345,7 @@ namespace Cube.MarketData {
       return new TopOfBook(this);
     }
 
-    /// <summary>Field number for the "marketId" field.</summary>
+    /// <summary>Field number for the "market_id" field.</summary>
     public const int MarketIdFieldNumber = 1;
     private ulong marketId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5267,7 +5356,7 @@ namespace Cube.MarketData {
       }
     }
 
-    /// <summary>Field number for the "transactTime" field.</summary>
+    /// <summary>Field number for the "transact_time" field.</summary>
     public const int TransactTimeFieldNumber = 2;
     private ulong transactTime_;
     /// <summary>
@@ -5282,7 +5371,7 @@ namespace Cube.MarketData {
       }
     }
 
-    /// <summary>Field number for the "bidPrice" field.</summary>
+    /// <summary>Field number for the "bid_price" field.</summary>
     public const int BidPriceFieldNumber = 3;
     private ulong bidPrice_;
     /// <summary>
@@ -5296,7 +5385,7 @@ namespace Cube.MarketData {
       }
     }
 
-    /// <summary>Field number for the "bidQuantity" field.</summary>
+    /// <summary>Field number for the "bid_quantity" field.</summary>
     public const int BidQuantityFieldNumber = 4;
     private ulong bidQuantity_;
     /// <summary>
@@ -5310,7 +5399,7 @@ namespace Cube.MarketData {
       }
     }
 
-    /// <summary>Field number for the "askPrice" field.</summary>
+    /// <summary>Field number for the "ask_price" field.</summary>
     public const int AskPriceFieldNumber = 5;
     private ulong askPrice_;
     /// <summary>
@@ -5324,7 +5413,7 @@ namespace Cube.MarketData {
       }
     }
 
-    /// <summary>Field number for the "askQuantity" field.</summary>
+    /// <summary>Field number for the "ask_quantity" field.</summary>
     public const int AskQuantityFieldNumber = 6;
     private ulong askQuantity_;
     /// <summary>
@@ -5338,7 +5427,7 @@ namespace Cube.MarketData {
       }
     }
 
-    /// <summary>Field number for the "lastPrice" field.</summary>
+    /// <summary>Field number for the "last_price" field.</summary>
     public const int LastPriceFieldNumber = 7;
     private ulong lastPrice_;
     /// <summary>
@@ -5352,7 +5441,7 @@ namespace Cube.MarketData {
       }
     }
 
-    /// <summary>Field number for the "rolling24hPrice" field.</summary>
+    /// <summary>Field number for the "rolling24h_price" field.</summary>
     public const int Rolling24HPriceFieldNumber = 8;
     private ulong rolling24HPrice_;
     /// <summary>
@@ -5869,7 +5958,7 @@ namespace Cube.MarketData {
       return new RateUpdate(this);
     }
 
-    /// <summary>Field number for the "assetId" field.</summary>
+    /// <summary>Field number for the "asset_id" field.</summary>
     public const int AssetIdFieldNumber = 1;
     private ulong assetId_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

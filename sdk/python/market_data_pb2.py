@@ -16,16 +16,16 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='market_data.proto',
-  package='md',
+  package='market_data',
   syntax='proto3',
   serialized_options=b'Z\003go/\252\002\017Cube.MarketData',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11market_data.proto\x12\x02md\"\xba\x02\n\tMdMessage\x12\"\n\theartbeat\x18\x01 \x01(\x0b\x32\r.md.HeartbeatH\x00\x12\x1e\n\x07summary\x18\x02 \x01(\x0b\x32\x0b.md.SummaryH\x00\x12\x1c\n\x06trades\x18\x03 \x01(\x0b\x32\n.md.TradesH\x00\x12(\n\x0bmboSnapshot\x18\x04 \x01(\x0b\x32\x11.md.MarketByOrderH\x00\x12(\n\x07mboDiff\x18\x05 \x01(\x0b\x32\x15.md.MarketByOrderDiffH\x00\x12(\n\x0bmbpSnapshot\x18\x06 \x01(\x0b\x32\x11.md.MarketByPriceH\x00\x12(\n\x07mbpDiff\x18\x07 \x01(\x0b\x32\x15.md.MarketByPriceDiffH\x00\x12\x1a\n\x05kline\x18\x08 \x01(\x0b\x32\t.md.KlineH\x00\x42\x07\n\x05inner\"\x9c\x01\n\rMarketByPrice\x12\'\n\x06levels\x18\x01 \x03(\x0b\x32\x17.md.MarketByPrice.Level\x12\r\n\x05\x63hunk\x18\x02 \x01(\r\x12\x11\n\tnumChunks\x18\x03 \x01(\r\x1a@\n\x05Level\x12\r\n\x05price\x18\x01 \x01(\x04\x12\x10\n\x08quantity\x18\x02 \x01(\x04\x12\x16\n\x04side\x18\x03 \x01(\x0e\x32\x08.md.Side\"\x85\x02\n\x11MarketByPriceDiff\x12)\n\x05\x64iffs\x18\x01 \x03(\x0b\x32\x1a.md.MarketByPriceDiff.Diff\x12\x16\n\x0etotalBidLevels\x18\x02 \x01(\r\x12\x16\n\x0etotalAskLevels\x18\x03 \x01(\r\x1ai\n\x04\x44iff\x12\r\n\x05price\x18\x01 \x01(\x04\x12\x10\n\x08quantity\x18\x02 \x01(\x04\x12\x16\n\x04side\x18\x03 \x01(\x0e\x32\x08.md.Side\x12(\n\x02op\x18\x04 \x01(\x0e\x32\x1c.md.MarketByPriceDiff.DiffOp\"*\n\x06\x44iffOp\x12\x07\n\x03\x41\x44\x44\x10\x00\x12\n\n\x06REMOVE\x10\x01\x12\x0b\n\x07REPLACE\x10\x02\"\xb5\x01\n\rMarketByOrder\x12\'\n\x06orders\x18\x01 \x03(\x0b\x32\x17.md.MarketByOrder.Order\x12\r\n\x05\x63hunk\x18\x02 \x01(\r\x12\x11\n\tnumChunks\x18\x03 \x01(\r\x1aY\n\x05Order\x12\r\n\x05price\x18\x01 \x01(\x04\x12\x10\n\x08quantity\x18\x02 \x01(\x04\x12\x17\n\x0f\x65xchangeOrderId\x18\x03 \x01(\x04\x12\x16\n\x04side\x18\x04 \x01(\x0e\x32\x08.md.Side\"\xcf\x02\n\x11MarketByOrderDiff\x12)\n\x05\x64iffs\x18\x01 \x03(\x0b\x32\x1a.md.MarketByOrderDiff.Diff\x12\x16\n\x0etotalBidLevels\x18\x02 \x01(\r\x12\x16\n\x0etotalAskLevels\x18\x03 \x01(\r\x12\x16\n\x0etotalBidOrders\x18\x04 \x01(\r\x12\x16\n\x0etotalAskOrders\x18\x05 \x01(\r\x1a\x82\x01\n\x04\x44iff\x12\r\n\x05price\x18\x01 \x01(\x04\x12\x10\n\x08quantity\x18\x02 \x01(\x04\x12\x17\n\x0f\x65xchangeOrderId\x18\x03 \x01(\x04\x12\x16\n\x04side\x18\x04 \x01(\x0e\x32\x08.md.Side\x12(\n\x02op\x18\x05 \x01(\x0e\x32\x1c.md.MarketByOrderDiff.DiffOp\"*\n\x06\x44iffOp\x12\x07\n\x03\x41\x44\x44\x10\x00\x12\n\n\x06REMOVE\x10\x01\x12\x0b\n\x07REPLACE\x10\x02\"\xe5\x01\n\x06Trades\x12 \n\x06trades\x18\x01 \x03(\x0b\x32\x10.md.Trades.Trade\x1a\xb8\x01\n\x05Trade\x12\x0f\n\x07tradeId\x18\x01 \x01(\x04\x12\r\n\x05price\x18\x02 \x01(\x04\x12 \n\x0e\x61ggressingSide\x18\x03 \x01(\x0e\x32\x08.md.Side\x12\x1e\n\x16restingExchangeOrderId\x18\x04 \x01(\x04\x12\x14\n\x0c\x66illQuantity\x18\x05 \x01(\x04\x12\x14\n\x0ctransactTime\x18\x06 \x01(\x04\x12!\n\x19\x61ggressingExchangeOrderId\x18\x07 \x01(\x04\"\x9b\x01\n\x07Summary\x12\x0c\n\x04open\x18\x01 \x01(\x04\x12\r\n\x05\x63lose\x18\x02 \x01(\x04\x12\x0b\n\x03low\x18\x03 \x01(\x04\x12\x0c\n\x04high\x18\x04 \x01(\x04\x12\x14\n\x0c\x62\x61seVolumeLo\x18\x05 \x01(\x04\x12\x14\n\x0c\x62\x61seVolumeHi\x18\x06 \x01(\x04\x12\x15\n\rquoteVolumeLo\x18\x07 \x01(\x04\x12\x15\n\rquoteVolumeHi\x18\x08 \x01(\x04\"\x9b\x01\n\x05Kline\x12#\n\x08interval\x18\x01 \x01(\x0e\x32\x11.md.KlineInterval\x12\x11\n\tstartTime\x18\x02 \x01(\x04\x12\x0c\n\x04open\x18\x03 \x01(\x04\x12\r\n\x05\x63lose\x18\x04 \x01(\x04\x12\x0c\n\x04high\x18\x05 \x01(\x04\x12\x0b\n\x03low\x18\x06 \x01(\x04\x12\x10\n\x08volumeLo\x18\x07 \x01(\x04\x12\x10\n\x08volumeHi\x18\x08 \x01(\x04\"1\n\tHeartbeat\x12\x11\n\trequestId\x18\x01 \x01(\x04\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\"-\n\nMdMessages\x12\x1f\n\x08messages\x18\x01 \x03(\x0b\x32\r.md.MdMessage\"\x87\x01\n\nAggMessage\x12\"\n\theartbeat\x18\x01 \x01(\x0b\x32\r.md.HeartbeatH\x00\x12$\n\ntopOfBooks\x18\x02 \x01(\x0b\x32\x0e.md.TopOfBooksH\x00\x12&\n\x0brateUpdates\x18\x03 \x01(\x0b\x32\x0f.md.RateUpdatesH\x00\x42\x07\n\x05inner\"\xad\x01\n\tTopOfBook\x12\x10\n\x08marketId\x18\x01 \x01(\x04\x12\x14\n\x0ctransactTime\x18\x02 \x01(\x04\x12\x10\n\x08\x62idPrice\x18\x03 \x01(\x04\x12\x13\n\x0b\x62idQuantity\x18\x04 \x01(\x04\x12\x10\n\x08\x61skPrice\x18\x05 \x01(\x04\x12\x13\n\x0b\x61skQuantity\x18\x06 \x01(\x04\x12\x11\n\tlastPrice\x18\x07 \x01(\x04\x12\x17\n\x0frolling24hPrice\x18\x08 \x01(\x04\")\n\nTopOfBooks\x12\x1b\n\x04tops\x18\x01 \x03(\x0b\x32\r.md.TopOfBook\"`\n\nRateUpdate\x12\x0f\n\x07\x61ssetId\x18\x01 \x01(\x04\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\x12\x0c\n\x04rate\x18\x03 \x01(\x04\x12 \n\x04side\x18\x04 \x01(\x0e\x32\x12.md.RateUpdateSide\".\n\x0bRateUpdates\x12\x1f\n\x07updates\x18\x01 \x03(\x0b\x32\x0e.md.RateUpdate\"Z\n\rClientMessage\x12\"\n\theartbeat\x18\x01 \x01(\x0b\x32\r.md.HeartbeatH\x00\x12\x1c\n\x06\x63onfig\x18\x02 \x01(\x0b\x32\n.md.ConfigH\x00\x42\x07\n\x05inner\"f\n\x06\x43onfig\x12\x0b\n\x03mbp\x18\x01 \x01(\x08\x12\x0b\n\x03mbo\x18\x02 \x01(\x08\x12\x0e\n\x06trades\x18\x03 \x01(\x08\x12\x0f\n\x07summary\x18\x04 \x01(\x08\x12!\n\x06klines\x18\x05 \x03(\x0e\x32\x11.md.KlineInterval*\x18\n\x04Side\x12\x07\n\x03\x42ID\x10\x00\x12\x07\n\x03\x41SK\x10\x01*@\n\rKlineInterval\x12\x06\n\x02S1\x10\x00\x12\x06\n\x02M1\x10\x01\x12\x07\n\x03M15\x10\x02\x12\x06\n\x02H1\x10\x03\x12\x06\n\x02H4\x10\x04\x12\x06\n\x02\x44\x31\x10\x05*%\n\x0eRateUpdateSide\x12\x08\n\x04\x42\x41SE\x10\x00\x12\t\n\x05QUOTE\x10\x01\x42\x17Z\x03go/\xaa\x02\x0f\x43ube.MarketDatab\x06proto3'
+  serialized_pb=b'\n\x11market_data.proto\x12\x0bmarket_data\"\x86\x03\n\tMdMessage\x12+\n\theartbeat\x18\x01 \x01(\x0b\x32\x16.market_data.HeartbeatH\x00\x12\'\n\x07summary\x18\x02 \x01(\x0b\x32\x14.market_data.SummaryH\x00\x12%\n\x06trades\x18\x03 \x01(\x0b\x32\x13.market_data.TradesH\x00\x12\x32\n\x0cmbo_snapshot\x18\x04 \x01(\x0b\x32\x1a.market_data.MarketByOrderH\x00\x12\x32\n\x08mbo_diff\x18\x05 \x01(\x0b\x32\x1e.market_data.MarketByOrderDiffH\x00\x12\x32\n\x0cmbp_snapshot\x18\x06 \x01(\x0b\x32\x1a.market_data.MarketByPriceH\x00\x12\x32\n\x08mbp_diff\x18\x07 \x01(\x0b\x32\x1e.market_data.MarketByPriceDiffH\x00\x12#\n\x05kline\x18\x08 \x01(\x0b\x32\x12.market_data.KlineH\x00\x42\x07\n\x05inner\"\xaf\x01\n\rMarketByPrice\x12\x30\n\x06levels\x18\x01 \x03(\x0b\x32 .market_data.MarketByPrice.Level\x12\r\n\x05\x63hunk\x18\x02 \x01(\r\x12\x12\n\nnum_chunks\x18\x03 \x01(\r\x1aI\n\x05Level\x12\r\n\x05price\x18\x01 \x01(\x04\x12\x10\n\x08quantity\x18\x02 \x01(\x04\x12\x1f\n\x04side\x18\x03 \x01(\x0e\x32\x11.market_data.Side\"\xa4\x02\n\x11MarketByPriceDiff\x12\x32\n\x05\x64iffs\x18\x01 \x03(\x0b\x32#.market_data.MarketByPriceDiff.Diff\x12\x18\n\x10total_bid_levels\x18\x02 \x01(\r\x12\x18\n\x10total_ask_levels\x18\x03 \x01(\r\x1a{\n\x04\x44iff\x12\r\n\x05price\x18\x01 \x01(\x04\x12\x10\n\x08quantity\x18\x02 \x01(\x04\x12\x1f\n\x04side\x18\x03 \x01(\x0e\x32\x11.market_data.Side\x12\x31\n\x02op\x18\x04 \x01(\x0e\x32%.market_data.MarketByPriceDiff.DiffOp\"*\n\x06\x44iffOp\x12\x07\n\x03\x41\x44\x44\x10\x00\x12\n\n\x06REMOVE\x10\x01\x12\x0b\n\x07REPLACE\x10\x02\"\xdc\x01\n\rMarketByOrder\x12\x30\n\x06orders\x18\x01 \x03(\x0b\x32 .market_data.MarketByOrder.Order\x12\r\n\x05\x63hunk\x18\x02 \x01(\r\x12\x12\n\nnum_chunks\x18\x03 \x01(\r\x1av\n\x05Order\x12\r\n\x05price\x18\x01 \x01(\x04\x12\x10\n\x08quantity\x18\x02 \x01(\x04\x12\x19\n\x11\x65xchange_order_id\x18\x03 \x01(\x04\x12\x1f\n\x04side\x18\x04 \x01(\x0e\x32\x11.market_data.Side\x12\x10\n\x08priority\x18\x05 \x01(\x04\"\x86\x03\n\x11MarketByOrderDiff\x12\x32\n\x05\x64iffs\x18\x01 \x03(\x0b\x32#.market_data.MarketByOrderDiff.Diff\x12\x18\n\x10total_bid_levels\x18\x02 \x01(\r\x12\x18\n\x10total_ask_levels\x18\x03 \x01(\r\x12\x18\n\x10total_bid_orders\x18\x04 \x01(\r\x12\x18\n\x10total_ask_orders\x18\x05 \x01(\r\x1a\xa8\x01\n\x04\x44iff\x12\r\n\x05price\x18\x01 \x01(\x04\x12\x10\n\x08quantity\x18\x02 \x01(\x04\x12\x19\n\x11\x65xchange_order_id\x18\x03 \x01(\x04\x12\x1f\n\x04side\x18\x04 \x01(\x0e\x32\x11.market_data.Side\x12\x31\n\x02op\x18\x05 \x01(\x0e\x32%.market_data.MarketByOrderDiff.DiffOp\x12\x10\n\x08priority\x18\x06 \x01(\x04\"*\n\x06\x44iffOp\x12\x07\n\x03\x41\x44\x44\x10\x00\x12\n\n\x06REMOVE\x10\x01\x12\x0b\n\x07REPLACE\x10\x02\"\x80\x02\n\x06Trades\x12)\n\x06trades\x18\x01 \x03(\x0b\x32\x19.market_data.Trades.Trade\x1a\xca\x01\n\x05Trade\x12\x0f\n\x07tradeId\x18\x01 \x01(\x04\x12\r\n\x05price\x18\x02 \x01(\x04\x12*\n\x0f\x61ggressing_side\x18\x03 \x01(\x0e\x32\x11.market_data.Side\x12!\n\x19resting_exchange_order_id\x18\x04 \x01(\x04\x12\x15\n\rfill_quantity\x18\x05 \x01(\x04\x12\x15\n\rtransact_time\x18\x06 \x01(\x04\x12$\n\x1c\x61ggressing_exchange_order_id\x18\x07 \x01(\x04\"\xa3\x01\n\x07Summary\x12\x0c\n\x04open\x18\x01 \x01(\x04\x12\r\n\x05\x63lose\x18\x02 \x01(\x04\x12\x0b\n\x03low\x18\x03 \x01(\x04\x12\x0c\n\x04high\x18\x04 \x01(\x04\x12\x16\n\x0e\x62\x61se_volume_lo\x18\x05 \x01(\x04\x12\x16\n\x0e\x62\x61se_volume_hi\x18\x06 \x01(\x04\x12\x17\n\x0fquote_volume_lo\x18\x07 \x01(\x04\x12\x17\n\x0fquote_volume_hi\x18\x08 \x01(\x04\"\xa7\x01\n\x05Kline\x12,\n\x08interval\x18\x01 \x01(\x0e\x32\x1a.market_data.KlineInterval\x12\x12\n\nstart_time\x18\x02 \x01(\x04\x12\x0c\n\x04open\x18\x03 \x01(\x04\x12\r\n\x05\x63lose\x18\x04 \x01(\x04\x12\x0c\n\x04high\x18\x05 \x01(\x04\x12\x0b\n\x03low\x18\x06 \x01(\x04\x12\x11\n\tvolume_lo\x18\x07 \x01(\x04\x12\x11\n\tvolume_hi\x18\x08 \x01(\x04\"2\n\tHeartbeat\x12\x12\n\nrequest_id\x18\x01 \x01(\x04\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\"6\n\nMdMessages\x12(\n\x08messages\x18\x01 \x03(\x0b\x32\x16.market_data.MdMessage\"\xa5\x01\n\nAggMessage\x12+\n\theartbeat\x18\x01 \x01(\x0b\x32\x16.market_data.HeartbeatH\x00\x12/\n\x0ctop_of_books\x18\x02 \x01(\x0b\x32\x17.market_data.TopOfBooksH\x00\x12\x30\n\x0crate_updates\x18\x03 \x01(\x0b\x32\x18.market_data.RateUpdatesH\x00\x42\x07\n\x05inner\"\xb5\x01\n\tTopOfBook\x12\x11\n\tmarket_id\x18\x01 \x01(\x04\x12\x15\n\rtransact_time\x18\x02 \x01(\x04\x12\x11\n\tbid_price\x18\x03 \x01(\x04\x12\x14\n\x0c\x62id_quantity\x18\x04 \x01(\x04\x12\x11\n\task_price\x18\x05 \x01(\x04\x12\x14\n\x0c\x61sk_quantity\x18\x06 \x01(\x04\x12\x12\n\nlast_price\x18\x07 \x01(\x04\x12\x18\n\x10rolling24h_price\x18\x08 \x01(\x04\"2\n\nTopOfBooks\x12$\n\x04tops\x18\x01 \x03(\x0b\x32\x16.market_data.TopOfBook\"j\n\nRateUpdate\x12\x10\n\x08\x61sset_id\x18\x01 \x01(\x04\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\x12\x0c\n\x04rate\x18\x03 \x01(\x04\x12)\n\x04side\x18\x04 \x01(\x0e\x32\x1b.market_data.RateUpdateSide\"7\n\x0bRateUpdates\x12(\n\x07updates\x18\x01 \x03(\x0b\x32\x17.market_data.RateUpdate\"l\n\rClientMessage\x12+\n\theartbeat\x18\x01 \x01(\x0b\x32\x16.market_data.HeartbeatH\x00\x12%\n\x06\x63onfig\x18\x02 \x01(\x0b\x32\x13.market_data.ConfigH\x00\x42\x07\n\x05inner\"o\n\x06\x43onfig\x12\x0b\n\x03mbp\x18\x01 \x01(\x08\x12\x0b\n\x03mbo\x18\x02 \x01(\x08\x12\x0e\n\x06trades\x18\x03 \x01(\x08\x12\x0f\n\x07summary\x18\x04 \x01(\x08\x12*\n\x06klines\x18\x05 \x03(\x0e\x32\x1a.market_data.KlineInterval*\x18\n\x04Side\x12\x07\n\x03\x42ID\x10\x00\x12\x07\n\x03\x41SK\x10\x01*@\n\rKlineInterval\x12\x06\n\x02S1\x10\x00\x12\x06\n\x02M1\x10\x01\x12\x07\n\x03M15\x10\x02\x12\x06\n\x02H1\x10\x03\x12\x06\n\x02H4\x10\x04\x12\x06\n\x02\x44\x31\x10\x05*%\n\x0eRateUpdateSide\x12\x08\n\x04\x42\x41SE\x10\x00\x12\t\n\x05QUOTE\x10\x01\x42\x17Z\x03go/\xaa\x02\x0f\x43ube.MarketDatab\x06proto3'
 )
 
 _SIDE = _descriptor.EnumDescriptor(
   name='Side',
-  full_name='md.Side',
+  full_name='market_data.Side',
   filename=None,
   file=DESCRIPTOR,
   create_key=_descriptor._internal_create_key,
@@ -43,15 +43,15 @@ _SIDE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2632,
-  serialized_end=2656,
+  serialized_start=3011,
+  serialized_end=3035,
 )
 _sym_db.RegisterEnumDescriptor(_SIDE)
 
 Side = enum_type_wrapper.EnumTypeWrapper(_SIDE)
 _KLINEINTERVAL = _descriptor.EnumDescriptor(
   name='KlineInterval',
-  full_name='md.KlineInterval',
+  full_name='market_data.KlineInterval',
   filename=None,
   file=DESCRIPTOR,
   create_key=_descriptor._internal_create_key,
@@ -89,15 +89,15 @@ _KLINEINTERVAL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2658,
-  serialized_end=2722,
+  serialized_start=3037,
+  serialized_end=3101,
 )
 _sym_db.RegisterEnumDescriptor(_KLINEINTERVAL)
 
 KlineInterval = enum_type_wrapper.EnumTypeWrapper(_KLINEINTERVAL)
 _RATEUPDATESIDE = _descriptor.EnumDescriptor(
   name='RateUpdateSide',
-  full_name='md.RateUpdateSide',
+  full_name='market_data.RateUpdateSide',
   filename=None,
   file=DESCRIPTOR,
   create_key=_descriptor._internal_create_key,
@@ -115,8 +115,8 @@ _RATEUPDATESIDE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2724,
-  serialized_end=2761,
+  serialized_start=3103,
+  serialized_end=3140,
 )
 _sym_db.RegisterEnumDescriptor(_RATEUPDATESIDE)
 
@@ -135,7 +135,7 @@ QUOTE = 1
 
 _MARKETBYPRICEDIFF_DIFFOP = _descriptor.EnumDescriptor(
   name='DiffOp',
-  full_name='md.MarketByPriceDiff.DiffOp',
+  full_name='market_data.MarketByPriceDiff.DiffOp',
   filename=None,
   file=DESCRIPTOR,
   create_key=_descriptor._internal_create_key,
@@ -158,14 +158,14 @@ _MARKETBYPRICEDIFF_DIFFOP = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=721,
-  serialized_end=763,
+  serialized_start=856,
+  serialized_end=898,
 )
 _sym_db.RegisterEnumDescriptor(_MARKETBYPRICEDIFF_DIFFOP)
 
 _MARKETBYORDERDIFF_DIFFOP = _descriptor.EnumDescriptor(
   name='DiffOp',
-  full_name='md.MarketByOrderDiff.DiffOp',
+  full_name='market_data.MarketByOrderDiff.DiffOp',
   filename=None,
   file=DESCRIPTOR,
   create_key=_descriptor._internal_create_key,
@@ -188,71 +188,71 @@ _MARKETBYORDERDIFF_DIFFOP = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=721,
-  serialized_end=763,
+  serialized_start=856,
+  serialized_end=898,
 )
 _sym_db.RegisterEnumDescriptor(_MARKETBYORDERDIFF_DIFFOP)
 
 
 _MDMESSAGE = _descriptor.Descriptor(
   name='MdMessage',
-  full_name='md.MdMessage',
+  full_name='market_data.MdMessage',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='heartbeat', full_name='md.MdMessage.heartbeat', index=0,
+      name='heartbeat', full_name='market_data.MdMessage.heartbeat', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='summary', full_name='md.MdMessage.summary', index=1,
+      name='summary', full_name='market_data.MdMessage.summary', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='trades', full_name='md.MdMessage.trades', index=2,
+      name='trades', full_name='market_data.MdMessage.trades', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mboSnapshot', full_name='md.MdMessage.mboSnapshot', index=3,
+      name='mbo_snapshot', full_name='market_data.MdMessage.mbo_snapshot', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mboDiff', full_name='md.MdMessage.mboDiff', index=4,
+      name='mbo_diff', full_name='market_data.MdMessage.mbo_diff', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mbpSnapshot', full_name='md.MdMessage.mbpSnapshot', index=5,
+      name='mbp_snapshot', full_name='market_data.MdMessage.mbp_snapshot', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mbpDiff', full_name='md.MdMessage.mbpDiff', index=6,
+      name='mbp_diff', full_name='market_data.MdMessage.mbp_diff', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='kline', full_name='md.MdMessage.kline', index=7,
+      name='kline', full_name='market_data.MdMessage.kline', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -270,40 +270,40 @@ _MDMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='inner', full_name='md.MdMessage.inner',
+      name='inner', full_name='market_data.MdMessage.inner',
       index=0, containing_type=None,
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=26,
-  serialized_end=340,
+  serialized_start=35,
+  serialized_end=425,
 )
 
 
 _MARKETBYPRICE_LEVEL = _descriptor.Descriptor(
   name='Level',
-  full_name='md.MarketByPrice.Level',
+  full_name='market_data.MarketByPrice.Level',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='price', full_name='md.MarketByPrice.Level.price', index=0,
+      name='price', full_name='market_data.MarketByPrice.Level.price', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='quantity', full_name='md.MarketByPrice.Level.quantity', index=1,
+      name='quantity', full_name='market_data.MarketByPrice.Level.quantity', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='side', full_name='md.MarketByPrice.Level.side', index=2,
+      name='side', full_name='market_data.MarketByPrice.Level.side', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -321,34 +321,34 @@ _MARKETBYPRICE_LEVEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=435,
-  serialized_end=499,
+  serialized_start=530,
+  serialized_end=603,
 )
 
 _MARKETBYPRICE = _descriptor.Descriptor(
   name='MarketByPrice',
-  full_name='md.MarketByPrice',
+  full_name='market_data.MarketByPrice',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='levels', full_name='md.MarketByPrice.levels', index=0,
+      name='levels', full_name='market_data.MarketByPrice.levels', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='chunk', full_name='md.MarketByPrice.chunk', index=1,
+      name='chunk', full_name='market_data.MarketByPrice.chunk', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='numChunks', full_name='md.MarketByPrice.numChunks', index=2,
+      name='num_chunks', full_name='market_data.MarketByPrice.num_chunks', index=2,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -366,42 +366,42 @@ _MARKETBYPRICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=343,
-  serialized_end=499,
+  serialized_start=428,
+  serialized_end=603,
 )
 
 
 _MARKETBYPRICEDIFF_DIFF = _descriptor.Descriptor(
   name='Diff',
-  full_name='md.MarketByPriceDiff.Diff',
+  full_name='market_data.MarketByPriceDiff.Diff',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='price', full_name='md.MarketByPriceDiff.Diff.price', index=0,
+      name='price', full_name='market_data.MarketByPriceDiff.Diff.price', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='quantity', full_name='md.MarketByPriceDiff.Diff.quantity', index=1,
+      name='quantity', full_name='market_data.MarketByPriceDiff.Diff.quantity', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='side', full_name='md.MarketByPriceDiff.Diff.side', index=2,
+      name='side', full_name='market_data.MarketByPriceDiff.Diff.side', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='op', full_name='md.MarketByPriceDiff.Diff.op', index=3,
+      name='op', full_name='market_data.MarketByPriceDiff.Diff.op', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -419,34 +419,34 @@ _MARKETBYPRICEDIFF_DIFF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=614,
-  serialized_end=719,
+  serialized_start=731,
+  serialized_end=854,
 )
 
 _MARKETBYPRICEDIFF = _descriptor.Descriptor(
   name='MarketByPriceDiff',
-  full_name='md.MarketByPriceDiff',
+  full_name='market_data.MarketByPriceDiff',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='diffs', full_name='md.MarketByPriceDiff.diffs', index=0,
+      name='diffs', full_name='market_data.MarketByPriceDiff.diffs', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='totalBidLevels', full_name='md.MarketByPriceDiff.totalBidLevels', index=1,
+      name='total_bid_levels', full_name='market_data.MarketByPriceDiff.total_bid_levels', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='totalAskLevels', full_name='md.MarketByPriceDiff.totalAskLevels', index=2,
+      name='total_ask_levels', full_name='market_data.MarketByPriceDiff.total_ask_levels', index=2,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -465,43 +465,50 @@ _MARKETBYPRICEDIFF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=502,
-  serialized_end=763,
+  serialized_start=606,
+  serialized_end=898,
 )
 
 
 _MARKETBYORDER_ORDER = _descriptor.Descriptor(
   name='Order',
-  full_name='md.MarketByOrder.Order',
+  full_name='market_data.MarketByOrder.Order',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='price', full_name='md.MarketByOrder.Order.price', index=0,
+      name='price', full_name='market_data.MarketByOrder.Order.price', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='quantity', full_name='md.MarketByOrder.Order.quantity', index=1,
+      name='quantity', full_name='market_data.MarketByOrder.Order.quantity', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='exchangeOrderId', full_name='md.MarketByOrder.Order.exchangeOrderId', index=2,
+      name='exchange_order_id', full_name='market_data.MarketByOrder.Order.exchange_order_id', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='side', full_name='md.MarketByOrder.Order.side', index=3,
+      name='side', full_name='market_data.MarketByOrder.Order.side', index=3,
       number=4, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='priority', full_name='market_data.MarketByOrder.Order.priority', index=4,
+      number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -518,34 +525,34 @@ _MARKETBYORDER_ORDER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=858,
-  serialized_end=947,
+  serialized_start=1003,
+  serialized_end=1121,
 )
 
 _MARKETBYORDER = _descriptor.Descriptor(
   name='MarketByOrder',
-  full_name='md.MarketByOrder',
+  full_name='market_data.MarketByOrder',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='orders', full_name='md.MarketByOrder.orders', index=0,
+      name='orders', full_name='market_data.MarketByOrder.orders', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='chunk', full_name='md.MarketByOrder.chunk', index=1,
+      name='chunk', full_name='market_data.MarketByOrder.chunk', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='numChunks', full_name='md.MarketByOrder.numChunks', index=2,
+      name='num_chunks', full_name='market_data.MarketByOrder.num_chunks', index=2,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -563,50 +570,57 @@ _MARKETBYORDER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=766,
-  serialized_end=947,
+  serialized_start=901,
+  serialized_end=1121,
 )
 
 
 _MARKETBYORDERDIFF_DIFF = _descriptor.Descriptor(
   name='Diff',
-  full_name='md.MarketByOrderDiff.Diff',
+  full_name='market_data.MarketByOrderDiff.Diff',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='price', full_name='md.MarketByOrderDiff.Diff.price', index=0,
+      name='price', full_name='market_data.MarketByOrderDiff.Diff.price', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='quantity', full_name='md.MarketByOrderDiff.Diff.quantity', index=1,
+      name='quantity', full_name='market_data.MarketByOrderDiff.Diff.quantity', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='exchangeOrderId', full_name='md.MarketByOrderDiff.Diff.exchangeOrderId', index=2,
+      name='exchange_order_id', full_name='market_data.MarketByOrderDiff.Diff.exchange_order_id', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='side', full_name='md.MarketByOrderDiff.Diff.side', index=3,
+      name='side', full_name='market_data.MarketByOrderDiff.Diff.side', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='op', full_name='md.MarketByOrderDiff.Diff.op', index=4,
+      name='op', full_name='market_data.MarketByOrderDiff.Diff.op', index=4,
       number=5, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='priority', full_name='market_data.MarketByOrderDiff.Diff.priority', index=5,
+      number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -623,48 +637,48 @@ _MARKETBYORDERDIFF_DIFF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1111,
-  serialized_end=1241,
+  serialized_start=1302,
+  serialized_end=1470,
 )
 
 _MARKETBYORDERDIFF = _descriptor.Descriptor(
   name='MarketByOrderDiff',
-  full_name='md.MarketByOrderDiff',
+  full_name='market_data.MarketByOrderDiff',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='diffs', full_name='md.MarketByOrderDiff.diffs', index=0,
+      name='diffs', full_name='market_data.MarketByOrderDiff.diffs', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='totalBidLevels', full_name='md.MarketByOrderDiff.totalBidLevels', index=1,
+      name='total_bid_levels', full_name='market_data.MarketByOrderDiff.total_bid_levels', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='totalAskLevels', full_name='md.MarketByOrderDiff.totalAskLevels', index=2,
+      name='total_ask_levels', full_name='market_data.MarketByOrderDiff.total_ask_levels', index=2,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='totalBidOrders', full_name='md.MarketByOrderDiff.totalBidOrders', index=3,
+      name='total_bid_orders', full_name='market_data.MarketByOrderDiff.total_bid_orders', index=3,
       number=4, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='totalAskOrders', full_name='md.MarketByOrderDiff.totalAskOrders', index=4,
+      name='total_ask_orders', full_name='market_data.MarketByOrderDiff.total_ask_orders', index=4,
       number=5, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -683,63 +697,63 @@ _MARKETBYORDERDIFF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=950,
-  serialized_end=1285,
+  serialized_start=1124,
+  serialized_end=1514,
 )
 
 
 _TRADES_TRADE = _descriptor.Descriptor(
   name='Trade',
-  full_name='md.Trades.Trade',
+  full_name='market_data.Trades.Trade',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='tradeId', full_name='md.Trades.Trade.tradeId', index=0,
+      name='tradeId', full_name='market_data.Trades.Trade.tradeId', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='price', full_name='md.Trades.Trade.price', index=1,
+      name='price', full_name='market_data.Trades.Trade.price', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='aggressingSide', full_name='md.Trades.Trade.aggressingSide', index=2,
+      name='aggressing_side', full_name='market_data.Trades.Trade.aggressing_side', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='restingExchangeOrderId', full_name='md.Trades.Trade.restingExchangeOrderId', index=3,
+      name='resting_exchange_order_id', full_name='market_data.Trades.Trade.resting_exchange_order_id', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='fillQuantity', full_name='md.Trades.Trade.fillQuantity', index=4,
+      name='fill_quantity', full_name='market_data.Trades.Trade.fill_quantity', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='transactTime', full_name='md.Trades.Trade.transactTime', index=5,
+      name='transact_time', full_name='market_data.Trades.Trade.transact_time', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='aggressingExchangeOrderId', full_name='md.Trades.Trade.aggressingExchangeOrderId', index=6,
+      name='aggressing_exchange_order_id', full_name='market_data.Trades.Trade.aggressing_exchange_order_id', index=6,
       number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -757,20 +771,20 @@ _TRADES_TRADE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1333,
-  serialized_end=1517,
+  serialized_start=1571,
+  serialized_end=1773,
 )
 
 _TRADES = _descriptor.Descriptor(
   name='Trades',
-  full_name='md.Trades',
+  full_name='market_data.Trades',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='trades', full_name='md.Trades.trades', index=0,
+      name='trades', full_name='market_data.Trades.trades', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -788,70 +802,70 @@ _TRADES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1288,
-  serialized_end=1517,
+  serialized_start=1517,
+  serialized_end=1773,
 )
 
 
 _SUMMARY = _descriptor.Descriptor(
   name='Summary',
-  full_name='md.Summary',
+  full_name='market_data.Summary',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='open', full_name='md.Summary.open', index=0,
+      name='open', full_name='market_data.Summary.open', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='close', full_name='md.Summary.close', index=1,
+      name='close', full_name='market_data.Summary.close', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='low', full_name='md.Summary.low', index=2,
+      name='low', full_name='market_data.Summary.low', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='high', full_name='md.Summary.high', index=3,
+      name='high', full_name='market_data.Summary.high', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='baseVolumeLo', full_name='md.Summary.baseVolumeLo', index=4,
+      name='base_volume_lo', full_name='market_data.Summary.base_volume_lo', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='baseVolumeHi', full_name='md.Summary.baseVolumeHi', index=5,
+      name='base_volume_hi', full_name='market_data.Summary.base_volume_hi', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='quoteVolumeLo', full_name='md.Summary.quoteVolumeLo', index=6,
+      name='quote_volume_lo', full_name='market_data.Summary.quote_volume_lo', index=6,
       number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='quoteVolumeHi', full_name='md.Summary.quoteVolumeHi', index=7,
+      name='quote_volume_hi', full_name='market_data.Summary.quote_volume_hi', index=7,
       number=8, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -869,70 +883,70 @@ _SUMMARY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1520,
-  serialized_end=1675,
+  serialized_start=1776,
+  serialized_end=1939,
 )
 
 
 _KLINE = _descriptor.Descriptor(
   name='Kline',
-  full_name='md.Kline',
+  full_name='market_data.Kline',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='interval', full_name='md.Kline.interval', index=0,
+      name='interval', full_name='market_data.Kline.interval', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='startTime', full_name='md.Kline.startTime', index=1,
+      name='start_time', full_name='market_data.Kline.start_time', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='open', full_name='md.Kline.open', index=2,
+      name='open', full_name='market_data.Kline.open', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='close', full_name='md.Kline.close', index=3,
+      name='close', full_name='market_data.Kline.close', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='high', full_name='md.Kline.high', index=4,
+      name='high', full_name='market_data.Kline.high', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='low', full_name='md.Kline.low', index=5,
+      name='low', full_name='market_data.Kline.low', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='volumeLo', full_name='md.Kline.volumeLo', index=6,
+      name='volume_lo', full_name='market_data.Kline.volume_lo', index=6,
       number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='volumeHi', full_name='md.Kline.volumeHi', index=7,
+      name='volume_hi', full_name='market_data.Kline.volume_hi', index=7,
       number=8, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -950,28 +964,28 @@ _KLINE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1678,
-  serialized_end=1833,
+  serialized_start=1942,
+  serialized_end=2109,
 )
 
 
 _HEARTBEAT = _descriptor.Descriptor(
   name='Heartbeat',
-  full_name='md.Heartbeat',
+  full_name='market_data.Heartbeat',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='requestId', full_name='md.Heartbeat.requestId', index=0,
+      name='request_id', full_name='market_data.Heartbeat.request_id', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='timestamp', full_name='md.Heartbeat.timestamp', index=1,
+      name='timestamp', full_name='market_data.Heartbeat.timestamp', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -989,21 +1003,21 @@ _HEARTBEAT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1835,
-  serialized_end=1884,
+  serialized_start=2111,
+  serialized_end=2161,
 )
 
 
 _MDMESSAGES = _descriptor.Descriptor(
   name='MdMessages',
-  full_name='md.MdMessages',
+  full_name='market_data.MdMessages',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='messages', full_name='md.MdMessages.messages', index=0,
+      name='messages', full_name='market_data.MdMessages.messages', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1021,35 +1035,35 @@ _MDMESSAGES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1886,
-  serialized_end=1931,
+  serialized_start=2163,
+  serialized_end=2217,
 )
 
 
 _AGGMESSAGE = _descriptor.Descriptor(
   name='AggMessage',
-  full_name='md.AggMessage',
+  full_name='market_data.AggMessage',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='heartbeat', full_name='md.AggMessage.heartbeat', index=0,
+      name='heartbeat', full_name='market_data.AggMessage.heartbeat', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='topOfBooks', full_name='md.AggMessage.topOfBooks', index=1,
+      name='top_of_books', full_name='market_data.AggMessage.top_of_books', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='rateUpdates', full_name='md.AggMessage.rateUpdates', index=2,
+      name='rate_updates', full_name='market_data.AggMessage.rate_updates', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1067,75 +1081,75 @@ _AGGMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='inner', full_name='md.AggMessage.inner',
+      name='inner', full_name='market_data.AggMessage.inner',
       index=0, containing_type=None,
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1934,
-  serialized_end=2069,
+  serialized_start=2220,
+  serialized_end=2385,
 )
 
 
 _TOPOFBOOK = _descriptor.Descriptor(
   name='TopOfBook',
-  full_name='md.TopOfBook',
+  full_name='market_data.TopOfBook',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketId', full_name='md.TopOfBook.marketId', index=0,
+      name='market_id', full_name='market_data.TopOfBook.market_id', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='transactTime', full_name='md.TopOfBook.transactTime', index=1,
+      name='transact_time', full_name='market_data.TopOfBook.transact_time', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='bidPrice', full_name='md.TopOfBook.bidPrice', index=2,
+      name='bid_price', full_name='market_data.TopOfBook.bid_price', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='bidQuantity', full_name='md.TopOfBook.bidQuantity', index=3,
+      name='bid_quantity', full_name='market_data.TopOfBook.bid_quantity', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='askPrice', full_name='md.TopOfBook.askPrice', index=4,
+      name='ask_price', full_name='market_data.TopOfBook.ask_price', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='askQuantity', full_name='md.TopOfBook.askQuantity', index=5,
+      name='ask_quantity', full_name='market_data.TopOfBook.ask_quantity', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='lastPrice', full_name='md.TopOfBook.lastPrice', index=6,
+      name='last_price', full_name='market_data.TopOfBook.last_price', index=6,
       number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='rolling24hPrice', full_name='md.TopOfBook.rolling24hPrice', index=7,
+      name='rolling24h_price', full_name='market_data.TopOfBook.rolling24h_price', index=7,
       number=8, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1153,21 +1167,21 @@ _TOPOFBOOK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2072,
-  serialized_end=2245,
+  serialized_start=2388,
+  serialized_end=2569,
 )
 
 
 _TOPOFBOOKS = _descriptor.Descriptor(
   name='TopOfBooks',
-  full_name='md.TopOfBooks',
+  full_name='market_data.TopOfBooks',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='tops', full_name='md.TopOfBooks.tops', index=0,
+      name='tops', full_name='market_data.TopOfBooks.tops', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1185,42 +1199,42 @@ _TOPOFBOOKS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2247,
-  serialized_end=2288,
+  serialized_start=2571,
+  serialized_end=2621,
 )
 
 
 _RATEUPDATE = _descriptor.Descriptor(
   name='RateUpdate',
-  full_name='md.RateUpdate',
+  full_name='market_data.RateUpdate',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='assetId', full_name='md.RateUpdate.assetId', index=0,
+      name='asset_id', full_name='market_data.RateUpdate.asset_id', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='timestamp', full_name='md.RateUpdate.timestamp', index=1,
+      name='timestamp', full_name='market_data.RateUpdate.timestamp', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='rate', full_name='md.RateUpdate.rate', index=2,
+      name='rate', full_name='market_data.RateUpdate.rate', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='side', full_name='md.RateUpdate.side', index=3,
+      name='side', full_name='market_data.RateUpdate.side', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1238,21 +1252,21 @@ _RATEUPDATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2290,
-  serialized_end=2386,
+  serialized_start=2623,
+  serialized_end=2729,
 )
 
 
 _RATEUPDATES = _descriptor.Descriptor(
   name='RateUpdates',
-  full_name='md.RateUpdates',
+  full_name='market_data.RateUpdates',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='updates', full_name='md.RateUpdates.updates', index=0,
+      name='updates', full_name='market_data.RateUpdates.updates', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1270,28 +1284,28 @@ _RATEUPDATES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2388,
-  serialized_end=2434,
+  serialized_start=2731,
+  serialized_end=2786,
 )
 
 
 _CLIENTMESSAGE = _descriptor.Descriptor(
   name='ClientMessage',
-  full_name='md.ClientMessage',
+  full_name='market_data.ClientMessage',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='heartbeat', full_name='md.ClientMessage.heartbeat', index=0,
+      name='heartbeat', full_name='market_data.ClientMessage.heartbeat', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='config', full_name='md.ClientMessage.config', index=1,
+      name='config', full_name='market_data.ClientMessage.config', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1309,54 +1323,54 @@ _CLIENTMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='inner', full_name='md.ClientMessage.inner',
+      name='inner', full_name='market_data.ClientMessage.inner',
       index=0, containing_type=None,
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=2436,
-  serialized_end=2526,
+  serialized_start=2788,
+  serialized_end=2896,
 )
 
 
 _CONFIG = _descriptor.Descriptor(
   name='Config',
-  full_name='md.Config',
+  full_name='market_data.Config',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='mbp', full_name='md.Config.mbp', index=0,
+      name='mbp', full_name='market_data.Config.mbp', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mbo', full_name='md.Config.mbo', index=1,
+      name='mbo', full_name='market_data.Config.mbo', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='trades', full_name='md.Config.trades', index=2,
+      name='trades', full_name='market_data.Config.trades', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='summary', full_name='md.Config.summary', index=3,
+      name='summary', full_name='market_data.Config.summary', index=3,
       number=4, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='klines', full_name='md.Config.klines', index=4,
+      name='klines', full_name='market_data.Config.klines', index=4,
       number=5, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1374,17 +1388,17 @@ _CONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2528,
-  serialized_end=2630,
+  serialized_start=2898,
+  serialized_end=3009,
 )
 
 _MDMESSAGE.fields_by_name['heartbeat'].message_type = _HEARTBEAT
 _MDMESSAGE.fields_by_name['summary'].message_type = _SUMMARY
 _MDMESSAGE.fields_by_name['trades'].message_type = _TRADES
-_MDMESSAGE.fields_by_name['mboSnapshot'].message_type = _MARKETBYORDER
-_MDMESSAGE.fields_by_name['mboDiff'].message_type = _MARKETBYORDERDIFF
-_MDMESSAGE.fields_by_name['mbpSnapshot'].message_type = _MARKETBYPRICE
-_MDMESSAGE.fields_by_name['mbpDiff'].message_type = _MARKETBYPRICEDIFF
+_MDMESSAGE.fields_by_name['mbo_snapshot'].message_type = _MARKETBYORDER
+_MDMESSAGE.fields_by_name['mbo_diff'].message_type = _MARKETBYORDERDIFF
+_MDMESSAGE.fields_by_name['mbp_snapshot'].message_type = _MARKETBYPRICE
+_MDMESSAGE.fields_by_name['mbp_diff'].message_type = _MARKETBYPRICEDIFF
 _MDMESSAGE.fields_by_name['kline'].message_type = _KLINE
 _MDMESSAGE.oneofs_by_name['inner'].fields.append(
   _MDMESSAGE.fields_by_name['heartbeat'])
@@ -1396,17 +1410,17 @@ _MDMESSAGE.oneofs_by_name['inner'].fields.append(
   _MDMESSAGE.fields_by_name['trades'])
 _MDMESSAGE.fields_by_name['trades'].containing_oneof = _MDMESSAGE.oneofs_by_name['inner']
 _MDMESSAGE.oneofs_by_name['inner'].fields.append(
-  _MDMESSAGE.fields_by_name['mboSnapshot'])
-_MDMESSAGE.fields_by_name['mboSnapshot'].containing_oneof = _MDMESSAGE.oneofs_by_name['inner']
+  _MDMESSAGE.fields_by_name['mbo_snapshot'])
+_MDMESSAGE.fields_by_name['mbo_snapshot'].containing_oneof = _MDMESSAGE.oneofs_by_name['inner']
 _MDMESSAGE.oneofs_by_name['inner'].fields.append(
-  _MDMESSAGE.fields_by_name['mboDiff'])
-_MDMESSAGE.fields_by_name['mboDiff'].containing_oneof = _MDMESSAGE.oneofs_by_name['inner']
+  _MDMESSAGE.fields_by_name['mbo_diff'])
+_MDMESSAGE.fields_by_name['mbo_diff'].containing_oneof = _MDMESSAGE.oneofs_by_name['inner']
 _MDMESSAGE.oneofs_by_name['inner'].fields.append(
-  _MDMESSAGE.fields_by_name['mbpSnapshot'])
-_MDMESSAGE.fields_by_name['mbpSnapshot'].containing_oneof = _MDMESSAGE.oneofs_by_name['inner']
+  _MDMESSAGE.fields_by_name['mbp_snapshot'])
+_MDMESSAGE.fields_by_name['mbp_snapshot'].containing_oneof = _MDMESSAGE.oneofs_by_name['inner']
 _MDMESSAGE.oneofs_by_name['inner'].fields.append(
-  _MDMESSAGE.fields_by_name['mbpDiff'])
-_MDMESSAGE.fields_by_name['mbpDiff'].containing_oneof = _MDMESSAGE.oneofs_by_name['inner']
+  _MDMESSAGE.fields_by_name['mbp_diff'])
+_MDMESSAGE.fields_by_name['mbp_diff'].containing_oneof = _MDMESSAGE.oneofs_by_name['inner']
 _MDMESSAGE.oneofs_by_name['inner'].fields.append(
   _MDMESSAGE.fields_by_name['kline'])
 _MDMESSAGE.fields_by_name['kline'].containing_oneof = _MDMESSAGE.oneofs_by_name['inner']
@@ -1426,23 +1440,23 @@ _MARKETBYORDERDIFF_DIFF.fields_by_name['op'].enum_type = _MARKETBYORDERDIFF_DIFF
 _MARKETBYORDERDIFF_DIFF.containing_type = _MARKETBYORDERDIFF
 _MARKETBYORDERDIFF.fields_by_name['diffs'].message_type = _MARKETBYORDERDIFF_DIFF
 _MARKETBYORDERDIFF_DIFFOP.containing_type = _MARKETBYORDERDIFF
-_TRADES_TRADE.fields_by_name['aggressingSide'].enum_type = _SIDE
+_TRADES_TRADE.fields_by_name['aggressing_side'].enum_type = _SIDE
 _TRADES_TRADE.containing_type = _TRADES
 _TRADES.fields_by_name['trades'].message_type = _TRADES_TRADE
 _KLINE.fields_by_name['interval'].enum_type = _KLINEINTERVAL
 _MDMESSAGES.fields_by_name['messages'].message_type = _MDMESSAGE
 _AGGMESSAGE.fields_by_name['heartbeat'].message_type = _HEARTBEAT
-_AGGMESSAGE.fields_by_name['topOfBooks'].message_type = _TOPOFBOOKS
-_AGGMESSAGE.fields_by_name['rateUpdates'].message_type = _RATEUPDATES
+_AGGMESSAGE.fields_by_name['top_of_books'].message_type = _TOPOFBOOKS
+_AGGMESSAGE.fields_by_name['rate_updates'].message_type = _RATEUPDATES
 _AGGMESSAGE.oneofs_by_name['inner'].fields.append(
   _AGGMESSAGE.fields_by_name['heartbeat'])
 _AGGMESSAGE.fields_by_name['heartbeat'].containing_oneof = _AGGMESSAGE.oneofs_by_name['inner']
 _AGGMESSAGE.oneofs_by_name['inner'].fields.append(
-  _AGGMESSAGE.fields_by_name['topOfBooks'])
-_AGGMESSAGE.fields_by_name['topOfBooks'].containing_oneof = _AGGMESSAGE.oneofs_by_name['inner']
+  _AGGMESSAGE.fields_by_name['top_of_books'])
+_AGGMESSAGE.fields_by_name['top_of_books'].containing_oneof = _AGGMESSAGE.oneofs_by_name['inner']
 _AGGMESSAGE.oneofs_by_name['inner'].fields.append(
-  _AGGMESSAGE.fields_by_name['rateUpdates'])
-_AGGMESSAGE.fields_by_name['rateUpdates'].containing_oneof = _AGGMESSAGE.oneofs_by_name['inner']
+  _AGGMESSAGE.fields_by_name['rate_updates'])
+_AGGMESSAGE.fields_by_name['rate_updates'].containing_oneof = _AGGMESSAGE.oneofs_by_name['inner']
 _TOPOFBOOKS.fields_by_name['tops'].message_type = _TOPOFBOOK
 _RATEUPDATE.fields_by_name['side'].enum_type = _RATEUPDATESIDE
 _RATEUPDATES.fields_by_name['updates'].message_type = _RATEUPDATE
@@ -1480,7 +1494,7 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 MdMessage = _reflection.GeneratedProtocolMessageType('MdMessage', (_message.Message,), {
   'DESCRIPTOR' : _MDMESSAGE,
   '__module__' : 'market_data_pb2'
-  # @@protoc_insertion_point(class_scope:md.MdMessage)
+  # @@protoc_insertion_point(class_scope:market_data.MdMessage)
   })
 _sym_db.RegisterMessage(MdMessage)
 
@@ -1489,12 +1503,12 @@ MarketByPrice = _reflection.GeneratedProtocolMessageType('MarketByPrice', (_mess
   'Level' : _reflection.GeneratedProtocolMessageType('Level', (_message.Message,), {
     'DESCRIPTOR' : _MARKETBYPRICE_LEVEL,
     '__module__' : 'market_data_pb2'
-    # @@protoc_insertion_point(class_scope:md.MarketByPrice.Level)
+    # @@protoc_insertion_point(class_scope:market_data.MarketByPrice.Level)
     })
   ,
   'DESCRIPTOR' : _MARKETBYPRICE,
   '__module__' : 'market_data_pb2'
-  # @@protoc_insertion_point(class_scope:md.MarketByPrice)
+  # @@protoc_insertion_point(class_scope:market_data.MarketByPrice)
   })
 _sym_db.RegisterMessage(MarketByPrice)
 _sym_db.RegisterMessage(MarketByPrice.Level)
@@ -1504,12 +1518,12 @@ MarketByPriceDiff = _reflection.GeneratedProtocolMessageType('MarketByPriceDiff'
   'Diff' : _reflection.GeneratedProtocolMessageType('Diff', (_message.Message,), {
     'DESCRIPTOR' : _MARKETBYPRICEDIFF_DIFF,
     '__module__' : 'market_data_pb2'
-    # @@protoc_insertion_point(class_scope:md.MarketByPriceDiff.Diff)
+    # @@protoc_insertion_point(class_scope:market_data.MarketByPriceDiff.Diff)
     })
   ,
   'DESCRIPTOR' : _MARKETBYPRICEDIFF,
   '__module__' : 'market_data_pb2'
-  # @@protoc_insertion_point(class_scope:md.MarketByPriceDiff)
+  # @@protoc_insertion_point(class_scope:market_data.MarketByPriceDiff)
   })
 _sym_db.RegisterMessage(MarketByPriceDiff)
 _sym_db.RegisterMessage(MarketByPriceDiff.Diff)
@@ -1519,12 +1533,12 @@ MarketByOrder = _reflection.GeneratedProtocolMessageType('MarketByOrder', (_mess
   'Order' : _reflection.GeneratedProtocolMessageType('Order', (_message.Message,), {
     'DESCRIPTOR' : _MARKETBYORDER_ORDER,
     '__module__' : 'market_data_pb2'
-    # @@protoc_insertion_point(class_scope:md.MarketByOrder.Order)
+    # @@protoc_insertion_point(class_scope:market_data.MarketByOrder.Order)
     })
   ,
   'DESCRIPTOR' : _MARKETBYORDER,
   '__module__' : 'market_data_pb2'
-  # @@protoc_insertion_point(class_scope:md.MarketByOrder)
+  # @@protoc_insertion_point(class_scope:market_data.MarketByOrder)
   })
 _sym_db.RegisterMessage(MarketByOrder)
 _sym_db.RegisterMessage(MarketByOrder.Order)
@@ -1534,12 +1548,12 @@ MarketByOrderDiff = _reflection.GeneratedProtocolMessageType('MarketByOrderDiff'
   'Diff' : _reflection.GeneratedProtocolMessageType('Diff', (_message.Message,), {
     'DESCRIPTOR' : _MARKETBYORDERDIFF_DIFF,
     '__module__' : 'market_data_pb2'
-    # @@protoc_insertion_point(class_scope:md.MarketByOrderDiff.Diff)
+    # @@protoc_insertion_point(class_scope:market_data.MarketByOrderDiff.Diff)
     })
   ,
   'DESCRIPTOR' : _MARKETBYORDERDIFF,
   '__module__' : 'market_data_pb2'
-  # @@protoc_insertion_point(class_scope:md.MarketByOrderDiff)
+  # @@protoc_insertion_point(class_scope:market_data.MarketByOrderDiff)
   })
 _sym_db.RegisterMessage(MarketByOrderDiff)
 _sym_db.RegisterMessage(MarketByOrderDiff.Diff)
@@ -1549,12 +1563,12 @@ Trades = _reflection.GeneratedProtocolMessageType('Trades', (_message.Message,),
   'Trade' : _reflection.GeneratedProtocolMessageType('Trade', (_message.Message,), {
     'DESCRIPTOR' : _TRADES_TRADE,
     '__module__' : 'market_data_pb2'
-    # @@protoc_insertion_point(class_scope:md.Trades.Trade)
+    # @@protoc_insertion_point(class_scope:market_data.Trades.Trade)
     })
   ,
   'DESCRIPTOR' : _TRADES,
   '__module__' : 'market_data_pb2'
-  # @@protoc_insertion_point(class_scope:md.Trades)
+  # @@protoc_insertion_point(class_scope:market_data.Trades)
   })
 _sym_db.RegisterMessage(Trades)
 _sym_db.RegisterMessage(Trades.Trade)
@@ -1562,77 +1576,77 @@ _sym_db.RegisterMessage(Trades.Trade)
 Summary = _reflection.GeneratedProtocolMessageType('Summary', (_message.Message,), {
   'DESCRIPTOR' : _SUMMARY,
   '__module__' : 'market_data_pb2'
-  # @@protoc_insertion_point(class_scope:md.Summary)
+  # @@protoc_insertion_point(class_scope:market_data.Summary)
   })
 _sym_db.RegisterMessage(Summary)
 
 Kline = _reflection.GeneratedProtocolMessageType('Kline', (_message.Message,), {
   'DESCRIPTOR' : _KLINE,
   '__module__' : 'market_data_pb2'
-  # @@protoc_insertion_point(class_scope:md.Kline)
+  # @@protoc_insertion_point(class_scope:market_data.Kline)
   })
 _sym_db.RegisterMessage(Kline)
 
 Heartbeat = _reflection.GeneratedProtocolMessageType('Heartbeat', (_message.Message,), {
   'DESCRIPTOR' : _HEARTBEAT,
   '__module__' : 'market_data_pb2'
-  # @@protoc_insertion_point(class_scope:md.Heartbeat)
+  # @@protoc_insertion_point(class_scope:market_data.Heartbeat)
   })
 _sym_db.RegisterMessage(Heartbeat)
 
 MdMessages = _reflection.GeneratedProtocolMessageType('MdMessages', (_message.Message,), {
   'DESCRIPTOR' : _MDMESSAGES,
   '__module__' : 'market_data_pb2'
-  # @@protoc_insertion_point(class_scope:md.MdMessages)
+  # @@protoc_insertion_point(class_scope:market_data.MdMessages)
   })
 _sym_db.RegisterMessage(MdMessages)
 
 AggMessage = _reflection.GeneratedProtocolMessageType('AggMessage', (_message.Message,), {
   'DESCRIPTOR' : _AGGMESSAGE,
   '__module__' : 'market_data_pb2'
-  # @@protoc_insertion_point(class_scope:md.AggMessage)
+  # @@protoc_insertion_point(class_scope:market_data.AggMessage)
   })
 _sym_db.RegisterMessage(AggMessage)
 
 TopOfBook = _reflection.GeneratedProtocolMessageType('TopOfBook', (_message.Message,), {
   'DESCRIPTOR' : _TOPOFBOOK,
   '__module__' : 'market_data_pb2'
-  # @@protoc_insertion_point(class_scope:md.TopOfBook)
+  # @@protoc_insertion_point(class_scope:market_data.TopOfBook)
   })
 _sym_db.RegisterMessage(TopOfBook)
 
 TopOfBooks = _reflection.GeneratedProtocolMessageType('TopOfBooks', (_message.Message,), {
   'DESCRIPTOR' : _TOPOFBOOKS,
   '__module__' : 'market_data_pb2'
-  # @@protoc_insertion_point(class_scope:md.TopOfBooks)
+  # @@protoc_insertion_point(class_scope:market_data.TopOfBooks)
   })
 _sym_db.RegisterMessage(TopOfBooks)
 
 RateUpdate = _reflection.GeneratedProtocolMessageType('RateUpdate', (_message.Message,), {
   'DESCRIPTOR' : _RATEUPDATE,
   '__module__' : 'market_data_pb2'
-  # @@protoc_insertion_point(class_scope:md.RateUpdate)
+  # @@protoc_insertion_point(class_scope:market_data.RateUpdate)
   })
 _sym_db.RegisterMessage(RateUpdate)
 
 RateUpdates = _reflection.GeneratedProtocolMessageType('RateUpdates', (_message.Message,), {
   'DESCRIPTOR' : _RATEUPDATES,
   '__module__' : 'market_data_pb2'
-  # @@protoc_insertion_point(class_scope:md.RateUpdates)
+  # @@protoc_insertion_point(class_scope:market_data.RateUpdates)
   })
 _sym_db.RegisterMessage(RateUpdates)
 
 ClientMessage = _reflection.GeneratedProtocolMessageType('ClientMessage', (_message.Message,), {
   'DESCRIPTOR' : _CLIENTMESSAGE,
   '__module__' : 'market_data_pb2'
-  # @@protoc_insertion_point(class_scope:md.ClientMessage)
+  # @@protoc_insertion_point(class_scope:market_data.ClientMessage)
   })
 _sym_db.RegisterMessage(ClientMessage)
 
 Config = _reflection.GeneratedProtocolMessageType('Config', (_message.Message,), {
   'DESCRIPTOR' : _CONFIG,
   '__module__' : 'market_data_pb2'
-  # @@protoc_insertion_point(class_scope:md.Config)
+  # @@protoc_insertion_point(class_scope:market_data.Config)
   })
 _sym_db.RegisterMessage(Config)
 

@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z\003go/\252\002\nCube.Trade',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0btrade.proto\x12\x05trade\"H\n\x0b\x43redentials\x12\x13\n\x0b\x61\x63\x63\x65ssKeyId\x18\x01 \x01(\t\x12\x11\n\tsignature\x18\x02 \x01(\t\x12\x11\n\ttimestamp\x18\x03 \x01(\x04\"\xcb\x01\n\x0cOrderRequest\x12\x1e\n\x03new\x18\x01 \x01(\x0b\x32\x0f.trade.NewOrderH\x00\x12$\n\x06\x63\x61ncel\x18\x02 \x01(\x0b\x32\x12.trade.CancelOrderH\x00\x12$\n\x06modify\x18\x03 \x01(\x0b\x32\x12.trade.ModifyOrderH\x00\x12%\n\theartbeat\x18\x04 \x01(\x0b\x32\x10.trade.HeartbeatH\x00\x12\x1f\n\x02mc\x18\x05 \x01(\x0b\x32\x11.trade.MassCancelH\x00\x42\x07\n\x05inner\"\xee\x02\n\x08NewOrder\x12\x15\n\rclientOrderId\x18\x01 \x01(\x04\x12\x11\n\trequestId\x18\x02 \x01(\x04\x12\x10\n\x08marketId\x18\x03 \x01(\x04\x12\x12\n\x05price\x18\x04 \x01(\x04H\x00\x88\x01\x01\x12\x10\n\x08quantity\x18\x05 \x01(\x04\x12\x19\n\x04side\x18\x06 \x01(\x0e\x32\x0b.trade.Side\x12\'\n\x0btimeInForce\x18\x07 \x01(\x0e\x32\x12.trade.TimeInForce\x12#\n\torderType\x18\x08 \x01(\x0e\x32\x10.trade.OrderType\x12\x14\n\x0csubaccountId\x18\t \x01(\x04\x12<\n\x13selfTradePrevention\x18\n \x01(\x0e\x32\x1a.trade.SelfTradePreventionH\x01\x88\x01\x01\x12!\n\x08postOnly\x18\x0b \x01(\x0e\x32\x0f.trade.PostOnlyB\x08\n\x06_priceB\x16\n\x14_selfTradePrevention\"_\n\x0b\x43\x61ncelOrder\x12\x10\n\x08marketId\x18\x01 \x01(\x04\x12\x15\n\rclientOrderId\x18\x02 \x01(\x04\x12\x11\n\trequestId\x18\x03 \x01(\x04\x12\x14\n\x0csubaccountId\x18\x04 \x01(\x04\"\xff\x01\n\x0bModifyOrder\x12\x10\n\x08marketId\x18\x01 \x01(\x04\x12\x15\n\rclientOrderId\x18\x02 \x01(\x04\x12\x11\n\trequestId\x18\x03 \x01(\x04\x12\x10\n\x08newPrice\x18\x04 \x01(\x04\x12\x13\n\x0bnewQuantity\x18\x05 \x01(\x04\x12\x14\n\x0csubaccountId\x18\x06 \x01(\x04\x12<\n\x13selfTradePrevention\x18\x07 \x01(\x0e\x32\x1a.trade.SelfTradePreventionH\x00\x88\x01\x01\x12!\n\x08postOnly\x18\x08 \x01(\x0e\x32\x0f.trade.PostOnlyB\x16\n\x14_selfTradePrevention\"\x82\x01\n\nMassCancel\x12\x14\n\x0csubaccountId\x18\x01 \x01(\x04\x12\x11\n\trequestId\x18\x02 \x01(\x04\x12\x15\n\x08marketId\x18\x03 \x01(\x04H\x00\x88\x01\x01\x12\x1e\n\x04side\x18\x04 \x01(\x0e\x32\x0b.trade.SideH\x01\x88\x01\x01\x42\x0b\n\t_marketIdB\x07\n\x05_side\"1\n\tHeartbeat\x12\x11\n\trequestId\x18\x01 \x01(\x04\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\"\xc3\x03\n\rOrderResponse\x12$\n\x06newAck\x18\x01 \x01(\x0b\x32\x12.trade.NewOrderAckH\x00\x12*\n\tcancelAck\x18\x02 \x01(\x0b\x32\x15.trade.CancelOrderAckH\x00\x12*\n\tmodifyAck\x18\x03 \x01(\x0b\x32\x15.trade.ModifyOrderAckH\x00\x12*\n\tnewReject\x18\x04 \x01(\x0b\x32\x15.trade.NewOrderRejectH\x00\x12\x30\n\x0c\x63\x61ncelReject\x18\x05 \x01(\x0b\x32\x18.trade.CancelOrderRejectH\x00\x12\x30\n\x0cmodifyReject\x18\x06 \x01(\x0b\x32\x18.trade.ModifyOrderRejectH\x00\x12\x1b\n\x04\x66ill\x18\x07 \x01(\x0b\x32\x0b.trade.FillH\x00\x12%\n\theartbeat\x18\x08 \x01(\x0b\x32\x10.trade.HeartbeatH\x00\x12(\n\x08position\x18\t \x01(\x0b\x32\x14.trade.AssetPositionH\x00\x12-\n\rmassCancelAck\x18\n \x01(\x0b\x32\x14.trade.MassCancelAckH\x00\x42\x07\n\x05inner\"\xba\x02\n\x0bNewOrderAck\x12\x11\n\tmsgSeqNum\x18\x01 \x01(\x04\x12\x15\n\rclientOrderId\x18\x02 \x01(\x04\x12\x11\n\trequestId\x18\x03 \x01(\x04\x12\x17\n\x0f\x65xchangeOrderId\x18\x04 \x01(\x04\x12\x10\n\x08marketId\x18\x05 \x01(\x04\x12\x12\n\x05price\x18\x06 \x01(\x04H\x00\x88\x01\x01\x12\x10\n\x08quantity\x18\x07 \x01(\x04\x12\x19\n\x04side\x18\x08 \x01(\x0e\x32\x0b.trade.Side\x12\'\n\x0btimeInForce\x18\t \x01(\x0e\x32\x12.trade.TimeInForce\x12#\n\torderType\x18\n \x01(\x0e\x32\x10.trade.OrderType\x12\x14\n\x0ctransactTime\x18\x0b \x01(\x04\x12\x14\n\x0csubaccountId\x18\x0c \x01(\x04\x42\x08\n\x06_price\"\xb3\x02\n\x0e\x43\x61ncelOrderAck\x12\x11\n\tmsgSeqNum\x18\x01 \x01(\x04\x12\x15\n\rclientOrderId\x18\x02 \x01(\x04\x12\x11\n\trequestId\x18\x03 \x01(\x04\x12\x14\n\x0ctransactTime\x18\x04 \x01(\x04\x12\x14\n\x0csubaccountId\x18\x05 \x01(\x04\x12,\n\x06reason\x18\x06 \x01(\x0e\x32\x1c.trade.CancelOrderAck.Reason\x12\x10\n\x08marketId\x18\x07 \x01(\x04\"x\n\x06Reason\x12\x10\n\x0cUNCLASSIFIED\x10\x00\x12\x0e\n\nDISCONNECT\x10\x01\x12\r\n\tREQUESTED\x10\x02\x12\x07\n\x03IOC\x10\x03\x12\x0f\n\x0bSTP_RESTING\x10\x04\x12\x12\n\x0eSTP_AGGRESSING\x10\x05\x12\x0f\n\x0bMASS_CANCEL\x10\x06\"\xaf\x01\n\x0eModifyOrderAck\x12\x11\n\tmsgSeqNum\x18\x01 \x01(\x04\x12\x15\n\rclientOrderId\x18\x02 \x01(\x04\x12\x11\n\trequestId\x18\x03 \x01(\x04\x12\x14\n\x0ctransactTime\x18\x04 \x01(\x04\x12\x13\n\x0bnewQuantity\x18\x05 \x01(\x04\x12\x14\n\x0csubaccountId\x18\x06 \x01(\x04\x12\x10\n\x08marketId\x18\x07 \x01(\x04\x12\r\n\x05price\x18\x08 \x01(\x04\"\x80\x02\n\rMassCancelAck\x12\x11\n\tmsgSeqNum\x18\x01 \x01(\x04\x12\x14\n\x0csubaccountId\x18\x02 \x01(\x04\x12\x11\n\trequestId\x18\x03 \x01(\x04\x12\x14\n\x0ctransactTime\x18\x04 \x01(\x04\x12\x30\n\x06reason\x18\x06 \x01(\x0e\x32\x1b.trade.MassCancelAck.ReasonH\x00\x88\x01\x01\x12\x1b\n\x13totalAffectedOrders\x18\x07 \x01(\r\"C\n\x06Reason\x12\x10\n\x0cUNCLASSIFIED\x10\x00\x12\x15\n\x11INVALID_MARKET_ID\x10\x01\x12\x10\n\x0cINVALID_SIDE\x10\x02\x42\t\n\x07_reason\"\x91\x06\n\x0eNewOrderReject\x12\x11\n\tmsgSeqNum\x18\x01 \x01(\x04\x12\x15\n\rclientOrderId\x18\x02 \x01(\x04\x12\x11\n\trequestId\x18\x03 \x01(\x04\x12\x14\n\x0ctransactTime\x18\x04 \x01(\x04\x12\x14\n\x0csubaccountId\x18\x05 \x01(\x04\x12,\n\x06reason\x18\x06 \x01(\x0e\x32\x1c.trade.NewOrderReject.Reason\x12\x10\n\x08marketId\x18\x07 \x01(\x04\x12\x12\n\x05price\x18\x08 \x01(\x04H\x00\x88\x01\x01\x12\x10\n\x08quantity\x18\t \x01(\x04\x12\x19\n\x04side\x18\n \x01(\x0e\x32\x0b.trade.Side\x12\'\n\x0btimeInForce\x18\x0b \x01(\x0e\x32\x12.trade.TimeInForce\x12#\n\torderType\x18\x0c \x01(\x0e\x32\x10.trade.OrderType\"\xbc\x03\n\x06Reason\x12\x10\n\x0cUNCLASSIFIED\x10\x00\x12\x14\n\x10INVALID_QUANTITY\x10\x01\x12\x15\n\x11INVALID_MARKET_ID\x10\x02\x12\x16\n\x12\x44UPLICATE_ORDER_ID\x10\x03\x12\x10\n\x0cINVALID_SIDE\x10\x04\x12\x19\n\x15INVALID_TIME_IN_FORCE\x10\x05\x12\x16\n\x12INVALID_ORDER_TYPE\x10\x06\x12\x15\n\x11INVALID_POST_ONLY\x10\x07\x12!\n\x1dINVALID_SELF_TRADE_PREVENTION\x10\x08\x12\x12\n\x0eUNKNOWN_TRADER\x10\t\x12\x1b\n\x17PRICE_WITH_MARKET_ORDER\x10\n\x12\x1f\n\x1bPOST_ONLY_WITH_MARKET_ORDER\x10\x0b\x12\x1e\n\x1aPOST_ONLY_WITH_INVALID_TIF\x10\x0c\x12\x1a\n\x16\x45XCEEDED_SPOT_POSITION\x10\r\x12\x1b\n\x17NO_OPPOSING_LIMIT_ORDER\x10\x0e\x12\x19\n\x15POST_ONLY_WOULD_TRADE\x10\x0f\x12\x16\n\x12\x44ID_NOT_FULLY_FILL\x10\x10\x42\x08\n\x06_price\"\x87\x02\n\x11\x43\x61ncelOrderReject\x12\x11\n\tmsgSeqNum\x18\x01 \x01(\x04\x12\x15\n\rclientOrderId\x18\x02 \x01(\x04\x12\x11\n\trequestId\x18\x03 \x01(\x04\x12\x14\n\x0ctransactTime\x18\x04 \x01(\x04\x12\x14\n\x0csubaccountId\x18\x05 \x01(\x04\x12/\n\x06reason\x18\x06 \x01(\x0e\x32\x1f.trade.CancelOrderReject.Reason\x12\x10\n\x08marketId\x18\x07 \x01(\x04\"F\n\x06Reason\x12\x10\n\x0cUNCLASSIFIED\x10\x00\x12\x15\n\x11INVALID_MARKET_ID\x10\x01\x12\x13\n\x0fORDER_NOT_FOUND\x10\x02\"\xb4\x03\n\x11ModifyOrderReject\x12\x11\n\tmsgSeqNum\x18\x01 \x01(\x04\x12\x15\n\rclientOrderId\x18\x02 \x01(\x04\x12\x11\n\trequestId\x18\x03 \x01(\x04\x12\x14\n\x0ctransactTime\x18\x04 \x01(\x04\x12\x14\n\x0csubaccountId\x18\x05 \x01(\x04\x12/\n\x06reason\x18\x06 \x01(\x0e\x32\x1f.trade.ModifyOrderReject.Reason\x12\x10\n\x08marketId\x18\x07 \x01(\x04\"\xf2\x01\n\x06Reason\x12\x10\n\x0cUNCLASSIFIED\x10\x00\x12\x14\n\x10INVALID_QUANTITY\x10\x01\x12\x15\n\x11INVALID_MARKET_ID\x10\x02\x12\x13\n\x0fORDER_NOT_FOUND\x10\x03\x12\x0f\n\x0bINVALID_IFM\x10\x04\x12\x15\n\x11INVALID_POST_ONLY\x10\x05\x12!\n\x1dINVALID_SELF_TRADE_PREVENTION\x10\x06\x12\x12\n\x0eUNKNOWN_TRADER\x10\x07\x12\x1a\n\x16\x45XCEEDED_SPOT_POSITION\x10\x08\x12\x19\n\x15POST_ONLY_WOULD_TRADE\x10\t\"\xc8\x01\n\x04\x46ill\x12\x11\n\tmsgSeqNum\x18\x01 \x01(\x04\x12\x10\n\x08marketId\x18\x02 \x01(\x04\x12\x15\n\rclientOrderId\x18\x03 \x01(\x04\x12\x17\n\x0f\x65xchangeOrderId\x18\x04 \x01(\x04\x12\x11\n\tfillPrice\x18\x05 \x01(\x04\x12\x14\n\x0c\x66illQuantity\x18\x06 \x01(\x04\x12\x16\n\x0eleavesQuantity\x18\x07 \x01(\x04\x12\x14\n\x0ctransactTime\x18\x08 \x01(\x04\x12\x14\n\x0csubaccountId\x18\t \x01(\x04\"z\n\rAssetPosition\x12\x14\n\x0csubaccountId\x18\x01 \x01(\x04\x12\x0f\n\x07\x61ssetId\x18\x02 \x01(\x04\x12\x1e\n\x05total\x18\x03 \x01(\x0b\x32\x0f.trade.RawUnits\x12\"\n\tavailable\x18\x04 \x01(\x0b\x32\x0f.trade.RawUnits\"F\n\x08RawUnits\x12\r\n\x05word0\x18\x01 \x01(\x04\x12\r\n\x05word1\x18\x02 \x01(\x04\x12\r\n\x05word2\x18\x03 \x01(\x04\x12\r\n\x05word3\x18\x04 \x01(\x04\"\x85\x01\n\tBootstrap\x12\x1b\n\x04\x64one\x18\x01 \x01(\x0b\x32\x0b.trade.DoneH\x00\x12\'\n\x07resting\x18\x02 \x01(\x0b\x32\x14.trade.RestingOrdersH\x00\x12)\n\x08position\x18\x03 \x01(\x0b\x32\x15.trade.AssetPositionsH\x00\x42\x07\n\x05inner\"4\n\rRestingOrders\x12#\n\x06orders\x18\x01 \x03(\x0b\x32\x13.trade.RestingOrder\"9\n\x0e\x41ssetPositions\x12\'\n\tpositions\x18\x01 \x03(\x0b\x32\x14.trade.AssetPosition\"\"\n\x04\x44one\x12\x1a\n\x12latestTransactTime\x18\x01 \x01(\x04\"\xa5\x02\n\x0cRestingOrder\x12\x15\n\rclientOrderId\x18\x01 \x01(\x04\x12\x17\n\x0f\x65xchangeOrderId\x18\x02 \x01(\x04\x12\x10\n\x08marketId\x18\x03 \x01(\x04\x12\r\n\x05price\x18\x04 \x01(\x04\x12\x18\n\x10originalQuantity\x18\x05 \x01(\x04\x12\x19\n\x04side\x18\x06 \x01(\x0e\x32\x0b.trade.Side\x12\'\n\x0btimeInForce\x18\x07 \x01(\x0e\x32\x12.trade.TimeInForce\x12#\n\torderType\x18\x08 \x01(\x0e\x32\x10.trade.OrderType\x12\x19\n\x11remainingQuantity\x18\t \x01(\x04\x12\x10\n\x08restTime\x18\n \x01(\x04\x12\x14\n\x0csubaccountId\x18\x0b \x01(\x04*\x18\n\x04Side\x12\x07\n\x03\x42ID\x10\x00\x12\x07\n\x03\x41SK\x10\x01*N\n\x0bTimeInForce\x12\x17\n\x13IMMEDIATE_OR_CANCEL\x10\x00\x12\x14\n\x10GOOD_FOR_SESSION\x10\x01\x12\x10\n\x0c\x46ILL_OR_KILL\x10\x02*D\n\tOrderType\x12\t\n\x05LIMIT\x10\x00\x12\x10\n\x0cMARKET_LIMIT\x10\x01\x12\x1a\n\x16MARKET_WITH_PROTECTION\x10\x02*V\n\x13SelfTradePrevention\x12\x12\n\x0e\x43\x41NCEL_RESTING\x10\x00\x12\x15\n\x11\x43\x41NCEL_AGGRESSING\x10\x01\x12\x14\n\x10\x41LLOW_SELF_TRADE\x10\x02*%\n\x08PostOnly\x12\x0c\n\x08\x44ISABLED\x10\x00\x12\x0b\n\x07\x45NABLED\x10\x01\x42\x12Z\x03go/\xaa\x02\nCube.Tradeb\x06proto3'
+  serialized_pb=b'\n\x0btrade.proto\x12\x05trade\"J\n\x0b\x43redentials\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\x12\x11\n\tsignature\x18\x02 \x01(\t\x12\x11\n\ttimestamp\x18\x03 \x01(\x04\"\xcb\x01\n\x0cOrderRequest\x12\x1e\n\x03new\x18\x01 \x01(\x0b\x32\x0f.trade.NewOrderH\x00\x12$\n\x06\x63\x61ncel\x18\x02 \x01(\x0b\x32\x12.trade.CancelOrderH\x00\x12$\n\x06modify\x18\x03 \x01(\x0b\x32\x12.trade.ModifyOrderH\x00\x12%\n\theartbeat\x18\x04 \x01(\x0b\x32\x10.trade.HeartbeatH\x00\x12\x1f\n\x02mc\x18\x05 \x01(\x0b\x32\x11.trade.MassCancelH\x00\x42\x07\n\x05inner\"\x99\x03\n\x08NewOrder\x12\x17\n\x0f\x63lient_order_id\x18\x01 \x01(\x04\x12\x12\n\nrequest_id\x18\x02 \x01(\x04\x12\x11\n\tmarket_id\x18\x03 \x01(\x04\x12\x12\n\x05price\x18\x04 \x01(\x04H\x00\x88\x01\x01\x12\x10\n\x08quantity\x18\x05 \x01(\x04\x12\x19\n\x04side\x18\x06 \x01(\x0e\x32\x0b.trade.Side\x12)\n\rtime_in_force\x18\x07 \x01(\x0e\x32\x12.trade.TimeInForce\x12$\n\norder_type\x18\x08 \x01(\x0e\x32\x10.trade.OrderType\x12\x15\n\rsubaccount_id\x18\t \x01(\x04\x12>\n\x15self_trade_prevention\x18\n \x01(\x0e\x32\x1a.trade.SelfTradePreventionH\x01\x88\x01\x01\x12\"\n\tpost_only\x18\x0b \x01(\x0e\x32\x0f.trade.PostOnly\x12\x1c\n\x14\x63\x61ncel_on_disconnect\x18\x0c \x01(\x08\x42\x08\n\x06_priceB\x18\n\x16_self_trade_prevention\"d\n\x0b\x43\x61ncelOrder\x12\x11\n\tmarket_id\x18\x01 \x01(\x04\x12\x17\n\x0f\x63lient_order_id\x18\x02 \x01(\x04\x12\x12\n\nrequest_id\x18\x03 \x01(\x04\x12\x15\n\rsubaccount_id\x18\x04 \x01(\x04\"\x8b\x02\n\x0bModifyOrder\x12\x11\n\tmarket_id\x18\x01 \x01(\x04\x12\x17\n\x0f\x63lient_order_id\x18\x02 \x01(\x04\x12\x12\n\nrequest_id\x18\x03 \x01(\x04\x12\x11\n\tnew_price\x18\x04 \x01(\x04\x12\x14\n\x0cnew_quantity\x18\x05 \x01(\x04\x12\x15\n\rsubaccount_id\x18\x06 \x01(\x04\x12>\n\x15self_trade_prevention\x18\x07 \x01(\x0e\x32\x1a.trade.SelfTradePreventionH\x00\x88\x01\x01\x12\"\n\tpost_only\x18\x08 \x01(\x0e\x32\x0f.trade.PostOnlyB\x18\n\x16_self_trade_prevention\"\x86\x01\n\nMassCancel\x12\x15\n\rsubaccount_id\x18\x01 \x01(\x04\x12\x12\n\nrequest_id\x18\x02 \x01(\x04\x12\x16\n\tmarket_id\x18\x03 \x01(\x04H\x00\x88\x01\x01\x12\x1e\n\x04side\x18\x04 \x01(\x0e\x32\x0b.trade.SideH\x01\x88\x01\x01\x42\x0c\n\n_market_idB\x07\n\x05_side\"2\n\tHeartbeat\x12\x12\n\nrequest_id\x18\x01 \x01(\x04\x12\x11\n\ttimestamp\x18\x02 \x01(\x04\"\xcb\x03\n\rOrderResponse\x12%\n\x07new_ack\x18\x01 \x01(\x0b\x32\x12.trade.NewOrderAckH\x00\x12+\n\ncancel_ack\x18\x02 \x01(\x0b\x32\x15.trade.CancelOrderAckH\x00\x12+\n\nmodify_ack\x18\x03 \x01(\x0b\x32\x15.trade.ModifyOrderAckH\x00\x12+\n\nnew_reject\x18\x04 \x01(\x0b\x32\x15.trade.NewOrderRejectH\x00\x12\x31\n\rcancel_reject\x18\x05 \x01(\x0b\x32\x18.trade.CancelOrderRejectH\x00\x12\x31\n\rmodify_reject\x18\x06 \x01(\x0b\x32\x18.trade.ModifyOrderRejectH\x00\x12\x1b\n\x04\x66ill\x18\x07 \x01(\x0b\x32\x0b.trade.FillH\x00\x12%\n\theartbeat\x18\x08 \x01(\x0b\x32\x10.trade.HeartbeatH\x00\x12(\n\x08position\x18\t \x01(\x0b\x32\x14.trade.AssetPositionH\x00\x12/\n\x0fmass_cancel_ack\x18\n \x01(\x0b\x32\x14.trade.MassCancelAckH\x00\x42\x07\n\x05inner\"\xe5\x02\n\x0bNewOrderAck\x12\x13\n\x0bmsg_seq_num\x18\x01 \x01(\x04\x12\x17\n\x0f\x63lient_order_id\x18\x02 \x01(\x04\x12\x12\n\nrequest_id\x18\x03 \x01(\x04\x12\x19\n\x11\x65xchange_order_id\x18\x04 \x01(\x04\x12\x11\n\tmarket_id\x18\x05 \x01(\x04\x12\x12\n\x05price\x18\x06 \x01(\x04H\x00\x88\x01\x01\x12\x10\n\x08quantity\x18\x07 \x01(\x04\x12\x19\n\x04side\x18\x08 \x01(\x0e\x32\x0b.trade.Side\x12)\n\rtime_in_force\x18\t \x01(\x0e\x32\x12.trade.TimeInForce\x12$\n\norder_type\x18\n \x01(\x0e\x32\x10.trade.OrderType\x12\x15\n\rtransact_time\x18\x0b \x01(\x04\x12\x15\n\rsubaccount_id\x18\x0c \x01(\x04\x12\x1c\n\x14\x63\x61ncel_on_disconnect\x18\r \x01(\x08\x42\x08\n\x06_price\"\xbb\x02\n\x0e\x43\x61ncelOrderAck\x12\x13\n\x0bmsg_seq_num\x18\x01 \x01(\x04\x12\x17\n\x0f\x63lient_order_id\x18\x02 \x01(\x04\x12\x12\n\nrequest_id\x18\x03 \x01(\x04\x12\x15\n\rtransact_time\x18\x04 \x01(\x04\x12\x15\n\rsubaccount_id\x18\x05 \x01(\x04\x12,\n\x06reason\x18\x06 \x01(\x0e\x32\x1c.trade.CancelOrderAck.Reason\x12\x11\n\tmarket_id\x18\x07 \x01(\x04\"x\n\x06Reason\x12\x10\n\x0cUNCLASSIFIED\x10\x00\x12\x0e\n\nDISCONNECT\x10\x01\x12\r\n\tREQUESTED\x10\x02\x12\x07\n\x03IOC\x10\x03\x12\x0f\n\x0bSTP_RESTING\x10\x04\x12\x12\n\x0eSTP_AGGRESSING\x10\x05\x12\x0f\n\x0bMASS_CANCEL\x10\x06\"\xed\x01\n\x0eModifyOrderAck\x12\x13\n\x0bmsg_seq_num\x18\x01 \x01(\x04\x12\x17\n\x0f\x63lient_order_id\x18\x02 \x01(\x04\x12\x12\n\nrequest_id\x18\x03 \x01(\x04\x12\x15\n\rtransact_time\x18\x04 \x01(\x04\x12\x1a\n\x12remaining_quantity\x18\x05 \x01(\x04\x12\x15\n\rsubaccount_id\x18\x06 \x01(\x04\x12\x11\n\tmarket_id\x18\x07 \x01(\x04\x12\r\n\x05price\x18\x08 \x01(\x04\x12\x10\n\x08quantity\x18\t \x01(\x04\x12\x1b\n\x13\x63umulative_quantity\x18\n \x01(\x04\"\x87\x02\n\rMassCancelAck\x12\x13\n\x0bmsg_seq_num\x18\x01 \x01(\x04\x12\x15\n\rsubaccount_id\x18\x02 \x01(\x04\x12\x12\n\nrequest_id\x18\x03 \x01(\x04\x12\x15\n\rtransact_time\x18\x04 \x01(\x04\x12\x30\n\x06reason\x18\x06 \x01(\x0e\x32\x1b.trade.MassCancelAck.ReasonH\x00\x88\x01\x01\x12\x1d\n\x15total_affected_orders\x18\x07 \x01(\r\"C\n\x06Reason\x12\x10\n\x0cUNCLASSIFIED\x10\x00\x12\x15\n\x11INVALID_MARKET_ID\x10\x01\x12\x10\n\x0cINVALID_SIDE\x10\x02\x42\t\n\x07_reason\"\x9c\x06\n\x0eNewOrderReject\x12\x13\n\x0bmsg_seq_num\x18\x01 \x01(\x04\x12\x17\n\x0f\x63lient_order_id\x18\x02 \x01(\x04\x12\x12\n\nrequest_id\x18\x03 \x01(\x04\x12\x15\n\rtransact_time\x18\x04 \x01(\x04\x12\x15\n\rsubaccount_id\x18\x05 \x01(\x04\x12,\n\x06reason\x18\x06 \x01(\x0e\x32\x1c.trade.NewOrderReject.Reason\x12\x11\n\tmarket_id\x18\x07 \x01(\x04\x12\x12\n\x05price\x18\x08 \x01(\x04H\x00\x88\x01\x01\x12\x10\n\x08quantity\x18\t \x01(\x04\x12\x19\n\x04side\x18\n \x01(\x0e\x32\x0b.trade.Side\x12)\n\rtime_in_force\x18\x0b \x01(\x0e\x32\x12.trade.TimeInForce\x12$\n\norder_type\x18\x0c \x01(\x0e\x32\x10.trade.OrderType\"\xbc\x03\n\x06Reason\x12\x10\n\x0cUNCLASSIFIED\x10\x00\x12\x14\n\x10INVALID_QUANTITY\x10\x01\x12\x15\n\x11INVALID_MARKET_ID\x10\x02\x12\x16\n\x12\x44UPLICATE_ORDER_ID\x10\x03\x12\x10\n\x0cINVALID_SIDE\x10\x04\x12\x19\n\x15INVALID_TIME_IN_FORCE\x10\x05\x12\x16\n\x12INVALID_ORDER_TYPE\x10\x06\x12\x15\n\x11INVALID_POST_ONLY\x10\x07\x12!\n\x1dINVALID_SELF_TRADE_PREVENTION\x10\x08\x12\x12\n\x0eUNKNOWN_TRADER\x10\t\x12\x1b\n\x17PRICE_WITH_MARKET_ORDER\x10\n\x12\x1f\n\x1bPOST_ONLY_WITH_MARKET_ORDER\x10\x0b\x12\x1e\n\x1aPOST_ONLY_WITH_INVALID_TIF\x10\x0c\x12\x1a\n\x16\x45XCEEDED_SPOT_POSITION\x10\r\x12\x1b\n\x17NO_OPPOSING_LIMIT_ORDER\x10\x0e\x12\x19\n\x15POST_ONLY_WOULD_TRADE\x10\x0f\x12\x16\n\x12\x44ID_NOT_FULLY_FILL\x10\x10\x42\x08\n\x06_price\"\x8f\x02\n\x11\x43\x61ncelOrderReject\x12\x13\n\x0bmsg_seq_num\x18\x01 \x01(\x04\x12\x17\n\x0f\x63lient_order_id\x18\x02 \x01(\x04\x12\x12\n\nrequest_id\x18\x03 \x01(\x04\x12\x15\n\rtransact_time\x18\x04 \x01(\x04\x12\x15\n\rsubaccount_id\x18\x05 \x01(\x04\x12/\n\x06reason\x18\x06 \x01(\x0e\x32\x1f.trade.CancelOrderReject.Reason\x12\x11\n\tmarket_id\x18\x07 \x01(\x04\"F\n\x06Reason\x12\x10\n\x0cUNCLASSIFIED\x10\x00\x12\x15\n\x11INVALID_MARKET_ID\x10\x01\x12\x13\n\x0fORDER_NOT_FOUND\x10\x02\"\xbc\x03\n\x11ModifyOrderReject\x12\x13\n\x0bmsg_seq_num\x18\x01 \x01(\x04\x12\x17\n\x0f\x63lient_order_id\x18\x02 \x01(\x04\x12\x12\n\nrequest_id\x18\x03 \x01(\x04\x12\x15\n\rtransact_time\x18\x04 \x01(\x04\x12\x15\n\rsubaccount_id\x18\x05 \x01(\x04\x12/\n\x06reason\x18\x06 \x01(\x0e\x32\x1f.trade.ModifyOrderReject.Reason\x12\x11\n\tmarket_id\x18\x07 \x01(\x04\"\xf2\x01\n\x06Reason\x12\x10\n\x0cUNCLASSIFIED\x10\x00\x12\x14\n\x10INVALID_QUANTITY\x10\x01\x12\x15\n\x11INVALID_MARKET_ID\x10\x02\x12\x13\n\x0fORDER_NOT_FOUND\x10\x03\x12\x0f\n\x0bINVALID_IFM\x10\x04\x12\x15\n\x11INVALID_POST_ONLY\x10\x05\x12!\n\x1dINVALID_SELF_TRADE_PREVENTION\x10\x06\x12\x12\n\x0eUNKNOWN_TRADER\x10\x07\x12\x1a\n\x16\x45XCEEDED_SPOT_POSITION\x10\x08\x12\x19\n\x15POST_ONLY_WOULD_TRADE\x10\t\"\xf1\x01\n\x04\x46ill\x12\x13\n\x0bmsg_seq_num\x18\x01 \x01(\x04\x12\x11\n\tmarket_id\x18\x02 \x01(\x04\x12\x17\n\x0f\x63lient_order_id\x18\x03 \x01(\x04\x12\x19\n\x11\x65xchange_order_id\x18\x04 \x01(\x04\x12\x12\n\nfill_price\x18\x05 \x01(\x04\x12\x15\n\rfill_quantity\x18\x06 \x01(\x04\x12\x17\n\x0fleaves_quantity\x18\x07 \x01(\x04\x12\x15\n\rtransact_time\x18\x08 \x01(\x04\x12\x15\n\rsubaccount_id\x18\t \x01(\x04\x12\x1b\n\x13\x63umulative_quantity\x18\n \x01(\x04\"|\n\rAssetPosition\x12\x15\n\rsubaccount_id\x18\x01 \x01(\x04\x12\x10\n\x08\x61sset_id\x18\x02 \x01(\x04\x12\x1e\n\x05total\x18\x03 \x01(\x0b\x32\x0f.trade.RawUnits\x12\"\n\tavailable\x18\x04 \x01(\x0b\x32\x0f.trade.RawUnits\"F\n\x08RawUnits\x12\r\n\x05word0\x18\x01 \x01(\x04\x12\r\n\x05word1\x18\x02 \x01(\x04\x12\r\n\x05word2\x18\x03 \x01(\x04\x12\r\n\x05word3\x18\x04 \x01(\x04\"\x85\x01\n\tBootstrap\x12\x1b\n\x04\x64one\x18\x01 \x01(\x0b\x32\x0b.trade.DoneH\x00\x12\'\n\x07resting\x18\x02 \x01(\x0b\x32\x14.trade.RestingOrdersH\x00\x12)\n\x08position\x18\x03 \x01(\x0b\x32\x15.trade.AssetPositionsH\x00\x42\x07\n\x05inner\"4\n\rRestingOrders\x12#\n\x06orders\x18\x01 \x03(\x0b\x32\x13.trade.RestingOrder\"9\n\x0e\x41ssetPositions\x12\'\n\tpositions\x18\x01 \x03(\x0b\x32\x14.trade.AssetPosition\"$\n\x04\x44one\x12\x1c\n\x14latest_transact_time\x18\x01 \x01(\x04\"\xcb\x02\n\x0cRestingOrder\x12\x17\n\x0f\x63lient_order_id\x18\x01 \x01(\x04\x12\x19\n\x11\x65xchange_order_id\x18\x02 \x01(\x04\x12\x11\n\tmarket_id\x18\x03 \x01(\x04\x12\r\n\x05price\x18\x04 \x01(\x04\x12\x16\n\x0eorder_quantity\x18\x05 \x01(\x04\x12\x19\n\x04side\x18\x06 \x01(\x0e\x32\x0b.trade.Side\x12)\n\rtime_in_force\x18\x07 \x01(\x0e\x32\x12.trade.TimeInForce\x12$\n\norder_type\x18\x08 \x01(\x0e\x32\x10.trade.OrderType\x12\x1a\n\x12remaining_quantity\x18\t \x01(\x04\x12\x11\n\trest_time\x18\n \x01(\x04\x12\x15\n\rsubaccount_id\x18\x0b \x01(\x04\x12\x1b\n\x13\x63umulative_quantity\x18\x0c \x01(\x04*\x18\n\x04Side\x12\x07\n\x03\x42ID\x10\x00\x12\x07\n\x03\x41SK\x10\x01*N\n\x0bTimeInForce\x12\x17\n\x13IMMEDIATE_OR_CANCEL\x10\x00\x12\x14\n\x10GOOD_FOR_SESSION\x10\x01\x12\x10\n\x0c\x46ILL_OR_KILL\x10\x02*D\n\tOrderType\x12\t\n\x05LIMIT\x10\x00\x12\x10\n\x0cMARKET_LIMIT\x10\x01\x12\x1a\n\x16MARKET_WITH_PROTECTION\x10\x02*V\n\x13SelfTradePrevention\x12\x12\n\x0e\x43\x41NCEL_RESTING\x10\x00\x12\x15\n\x11\x43\x41NCEL_AGGRESSING\x10\x01\x12\x14\n\x10\x41LLOW_SELF_TRADE\x10\x02*%\n\x08PostOnly\x12\x0c\n\x08\x44ISABLED\x10\x00\x12\x0b\n\x07\x45NABLED\x10\x01\x42\x12Z\x03go/\xaa\x02\nCube.Tradeb\x06proto3'
 )
 
 _SIDE = _descriptor.EnumDescriptor(
@@ -43,8 +43,8 @@ _SIDE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5201,
-  serialized_end=5225,
+  serialized_start=5506,
+  serialized_end=5530,
 )
 _sym_db.RegisterEnumDescriptor(_SIDE)
 
@@ -74,8 +74,8 @@ _TIMEINFORCE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5227,
-  serialized_end=5305,
+  serialized_start=5532,
+  serialized_end=5610,
 )
 _sym_db.RegisterEnumDescriptor(_TIMEINFORCE)
 
@@ -105,8 +105,8 @@ _ORDERTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5307,
-  serialized_end=5375,
+  serialized_start=5612,
+  serialized_end=5680,
 )
 _sym_db.RegisterEnumDescriptor(_ORDERTYPE)
 
@@ -136,8 +136,8 @@ _SELFTRADEPREVENTION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5377,
-  serialized_end=5463,
+  serialized_start=5682,
+  serialized_end=5768,
 )
 _sym_db.RegisterEnumDescriptor(_SELFTRADEPREVENTION)
 
@@ -162,8 +162,8 @@ _POSTONLY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5465,
-  serialized_end=5502,
+  serialized_start=5770,
+  serialized_end=5807,
 )
 _sym_db.RegisterEnumDescriptor(_POSTONLY)
 
@@ -228,8 +228,8 @@ _CANCELORDERACK_REASON = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2169,
-  serialized_end=2289,
+  serialized_start=2295,
+  serialized_end=2415,
 )
 _sym_db.RegisterEnumDescriptor(_CANCELORDERACK_REASON)
 
@@ -258,8 +258,8 @@ _MASSCANCELACK_REASON = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2648,
-  serialized_end=2715,
+  serialized_start=2843,
+  serialized_end=2910,
 )
 _sym_db.RegisterEnumDescriptor(_MASSCANCELACK_REASON)
 
@@ -358,8 +358,8 @@ _NEWORDERREJECT_REASON = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3060,
-  serialized_end=3504,
+  serialized_start=3266,
+  serialized_end=3710,
 )
 _sym_db.RegisterEnumDescriptor(_NEWORDERREJECT_REASON)
 
@@ -388,8 +388,8 @@ _CANCELORDERREJECT_REASON = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3710,
-  serialized_end=3780,
+  serialized_start=3924,
+  serialized_end=3994,
 )
 _sym_db.RegisterEnumDescriptor(_CANCELORDERREJECT_REASON)
 
@@ -453,8 +453,8 @@ _MODIFYORDERREJECT_REASON = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3977,
-  serialized_end=4219,
+  serialized_start=4199,
+  serialized_end=4441,
 )
 _sym_db.RegisterEnumDescriptor(_MODIFYORDERREJECT_REASON)
 
@@ -468,7 +468,7 @@ _CREDENTIALS = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='accessKeyId', full_name='trade.Credentials.accessKeyId', index=0,
+      name='access_key_id', full_name='trade.Credentials.access_key_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -501,7 +501,7 @@ _CREDENTIALS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=22,
-  serialized_end=94,
+  serialized_end=96,
 )
 
 
@@ -565,8 +565,8 @@ _ORDERREQUEST = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=97,
-  serialized_end=300,
+  serialized_start=99,
+  serialized_end=302,
 )
 
 
@@ -579,21 +579,21 @@ _NEWORDER = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='clientOrderId', full_name='trade.NewOrder.clientOrderId', index=0,
+      name='client_order_id', full_name='trade.NewOrder.client_order_id', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='requestId', full_name='trade.NewOrder.requestId', index=1,
+      name='request_id', full_name='trade.NewOrder.request_id', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='marketId', full_name='trade.NewOrder.marketId', index=2,
+      name='market_id', full_name='trade.NewOrder.market_id', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -621,37 +621,44 @@ _NEWORDER = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='timeInForce', full_name='trade.NewOrder.timeInForce', index=6,
+      name='time_in_force', full_name='trade.NewOrder.time_in_force', index=6,
       number=7, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='orderType', full_name='trade.NewOrder.orderType', index=7,
+      name='order_type', full_name='trade.NewOrder.order_type', index=7,
       number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='subaccountId', full_name='trade.NewOrder.subaccountId', index=8,
+      name='subaccount_id', full_name='trade.NewOrder.subaccount_id', index=8,
       number=9, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='selfTradePrevention', full_name='trade.NewOrder.selfTradePrevention', index=9,
+      name='self_trade_prevention', full_name='trade.NewOrder.self_trade_prevention', index=9,
       number=10, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='postOnly', full_name='trade.NewOrder.postOnly', index=10,
+      name='post_only', full_name='trade.NewOrder.post_only', index=10,
       number=11, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cancel_on_disconnect', full_name='trade.NewOrder.cancel_on_disconnect', index=11,
+      number=12, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -672,13 +679,13 @@ _NEWORDER = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
     _descriptor.OneofDescriptor(
-      name='_selfTradePrevention', full_name='trade.NewOrder._selfTradePrevention',
+      name='_self_trade_prevention', full_name='trade.NewOrder._self_trade_prevention',
       index=1, containing_type=None,
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=303,
-  serialized_end=669,
+  serialized_start=305,
+  serialized_end=714,
 )
 
 
@@ -691,28 +698,28 @@ _CANCELORDER = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketId', full_name='trade.CancelOrder.marketId', index=0,
+      name='market_id', full_name='trade.CancelOrder.market_id', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='clientOrderId', full_name='trade.CancelOrder.clientOrderId', index=1,
+      name='client_order_id', full_name='trade.CancelOrder.client_order_id', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='requestId', full_name='trade.CancelOrder.requestId', index=2,
+      name='request_id', full_name='trade.CancelOrder.request_id', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='subaccountId', full_name='trade.CancelOrder.subaccountId', index=3,
+      name='subaccount_id', full_name='trade.CancelOrder.subaccount_id', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -730,8 +737,8 @@ _CANCELORDER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=671,
-  serialized_end=766,
+  serialized_start=716,
+  serialized_end=816,
 )
 
 
@@ -744,56 +751,56 @@ _MODIFYORDER = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='marketId', full_name='trade.ModifyOrder.marketId', index=0,
+      name='market_id', full_name='trade.ModifyOrder.market_id', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='clientOrderId', full_name='trade.ModifyOrder.clientOrderId', index=1,
+      name='client_order_id', full_name='trade.ModifyOrder.client_order_id', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='requestId', full_name='trade.ModifyOrder.requestId', index=2,
+      name='request_id', full_name='trade.ModifyOrder.request_id', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='newPrice', full_name='trade.ModifyOrder.newPrice', index=3,
+      name='new_price', full_name='trade.ModifyOrder.new_price', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='newQuantity', full_name='trade.ModifyOrder.newQuantity', index=4,
+      name='new_quantity', full_name='trade.ModifyOrder.new_quantity', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='subaccountId', full_name='trade.ModifyOrder.subaccountId', index=5,
+      name='subaccount_id', full_name='trade.ModifyOrder.subaccount_id', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='selfTradePrevention', full_name='trade.ModifyOrder.selfTradePrevention', index=6,
+      name='self_trade_prevention', full_name='trade.ModifyOrder.self_trade_prevention', index=6,
       number=7, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='postOnly', full_name='trade.ModifyOrder.postOnly', index=7,
+      name='post_only', full_name='trade.ModifyOrder.post_only', index=7,
       number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -811,13 +818,13 @@ _MODIFYORDER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='_selfTradePrevention', full_name='trade.ModifyOrder._selfTradePrevention',
+      name='_self_trade_prevention', full_name='trade.ModifyOrder._self_trade_prevention',
       index=0, containing_type=None,
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=769,
-  serialized_end=1024,
+  serialized_start=819,
+  serialized_end=1086,
 )
 
 
@@ -830,21 +837,21 @@ _MASSCANCEL = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='subaccountId', full_name='trade.MassCancel.subaccountId', index=0,
+      name='subaccount_id', full_name='trade.MassCancel.subaccount_id', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='requestId', full_name='trade.MassCancel.requestId', index=1,
+      name='request_id', full_name='trade.MassCancel.request_id', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='marketId', full_name='trade.MassCancel.marketId', index=2,
+      name='market_id', full_name='trade.MassCancel.market_id', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -869,7 +876,7 @@ _MASSCANCEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='_marketId', full_name='trade.MassCancel._marketId',
+      name='_market_id', full_name='trade.MassCancel._market_id',
       index=0, containing_type=None,
       create_key=_descriptor._internal_create_key,
     fields=[]),
@@ -879,8 +886,8 @@ _MASSCANCEL = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1027,
-  serialized_end=1157,
+  serialized_start=1089,
+  serialized_end=1223,
 )
 
 
@@ -893,7 +900,7 @@ _HEARTBEAT = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='requestId', full_name='trade.Heartbeat.requestId', index=0,
+      name='request_id', full_name='trade.Heartbeat.request_id', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -918,8 +925,8 @@ _HEARTBEAT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1159,
-  serialized_end=1208,
+  serialized_start=1225,
+  serialized_end=1275,
 )
 
 
@@ -932,42 +939,42 @@ _ORDERRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='newAck', full_name='trade.OrderResponse.newAck', index=0,
+      name='new_ack', full_name='trade.OrderResponse.new_ack', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cancelAck', full_name='trade.OrderResponse.cancelAck', index=1,
+      name='cancel_ack', full_name='trade.OrderResponse.cancel_ack', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='modifyAck', full_name='trade.OrderResponse.modifyAck', index=2,
+      name='modify_ack', full_name='trade.OrderResponse.modify_ack', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='newReject', full_name='trade.OrderResponse.newReject', index=3,
+      name='new_reject', full_name='trade.OrderResponse.new_reject', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cancelReject', full_name='trade.OrderResponse.cancelReject', index=4,
+      name='cancel_reject', full_name='trade.OrderResponse.cancel_reject', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='modifyReject', full_name='trade.OrderResponse.modifyReject', index=5,
+      name='modify_reject', full_name='trade.OrderResponse.modify_reject', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -995,7 +1002,7 @@ _ORDERRESPONSE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='massCancelAck', full_name='trade.OrderResponse.massCancelAck', index=9,
+      name='mass_cancel_ack', full_name='trade.OrderResponse.mass_cancel_ack', index=9,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1018,8 +1025,8 @@ _ORDERRESPONSE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1211,
-  serialized_end=1662,
+  serialized_start=1278,
+  serialized_end=1737,
 )
 
 
@@ -1032,35 +1039,35 @@ _NEWORDERACK = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='msgSeqNum', full_name='trade.NewOrderAck.msgSeqNum', index=0,
+      name='msg_seq_num', full_name='trade.NewOrderAck.msg_seq_num', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='clientOrderId', full_name='trade.NewOrderAck.clientOrderId', index=1,
+      name='client_order_id', full_name='trade.NewOrderAck.client_order_id', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='requestId', full_name='trade.NewOrderAck.requestId', index=2,
+      name='request_id', full_name='trade.NewOrderAck.request_id', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='exchangeOrderId', full_name='trade.NewOrderAck.exchangeOrderId', index=3,
+      name='exchange_order_id', full_name='trade.NewOrderAck.exchange_order_id', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='marketId', full_name='trade.NewOrderAck.marketId', index=4,
+      name='market_id', full_name='trade.NewOrderAck.market_id', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1088,30 +1095,37 @@ _NEWORDERACK = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='timeInForce', full_name='trade.NewOrderAck.timeInForce', index=8,
+      name='time_in_force', full_name='trade.NewOrderAck.time_in_force', index=8,
       number=9, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='orderType', full_name='trade.NewOrderAck.orderType', index=9,
+      name='order_type', full_name='trade.NewOrderAck.order_type', index=9,
       number=10, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='transactTime', full_name='trade.NewOrderAck.transactTime', index=10,
+      name='transact_time', full_name='trade.NewOrderAck.transact_time', index=10,
       number=11, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='subaccountId', full_name='trade.NewOrderAck.subaccountId', index=11,
+      name='subaccount_id', full_name='trade.NewOrderAck.subaccount_id', index=11,
       number=12, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cancel_on_disconnect', full_name='trade.NewOrderAck.cancel_on_disconnect', index=12,
+      number=13, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -1132,8 +1146,8 @@ _NEWORDERACK = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1665,
-  serialized_end=1979,
+  serialized_start=1740,
+  serialized_end=2097,
 )
 
 
@@ -1146,35 +1160,35 @@ _CANCELORDERACK = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='msgSeqNum', full_name='trade.CancelOrderAck.msgSeqNum', index=0,
+      name='msg_seq_num', full_name='trade.CancelOrderAck.msg_seq_num', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='clientOrderId', full_name='trade.CancelOrderAck.clientOrderId', index=1,
+      name='client_order_id', full_name='trade.CancelOrderAck.client_order_id', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='requestId', full_name='trade.CancelOrderAck.requestId', index=2,
+      name='request_id', full_name='trade.CancelOrderAck.request_id', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='transactTime', full_name='trade.CancelOrderAck.transactTime', index=3,
+      name='transact_time', full_name='trade.CancelOrderAck.transact_time', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='subaccountId', full_name='trade.CancelOrderAck.subaccountId', index=4,
+      name='subaccount_id', full_name='trade.CancelOrderAck.subaccount_id', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1188,7 +1202,7 @@ _CANCELORDERACK = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='marketId', full_name='trade.CancelOrderAck.marketId', index=6,
+      name='market_id', full_name='trade.CancelOrderAck.market_id', index=6,
       number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1207,8 +1221,8 @@ _CANCELORDERACK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1982,
-  serialized_end=2289,
+  serialized_start=2100,
+  serialized_end=2415,
 )
 
 
@@ -1221,49 +1235,49 @@ _MODIFYORDERACK = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='msgSeqNum', full_name='trade.ModifyOrderAck.msgSeqNum', index=0,
+      name='msg_seq_num', full_name='trade.ModifyOrderAck.msg_seq_num', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='clientOrderId', full_name='trade.ModifyOrderAck.clientOrderId', index=1,
+      name='client_order_id', full_name='trade.ModifyOrderAck.client_order_id', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='requestId', full_name='trade.ModifyOrderAck.requestId', index=2,
+      name='request_id', full_name='trade.ModifyOrderAck.request_id', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='transactTime', full_name='trade.ModifyOrderAck.transactTime', index=3,
+      name='transact_time', full_name='trade.ModifyOrderAck.transact_time', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='newQuantity', full_name='trade.ModifyOrderAck.newQuantity', index=4,
+      name='remaining_quantity', full_name='trade.ModifyOrderAck.remaining_quantity', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='subaccountId', full_name='trade.ModifyOrderAck.subaccountId', index=5,
+      name='subaccount_id', full_name='trade.ModifyOrderAck.subaccount_id', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='marketId', full_name='trade.ModifyOrderAck.marketId', index=6,
+      name='market_id', full_name='trade.ModifyOrderAck.market_id', index=6,
       number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1272,6 +1286,20 @@ _MODIFYORDERACK = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='price', full_name='trade.ModifyOrderAck.price', index=7,
       number=8, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='quantity', full_name='trade.ModifyOrderAck.quantity', index=8,
+      number=9, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cumulative_quantity', full_name='trade.ModifyOrderAck.cumulative_quantity', index=9,
+      number=10, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1288,8 +1316,8 @@ _MODIFYORDERACK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2292,
-  serialized_end=2467,
+  serialized_start=2418,
+  serialized_end=2655,
 )
 
 
@@ -1302,28 +1330,28 @@ _MASSCANCELACK = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='msgSeqNum', full_name='trade.MassCancelAck.msgSeqNum', index=0,
+      name='msg_seq_num', full_name='trade.MassCancelAck.msg_seq_num', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='subaccountId', full_name='trade.MassCancelAck.subaccountId', index=1,
+      name='subaccount_id', full_name='trade.MassCancelAck.subaccount_id', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='requestId', full_name='trade.MassCancelAck.requestId', index=2,
+      name='request_id', full_name='trade.MassCancelAck.request_id', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='transactTime', full_name='trade.MassCancelAck.transactTime', index=3,
+      name='transact_time', full_name='trade.MassCancelAck.transact_time', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1337,7 +1365,7 @@ _MASSCANCELACK = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='totalAffectedOrders', full_name='trade.MassCancelAck.totalAffectedOrders', index=5,
+      name='total_affected_orders', full_name='trade.MassCancelAck.total_affected_orders', index=5,
       number=7, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1361,8 +1389,8 @@ _MASSCANCELACK = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=2470,
-  serialized_end=2726,
+  serialized_start=2658,
+  serialized_end=2921,
 )
 
 
@@ -1375,35 +1403,35 @@ _NEWORDERREJECT = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='msgSeqNum', full_name='trade.NewOrderReject.msgSeqNum', index=0,
+      name='msg_seq_num', full_name='trade.NewOrderReject.msg_seq_num', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='clientOrderId', full_name='trade.NewOrderReject.clientOrderId', index=1,
+      name='client_order_id', full_name='trade.NewOrderReject.client_order_id', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='requestId', full_name='trade.NewOrderReject.requestId', index=2,
+      name='request_id', full_name='trade.NewOrderReject.request_id', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='transactTime', full_name='trade.NewOrderReject.transactTime', index=3,
+      name='transact_time', full_name='trade.NewOrderReject.transact_time', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='subaccountId', full_name='trade.NewOrderReject.subaccountId', index=4,
+      name='subaccount_id', full_name='trade.NewOrderReject.subaccount_id', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1417,7 +1445,7 @@ _NEWORDERREJECT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='marketId', full_name='trade.NewOrderReject.marketId', index=6,
+      name='market_id', full_name='trade.NewOrderReject.market_id', index=6,
       number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1445,14 +1473,14 @@ _NEWORDERREJECT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='timeInForce', full_name='trade.NewOrderReject.timeInForce', index=10,
+      name='time_in_force', full_name='trade.NewOrderReject.time_in_force', index=10,
       number=11, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='orderType', full_name='trade.NewOrderReject.orderType', index=11,
+      name='order_type', full_name='trade.NewOrderReject.order_type', index=11,
       number=12, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1476,8 +1504,8 @@ _NEWORDERREJECT = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=2729,
-  serialized_end=3514,
+  serialized_start=2924,
+  serialized_end=3720,
 )
 
 
@@ -1490,35 +1518,35 @@ _CANCELORDERREJECT = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='msgSeqNum', full_name='trade.CancelOrderReject.msgSeqNum', index=0,
+      name='msg_seq_num', full_name='trade.CancelOrderReject.msg_seq_num', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='clientOrderId', full_name='trade.CancelOrderReject.clientOrderId', index=1,
+      name='client_order_id', full_name='trade.CancelOrderReject.client_order_id', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='requestId', full_name='trade.CancelOrderReject.requestId', index=2,
+      name='request_id', full_name='trade.CancelOrderReject.request_id', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='transactTime', full_name='trade.CancelOrderReject.transactTime', index=3,
+      name='transact_time', full_name='trade.CancelOrderReject.transact_time', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='subaccountId', full_name='trade.CancelOrderReject.subaccountId', index=4,
+      name='subaccount_id', full_name='trade.CancelOrderReject.subaccount_id', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1532,7 +1560,7 @@ _CANCELORDERREJECT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='marketId', full_name='trade.CancelOrderReject.marketId', index=6,
+      name='market_id', full_name='trade.CancelOrderReject.market_id', index=6,
       number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1551,8 +1579,8 @@ _CANCELORDERREJECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3517,
-  serialized_end=3780,
+  serialized_start=3723,
+  serialized_end=3994,
 )
 
 
@@ -1565,35 +1593,35 @@ _MODIFYORDERREJECT = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='msgSeqNum', full_name='trade.ModifyOrderReject.msgSeqNum', index=0,
+      name='msg_seq_num', full_name='trade.ModifyOrderReject.msg_seq_num', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='clientOrderId', full_name='trade.ModifyOrderReject.clientOrderId', index=1,
+      name='client_order_id', full_name='trade.ModifyOrderReject.client_order_id', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='requestId', full_name='trade.ModifyOrderReject.requestId', index=2,
+      name='request_id', full_name='trade.ModifyOrderReject.request_id', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='transactTime', full_name='trade.ModifyOrderReject.transactTime', index=3,
+      name='transact_time', full_name='trade.ModifyOrderReject.transact_time', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='subaccountId', full_name='trade.ModifyOrderReject.subaccountId', index=4,
+      name='subaccount_id', full_name='trade.ModifyOrderReject.subaccount_id', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1607,7 +1635,7 @@ _MODIFYORDERREJECT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='marketId', full_name='trade.ModifyOrderReject.marketId', index=6,
+      name='market_id', full_name='trade.ModifyOrderReject.market_id', index=6,
       number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1626,8 +1654,8 @@ _MODIFYORDERREJECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3783,
-  serialized_end=4219,
+  serialized_start=3997,
+  serialized_end=4441,
 )
 
 
@@ -1640,64 +1668,71 @@ _FILL = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='msgSeqNum', full_name='trade.Fill.msgSeqNum', index=0,
+      name='msg_seq_num', full_name='trade.Fill.msg_seq_num', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='marketId', full_name='trade.Fill.marketId', index=1,
+      name='market_id', full_name='trade.Fill.market_id', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='clientOrderId', full_name='trade.Fill.clientOrderId', index=2,
+      name='client_order_id', full_name='trade.Fill.client_order_id', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='exchangeOrderId', full_name='trade.Fill.exchangeOrderId', index=3,
+      name='exchange_order_id', full_name='trade.Fill.exchange_order_id', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='fillPrice', full_name='trade.Fill.fillPrice', index=4,
+      name='fill_price', full_name='trade.Fill.fill_price', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='fillQuantity', full_name='trade.Fill.fillQuantity', index=5,
+      name='fill_quantity', full_name='trade.Fill.fill_quantity', index=5,
       number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='leavesQuantity', full_name='trade.Fill.leavesQuantity', index=6,
+      name='leaves_quantity', full_name='trade.Fill.leaves_quantity', index=6,
       number=7, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='transactTime', full_name='trade.Fill.transactTime', index=7,
+      name='transact_time', full_name='trade.Fill.transact_time', index=7,
       number=8, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='subaccountId', full_name='trade.Fill.subaccountId', index=8,
+      name='subaccount_id', full_name='trade.Fill.subaccount_id', index=8,
       number=9, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cumulative_quantity', full_name='trade.Fill.cumulative_quantity', index=9,
+      number=10, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1714,8 +1749,8 @@ _FILL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4222,
-  serialized_end=4422,
+  serialized_start=4444,
+  serialized_end=4685,
 )
 
 
@@ -1728,14 +1763,14 @@ _ASSETPOSITION = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='subaccountId', full_name='trade.AssetPosition.subaccountId', index=0,
+      name='subaccount_id', full_name='trade.AssetPosition.subaccount_id', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='assetId', full_name='trade.AssetPosition.assetId', index=1,
+      name='asset_id', full_name='trade.AssetPosition.asset_id', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1767,8 +1802,8 @@ _ASSETPOSITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4424,
-  serialized_end=4546,
+  serialized_start=4687,
+  serialized_end=4811,
 )
 
 
@@ -1820,8 +1855,8 @@ _RAWUNITS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4548,
-  serialized_end=4618,
+  serialized_start=4813,
+  serialized_end=4883,
 )
 
 
@@ -1871,8 +1906,8 @@ _BOOTSTRAP = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=4621,
-  serialized_end=4754,
+  serialized_start=4886,
+  serialized_end=5019,
 )
 
 
@@ -1903,8 +1938,8 @@ _RESTINGORDERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4756,
-  serialized_end=4808,
+  serialized_start=5021,
+  serialized_end=5073,
 )
 
 
@@ -1935,8 +1970,8 @@ _ASSETPOSITIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4810,
-  serialized_end=4867,
+  serialized_start=5075,
+  serialized_end=5132,
 )
 
 
@@ -1949,7 +1984,7 @@ _DONE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='latestTransactTime', full_name='trade.Done.latestTransactTime', index=0,
+      name='latest_transact_time', full_name='trade.Done.latest_transact_time', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1967,8 +2002,8 @@ _DONE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4869,
-  serialized_end=4903,
+  serialized_start=5134,
+  serialized_end=5170,
 )
 
 
@@ -1981,21 +2016,21 @@ _RESTINGORDER = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='clientOrderId', full_name='trade.RestingOrder.clientOrderId', index=0,
+      name='client_order_id', full_name='trade.RestingOrder.client_order_id', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='exchangeOrderId', full_name='trade.RestingOrder.exchangeOrderId', index=1,
+      name='exchange_order_id', full_name='trade.RestingOrder.exchange_order_id', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='marketId', full_name='trade.RestingOrder.marketId', index=2,
+      name='market_id', full_name='trade.RestingOrder.market_id', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2009,7 +2044,7 @@ _RESTINGORDER = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='originalQuantity', full_name='trade.RestingOrder.originalQuantity', index=4,
+      name='order_quantity', full_name='trade.RestingOrder.order_quantity', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2023,36 +2058,43 @@ _RESTINGORDER = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='timeInForce', full_name='trade.RestingOrder.timeInForce', index=6,
+      name='time_in_force', full_name='trade.RestingOrder.time_in_force', index=6,
       number=7, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='orderType', full_name='trade.RestingOrder.orderType', index=7,
+      name='order_type', full_name='trade.RestingOrder.order_type', index=7,
       number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='remainingQuantity', full_name='trade.RestingOrder.remainingQuantity', index=8,
+      name='remaining_quantity', full_name='trade.RestingOrder.remaining_quantity', index=8,
       number=9, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='restTime', full_name='trade.RestingOrder.restTime', index=9,
+      name='rest_time', full_name='trade.RestingOrder.rest_time', index=9,
       number=10, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='subaccountId', full_name='trade.RestingOrder.subaccountId', index=10,
+      name='subaccount_id', full_name='trade.RestingOrder.subaccount_id', index=10,
       number=11, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cumulative_quantity', full_name='trade.RestingOrder.cumulative_quantity', index=11,
+      number=12, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -2069,8 +2111,8 @@ _RESTINGORDER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4906,
-  serialized_end=5199,
+  serialized_start=5173,
+  serialized_end=5504,
 )
 
 _ORDERREQUEST.fields_by_name['new'].message_type = _NEWORDER
@@ -2094,56 +2136,56 @@ _ORDERREQUEST.oneofs_by_name['inner'].fields.append(
   _ORDERREQUEST.fields_by_name['mc'])
 _ORDERREQUEST.fields_by_name['mc'].containing_oneof = _ORDERREQUEST.oneofs_by_name['inner']
 _NEWORDER.fields_by_name['side'].enum_type = _SIDE
-_NEWORDER.fields_by_name['timeInForce'].enum_type = _TIMEINFORCE
-_NEWORDER.fields_by_name['orderType'].enum_type = _ORDERTYPE
-_NEWORDER.fields_by_name['selfTradePrevention'].enum_type = _SELFTRADEPREVENTION
-_NEWORDER.fields_by_name['postOnly'].enum_type = _POSTONLY
+_NEWORDER.fields_by_name['time_in_force'].enum_type = _TIMEINFORCE
+_NEWORDER.fields_by_name['order_type'].enum_type = _ORDERTYPE
+_NEWORDER.fields_by_name['self_trade_prevention'].enum_type = _SELFTRADEPREVENTION
+_NEWORDER.fields_by_name['post_only'].enum_type = _POSTONLY
 _NEWORDER.oneofs_by_name['_price'].fields.append(
   _NEWORDER.fields_by_name['price'])
 _NEWORDER.fields_by_name['price'].containing_oneof = _NEWORDER.oneofs_by_name['_price']
-_NEWORDER.oneofs_by_name['_selfTradePrevention'].fields.append(
-  _NEWORDER.fields_by_name['selfTradePrevention'])
-_NEWORDER.fields_by_name['selfTradePrevention'].containing_oneof = _NEWORDER.oneofs_by_name['_selfTradePrevention']
-_MODIFYORDER.fields_by_name['selfTradePrevention'].enum_type = _SELFTRADEPREVENTION
-_MODIFYORDER.fields_by_name['postOnly'].enum_type = _POSTONLY
-_MODIFYORDER.oneofs_by_name['_selfTradePrevention'].fields.append(
-  _MODIFYORDER.fields_by_name['selfTradePrevention'])
-_MODIFYORDER.fields_by_name['selfTradePrevention'].containing_oneof = _MODIFYORDER.oneofs_by_name['_selfTradePrevention']
+_NEWORDER.oneofs_by_name['_self_trade_prevention'].fields.append(
+  _NEWORDER.fields_by_name['self_trade_prevention'])
+_NEWORDER.fields_by_name['self_trade_prevention'].containing_oneof = _NEWORDER.oneofs_by_name['_self_trade_prevention']
+_MODIFYORDER.fields_by_name['self_trade_prevention'].enum_type = _SELFTRADEPREVENTION
+_MODIFYORDER.fields_by_name['post_only'].enum_type = _POSTONLY
+_MODIFYORDER.oneofs_by_name['_self_trade_prevention'].fields.append(
+  _MODIFYORDER.fields_by_name['self_trade_prevention'])
+_MODIFYORDER.fields_by_name['self_trade_prevention'].containing_oneof = _MODIFYORDER.oneofs_by_name['_self_trade_prevention']
 _MASSCANCEL.fields_by_name['side'].enum_type = _SIDE
-_MASSCANCEL.oneofs_by_name['_marketId'].fields.append(
-  _MASSCANCEL.fields_by_name['marketId'])
-_MASSCANCEL.fields_by_name['marketId'].containing_oneof = _MASSCANCEL.oneofs_by_name['_marketId']
+_MASSCANCEL.oneofs_by_name['_market_id'].fields.append(
+  _MASSCANCEL.fields_by_name['market_id'])
+_MASSCANCEL.fields_by_name['market_id'].containing_oneof = _MASSCANCEL.oneofs_by_name['_market_id']
 _MASSCANCEL.oneofs_by_name['_side'].fields.append(
   _MASSCANCEL.fields_by_name['side'])
 _MASSCANCEL.fields_by_name['side'].containing_oneof = _MASSCANCEL.oneofs_by_name['_side']
-_ORDERRESPONSE.fields_by_name['newAck'].message_type = _NEWORDERACK
-_ORDERRESPONSE.fields_by_name['cancelAck'].message_type = _CANCELORDERACK
-_ORDERRESPONSE.fields_by_name['modifyAck'].message_type = _MODIFYORDERACK
-_ORDERRESPONSE.fields_by_name['newReject'].message_type = _NEWORDERREJECT
-_ORDERRESPONSE.fields_by_name['cancelReject'].message_type = _CANCELORDERREJECT
-_ORDERRESPONSE.fields_by_name['modifyReject'].message_type = _MODIFYORDERREJECT
+_ORDERRESPONSE.fields_by_name['new_ack'].message_type = _NEWORDERACK
+_ORDERRESPONSE.fields_by_name['cancel_ack'].message_type = _CANCELORDERACK
+_ORDERRESPONSE.fields_by_name['modify_ack'].message_type = _MODIFYORDERACK
+_ORDERRESPONSE.fields_by_name['new_reject'].message_type = _NEWORDERREJECT
+_ORDERRESPONSE.fields_by_name['cancel_reject'].message_type = _CANCELORDERREJECT
+_ORDERRESPONSE.fields_by_name['modify_reject'].message_type = _MODIFYORDERREJECT
 _ORDERRESPONSE.fields_by_name['fill'].message_type = _FILL
 _ORDERRESPONSE.fields_by_name['heartbeat'].message_type = _HEARTBEAT
 _ORDERRESPONSE.fields_by_name['position'].message_type = _ASSETPOSITION
-_ORDERRESPONSE.fields_by_name['massCancelAck'].message_type = _MASSCANCELACK
+_ORDERRESPONSE.fields_by_name['mass_cancel_ack'].message_type = _MASSCANCELACK
 _ORDERRESPONSE.oneofs_by_name['inner'].fields.append(
-  _ORDERRESPONSE.fields_by_name['newAck'])
-_ORDERRESPONSE.fields_by_name['newAck'].containing_oneof = _ORDERRESPONSE.oneofs_by_name['inner']
+  _ORDERRESPONSE.fields_by_name['new_ack'])
+_ORDERRESPONSE.fields_by_name['new_ack'].containing_oneof = _ORDERRESPONSE.oneofs_by_name['inner']
 _ORDERRESPONSE.oneofs_by_name['inner'].fields.append(
-  _ORDERRESPONSE.fields_by_name['cancelAck'])
-_ORDERRESPONSE.fields_by_name['cancelAck'].containing_oneof = _ORDERRESPONSE.oneofs_by_name['inner']
+  _ORDERRESPONSE.fields_by_name['cancel_ack'])
+_ORDERRESPONSE.fields_by_name['cancel_ack'].containing_oneof = _ORDERRESPONSE.oneofs_by_name['inner']
 _ORDERRESPONSE.oneofs_by_name['inner'].fields.append(
-  _ORDERRESPONSE.fields_by_name['modifyAck'])
-_ORDERRESPONSE.fields_by_name['modifyAck'].containing_oneof = _ORDERRESPONSE.oneofs_by_name['inner']
+  _ORDERRESPONSE.fields_by_name['modify_ack'])
+_ORDERRESPONSE.fields_by_name['modify_ack'].containing_oneof = _ORDERRESPONSE.oneofs_by_name['inner']
 _ORDERRESPONSE.oneofs_by_name['inner'].fields.append(
-  _ORDERRESPONSE.fields_by_name['newReject'])
-_ORDERRESPONSE.fields_by_name['newReject'].containing_oneof = _ORDERRESPONSE.oneofs_by_name['inner']
+  _ORDERRESPONSE.fields_by_name['new_reject'])
+_ORDERRESPONSE.fields_by_name['new_reject'].containing_oneof = _ORDERRESPONSE.oneofs_by_name['inner']
 _ORDERRESPONSE.oneofs_by_name['inner'].fields.append(
-  _ORDERRESPONSE.fields_by_name['cancelReject'])
-_ORDERRESPONSE.fields_by_name['cancelReject'].containing_oneof = _ORDERRESPONSE.oneofs_by_name['inner']
+  _ORDERRESPONSE.fields_by_name['cancel_reject'])
+_ORDERRESPONSE.fields_by_name['cancel_reject'].containing_oneof = _ORDERRESPONSE.oneofs_by_name['inner']
 _ORDERRESPONSE.oneofs_by_name['inner'].fields.append(
-  _ORDERRESPONSE.fields_by_name['modifyReject'])
-_ORDERRESPONSE.fields_by_name['modifyReject'].containing_oneof = _ORDERRESPONSE.oneofs_by_name['inner']
+  _ORDERRESPONSE.fields_by_name['modify_reject'])
+_ORDERRESPONSE.fields_by_name['modify_reject'].containing_oneof = _ORDERRESPONSE.oneofs_by_name['inner']
 _ORDERRESPONSE.oneofs_by_name['inner'].fields.append(
   _ORDERRESPONSE.fields_by_name['fill'])
 _ORDERRESPONSE.fields_by_name['fill'].containing_oneof = _ORDERRESPONSE.oneofs_by_name['inner']
@@ -2154,11 +2196,11 @@ _ORDERRESPONSE.oneofs_by_name['inner'].fields.append(
   _ORDERRESPONSE.fields_by_name['position'])
 _ORDERRESPONSE.fields_by_name['position'].containing_oneof = _ORDERRESPONSE.oneofs_by_name['inner']
 _ORDERRESPONSE.oneofs_by_name['inner'].fields.append(
-  _ORDERRESPONSE.fields_by_name['massCancelAck'])
-_ORDERRESPONSE.fields_by_name['massCancelAck'].containing_oneof = _ORDERRESPONSE.oneofs_by_name['inner']
+  _ORDERRESPONSE.fields_by_name['mass_cancel_ack'])
+_ORDERRESPONSE.fields_by_name['mass_cancel_ack'].containing_oneof = _ORDERRESPONSE.oneofs_by_name['inner']
 _NEWORDERACK.fields_by_name['side'].enum_type = _SIDE
-_NEWORDERACK.fields_by_name['timeInForce'].enum_type = _TIMEINFORCE
-_NEWORDERACK.fields_by_name['orderType'].enum_type = _ORDERTYPE
+_NEWORDERACK.fields_by_name['time_in_force'].enum_type = _TIMEINFORCE
+_NEWORDERACK.fields_by_name['order_type'].enum_type = _ORDERTYPE
 _NEWORDERACK.oneofs_by_name['_price'].fields.append(
   _NEWORDERACK.fields_by_name['price'])
 _NEWORDERACK.fields_by_name['price'].containing_oneof = _NEWORDERACK.oneofs_by_name['_price']
@@ -2171,8 +2213,8 @@ _MASSCANCELACK.oneofs_by_name['_reason'].fields.append(
 _MASSCANCELACK.fields_by_name['reason'].containing_oneof = _MASSCANCELACK.oneofs_by_name['_reason']
 _NEWORDERREJECT.fields_by_name['reason'].enum_type = _NEWORDERREJECT_REASON
 _NEWORDERREJECT.fields_by_name['side'].enum_type = _SIDE
-_NEWORDERREJECT.fields_by_name['timeInForce'].enum_type = _TIMEINFORCE
-_NEWORDERREJECT.fields_by_name['orderType'].enum_type = _ORDERTYPE
+_NEWORDERREJECT.fields_by_name['time_in_force'].enum_type = _TIMEINFORCE
+_NEWORDERREJECT.fields_by_name['order_type'].enum_type = _ORDERTYPE
 _NEWORDERREJECT_REASON.containing_type = _NEWORDERREJECT
 _NEWORDERREJECT.oneofs_by_name['_price'].fields.append(
   _NEWORDERREJECT.fields_by_name['price'])
@@ -2198,8 +2240,8 @@ _BOOTSTRAP.fields_by_name['position'].containing_oneof = _BOOTSTRAP.oneofs_by_na
 _RESTINGORDERS.fields_by_name['orders'].message_type = _RESTINGORDER
 _ASSETPOSITIONS.fields_by_name['positions'].message_type = _ASSETPOSITION
 _RESTINGORDER.fields_by_name['side'].enum_type = _SIDE
-_RESTINGORDER.fields_by_name['timeInForce'].enum_type = _TIMEINFORCE
-_RESTINGORDER.fields_by_name['orderType'].enum_type = _ORDERTYPE
+_RESTINGORDER.fields_by_name['time_in_force'].enum_type = _TIMEINFORCE
+_RESTINGORDER.fields_by_name['order_type'].enum_type = _ORDERTYPE
 DESCRIPTOR.message_types_by_name['Credentials'] = _CREDENTIALS
 DESCRIPTOR.message_types_by_name['OrderRequest'] = _ORDERREQUEST
 DESCRIPTOR.message_types_by_name['NewOrder'] = _NEWORDER
